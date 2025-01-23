@@ -121,7 +121,64 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Bull Bitcoin Mobile Wallet adds payjoin:**
+  Bull Bitcoin [announced][bull bitcoin blog] send and receive support for [payjoin][topic
+  payjoin] as outlined in the [proposed][BIPs #1483] BIP77 Payjoin Version 2: Serverless
+  Payjoin specification.
+
+- **Bitcoin Keeper adds miniscript support:**
+  Bitcoin Keeper [announced][bitcoin keeper twitter] support for
+  [miniscript][topic miniscript] in the [v1.3.0 release][bitcoin keeper v1.3.0].
+
+- **Nunchuk adds taproot MuSig2 features:**
+  Nunchuk [announced][nunchuk blog] beta support for [MuSig2][topic musig] for
+  [taproot][topic taproot] keypath [multisignature][topic multisignature] spends
+  as well as using a tree of MuSig2 scriptpaths in order to achieve k-of-n
+  [threshold][topic threshold signature] spending.
+
+- **Jade Plus signing device announced:**
+  The [Jade Plus][blockstream blog] hardware signing device includes
+  [exfiltration-resistant signing capabilities][topic exfiltration-resistant
+  signing] and air-gapped functionality, among other features.
+
+- **Coinswap v0.1.0 released:**
+  [Coinswap v0.1.0][coinswap v0.1.0] is beta software that builds on a
+  formalized [coinswap][topic coinswap] protocol [specification][coinswap spec],
+  supports [testnet4][topic testnet], and includes command line applications for
+  interacting with the protocol.
+
+- **Bitcoin Safe 1.0.0 released:**
+  The [Bitcoin Safe][bitcoin safe website] desktop wallet software supports a
+  variety of hardware signing devices with the [1.0.0 release][bitcoin safe 1.0.0].
+
+- **Bitcoin Core 28.0 policy demonstration:**
+  Super Testnet [announced][zero fee sn] a [Zero fee playground][zero fee
+  website] website that demonstrates [mempool policy features][28.0 guide] from the Bitcoin
+  Core 28.0 release.
+
+- **Rust-payjoin 0.21.0 released:**
+  The [rust-payjoin 0.21.0][rust-payjoin 0.21.0] release adds [transaction
+  cut-through][] capabilities (see [Podcast #282][pod282 payjoin]).
+
+- **PeerSwap v4.0rc1:**
+  Lightning channel liquidity software PeerSwap published [v4.0rc1][peerswap v4.0rc1] which
+  includes protocol upgrades. The [PeerSwap FAQ][peerswap faq] outlines how
+  PeerSwap differs from [submarine swaps][topic submarine swaps],
+  [splicing][topic splicing], and [liquidity ads][topic liquidity advertisements].
+
+- **Joinpool prototype using CTV:**
+  The [ctv payment pool][ctv payment pool github] proof-of-concept uses the proposed
+  [OP_CHECKTEMPLATEVERIFY (CTV)][topic op_checktemplateverify] opcode to create
+  a [joinpool][topic joinpools].
+
+- **Rust joinstr library announced:**
+  The experimental [rust library][rust joinstr github] implements the joinstr [coinjoin][topic
+  coinjoin] protocol.
+
+- **Strata bridge announced:**
+  The [Strata bridge][strata blog] is a [BitVM2][topic acc]-based bridge for
+  moving bitcoins to and from a [sidechain][topic sidechains], in this instance
+  a validity rollup (see [Newsletter #222][news222 validity rollups]).
 
 ## Releases and release candidates
 
@@ -178,7 +235,7 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-01-28 15:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="1746,21283,31397,2896,3408,9405,1149" %}
+{% include linkers/issues.md v=2 issues="1746,21283,31397,2896,3408,9405,1149,1483" %}
 [news337 dlc]: /en/newsletters/2025/01/17/#offchain-dlcs
 [conduition factories]: https://conduition.io/scriptless/dlc-factory/
 [conduition reply]: https://mailmanlists.org/pipermail/dlc-dev/2025-January/000193.html
@@ -196,3 +253,24 @@ repo], and [BINANAs][binana repo]._
 [btcpay server 2.0.6]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.6
 [news321 async]: /en/newsletters/2024/09/20/#ldk-3140
 [news333 prclub]: /en/newsletters/2024/12/13/#bitcoin-core-pr-review-club
+[bull bitcoin blog]: https://www.bullbitcoin.com/blog/bull-bitcoin-wallet-payjoin
+[bitcoin keeper twitter]: https://x.com/bitcoinKeeper_/status/1866147392892080186
+[bitcoin keeper v1.3.0]: https://github.com/bithyve/bitcoin-keeper/releases/tag/v1.3.0
+[nunchuk blog]: https://nunchuk.io/blog/taproot-multisig
+[blockstream blog]: https://blog.blockstream.com/introducing-the-all-new-blockstream-jade-plus-simple-enough-for-beginners-advanced-enough-for-cypherpunks/
+[coinswap v0.1.0]: https://github.com/citadel-tech/coinswap/releases/tag/v0.1.0
+[coinswap spec]: https://github.com/citadel-tech/Coinswap-Protocol-Specification
+[bitcoin safe website]: https://bitcoin-safe.org/en/
+[bitcoin safe 1.0.0]: https://github.com/andreasgriffin/bitcoin-safe
+[zero fee sn]: https://stacker.news/items/805544
+[zero fee website]: https://supertestnet.github.io/zero_fee_playground/
+[28.0 guide]: /en/bitcoin-core-28-wallet-integration-guide/
+[rust-payjoin 0.21.0]: https://github.com/payjoin/rust-payjoin/releases/tag/payjoin-0.21.0
+[transaction cut-through]: https://bitcointalk.org/index.php?topic=281848.0
+[pod282 payjoin]: /en/podcast/2023/12/21/#payjoin-transcript
+[peerswap v4.0rc1]: https://github.com/ElementsProject/peerswap/releases/tag/v4.0rc1
+[peerswap faq]: https://github.com/ElementsProject/peerswap?tab=readme-ov-file#faq
+[ctv payment pool github]: https://github.com/stutxo/op_ctv_payment_pool
+[rust joinstr github]: https://github.com/pythcoiner/joinstr
+[strata blog]: https://www.alpenlabs.io/blog/introducing-the-strata-bridge
+[news222 validity rollups]: /en/newsletters/2022/10/19/#validity-rollups-research
