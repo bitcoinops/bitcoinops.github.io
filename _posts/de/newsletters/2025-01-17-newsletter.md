@@ -8,7 +8,7 @@ layout: newsletter
 lang: de
 ---
 Der Newsletter dieser Woche fasst die anhaltende Diskussion über
-die Belohnung von Pool-Minern mit handelbaren E-Cash-Anteilen zusammen
+die Belohnung von Pool-Minern mit handelbaren E-Cash-Shares zusammen
 und beschreibt einen neuen Vorschlag zur Ermöglichung der
 Offchain-Auflösung von DLCs. Des Weiteren beinhalten die Abschnitte
 die regulären Ankündigungen neuer Versionen und Release-Kandidaten sowie
@@ -21,26 +21,26 @@ die sich großer Beliebtheit erfreut.
   Die vorliegende [Diskussion][ecash tides] wurde auf Basis der [vorangegangenen Zusammenfassung]
   [news304 ecashtides] eines Delving Bitcoin-Threads fortgesetzt, in welcher die Bezahlung von
   [Pool-Minern][topic pooled mining] mit E-Cash für jeden von ihnen eingereichten
-  Anteil erörtert wurde. Zuvor [erörterte][corallo whyecash] Matt Corallo die Notwendigkeit
+  Share erörtert wurde. Zuvor [erörterte][corallo whyecash] Matt Corallo die Notwendigkeit
   der Implementierung eines zusätzlichen Codes und der Buchhaltung für die Handhabung handelbarer
-  Ecash-Anteile durch einen Pool, wenn die Miner doch einfach mit einer regulären Ecash-Mine
+  Ecash-Shares durch einen Pool, wenn die Miner doch einfach mit einer regulären Ecash-Mine
   (oder über LN) entlohnt werden könnten.
   David Caseria [führte][caseria pplns] aus, dass bei einigen Pay-per-Last-N-Shares-Systemen
   ([PPLNS][topic pplns]), wie beispielsweise [TIDES][recap291 tides], ein Miner
   möglicherweise warten muss, bis der Pool mehrere Blöcke gefunden hat, was bei
   einem kleinen Pool Tage oder Wochen dauern kann.
-  Anstatt abzuwarten, könnte ein Miner mit E-Cash-Anteilen diese unmittelbar auf
+  Anstatt abzuwarten, könnte ein Miner mit E-Cash-Shares diese unmittelbar auf
   einem offenen Markt veräußern (ohne dem Pool oder Dritten seine Identität preiszugeben,
   nicht einmal eine flüchtige Identität, die er beim Mining verwendet hat).
 
   Caseria wies zudem darauf hin, dass es für existierende Mining-Pools finanziell herausfordernd
-  ist, das System der _vollständigen Bezahlung pro Anteil_ ([FPPS][topic fpps]) zu unterstützen.
+  ist, das System der _vollständigen Bezahlung pro Share_ ([FPPS][topic fpps]) zu unterstützen.
   Bei diesem System wird ein Miner proportional zur gesamten Blockbelohnung
-  (Subvention plus Transaktionsgebühren) entlohnt, sofern er einen Anteil erstellt.
+  (Subvention plus Transaktionsgebühren) entlohnt, sofern er einen Share erstellt.
   Er äußerte sich nicht explizit zu den Gründen, jedoch wird in Fachkreisen davon ausgegangen,
   dass die Problematik in den divergierenden Gebühren liegt, welche die Pools dazu veranlassen,
   signifikante Rücklagen zu bilden. Wenn ein Pool-Miner die Kontrolle über 1 % der Hashrate erhält
-  und Anteile an einer Vorlage mit etwa 1.000 BTC an Gebühren und 3 BTC an Subventionen durch den
+  und Shares an einer Vorlage mit etwa 1.000 BTC an Gebühren und 3 BTC an Subventionen durch den
   Pool-Miner erstellt, dann ergibt sich eine Schuld des Pools in Höhe von 10 BTC.
   Im Falle der Nicht-Abbauung des Blocks durch den Pool und der damit verbundenen Reduzierung
   der Gebühren auf einen Bruchteil der Blockbelohnung besteht die Möglichkeit, dass der Pool
@@ -51,15 +51,15 @@ die sich großer Beliebtheit erfreut.
   Verwendung von Proxys für die [tatsächlichen Gebühren][news304 fpps proxy].
 
   Der Entwickler vnprc [beschreibt][vnprc ehash] die Funktionsweise seiner [Lösung]
-  [hashpool], die sich auf die im PPLNS-Auszahlungsplan aufgeführten E-Cash-Aktien fokussiert.
+  [hashpool], die sich auf die im PPLNS-Auszahlungsplan aufgeführten E-Cash-Shares fokussiert.
   Er ist der Auffassung, dass dies insbesondere für die Einführung neuer Pools von Nutzen sein
   könnte: Derzeit ist der erste Miner, der einem Pool beitritt, der gleichen hohen Varianz
   ausgesetzt wie beim Solo-Mining. In der Regel sind demnach die einzigen Personen, die einen Pool
   starten können, bestehende große Miner oder diejenigen, die bereit sind, eine erhebliche Hashrate
-  zu mieten. In Bezug auf die PPLNS-Ecash-Anteile geht vnprc jedoch davon aus, dass ein Pool als
+  zu mieten. In Bezug auf die PPLNS-Ecash-Shares geht vnprc jedoch davon aus, dass ein Pool als
   Kunde eines größeren Pools starten könnte, so dass selbst der erste Miner, der dem neuen Pool
   beitritt, eine geringere Varianz als beim Solo-Mining hat. Der Zwischenpool könnte dann die
-  erworbenen E-Cash-Anteile verkaufen, um das von ihm gewählte Auszahlungsschema für seine Miner
+  erworbenen E-Cash-Shares verkaufen, um das von ihm gewählte Auszahlungsschema für seine Miner
   zu finanzieren. Sobald der Zwischenpool eine signifikante Menge an Hashrate erworben hat,
   könnte er auch mit größeren Pools über die Erstellung alternativer Blockmodelle verhandeln,
   die für seine Miner geeignet sind.
@@ -130,7 +130,7 @@ die sich großer Beliebtheit erfreut.
   [Anti-Fee-Sniping][topic fee sniping]-Mechanismus von
   [BIP326][] für [Taproot][topic taproot]-Transaktionen erforderlich.
 
-- [BIPs #1687][] führt [BIP375][] zusammen, um das Senden von [stillen Zahlungen][topic
+- [BIPs #1687][] merged [BIP375][], um das Senden von [stillen Zahlungen][topic
   silent payments] mit [PSBTs][topic psbt] anzugeben. Wenn es mehrere unabhängige
   Unterzeichner gibt, ist ein [DLEQ][topic dleq]-Nachweis erforderlich, damit alle Unterzeichner
   den Mitunterzeichnern nachweisen können,
