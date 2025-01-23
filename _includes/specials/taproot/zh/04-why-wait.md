@@ -1,16 +1,8 @@
 {% capture /dev/null %}
-<!-- 已在 regtest 上测试以下内容：
-  - 根据 getblockchaininfo，Taproot 在 min_lockin_height 激活
-  - nlocktime 为 x 的交易无法在高度 x-1 时发送，但可在高度 x 时发送
 
-未测试：
-  - 在 min_lockin_height 实际花费 P2TR 交易
--->
 
-<!-- Taproot 规则生效前的最后一个区块 -->
 {% assign ante_trb = "709,631" %}
 
-<!-- 激活后保守的安全重组区块（+144 个区块） -->
 {% assign safe_trb = "709,776" %}
 {% endcapture %}
 {% auto_anchor %}
