@@ -69,11 +69,11 @@ lang: zh
 {% include linkers/issues.md issues="22112,4611,4646,4614,1871,1846,975,2462" %}
 [LND 0.13.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.1-beta
 [eclair 0.6.1]: https://github.com/ACINQ/eclair/releases/tag/v0.6.1
-[news76 upfront shutdown]: /en/newsletters/2019/12/11/#lnd-3655
+[news76 upfront shutdown]: /zh/newsletters/2019/12/11/#lnd-3655
 [rl 0.0.99 rn]: https://github.com/rust-bitcoin/rust-lightning/blob/main/CHANGELOG.md#0099---2021-07-09
-[news55 tlv]: /en/newsletters/2019/07/17/#bolts-607
-[news75 payment secrets]: /en/newsletters/2019/12/04/#c-lightning-3259
-[news126 lnd4752]: /en/newsletters/2020/12/02/#lnd-4752
+[news55 tlv]: /zh/newsletters/2019/07/17/#bolts-607
+[news75 payment secrets]: /zh/newsletters/2019/12/04/#c-lightning-3259
+[news126 lnd4752]: /zh/newsletters/2020/12/02/#lnd-4752
 [jager ln perf]: https://bottlepay.com/blog/bitcoin-lightning-node-performance/
 [rust-lightning 0.0.99]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.99
 [I2P]: https://geti2p.net/en/
@@ -83,9 +83,10 @@ lang: zh
 [suredbits blog]: https://suredbits.com/dlc-wallet-alpha-release/
 [suredbits blog dlcs ln]: https://suredbits.com/discreet-log-contracts-on-lightning-network/
 [sparrow 1.4.3]: https://github.com/sparrowwallet/sparrow/releases/tag/1.4.3
-[taproot series 4]: /en/preparing-for-taproot/#from-p2wpkh-to-single-sig-p2tr
-[taproot series 1]: /en/preparing-for-taproot/#bech32m-sending-support
+[taproot series 4]: /zh/preparing-for-taproot/#从-p2wpkh-到单签-p2tr
+[taproot series 1]: /zh/preparing-for-taproot/#bech32m-发送支持
 [coldcard 4.1.0]: https://blog.coinkite.com/version-4.1.0-released/
 [seed xor]: https://seedxor.com/
 [bluewallet ldk tweet]: https://twitter.com/bluewalletio/status/1414908931902779394
 [ldk github]: https://github.com/lightningdevkit
+[series preparing for taproot]: /zh/preparing-for-taproot/
