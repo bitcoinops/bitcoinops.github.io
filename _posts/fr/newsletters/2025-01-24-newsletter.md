@@ -56,7 +56,7 @@ d'infrastructure Bitcoin populaires.
   factories] proposé par le développeur conduition avec les schémas de [DLC][topic dlc] offchain
   précédemment publiés et implémentés. Il y a une différence significative et intéressante :
 
-  - Le protocole _DLC channels_ mentionné dans les Bulletins 
+  - Le protocole _DLC channels_ mentionné dans les Bulletins
     [#174][news174 channels] et
     [#260][news260 channels] utilise un mécanisme similaire à [LN-Penalty][topic ln-penalty]
     commit-and-revoke où les parties _s'engagent_ sur un nouvel état en le signant puis _révoquent_
