@@ -78,7 +78,7 @@ excerpt: >
 ## 1月
 
 {:#feetimelocks}
-John Lawが[手数料依存のタイムロック][news283 feelocks]を提案しました。
+- **手数料依存のタイムロック:** John Lawが[手数料依存のタイムロック][news283 feelocks]を提案しました。
 これは、ソフトフォークでブロックの手数料率の中央値がユーザーの指定したレベルを下回った場合にのみ
 [タイムロック][topic timelocks]を失効させるというものです。
 これにより、タイムロックの期限切れ間際に手数料が高騰することで、承認が妨げられるのを防ぐことができます。
@@ -92,7 +92,7 @@ Taprootの[annex][topic annex]内へのパラメーターの格納や、
 [帯域外の手数料][topic out-of-band fees]の影響などが含まれました。
 
 {:#optimizedexits}
-Salvatore Ingalaが、Joinpoolやチャネルファクトリーのようなマルチパーティーコントラクトからの
+- **コントラクトプロトコルからの退出の最適化:** Salvatore Ingalaが、Joinpoolやチャネルファクトリーのようなマルチパーティーコントラクトからの
 [退出を最適化][news283 exits]する方法を提案しました。提案された方法では、
 ユーザーが個別にトランザクションをブロードキャストするのではなく、
 単一のトランザクションに調整できるようにします。これにより、
@@ -103,7 +103,7 @@ Ingalaは、これを[OP_CAT][topic op_cat]と[MATT][topic acc]のソフトフ�
 [OP_CSFS][topic op_checksigfromstack]と64-bitの算術演算が使用できるとさらに効率化できます。
 
 {:#poclnsym}
-Gregory Sandersが、Core Lightningのフォークを使用した[LN-Symmetry][topic eltoo]の
+- **LN-SymmetryのPoC実装:** Gregory Sandersが、Core Lightningのフォークを使用した[LN-Symmetry][topic eltoo]の
 PoC[実装][news284 lnsym]を共有しました。LN-Symmetryは、
 ペナルティトランザクションを必要としない双方向のペイメントチャネルを可能にしますが、
 子トランザクションが任意のバージョンの親トランザクションを使用できるようにするための
@@ -118,7 +118,7 @@ Sandersは、[LN-Penalty][topic ln-penalty]と比較したそのシンプルさ�
 ## 2月
 
 {:#rbfr}
-Peter Toddが、標準の[RBF][topic rbf]ポリシーが失敗した場合の
+- **Replace by feerate:** Peter Toddが、標準の[RBF][topic rbf]ポリシーが失敗した場合の
 [トランザクションのPinning][topic transaction pinning]に対処するために、
 [Replace by Feerate][news288 rbfr]（RBFr）を提案しました。
 RBFrには2つのバリエーションがあり、純粋なRBFrでは、
@@ -130,7 +130,7 @@ Toddは実験的な実装をリリースし、他の開発者はトランザク�
 これには、採用されるソリューションの信頼性を高めるために必要なツールの開発も含まれます。
 
 {:#hrpay}
-Matt Coralloが、DNSベースの[人が読めるBitcoinの支払い指示][news290 dns]のためのBIPを提案しました。
+- **人が読める支払い指示:** Matt Coralloが、DNSベースの[人が読めるBitcoinの支払い指示][news290 dns]のためのBIPを提案しました。
 これによりメールアドレスような文字列（例：example@example.com）で、
 [BIP21][] URIを含むDNSSEC署名付きのTXTレコードを解決できます。
 これは、オンチェーンアドレスや[サイレントペイメント][topic silent payments]、
@@ -144,13 +144,13 @@ Coralloはまた、LNノード用に[BOLT][news333 dnsbolt]と[BLIP][news306 dns
 議論は今年後半まで[続きました][news306 bip21]。
 
 {:#asmap}
-Fabian Jahrは、複数の開発者が[独自に同等のASMapを作成できる][news290 asmap]ソフトウェアを作成しました。
+- **ASMap生成の改善:** Fabian Jahrは、複数の開発者が[独自に同等のASMapを作成できる][news290 asmap]ソフトウェアを作成しました。
 これにより、Bitcoin Coreはピアの接続を多様化し、[エクリプス攻撃][topic eclipse attacks]に抵抗できます。
 Jahrのツールが広く受け入れられれば、Bitcoin CoreにデフォルトでASMapが組み込まれ、
 複数のサブネットを制御する当事者からの攻撃に対する保護が強化される可能性があります。
 
 {:#dualfunding}
-[デュアルファンディング][topic dual funding]の[サポート][news290 dualfund]が
+- **LNのデュアルファンディング:** [デュアルファンディング][topic dual funding]の[サポート][news290 dualfund]が
 インタラクティブなトランザクション構築プロトコルとともに、LN仕様に追加されました。
 インタラクティブな構築により、2つのノードは、
 ファンディングトランザクションを一緒に構築するために使用する設定とUTXOの詳細を交換できます。
@@ -163,7 +163,7 @@ Jahrのツールが広く受け入れられれば、Bitcoin Coreにデフォル�
 [Liquidity Ads][topic liquidity advertisements]プロトコルと組み合わせることができます。
 
 {:#betfeerates}
-ZmnSCPxjが、2人の参加者が[将来のブロックの手数料率に賭ける][news291 bets]ことができる
+- **将来の手数料率に対するトラストレスな賭け:** ZmnSCPxjが、2人の参加者が[将来のブロックの手数料率に賭ける][news291 bets]ことができる
 トラストレスなスクリプトを提案しました。将来のブロックでトランザクションが承認されることを望むユーザーは、
 このスクリプトを使用して、その時点で[手数料率][topic fee estimation]が異常に高くなるリスクを相殺することができます。
 ユーザーがトランザクションの承認を必要とする頃にブロックをマイニングすることを期待するマイナーは、
@@ -306,13 +306,13 @@ Wasabiと関連ソフトウェアに影響する非匿名化の[脆弱性][news3
 ## 3月
 
 {:#binanabips}
-BIPのマージに関する継続的な問題により、1月に仕様やその他のドキュメント用に
+- **BINANAとBIP:** BIPのマージに関する継続的な問題により、1月に仕様やその他のドキュメント用に
 [新しくBINANAリポジトリ][news286 binana]が作成されました。2月、3月には、
 既存のBIPエディターが支援を要請し、[新しいエディターを追加するプロセス][news292 bips]が始まりました。
 4月に大規模な公開討論が最高潮に達した後、Bitcoinのコントリビューター数名が[BIPエディター][news299 bips]になりました。
 
 {:#enhancedfeeestimates}
-Abubakar Sadiq Ismailが、リアルタイムのmempoolのデータを使用して
+- **強化された手数料の推定:** Abubakar Sadiq Ismailが、リアルタイムのmempoolのデータを使用して
 [Bitcoin Coreの手数料率の推定][news295 fees]を強化する提案をしました。
 現在の推定は、承認済みのトランザクションデータに依存しており、更新は遅いものの細工は困難です。
 Ismailは、現在のアプローチと新しいmempoolベースのアルゴリズムを比較する予備的なコードを開発しました。
@@ -320,7 +320,7 @@ Ismailは、現在のアプローチと新しいmempoolベースのアルゴリ�
 二重調整により実用性は向上しますが、調整を下げた推定値に限定すると、細工をより効果的に防止できます。
 
 {:#efficientsponsors}
-Martin Habovštiakは、taproot annexを使用して[無関係なトランザクションの優先順位を上げる][news295 sponsor]方法を提案し、
+- **より効率的なトランザクションスポンサーシップ:** Martin Habovštiakは、taproot annexを使用して[無関係なトランザクションの優先順位を上げる][news295 sponsor]方法を提案し、
 以前の[手数料スポンサーシップ][topic fee sponsorship]の方法と比較して、スペース要件を大幅に削減しました。
 David Hardingは、署名コミットメントメッセージを使用して、
 オンチェーンスペースを必要とせず、ブロックの順序に依存する、さらに効率的なアプローチを提案しました。
@@ -338,7 +338,7 @@ David Hardingは、署名コミットメントメッセージを使用して、
 ## 4月
 
 {:#consensuscleanup}
-Antoine PoinsotがMatt Coralloの2019年のコンセンサスクリーンアップ提案を[再検討し][news296 ccsf]、
+- **コンセンサスクリーンアップ:** Antoine PoinsotがMatt Coralloの2019年のコンセンサスクリーンアップ提案を[再検討し][news296 ccsf]、
 検証が遅いブロックや、盗難を可能にするタイムワープ攻撃、軽量クライントとフルノードに影響する
 [フェイクトランザクションの脆弱性][topic merkle tree vulnerabilities]などの問題に対処します。
 Poinsotはまた、ブロック1,983,702でフルノードに影響する[重複トランザクション][topic duplicate transactions]の問題にも焦点を当てました。
@@ -353,12 +353,12 @@ Niklas GöggeはBitcoin Core用に現在検出可能なすべての脆弱性を�
 [タイムワープ脆弱性][topic time warp]のZawy-Murchバージョンを修正することについて[議論][news332 zmwarp]が行われました。
 
 {:#bip2reform}
-新しいBIPエディターの追加に関する議論から派生して、
+- **BIPプロセスの改革:** 新しいBIPエディターの追加に関する議論から派生して、
 新しいBIPの追加と既存のBIPの更新に関する現在のプロセスを規定する[BIP2の改革][news297 bips]が望まれました。
 議論は翌月も[続き][news303 bip2]、9月には更新されたプロセス用の[BIPのドラフト][news322 newbip2]が公開されました。
 
 {:#inboundrouting}
-LNDが、Joost Jagerが推進する[インバウンドルーティング手数料][news297 inbound]をサポートし、
+- **インバウンドルーティング手数料:** LNDが、Joost Jagerが推進する[インバウンドルーティング手数料][news297 inbound]をサポートし、
 ノードはピアから受信した支払いに対してチャネル固有の手数料を請求できるようになります。
 これにより、ノードは流動性を管理しやすくなり、
 たとえば管理の不十分なノードからのインバンド支払いに対してより高い手数料を課すことができます。
@@ -367,7 +367,7 @@ LNDが、Joost Jagerが推進する[インバウンドルーティング手数�
 この機能はLNDで年間を通して開発が続けられました。
 
 {:#weakblocks}
-Greg Sandersが、トランザクションリレーとマイニングのポリシーが異なる中で、
+- **弱ブロック:** Greg Sandersが、トランザクションリレーとマイニングのポリシーが異なる中で、
 [弱ブロック][news299 weakblocks]（Pow（Proof-of-Work）が不十分なものの有効なトランザクションを含むブロック）を使用して
 [コンパクトブロックリレー][topic compact block relay]を改善する提案を行いました。
 マイナーは、マイニングしようとするトランザクションを反映して、PoWの割合に比例した弱ブロックを生成します。
@@ -378,13 +378,13 @@ pinning]への対処や、[手数料率の推定][topic fee estimation]の強化
 SandersのPoC実装はこのアイディアを実証しています。
 
 {:#testnet}
-Jameson Loppが、4月に現在のBitcoinの公開[testnet][topic testnet]（testnet3）の問題について議論を開始し、
+- **testnetの再起動:** Jameson Loppが、4月に現在のBitcoinの公開[testnet][topic testnet]（testnet3）の問題について議論を開始し、
 特殊ケースのコンセンサスルールのセットを使用して、[testnetを再起動する][news297 testnet]ことを提案しました。
 5月には、Fabian JahrがBIPのドラフトとtestnet4の実装の提案を[発表しました][news306 testnet]。
 [BIP][news315 testnet4bip]とBitcoin Coreの[実装][news315 testnet4imp]は8月にマージされました。
 
 {:#devarrests}
-4月は、プライバシーソフトウェアに注力する[2人のBitcoin開発者の逮捕][news300 arrest]と
+- **開発者の逮捕:** 4月は、プライバシーソフトウェアに注力する[2人のBitcoin開発者の逮捕][news300 arrest]と
 法的リスクを理由に米国へのサービスを停止する意向を発表した少なくとも2社のニュースで残念な終わりを迎えました。
 
 <div markdown="1" class="callout" id="cluster">
@@ -437,7 +437,7 @@ Pieter Wuilleは8月に、ブロックを構築するマイナーのために
 ## 5月
 
 {:#silentpayments}
-[サイレントペイメント][topic silent payments]をより[広く利用できるようにするための][news304 sp]取り組みが今年も続きました。
+- **サイレントペイメント:** [サイレントペイメント][topic silent payments]をより[広く利用できるようにするための][news304 sp]取り組みが今年も続きました。
 Josie Bakerは、Andrew Tothのドラフト仕様に基づいて、サイレントペイメント（SP）用のPSBT拡張に関する議論を開始しました。
 この議論は6月に入っても続き、[ECDH共有を使用してトラストレスな調整][news308 sp]を行うことを検討しました。
 それとは別に、Setor Blagogeeは、[軽量クライアントがサイレントペイメントを受け取るのを支援する][news305 splite]プロトコルのドラフト仕様を投稿しました。
@@ -445,7 +445,7 @@ Josie Bakerは、Andrew Tothのドラフト仕様に基づいて、サイレン�
 提案されたPSBT機能の[2つ][news326 sppsbt]のドラフト[BIP][news327 sppsbt]が作成されました。
 
 {:#bitvmx}
-Sergio Demian Lernerと数人の共著者は、[BitVM][topic acc]の背後にあるアイディアに一部基づいた
+- **BitVMX:** Sergio Demian Lernerと数人の共著者は、[BitVM][topic acc]の背後にあるアイディアに一部基づいた
 新しい仮想CPUアーキテクチャに関する論文を[発表しました][news303 bitvmx]。
 彼らのプロジェクトであるBitVMXの目標は、RISC-Vなどの確立されたCPUアーキテクチャ上で実行するためにコンパイルできる
 すべてのプログラムの適切な実行を効率的に証明できるようにすることです。
@@ -455,7 +455,7 @@ BitVMと同様に、BitVMXでもコンセンサスの変更は必要ありませ
 当事者の1人（または複数）がコントラクトから資金を引き出すことを阻止できます。
 
 {:#aut}
-Adam Gibsonが、UTXOをkey-pathで使用できる人なら誰でも、
+- **匿名使用トークン:** Adam Gibsonが、UTXOをkey-pathで使用できる人なら誰でも、
 どのUTXOか明らかにすることなく、それを使用できることを証明できるようにするために開発した
 [匿名使用トークン][news303 aut]スキームについて説明しました。
 彼が強調する用途の1つは、LNチャネルをアナウンスする際に、
@@ -467,7 +467,7 @@ Gibsonはまた、サインアップに匿名のプルーフを提供する必�
 その後、Johan Halsethは、異なるメカニズムを用いてほぼ同じ目標を達成する概念実証の実装を[発表しました][news321 utxozk]。
 
 {:#lnup}
-何年もの間、LNの開発者たちは、既存のチャネルをさまざまな方法で[アップグレード][topic channel commitment
+- **LNチャネルのアップグレード:** 何年もの間、LNの開発者たちは、既存のチャネルをさまざまな方法で[アップグレード][topic channel commitment
 upgrades]できるように、LNプロトコルを変更することについて議論してきました。
 5月に、Carla Kirk-Cohenは、これらのケースのいくつかを[検証し][news304 lnup]、
 アップグレードの3つの異なる提案を比較しました。6月には、
@@ -477,7 +477,7 @@ LN仕様に静止プロトコルが[追加][news309 stfu]されました。
 チャネルアナウンスプロトコルの更新案の[開発が再開されました][news326 ann1.75]。
 
 {:#minecash}
-Ethan Tuttleが、マイニングプールがマイニングしたシェアの数に比例して
+- **プールマイナー向けEcash:** Ethan Tuttleが、マイニングプールがマイニングしたシェアの数に比例して
 [マイナーにecashトークンを報酬として与える][news304 minecash]ことができる提案をDelving Bitcoinに投稿しました。
 マイナーは、そのトークンをすぐに売却まはた譲渡するか、プールがブロックをマイニングをするまで待ち、
 見つかった時点でsatoshiとトークンを交換することができます。ただし、
@@ -487,17 +487,17 @@ Matt Coralloは、大規模なプールで実装されている標準化され�
 他のメカニズムであれ、マイナーはすぐに別のプールに切り替えることはありません。
 
 {:#miniscript}
-Ava Chowが5月に、[Miniscript][topic miniscript]のBIPを[提案し][news304 msbip]、
+- **Miniscriptの仕様:** Ava Chowが5月に、[Miniscript][topic miniscript]のBIPを[提案し][news304 msbip]、
 [7月][news310 msbip]に[BIP379][]になりました。
 
 {:#utreexod}
-また5月には、utreexodのベータリリースが[公開され][news302 utreexod]、
+- **Utreexoベータ:** また5月には、utreexodのベータリリースが[公開され][news302 utreexod]、
 ユーザーはディスクスペース要件を最小限に抑えるこのフルノード設計を試すことができるようになりました。
 
 ## 6月
 
 {:#lnfeasibility}
-René Pickhardtが、チャネルキャパシティ内での可能な富の分配を分析することで、
+- **LN支払いの実行可能性とチャネルの枯渇:** René Pickhardtが、チャネルキャパシティ内での可能な富の分配を分析することで、
 [LN支払いの実行可能性を][news309 feas]推定する研究を行いました。
 たとえば、アリスがボブを経由してキャロルに1 BTCを送金したい場合、成功の可能性は、
 アリス-ボブおよびボブ-キャロルのチャネルが送金をサポートできるかどうかによって決まります。
@@ -510,7 +510,7 @@ LN支払いの成功率を向上させます。今年の後半、Pickhardtの研
 ![チャネル枯渇の例](/img/posts/2024-12-depletion.png)
 
 {:#quantumsign}
-開発者のHunter Beastは、バージョン3のsegwitアドレスを[量子耐性のある署名アルゴリズム][topic quantum resistance]に割り当てるための
+- **量子耐性のあるトランザクション署名:** 開発者のHunter Beastは、バージョン3のsegwitアドレスを[量子耐性のある署名アルゴリズム][topic quantum resistance]に割り当てるための
 「ラフなドラフト」BIPを[投稿しました][news307 quant]。ドラフトBIPでは、この問題について説明し、
 いくつかのアルゴリズム候補とその予想されるオンチェーンサイズをリンクしています。
 アルゴリズムの選択と具体的な実装の詳細は今後の議論に委ねられました。
@@ -605,7 +605,7 @@ Bitcoin Core PR Review Club[ミーティング][news333 prclub]の概要が紹�
 ## 7月
 
 {:#bolt11blind}
-Elle Moutonが、[BOLT11インボイスにブラインドパスフィールドを追加する][news310 path]BLIPを提案しました。
+- **BOLT11インボイス用のブラインドパス:** Elle Moutonが、[BOLT11インボイスにブラインドパスフィールドを追加する][news310 path]BLIPを提案しました。
 これにより支払いの受取人は、ノードのIDとチャネルピアを隠すことができます。たとえば、
 ボブは彼のインボイスにブラインドパスを追加し、アリスのソフトウェアがそれをサポートしている場合は
 プライベートに支払いを行うことができます。サポートしていない場合はエラーになります。
@@ -613,7 +613,7 @@ Moutonは、ブラインドパスをネイティブにサポートする[オフ�
 これを考えています。この提案は、[8月][news317 blip39]に[BLIP39][]となりました。
 
 {:#chilldkg}
-Tim RuffingとJonas Nickが、Bitcoinの[Schnorr署名][topic schnorr signatures]と互換性のある
+- **閾値署名用のChillDKG鍵生成:** Tim RuffingとJonas Nickが、Bitcoinの[Schnorr署名][topic schnorr signatures]と互換性のある
 [FROSTスタイルのスクリプトレスな閾値署名の鍵を安全に生成する][news312 chilldkg]ための
 BIPドラフトと参照実装であるChillDKGを提案しました。ChillDKGは、
 FROSTのよく知られた鍵生成アルゴリズムと最新の暗号プリミティブを組み合わせて、
@@ -625,7 +625,7 @@ FROSTのよく知られた鍵生成アルゴリズムと最新の暗号プリミ
 ユーザーのバックアップをさらに簡素化することを目的としています。
 
 {:#musigthresh}
-7月には、異なるソフトウェアが相互作用して[MuSig2][topic musig]署名を作成するのを助ける
+- **MuSig用のBIPと閾値署名:** 7月には、異なるソフトウェアが相互作用して[MuSig2][topic musig]署名を作成するのを助ける
 いくつかのBIPが[マージされました][news310 musig]。月の後半には、
 Sivaram Dhakshinamoorthyが、Bitcoinの[Schnorr署名][topic schnorr signatures]の実装用に
 スクリプトレスな[閾値署名][topic threshold signature]を作成するためのBIPの提案を[発表しました][news315 threshsig]。
@@ -637,13 +637,13 @@ Sivaram Dhakshinamoorthyが、Bitcoinの[Schnorr署名][topic schnorr signatures
 ## 8月
 
 {:#hyperion}
-Sergi Delgadoが、シミュレートされたBitcoinネットワークを通じてデータがどのように伝播されるかを追跡する
+- **Hyperionネットワークシミュレーター:** Sergi Delgadoが、シミュレートされたBitcoinネットワークを通じてデータがどのように伝播されるかを追跡する
 ネットワークシミュレーターHyperionを[リリースしました][news314 hyperion]。
 この研究は、当初、Bitcoinの現在のトランザクションアナウンス方式と、
 提案中の[Erlay][topic erlay]方式を比較したいという思いから始まりました。
 
 {:#fullrbf}
-開発者の0xB10Cが、最近の[コンパクトブロック][topic compact block relay]の再構築の信頼性を[調査しました][news315 cb]。
+- **フルRBF:** 開発者の0xB10Cが、最近の[コンパクトブロック][topic compact block relay]の再構築の信頼性を[調査しました][news315 cb]。
 新しいブロックには、ノードが確認したことのないトランザクションが含まれていることがあります。
 その場合、コンパクトブロックを受信するノードは通常、送信ピアにそれらのトランザクションを要求し、
 ピアからの応答を待つ必要があります。これによりブロックの伝播が遅くなります。
@@ -866,7 +866,7 @@ _2025年1月から、Optechは毎月最初に発行されるニュースレタ�
 ## 9月
 
 {:#hybridjamming}
-Carla Kirk-Cohenが、もともとClara ShikhelmanとSergei Tikhomirovによって提案された
+- **ハイブリッドチャネルジャミングの緩和策のテストと調整:** Carla Kirk-Cohenが、もともとClara ShikhelmanとSergei Tikhomirovによって提案された
 [ハイブリッドチャネルジャミングの緩和策][news322 jam]のテストと調整について説明しました。
 チャネルを1時間妨害する試みは、攻撃者が既知の攻撃を使用するよりも多くの時間を費やしたか、
 または意図せずに対象の収入を増やしたため、ほとんど失敗しました。ただし、
@@ -880,7 +880,7 @@ Carla Kirk-Cohenが、もともとClara ShikhelmanとSergei Tikhomirovによっ�
 htlce]に従って行われました。年末直前に[LNDの実装][news332 htlce]も追加されました。
 
 {:#shieldedcsv}
-Jonas NickとLiam Eagen、Robin Linusが、
+- **シールドCSV:** Jonas NickとLiam Eagen、Robin Linusが、
 新しい[Client-Side Validation][topic client-side validation]（CSV）プロトコルである
 [シールドCSV][news322 csv]を発表しました。このプロトコルは、
 トークンの詳細や転送履歴を公開することなく、BitcoinのProof of Workによって保護されたトークンの転送を可能にします。
@@ -895,7 +895,7 @@ Jonas NickとLiam Eagen、Robin Linusが、
 大幅な効率性とプライバシーの向上を約束します。
 
 {:#lnoff}
-Andy Schroderが、オンライン時に認証トークンを生成することで、
+- **LNオフライン支払い:** Andy Schroderが、オンライン時に認証トークンを生成することで、
 [LNのオフライン支払いを可能にする][news321 lnoff]プロセスを概説しました。
 これにより、支払人のウォレットは、オフライン時に常時オンラインのノードまたはLSPを介して支払いを承認できます。
 トークンはNFCまたはその他のシンプルなプロトコルを介して受信者に転送できるため、
@@ -906,7 +906,7 @@ Bastien Teinturierは同様のユースケースにおける彼のリモート�
 ## 10月
 
 {:#offers}
-[オファー][topic offers]の仕様[BOLT12][]が[マージされました][news323 offers]。
+- **BOLT12オファー:** [オファー][topic offers]の仕様[BOLT12][]が[マージされました][news323 offers]。
 [当初2019年に提案された][news72 offers]オファーは、
 2つのノードが[Onionメッセージ][topic onion messages]を使用してLN上で
 インボイスと支払いのネゴシエーションを行えるようにします。
@@ -914,7 +914,7 @@ Onionメッセージとオファー互換の支払いはどちらも、送信者
 [ブラインドパス][topic rv routing]を使用できます。
 
 {:#pooledmining}
-各マイナーが独自のトランザクションを選択できるように設定できる
+- **マイニングインターフェース、ブロック保留およびシェアの検証コスト:** 各マイナーが独自のトランザクションを選択できるように設定できる
 [Stratum v2][topic pooled mining]プロトコルを使用するマイナーをサポートすることを目標に、
 Bitcoin Coreに[新しいマイニングインターフェース][news325 mining]が開発されました。
 ただし、Anthony Townsは今年初めに、独立したトランザクションの選択によって
@@ -1007,7 +1007,7 @@ Bitcoin Coreに[新しいマイニングインターフェース][news325 mining
 ## 11月
 
 {:#superscalar}
-ZmnSCPxjが、[タイムアウトツリー][topic timeout trees]を使用する
+- **SuperScalarタイムアウトツリー型チャネルファクトリー:** ZmnSCPxjが、[タイムアウトツリー][topic timeout trees]を使用する
 [チャネルファクトリー][topic channel factories]の[SuperScalar設計][news327 superscalar]を提案しました。
 これは、トラストレス性を維持しながら、LNユーザーがチャネルを開いて流動性にもっと安価にアクセスできるようにするものです。
 この設計では、サービスプロバイダーがツリーをオンチェーンに配置するコストを支払うか、
@@ -1023,7 +1023,7 @@ ZmnSCPxjが、[タイムアウトツリー][topic timeout trees]を使用する
 [プラグイン可能なチャネルファクトリーの調整][news330 plug]を提案しました。
 
 {:#opr}
-John Lawが、参加者双方が資金を債権に拠出することを要求する
+- **高速かつ安価なオフチェーン支払いの解決:** John Lawが、参加者双方が資金を債権に拠出することを要求する
 オフチェーン支払いの解決（OPR）マイクロペイメントプロトコルを[提案しました][news329 opr]。
 この債権は、どちらの参加者によっても いつでも事実上破壊することができます。
 これにより両者に、相手をなだめるか、 債権の相互確証破壊（MAD）のリスクを負うかのインセンティブが生まれます。
