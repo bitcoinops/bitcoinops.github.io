@@ -161,7 +161,7 @@ die sich großer Beliebtheit erfreut.
 [news304 fpps proxy]: /en/newsletters/2024/05/24/#pay-per-share-pps
 [tbast splice]: https://github.com/ACINQ/eclair/pull/2936#issuecomment-2595930679
 [conduition offchain2]: https://mailmanlists.org/pipermail/dlc-dev/2025-January/000189.html
-[news214 splicing]: /en/newsletters/2022/08/24/#bolts-1004
+[news214 splicing]: /de/newsletters/2022/08/24/#bolts-1004
 [news306 v2]: /en/newsletters/2024/06/07/#rust-bitcoin-2644
 [news335 dleq]: /en/newsletters/2025/01/03/#bips-1689
 [recap327 dleq]: /en/podcast/2024/11/05/#draft-bip-for-dleq-proofs
