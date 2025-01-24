@@ -1,6 +1,6 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Optech #338'
-permalink : /fr/newsletters/2025/01/24/
+permalink: /fr/newsletters/2025/01/24/
 name: 2025-01-24-newsletter-fr
 slug: 2025-01-24-newsletter-fr
 type: newsletter
