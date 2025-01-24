@@ -83,6 +83,9 @@ optech_mentions:
   - title: Offchain DLCs
     url: /en/newsletters/2025/01/17/#offchain-dlcs
 
+  - title: "Offchain DLCs: DLC channels compared to DLC factories"
+    url: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signature adaptors

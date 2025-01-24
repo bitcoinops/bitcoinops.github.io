@@ -44,6 +44,9 @@ optech_mentions:
   - title: "Updated channel announcements that include support for simple taproot channels"
     url: /en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
 
+  - title: "Eclair #2896 enables the storage of MuSig2 partial signatures for simple taproot channels"
+    url: /en/newsletters/2025/01/24/#eclair-2896
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

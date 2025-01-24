@@ -185,6 +185,9 @@ optech_mentions:
   - title: "Bitcoin Core #30708 adds `getdescriptoractivity` RPC command"
     url: /en/newsletters/2024/12/06/#bitcoin-core-30708
 
+  - title: "Draft BIP for unspendable keys in descriptors"
+    url: /en/newsletters/2025/01/24/#draft-bip-for-unspendable-keys-in-descriptors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

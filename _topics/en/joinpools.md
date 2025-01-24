@@ -51,6 +51,9 @@ optech_mentions:
   - title: "Proposal for a mass-exit protocol that allows highly efficient payment batching"
     url: /en/newsletters/2024/01/03/#pool-exit-payment-batching-with-delegation-using-fraud-proofs
 
+  - title: "Announcement of a proof-of-concept `OP_CTV` payment pool"
+    url: /en/newsletters/2025/01/24/#joinpool-prototype-using-ctv
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coinjoin

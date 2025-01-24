@@ -67,6 +67,9 @@ optech_mentions:
   - title: "Teleport Transactions 0.1 implements routable coinswaps"
     url: /en/newsletters/2022/03/23/#coinswap-implementation-teleport-transactions-announced
 
+  - title: "Coinswap v0.1.0 released with support for testnet4"
+    url: /en/newsletters/2025/01/24/#coinswap-v0-1-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coinjoin
