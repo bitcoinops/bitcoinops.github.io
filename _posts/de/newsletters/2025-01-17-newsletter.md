@@ -17,12 +17,12 @@ die sich großer Beliebtheit erfreut.
 
 ## News
 
-- ***Fortsetzung der Diskussion über Miner-Auszahlungen mit Ecash:**
+- **Fortsetzung der Diskussion über Miner-Auszahlungen mit Ecash:**
   Die vorliegende [Diskussion][ecash tides] wurde auf Basis der [vorangegangenen Zusammenfassung]
   [news304 ecashtides] eines Delving Bitcoin-Threads fortgesetzt, in welcher die Bezahlung von
   [Pool-Minern][topic pooled mining] mit E-Cash für jeden von ihnen eingereichten
   Share erörtert wurde. Zuvor [erörterte][corallo whyecash] Matt Corallo die Notwendigkeit
-  der Implementierung eines zusätzlichen Codes und der Buchhaltung für die Handhabung handelbarer
+  der Implementierung zusätzlichen Codes und der Buchhaltung für die Handhabung handelbarer
   Ecash-Shares durch einen Pool, wenn die Miner doch einfach mit einer regulären Ecash-Mine
   (oder über LN) entlohnt werden könnten.
   David Caseria [führte][caseria pplns] aus, dass bei einigen Pay-per-Last-N-Shares-Systemen
