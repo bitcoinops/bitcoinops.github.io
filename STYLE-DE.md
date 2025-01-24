@@ -12,7 +12,6 @@ des englischen [Hautptleitfaden](STYLE.md) folgen.
 Wie im Hauptleitfaden beschrieben, werden auch in der deutschen Übersetzung
 Eigennamen gross geschrieben.
 
-
 ### Gebräuchliche Substantive
 
 Anders als im Englischen, wird, mit Ausnahme der unten aufgelisteten Begriffe,
@@ -42,7 +41,7 @@ Möglichkeit mit Bindestrich geschrieben werden. Siehe dazu auch [Duden, D41](ht
 
 Übersetzungen sollten den Regeln der neuen deutschen Rechtschreibung folgen.
 
-### Bevorzugte Begriffe:
+### Bevorzugte Begriffe für deutsche Übersetzung
 
 Wo sinnvoll und verständnisfördernd sollten Fachbegriffe nur dann übersetzt,
 und Fremd- bzw. Lehnwörter nur dann verwendet werden, wenn sich diese in der
@@ -68,6 +67,74 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | UTXO|-|-| Genus Maskulinum |
 | wallet | Wallet | Geldbörse | Genus Neutrum |
 | work | Arbeitsnachweis | Arbeit| Im Kontext von PoW |
+
+### Nicht übersetzte Begriffe
+
+#### Mining und Pool-Begriffe
+
+| Englischer Ausdruck | Begründung |
+|-|-|
+| Pool-Miner | ist ein etablierter Fachbegriff |
+| Mining | etablierter Fachbegriff |
+| Pool | etablierter Fachbegriff |
+| E-Cash-Shares | wurde von "E-Cash-Anteile" korrigiert |
+| Pay-per-Last-N-Shares | technischer Begriff |
+| PPLNS | Abkürzung für "Pay-Per-Last-N-Shares", ein Auszahlungssystem bei Mining-Pools, bei dem die letzten N Shares für die Berechnung der Auszahlung verwendet werden |
+| TIDES | Name des Systems |
+| FPPS | Abkürzung für "Full Pay-Per-Share", ein Auszahlungssystem, das die volle Blockbelohnung (inkl. Gebühren) pro Share auszahlt |
+| Proxy | technischer Begriff |
+
+#### Lightning Network & DLC Begriffe
+
+| Englischer Ausdruck | Begründung |
+|-|-|
+| LN | Abkürzung für "Lightning Network", ein Layer-2-Protokoll für schnelle Bitcoin-Transaktionen |
+| DLC | Abkürzung für "Discreet Log Contract", ein Protokoll für Bitcoin-basierte Smart Contracts |
+| Offchain | beschreibt Transaktionen außerhalb der Blockchain |
+| On-Chain | beschreibt Transaktionen auf der Blockchain |
+| HTLC | Abkürzung für "Hash Time-Locked Contract", ein Vertragskonstrukt für sichere Zahlungsweiterleitung im Lightning Network |
+| Oracle | technischer Begriff |
+
+#### Software & Entwicklung
+
+| Englischer Ausdruck | Begründung |
+|-|-|
+| Release | etablierter Begriff |
+| Release-Kandidaten | teilweise etablierter Begriff |
+| LDK | Abkürzung für "Lightning Development Kit", eine Bibliothek zur Entwicklung von Lightning-Network-Anwendungen |
+| Wallet | etablierter Begriff |
+| LSPS | Abkürzung für "Lightning Service Provider Specification", ein Standard für Lightning Network Dienstleister |
+| Human Readable Names | technischer Begriff |
+| Core Lightning | Produktname |
+| Eclair | Produktname |
+| BTCPay Server | Produktname |
+| BDK | Produktname |
+| Rust Bitcoin | Produktname |
+
+#### Protokolle & Standards
+
+| Englischer Ausdruck | Begründung |
+|-|-|
+| BIP | Abkürzung für "Bitcoin Improvement Proposal", standardisierte Vorschläge zur Verbesserung des Bitcoin-Protokolls |
+| BOLT | Abkürzung für "Basis of Lightning Technology", die technischen Spezifikationen des Lightning Networks |
+| BLIP | Abkürzung für "Bitcoin Lightning Improvement Proposal", Verbesserungsvorschläge für das Lightning Network |
+| PSBT | Abkürzung für "Partially Signed Bitcoin Transaction", ein Format für teilweise signierte Bitcoin-Transaktionen |
+| DLEQ | Abkürzung für "Discrete Logarithm EQuality", ein kryptographischer Beweis für die Gleichheit diskreter Logarithmen |
+| Splice | technischer Begriff |
+| Short Channel Identifier (SCID) | technischer Begriff |
+
+#### Plattformen & Listen
+
+| Englischer Ausdruck | Begründung |
+|-|-|
+| Delving Bitcoin | Name der Plattform |
+| DLC-Dev | Name der Mailingliste |
+
+#### Entwicklungsbegriffe
+
+| Englischer Ausdruck | Begründung |
+|-|-|
+| merged | Git/GitHub Terminologie |
 
 ### Maßeinheiten
 
