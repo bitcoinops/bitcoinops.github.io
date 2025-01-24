@@ -9,7 +9,7 @@ lang: fr
 ---
 Le bulletin de cette semaine annonce une ébauche de BIP pour référencer des clés non dépensables
 dans les descripteurs, examine comment les implémentations utilisent PSBTv2, et corrige en détail
-notre description de la semaine dernière d'un nouveau protocole DLC offchain. 
+notre description de la semaine dernière d'un nouveau protocole DLC offchain.
 Il contient également nos sections régulières avec des descriptions des
 changements apportés aux clients et services populaires, des annonces de nouvelles versions et de
 candidats à la version, et des résumés des changements notables apportés aux logiciels
