@@ -52,7 +52,7 @@ d'infrastructure Bitcoin populaires.
   n'ont pas traité la PSBT.
 
 - **Correction à propos des DLC offchain :** dans notre description des DLC offchain dans [le
-  bulletin de la semaine dernière][news337 dlc], nous avons confondu le [nouveau schéma][conuition
+  bulletin de la semaine dernière][news337 dlc], nous avons confondu le [nouveau schéma][conduition
   factories] proposé par le développeur conduition avec les schémas de [DLC][topic dlc] offchain
   précédemment publiés et implémentés. Il y a une différence significative et intéressante :
 
