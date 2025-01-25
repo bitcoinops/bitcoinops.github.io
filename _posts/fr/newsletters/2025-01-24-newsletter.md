@@ -12,7 +12,7 @@ dans les descripteurs, examine comment les implémentations utilisent PSBTv2, et
 notre description de la semaine dernière d'un nouveau protocole DLC offchain.
 Il contient également nos sections régulières avec des descriptions des
 changements apportés aux clients et services populaires, des annonces de nouvelles versions et de
-candidats à la version, et des résumés des changements notables apportés aux logiciels
+versions candidates avec des résumés des changements notables apportés aux logiciels
 d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
@@ -27,12 +27,12 @@ d'infrastructure Bitcoin populaires.
   seule une dépense par scriptpath à l'aide d'une tapleaf est possible. (par
   exemple, en utilisant un [tapscript][topic tapscript]).
 
-  Au moment de la rédaction, une discussion active a lieu sur le [PR][bips #1746] du BIP en avant projet.
+  Au moment de la rédaction, une discussion active a lieu sur la [PR][bips #1746] du BIP en avant projet.
 
 - **Tests d'intégration PSBTv2 :** Sjors Provoost a [posté][provoost psbtv2] sur la liste de
   diffusion Bitcoin-Dev pour demander des logiciels ayant implémenté le support pour la version 2 des
-  [PSBTs][topic psbt] (voir le [Bulletin #141][news141 psbtv2]) afin d'aider à tester un [PR][bitcoin
-  core #21283] ajoutant son support à Bitcoin Core. Une liste mise à jour des logiciels l'utilisant
+  [PSBTs][topic psbt] (voir le [Bulletin #141][news141 psbtv2]) afin d'aider à tester une [PR][bitcoin
+  core #21283] ajoutant sa gestion par Bitcoin Core. Une liste mise à jour des logiciels l'utilisant
   peut être [trouvée][bse psbtv2] sur Bitcoin Stack Exchange. Nous avons trouvé deux réponses
   intéressantes :
 
@@ -40,8 +40,8 @@ d'infrastructure Bitcoin populaires.
   convertit les champs d'un PSBTv2 en un arbre de Merkle et envoie initialement uniquement la racine à
   un dispositif de signature matériel Ledger. Lorsque des champs spécifiques sont nécessaires, ils
   sont envoyés avec la preuve de Merkle appropriée. Cela permet au dispositif de travailler en toute
-  sécurité avec chaque morceau d'information indépendamment sans avoir à stocker l'ensemble du PSBT
-  dans sa mémoire limitée. Cela est possible avec PSBTv2 car il a déjà les parties de la transaction
+  sécurité avec chaque morceau d'information indépendamment sans avoir à stocker l'ensemble de la PSBT
+  dans sa mémoire limitée. Cela est possible avec PSBTv2 car elle a déjà les parties de la transaction
   non signée séparées en champs distincts ; pour le format PSBT original (v0), cela nécessitait un
   traitement supplémentaire.
 
