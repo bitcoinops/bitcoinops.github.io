@@ -68,6 +68,15 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | wallet | Wallet | Geldbörse | Genus Neutrum |
 | work | Arbeitsnachweis | Arbeit| Im Kontext von PoW |
 
+
+| nothing up my sleeve (NUMS)-Punkt | | | |
+| Keypath | | | |
+| Scriptpath | | | |
+| Tapleaf | | | |
+| Tapscript | | | |
+
+
+
 ### Nicht übersetzte Begriffe
 
 #### Mining und Pool-Begriffe
@@ -110,6 +119,7 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | BTCPay Server | Produktname |
 | BDK | Produktname |
 | Rust Bitcoin | Produktname |
+| PR | Abkürzung für "Pull Request", eine Funktion von Git/GitHub, bei der ein Entwickler eine Änderung an einem Repository vorschlägt |
 
 #### Protokolle & Standards
 
