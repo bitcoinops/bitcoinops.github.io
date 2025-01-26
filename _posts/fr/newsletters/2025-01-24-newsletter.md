@@ -27,11 +27,11 @@ d'infrastructure Bitcoin populaires.
   seule une dépense par scriptpath à l'aide d'une tapleaf est possible. (par
   exemple, en utilisant un [tapscript][topic tapscript]).
 
-  Au moment de la rédaction, une discussion active a lieu sur la [PR][bips #1746] du BIP en avant projet.
+  Au moment où nous écrivons ces lignes, une discussion active a lieu sur la [PR][bips #1746] du BIP en avant projet.
 
-- **Tests d'intégration PSBTv2 :** Sjors Provoost a [posté][provoost psbtv2] sur la liste de
-  diffusion Bitcoin-Dev pour demander des logiciels ayant implémenté le support pour la version 2 des
-  [PSBTs][topic psbt] (voir le [Bulletin #141][news141 psbtv2]) afin d'aider à tester une [PR][bitcoin
+- **Tests d'intégration PSBTv2 :** Sjors Provoost a [démandé][provoost psbtv2] sur la liste de
+  diffusion Bitcoin-Dev qu'on lui communique les logiciels ayant implémenté le support pour la version 2 des
+  [PSBTs][topic psbt] (voir le [Bulletin #141][news141 psbtv2]) afin de tester [PR][bitcoin
   core #21283] ajoutant sa gestion par Bitcoin Core. Une liste mise à jour des logiciels l'utilisant
   peut être [trouvée][bse psbtv2] sur Bitcoin Stack Exchange. Nous avons trouvé deux réponses
   intéressantes :
@@ -45,15 +45,15 @@ d'infrastructure Bitcoin populaires.
   non signée séparées en champs distincts ; pour le format PSBT original (v0), cela nécessitait un
   traitement supplémentaire.
 
-- **Paiements silencieux PSBTv2 :** Le [BIP352][] spécifiant les [paiements silencieux][topic silent
-  payments] dépend explicitement de la spécification [BIP370][] de PSBTv2.  Andrew Toth [explique][toth
-  psbtv2] que les paiements silencieux ont besoin du champ `PSBT_OUT_SCRIPT` de v2 car le script de
-  sortie à utiliser ne peut pas être connu pour les paiements silencieux tant que tous les signataires
+- **Paiements silencieux PSBTv2 :** Le [BIP352][] spécifiant [silent payments][topic silent
+  payments] dépend explicitement de la spécification [BIP370][] de PSBTv2. Andrew Toth [explique][toth
+  psbtv2] que silent payments a besoin du champ `PSBT_OUT_SCRIPT` de v2 car le script de
+  sortie à utiliser ne peut pas être connu pour silent payments tant que tous les signataires
   n'ont pas traité la PSBT.
 
 - **Correction à propos des DLC offchain :** dans notre description des DLC offchain dans [le
   bulletin de la semaine dernière][news337 dlc], nous avons confondu le [nouveau schéma][conduition
-  factories] proposé par le développeur conduition avec les schémas de [DLC][topic dlc] offchain
+  factories] proposé par le développeur Conduition avec les schémas de [DLC][topic dlc] offchain
   précédemment publiés et implémentés. Il y a une différence significative et intéressante :
 
   - Le protocole _DLC channels_ mentionné dans les Bulletins
@@ -96,7 +96,7 @@ d'infrastructure Bitcoin populaires.
   actuellement le compromis pour la réduction de l'interactivité par rapport au protocole DLC
   channels, qui permet des changements de contrat arbitraires à tout moment par révocation mutuelle.
 
-  Nous remercions conduition de nous avoir informés de notre erreur dans le bulletin de la semaine
+  Nous remercions Conduition de nous avoir informés de notre erreur dans le bulletin de la semaine
   dernière et d'avoir patiemment [répondu][conduition reply] à nos questions.
 
 ## Modifications apportées aux services et aux logiciels clients
@@ -186,7 +186,7 @@ repo], et [BINANAs][binana repo]._
   suivant et en utilisant tous les pairs potentiels pouvant fournir les transactions parentes manquantes.
   Auparavant, le processus de résolution dépendait uniquement du pair qui avait initialement
   fourni la transaction orpheline. Si le pair ne répondait pas ou renvoyait un
-  message `notfound`, il n'y avait pas de mécanisme de réessai, entraînant probablement
+  message `notfound`, il n'y avait pas de mécanisme de nouvelle tentative, entraînant probablement
   des échecs de téléchargement de la transaction. La nouvelle approche tente de télécharger la
   transaction parente de tous les pairs candidats tout en maintenant l'efficacité de la bande
   passante, la résistance à la censure et un équilibrage de charge efficace. C'est
