@@ -22,45 +22,49 @@ Bitcoin-Infrastruktursoftware zusammengefasst werden.
 - **BIP-Entwurf für nicht ausgabefähige Schlüssel in Deskriptoren:**
   Andrew Toth hat auf der [Delving Bitcoin][toth unspendable delv] und der
   [Bitcoin-Dev Mailingliste][toth unspendable ml] einen
-  [BIP-Entwurf][bips #1746] veröffentlicht. Dieser betrifft die Referenzierung
+  [BIP-Entwurf][bips #1746] veröffentlicht, der die Referenzierung
   von nachweislich nicht ausgabefähigen Schlüsseln in
-  [Deskriptoren][topic descriptors]. Dies folgt einer früheren Diskussion,
-  die in unserem [Newsletter #283][news283 unspendable] näher ausgeführt ist.
+  [Deskriptoren][topic descriptors] behandelt. Diese Veröffentlichung baut
+  auf einer früheren Diskussion auf, die in unserem
+  [Newsletter #283][news283 unspendable] näher ausgeführt ist.
   Die Verwendung eines nachweislich nicht ausgabefähigen Schlüssels,
   auch als "_nothing up my sleeve_" (NUMS)-Punkt bezeichnet,
   ist besonders relevant für den internen [Taproot][topic taproot]-Schlüssel.
-  Sollte es nicht möglich sein, eine Keypath-Ausgabe mit dem internen Schlüssel
-  zu erstellen, kann stattdessen eine Scriptpath-Ausgabe mit einem Tapleaf
-  erfolgen (z.B. unter Verwendung eines [Tapscript][topic tapscript]).
+  Sofern die Erstellung eines Keypath Spend mit dem internen Schlüssel nicht
+  möglich ist, kann alternativ ein Scriptpath Spend mit einem Tapleaf
+  erstellt werden (beispielsweise mit einem [Tapscript][topic tapscript]).
 
   Zum Zeitpunkt der Erstellung dieses Dokuments findet eine aktive
   Diskussion über die [PR][bips #1746] für den Entwurf des BIP statt.
 
-- **PSBTv2 integration testing:** Sjors Provoost [posted][provoost
-  psbtv2] to the Bitcoin-Dev mailing list to ask about software that had
-  implemented support for version 2 [PSBTs][topic psbt] (see [Newsletter
-  #141][news141 psbtv2]) in order to help test a [PR][bitcoin core
-  #21283] adding support for it to Bitcoin Core.  An updated list of
-  software using it may be [found][bse psbtv2] on the Bitcoin Stack
-  Exchange.  We found two replies interesting:
+- **PSBTv2 Integrationstests:**
+  Sjors Provoost hat in der Bitcoin-Dev-Mailingliste nach
+  Software [gesucht][provoost psbtv2], die Unterstützung für [PSBTs][topic psbt]
+  der Version 2 implementiert hat (siehe [Newsletter #141] [news141 psbtv2]).
+  Ziel ist es, beim Testen eines [PR][bitcoin core #21283] zu helfen, der
+  Bitcoin Core-Unterstützung dafür hinzufügt. Auf dem Bitcoin Stack Exchange
+  [findet][bse psbtv2] sich eine aktualisierte Liste der von ihm verwendeten Software.
+  Zwei Antworten waren von Interesse:
 
-  - **Merklized PSBTv2:** Salvatore Ingala [explains][ingala psbtv2]
-    that the Ledger Bitcoin App converts the fields of a PSBTv2 into a
-    merkle tree and initially sends only the root to a Ledger hardware
-    signing device.  When specific fields are needed, they are sent
-    along with the appropriate merkle proof.  This allows the device to
-    safely work with each piece of information independently without
-    having to store the entire PSBT in its constrained memory.  This is
-    possible with PSBTv2 because it already has the parts of the
-    unsigned transaction separated into distinct fields; for the
-    original PSBT format (v0), this required additional parsing.
+  - **Merklized PSBTv2:**
+    Salvatore Ingala [erläutert][ingala psbtv2], dass die Ledger Bitcoin App die
+    Felder eines PSBTv2 in einen Merkle-Baum umwandelt und zunächst nur die
+    Wurzel an ein Ledger-Hardware-Signaturgerät sendet. Bei Bedarf werden
+    spezifische Felder zusammen mit dem entsprechenden Merkle-Proof gesendet.
+    Diese Vorgehensweise erlaubt es dem Gerät, mit jedem Informationselement
+    isoliert zu arbeiten, ohne dass eine Speicherung der gesamten PSBT im
+    begrenzten Speicher erforderlich ist. Diese Funktionalität wird durch das
+    PSBTv2-Format ermöglicht, da die Bestandteile der nicht signierten Transaktion
+    bereits in separate Felder unterteilt sind. Im ursprünglichen
+    PSBT-Format (v0) war eine zusätzliche Analyse notwendig.
 
-  - **Silent payments PSBTv2:** [BIP352][] specifying
-    [silent payments][topic silent payments] explicitly depends on the
-    [BIP370][] specification of PSBTv2.  Andrew Toth [explains][toth
-    psbtv2] that silent payments need v2's `PSBT_OUT_SCRIPT` field since
-    output script to use can't be known for silent payments until all
-    signers have processed the PSBT.
+  - **Silent payments PSBTv2:**
+    [BIP352][] spezifiziert, dass [Silent Payments][topic silent payments]
+    ausdrücklich von der [BIP370][]-Spezifikation von PSBTv2 abhängig ist.
+    Andrew Toth [erklärt][toth psbtv2], dass Silent Payments das
+    `PSBT_OUT_SCRIPT`-Feld der Version 2 benötigen, da das zu verwendende
+    Ausgabescript für Silent Payments erst bekannt sein kann, nachdem alle
+    Unterzeichner das PSBT bearbeitet haben.
 
 - **Correction about offchain DLCs:** in our description of offchain
   DLCs in [last week's newsletter][news337 dlc], we confused the [new
