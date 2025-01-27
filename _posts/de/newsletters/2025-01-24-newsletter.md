@@ -11,7 +11,7 @@ Der Newsletter dieser Woche kündigt einen BIP-Entwurf für die
 Referenzierung nicht ausgabefähiger Schlüssel in Deskriptoren an,
 untersucht, wie Implementierungen PSBTv2 verwenden, und nimmt
 ausführliche Korrekturen an unserer Beschreibung eines neuen
-Off-Chain-DLC-Protokolls in der letzten Woche vor. Darüber hinaus
+Off-Chain-DLC-Protokolls von der letzten Woche vor. Darüber hinaus
 enthalten sind unsere regulären Abschnitte, in denen Änderungen an
 Diensten und Client-Software beschrieben, neue Versionen und
 Release-Kandidaten angekündigt und aktuelle Änderungen an beliebter
@@ -66,180 +66,191 @@ Bitcoin-Infrastruktursoftware zusammengefasst werden.
     Ausgabescript für Silent Payments erst bekannt sein kann, nachdem alle
     Unterzeichner das PSBT bearbeitet haben.
 
-- **Correction about offchain DLCs:** in our description of offchain
-  DLCs in [last week's newsletter][news337 dlc], we confused the [new
-  scheme][conduition factories] proposed by developer conduition with
-  previously published and implemented offchain [DLC][topic dlc]
-  schemes.  There's a significant and interesting difference:
+- **Korrektur zu Off-Chain-DLCs:** In der jüngsten Ausgabe unseres
+  [Newsletters][news337 dlc] wurde eine Verwechslung zwischen dem von dem
+  Entwickler Conduition vorgeschlagenen neuen [Schema][conduition factories]
+  für Off-Chain-DLCs und zuvor veröffentlichten und implementierten
+  Off-Chain-[DLC][topic dlc]-Schemen festgestellt. Diese Verwechslung
+  resultiert in einem signifikanten und interessanten Unterschied,
+  der in der folgenden Analyse erörtert wird:
 
-  - The _DLC channels_ protocol mentioned in Newsletters
-    [#174][news174 channels] and [#260][news260 channels] uses a
-    mechanism similar to [LN-Penalty][topic ln-penalty]
-    commit-and-revoke where parties _commit_ to a new state by signing
-    it and then _revoke_ the old state by releasing a secret that allows
-    their private version of the old state to be completely spent by
-    their counterparty if it is published onchain.  This allows a DLC to
-    be renewed through interaction between the parties.  For example,
-    Alice and Bob do the following:
+  - Bezüglich des in den Newslettern [#174][news174 channels] und
+    [#260][news260 channels] erwähnten _DLC channels_ Protokoll ist
+    festzustellen, dass dieses einen Mechanismus verwendet, der mit dem
+    [LN-Penalty][topic ln-penalty]-Commit-and-Revoke vergleichbar ist.
+    Bei diesem Mechanismus kommt es zur Interaktion der Parteien, die durch
+    _commit_ auf einen neuen Status festgelegt werden und durch _revoke_
+    den alten Status, indem sie ein Geheimnis freigeben. Dieses ermöglicht
+    es der Gegenpartei, ihre private Version des alten Status vollständig
+    auszugeben, falls dieser auf der Blockchain veröffentlicht wird. Dadurch kann
+    ein DLC durch Interaktion zwischen den Parteien erneuert werden. Alice
+    und Bob machen beispielsweise Folgendes:
 
-    1. Immediately agree to a DLC for the BTCUSD price a month from now.
+    1. Die Beteiligten einigen sich unverzüglich auf einen DLC für den BTCUSD-Preis,
+       der einen Monat von jetzt an gültig ist.
 
-    2. Three weeks later, agree to a DLC for the BTCUSD price two months
-       from now and revoke the previous DLC.
+    2. Drei Wochen später einigen sie sich auf einen DLC für den BTCUSD-Preis,
+       der zwei Monate von jetzt an gültig ist, und widerrufen das vorherige DLC.
 
-  - The new _DLC factories_ protocol automatically revokes both parties'
-    ability to publish states onchain at the time the contract matures
-    by allowing any oracle attestation for the contract to serve as the
-    secret that allows a private state to be completely spent by a
-    counterparty if it is published onchain.  In effect this
-    automatically cancels old states, which allows successive DLCs to be
-    signed at the start of the factory without any further interaction
-    required.  For example, Alice and Bob do the following:
+  - Das neue _DLC factories_-Protokoll widerruft automatisch die Fähigkeit
+    beider Parteien, Zustände onchain zu veröffentlichen, sobald der Vertrag ausläuft.
+    Dies geschieht, indem jede Orakel-Bestätigung für den Vertrag als das Geheimnis dient,
+    das es der Gegenpartei ermöglicht, einen privaten Zustand vollständig auszugeben,
+    falls dieser onchain veröffentlicht wird. Dadurch werden alte Zustände automatisch
+    aufgehoben, wodurch aufeinanderfolgende DLCs zu Beginn des Produktionssystems ohne
+    weitere Interaktionen unterzeichnet werden können.
+    Zum Beispiel führen Alice und Bob folgende Schritte aus:
 
-    1. Immediately agree to a DLC for the BTCUSD price a month from now.
+    1. Sie einigen sich sofort auf einen DLC für den BTCUSD-Preis, der einen Monat
+       von jetzt an gültig ist.
 
-    2. Also immediately agree to a DLC for the BTCUSD price two months
-       from now with a transaction [timelock][topic timelocks] that
-       prevents it from being published until a month from now.  They
-       can repeat this for month three, four, etc...
+    2. Sie einigen sich ebenfalls sofort auf einen DLC für den BTCUSD-Preis, der zwei
+       Monate von jetzt an gültig ist, mit einer [timelock][topic timelocks], die dessen
+       Veröffentlichung erst einen Monat von jetzt an ermöglicht. Sie können dies für den
+       dritten, vierten Monat usw. wiederholen...
+    
 
-  In the DLC channels protocol, Alice and Bob can't create the second
-  contract until they're ready to revoke the first contract, which
-  requires interaction between them at that time.  In the DLC factories
-  protocol, all contracts can be created at the time the factory is
-  created and no further interaction is required; however, either party
-  can still interrupt a series of contracts by going onchain with the
-  currently safe-and-publishable version.
+   Im DLC-Channels-Protokoll können Alice und Bob den zweiten Vertrag nicht erstellen,
+   bevor sie bereit sind, den ersten Vertrag zu widerrufen, was zu diesem Zeitpunkt eine
+   Interaktion zwischen ihnen erfordert. Im DLC-Factories-Protokoll können alle Verträge
+   zum Zeitpunkt der Erstellung der Produktionssystems erstellt werden und es ist keine weitere
+   Interaktion erforderlich; jedoch kann jede Partei dennoch eine Reihe von Verträgen
+   unterbrechen, indem sie die aktuelle sichere und veröffentlichbare Version onchain bringt.
 
-  If factory participants are able to interact after the contract is
-  established, they can extend it---but they can't decide to use a
-  different contract or different oracles until after all previously
-  signed contracts have matured (unless they go onchain).  Although it
-  may be possible to eliminate this shortcoming, this currently is the
-  tradeoff for the reduced interactivity compared to the DLC channels
-  protocol, which allows arbitrary contract changes at any time by
-  mutual revocation.
+  Wenn Produktionssystems-teilnehmer nach dem Abschluss des Vertrags interagieren können,
+  können sie ihn erweitern – allerdings können sie nicht entscheiden,
+  einen anderen Vertrag oder andere Orakel zu verwenden, bis alle zuvor
+  unterzeichneten Verträge ausgereift sind (es sei denn, sie gehen onchain).
+  Obwohl es möglicherweise möglich ist, dieses Manko zu beseitigen, ist dies
+  derzeit der Kompromiss für die reduzierte Interaktivität im Vergleich zum
+  DLC-Channels-Protokoll, das willkürliche Vertragsänderungen jederzeit
+  durch gegenseitigen Widerruf ermöglicht.
 
-  We thank conduition for informing us about our mistake in last week's
-  newsletter and for patiently [answering][conduition reply] our
-  questions.
+  Wir danken Conduition dafür, dass sie uns über unseren Fehler in der letzten Ausgabe
+  unseres Newsletters informiert haben und dafür, dass sie geduldig
+  [geantwortet][conduition reply] haben.
 
-## Changes to services and client software
+## Änderungen an Diensten und Client-Software
 
-*In this monthly feature, we highlight interesting updates to Bitcoin
-wallets and services.*
+*In diesem monatlichen Feature heben wir interessante Updates zu Bitcoin-Wallets
+und -Diensten hervor.*
 
-- **Bull Bitcoin Mobile Wallet adds payjoin:**
-  Bull Bitcoin [announced][bull bitcoin blog] send and receive support for [payjoin][topic
-  payjoin] as outlined in the [proposed][BIPs #1483] BIP77 Payjoin Version 2: Serverless
-  Payjoin specification.
+- **Bull Bitcoin Mobile Wallet fügt Payjoin hinzu:**
+  Bull Bitcoin [kündigte an][bull bitcoin blog], dass das Senden und Empfangen von
+  [Payjoin][topic payjoin] gemäß der [vorgeschlagenen][BIPs #1483] BIP77
+  Payjoin Version 2: Serverloses Payjoin-Spezifikation unterstützt wird.
 
-- **Bitcoin Keeper adds miniscript support:**
-  Bitcoin Keeper [announced][bitcoin keeper twitter] support for
-  [miniscript][topic miniscript] in the [v1.3.0 release][bitcoin keeper v1.3.0].
+- **Bitcoin Keeper fügt Miniscript-Unterstützung hinzu:**
+  Bitcoin Keeper [kündigte an][bitcoin keeper twitter], dass
+  [Miniscript][topic miniscript] in der [v1.3.0-Version][bitcoin keeper v1.3.0]
+  unterstützt wird.
 
-- **Nunchuk adds taproot MuSig2 features:**
-  Nunchuk [announced][nunchuk blog] beta support for [MuSig2][topic musig] for
-  [taproot][topic taproot] keypath [multisignature][topic multisignature] spends
-  as well as using a tree of MuSig2 scriptpaths in order to achieve k-of-n
-  [threshold][topic threshold signature] spending.
+- **Nunchuk fügt Taproot MuSig2-Funktionen hinzu:**
+  Nunchuk [kündigte an][nunchuk blog] die Beta-Unterstützung für [MuSig2][topic musig]
+  für [Taproot][topic taproot] Keypath-[Multisignaturen][topic multisignature]
+  Transaktionen sowie die Verwendung eines Baums von MuSig2-Scriptpathen,
+  um k-von-n-[Threshold-Signaturen][topic threshold signature] zu erreichen.
 
-- **Jade Plus signing device announced:**
-  The [Jade Plus][blockstream blog] hardware signing device includes
-  [exfiltration-resistant signing capabilities][topic exfiltration-resistant
-  signing] and air-gapped functionality, among other features.
+- **Jade Plus Signing-Gerät angekündigt:**
+  Das [Jade Plus][blockstream blog] Hardware-Signaturgerät beinhaltet
+  [exfiltration-resistente Signatur-Funktionen][topic exfiltration-resistant signing]
+  und Air-Gapped-Funktionalität, unter anderem.
 
-- **Coinswap v0.1.0 released:**
-  [Coinswap v0.1.0][coinswap v0.1.0] is beta software that builds on a
-  formalized [coinswap][topic coinswap] protocol [specification][coinswap spec],
-  supports [testnet4][topic testnet], and includes command line applications for
-  interacting with the protocol.
+- **Coinswap v0.1.0 veröffentlicht:**
+  [Coinswap v0.1.0][coinswap v0.1.0] ist Beta-Software, die auf einem formalisierten
+  [Coinswap][topic coinswap] Protokoll [Spezifikation][coinswap spec] aufbaut,
+  [Testnet4][topic testnet] unterstützt und Kommandozeilenanwendungen zur
+  Interaktion mit dem Protokoll beinhaltet.
 
-- **Bitcoin Safe 1.0.0 released:**
-  The [Bitcoin Safe][bitcoin safe website] desktop wallet software supports a
-  variety of hardware signing devices with the [1.0.0 release][bitcoin safe 1.0.0].
+- **Bitcoin Safe 1.0.0 veröffentlicht:**
+  Die [Bitcoin Safe][bitcoin safe website] Desktop-Wallet-Software
+  unterstützt eine Vielzahl von Hardware-Signaturgeräten mit der
+  [1.0.0-Veröffentlichung][bitcoin safe 1.0.0].
 
-- **Bitcoin Core 28.0 policy demonstration:**
-  Super Testnet [announced][zero fee sn] a [Zero fee playground][zero fee
-  website] website that demonstrates [mempool policy features][28.0 guide] from the Bitcoin
-  Core 28.0 release.
+- **Bitcoin Core 28.0 Policy-Demonstration:**
+  Super Testnet [kündigte an][zero fee sn] eine [Zero fee Playground][zero fee website]
+  Webseite, die die [Mempool-Policy-Funktionen][28.0 guide]
+  der Bitcoin Core 28.0 Release demonstriert.
 
-- **Rust-payjoin 0.21.0 released:**
-  The [rust-payjoin 0.21.0][rust-payjoin 0.21.0] release adds [transaction
-  cut-through][] capabilities (see [Podcast #282][pod282 payjoin]).
+- **Rust-payjoin 0.21.0 veröffentlicht:**
+  Das [rust-payjoin 0.21.0][rust-payjoin 0.21.0] Release fügt
+  [Transaction Cut-Through][] Funktionen hinzu (siehe [Podcast #282][pod282 payjoin]).
 
 - **PeerSwap v4.0rc1:**
-  Lightning channel liquidity software PeerSwap published [v4.0rc1][peerswap v4.0rc1] which
-  includes protocol upgrades. The [PeerSwap FAQ][peerswap faq] outlines how
-  PeerSwap differs from [submarine swaps][topic submarine swaps],
-  [splicing][topic splicing], and [liquidity ads][topic liquidity advertisements].
+  Die Lightning-Channel-Liquiditätssoftware PeerSwap veröffentlichte
+  [v4.0rc1][peerswap v4.0rc1], die Protokoll-Upgrades beinhaltet.
+  Das [PeerSwap FAQ][peerswap faq] erläutert, wie PeerSwap sich von
+  [Submarine Swaps][topic submarine swaps], [Splicing][topic splicing]
+  und [Liquiditätsanzeigen][topic liquidity advertisements] unterscheidet.
 
-- **Joinpool prototype using CTV:**
-  The [ctv payment pool][ctv payment pool github] proof-of-concept uses the proposed
-  [OP_CHECKTEMPLATEVERIFY (CTV)][topic op_checktemplateverify] opcode to create
-  a [joinpool][topic joinpools].
+- **Joinpool-Prototyp mit CTV:**
+  Der [CTV Payment Pool][ctv payment pool github] Proof-of-Concept verwendet die
+  vorgeschlagene [OP_CHECKTEMPLATEVERIFY (CTV)][topic op_checktemplateverify]
+  Opcode, um einen [Joinpool][topic joinpools] zu erstellen.
 
-- **Rust joinstr library announced:**
-  The experimental [rust library][rust joinstr github] implements the joinstr [coinjoin][topic
-  coinjoin] protocol.
+- **Rust Joinstr Library angekündigt:**
+  Die experimentelle [Rust-Bibliothek][rust joinstr github] implementiert das Joinstr
+  [CoinJoin][topic coinjoin] Protokoll.
 
-- **Strata bridge announced:**
-  The [Strata bridge][strata blog] is a [BitVM2][topic acc]-based bridge for
-  moving bitcoins to and from a [sidechain][topic sidechains], in this instance
-  a validity rollup (see [Newsletter #222][news222 validity rollups]).
+- **Strata Bridge angekündigt:**
+  Die [Strata Bridge][strata blog] ist eine auf [BitVM2][topic acc]-basierte
+  Brücke zum Transfer von Bitcoins zu und von einer [Sidechain][topic sidechains],
+  in diesem Fall einem Validity Rollup (siehe [Newsletter #222][news222 validity rollups]).
 
-## Releases and release candidates
+## Releases und Release-Kandidaten
 
-_New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates._
+Neue Releases und Release-Kandidaten für beliebte Bitcoin-Infrastrukturprojekte.
+Bitte ziehen Sie ein Upgrade auf neue Releases in Betracht oder helfen Sie dabei,
+Release-Kandidaten zu testen.
 
-- [BTCPay Server 2.0.6][] contains a "security fix for merchants using
-  refunds/pull payments onchain with automated payout processors." Also
-  included are several new features and bug fixes.
+- [BTCPay Server 2.0.6][] enthält einen "Sicherheitsfix für Händler,
+die Rücksendungen/Pull-Zahlungen onchain mit automatisierten
+Auszahlungsverarbeitern verwenden." Ebenfalls enthalten sind mehrere neue
+Funktionen und Fehlerbehebungen.
 
-## Notable code and documentation changes
+## Bedeutende Änderungen im Code und in der Dokumentation
 
-_Notable recent changes in [Bitcoin Core][bitcoin core repo], [Core
-Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
-[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
-Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
-Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
-[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
-repo], and [BINANAs][binana repo]._
+_[Bemerkenswerte kürzliche Änderungen in [Bitcoin Core][bitcoin core repo],
+[Core Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
+[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet Interface (HWI)][hwi repo],
+[Rust Bitcoin][rust bitcoin repo], [BTCPay Server][btcpay server repo], [BDK][bdk repo],
+[Bitcoin Improvement Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
+[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo],
+und [BINANAs][binana repo].]_
 
-- [Bitcoin Core #31397][] improves the [orphan resolution process][news333 prclub] by tracking and
-  using all potential peers that can provide missing parent transactions.
-  Previously, the resolution process relied solely on the peer that originally
-  provided the orphaned transaction. If the peer did not respond or returned a
-  `notfound` message, there was no retry mechanism, resulting in likely
-  transaction download failures. The new approach attempts to download the
-  parent transaction from all candidate peers while maintaining bandwidth
-  efficiency, censorship resistance, and effective load balancing. It is
-  particularly beneficial for one-parent one-child (1p1c) [package relay][topic
-  package relay], and it sets the stage for [BIP331][]'s receiver-initiated
-  ancestor package relay.
+- [Bitcoin Core #31397][] verbessert den [Orphan-Auflösungsprozess][news333 prclub],
+indem alle potenziellen Peers, die fehlende Elterntransaktionen bereitstellen können,
+verfolgt und genutzt werden. Bisher verlagerte sich der Auflösungsprozess ausschließlich
+auf den Peer, der die verwaiste Transaktion ursprünglich bereitgestellt hat. Falls der
+Peer nicht antwortete oder eine `notfound`-Nachricht zurückgab, gab es keinen
+Wiederholungsmechanismus, was wahrscheinlich zu Transaktionsdownload-Fehlern führte.
+Der neue Ansatz versucht, die Elterntransaktion von allen Kandidaten-Peers herunterzuladen,
+während die Bandbreiteneffizienz, Zensurresistenz und effektive Lastverteilung
+beibehalten werden. Dies ist besonders vorteilhaft für den ein-Elternteil-ein-Kind (1p1c)
+[Package Relay][topic package relay] und bereitet den Boden für den empfänger-initiierten
+[BIP331][] Ancestor Package Relay vor.
 
-- [Eclair #2896][] enables the storage of a [MuSig2][topic musig] peer’s partial
-  signature instead of a traditional 2-of-2 multisig signature, as a
-  prerequisite for a future implementation of [simple taproot channels][topic
-  simple taproot channels]. Storing this allows a node to unilaterally broadcast
-  a commitment transaction when needed.
+- [Eclair #2896][] ermöglicht das Speichern der partiellen Signatur eines
+[MuSig2][topic musig] Peers anstelle einer traditionellen 2-von-2 Multisig-Signatur,
+als Voraussetzung für eine zukünftige Implementierung von
+[einfachen Taproot Channels][topic simple taproot channels]. Das Speichern dieser
+Signaturen erlaubt einem Node, eine Commitment-Transaktion einseitig zu broadcasten,
+wenn dies nötig ist.
 
-- [LDK #3408][] introduces utilities for creating static invoices and their
-  corresponding [offers][topic offers] in the `ChannelManager`, to support
-  [async payments][topic async payments] in [BOLT12][] as specified in [BOLTs
-  #1149][]. Unlike the regular offer creation utility, which requires the
-  recipient to be online to serve invoice requests, the new utility accommodates
-  recipients who are frequently offline. This PR also adds missing tests for
-  paying static invoices (see Newsletter [#321][news321 async]), and ensures
-  that invoice requests are retrievable when the recipient comes back online.
+- [LDK #3408][] führt Dienstprogramme zur Erstellung statischer Rechnungen und deren
+entsprechenden [Offers][topic offers] im `ChannelManager` ein, um
+[asynchrone Zahlungen][topic async payments] in [BOLT12][] gemäß den Spezifikationen der
+[BOLTs #1149][]. Anders als das reguläre Dienstprogramm zur Erstellung von Offers,
+das den Empfänger erfordert, um online zu sein, um Rechnungsanfragen zu bedienen,
+ermöglicht das neue Dienstprogramm Empfängern, die häufig offline sind. Diese PR
+fügt auch fehlende Tests für das Bezahlen statischer Rechnungen hinzu
+(siehe Newsletter [#321][news321 async]) und stellt sicher, dass Rechnungsanfragen
+abgerufen werden können, wenn der Empfänger wieder online kommt.
 
-- [LND #9405][] makes the `ProofMatureDelta` parameter configurable, which
-  determines the number of confirmations required before a [channel
-  announcement][topic channel announcements] is processed in the gossip network.
-  The default value is 6.
+- [LND #9405][] macht den Parameter `ProofMatureDelta` konfigurierbar, welcher die
+Anzahl der Bestätigungen bestimmt, die erforderlich sind, bevor eine
+[Channel Announcement][topic channel announcements] im Gossip-Netzwerk verarbeitet
+wird. Der Standardwert ist 6.
 
 {% include snippets/recap-ad.md when="2025-01-28 15:30" %}
 {% include references.md %}
