@@ -244,7 +244,7 @@ repo], et [BINANAs][binana repo]._
 [bitcoin safe 1.0.0]: https://github.com/andreasgriffin/bitcoin-safe
 [zero fee sn]: https://stacker.news/items/805544
 [zero fee website]: https://supertestnet.github.io/zero_fee_playground/
-[28.0 guide]: /en/bitcoin-core-28-wallet-integration-guide/
+[28.0 guide]: /fr/bitcoin-core-28-wallet-integration-guide/
 [rust-payjoin 0.21.0]: https://github.com/payjoin/rust-payjoin/releases/tag/payjoin-0.21.0
 [transaction cut-through]: https://bitcointalk.org/index.php?topic=281848.0
 [pod282 payjoin]: /en/podcast/2023/12/21/#payjoin-transcript
