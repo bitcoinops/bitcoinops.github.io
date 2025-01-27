@@ -168,8 +168,8 @@ und -Diensten hervor.*
 
 - **Bitcoin Core 28.0 Policy-Demonstration:**
   Super Testnet [kündigte an][zero fee sn] eine [Zero fee Playground][zero fee website]
-  Webseite, die die [Mempool-Policy-Funktionen][28.0 guide]
-  der Bitcoin Core 28.0 Release demonstriert.
+  Webseite zur Demonstration der [Mempool-Policy-Funktionen][28.0 guide]
+  der Bitcoin Core 28.0 Release.
 
 - **Rust-payjoin 0.21.0 veröffentlicht:**
   Das [rust-payjoin 0.21.0][rust-payjoin 0.21.0] Release fügt
