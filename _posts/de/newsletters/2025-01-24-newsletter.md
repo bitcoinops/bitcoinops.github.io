@@ -75,8 +75,8 @@ Bitcoin-Infrastruktursoftware zusammengefasst werden.
   der in der folgenden Analyse erörtert wird:
 
   - Bezüglich des in den Newslettern [#174][news174 channels] und
-    [#260][news260 channels] erwähnten _DLC channels_ Protokoll ist
-    festzustellen, dass dieses einen Mechanismus verwendet, der mit dem
+    [#260][news260 channels] erwähnten _DLC channels_ Protokoll
+    verwendet einen Mechanismus, der mit dem
     [LN-Penalty][topic ln-penalty]-Commit-and-Revoke vergleichbar ist.
     Bei diesem Mechanismus kommt es zur Interaktion der Parteien, die durch
     _commit_ auf einen neuen Status festgelegt werden und durch _revoke_
