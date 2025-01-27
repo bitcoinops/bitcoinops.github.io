@@ -35,7 +35,7 @@ lang: zh
 - **<!--why-are-there-several-round-number-transactions-with-no-change-->**[为什么有几笔整数字额的交易没有找零？]({{bse}}107418)
   Shm 询问了一系列相关交易，这些交易有多个输入，但仅有一个无找零的整数字额输出。Murch 在回答中描述了[避免找零][bitcoin wiki change avoidance]的概念，尤其是在拥有大量 UTXO 的钱包中。避免找零可以减少交易大小、降低未来手续费、整合 UTXO，并提高隐私性。
 
-## 为 Taproot 做准备 #6：通过使用学习 Taproot
+## 准备 Taproot #6：通过使用学习 Taproot
 
 *关于开发者和服务提供商如何为即将到来的 Taproot 激活做好准备的[系列][series preparing for taproot]文章。*
 
