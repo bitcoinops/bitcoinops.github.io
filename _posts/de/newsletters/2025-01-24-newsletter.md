@@ -107,8 +107,7 @@ Bitcoin-Infrastruktursoftware zusammengefasst werden.
     2. Sie einigen sich ebenfalls sofort auf einen DLC für den BTCUSD-Preis, der zwei
        Monate von jetzt an gültig ist, mit einer [timelock][topic timelocks], die dessen
        Veröffentlichung erst einen Monat von jetzt an ermöglicht. Sie können dies für den
-       dritten, vierten Monat usw. wiederholen...
-    
+       dritten, vierten Monat usw. wiederholen.
 
    Im DLC-Channels-Protokoll können Alice und Bob den zweiten Vertrag nicht erstellen,
    bevor sie bereit sind, den ersten Vertrag zu widerrufen, was zu diesem Zeitpunkt eine
