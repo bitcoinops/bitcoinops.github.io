@@ -30,7 +30,7 @@ infrastructure software.
   tapscript]).
 
   As of this writing, active discussion is occurring on the [PR][bips
-  #1746] for the draft BIP.
+  #1746] for the draft BIP. {% assign timestamp="0:49" %}
 
 - **PSBTv2 integration testing:** Sjors Provoost [posted][provoost
   psbtv2] to the Bitcoin-Dev mailing list to ask about software that had
@@ -38,7 +38,7 @@ infrastructure software.
   #141][news141 psbtv2]) in order to help test a [PR][bitcoin core
   #21283] adding support for it to Bitcoin Core.  An updated list of
   software using it may be [found][bse psbtv2] on the Bitcoin Stack
-  Exchange.  We found two replies interesting:
+  Exchange.  We found two replies interesting: {% assign timestamp="9:55" %}
 
   - **Merklized PSBTv2:** Salvatore Ingala [explains][ingala psbtv2]
     that the Ledger Bitcoin App converts the fields of a PSBTv2 into a
@@ -114,7 +114,7 @@ infrastructure software.
 
   We thank conduition for informing us about our mistake in last week's
   newsletter and for patiently [answering][conduition reply] our
-  questions.
+  questions. {% assign timestamp="15:25" %}
 
 ## Changes to services and client software
 
@@ -124,61 +124,61 @@ wallets and services.*
 - **Bull Bitcoin Mobile Wallet adds payjoin:**
   Bull Bitcoin [announced][bull bitcoin blog] send and receive support for [payjoin][topic
   payjoin] as outlined in the [proposed][BIPs #1483] BIP77 Payjoin Version 2: Serverless
-  Payjoin specification.
+  Payjoin specification. {% assign timestamp="28:10" %}
 
 - **Bitcoin Keeper adds miniscript support:**
   Bitcoin Keeper [announced][bitcoin keeper twitter] support for
-  [miniscript][topic miniscript] in the [v1.3.0 release][bitcoin keeper v1.3.0].
+  [miniscript][topic miniscript] in the [v1.3.0 release][bitcoin keeper v1.3.0]. {% assign timestamp="28:52" %}
 
 - **Nunchuk adds taproot MuSig2 features:**
   Nunchuk [announced][nunchuk blog] beta support for [MuSig2][topic musig] for
   [taproot][topic taproot] keypath [multisignature][topic multisignature] spends
   as well as using a tree of MuSig2 scriptpaths in order to achieve k-of-n
-  [threshold][topic threshold signature] spending.
+  [threshold][topic threshold signature] spending. {% assign timestamp="29:26" %}
 
 - **Jade Plus signing device announced:**
   The [Jade Plus][blockstream blog] hardware signing device includes
   [exfiltration-resistant signing capabilities][topic exfiltration-resistant
-  signing] and air-gapped functionality, among other features.
+  signing] and air-gapped functionality, among other features. {% assign timestamp="32:08" %}
 
 - **Coinswap v0.1.0 released:**
   [Coinswap v0.1.0][coinswap v0.1.0] is beta software that builds on a
   formalized [coinswap][topic coinswap] protocol [specification][coinswap spec],
   supports [testnet4][topic testnet], and includes command line applications for
-  interacting with the protocol.
+  interacting with the protocol. {% assign timestamp="32:36" %}
 
 - **Bitcoin Safe 1.0.0 released:**
   The [Bitcoin Safe][bitcoin safe website] desktop wallet software supports a
-  variety of hardware signing devices with the [1.0.0 release][bitcoin safe 1.0.0].
+  variety of hardware signing devices with the [1.0.0 release][bitcoin safe 1.0.0]. {% assign timestamp="35:14" %}
 
 - **Bitcoin Core 28.0 policy demonstration:**
   Super Testnet [announced][zero fee sn] a [Zero fee playground][zero fee
   website] website that demonstrates [mempool policy features][28.0 guide] from the Bitcoin
-  Core 28.0 release.
+  Core 28.0 release. {% assign timestamp="35:41" %}
 
 - **Rust-payjoin 0.21.0 released:**
   The [rust-payjoin 0.21.0][rust-payjoin 0.21.0] release adds [transaction
-  cut-through][] capabilities (see [Podcast #282][pod282 payjoin]).
+  cut-through][] capabilities (see [Podcast #282][pod282 payjoin]). {% assign timestamp="36:21" %}
 
 - **PeerSwap v4.0rc1:**
   Lightning channel liquidity software PeerSwap published [v4.0rc1][peerswap v4.0rc1] which
   includes protocol upgrades. The [PeerSwap FAQ][peerswap faq] outlines how
   PeerSwap differs from [submarine swaps][topic submarine swaps],
-  [splicing][topic splicing], and [liquidity ads][topic liquidity advertisements].
+  [splicing][topic splicing], and [liquidity ads][topic liquidity advertisements]. {% assign timestamp="37:34" %}
 
 - **Joinpool prototype using CTV:**
   The [ctv payment pool][ctv payment pool github] proof-of-concept uses the proposed
   [OP_CHECKTEMPLATEVERIFY (CTV)][topic op_checktemplateverify] opcode to create
-  a [joinpool][topic joinpools].
+  a [joinpool][topic joinpools]. {% assign timestamp="38:24" %}
 
 - **Rust joinstr library announced:**
   The experimental [rust library][rust joinstr github] implements the joinstr [coinjoin][topic
-  coinjoin] protocol.
+  coinjoin] protocol. {% assign timestamp="39:58" %}
 
 - **Strata bridge announced:**
   The [Strata bridge][strata blog] is a [BitVM2][topic acc]-based bridge for
   moving bitcoins to and from a [sidechain][topic sidechains], in this instance
-  a validity rollup (see [Newsletter #222][news222 validity rollups]).
+  a validity rollup (see [Newsletter #222][news222 validity rollups]). {% assign timestamp="40:36" %}
 
 ## Releases and release candidates
 
@@ -188,7 +188,7 @@ release candidates._
 
 - [BTCPay Server 2.0.6][] contains a "security fix for merchants using
   refunds/pull payments onchain with automated payout processors." Also
-  included are several new features and bug fixes.
+  included are several new features and bug fixes. {% assign timestamp="41:41" %}
 
 ## Notable code and documentation changes
 
@@ -211,13 +211,13 @@ repo], and [BINANAs][binana repo]._
   efficiency, censorship resistance, and effective load balancing. It is
   particularly beneficial for one-parent one-child (1p1c) [package relay][topic
   package relay], and it sets the stage for [BIP331][]'s receiver-initiated
-  ancestor package relay.
+  ancestor package relay. {% assign timestamp="42:19" %}
 
 - [Eclair #2896][] enables the storage of a [MuSig2][topic musig] peer’s partial
   signature instead of a traditional 2-of-2 multisig signature, as a
   prerequisite for a future implementation of [simple taproot channels][topic
   simple taproot channels]. Storing this allows a node to unilaterally broadcast
-  a commitment transaction when needed.
+  a commitment transaction when needed. {% assign timestamp="44:21" %}
 
 - [LDK #3408][] introduces utilities for creating static invoices and their
   corresponding [offers][topic offers] in the `ChannelManager`, to support
@@ -226,12 +226,12 @@ repo], and [BINANAs][binana repo]._
   recipient to be online to serve invoice requests, the new utility accommodates
   recipients who are frequently offline. This PR also adds missing tests for
   paying static invoices (see Newsletter [#321][news321 async]), and ensures
-  that invoice requests are retrievable when the recipient comes back online.
+  that invoice requests are retrievable when the recipient comes back online. {% assign timestamp="46:02" %}
 
 - [LND #9405][] makes the `ProofMatureDelta` parameter configurable, which
   determines the number of confirmations required before a [channel
   announcement][topic channel announcements] is processed in the gossip network.
-  The default value is 6.
+  The default value is 6. {% assign timestamp="47:57" %}
 
 {% include snippets/recap-ad.md when="2025-01-28 15:30" %}
 {% include references.md %}
