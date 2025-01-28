@@ -80,3 +80,4 @@ lang: zh
 [bitcoin wiki change avoidance]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Change_avoidance
 [github gitian builds]: https://github.com/bitcoin-core/docs/blob/master/gitian-building.md
 [github contrib guix]: https://github.com/bitcoin/bitcoin/blob/master/contrib/guix/README.md
+[series preparing for taproot]: /zh/preparing-for-taproot/
