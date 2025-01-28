@@ -181,7 +181,7 @@ th, td {
     </div></th>
 
     <th style="vertical-align:top;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/bech32/">Bech32m <br/><font color="grey">P2TR</font></a><span class="tooltip">Does the Product/Service support Bech32 (BIP350)?</span>
+    <a href="https://bitcoinops.org/en/topics/bech32/">Bech32m <br/><font color="grey">P2TR</font></a><span class="tooltip">Does the Product/Service support Bech32m (BIP350)?</span>
     </div></th>
 
     <th style="vertical-align:top;"><div class="tooltip-container">Native <br/>Segwit<br/> Change<span class="tooltip">Does the Product/Service provide Native Segwit Change (P2WPKH, P2WSH, or P2TR)?</span>
