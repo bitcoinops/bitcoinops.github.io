@@ -9,7 +9,7 @@ feature:
   os: "Android, iOS"
   web: "No"
   hwi: "No"
-  default_receive: "P2TR via swap-in-potentiam"
+  default_receive: "P2TR via <a href=\"https://bitcoinops.org/en/topics/swap-in-potentiam/\">swap-in-potentiam</a>"
   bech32: "Send Support"
   bech32m: "Full Support (send & receive)"
   segwit_change: "Not Applicable"

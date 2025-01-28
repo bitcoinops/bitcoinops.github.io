@@ -103,16 +103,16 @@ th, td {
     <td style="border-style:hidden;text-align:left;vertical-align: top;font-size:14px;">
           <font size="3"><b>Legend:</b></font><br>
 
-          <div class="tooltip-container">&#x2705; - Full Support <span class="tooltip">This response can represent "Send & Receive Support" (i.e. Bech32) or "Yes" (i.e. Native Segwit Change).</span>
+          <div class="tooltip-container">&#x2705; - Full Support / Yes <span class="tooltip">This response can represent "Send & Receive Support" (i.e. Bech32) or "Yes" (i.e. Native Segwit Change).</span>
           </div><br/>
 
-          <div class="tooltip-container">&#x1F4B8; - Send Support<span class="tooltip">This response represents "Send Only Support" (i.e. Bech32) or "Yes" (i.e. Native Segwit Change).</span>
+          <div class="tooltip-container">&#x1F4B8; - Send Support<span class="tooltip">This response represents "Send Only Support" (i.e. Bech32).</span>
           </div><br/>
 
-          <div class="tooltip-container">&#x274C; - No Support<span class="tooltip">This response represents "No Support" for a given feature.</span>
+          <div class="tooltip-container">&#x274C; - No Support / No <span class="tooltip">This response represents "No Support" or simply "No".</span>
           </div><br/>
 
-          <div class="tooltip-container">&#129335; - Unknown<span class="tooltip">This response represents uncertain status for a given feature.</span>
+          <div class="tooltip-container">&#129335; - Unknown<span class="tooltip">This response represents uncertain status.</span>
           </div><br/>
 
           <div class="tooltip-container">&#x2796; - Not Applicable <span class="tooltip">This response represents that a given feature is NOT applicable for a Product/Service category.  For example, Lighting Features would be "Not Applicable" for a Signing Device.</span>

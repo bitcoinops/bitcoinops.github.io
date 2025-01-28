@@ -9,7 +9,7 @@ feature:
   os: "Android, iOS"
   web: "No"
   hwi: "Yes"
-  default_receive: "P2WSH"
+  default_receive: "P2SH-P2WSH"
   bech32: "Send Support"
   bech32m: "Send Support"
   segwit_change: "No"
