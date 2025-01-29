@@ -364,7 +364,7 @@ th, td {
   <tr style="background-color: transparent;">
   <td colspan="15" style="text-align:left;font-size:14px;border-style:hidden;" >
   <span class="bold">Notes:</span><br/>
-  &#x1F538; Details about what is being tested per feature can be seen by hovering over the respective header.<br/>
+  &#x1F538; Hover over a column header to see details about what is being tested per feature.<br/>
   &#x1F538; Features with alternate implementations are denoted with <font color="orange" size="3">*</font>, hover for details.<br/>
   </td>
 
