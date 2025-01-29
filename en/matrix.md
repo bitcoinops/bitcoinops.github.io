@@ -374,7 +374,7 @@ th, td {
   <span class="bold">Approach:</span><br/>
   &#x1F538; Bitcoinops has selected the initial features within the matrix, focusing on interoperability.  <br/>
   &#x1F538; The matrix will be split by category once enough results are collected.<br/>
-  &#x1F538; New feature as well as Product/Service requests are welcome!  Open a PR in the Optech Github.<br/>
+  &#x1F538; New feature as well as Product/Service requests are welcome!  Open a PR in the [Optech Github](https://github.com/bitcoinops/bitcoinops.github.io).<br/>
   </td>
   </tr>
 
