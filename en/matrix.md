@@ -372,7 +372,7 @@ th, td {
   <tr style="background-color: transparent;">
   <td colspan="15" style="text-align:left;font-size:14px;border-style:hidden;" >
   <span class="bold">Approach:</span><br/>
-  &#x1F538; The initial features within the matrix have been selected by bitcoinops with a focus on interoperability.  <br/>
+  &#x1F538; Bitcoinops has selected the initial features within the matrix, focusing on interoperability.  <br/>
   &#x1F538; The matrix will be split by category, once enough results are collected.<br/>
   &#x1F538; New feature as well as Product/Service requests are welcome!  Open a PR in the Optech Github.<br/>
   </td>
