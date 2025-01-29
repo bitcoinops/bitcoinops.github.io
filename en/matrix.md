@@ -364,7 +364,7 @@ th, td {
   <tr style="background-color: transparent;">
   <td colspan="15" style="text-align:left;font-size:14px;border-style:hidden;" >
   <span class="bold">Notes:</span><br/>
-  &#x1F538; Hover over a column header to see details about what is being tested per feature.<br/>
+  &#x1F538; Hover over a column header to see that column's details.<br/>
   &#x1F538; Features with alternate implementations are denoted with <font color="orange" size="3">*</font>, hover for details.<br/>
   </td>
 
@@ -374,7 +374,7 @@ th, td {
   <span class="bold">Approach:</span><br/>
   &#x1F538; Bitcoinops has selected the initial features within the matrix, focusing on interoperability.  <br/>
   &#x1F538; The matrix will be split by category once enough results are collected.<br/>
-  &#x1F538; New feature as well as Product/Service requests are welcome!  Open a PR in the [Optech Github](https://github.com/bitcoinops/bitcoinops.github.io).<br/>
+  &#x1F538; New feature as well as Product/Service requests are welcome!  Open a PR in the <a href="https://github.com/bitcoinops/bitcoinops.github.io">Optech Github</a>.<br/>
   </td>
   </tr>
 
