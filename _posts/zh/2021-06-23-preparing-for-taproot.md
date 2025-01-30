@@ -59,11 +59,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/zh/05-taproot-notebooks.md %}
 
-## 多签概述
+## 多签
 
-*最初发表于 [Newsletter #160](/en/newsletters/2021/08/04/#preparing-for-taproot-7-multisignatures)*
+*最初发表于 [Newsletter #160](/zh/newsletters/2021/08/04/#准备-taproot-7多签)*
 
-{% include specials/taproot/en/06-multisignatures.md %}
+{% include specials/taproot/zh/06-multisignatures.md %}
 
 ## 多签随机数
 
