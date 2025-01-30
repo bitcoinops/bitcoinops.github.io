@@ -146,9 +146,9 @@ und -Diensten hervor.*
 
 - **Nunchuk fügt Taproot MuSig2-Funktionen hinzu:**
   Nunchuk [kündigte an][nunchuk blog] die Beta-Unterstützung für [MuSig2][topic musig]
-  für [Taproot][topic taproot] Keypath-[Multisignaturen][topic multisignature]
-  Transaktionen sowie die Verwendung eines Baums von MuSig2-Scriptpathen,
-  um k-von-n-[Threshold-Signaturen][topic threshold signature] zu erreichen.
+  basierte [Taproot][topic taproot] Keypath [Inputs][topic multisignature],
+  sowie die Unterstützung von k-von-n-[Threshold-Wallet-Konfigurationen][topic threshold signature]
+  basierend auf mehreren alternativen Blättern mit MuSig2-Scripten im Skriptbaum.
 
 - **Jade Plus Signing-Gerät angekündigt:**
   Das [Jade Plus][blockstream blog] Hardware-Signaturgerät beinhaltet
