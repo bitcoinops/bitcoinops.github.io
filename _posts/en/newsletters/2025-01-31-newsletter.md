@@ -130,7 +130,66 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Who uses or wants to use PSBTv2 (BIP370)?]({{bse}}125384)
+  In addition to posting to the Bitcoin-Dev mailing list (see [Newsletter
+  #338][news338 psbtv2]), Sjors Provoost posted to the Bitcoin Stack Exchange
+  seeking users and potential users of [PSBTv2][topic psbt]. Optech readers
+  interested in [BIP370][] should reply to the question or mailing list post.
+
+- [In the bitcoin's block genesis, which parts can be filled arbitrarily?]({{bse}}125274)
+  Pieter Wuille points out that none of the fields of Bitcoin's [genesis block][mempool
+  genesis block] are subject to the normal block validation rules saying,
+  "Literally all of them could have had any content. It looks like a normal
+  block where possible, but it didn't need to".
+
+- [Lightning force close detection]({{bse}}122504)
+  Sanket1729 and Antoine Poinsot discuss how the mempool.space [block
+  explorer][topic block explorers] uses [`nLockTime`][topic timelocks] and `nSequence` fields to determine
+  whether a transaction is a Lightning force close transaction.
+
+- [Is a segwit-formatted transaction with all inputs of non-witness program type valid?]({{bse}}125240)
+  Pieter Wuille distinguishes between [BIP141][], which specifies the structure
+  and validity around the segwit consensus changes and computation of wtxids, and [BIP144][], which
+  specifies the serialization format for communicating segwit transactions.
+
+- [P2TR Security Question]({{bse}}125334)
+  Pieter Wuille quotes from [BIP341][] that specifies [taproot][topic taproot]
+  to explain why a public key is directly included in an output, and
+  related considerations around quantum computing.
+
+- [What exactly is being done today to make Bitcoin "quantum-safe"?]({{bse}}125171)
+  Murch comments on the current state of quantum capabilities, recent
+  [post-quantum signature schemes][topic quantum resistance], and the proposed [QuBit -
+  Pay to Quantum Resistant Hash][BIPs #1670] BIP.
+
+- [What are the harmful effects of a shorter inter-block time?]({{bse}}125318)
+  Pieter Wuille highlights the advantage conveyed, as a result of block
+  propagation time, to a miner that just found a block, how that advantage is
+  magnified with shorter block times, and the potential effects of the advantage.
+
+- [Could proof-of-work be used to replace policy rules?]({{bse}}124931)
+  Jgmontoya wonders if attaching proof-of-work to non-standard transactions
+  could achieve similar [node resource protection][policy series] goals as
+  mempool policy. Antoine Poinsot points out that there are other goals of
+  mempool policy beyond protecting node resources including efficient block
+  template building, discouraging some transaction types, and protecting [soft
+  fork][topic soft fork activation] upgrade hooks.
+
+- [How does MuSig work in real Bitcoin scenarios?]({{bse}}125030)
+  Pieter Wuille elaborates on the differences between [MuSig][topic musig]
+  versions, calls out the Interactive Aggregated Signature (IAS) variant
+  of MuSig1 and its interplay with [cross-input signature aggregation
+  (CISA)][topic cisa], and mentions [threshold signatures][topic threshold
+  signature] before answering lower level questions on the specifications.
+
+- [How does the -blocksxor switch that obfuscates the blocks.dat files work?]({{bse}}125055)
+  Vojtěch Strnad describes the `-blocksxor` option for obfuscating
+  Bitcoin Core block data files on disk (see [Newsletter #316][news316 xor]).
+
+- [How does the related key attack on Schnorr signatures work?]({{bse}}125328)
+  Pieter Wuille answers that "the attack applies when the victim chooses a
+  related key, and the attacker knows the relation" and that related
+  keys are extremely common.
 
 ## Releases and release candidates
 
@@ -205,7 +264,7 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-02-04 15:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="31376,31583,31590,2982,1614,1110" %}
+{% include linkers/issues.md v=2 issues="31376,31583,31590,2982,1614,1110,1670" %}
 [morehouse ldkclaim]: https://delvingbitcoin.org/t/disclosure-ldk-invalid-claims-liquidity-griefing/1400
 [news335 ldk3340]: /en/newsletters/2025/01/03/#ldk-3340
 [riard minecycle]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CALZpt+EnDUtfty3X=u2-2c5Q53Guc6aRdx0Z4D75D50ZXjsu2A@mail.gmail.com/
@@ -219,3 +278,7 @@ repo], and [BINANAs][binana repo]._
 [news281 griefing]: /en/newsletters/2023/12/13/#discussion-about-griefing-liquidity-ads
 [news238 peer]: /en/newsletters/2023/02/15/#core-lightning-5361
 [news335 peer]: /en/newsletters/2025/01/03/#eclair-2888
+[news338 psbtv2]: /en/newsletters/2025/01/24/#psbtv2-integration-testing
+[mempool genesis block]: https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+[policy series]: /en/blog/waiting-for-confirmation/#policy-for-protection-of-node-resources
+[news316 xor]: /en/newsletters/2024/08/16/#bitcoin-core-28052
