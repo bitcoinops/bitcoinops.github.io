@@ -158,17 +158,50 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31376][] Miner: never create a template which exploits the timewarp bug
+- [Bitcoin Core #31376][] extends a check that prevents miners from creating
+  block templates that exploit the [timewarp][topic time warp] bug to apply to
+  all networks, not just [testnet4][topic testnet]. This change is in
+  preparation for a possible future soft fork that would permanently fix the
+  timewarp bug.
 
-- [Bitcoin Core #31583][] rpc: add target to getmininginfo field and show next block info
+- [Bitcoin Core #31583][] updates the `getmininginfo`, `getblock`,
+  `getblockheader`, `getblockchaininfo` and `getchainstates` RPC commands to now
+  return a `nBits` field (the compact representation of the block difficulty
+  target) and a `target` field. In addition, `getmininginfo` adds a `next`
+  object that specifies the height, `nBits`, difficulty, and target for the next
+  block. To derive and obtain the target, this PR introduces the
+  `DeriveTarget()` and the `GetTarget()` helper functions. These changes are
+  useful for the implementation of [Stratum V2][topic pooled mining].
 
-- [Bitcoin Core #31590][] descriptors: Try pubkeys of both parities when retrieving the private keys for an xonly pubkey in a descriptor
+- [Bitcoin Core #31590][] refactors the `GetPrivKey()` method to check pubkeys
+  for both parity bit values when retrieving private keys for an [x-only
+  pubkey][topic x-only public keys]
+  in a [descriptor][topic descriptors]. Previously, if the stored pubkey didn’t
+  have the correct parity bit, the private key couldn’t be retrieved and
+  transactions couldn’t be signed.
 
-- [Eclair #2982][] Add liquidity griefing protection for liquidity ads
+- [Eclair #2982][] introduces the `lock-utxos-during-funding` configuration
+  setting, allowing [liquidity advertisement][topic liquidity advertisements]
+  sellers to mitigate a type liquidity griefing attack
+  that could prevent honest users from being able to use their UTXOs for extended periods. The default
+  setting is true, meaning that UTXOs are locked during the funding process and
+  are vulnerable to abuse. If set to false, UTXO locking is disabled and the attack can
+  be completely prevented, but this may adversely affect honest peers.
+  This PR also adds a configurable timeout mechanism that automatically aborts
+  incoming channels if a peer becomes unresponsive.
 
-- [BDK #1614][] feat(rpc): introduce FilterIter
+- [BDK #1614][] adds support for using [compact block filters][topic compact
+  block filters] as specified in [BIP158][] for downloading confirmed
+  transactions. This is done by adding a BIP158 module to the `bdk_bitcoind_rpc`
+  crate, along with a new `FilterIter` type that can be used to retrieve blocks
+  that contains transactions relevant to a list of script
+  pubkeys.
 
-- [BOLTs #1110][] Peer storage for nodes to distribute small encrypted blobs.
+- [BOLTs #1110][] merges the specification for the [peer storage][topic peer
+  storage] protocol, which allows nodes to store encrypted blobs up to 64kB
+  for peers who request them, and charge for this service. This has already been
+  implemented in Core Lightning (see newsletter [#238][news238 peer]) and Eclair
+  (see newsletter [#335][news335 peer]).
 
 {% include snippets/recap-ad.md when="2025-02-04 15:30" %}
 {% include references.md %}
@@ -183,3 +216,6 @@ repo], and [BINANAs][binana repo]._
 [news274 cycle]: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
 [ldk v0.1.1]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.1
 [morehouse ldk-dos]: https://delvingbitcoin.org/t/disclosure-ldk-duplicate-htlc-force-close-griefing/1410
+[news281 griefing]: /en/newsletters/2023/12/13/#discussion-about-griefing-liquidity-ads
+[news238 peer]: /en/newsletters/2023/02/15/#core-lightning-5361
+[news335 peer]: /en/newsletters/2025/01/03/#eclair-2888
