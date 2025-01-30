@@ -117,7 +117,7 @@ Bitcoin-Infrastruktursoftware zusammengefasst werden.
    unterbrechen, indem sie die aktuelle sichere und veröffentlichbare Version onchain bringt.
 
   Wenn Produktionssystemsteilnehmer nach dem Abschluss des Vertrags interagieren können,
-  können sie ihn erweitern – allerdings können sie nicht entscheiden,
+  können sie ihn verlängern – allerdings können sie nicht entscheiden,
   einen anderen Vertrag oder andere Orakel zu verwenden, bis alle zuvor
   unterzeichneten Verträge ausgereift sind (es sei denn, sie gehen onchain).
   Obwohl es möglicherweise möglich ist, dieses Manko zu beseitigen, ist dies
