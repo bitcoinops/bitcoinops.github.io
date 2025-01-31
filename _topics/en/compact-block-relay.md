@@ -63,6 +63,9 @@ optech_mentions:
   - title: "CVE-2024-35202 remote crash vulnerability exploiting compact block reconstruction"
     url: /en/newsletters/2024/10/11/#cve-2024-35202-remote-crash-vulnerability
 
+  - title: "Renewed discussion about compact block reconstruction success rates"
+    url: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -36,6 +36,9 @@ optech_mentions:
   - title: Notes from Bitcoin developer discussion about CISA
     url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
+  - title: Interplay between CISA and Musig1 interactive aggregated signature
+    url: /en/newsletters/2025/01/31/#how-does-musig-work-in-real-bitcoin-scenarios
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

@@ -155,6 +155,9 @@ optech_mentions:
   - title: "David Harding responsibly disclosed an LN vulnerability allowing theft with miner assistance"
     url: /en/newsletters/2024/12/13/#vulnerability-allowing-theft-from-ln-channels-with-miner-assistance
 
+  - title: "Matt Morehouse responsibly disclosed a vulnerability allowing theft from pre-release LDK nodes"
+    url: /en/newsletters/2025/01/31/#vulnerability-in-ldk-claim-processing
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
