@@ -35,6 +35,9 @@ optech_mentions:
   - title: "Comparison of replacement cycling HTLCs to repeatedly broadcasting old states in LN-Symmetry"
     url: /en/newsletters/2025/01/10/#multiparty-ln-symmetry-variant-with-penalties-for-limiting-published-updates
 
+  - title: "Variant of replacement cycling attack that could benefit exploitative miners"
+    url: /en/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction replacement

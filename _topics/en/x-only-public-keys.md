@@ -50,6 +50,9 @@ optech_mentions:
   - title: "Should an even Y coordinate be enforced after every key-tweak operation, or only at the end?"
     url: /en/newsletters/2024/06/28/#should-an-even-y-coordinate-be-enforced-after-every-key-tweak-operation-or-only-at-the-end
 
+  - title: "Bitcoin Core #31590 checks parity bits when retrieving privkeys for x-only pubkeys in descriptors"
+    url: /en/newsletters/2025/01/31/#bitcoin-core-31590
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

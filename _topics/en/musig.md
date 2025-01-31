@@ -151,6 +151,9 @@ optech_mentions:
   - title: "Eclair #2896 enables the storage of MuSig2 partial signatures for simple taproot channels"
     url: /en/newsletters/2025/01/24/#eclair-2896
 
+  - title: Interplay between Musig1 interactive aggregated signature and cross-input signature aggregation
+    url: /en/newsletters/2025/01/31/#how-does-musig-work-in-real-bitcoin-scenarios
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures

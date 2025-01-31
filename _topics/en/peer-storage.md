@@ -36,6 +36,9 @@ optech_mentions:
   - title: "Eclair #2888 implements support for the peer storage protocol as specified in BOLTs #1110"
     url: /en/newsletters/2025/01/03/#eclair-2888
 
+  - title: "BOLTs #1110 merges the specification for the peer storage protocol"
+    url: /en/newsletters/2025/01/31/#bolts-1110
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

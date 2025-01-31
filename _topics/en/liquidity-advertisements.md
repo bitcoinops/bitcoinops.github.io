@@ -48,6 +48,9 @@ optech_mentions:
   - title: "Eclair #2861 implements on-the-fly funding using liquidity ads with either dual-funding or splicing"
     url: /en/newsletters/2024/10/04/#eclair-2861
 
+  - title: "Eclair #2982 introduces an option to mitigate a type liquidity ads griefing attack"
+    url: /en/newsletters/2025/01/31/#eclair-2982
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dual funding

@@ -188,6 +188,9 @@ optech_mentions:
   - title: "Draft BIP for unspendable keys in descriptors"
     url: /en/newsletters/2025/01/24/#draft-bip-for-unspendable-keys-in-descriptors
 
+  - title: "Bitcoin Core #31590 checks parity bits when retrieving privkeys for x-only pubkeys in descriptors"
+    url: /en/newsletters/2025/01/31/#bitcoin-core-31590
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
