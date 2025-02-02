@@ -17,7 +17,7 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
 
 ## News
 
-- **Sicherheitslücke in der LDK-HTLC-Abwicklung:**  
+- **Sicherheitslücke in der LDK-HTLC-Abwicklung:**
   Matt Morehouse hat auf Delving Bitcoin einen Beitrag [veröffentlicht][morehouse ldkclaim], in dem
   er eine Schwachstelle in LDK aufdeckte – eine Schwachstelle, die er
   [verantwortungsvoll offengelegt][topic responsible disclosures] hat und die in LDK Version 0.1 behoben wurde.
@@ -52,14 +52,14 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
   Morehouses Beitrag liefert weitere Details und diskutiert mögliche Ansätze, um zukünftige
   Schwachstellen, die aus derselben Grundursache resultieren, zu verhindern.
 
-- **Angriffe durch Replacement Cycling mit Ausnutzung von Minern:**  
+- **Angriffe durch Replacement Cycling mit Ausnutzung von Minern:**
   Antoine Riard hat auf der Bitcoin-Dev-Mailingliste einen Beitrag [veröffentlicht][riard minecycle],
   um eine weitere Schwachstelle offenzulegen, die mit dem [Replacement Cycling][topic replacement cycling]
   Angriff möglich ist – einem Angriff, den er ursprünglich
   2023 öffentlich bekannt machte (siehe [Newsletter #274][news274 cycle]).
 
   Kurz zusammengefasst:
-  
+
   1. Bob sendet eine Transaktion, in der er an Mallory (und möglicherweise an weitere Empfänger)
      zahlt.
 
@@ -87,7 +87,7 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
   regelmäßig ausnutzen, gehen wir davon aus, dass sein Verhalten von Community-Mitgliedern, die
   [Block-Monitoring-Tools][miningpool.observer] entwickeln und einsetzen, erkannt wird.
 
-- **Aktualisierte Statistiken zur Kompaktblock-Rekonstruktion:**  
+- **Aktualisierte Statistiken zur Kompaktblock-Rekonstruktion:**
   Auf einen vorherigen Thread (siehe [Newsletter #315][news315 cb]) folgend, hat Entwickler 0xB10C
   in einem Beitrag an Delving Bitcoin aktualisierte Statistiken darüber veröffentlicht, wie häufig
   seine Bitcoin Core-Knoten zusätzliche Transaktionen anfordern müssen, um die
