@@ -123,42 +123,42 @@ bestbewerteten Fragen und Antworten hervor, die seit unserem letzten Update gepo
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [Wer nutzt oder möchte PSBTv2 (BIP370) verwenden?](../../en/newsletters/{{bse}}125384)
+- [Wer nutzt oder möchte PSBTv2 (BIP370) verwenden?]({{bse}}125384)
   Neben seinem Posting in der Bitcoin-Dev-Mailingliste (siehe [Newsletter #338][news338 psbtv2])
   hat Sjors Provoost auch im Bitcoin Stack Exchange nach Nutzern und potenziellen Anwendern von
   [PSBTv2][topic psbt] gesucht. Leser von Optech, die an [BIP370][] interessiert sind, werden
   gebeten, auf die Frage oder den entsprechenden Mailinglisten-Beitrag zu antworten.
 
-- [Im Bitcoin-Genesisblock, welche Teile können beliebig belegt werden?](../../en/newsletters/{{bse}}125274)
+- [Im Bitcoin-Genesisblock, welche Teile können beliebig belegt werden?]({{bse}}125274)
   Pieter Wuille weist darauf hin, dass keines der Felder des [Genesis-Blocks][mempool genesis block]
   den üblichen Blockvalidierungsregeln unterliegt. Er erklärt: "Buchstäblich alle könnten
   jeglichen Inhalt enthalten haben. Dort, wo es möglich war, wurde es wie ein normaler Block
   gestaltet – es hätte aber auch anders sein können."
 
-- [Erkennung von Lightning-Force-Close](../../en/newsletters/{{bse}}122504)
+- [Erkennung von Lightning-Force-Close]({{bse}}122504)
   Sanket1729 und Antoine Poinsot diskutieren, wie der [Block-Explorer][topic block explorers] von
   mempool.space die Felder [`nLockTime`][topic timelocks] und `nSequence` verwendet, um
   festzustellen, ob eine Transaktion eine Lightning force close Transaktion ist.
 
-- [Ist eine segwit-formatierte Transaktion mit allen Eingaben vom Typ „Nicht-Witness-Programm" gültig?](../../en/newsletters/{{bse}}125240)
+- [Ist eine segwit-formatierte Transaktion mit allen Eingaben vom Typ „Nicht-Witness-Programm" gültig?]({{bse}}125240)
   Pieter Wuille unterscheidet zwischen [BIP141][], das die Struktur und Gültigkeit im Zusammenhang mit den Segwit-Konsensänderungen und der Berechnung von wtxids bestimmt, und [BIP144][], welches das Serialisierungsformat für die Übertragung von Segwit-Transaktionen definiert.
 
-- [P2TR-Sicherheitsfrage](../../en/newsletters/{{bse}}125334)
+- [P2TR-Sicherheitsfrage]({{bse}}125334)
   Pieter Wuille zitiert aus [BIP341][], das [Taproot][topic taproot] spezifiziert, um zu
   erklären, warum ein öffentlicher Schlüssel direkt in einer Ausgabe enthalten ist, und geht auf
   damit verbundene Überlegungen zum Thema Quantencomputing ein.
 
-- [Was genau wird heute unternommen, um Bitcoin quantensicher zu machen?](../../en/newsletters/{{bse}}125171)
+- [Was genau wird heute unternommen, um Bitcoin quantensicher zu machen?]({{bse}}125171)
   Murch kommentiert den aktuellen Stand der quantentechnologischen Fähigkeiten, kürzlich
   eingeführte [post-quantum Signaturschemata][topic quantum resistance] und den vorgeschlagenen
   [QuBit – Pay to Quantum Resistant Hash][BIPs #1670]-BIP.
 
-- [Welche schädlichen Auswirkungen hat eine kürzere Inter-Block-Zeit?](../../en/newsletters/{{bse}}125318)
+- [Welche schädlichen Auswirkungen hat eine kürzere Inter-Block-Zeit?]({{bse}}125318)
   Pieter Wuille hebt den Vorteil hervor, den ein Miner aufgrund der Blockpropagation erlangt,
   kurz nachdem er einen Block gefunden hat, wie dieser Vorteil bei kürzeren Blockzeiten verstärkt
   wird und welche potenziellen Auswirkungen daraus resultieren können.
 
-- [Kann Proof-of-Work eingesetzt werden, um Richtlinienregeln zu ersetzen?](../../en/newsletters/{{bse}}124931)
+- [Kann Proof-of-Work eingesetzt werden, um Richtlinienregeln zu ersetzen?]({{bse}}124931)
   Jgmontoya fragt sich, ob das Anhängen von Proof-of-Work an nicht-standardmäßige Transaktionen
   ähnliche Ziele des [Schutzes von Node-Ressourcen][policy series] erreichen könnte wie die
   Mempool-Policy. Antoine Poinsot weist darauf hin, dass die Mempool-Policy neben dem Schutz der
@@ -166,17 +166,17 @@ bestbewerteten Fragen und Antworten hervor, die seit unserem letzten Update gepo
   Blocktemplates, das Abschrecken bestimmter Transaktionstypen und den Schutz von Upgrade-Hooks
   bei [Soft Forks][topic soft fork activation].
 
-- [Wie funktioniert MuSig in realen Bitcoin-Szenarien?](../../en/newsletters/{{bse}}125030)
+- [Wie funktioniert MuSig in realen Bitcoin-Szenarien?]({{bse}}125030)
   Pieter Wuille erläutert die Unterschiede zwischen den [MuSig][topic musig]-Versionen, hebt die
   Interactive Aggregated Signature (IAS)-Variante von MuSig1 und deren Zusammenspiel mit der
   [Cross-Input-Signaturaggregation (CISA)][topic cisa] hervor und erwähnt [Threshold Signatures][topic threshold signature],
   bevor er detailliertere Fragen zu den Spezifikationen beantwortet.
 
-- [Wie funktioniert der -blocksxor-Schalter, der die blocks.dat-Dateien verschleiert?](../../en/newsletters/{{bse}}125055)
+- [Wie funktioniert der -blocksxor-Schalter, der die blocks.dat-Dateien verschleiert?]({{bse}}125055)
   Vojtěch Strnad beschreibt die `-blocksxor`-Option zum Verschleiern der Bitcoin Core
   Blockdaten-Dateien auf der Festplatte (siehe [Newsletter #316][news316 xor]).
 
-- [Wie funktioniert der Related-Key-Angriff auf Schnorr-Signaturen?](../../en/newsletters/{{bse}}125328)
+- [Wie funktioniert der Related-Key-Angriff auf Schnorr-Signaturen?]({{bse}}125328)
   Pieter Wuille erklärt, dass „der Angriff anwendbar ist, wenn das Opfer einen verwandten
   Schlüssel auswählt und der Angreifer die Beziehung kennt" und dass verwandte Schlüssel äußerst
   verbreitet sind.
