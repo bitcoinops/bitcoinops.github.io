@@ -19,8 +19,8 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
 
 - **Sicherheitslücke in der LDK-HTLC-Abwicklung:**
   Matt Morehouse hat auf Delving Bitcoin einen Beitrag [veröffentlicht][morehouse ldkclaim], in dem
-  er eine Schwachstelle in LDK aufdeckte – eine Schwachstelle, die er [verantwortungsvoll
-  offengelegt][topic responsible disclosures] hat und die in LDK Version 0.1 behoben wurde.
+  er eine Schwachstelle in LDK aufdeckte – eine Schwachstelle, die er
+  [verantwortungsvoll offengelegt][topic responsible disclosures] hat und die in LDK Version 0.1 behoben wurde.
 
   Wenn ein Kanal einseitig geschlossen wird und dabei mehrere ausstehende [HTLCs][topic htlc]
   vorhanden sind, versucht LDK, möglichst viele HTLCs in einer einzigen Sammeltransaktion
@@ -44,8 +44,8 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
   dieses Problem behoben werden kann, indem man „auf LDK Version 0.1 aktualisiert und die Abfolge
   der Commitment- und HTLC-Transaktionen, die zur Blockade geführt haben, erneut abspielt."
 
-  Der Release-Kandidat LDK 0.1-beta änderte jedoch seine Logik (siehe [Newsletter #335][news335
-  ldk3340]) und begann damit, alle Arten von HTLCs zusammenzufassen, wodurch ein Angreifer in die
+  Der Release-Kandidat LDK 0.1-beta änderte jedoch seine Logik (siehe [Newsletter #335][news335 ldk3340])
+  und begann damit, alle Arten von HTLCs zusammenzufassen, wodurch ein Angreifer in die
   Lage versetzt würde, einen Konflikt mit einem HTLC, der einem Timelock unterliegt, zu erzeugen.
   Bleibt die Auflösung dieses HTLCs auch nach Ablauf des Timelocks blockiert, wäre ein Diebstahl
   möglich. Ein Upgrade auf die Release-Version von LDK 0.1 behebt auch diese Art der Schwachstelle.
@@ -54,9 +54,9 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
   Schwachstellen, die aus derselben Grundursache resultieren, zu verhindern.
 
 - **Angriffe durch Replacement Cycling mit Ausnutzung von Minern:**
-  Antoine Riard hat auf der Bitcoin-Dev-Mailingliste einen Beitrag [veröffentlicht][riard
-  minecycle], um eine weitere Schwachstelle offenzulegen, die mit dem [Replacement
-  Cycling][topic replacement cycling] Angriff möglich ist – einem Angriff, den er ursprünglich
+  Antoine Riard hat auf der Bitcoin-Dev-Mailingliste einen Beitrag [veröffentlicht][riard minecycle],
+  um eine weitere Schwachstelle offenzulegen, die mit dem [Replacement Cycling][topic replacement cycling]
+  Angriff möglich ist – einem Angriff, den er ursprünglich
   2023 öffentlich bekannt machte (siehe [Newsletter #274][news274 cycle]).
 
   Kurz zusammengefasst:
@@ -131,8 +131,8 @@ bestbewerteten Fragen und Antworten hervor, die seit unserem letzten Update gepo
   gebeten, auf die Frage oder den entsprechenden Mailinglisten-Beitrag zu antworten.
 
 - [Im Bitcoin-Genesisblock, welche Teile können beliebig belegt werden?](../../en/newsletters/{{bse}}125274)
-  Pieter Wuille weist darauf hin, dass keines der Felder des [Genesis-Blocks][mempool genesis
-  block] den üblichen Blockvalidierungsregeln unterliegt. Er erklärt: "Buchstäblich alle könnten
+  Pieter Wuille weist darauf hin, dass keines der Felder des [Genesis-Blocks][mempool genesis block]
+  den üblichen Blockvalidierungsregeln unterliegt. Er erklärt: "Buchstäblich alle könnten
   jeglichen Inhalt enthalten haben. Dort, wo es möglich war, wurde es wie ein normaler Block
   gestaltet – es hätte aber auch anders sein können."
 
@@ -141,8 +141,7 @@ bestbewerteten Fragen und Antworten hervor, die seit unserem letzten Update gepo
   mempool.space die Felder [`nLockTime`][topic timelocks] und `nSequence` verwendet, um
   festzustellen, ob eine Transaktion eine Lightning force close Transaktion ist.
 
-- [Ist eine segwit-formatierte Transaktion mit allen Eingaben vom Typ
-  „Nicht-Witness-Programm" gültig?](../../en/newsletters/{{bse}}125240)
+- [Ist eine segwit-formatierte Transaktion mit allen Eingaben vom Typ „Nicht-Witness-Programm" gültig?](../../en/newsletters/{{bse}}125240)
   Pieter Wuille unterscheidet zwischen [BIP141][], das die Struktur und Gültigkeit im
   Zusammenhang mit den Segwit-Konsensänderungen und der Berechnung von wtxids festlegt, und
   [BIP144][], das das Serialisierungsformat für die Übertragung von Segwit-Transaktionen
@@ -174,12 +173,10 @@ bestbewerteten Fragen und Antworten hervor, die seit unserem letzten Update gepo
 - [Wie funktioniert MuSig in realen Bitcoin-Szenarien?](../../en/newsletters/{{bse}}125030)
   Pieter Wuille erläutert die Unterschiede zwischen den [MuSig][topic musig]-Versionen, hebt die
   Interactive Aggregated Signature (IAS)-Variante von MuSig1 und deren Zusammenspiel mit der
-  [Cross-Input-Signaturaggregation (CISA)][topic cisa] hervor und erwähnt [Threshold
-  Signatures][topic threshold signature], bevor er detailliertere Fragen zu den Spezifikationen
-  beantwortet.
+  [Cross-Input-Signaturaggregation (CISA)][topic cisa] hervor und erwähnt [Threshold Signatures][topic threshold signature],
+  bevor er detailliertere Fragen zu den Spezifikationen beantwortet.
 
-- [Wie funktioniert der -blocksxor-Schalter, der die blocks.dat-Dateien
-  verschleiert?](../../en/newsletters/{{bse}}125055)
+- [Wie funktioniert der -blocksxor-Schalter, der die blocks.dat-Dateien verschleiert?](../../en/newsletters/{{bse}}125055)
   Vojtěch Strnad beschreibt die `-blocksxor`-Option zum Verschleiern der Bitcoin Core
   Blockdaten-Dateien auf der Festplatte (siehe [Newsletter #316][news316 xor]).
 
@@ -198,19 +195,19 @@ helfen._
   LN-fähigen Anwendungen. Ein Angreifer, der bereit ist, mindestens 1 % der Kanalgelder zu
   opfern, könnte das Opfer dazu verleiten, andere, nicht damit zusammenhängende Kanäle zu
   schließen, was dazu führen könnte, dass das Opfer unnötig Transaktionsgebühren zahlt. Matt
-  Morehouse, der die Schwachstelle entdeckt hat, [hat darüber bei Delving Bitcoin
-  berichtet][morehouse ldk-dos]; Optech wird in der nächsten Ausgabe des Newsletters eine
-  detailliertere Zusammenfassung liefern. Das Release beinhaltet außerdem API-Updates und
-  Fehlerbehebungen.
+  Morehouse, der die Schwachstelle entdeckt hat,
+  [hat darüber bei Delving Bitcoin berichtet][morehouse ldk-dos];
+  Optech wird in der nächsten Ausgabe des Newsletters eine detailliertere Zusammenfassung
+  liefern. Das Release beinhaltet außerdem API-Updates und Fehlerbehebungen.
 
 ## Wesentliche Änderungen im Code und in der Dokumentation
 
-_Wichtige aktuelle Änderungen in [Bitcoin Core][bitcoin core repo], [Core Lightning][core
-lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1
-repo], [Hardware Wallet Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
-Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo],
-[Lightning BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin
-inquisition repo] und [BINANAs][binana repo]._
+_Wichtige aktuelle Änderungen in [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning repo],
+[Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1 repo],
+[Hardware Wallet Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay Server][btcpay server repo],
+[BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo],
+[Lightning BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo] und
+[BINANAs][binana repo]._
 
 - [Bitcoin Core #31376][] erweitert eine Prüfung, die verhindert, dass Miner Blockvorlagen
   erstellen, welche den [Timewarp][topic time warp]-Fehler ausnutzen – und zwar für alle
@@ -226,8 +223,8 @@ inquisition repo] und [BINANAs][binana repo]._
   Änderungen sind nützlich für die Implementierung von [Stratum V2][topic pooled mining].
 
 - [Bitcoin Core #31590][] überarbeitet die Methode `GetPrivKey()`, sodass beim Abrufen privater
-  Schlüssel für einen [x-only-Pubkey][topic x-only public keys] in einem [Descriptor][topic
-  descriptors] beide möglichen Werte des Paritätsbits überprüft werden. Zuvor konnte, wenn der
+  Schlüssel für einen [x-only-Pubkey][topic x-only public keys] in einem [Descriptor][topic descriptors]
+  beide möglichen Werte des Paritätsbits überprüft werden. Zuvor konnte, wenn der
   gespeicherte Pubkey nicht das korrekte Paritätsbit aufwies, der private Schlüssel nicht
   abgerufen werden, und Transaktionen konnten nicht signiert werden.
 
