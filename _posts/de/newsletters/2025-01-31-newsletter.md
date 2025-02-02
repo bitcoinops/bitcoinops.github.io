@@ -17,7 +17,7 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
 
 ## News
 
-- **Sicherheitslücke in der LDK-HTLC-Abwicklung:**
+- **Sicherheitslücke in der LDK-HTLC-Abwicklung:**  
   Matt Morehouse hat auf Delving Bitcoin einen Beitrag [veröffentlicht][morehouse ldkclaim], in dem
   er eine Schwachstelle in LDK aufdeckte – eine Schwachstelle, die er
   [verantwortungsvoll offengelegt][topic responsible disclosures] hat und die in LDK Version 0.1 behoben wurde.
@@ -26,11 +26,10 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
   vorhanden sind, versucht LDK, möglichst viele HTLCs in einer einzigen Sammeltransaktion
   abzuwickeln, um Transaktionsgebühren zu sparen. Sollte allerdings die Gegenpartei in der Lage
   sein, einen der zusammengefassten HTLCs zuerst zu bestätigen, führt dies zu einem _Konflikt_ mit
-  der Sammeltransaktion und macht diese ungültig. In diesem Fall erstellt LDK korrekt eine
-  aktualisierte Sammeltransaktion, in der der Konflikt entfernt wurde. Unglücklicherweise
-  aktualisiert LDK, falls die Transaktion der Gegenpartei mit mehreren separaten
-  Sammeltransaktionen in Konflikt steht, fälschlicherweise nur die erste, sodass die übrigen nicht
-  bestätigt werden können.
+  der Sammeltransaktion und macht diese ungültig. LDK erstellt in diesem Fall korrekt eine neue
+  Sammeltransaktion, die den Konflikt behebt. Leider aktualisiert LDK – sofern die Transaktion der
+  Gegenpartei mit mehreren separaten Sammeltransaktionen kollidiert – fälschlicherweise nur die erste,
+  sodass die restlichen Transaktionen nicht bestätigt werden können.
 
   Die Knoten müssen ihre HTLCs vor Ablauf einer festgelegten Frist abwickeln, da die Gegenpartei
   sonst in der Lage ist, die Gelder zurückzuholen. Ein [Timelock][topic timelocks] verhindert,
@@ -53,14 +52,14 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
   Morehouses Beitrag liefert weitere Details und diskutiert mögliche Ansätze, um zukünftige
   Schwachstellen, die aus derselben Grundursache resultieren, zu verhindern.
 
-- **Angriffe durch Replacement Cycling mit Ausnutzung von Minern:**
+- **Angriffe durch Replacement Cycling mit Ausnutzung von Minern:**  
   Antoine Riard hat auf der Bitcoin-Dev-Mailingliste einen Beitrag [veröffentlicht][riard minecycle],
   um eine weitere Schwachstelle offenzulegen, die mit dem [Replacement Cycling][topic replacement cycling]
   Angriff möglich ist – einem Angriff, den er ursprünglich
   2023 öffentlich bekannt machte (siehe [Newsletter #274][news274 cycle]).
 
   Kurz zusammengefasst:
-
+  
   1. Bob sendet eine Transaktion, in der er an Mallory (und möglicherweise an weitere Empfänger)
      zahlt.
 
@@ -88,7 +87,7 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
   regelmäßig ausnutzen, gehen wir davon aus, dass sein Verhalten von Community-Mitgliedern, die
   [Block-Monitoring-Tools][miningpool.observer] entwickeln und einsetzen, erkannt wird.
 
-- **Aktualisierte Statistiken zur Kompaktblock-Rekonstruktion:**
+- **Aktualisierte Statistiken zur Kompaktblock-Rekonstruktion:**  
   Auf einen vorherigen Thread (siehe [Newsletter #315][news315 cb]) folgend, hat Entwickler 0xB10C
   in einem Beitrag an Delving Bitcoin aktualisierte Statistiken darüber veröffentlicht, wie häufig
   seine Bitcoin Core-Knoten zusätzliche Transaktionen anfordern müssen, um die
@@ -142,10 +141,7 @@ bestbewerteten Fragen und Antworten hervor, die seit unserem letzten Update gepo
   festzustellen, ob eine Transaktion eine Lightning force close Transaktion ist.
 
 - [Ist eine segwit-formatierte Transaktion mit allen Eingaben vom Typ „Nicht-Witness-Programm" gültig?](../../en/newsletters/{{bse}}125240)
-  Pieter Wuille unterscheidet zwischen [BIP141][], das die Struktur und Gültigkeit im
-  Zusammenhang mit den Segwit-Konsensänderungen und der Berechnung von wtxids festlegt, und
-  [BIP144][], das das Serialisierungsformat für die Übertragung von Segwit-Transaktionen
-  definiert.
+  Pieter Wuille unterscheidet zwischen [BIP141][], das die Struktur und Gültigkeit im Zusammenhang mit den Segwit-Konsensänderungen und der Berechnung von wtxids bestimmt, und [BIP144][], welches das Serialisierungsformat für die Übertragung von Segwit-Transaktionen definiert.
 
 - [P2TR-Sicherheitsfrage](../../en/newsletters/{{bse}}125334)
   Pieter Wuille zitiert aus [BIP341][], das [Taproot][topic taproot] spezifiziert, um zu
