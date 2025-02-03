@@ -85,7 +85,7 @@ Bitcoin-Infrastruktursoftware beschrieben werden.
   spezielle, möglicherweise seltene Umstände voraus und kann dazu führen, dass ein Angreifer Geld
   verliert, wenn er die Netzbedingungen falsch einschätzt. Sollte ein Angreifer die Schwachstelle
   regelmäßig ausnutzen, gehen wir davon aus, dass sein Verhalten von Community-Mitgliedern, die
-  [Block-Monitoring-Tools][miningpool.observer] entwickeln und einsetzen, erkannt wird.
+  [Block-Monitoring-Tools][miningpool.observer] entwickeln und einsetzen, bemerkt wird.
 
 - **Aktualisierte Statistiken zur Kompaktblock-Rekonstruktion:**
   Auf einen vorherigen Thread (siehe [Newsletter #315][news315 cb]) folgend, hat Entwickler 0xB10C
