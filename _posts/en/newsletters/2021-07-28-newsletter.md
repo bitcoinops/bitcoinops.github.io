@@ -196,7 +196,7 @@ is about 4x.  We thank Amiti Uttarwar for reporting this error.
 [news155 tr psbts]: /en/newsletters/2021/06/30/#psbt-extensions-for-taproot
 [zmn liquidity providers]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
 [lightning pool]: https://lightning.engineering/posts/2020-11-02-pool-deep-dive/
-[compat matrix]: /en/compatibility/
+[compat matrix]: /en/matrix/
 [news158 taproot]: /en/newsletters/2021/07/21/#preparing-for-taproot-5-why-are-we-waiting
 [0xB10C blog]: https://b10c.me/blog/007-spending-p2tr-pre-activation/
 [bip341 deployment]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment
