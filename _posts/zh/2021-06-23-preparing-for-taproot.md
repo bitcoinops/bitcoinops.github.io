@@ -55,9 +55,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 通过使用学习 Taproot
 
-*最初发表于 [Newsletter #159](/en/newsletters/2021/07/28/#preparing-for-taproot-6-learn-taproot-by-using-it)*
+*最初发表于 [Newsletter #159](/zh/newsletters/2021/07/28/#准备-taproot-6通过使用学习-taproot)*
 
-{% include specials/taproot/en/05-taproot-notebooks.md %}
+{% include specials/taproot/zh/05-taproot-notebooks.md %}
 
 ## 多签概述
 
