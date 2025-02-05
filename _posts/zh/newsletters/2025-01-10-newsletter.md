@@ -9,9 +9,9 @@ lang: zh
 ---
 本周的周报描述了一个可能影响矿工的 Bitcoin Core 变更，总结了关于创建合约级相对时间锁（relative timelocks）的讨论，讨论了一个带有可选惩罚机制的 LN-Symmetry 变体提案。此外，还包括我们的常规部分：新版本和候选版本的公告、以及对热门比特币基础设施项目的重大变更介绍。
 
-## News
+## 新闻
 
-- **<!--investigating-pool-behavior-before-before-a-bitcoin-core-bug-->在修复 Bitcoin Core 漏洞前调查矿池行为：**
+- **<!--investigating-pool-behavior-before-before-a-bitcoin-core-bug-->****在修复 Bitcoin Core 漏洞前调查矿池行为：**
   Abubakar Sadiq Ismail 在 Delving Bitcoin [发布了][ismail double]一篇关于 2021 年由 Antoine Riard 发现的[漏洞][bitcoin core #21950]的帖子。该漏洞会导致节点在区块模板中为 coinbase 交易保留 2000 vbytes，而非预期的 1000 vbytes。如果取消这种双倍保留，大约可以多包含五笔小交易。然而，这可能导致依赖双倍保留的矿工生成无效区块，从而造成大量收入损失。Ismail 分析了过去的区块，以确定哪些矿池可能存在风险。他指出 Ocean.xyz、F2Pool 和一个未知的矿工显然正在使用非默认设置，尽管如果漏洞得到修复，这些矿工似乎都没有亏损的风险。
 
   然而，为了将风险降至最低，目前建议引入一个新的启动选项，默认情况下仍为 coinbase 交易保留 2000 vbytes。对于不需要向后兼容性的矿工，可以轻松将保留值减少到 1000 vbytes（或者更少，如果他们的需求更低）。
@@ -22,9 +22,9 @@ lang: zh
 
   Sanders 建议使用相对时间锁定来解决这个问题，该时间锁定将适用于结算合同所需的所有交易。如果 LN-Symmetry 具有这样的功能，而 Alice 确认了倒数第二个状态，Bob 将需要在倒数第二个状态的截止日期之前确认最新状态。在[后续帖子][sanders tpp]中，Sanders 链接到 John Law 的一个通道协议(见[周报#244][news244 tpp])，该协议使用两个交易级别的相对时间锁来提供合约级别的相对时间锁，而无需共识变更。然而，这对 LN-Symmetry 无法奏效，因为 LN-Symmetry 允许每个状态从任何先前状态进行花费。
 
-  Sanders 描绘了一种解决方案，但指出它存在缺点。他还提到可以通过 Chia 的 `coinid` 功能解决该问题，这与 John Law 在 2021 年提出的“继承标识符（Inherited Identifiers，IIDs）”的想法类似。Jeremy Rubin [回复了][rubin muon]一条链接，提到他去年提出的_muon_输出提案，该提案要求创建它们的交易和消费它们的交易必须在同一块中完成，并展示了这些输出如何有助于解决问题。Sanders 提到，并由 Anthony Towns [扩展了][towns coinid]关于 Chia 区块链中 `coinid` 功能的讨论，展示了它如何将所需数据减少到恒定数量。Salvatore Ingala [发布了][ingala cat]一种使用 [OP_CAT][topic op_cat] 的类似机制，他从开发者 Rijndael 那里了解到，后者后来[提供了详细信息][rijndael cat]。Brandon Black [ 描述了][black penalty]一种替代方案：一种基于惩罚的 LN-Symmetry 变体，并引用了 Daniel Roberts 的相关工作(见下一个新闻项目)。
+  Sanders 描绘了一种解决方案，但指出它存在缺点。他还提到可以通过 Chia 的 `coinid` 功能解决该问题，这与 John Law 在 2021 年提出的“继承标识符（Inherited Identifiers，IIDs）”的想法类似。Jeremy Rubin [回复了][rubin muon]一条链接，提到他去年提出的_muon_输出提案，该提案要求创建它们的交易和消费它们的交易必须在同一块中完成，并展示了这些输出如何有助于解决问题。Sanders 提到，并由 Anthony Towns [扩展了][towns coinid]关于 Chia 区块链中 `coinid` 功能的讨论，展示了它如何将所需数据减少到恒定数量。Salvatore Ingala [发布了][ingala cat]一种使用 [OP_CAT][topic op_cat] 的类似机制，他从开发者 Rijndael 那里了解到，后者后来[提供了详细信息][rijndael cat]。Brandon Black [描述了][black penalty]一种替代方案：一种基于惩罚的 LN-Symmetry 变体，并引用了 Daniel Roberts 的相关工作(见下一个新闻项目)。
 
-- **<!--multiparty-ln-symmetry-variant-with-penalties-for-limiting-published-update-->带有惩罚机制的多方 LN-Symmetry 变体：限制已发布的更新：**
+- **<!--multiparty-ln-symmetry-variant-with-penalties-for-limiting-published-update-->****带有惩罚机制的多方 LN-Symmetry 变体：限制已发布的更新：**
   Daniel Roberts 在 Delving Bitcoin 上[发布了][roberts sympen]一篇帖子，讨论如何防止恶意的通道对手方(Mallory)通过故意以比诚实对手方(Bob)更高的用来支付最终状态的费率广播旧状态来延迟通道结算的行为。理论上，Bob 可以将其最终状态重新绑定到 Mallory 的旧状态，并且这两个交易可能在同一区块中确认，从而导致 Mallory 因支付费用而损失金钱，而 Bob 则以他已经愿意支付的相同费用确认最终状态。然而，如果 Mallory 能够反复阻止 Bob 在她的旧状态广播被确认之前获知这一行为，她可以阻止他做出反应，直到通道中的 [HTLC][topic htlc] 到期并使 Mallory 能够窃取资金。
 
   Roberts 提出了一个方案，允许通道参与者仅确认一个状态。如果之前的状态被确认，则提交最终状态的参与者以及未提交任何状态的参与者可以没收任何提交了过时旧状态的参与者的资金。
