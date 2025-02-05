@@ -23,11 +23,16 @@ lang: zh
 
 - **<!--correction-about-offchain-dlcs-->** **关于链下 DLC 的勘误**：在[上周新闻部分][news337 dlc]对链下 DLC 的介绍中，我们混淆了由开发者 conduition 提出的[新方案][conduition factories]，与此前已经发布并得到实现的链下 DLC（谨慎日志合约）方案。它们有以下重大且有趣的区别：
 
-  - 周报 [#174][news174 channels] 和 [LN-Penalty][topic ln-penalty] 所提到的 *DLC 通道* 协议使用了一种类似于 [LN-Penalty][topic ln-penalty] 的 “先承诺后撤销（commit-and-revoke）” 机制：各参与者先通过签名来 *承诺* 一个新状态，然后通过释放一个秘密值、允许对手方从本地私有的旧状态（如果真的被发布上链）中完全花费来 *撤销* 旧状态。这让一个 DLC 可以通过双方的交互来刷新。比如说，Alice 和 Bob 可以这样做：
+  * 周报 [#174][news174 channels] 和 [LN-Penalty][topic ln-penalty] 所提到的 *DLC 通道* 协议使用了一种类似于 [LN-Penalty][topic ln-penalty] 的 “先承诺后撤销（commit-and-revoke）” 机制：各参与者先通过签名来 *承诺* 一个新状态，然后通过释放一个秘密值、允许对手方从本地私有的旧状态（如果真的被发布上链）中完全花费来 *撤销* 旧状态。这让一个 DLC 可以通过双方的交互来刷新。比如说，Alice 和 Bob 可以这样做：
+
     1. 立即启动一个打赌一个月后 BTCUSD 价格的 DLC；
+
     2. 在三周后，同意启动一个打赌两个月后 BTCUSD 价格的 DLC，并撤销前一个合约。
-  - 而新的 *DLC 工厂* 协议则会在合约到期时自动撤销双方在链上发布状态的能力，因为合约的任何断言机（oracle）见证，都可以作为秘密值，让一方的私有状态（如果被发布上链）被对方完全花费。实际上，这就自动取消了旧状态，让工厂从建立之始就可以签名连续的 DLC，无需任何额外的交互。比如说，Alice 和 Bob 可以这样做：
+
+  * 而新的 *DLC 工厂* 协议则会在合约到期时自动撤销双方在链上发布状态的能力，因为合约的任何断言机（oracle）见证，都可以作为秘密值，让一方的私有状态（如果被发布上链）被对方完全花费。实际上，这就自动取消了旧状态，让工厂从建立之始就可以签名连续的 DLC，无需任何额外的交互。比如说，Alice 和 Bob 可以这样做：
+
     1. 立即开启一个打赌一个月后 BTCUSD 价格的 DLC；
+
     2. 同时立即开启一个打赌两个月后 BTCUSD 价格的 DLC，使用一个交易[时间锁][topic timelocks]来防止它在一个月内发布。他们还可以重复这一技巧，从而建立三个月后、四个月后 …… 到期的合约。
 
   在 DLC 通道协议中，Alice 和 Bob 不能同时创建两个合约：必须在准备好撤销第一个合约之后，才能创建第二个合约，这就需要在某个时间发生交互。而在 DLC 工厂协议中，所有合约都可以在工厂建立时就创建，而且不需要额外的交互；不过，任何一方都依然可以将最新的 “安全可发布” 交易版本发布到链上，从而中断这一系列的合约。
@@ -41,16 +46,27 @@ lang: zh
 *在这个月度栏目中，我们会突出比特币钱包和服务的有趣更新。*
 
 - **<!--bull-bitcoin-mobile-wallet-adds-payjoin-->** **Bull Bitcoin 移动钱包添加 payjoin 特性**：Bull Bitcoin [宣布][bull bitcoin blog]在发送和收款时支持由[提议中][BIPs #1483]的 BIP77 Payjoin Version2：免服务器的 Payjoin 规范定义的 “[payjoin][topic payjoin]” 功能。
+
 - **<!--bitcoin-keeper-adds-miniscript-support-->** **Bitcoin Keeper 添加 miniscript 支持**：Bitcoin Keeper [宣布][bitcoin keeper twitter] 在 [v1.3.0 版本][bitcoin keeper v1.3.0] 中支持 “[miniscript][topic miniscript]” 。
+
 - **<!--nunchuk-adds-taproot-musig2-features-->** **Nunchuk 添加 taproot MuSig2 特性**：Nunchuk [宣布][nunchuk blog] 实验性支持 [MuSig2][topic musig]：可在 [taproot][topic taproot] 密钥路径中使用[多重签名][topic multisignature]花费，同时使用一棵 MuSig2 脚本路径脚本树，从而激活 k-of-n 的[门限签名][topic threshold signature]花费。
+
 - **<!--jade-plus-signing-device-announced-->** **Jade Plus 签名设备发布**：[Jade Plus][blockstream blog] 签名设备加入了%#%#以及空气隔离（air-gapped）功能，还有别的特性。
+
 - **<!--coinswap-v010-released-->** **Coinswap v0.1.0 发布**：[Coinswap v0.1.0][coinswap v0.1.0] 是一个测试版软件，建立在形式化的 [coinswap][topic coinswap] 协议%43%#之上，支持 [testnet4][topic testnet]，还包含了跟这个协议交互的命令行应用。
+
 - **<!--bitcoin-safe-100-released-->** **Bitcoin Safe 1.0.0 发布**：[Bitcoin Safe][bitcoin safe website] 桌面钱包应用 [1.0.0 版本][bitcoin safe 1.0.0]，支持多种硬件签名设备。
+
 - **<!--bitcoin-core-280-policy-demonstration-->** **Bitcoin Core 28.0 交易池规则演示**：Super Testnet [发布][zero fee sn] 了一个名为 “[零费率交易游乐园][zero fee website]” 的网站，解释来自 Bitcoin Core 28.0 的[交易池规则则行][28.0 guide]。
+
 - **<!--rustpayjoin-0210-released-->** **Rust-payjoin 0.21.0 发布**：[rust-payjoin 0.21.0][rust-payjoin 0.21.0] 版本加入了 “交易提炼（[transaction cut-through][]）” 功能（详情听 [Podcast #282][pod282 payjoin]）。
+
 - **<!--peerswap-v40rc1-->** **PeerSwap v4.0rc1**：闪电通道流动性软件 PeerSwap 发布了 [v4.0rc1][peerswap v4.0rc1]，包含了协议升级。[PeerSwap FAQ][peerswap faq] 页面概述了 PeerSwap 如何不同于 “[潜水艇互换][topic submarine swaps]”、“[通道拼接][topic splicing]” 和 “[流动性广告][topic liquidity advertisements]”。
+
 - **<!--joinpool-prototype-using-ctv-->** **使用 CTV 的 Joinpool 原型**：这个 “[ctv payment pool][ctv payment pool github]” 概念验证项目使用了提议中的 [OP_CHECKTEMPLATEVERIFY (CTV)][topic op_checktemplateverify] 操作嘛来创建一种 [joinpool][topic joinpools] 。
+
 - **<!--rust-joinstr-library-announced-->Rust joinstr 库发布**：这个实验性的 [rust 库][rust joinstr github] 实现了 joinstr [coinjoin][topic coinjoin] 协议。
+
 - **<!--strata-bridge-announced-->** **Strata bridge 发布**：[Strata bridge][strata blog] 是一个基于 [BitVM2][topic acc] 的桥，可以在比特币主链和[侧链][topic sidechains]（在这个案例中是一个 validity roolup，详见 [周报 #222][news222 validity rollups]）间来回移动比特币。
 
 ## 新版本和候选版本
@@ -64,8 +80,11 @@ lang: zh
 *重大更新出现在：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs][blips repo]、[Bitcoin Inquisition][bitcoin inquisition repo] 和 [BINANAs][binana repo]*。
 
 - [Bitcoin Core #31397][] 通过跟踪和使用所有可以提供缺失父交易的潜在对等节点，优化[孤儿交易确定程序][news333 prclub]。以往，这个确定程序仅依赖于最初提供孤儿交易的对等节点；如果该对等节点不响应或返回一个 `notfound` 消息，程序是没有重试机制的，导致可能的交易下载失败。新方法尝试从所有候选的对等节点处下载父交易，同时保持带宽效率、抗审查性以及实质的负载均衡。这对 “一父一子（1p1c）”[交易宝转发][topic package relay]尤其有好处，并且为 [BIP331][] 的 “接受方发起的祖先交易宝转发” 奠定了基础。
+
 - [Eclair #2896][] 启用了 [MuSig2][topic musig] 的对等节点碎片签名存储，而不是传统的 2-of-2 多签名的存储，作为未来实现 “[简单 taproot 通道][topic simple taproot channels]” 的前置。存储该碎片签名允许一个节点在需要时单方面广播一笔承诺交易。
+
 - [LDK #3408][] 引入了在 `ChannelManager` 中创建静态发票及其对应的 [offers][topic offers] 的用法，以支持在 [BOLT12][] 中实现[异步支付][topic async payments]，如 [BOLTs #1149][] 的规定。常规的 offer 创建用法要求接收者在线以服务发票请求，这种新方法则适合经常离线的接收者。这项 PR 也为给静态发票支付（详见周报 [#321][news321 async]）添加了缺失的测试，并保证当接收者回到线上时，发票请求是可以检索的。
+
 - [LND #9405][] 让 `ProofMatureDelta` 参数变成可配置的，该参数决定 gossip 网络中的一条 [通道宣告][topic channel announcements] 在得到处理之前需要积累多少确认数量。默认数值是 6 。
 
 
@@ -80,7 +99,7 @@ lang: zh
 [news283 unspendable]: /zh/newsletters/2024/01/03/#how-to-specify-unspendable-keys-in-descriptors
 [toth unspendable delv]: https://delvingbitcoin.org/t/unspendable-keys-in-descriptors/304/31
 [toth unspendable ml]: https://mailing-list.bitcoindevs.xyz/bitcoindev/a594150d-fd61-42f5-91cd-51ea32ba2b2cn@googlegroups.com/
-[news141 psbtv2]: /en/newsletters/2021/03/24/#bips-1059
+[news141 psbtv2]: /zh/newsletters/2021/03/24/#bips-1059
 [provoost psbtv2]: https://mailing-list.bitcoindevs.xyz/bitcoindev/6FDAD97F-7C5F-474B-9EE6-82092C9073C5@sprovoost.nl/
 [bse psbtv2]: https://bitcoin.stackexchange.com/a/125393/21052
 [ingala psbtv2]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CAMhCMoGONKFok_SuZkic+T=yoWZs5eeVxtwJL6Ei=yysvA8rrg@mail.gmail.com/
@@ -108,4 +127,4 @@ lang: zh
 [ctv payment pool github]: https://github.com/stutxo/op_ctv_payment_pool
 [rust joinstr github]: https://github.com/pythcoiner/joinstr
 [strata blog]: https://www.alpenlabs.io/blog/introducing-the-strata-bridge
-[news222 validity rollups]: /en/newsletters/2022/10/19/#validity-rollups-research
+[news222 validity rollups]: /zh/newsletters/2022/10/19/#rollup
