@@ -467,15 +467,45 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #21590][] Safegcd-based modular inverses in MuHash3072
+- [Bitcoin Core #21590][] implements a safegcd-based [modular
+  inversion][modularinversion] algorithm for MuHash3072 (see Newsletters
+  [#131][news131 muhash] and [#136][news136 gcd]), based on libsecp256k1’s implementation while adding
+  support for both 32-bit and 64-bit architectures and specializing for the
+  specific modulus. Benchmark results show an approximate 100× performance
+  improvement on x86_64, reducing MuHash’s computation from 5.8 ms to 57 μs,
+  paving the way for more efficient state validation.
 
-- [Eclair #2983][] Only sync with top peers
+- [Eclair #2983][] modifies routing table synchronization on reconnection to
+  only synchronize [channel announcements][topic channel announcements] with the node's
+  top peers (determined by shared channel capacity) to
+  reduce network overhead. In addition, the default behavior of the
+  synchronization whitelist (see Newsletter [#62][news62 whitelist]) has been
+  updated: to disable synchronization with non-whitelisted peers, users must now
+  set `router.sync.peer-limit` to 0 (the default value is 5).
 
-- [Eclair #2968][] Send `channel_announcement` for splice transactions on public channels
+- [Eclair #2968][] adds support for [splicing][topic splicing] on public
+  channels. Once the splice transaction is confirmed and locked on both sides,
+  nodes exchange announcement signatures and then broadcast a
+  `channel_announcement` message to the network. Recently, Eclair added tracking
+  of third-party splices as a prerequisite for this (see Newsletter
+  [#337][news337 splicing]). This PR also disallows the use of
+  `short_channel_id` for routing on private channels, instead prioritizing
+  `scid_alias` to ensure that the channel UTXO isn't revealed.
 
-- [LDK #3556][] Fail HTLC backwards before upstream claims on-chain
+- [LDK #3556][] improves [HTLC][topic htlc] handling by proactively failing
+  HTLCs backwards if they are too close to expiration before waiting for an
+  upstream on-chain claim to confirm. Previously, a node would delay failing the
+  HTLC backwards by an additional three blocks to give the claim time to
+  confirm. However, this delay ran the risk of forcibly closing its channel. In
+  addition, the `historical_inbound_htlc_fulfills` field is removed to clean up
+  the channel state, and a new `SentHTLCId` is introduced to eliminate confusion
+  from duplicate HTLC IDs on inbound channels.
 
-- [LND #9456][] lnrpc+docs: deprecate warning `SendToRoute`, `SendToRouteSync`, `SendPayment`, and `SendPaymentSync` in Release 0.19
+- [LND #9456][] adds deprecation warnings to the `SendToRoute`,
+  `SendToRouteSync`, `SendPayment`, and `SendPaymentSync` endpoints in
+  preparation for their removal in the release after next (0.21). Users are
+  encouraged to migrate to the new v2 methods `SendToRouteV2`, `SendPaymentV2`,
+  `TrackPaymentV2`.
 
 {% include snippets/recap-ad.md when="2025-02-11 15:30" %}
 
@@ -543,3 +573,7 @@ repo], and [BINANAs][binana repo]._
 [bdk wallet 1.1.0]: https://github.com/bitcoindevkit/bdk/releases/tag/wallet-1.1.0
 [lnd v0.18.5-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.5-beta.rc1
 [ap4]: https://mailing-list.bitcoindevs.xyz/bitcoindev/jiyMlvTX8BnG71f75SqChQZxyhZDQ65kldcugeIDJVJsvK4hadCO3GT46xFc7_cUlWdmOCG0B_WIz0HAO5ZugqYTuX5qxnNLRBn3MopuATI=@protonmail.com/
+[modularinversion]: https://en.wikipedia.org/wiki/Modular_multiplicative_inverse
+[news131 muhash]: /en/newsletters/2021/01/13/#bitcoin-core-19055
+[news62 whitelist]: /en/newsletters/2019/09/04/#eclair-954
+[news337 splicing]: /en/newsletters/2025/01/17/#eclair-2936
