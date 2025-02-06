@@ -1,6 +1,6 @@
 正如[上周所述][bech32 easy]，实现 segwit 仅花费应当是容易的。然而我们怀疑一些管理者可能会想知道是否有足够多人使用 segwit 来证明他们的团队值得在此方面花费开发精力。本周，我们查看了追踪各种 segwit 采用统计数据的网站，以便你可以决定它是否足够流行，以至于你的钱包或服务如果不支持它会成为异类。
 
-Optech 在我们的[仪表盘][optech dashboard]上追踪 segwit 使用的统计数据；另一个追踪相关统计数据的网站是 [P2SH.info][]。我们看到平均每个区块大约有 200 个输出被发送到原生 segwit 地址 (bech32)。这些输出随后在大约 10% 的比特币交易中被花费。使得涉及原生 segwit 地址的支付比几乎所有的山寨币都更受欢迎。
+Optech 在我们的仪表盘上追踪 segwit 使用的统计数据；另一个追踪相关统计数据的网站是 [P2SH.info][]。我们看到平均每个区块大约有 200 个输出被发送到原生 segwit 地址 (bech32)。这些输出随后在大约 10% 的比特币交易中被花费。使得涉及原生 segwit 地址的支付比几乎所有的山寨币都更受欢迎。
 
 ![Optech 仪表盘 segwit 使用统计数据的截图](/img/posts/2019-03-segwit-usage.png)
 
@@ -13,7 +13,6 @@ Optech 在我们的[仪表盘][optech dashboard]上追踪 segwit 使用的统计
 统计数据和兼容性数据显示 segwit 已经得到了良好的支持并且经常使用，但仍有一些值得注意的迟缓者尚未提供支持。我们希望我们的活动和其他社区努力将帮助说服这些迟缓者赶上 bech32 发送支持，以便所有希望利用原生 segwit 的钱包可以在接下来的几个月中做到这一点。
 
 [bech32 easy]: /zh/newsletters/2019/03/19/#bech32-发送支持
-[optech dashboard]: https://dashboard.bitcoinops.org/
 [p2sh.info]: https://p2sh.info/
 [bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
 [when segwit]: https://whensegwit.com/

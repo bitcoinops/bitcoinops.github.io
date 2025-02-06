@@ -245,7 +245,6 @@ BRD 在替换交易上显示“失败”标签。在测试中，“失败”交�
 [announcement]: /zh/announcing-bitcoin-optech/
 [workshops]: /en/workshops/
 [newsletters]: /zh/newsletters/
-[dashboard]: https://dashboard.bitcoinops.org/
 [dashboard blog post]: /zh/dashboard-announcement/
 [scaling book]: https://github.com/bitcoinops/scaling-book
 [scaling book feebumping]: https://github.com/bitcoinops/scaling-book/blob/master/1.fee_bumping/fee_bumping.md

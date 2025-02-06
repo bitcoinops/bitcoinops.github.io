@@ -72,8 +72,7 @@ incentive issues mentioned above by requiring higher transaction fees for
 replacement transactions.
 
 ![rbf-transactions-in-2018](/img/posts/rbf-in-the-wild/rbf-transactions-in-2018.png)
-*~6% of transactions signaled opt-in RBF in 2018. Source: [Bitcoin Optech
-Dashboard](https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=1514835702976&to=1546285302976)*
+*~6% of transactions signaled opt-in RBF in 2018.*
 
 ## What was evaluated?
 
