@@ -1,0 +1,30 @@
+digraph G {
+    rankdir=LR;
+    size="6.5,25";
+
+    node [shape = "box", label = "", style = "filled", fillcolor = "black", width = 0.3, height = 0.3];
+    edge [ranksep = "3", minlen = "3", dir="back", arrowsize = "0.9", arrowhead = "vee" ];
+
+    // First generation
+    A -> {B,C,D};
+
+    // Second generation
+    B -> {E, F};
+    C -> {E, G};
+    D -> {E, F, H};
+
+    // Third generation
+    E -> I;
+    F -> I;
+    G -> I;
+    // H has no children
+
+    // Fourth generation
+    I -> {J, K};
+
+    // Fifth generation
+    J -> {L, M};
+    K -> M;
+
+    label = "Příklad blockchainu v podobě orientovaného acyklického grafu";
+}
