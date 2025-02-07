@@ -121,6 +121,9 @@ optech_mentions:
   - title: "Oracle-assisted and slashing-based pseudo-covenants"
     url: /en/newsletters/2024/12/13/#incentive-based-pseudo-covenants
 
+  - title: "Request for a covenant to fairly distribute rewards in the Braidpool decentralized mining pool"
+    url: /en/newsletters/2025/02/07/#request-for-a-covenant-design-supporting-braidpool
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

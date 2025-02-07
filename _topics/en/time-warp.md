@@ -57,6 +57,9 @@ optech_mentions:
   - title: "Bitcoin Core #31376 prevents creating block templates that exploit the timewarp bug"
     url: /en/newsletters/2025/01/31/#bitcoin-core-31376
 
+  - title: "Consensus cleanup proposal updates time warp grace period to 2 hours"
+    url: /en/newsletters/2025/02/07/#increase-timewarp-grace-period-to-2-hours
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal

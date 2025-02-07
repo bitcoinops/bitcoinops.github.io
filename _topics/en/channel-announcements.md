@@ -107,6 +107,12 @@ optech_mentions:
   - title: "Updates to the version 1.75 channel announcements proposal"
     url: /en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
 
+  - title: "Utreexo-based zero-knowledge gossip for LN channel announcements compatible with MuSig2 STCs"
+    url: /en/newsletters/2025/02/07/#zero-knowledge-gossip-for-ln-channel-announcements
+
+  - title: "Eclair #2983 only synchronizes channel announcements with the node's top peers on reconnection"
+    url: /en/newsletters/2025/02/07/#eclair-2983
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

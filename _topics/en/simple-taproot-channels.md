@@ -47,6 +47,9 @@ optech_mentions:
   - title: "Eclair #2896 enables the storage of MuSig2 partial signatures for simple taproot channels"
     url: /en/newsletters/2025/01/24/#eclair-2896
 
+  - title: "Zero-knowledge gossip for LN channel announcements compatible with MuSig2 simple taproot channels"
+    url: /en/newsletters/2025/02/07/#zero-knowledge-gossip-for-ln-channel-announcements
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

@@ -53,6 +53,9 @@ optech_mentions:
   - title: "Announcement of new Hyperion network simulator intended for eventual testing of Erlay"
     url: /en/newsletters/2024/08/02/#hyperion-network-event-simulator-for-the-bitcoin-p2p-network
 
+  - title: "Erlay update and summary of results from multiple research questions"
+    url: /en/newsletters/2025/02/07/#erlay-update
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch
