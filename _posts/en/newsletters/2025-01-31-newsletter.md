@@ -53,7 +53,7 @@ changes to popular Bitcoin infrastructure software.
 
   Morehouse's post provides additional details and discusses possible
   ways to prevent future vulnerabilities stemming from the same root
-  cause.
+  cause. {% assign timestamp="0:47" %}
 
 - **Replacement cycling attacks with miner exploitation:** Antoine Riard
   [posted][riard minecycle] to the Bitcoin-Dev mailing list to
@@ -89,7 +89,7 @@ changes to popular Bitcoin infrastructure software.
   network conditions poorly.  If an attacker did regularly
   exploit the vulnerability, we believe their behavior would be detected
   by community members who build and use [block monitoring
-  tools][miningpool.observer].
+  tools][miningpool.observer]. {% assign timestamp="17:28" %}
 
 - **Updated stats on compact block reconstruction:** following up on a
   previous thread (see [Newsletter #315][news315 cb]), developer 0xB10C
@@ -117,7 +117,7 @@ changes to popular Bitcoin infrastructure software.
   attacker can create them for free---but it might be possible to persist
   a larger number of them and other evicted transactions for a longer
   time in the extrapool.  The discussion was inconclusive at the time of
-  writing.
+  writing. {% assign timestamp="23:56" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -134,38 +134,38 @@ answers posted since our last update.*
   In addition to posting to the Bitcoin-Dev mailing list (see [Newsletter
   #338][news338 psbtv2]), Sjors Provoost posted to the Bitcoin Stack Exchange
   seeking users and potential users of [PSBTv2][topic psbt]. Optech readers
-  interested in [BIP370][] should reply to the question or mailing list post.
+  interested in [BIP370][] should reply to the question or mailing list post. {% assign timestamp="32:38" %}
 
 - [In the bitcoin's block genesis, which parts can be filled arbitrarily?]({{bse}}125274)
   Pieter Wuille points out that none of the fields of Bitcoin's [genesis block][mempool
   genesis block] are subject to the normal block validation rules saying,
   "Literally all of them could have had any content. It looks like a normal
-  block where possible, but it didn't need to".
+  block where possible, but it didn't need to". {% assign timestamp="34:41" %}
 
 - [Lightning force close detection]({{bse}}122504)
   Sanket1729 and Antoine Poinsot discuss how the mempool.space [block
   explorer][topic block explorers] uses [`nLockTime`][topic timelocks] and `nSequence` fields to determine
-  whether a transaction is a Lightning force close transaction.
+  whether a transaction is a Lightning force close transaction. {% assign timestamp="36:47" %}
 
 - [Is a segwit-formatted transaction with all inputs of non-witness program type valid?]({{bse}}125240)
   Pieter Wuille distinguishes between [BIP141][], which specifies the structure
   and validity around the segwit consensus changes and computation of wtxids, and [BIP144][], which
-  specifies the serialization format for communicating segwit transactions.
+  specifies the serialization format for communicating segwit transactions. {% assign timestamp="40:01" %}
 
 - [P2TR Security Question]({{bse}}125334)
   Pieter Wuille quotes from [BIP341][] that specifies [taproot][topic taproot]
   to explain why a public key is directly included in an output, and
-  related considerations around quantum computing.
+  related considerations around quantum computing. {% assign timestamp="41:41" %}
 
 - [What exactly is being done today to make Bitcoin "quantum-safe"?]({{bse}}125171)
   Murch comments on the current state of quantum capabilities, recent
   [post-quantum signature schemes][topic quantum resistance], and the proposed [QuBit -
-  Pay to Quantum Resistant Hash][BIPs #1670] BIP.
+  Pay to Quantum Resistant Hash][BIPs #1670] BIP. {% assign timestamp="44:27" %}
 
 - [What are the harmful effects of a shorter inter-block time?]({{bse}}125318)
   Pieter Wuille highlights the advantage conveyed, as a result of block
   propagation time, to a miner that just found a block, how that advantage is
-  magnified with shorter block times, and the potential effects of the advantage.
+  magnified with shorter block times, and the potential effects of the advantage. {% assign timestamp="47:57" %}
 
 - [Could proof-of-work be used to replace policy rules?]({{bse}}124931)
   Jgmontoya wonders if attaching proof-of-work to non-standard transactions
@@ -173,23 +173,23 @@ answers posted since our last update.*
   mempool policy. Antoine Poinsot points out that there are other goals of
   mempool policy beyond protecting node resources including efficient block
   template building, discouraging some transaction types, and protecting [soft
-  fork][topic soft fork activation] upgrade hooks.
+  fork][topic soft fork activation] upgrade hooks. {% assign timestamp="51:19" %}
 
 - [How does MuSig work in real Bitcoin scenarios?]({{bse}}125030)
   Pieter Wuille elaborates on the differences between [MuSig][topic musig]
   versions, calls out the Interactive Aggregated Signature (IAS) variant
   of MuSig1 and its interplay with [cross-input signature aggregation
   (CISA)][topic cisa], and mentions [threshold signatures][topic threshold
-  signature] before answering lower level questions on the specifications.
+  signature] before answering lower level questions on the specifications. {% assign timestamp="54:54" %}
 
 - [How does the -blocksxor switch that obfuscates the blocks.dat files work?]({{bse}}125055)
   Vojtěch Strnad describes the `-blocksxor` option for obfuscating
-  Bitcoin Core block data files on disk (see [Newsletter #316][news316 xor]).
+  Bitcoin Core block data files on disk (see [Newsletter #316][news316 xor]). {% assign timestamp="57:18" %}
 
 - [How does the related key attack on Schnorr signatures work?]({{bse}}125328)
   Pieter Wuille answers that "the attack applies when the victim chooses a
   related key, and the attacker knows the relation" and that related
-  keys are extremely common.
+  keys are extremely common. {% assign timestamp="59:42" %}
 
 ## Releases and release candidates
 
@@ -204,7 +204,7 @@ release candidates._
   spending money on transaction fees.  Matt Morehouse, who discovered
   the vulnerability, [posted][morehouse ldk-dos] about it to Delving
   Bitcoin; Optech will provide a more detailed summary in next week's
-  newsletter.  The release also includes API updates and bug fixes.
+  newsletter.  The release also includes API updates and bug fixes. {% assign timestamp="1:01:19" %}
 
 ## Notable code and documentation changes
 
@@ -221,7 +221,7 @@ repo], and [BINANAs][binana repo]._
   block templates that exploit the [timewarp][topic time warp] bug to apply to
   all networks, not just [testnet4][topic testnet]. This change is in
   preparation for a possible future soft fork that would permanently fix the
-  timewarp bug.
+  timewarp bug. {% assign timestamp="1:03:24" %}
 
 - [Bitcoin Core #31583][] updates the `getmininginfo`, `getblock`,
   `getblockheader`, `getblockchaininfo` and `getchainstates` RPC commands to now
@@ -230,14 +230,14 @@ repo], and [BINANAs][binana repo]._
   object that specifies the height, `nBits`, difficulty, and target for the next
   block. To derive and obtain the target, this PR introduces the
   `DeriveTarget()` and the `GetTarget()` helper functions. These changes are
-  useful for the implementation of [Stratum V2][topic pooled mining].
+  useful for the implementation of [Stratum V2][topic pooled mining]. {% assign timestamp="1:04:48" %}
 
 - [Bitcoin Core #31590][] refactors the `GetPrivKey()` method to check pubkeys
   for both parity bit values when retrieving private keys for an [x-only
   pubkey][topic x-only public keys]
   in a [descriptor][topic descriptors]. Previously, if the stored pubkey didn’t
   have the correct parity bit, the private key couldn’t be retrieved and
-  transactions couldn’t be signed.
+  transactions couldn’t be signed. {% assign timestamp="1:05:40" %}
 
 - [Eclair #2982][] introduces the `lock-utxos-during-funding` configuration
   setting, allowing [liquidity advertisement][topic liquidity advertisements]
@@ -247,20 +247,20 @@ repo], and [BINANAs][binana repo]._
   are vulnerable to abuse. If set to false, UTXO locking is disabled and the attack can
   be completely prevented, but this may adversely affect honest peers.
   This PR also adds a configurable timeout mechanism that automatically aborts
-  incoming channels if a peer becomes unresponsive.
+  incoming channels if a peer becomes unresponsive. {% assign timestamp="1:07:17" %}
 
 - [BDK #1614][] adds support for using [compact block filters][topic compact
   block filters] as specified in [BIP158][] for downloading confirmed
   transactions. This is done by adding a BIP158 module to the `bdk_bitcoind_rpc`
   crate, along with a new `FilterIter` type that can be used to retrieve blocks
   that contains transactions relevant to a list of script
-  pubkeys.
+  pubkeys. {% assign timestamp="1:11:39" %}
 
 - [BOLTs #1110][] merges the specification for the [peer storage][topic peer
   storage] protocol, which allows nodes to store encrypted blobs up to 64kB
   for peers who request them, and charge for this service. This has already been
   implemented in Core Lightning (see newsletter [#238][news238 peer]) and Eclair
-  (see newsletter [#335][news335 peer]).
+  (see newsletter [#335][news335 peer]). {% assign timestamp="1:12:08" %}
 
 {% include snippets/recap-ad.md when="2025-02-04 15:30" %}
 {% include references.md %}
