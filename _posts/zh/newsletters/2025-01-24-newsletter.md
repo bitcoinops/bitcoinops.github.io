@@ -19,6 +19,7 @@ lang: zh
 - **<!--psbtv2-integration-testing-->** **PSBTv2 集成测试**：Sjors Provoost 在 Bitcoin-Dev 邮件组中[发帖][provoost psbtv2]询问那些软件已经实现对版本 2 的 “待签名比特币交易（[PSBTs][topic psbt]）” 数据格式（详见[周报 #141][news141 psbtv2]）的支持，以测试一项为 Bitcoin Core 添加支持的 [PR][bitcoin core #21283] 。一个更新后的支持软件清单可以在 Bitcoin Stack Exchange 网站中[找到][bse psbtv2]。我们发现了两个有意思的回复：
 
   - **<!--merklized-psbtv2-->** **默克尔化的 PSBTv2**：Salvatore Ingala [解释道][ingala psbtv2]，Ledger Bitcoin 应用会将一项 PSBTv2 数据的各字段转化成一棵默克尔树，并且最初仅发送树根到 Ledger 硬件签名器。在需要具体字段时，再发送数值以及相应的默克尔树证据。这让设备可以安全地跟每一段信息独立工作，而无需再有限的内存中存储完整的 PSBT 数据。在 PSBTv2 可以做到，是因为它已经将待签名交易的部分分割到了不同的字段中；而对初版的 PSBT 格式（v0），这就需要额外的解析。
+
   - **<!--silent-payments-psbtv2-->** **静默支付 PSBTv2**：[BIP352][] 指定 “[静默支付][topic silent payments]” 显式地依赖于 [解释道][toth psbtv2] PSBTv2 规范。Andrew Toth [解释道][toth psbtv2]，静默支付需要 v2 的 `PSBT_OUT_SCRIPT` 字段，因为静默支付所需使用的输出脚本，在所有输入的签名人处理完这个 PSBT 之前，是无法知晓的。
 
 - **<!--correction-about-offchain-dlcs-->** **关于链下 DLC 的勘误**：在[上周新闻部分][news337 dlc]对链下 DLC 的介绍中，我们混淆了由开发者 conduition 提出的[新方案][conduition factories]，与此前已经发布并得到实现的链下 DLC（谨慎日志合约）方案。它们有以下重大且有趣的区别：
