@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Discussion about fixing Murch-Zawy time warp and duplicate transactions in consensus cleanup"
     url: /en/newsletters/2024/12/06/#continued-discussion-about-consensus-cleanup-soft-fork-proposal
 
+  - title: "Announcement of updates to the consensus cleanup soft fork proposal"
+    url: /en/newsletters/2025/02/07/#updates-to-cleanup-soft-fork-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation

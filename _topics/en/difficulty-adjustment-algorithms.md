@@ -66,8 +66,10 @@ where coins have no value, there's no incentive to lie.
 Other cryptocurrencies use different DAAs, and these have sometimes
 resulted in severe security vulnerabilities for those systems.
 Alternative DAAs for systems that use the same SHA256d PoW function as
-Bitcoin have occasionally resulted in inconsistent block production in
-Bitcoin.
+Bitcoin have occasionally resulted in that system temporarily overpaying
+or underpaying for hashrate, attracting miners away from (or to)
+Bitcoin, leading to inconsistent block production in Bitcoin until the
+problem is solved.
 
 Alternative DAAs may also be used in Bitcoin-related protocols, such as
 decentralized [mining pools][topic pooled mining] like Braidpool.

@@ -85,6 +85,9 @@ optech_mentions:
   - title: "Bitcoin Core #30239 makes ephemeral dust outputs standard, allowing zero-fee transaction relay"
     url: /en/newsletters/2024/11/22/#bitcoin-core-30239
 
+  - title: "Discussion of tradeoffs in ephemeral anchor scripts related to spending trimmed HTLC value"
+    url: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay

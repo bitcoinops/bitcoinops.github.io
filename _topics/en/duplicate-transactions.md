@@ -36,6 +36,9 @@ optech_mentions:
   - title: "Discussion about fixing remaining duplicate transaction vulnerabilities in consensus cleanup fork"
     url: /en/newsletters/2024/12/06/#continued-discussion-about-consensus-cleanup-soft-fork-proposal
 
+  - title: "Consensus cleanup proposal updated to require setting coinbase lock time to previous block height"
+    url: /en/newsletters/2025/02/07/#duplicate-transaction-fix
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork

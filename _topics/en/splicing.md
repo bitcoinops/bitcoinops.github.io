@@ -92,6 +92,9 @@ optech_mentions:
   - title: "Eclair #2936 begins tracking splices created by third-parties"
     url: /en/newsletters/2025/01/17/#eclair-2936
 
+  - title: "Eclair #2968 adds support for splicing on public channels"
+    url: /en/newsletters/2025/02/07/#eclair-2968
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

@@ -80,6 +80,12 @@ optech_mentions:
   - title: "Continued discussion about rewarding pool miners with tradeable ecash shares"
     url: /en/newsletters/2025/01/17/#continued-discussion-about-rewarding-pool-miners-with-tradeable-ecash-shares
 
+  - title: "Request for a covenant to fairly distribute rewards in the Braidpool decentralized mining pool"
+    url: /en/newsletters/2025/02/07/#request-for-a-covenant-design-supporting-braidpool
+
+  - title: "Deterministic transaction selection from a committed mempool for Braidpool decentralized mining"
+    url: /en/newsletters/2025/02/07/#deterministic-transaction-selection-from-a-committed-mempool
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:

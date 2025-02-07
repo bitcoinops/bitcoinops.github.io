@@ -46,6 +46,9 @@ optech_mentions:
   - title: "Release of utreexod beta"
     url: /en/newsletters/2024/05/15/#release-of-utreexod-beta
 
+  - title: "Utreexo might make it easier to manage a DAG-style blockchain"
+    url: /en/newsletters/2025/02/07/#fast-difficulty-adjustment-algorithm-for-a-dag-blockchain
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs
