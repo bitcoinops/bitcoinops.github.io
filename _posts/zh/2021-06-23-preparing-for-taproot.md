@@ -67,9 +67,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 多签随机数
 
-*最初发表于 [Newsletter #161](/en/newsletters/2021/08/11/#preparing-for-taproot-8-multisignature-nonces)*
+*最初发表于 [Newsletter #161](zh/newsletters/2021/08/11/#准备-taproot-8多签随机数)*
 
-{% include specials/taproot/en/07-nonces.md %}
+{% include specials/taproot/zh/07-nonces.md %}
 
 ## 签名适配器
 
