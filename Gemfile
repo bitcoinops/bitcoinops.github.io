@@ -13,7 +13,7 @@ group :development do
 end
 
 group :testing do
-  gem 'html-proofer'
+  gem 'html-proofer', "~> 3.0"
   gem 'mdl'
   gem 'json-schema'
   gem 'toml'
