@@ -117,50 +117,50 @@ Konsensänderungen weiter und verweist auf die erneute Diskussion
   auf die optimale Auswahl konzentriert:
 
   - [Filtern basierend auf Transaktionswissen][sd1] untersucht, ob ein Knoten einen Peer in seine
-    Pläne zur Weiterleitung einer Transaktion einbeziehen sollte, auch wenn er weiß, dass der Peer
-    die Transaktion bereits besitzt. Beispielsweise hat unser Knoten zehn Peers; drei dieser Peers
-    haben bereits eine Transaktion an uns angekündigt. Wenn wir drei Peers zufällig auswählen möchten,
-    um diese Transaktion weiter zu verbreiten, sollten wir aus allen zehn Peers oder nur den sieben
-    auswählen, die uns die Transaktion noch nicht angekündigt haben? Überraschenderweise zeigen
-    Simulationsergebnisse, dass "es keinen signifikanten Unterschied zwischen den Optionen gibt".
-    Delgado untersucht dieses überraschende Ergebnis und kommt zu dem Schluss, dass alle Peers
-    berücksichtigt werden sollten (d. h. es sollte keine Filterung erfolgen).
+  Pläne zur Weiterleitung einer Transaktion einbeziehen sollte, auch wenn er weiß, dass der Peer
+  die Transaktion bereits besitzt. Beispielsweise hat unser Knoten zehn Peers; drei dieser Peers
+  haben bereits eine Transaktion an uns angekündigt. Wenn wir drei Peers zufällig auswählen möchten,
+  um diese Transaktion weiter zu verbreiten, sollten wir aus allen zehn Peers oder nur den sieben
+  auswählen, die uns die Transaktion noch nicht angekündigt haben? Überraschenderweise zeigen
+  Simulationsergebnisse, dass "es keinen signifikanten Unterschied zwischen den Optionen gibt".
+  Delgado untersucht dieses überraschende Ergebnis und kommt zu dem Schluss, dass alle Peers
+  berücksichtigt werden sollten (d. h. es sollte keine Filterung erfolgen).
 
   - [Wann Fanout-Kandidaten-Peers auswählen][sd2] untersucht, wann ein Knoten entscheiden sollte,
-    welche Peers eine Fanout-Transaktion erhalten (während der Rest über Erlay-Synchronisierung erfolgt).
-    Zwei Zeitpunkte werden betrachtet: kurz nachdem ein Knoten eine neue Transaktion validiert und in die
-    Warteschlange zur Weiterleitung gestellt hat, sowie wenn es Zeit ist, diese Transaktion zu verbreiten
-    (Knoten leiten Transaktionen nicht sofort weiter, sondern warten eine kleine, zufällige Zeit,
-    um es schwieriger zu machen, die Netzwerktopologie zu ermitteln und zu erraten, welcher Knoten die
-    Transaktion ursprünglich gesendet hat – was schlecht für die Privatsphäre wäre). Auch hier zeigen
-    Simulationsergebnisse, dass "es keine bedeutenden Unterschiede gibt", wobei "die Ergebnisse variieren
-    können […] in Netzwerken mit partieller [Erlay]-Unterstützung".
+  welche Peers eine Fanout-Transaktion erhalten (während der Rest über Erlay-Synchronisierung erfolgt).
+  Zwei Zeitpunkte werden betrachtet: kurz nachdem ein Knoten eine neue Transaktion validiert und in die
+  Warteschlange zur Weiterleitung gestellt hat, sowie wenn es Zeit ist, diese Transaktion zu verbreiten
+  (Knoten leiten Transaktionen nicht sofort weiter, sondern warten eine kleine, zufällige Zeit,
+  um es schwieriger zu machen, die Netzwerktopologie zu ermitteln und zu erraten, welcher Knoten die
+  Transaktion ursprünglich gesendet hat – was schlecht für die Privatsphäre wäre). Auch hier zeigen
+  Simulationsergebnisse, dass "es keine bedeutenden Unterschiede gibt", wobei "die Ergebnisse variieren
+  können […] in Netzwerken mit partieller [Erlay]-Unterstützung".
 
   - [Wie viele Peers sollten eine Fanout erhalten][sd3] untersucht die Fanout-Rate. Eine höhere Rate
-    beschleunigt die Transaktionsverbreitung, reduziert jedoch die Bandbreiteneinsparungen. Neben dem
-    Testen der Fanout-Rate untersuchte Delgado auch eine Erhöhung der Anzahl der ausgehenden Peers,
-    da dies eines der Ziele der Erlay-Adoption ist. Die Simulation zeigt, dass der aktuelle Erlay-Ansatz
-    die Bandbreite um etwa 35% reduziert, wenn die aktuellen Grenzwerte für ausgehende Peers (8 Peers)
-    verwendet werden, und um 45%, wenn 12 ausgehende Peers genutzt werden. Allerdings steigt die
-    Transaktionsverzögerung um etwa 240%. Viele weitere Kompromisse werden im Beitrag graphisch dargestellt.
-    Zusätzlich bemerkt Delgado, dass die Ergebnisse nicht nur bei der Auswahl aktueller Parameter helfen,
-    sondern auch bei der Bewertung alternativer Fanout-Algorithmen, die möglicherweise
-    bessere Kompromisse bieten.
+  beschleunigt die Transaktionsverbreitung, reduziert jedoch die Bandbreiteneinsparungen. Neben dem
+  Testen der Fanout-Rate untersuchte Delgado auch eine Erhöhung der Anzahl der ausgehenden Peers,
+  da dies eines der Ziele der Erlay-Adoption ist. Die Simulation zeigt, dass der aktuelle Erlay-Ansatz
+  die Bandbreite um etwa 35% reduziert, wenn die aktuellen Grenzwerte für ausgehende Peers (8 Peers)
+  verwendet werden, und um 45%, wenn 12 ausgehende Peers genutzt werden. Allerdings steigt die
+  Transaktionsverzögerung um etwa 240%. Viele weitere Kompromisse werden im Beitrag graphisch dargestellt.
+  Zusätzlich bemerkt Delgado, dass die Ergebnisse nicht nur bei der Auswahl aktueller Parameter helfen,
+  sondern auch bei der Bewertung alternativer Fanout-Algorithmen, die möglicherweise
+  bessere Kompromisse bieten.
 
   - [Definition der Fanout-Rate basierend auf dem Empfang einer Transaktion][sd4] untersucht, ob die
-    Fanout-Rate angepasst werden sollte, je nachdem, ob eine Transaktion zuerst über Fanout oder durch
-    Synchronisierung empfangen wurde. Weiterhin wird erörtert, welche angepasste Rate verwendet werden sollte,
-    falls eine Anpassung erfolgen soll. Die Idee dahinter ist, dass Fanout schneller und effizienter ist,
-    wenn eine neue Transaktion beginnt, durch das Netzwerk geleitet zu werden – jedoch führt dies zu unnötigem
-    Bandbreitenverbrauch, nachdem die Transaktion bereits den Großteil der Knoten erreicht hat. Es gibt keine
-    Möglichkeit für einen Knoten, direkt zu bestimmen, wie viele andere Knoten die Transaktion bereits gesehen
-    haben. Ist es jedoch wahrscheinlich, dass eine Transaktion sich noch im frühen Stadium ihrer Verbreitung
-    befindet, wenn der Peer, der sie zuerst gesendet hat, Fanout anstelle des Wartens auf die nächste geplante
-    Synchronisierung verwendet hat, können diese Daten genutzt werden, um die eigene Fanout-Rate moderat zu
-    erhöhen und die Verbreitung zu beschleunigen. Delgado simulierte diese Idee und fand ein modifiziertes
-    Fanout-Verhältnis, das die Verbreitungszeit um 18% reduziert – bei nur einer 6,5%igen Erhöhung der
-    Bandbreite im Vergleich zum Vergleichsergebnis, das die gleiche Fanout-Rate für
-    alle Transaktionen verwendet.
+  Fanout-Rate angepasst werden sollte, je nachdem, ob eine Transaktion zuerst über Fanout oder durch
+  Synchronisierung empfangen wurde. Weiterhin wird erörtert, welche angepasste Rate verwendet werden sollte,
+  falls eine Anpassung erfolgen soll. Die Idee dahinter ist, dass Fanout schneller und effizienter ist,
+  wenn eine neue Transaktion beginnt, durch das Netzwerk geleitet zu werden – jedoch führt dies zu unnötigem
+  Bandbreitenverbrauch, nachdem die Transaktion bereits den Großteil der Knoten erreicht hat. Es gibt keine
+  Möglichkeit für einen Knoten, direkt zu bestimmen, wie viele andere Knoten die Transaktion bereits gesehen
+  haben. Ist es jedoch wahrscheinlich, dass eine Transaktion sich noch im frühen Stadium ihrer Verbreitung
+  befindet, wenn der Peer, der sie zuerst gesendet hat, Fanout anstelle des Wartens auf die nächste geplante
+  Synchronisierung verwendet hat, können diese Daten genutzt werden, um die eigene Fanout-Rate moderat zu
+  erhöhen und die Verbreitung zu beschleunigen. Delgado simulierte diese Idee und fand ein modifiziertes
+  Fanout-Verhältnis, das die Verbreitungszeit um 18% reduziert – bei nur einer 6,5%igen Erhöhung der
+  Bandbreite im Vergleich zum Vergleichsergebnis, das die gleiche Fanout-Rate für
+  alle Transaktionen verwendet.
 
 - **Kompromisse in LN-Ephemeral-Anker-Skripten:** Bastien Teinturier [postete][teinturier ephanc] auf
   Delving Bitcoin, um Meinungen zu den zu verwendenden [Ephemeral-Anker-][topic ephemeral anchors] Skripten
@@ -170,27 +170,27 @@ Konsensänderungen weiter und verweist auf die erneute Diskussion
   [CPFP-Gebühren erhöhen][topic cpfp] kann (und unter welchen Bedingungen dies erfolgen kann).
   Er präsentierte dazu vier Optionen:
 
-    - *Verwenden eines Pay-to-Anker-(P2A)-Skripts:* Dieses Skript hat eine minimale On-Chain-Größe,
-    führt jedoch dazu, dass der gesamte [geschnürte HTLC-][topic trimmed htlc] Wert aller
-    Wahrscheinlichkeit nach an die Miner geht – wie es derzeit auch der Fall ist.
+  - *Verwenden eines Pay-to-Anker-(P2A)-Skripts:* Dieses Skript hat eine minimale On-Chain-Größe,
+  führt jedoch dazu, dass der gesamte [geschnürte HTLC-][topic trimmed htlc] Wert aller
+  Wahrscheinlichkeit nach an die Miner geht – wie es derzeit auch der Fall ist.
 
-    - *Verwenden eines einzelteilnehmer-schlüsselbasierten Ankers:* Dadurch könnte ein Überschuss
-    an geschnürtem HTLC-Wert von einem Teilnehmer beansprucht werden, der sich freiwillig dazu bereit
-    erklärt, einige Dutzend Blöcke zu warten, bevor er das aus dem Kanal abgeschlossene Geld ausgeben kann.
-    Jeder, der einen Kanal zwangsweise schließen will, muss ohnehin warten. Allerdings kann keine der
-    beiden Parteien die Zahlung der Gebühr an Dritte delegieren, ohne dass diese Gefahr laufen, alle
-    Kanalfonds abzugreifen. Sollten sowohl Sie als auch Ihr Kontrahent um den Überschusswert konkurrieren,
-    geht dieser höchstwahrscheinlich an die Miner.
+  - *Verwenden eines einzelteilnehmer-schlüsselbasierten Ankers:* Dadurch könnte ein Überschuss
+  an geschnürtem HTLC-Wert von einem Teilnehmer beansprucht werden, der sich freiwillig dazu bereit
+  erklärt, einige Dutzend Blöcke zu warten, bevor er das aus dem Kanal abgeschlossene Geld ausgeben kann.
+  Jeder, der einen Kanal zwangsweise schließen will, muss ohnehin warten. Allerdings kann keine der
+  beiden Parteien die Zahlung der Gebühr an Dritte delegieren, ohne dass diese Gefahr laufen, alle
+  Kanalfonds abzugreifen. Sollten sowohl Sie als auch Ihr Kontrahent um den Überschusswert konkurrieren,
+  geht dieser höchstwahrscheinlich an die Miner.
 
-    - *Verwenden eines gemeinsamen Schlüssel-Ankers:* Dieser Ansatz ermöglicht ebenfalls die Rückgewinnung
-    von überschüssigem, geschnürtem HTLC-Wert und erlaubt eine Delegation. Allerdings ist auch hier möglich,
-    dass jeder, der die Delegation erhält, mit Ihnen und Ihrem Kontrahenten um den Überschusswert
-    konkurriert – was im Falle eines Wettbewerbs dazu führt, dass der gesamte Überschusswert an die Miner geht.
+  - *Verwenden eines gemeinsamen Schlüssel-Ankers:* Dieser Ansatz ermöglicht ebenfalls die Rückgewinnung
+  von überschüssigem, geschnürtem HTLC-Wert und erlaubt eine Delegation. Allerdings ist auch hier möglich,
+  dass jeder, der die Delegation erhält, mit Ihnen und Ihrem Kontrahenten um den Überschusswert
+  konkurriert – was im Falle eines Wettbewerbs dazu führt, dass der gesamte Überschusswert an die Miner geht.
 
-    - *Verwenden eines dualen Schlüssel-Ankers:* Dadurch kann jeder Teilnehmer den überschüssigen,
-    geschnürten HTLC-Wert beanspruchen, ohne auf zusätzliche Blöcke warten zu müssen. Jedoch erlaubt
-    diese Variante keine Delegation, sodass die beiden Parteien eines Kanals weiterhin direkt miteinander
-    konkurrieren.
+  - *Verwenden eines dualen Schlüssel-Ankers:* Dadurch kann jeder Teilnehmer den überschüssigen,
+  geschnürten HTLC-Wert beanspruchen, ohne auf zusätzliche Blöcke warten zu müssen. Jedoch erlaubt
+  diese Variante keine Delegation, sodass die beiden Parteien eines Kanals weiterhin direkt miteinander
+  konkurrieren.
 
   In Antworten auf den Beitrag bemerkte Gregory Sanders [noted][sanders ephanc], dass die unterschiedlichen
   Ansätze zu verschiedenen Zeitpunkten zum Einsatz kommen könnten. Beispielsweise könnte P2A dann verwendet
@@ -240,70 +240,70 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu Änderungen der 
   und schlug Parameteränderungen vor:
 
   - [Einführung einer Legacy-Eingabe-Sigops-Begrenzung][ap1]:
-    In einem privaten Thread haben Poinsot und mehrere andere Mitwirkende versucht,
-    einen Block für Regtest zu erstellen, der die längste mögliche Zeit für die Validierung benötigt,
-    indem sie bekannte Probleme bei der Validierung von Legacy- (Vor-SegWit-) Transaktionen ausnutzen.
-    Nach Recherchen fand er heraus, dass er den "schlechtesten Block" anpassen konnte, um ihn unter den
-    ursprünglich vorgeschlagenen [Maßnahmen][ccbip] von 2019 gültig zu machen (siehe
-    [Newsletter #36][news36 cc]). Dies führte ihn dazu, eine andere Maßnahme vorzuschlagen:
-    die Begrenzung der maximalen Anzahl von Signaturoperationen (Sigops) in Legacy-Transaktionen
-    auf 2.500. Jede Ausführung von `OP_CHECKSIG` zählt als eine Sigop und jede Ausführung
-    von `OP_CHECKMULTISIG` kann bis zu 20 Sigops zählen (je nach Anzahl der verwendeten
-    öffentlichen Schlüssel). Seine Analyse zeigt, dass dies die Worst-Case-Validierungszeit
-    um 97,5% reduzieren wird.
+  In einem privaten Thread haben Poinsot und mehrere andere Mitwirkende versucht,
+  einen Block für Regtest zu erstellen, der die längste mögliche Zeit für die Validierung benötigt,
+  indem sie bekannte Probleme bei der Validierung von Legacy- (Vor-SegWit-) Transaktionen ausnutzen.
+  Nach Recherchen fand er heraus, dass er den "schlechtesten Block" anpassen konnte, um ihn unter den
+  ursprünglich vorgeschlagenen [Maßnahmen][ccbip] von 2019 gültig zu machen (siehe
+  [Newsletter #36][news36 cc]). Dies führte ihn dazu, eine andere Maßnahme vorzuschlagen:
+  die Begrenzung der maximalen Anzahl von Signaturoperationen (Sigops) in Legacy-Transaktionen
+  auf 2.500. Jede Ausführung von `OP_CHECKSIG` zählt als eine Sigop und jede Ausführung
+  von `OP_CHECKMULTISIG` kann bis zu 20 Sigops zählen (je nach Anzahl der verwendeten
+  öffentlichen Schlüssel). Seine Analyse zeigt, dass dies die Worst-Case-Validierungszeit
+  um 97,5% reduzieren wird.
 
-    Wie bei jeder Änderung dieser Art besteht das Risiko einer
-    [unbeabsichtigten Beschlagnahme][topic accidental confiscation] aufgrund der neuen Regel,
-    die zuvor unterzeichnete Transaktionen ungültig macht. Wenn Sie jemanden kennen, der
-    Legacy-Transaktionen mit mehr als 2.500 Einzelsig-Operationen oder mehr als 2.125 Schlüsseln
-    für Multisig-Operationen benötigt[^2kmultisig], informieren Sie bitte Poinsot oder andere
-    Protokollentwickler.
+  Wie bei jeder Änderung dieser Art besteht das Risiko einer
+  [unbeabsichtigten Beschlagnahme][topic accidental confiscation] aufgrund der neuen Regel,
+  die zuvor unterzeichnete Transaktionen ungültig macht. Wenn Sie jemanden kennen, der
+  Legacy-Transaktionen mit mehr als 2.500 Einzelsig-Operationen oder mehr als 2.125 Schlüsseln
+  für Multisig-Operationen benötigt[^2kmultisig], informieren Sie bitte Poinsot oder andere
+  Protokollentwickler.
 
 
   - [Verlängern der Timewarp-Gnadenfrist auf 2 Stunden][ap2]:
-    Zuvor sah der Cleanup-Vorschlag vor, dass der erste Block in einem neuen Schwierigkeitsintervall
-    keinen Blockheader-Timestamp haben durfte, der mehr als 600 Sekunden vor dem Timestamp des vorherigen
-    Blocks lag. Dies bedeutete, dass eine konstante Hashrate die
-    [Timewarp][topic time warp]-Sicherheitslücke nicht ausnutzen konnte, um
-    Blöcke schneller als im 10-Minuten-Takt zu erzeugen.
+  Zuvor sah der Cleanup-Vorschlag vor, dass der erste Block in einem neuen Schwierigkeitsintervall
+  keinen Blockheader-Timestamp haben durfte, der mehr als 600 Sekunden vor dem Timestamp des vorherigen
+  Blocks lag. Dies bedeutete, dass eine konstante Hashrate die
+  [Timewarp][topic time warp]-Sicherheitslücke nicht ausnutzen konnte, um
+  Blöcke schneller als im 10-Minuten-Takt zu erzeugen.
 
-    Poinsot akzeptiert jetzt die Verwendung einer Gnadenfrist von 7.200 Sekunden (2 Stunden),
-    wie ursprünglich von Sjors Provoost vorgeschlagen, da dies viel weniger wahrscheinlich zu einem
-    unbeabsichtigten Fehler eines Miners führen würde, der einen ungültigen Block produziert.
-    Allerdings ermöglicht diese Regel einem sehr geduldigen Angreifer, der mehr als 50 % der
-    Netzwerk-Hashrate kontrolliert, die Timewarp-Attacke zu nutzen, um die Schwierigkeit über
-    einen Zeitraum von Monaten zu senken – selbst wenn die tatsächliche Hashrate konstant bleibt
-    oder steigt. Dies wäre ein öffentlich sichtbarer Angriff, und das Netzwerk hätte Monate
-    Zeit zum Reagieren.
+  Poinsot akzeptiert jetzt die Verwendung einer Gnadenfrist von 7.200 Sekunden (2 Stunden),
+  wie ursprünglich von Sjors Provoost vorgeschlagen, da dies viel weniger wahrscheinlich zu einem
+  unbeabsichtigten Fehler eines Miners führen würde, der einen ungültigen Block produziert.
+  Allerdings ermöglicht diese Regel einem sehr geduldigen Angreifer, der mehr als 50 % der
+  Netzwerk-Hashrate kontrolliert, die Timewarp-Attacke zu nutzen, um die Schwierigkeit über
+  einen Zeitraum von Monaten zu senken – selbst wenn die tatsächliche Hashrate konstant bleibt
+  oder steigt. Dies wäre ein öffentlich sichtbarer Angriff, und das Netzwerk hätte Monate
+  Zeit zum Reagieren.
 
-    In seinem Beitrag fasst Poinsot frühere Argumente zusammen (siehe [Newsletter #335][news335 cc]
-    für unsere deutlich kürzere Zusammenfassung) und kommt zu dem Schluss, dass "trotz der vergleichsweise
-    schwachen Befürwortungsargumente für eine Verlängerung der Gnadenfrist die damit verbundenen
-    Kosten es nicht verbieten, auf Nummer sicher zu gehen."
+  In seinem Beitrag fasst Poinsot frühere Argumente zusammen (siehe [Newsletter #335][news335 cc]
+  für unsere deutlich kürzere Zusammenfassung) und kommt zu dem Schluss, dass "trotz der vergleichsweise
+  schwachen Befürwortungsargumente für eine Verlängerung der Gnadenfrist die damit verbundenen
+  Kosten es nicht verbieten, auf Nummer sicher zu gehen."
 
-    In einem Thread, der sich der Diskussion über die Verlängerung der Gnadenfrist widmete,
-    diskutierten die Entwickler Zawy und Pieter Wuille [diskutierten][wuille erlang],
-    wie die 600-Sekunden-Gnadenfrist – die anscheinend eine allmählich abnehmende Schwierigkeit
-    bis zum Mindestwert zulässt – tatsächlich ausreicht, um mehr als einen kleinen Schwierigkeitsabfall
-    zu verhindern. Insbesondere untersuchten sie die Auswirkungen von Bitcoins
-    Off-by-One-Schwierigkeitsanpassungsfehler sowie die Asymmetrie der [erlang][]-Verteilung
-    auf die genaue Neuausrichtung der Schwierigkeit. Zawy fasste seine Argumentation wie folgt zusammen:
-    "Es geht nicht darum, dass eine Anpassung sowohl für Erlang als auch für '2015-Loch' nicht nötig
-    wäre, sondern darum, dass 600 Sekunden vor dem vorherigen Block nicht als 600-Sekunden-Fehler zu
-    werten sind, sondern als ein Fehler von 1200 Sekunden – weil wir tatsächlich einen
-    Timestamp 600 Sekunden nach dem vorherigen erwartet hatten."
+  In einem Thread, der sich der Diskussion über die Verlängerung der Gnadenfrist widmete,
+  diskutierten die Entwickler Zawy und Pieter Wuille [diskutierten][wuille erlang],
+  wie die 600-Sekunden-Gnadenfrist – die anscheinend eine allmählich abnehmende Schwierigkeit
+  bis zum Mindestwert zulässt – tatsächlich ausreicht, um mehr als einen kleinen Schwierigkeitsabfall
+  zu verhindern. Insbesondere untersuchten sie die Auswirkungen von Bitcoins
+  Off-by-One-Schwierigkeitsanpassungsfehler sowie die Asymmetrie der [erlang][]-Verteilung
+  auf die genaue Neuausrichtung der Schwierigkeit. Zawy fasste seine Argumentation wie folgt zusammen:
+  "Es geht nicht darum, dass eine Anpassung sowohl für Erlang als auch für '2015-Loch' nicht nötig
+  wäre, sondern darum, dass 600 Sekunden vor dem vorherigen Block nicht als 600-Sekunden-Fehler zu
+  werten sind, sondern als ein Fehler von 1200 Sekunden – weil wir tatsächlich einen
+  Timestamp 600 Sekunden nach dem vorherigen erwartet hatten."
 
 
   - [Lösung für duplizierte Transaktionen][ap3]: Nach einer Anfrage nach Feedback von Minern
-    (siehe [Newsletter #332][news332 cleanup]) bezüglich möglicher negativer Auswirkungen von
-    Konsenslösungen auf das  Problem der [duplizierten Transaktionen][topic duplicate transactions]
-    wählte Poinsot eine spezifische Lösung, die in den Cleanup-Vorschlag aufgenommen werden soll:
-    Die Höhe des vorherigen Blocks muss in jedem Time-Lock-Feld der Coinbase-Transaktion enthalten sein.
-    Dieser Vorschlag hat zwei Vorteile: Er ermöglicht es, die festgelegte Blockhöhe aus einem
-    Block zu [extrahieren][corallo duplocktime], ohne das Script parsen zu müssen, und er ermöglicht es,
-    einen kompakten, SHA256-basierten Nachweis der Blockhöhe zu [erstellen][harding duplocktime]
-    (im Worst-Case etwa 700 Bytes – viel weniger als der im Worst-Case benötigte 1-MB-Nachweis
-    ohne ein fortschrittliches Nachweissystem).
+  (siehe [Newsletter #332][news332 cleanup]) bezüglich möglicher negativer Auswirkungen von
+  Konsenslösungen auf das  Problem der [duplizierten Transaktionen][topic duplicate transactions]
+  wählte Poinsot eine spezifische Lösung, die in den Cleanup-Vorschlag aufgenommen werden soll:
+  Die Höhe des vorherigen Blocks muss in jedem Time-Lock-Feld der Coinbase-Transaktion enthalten sein.
+  Dieser Vorschlag hat zwei Vorteile: Er ermöglicht es, die festgelegte Blockhöhe aus einem
+  Block zu [extrahieren][corallo duplocktime], ohne das Script parsen zu müssen, und er ermöglicht es,
+  einen kompakten, SHA256-basierten Nachweis der Blockhöhe zu [erstellen][harding duplocktime]
+  (im Worst-Case etwa 700 Bytes – viel weniger als der im Worst-Case benötigte 1-MB-Nachweis
+  ohne ein fortschrittliches Nachweissystem).
 
   Diese Änderung wird keine Auswirkungen auf normale Nutzer haben, aber sie wird letztlich
   Miner dazu zwingen, ihre Software zur Erstellung von Coinbase-Transaktionen zu aktualisieren.
@@ -337,29 +337,29 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu Änderungen der 
   ihre Blöcke übernehmen, die anhand dieser Festlegungen deterministisch ausgewählt wurden.
   Er sieht zwei Anwendungsmöglichkeiten:
 
-    - _Globale Anwendung für alle Miner:_
-     Dies würde das "Risiko und die Haftung bei der Transaktionselektion" in einer Welt beseitigen,
-     in der Miner häufig große Unternehmensstrukturen sind, die sich an geltende Gesetze, Vorschriften
-     und die Empfehlungen von Risikomanagern halten müssen.
+  - _Globale Anwendung für alle Miner:_
+   Dies würde das "Risiko und die Haftung bei der Transaktionselektion" in einer Welt beseitigen,
+   in der Miner häufig große Unternehmensstrukturen sind, die sich an geltende Gesetze, Vorschriften
+   und die Empfehlungen von Risikomanagern halten müssen.
 
-    - _Lokale Anwendung für einen einzelnen Pool:_
-      Dieser Ansatz bietet nahezu die gleichen Vorteile wie ein global deterministischer Algorithmus,
-      erfordert jedoch keine Konsensänderungen. Außerdem kann er die Bandbreite zwischen den Peers in
-      einem dezentralen [Minenpool][topic pooled mining] wie Braidpool erheblich einsparen, da der
-      Algorithmus genau festlegt, welche Transaktionen ein _Kandidatenblock_ enthalten muss – sodass
-      bei der Erzeugung eines jeden _Shares_ keine Transaktionsdaten explizit an die Pool-Peers
-      übermittelt werden müssen.
+  - _Lokale Anwendung für einen einzelnen Pool:_
+  Dieser Ansatz bietet nahezu die gleichen Vorteile wie ein global deterministischer Algorithmus,
+  erfordert jedoch keine Konsensänderungen. Außerdem kann er die Bandbreite zwischen den Peers in
+  einem dezentralen [Minenpool][topic pooled mining] wie Braidpool erheblich einsparen, da der
+  Algorithmus genau festlegt, welche Transaktionen ein _Kandidatenblock_ enthalten muss – sodass
+  bei der Erzeugung eines jeden _Shares_ keine Transaktionsdaten explizit an die Pool-Peers
+  übermittelt werden müssen.
 
-    Anthony Towns [beschrieb][towns dtx] mehrere potenzielle Probleme einer globalen Konsensänderung:
-    Jede Veränderung der Transaktionselektion würde zwangsläufig eine Konsensänderung (möglicherweise
-    in Form eines Hard Forks) nach sich ziehen, und jeder, der eine nicht-standardmäßige
-    Transaktion erstellt, wäre nicht in der Lage, diese abgebaut zu bekommen – selbst mit der
-    Zusammenarbeit eines Miners. Kürzliche Richtlinienänderungen der letzten Jahre, die eine
-    Konsensänderung erfordert hätten, umfassen [TRUC][topic v3 transaction relay], aktualisierte
-    [RBF][topic rbf]-Richtlinien und [ephemeral anchors][topic ephemeral anchors]. Towns verlinkte
-    zu einem [bekannten Fall][bitcoin core #26348], in dem Millionen von Dollar an Wert versehentlich
-    in ein nicht-standardmäßiges Skript gesteckt wurden, welches ein kooperativer Miner wieder
-    freigeben konnte.
+  Anthony Towns [beschrieb][towns dtx] mehrere potenzielle Probleme einer globalen Konsensänderung:
+  Jede Veränderung der Transaktionselektion würde zwangsläufig eine Konsensänderung (möglicherweise
+  in Form eines Hard Forks) nach sich ziehen, und jeder, der eine nicht-standardmäßige
+  Transaktion erstellt, wäre nicht in der Lage, diese abgebaut zu bekommen – selbst mit der
+  Zusammenarbeit eines Miners. Kürzliche Richtlinienänderungen der letzten Jahre, die eine
+  Konsensänderung erfordert hätten, umfassen [TRUC][topic v3 transaction relay], aktualisierte
+  [RBF][topic rbf]-Richtlinien und [ephemeral anchors][topic ephemeral anchors]. Towns verlinkte
+  zu einem [bekannten Fall][bitcoin core #26348], in dem Millionen von Dollar an Wert versehentlich
+  in ein nicht-standardmäßiges Skript gesteckt wurden, welches ein kooperativer Miner wieder
+  freigeben konnte.
 
   Die verbleibende Diskussion richtete sich auf den lokalen Ansatz, wie er für Braidpool konzipiert wurde.
   Es gab keinerlei Einwände, und zusätzliche Gespräche über einen Schwierigkeitsanpassungsalgorithmus
@@ -461,10 +461,10 @@ _Die jüngsten, herausragenden Änderungen in [Bitcoin Core][bitcoin core repo],
 ## Footnotes
 
 [^2kmultisig]:
-    Bei P2SH und der vorgeschlagenen Zählweise der Input-Sigops wird ein `OP_CHECKMULTISIG`
-    mit mehr als 16 öffentlichen Schlüsseln als 20 Sigops gezählt, sodass jemand, der
-    `OP_CHECKMULTISIG` 125 Mal mit jeweils 17 Schlüsseln verwendet, insgesamt als 2.500
-    Sigops gewertet wird.
+  Bei P2SH und der vorgeschlagenen Zählweise der Input-Sigops wird ein `OP_CHECKMULTISIG`
+  mit mehr als 16 öffentlichen Schlüsseln als 20 Sigops gezählt, sodass jemand, der
+  `OP_CHECKMULTISIG` 125 Mal mit jeweils 17 Schlüsseln verwendet, insgesamt als 2.500
+  Sigops gewertet wird.
 
 
 {% include references.md %}
