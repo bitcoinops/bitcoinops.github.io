@@ -87,8 +87,8 @@ Konsensänderungen weiter und verweist auf die erneute Diskussion
   Er [beschrieb][wuille sp cl] darüber hinaus einen neuen Cluster-Linearisierungsalgorithmus, den die
   Cluster-Mempool-Arbeitsgruppe auf Grundlage einer Diskussion von Bitcoin Research Week
   mit Dongning Guo und Aviv Zohar entwickelt hat. Dieser Ansatz transformiert das
-  ursprüngliche Problem in eine Variante, die mittels [linearem Programmieren][]
-  gelöst werden kann, und scheint schnell, unkompliziert implementierbar und in der
+  ursprüngliche Problem in eine Variante, die mittels [linear programming][] gelöst
+  werden kann, und scheint schnell, unkompliziert implementierbar und in der
   Lage zu sein, eine optimale Linearisierung zu erzeugen – sofern er tatsächlich terminiert.
   Allerdings bedarf es noch eines Beweises, dass er in einer vernünftigen Zeit terminiert.
 
