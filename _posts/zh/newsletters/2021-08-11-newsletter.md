@@ -61,7 +61,7 @@ lang: zh
 
 ## 值得注意的代码与文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范(BOLT)][bolts repo]中的值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范(BOLTs)][bolts repo]中的值得注意的更改。*
 
 - [Bitcoin Core #21528][] 旨在改善 P2P 传播中的完整节点监听地址。在节点防止网络分区（如 [eclipse 攻击][topic eclipse attacks]）方面，暴露多样化的地址集非常重要。当 Bitcoin Core 节点接收到一个包含 10 个或更少地址的地址消息时，它会将其转发给 1 或 2 个对等节点。这是自我广告地址的主要技术，因此将地址发送给不会转发这些地址的对等节点实际上会停止或“黑洞”网络中的传播。虽然在恶意情况下无法防止传播失败，但此补丁改进了在诚实情况下的地址传播，例如在仅用于区块中继连接或轻客户端的情况下。
 
