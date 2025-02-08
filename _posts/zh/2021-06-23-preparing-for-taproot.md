@@ -73,9 +73,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 签名适配器
 
-*最初发表于 [Newsletter #162](/en/newsletters/2021/08/18/#preparing-for-taproot-9-signature-adaptors)*
+*最初发表于 [Newsletter #162](/zh/newsletters/2021/08/18/#准备-taproot-9签名适配器)*
 
-{% include specials/taproot/en/08-signature-adaptors.md %}
+{% include specials/taproot/zh/08-signature-adaptors.md %}
 
 ## PTLCs
 
