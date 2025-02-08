@@ -285,7 +285,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu Änderungen der 
     diskutierten die Entwickler Zawy und Pieter Wuille [diskutierten][wuille erlang],
     wie die 600-Sekunden-Gnadenfrist – die anscheinend eine allmählich abnehmende Schwierigkeit
     bis zum Mindestwert zulässt – tatsächlich ausreicht, um mehr als einen kleinen Schwierigkeitsabfall
-    zu verhindern.Insbesondere untersuchten sie die Auswirkungen von Bitcoins
+    zu verhindern. Insbesondere untersuchten sie die Auswirkungen von Bitcoins
     Off-by-One-Schwierigkeitsanpassungsfehler sowie die Asymmetrie der [erlang][]-Verteilung
     auf die genaue Neuausrichtung der Schwierigkeit. Zawy fasste seine Argumentation wie folgt zusammen:
     "Es geht nicht darum, dass eine Anpassung sowohl für Erlang als auch für '2015-Loch' nicht nötig
