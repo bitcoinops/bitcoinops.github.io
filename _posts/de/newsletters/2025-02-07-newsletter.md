@@ -222,7 +222,7 @@ Konsensänderungen weiter und verweist auf die erneute Diskussion
   die ansonsten [unwirtschaftlich][topic uneconomical outputs] wären, wie beispielsweise für
   [getrimmte HTLCs][topic trimmed htlc].
 
-- **Diskussion über die Senkung der Mindest-Transaktions-Relay-Gebühr:**  
+- **Diskussion über die Senkung der Mindest-Transaktions-Relay-Gebühr:**
   Greg Tonoski [postete][tonoski minrelay] auf der Bitcoin-Dev-Mailingliste über die Senkung der
   [Standard-Mindest-Transaktions-Relay-Gebühr][topic default minimum transaction relay feerates],
   ein Thema, das seit 2018 wiederholt diskutiert wurde (und von Optech zusammengefasst wurde) – zuletzt
@@ -239,7 +239,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu Änderungen der 
   Beiträge im Delving Bitcoin-Thread zum [Konsens-Cleanup-Soft-Fork][topic consensus cleanup]
   und schlug Parameteränderungen vor:
 
-  - [Einführung einer Legacy-Eingabe-Sigops-Begrenzung][ap1]:  
+  - [Einführung einer Legacy-Eingabe-Sigops-Begrenzung][ap1]:
     In einem privaten Thread haben Poinsot und mehrere andere Mitwirkende versucht,
     einen Block für Regtest zu erstellen, der die längste mögliche Zeit für die Validierung benötigt,
     indem sie bekannte Probleme bei der Validierung von Legacy- (Vor-SegWit-) Transaktionen ausnutzen.
@@ -260,7 +260,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu Änderungen der 
     Protokollentwickler.
 
 
-  - [Verlängern der Timewarp-Gnadenfrist auf 2 Stunden][ap2]:  
+  - [Verlängern der Timewarp-Gnadenfrist auf 2 Stunden][ap2]:
     Zuvor sah der Cleanup-Vorschlag vor, dass der erste Block in einem neuen Schwierigkeitsintervall
     keinen Blockheader-Timestamp haben durfte, der mehr als 600 Sekunden vor dem Timestamp des vorherigen
     Blocks lag. Dies bedeutete, dass eine konstante Hashrate die
@@ -313,7 +313,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu Änderungen der 
   Poinsot [veröffentlichte][ap4] außerdem eine hochrangige Aktualisierung über seine Arbeit
   und den aktuellen Stand des Vorschlags auf der Bitcoin-Dev-Mailingliste.
 
-- **Anfrage für ein Covenant-Design zur Unterstützung von Braidpool:**  
+- **Anfrage für ein Covenant-Design zur Unterstützung von Braidpool:**
   Bob McElrath [postete][mcelrath braidcov] auf Delving Bitcoin und bat Entwickler, die an
   [Covenant][topic covenants]-Designs arbeiten, ihre bevorzugten oder neue Vorschläge in Betracht
   zu ziehen, um zu untersuchen, wie sie bei der Errichtung eines effizienten, dezentralen
@@ -322,7 +322,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu Änderungen der 
   [Schwellenwert-Unterschriften][topic threshold signature] in Abhängigkeit von ihrem Anteil an
   der Hashleistung im Pool erhalten. Dies ermöglicht es einem Mehrheitsminer (bzw. einer
   Kollusion mehrerer Miner, die zusammen die Mehrheit bilden), Auszahlungen von kleineren
-  Minern zu stehlen.  
+  Minern zu stehlen.
   McElrath bevorzugt die Verwendung eines Covenants, das sicherstellt, dass jeder Miner in der
   Lage ist, Mittel aus dem Pool anteilig zu seinen Beiträgen abzuheben. In seinem Beitrag legt er
   eine konkrete Liste von Anforderungen vor und begrüßt zudem einen Beweis der Unmöglichkeit.
@@ -330,19 +330,19 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu Änderungen der 
   Zum Zeitpunkt des Schreibens gab es noch keine Antworten.
 
 
-- **Deterministische Transaktionselektion aus einem festgeschriebenen Mem-Pool:**  
+- **Deterministische Transaktionselektion aus einem festgeschriebenen Mem-Pool:**
   Ein Thread aus April 2024 erhielt in diesem Monat erneute Aufmerksamkeit. Zuvor hatte Bob McElrath
   in einem Beitrag die Idee [geäußert][mcelrath dtx], dass Miner sich dazu verpflichten, ihre
   Transaktionen in den Mem-Pool aufzunehmen, und anschließend nur diejenigen Transaktionen in
   ihre Blöcke übernehmen, die anhand dieser Festlegungen deterministisch ausgewählt wurden.
   Er sieht zwei Anwendungsmöglichkeiten:
 
-    - _Globale Anwendung für alle Miner:_  
+    - _Globale Anwendung für alle Miner:_
      Dies würde das "Risiko und die Haftung bei der Transaktionselektion" in einer Welt beseitigen,
      in der Miner häufig große Unternehmensstrukturen sind, die sich an geltende Gesetze, Vorschriften
      und die Empfehlungen von Risikomanagern halten müssen.
 
-    - _Lokale Anwendung für einen einzelnen Pool:_  
+    - _Lokale Anwendung für einen einzelnen Pool:_
       Dieser Ansatz bietet nahezu die gleichen Vorteile wie ein global deterministischer Algorithmus,
       erfordert jedoch keine Konsensänderungen. Außerdem kann er die Bandbreite zwischen den Peers in
       einem dezentralen [Minenpool][topic pooled mining] wie Braidpool erheblich einsparen, da der
