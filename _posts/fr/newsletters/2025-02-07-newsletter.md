@@ -450,7 +450,7 @@ Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [richter cluster]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303/9
 [mincut impl]: https://github.com/jonas-sauer/MonotoneParametricMinCut
 [wuille cluster]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303/10
-[linear programming]: https://en.wikipedia.org/wiki/Linear_programming
+[programmation linéaire]: https://en.wikipedia.org/wiki/Linear_programming
 [wuille sp cl]: https://delvingbitcoin.org/t/spanning-forest-cluster-linearization/1419
 [richter deepseek]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303/15
 [delgado erlay]: https://delvingbitcoin.org/t/erlay-overview-and-current-approach/1415
