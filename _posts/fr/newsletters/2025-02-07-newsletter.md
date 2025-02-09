@@ -366,7 +366,7 @@ consensus de Bitcoin._
   meilleur équilibre entre les compromis.
 
   Le dernier message du fil de discussion a été posté environ un mois avant la rédaction de ce résumé,
-  mais nous nous attendons à ce que Zawy et les développeurs de Braidpool continuent d'analyser et
+  mais nous restons en attente à ce que Zawy et les développeurs de Braidpool continuent d'analyser et
   d'implémenter le protocole.
 
 ## Mises à jour et versions candidates
