@@ -79,9 +79,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## PTLCs
 
-*最初发表于 [Newsletter #163](/en/newsletters/2021/08/25/#preparing-for-taproot-10-ptlcs)*
+*最初发表于 [Newsletter #163](/zh/newsletters/2021/08/25/#准备-taproot-10ptlcs)*
 
-{% include specials/taproot/en/09-ptlcs.md %}
+{% include specials/taproot/zh/09-ptlcs.md %}
 
 ## 使用 Taproot 的闪电网络
 
