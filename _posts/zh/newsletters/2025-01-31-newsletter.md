@@ -11,7 +11,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--vulnerability-in-ldk-claim-processing-->LDK 认领过程中的漏洞：** Matt Morehouse 在 Delving Bitcoin 上[发布了][morehouse ldkclaim]一篇帖子，披露了一个影响 LDK 的漏洞，他[负责任地公开了][topic responsible disclosures]该漏洞，并在 LDK 版本 0.1 中修复了该漏洞。当一个通道在存在多个待处理[HTLCs][topic htlc]的情况下被单方面关闭时，LDK 会尝试在同一笔交易中尽可能解决尽多的 HTLC，以节省交易费用。然而，如果通道对方能够首先确认其中任何一个批量处理的 HTLC，这将与批量交易发生_冲突_并使其无效。在这种情况下，LDK 会正确地创建一个更新后的批量交易，将冲突移除。不幸的是，如果对方的交易与多个单独的批次发生冲突，LDK 会错误地只更新第一个批次，剩余的批次将无法确认。
+- **<!--vulnerability-in-ldk-claim-processing-->****LDK 认领过程中的漏洞：** Matt Morehouse 在 Delving Bitcoin 上[发布了][morehouse ldkclaim]一篇帖子，披露了一个影响 LDK 的漏洞，他[负责任地公开了][topic responsible disclosures]该漏洞，并在 LDK 版本 0.1 中修复了该漏洞。当一个通道在存在多个待处理[HTLCs][topic htlc]的情况下被单方面关闭时，LDK 会尝试在同一笔交易中尽可能解决尽多的 HTLC，以节省交易费用。然而，如果通道对方能够首先确认其中任何一个批量处理的 HTLC，这将与批量交易发生_冲突_并使其无效。在这种情况下，LDK 会正确地创建一个更新后的批量交易，将冲突移除。不幸的是，如果对方的交易与多个单独的批次发生冲突，LDK 会错误地只更新第一个批次，剩余的批次将无法确认。
 
   节点必须在截止日期之前处理其 HTLC，否则对手方可能会窃取他们的资金。[时间锁][topic timelocks]阻止对手方在双方各自的截止日期之前花费 HTLC。大多数旧版本的 LDK 会将这些 HTLC 放入单独的批次中，并确保在对方能够确认冲突的交易之前确认该批次，从而确保没有资金会被盗走。对于那些没有允许资金被盗，但对方可以立即处理的 HTLC，存在对方可能会使资金被卡住的风险。Morehouse 写道，可以通过“升级到 LDK 版本 0.1 并重放导致锁定的承诺和 HTLC 交易序列来修复此问题”。
 
@@ -48,37 +48,37 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [谁使用或想要使用 PSBTv2（BIP370）？]({{bse}}125384)
+- [<!--who-uses-or-wants-to-use-psbtv2-bip370-->谁使用或想要使用 PSBTv2（BIP370）？]({{bse}}125384)
   除了在 Bitcoin-Dev 邮件列表上发布(见[周报#338][news338 psbtv2])，Sjors Provoost 还在 Bitcoin Stack Exchange 上发布了帖子，寻找[PSBTv2][topic psbt]的用户和潜在用户。对[BIP370][]感兴趣的 Optech 读者可以回复该问题或邮件列表帖子。
 
-- [在比特币创世区块中，哪些部分可以随意填写？]({{bse}}125274)
+- [<!--in-the-bitcoin-s-block-genesis-which-parts-can-be-filled-arbitrarily-->在比特币创世区块中，哪些部分可以随意填写？]({{bse}}125274)
   Pieter Wuille 指出，比特币[创世区块][mempool genesis block]的任何字段都不受常规区块验证规则的限制，他说：“这些字段字面上可以包含任何内容。它看起来像一个正常的区块，但它并不需要是这样。”
 
-- [闪电网络强制关闭交易的检测]({{bse}}122504)
+- [<!--lightning-force-close-detection-->闪电网络强制关闭交易的检测]({{bse}}122504)
   Sanket1729 和 Antoine Poinsot 讨论了 mempool.space [区块浏览器][topic block explorers]如何利用 [`nLockTime`][topic timelocks] 和 `nSequence` 字段来判断一笔交易是否是闪电网络强制关闭交易。
 
-- [一个所有输入都属于非见证程序类型的隔离见证格式交易有效吗？]({{bse}}125240)
+- [<!--is-a-segwit-formatted-transaction-with-all-inputs-of-non-witness-program-type-valid-->一个所有输入都属于非见证程序类型的隔离见证格式交易有效吗？]({{bse}}125240)
   Pieter Wuille 区分了[BIP141][]与[BIP144][]，前者规定了与 SegWit 共识变化和 wtxid 计算相关的结构和有效性，后者规定了用于传输 SegWit 交易的序列化格式。
 
-- [P2TR 安全性问题]({{bse}}125334)
+- [<!--p2tr-security-question-->P2TR 安全性问题]({{bse}}125334)
   Pieter Wuille 引用了 [BIP341][] 中指定 [taproot][topic taproot] 的内容，以解释为什么公钥直接包含在输出中，以及有关量子计算相关的考虑。
 
-- [今天在做什么来让比特币变得“量子安全”？]({{bse}}125171)
+- [<!--what-exactly-is-being-done-today-to-make-bitcoin-quantum-safe-->今天在做什么来让比特币变得“量子安全”？]({{bse}}125171)
   Murch 评论了量子能力的当前状态、最近的[后量子签名方案][topic quantum resistance]，以及提议的[QuBit - Pay to Quantum Resistant Hash][BIPs #1670] BIP。
 
-- [较短的区块间时间会带来什么有害影响？]({{bse}}125318)
+- [<!--what-are-the-harmful-effects-of-a-shorter-inter-block-time-->较短的区块间时间会带来什么有害影响？]({{bse}}125318)
   Pieter Wuille 强调了一个由于区块传播时间而产生的优势，它被传递给刚刚找到区块的矿工，这种优势在更短的区块时间下会被放大，以及该优势可能带来的影响。
 
-- [工作量证明是否可以用来替代交易池规则？]({{bse}}124931)
+- [<!--could-proof-of-work-be-used-to-replace-policy-rules-->工作量证明是否可以用来替代交易池规则？]({{bse}}124931)
   Jgmontoya 想知道，如果将工作量证明附加到非标准交易上，是否可以实现与交易池规则相似的[节点资源保护][policy series]目标。Antoine Poinsot 指出，交易池规则除了保护节点资源之外，还有其他目标，包括高效的区块模板构建、阻止某些交易类型，以及保护[软分叉][topic soft fork activation]升级挂钩。
 
-- [MuSig 如何在真实的比特币场景中工作？]({{bse}}125030)
+- [<!--how-does-musig-work-in-real-bitcoin-scenarios-->MuSig 如何在真实的比特币场景中工作？]({{bse}}125030)
   Pieter Wuille 阐述了不同版本的 [MuSig][topic musig] 之间的区别，提到 MuSig1 的交互式聚合签名（IAS）变种及其与[跨输入签名聚合（CISA）][topic cisa]的相互作用，并在回答关于规范的低层次问题之前提到了[门限签名][topic threshold signature]。
 
-- [-blocksxor 开关如何使 blocks.dat 文件混淆？]({{bse}}125055)
+- [<!--how-does-the-blocksxor-switch-that-obfuscates-the-blocks-dat-files-work-->-blocksxor 开关如何使 blocks.dat 文件混淆？]({{bse}}125055)
   Vojtěch Strnad 描述了用于混淆 Bitcoin Core 区块数据文件的 `-blocksxor` 选项(见[周报#316][news316 xor])。
 
-- [关联密钥攻击如何作用于 Schnorr 签名？]({{bse}}125328)
+- [<!--how-does-the-related-key-attack-on-schnorr-signatures-work-->关联密钥攻击如何作用于 Schnorr 签名？]({{bse}}125328)
   Pieter Wuille 回答说：“当受害者选择一个关联密钥且攻击者知道该关系时，攻击就会发生”，并且关联密钥是非常常见的。
 
 ## 版本和候选版本
@@ -114,7 +114,7 @@ repo] 和 [BINANAs][binana repo]。_
 [b10c cb]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/5
 [news315 cb]: /zh/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
 [news338 orphan]: /zh/newsletters/2025/01/24/#bitcoin-core-31397
-[news274 cycle]: /zh/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
+[news274 cycle]: /zh/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs-htlcs
 [ldk v0.1.1]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.1
 [morehouse ldk-dos]: https://delvingbitcoin.org/t/disclosure-ldk-duplicate-htlc-force-close-griefing/1410
 [news281 griefing]: /zh/newsletters/2023/12/13/#discussion-about-griefing-liquidity-ads
@@ -122,5 +122,5 @@ repo] 和 [BINANAs][binana repo]。_
 [news335 peer]: /zh/newsletters/2025/01/03/#eclair-2888
 [news338 psbtv2]: /zh/newsletters/2025/01/24/#psbtv2-integration-testing
 [mempool genesis block]: https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
-[policy series]: /zh/blog/waiting-for-confirmation/#policy-for-protection-of-node-resources
+[policy series]: /zh/blog/waiting-for-confirmation/#用于保护节点资源的规则
 [news316 xor]: /zh/newsletters/2024/08/16/#bitcoin-core-28052
