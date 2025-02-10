@@ -98,3 +98,4 @@ lang: zh
 [mempool message]: https://developer.bitcoin.org/reference/p2p_networking.html#mempool
 [news74 bip37 default]: /zh/newsletters/2019/11/27/#deprecated-or-removed-features
 [wiki sighash]: https://en.bitcoin.it/wiki/Contract#SIGHASH_flags
+[series preparing for taproot]: /zh/preparing-for-taproot/
