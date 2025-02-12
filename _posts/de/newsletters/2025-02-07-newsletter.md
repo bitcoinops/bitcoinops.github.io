@@ -1,7 +1,7 @@
 ---
 title: 'Bitcoin Optech Newsletter #340'
 permalink: /de/newsletters/2025/02/07/
-name: 2025-01-07-newsletter-de
+name: 2025-02-07-newsletter-de
 slug: 2025-02-07-newsletter-de
 type: newsletter
 layout: newsletter
@@ -471,7 +471,7 @@ _Die jüngsten, herausragenden Änderungen in [Bitcoin Core][bitcoin core repo],
 {% include linkers/issues.md v=2 issues="21590,2983,2968,3556,9456,26348" %}
 [dryja pp]: https://docs.google.com/presentation/d/1G4xchDGcO37DJ2lPC_XYyZIUkJc2khnLrCaZXgvDN0U/mobilepresent?pli=1#slide=id.g85f425098_0_219
 [morehouse forceclose]: https://delvingbitcoin.org/t/disclosure-ldk-duplicate-htlc-force-close-griefing/1410
-[news339 ldkvuln]: /de/newsletters/2025/01/31/#vulnerability-in-ldk-claim-processing
+[news339 ldkvuln]: /de/newsletters/2025/01/31/#sicherheitslucke-in-der-ldk-htlc-abwicklung
 [halseth zkgoss]: https://delvingbitcoin.org/t/zk-gossip-for-lightning-channel-announcements/1407
 [news321 zkgoss]: /en/newsletters/2024/09/20/#proving-utxo-set-inclusion-in-zero-knowledge
 [richter cluster]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303/9
@@ -488,11 +488,11 @@ _Die jüngsten, herausragenden Änderungen in [Bitcoin Core][bitcoin core repo],
 [sanders ephanc]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/2
 [harding ephanc]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/4
 [riard ephanc]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/3
-[news339 pincycle]: /de/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
+[news339 pincycle]: /de/newsletters/2025/01/31/#angriffe-durch-replacement-cycling-mit-ausnutzung-von-minern
 [kurbatov rand]: https://delvingbitcoin.org/t/emulating-op-rand/1409
 [tonoski minrelay]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CAMHHROxVo_7ZRFy+nq_2YzyeYNO1ijR_r7d89bmBWv4f4wb9=g@mail.gmail.com/
 [news324 largeinv]: /en/newsletters/2024/10/11/#dos-from-large-inventory-sets
-[news212 relay]: /de/newsletters/2022/08/10/#lowering-the-default-minimum-transaction-relay-feerate
+[news212 relay]: /de/newsletters/2022/08/10/#senkung-der-standardminimumgebuhrenrate-fur-transaktionsweiterleitungen
 [ap1]: https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/64
 [ap2]: https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/66
 [mcelrath braidcov]: https://delvingbitcoin.org/t/challenge-covenants-for-braidpool/1370/1
