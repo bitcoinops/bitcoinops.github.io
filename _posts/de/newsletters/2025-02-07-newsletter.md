@@ -471,7 +471,7 @@ _Die jüngsten, herausragenden Änderungen in [Bitcoin Core][bitcoin core repo],
 {% include linkers/issues.md v=2 issues="21590,2983,2968,3556,9456,26348" %}
 [dryja pp]: https://docs.google.com/presentation/d/1G4xchDGcO37DJ2lPC_XYyZIUkJc2khnLrCaZXgvDN0U/mobilepresent?pli=1#slide=id.g85f425098_0_219
 [morehouse forceclose]: https://delvingbitcoin.org/t/disclosure-ldk-duplicate-htlc-force-close-griefing/1410
-[news339 ldkvuln]: /en/newsletters/2025/01/31/#vulnerability-in-ldk-claim-processing
+[news339 ldkvuln]: /de/newsletters/2025/01/31/#vulnerability-in-ldk-claim-processing
 [halseth zkgoss]: https://delvingbitcoin.org/t/zk-gossip-for-lightning-channel-announcements/1407
 [news321 zkgoss]: /en/newsletters/2024/09/20/#proving-utxo-set-inclusion-in-zero-knowledge
 [richter cluster]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303/9
@@ -488,11 +488,11 @@ _Die jüngsten, herausragenden Änderungen in [Bitcoin Core][bitcoin core repo],
 [sanders ephanc]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/2
 [harding ephanc]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/4
 [riard ephanc]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/3
-[news339 pincycle]: /en/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
+[news339 pincycle]: /de/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
 [kurbatov rand]: https://delvingbitcoin.org/t/emulating-op-rand/1409
 [tonoski minrelay]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CAMHHROxVo_7ZRFy+nq_2YzyeYNO1ijR_r7d89bmBWv4f4wb9=g@mail.gmail.com/
 [news324 largeinv]: /en/newsletters/2024/10/11/#dos-from-large-inventory-sets
-[news212 relay]: /en/newsletters/2022/08/10/#lowering-the-default-minimum-transaction-relay-feerate
+[news212 relay]: /de/newsletters/2022/08/10/#lowering-the-default-minimum-transaction-relay-feerate
 [ap1]: https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/64
 [ap2]: https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/66
 [mcelrath braidcov]: https://delvingbitcoin.org/t/challenge-covenants-for-braidpool/1370/1
@@ -518,12 +518,12 @@ _Die jüngsten, herausragenden Änderungen in [Bitcoin Core][bitcoin core repo],
 [erlang]: https://en.wikipedia.org/wiki/Erlang_distribution
 [sd4]: https://delvingbitcoin.org/t/erlay-define-fanout-rate-based-on-the-transaction-reception-method/1422
 [news136 gcd]: /en/newsletters/2021/02/17/#faster-signature-operations
-[news337 bdk]: /en/newsletters/2025/01/17/#bdk-1789
-[news339 bdk-cpf]: /en/newsletters/2025/01/31/#bdk-1614
+[news337 bdk]: /de/newsletters/2025/01/17/#bdk-1789
+[news339 bdk-cpf]: /de/newsletters/2025/01/31/#bdk-1614
 [bdk wallet 1.1.0]: https://github.com/bitcoindevkit/bdk/releases/tag/wallet-1.1.0
 [lnd v0.18.5-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.5-beta.rc1
 [ap4]: https://mailing-list.bitcoindevs.xyz/bitcoindev/jiyMlvTX8BnG71f75SqChQZxyhZDQ65kldcugeIDJVJsvK4hadCO3GT46xFc7_cUlWdmOCG0B_WIz0HAO5ZugqYTuX5qxnNLRBn3MopuATI=@protonmail.com/
 [modularinversion]: https://en.wikipedia.org/wiki/Modular_multiplicative_inverse
 [news131 muhash]: /en/newsletters/2021/01/13/#bitcoin-core-19055
 [news62 whitelist]: /en/newsletters/2019/09/04/#eclair-954
-[news337 splicing]: /en/newsletters/2025/01/17/#eclair-2936
+[news337 splicing]: /de/newsletters/2025/01/17/#eclair-2936
