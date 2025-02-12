@@ -100,12 +100,71 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Cluster mempool: introduce TxGraph][review club 31363] is a PR by
+[sipa][gh sipa] that introduces the `TxGraph` class, which encapsulates
+knowledge about the (effective) fees, sizes, and dependencies between
+all mempool transactions, but nothing else. It is part of the [cluster
+mempool][topic cluster mempool] project and brings a comprehensive
+interface that allows interaction with the mempool graph through
+mutation, inspector, and staging functions.
+
+Notably, `TxGraph` does not have any knowledge about `CTransaction`,
+inputs, outputs, txids, wtxids, prioritization, validity, policy
+rules, and a lot more. This makes it easier to (almost) fully specify
+the class's behavior, allowing for simulation-based tests - which are
+included in the PR.
+
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/31397#l-23FIXME"
+  q0="What is the mempool \"graph\" and to what extent does it exist in
+  the mempool code on master?"
+  a0="On master, the mempool graph exists implicitly as the set of
+  `CTxMemPoolEntry` objects as nodes, and their ancestor/dependant
+  relationships which can be recursively traversed with
+  `GetMemPoolParents()` and `GetMemPoolChildren()`."
+  a0link="https://bitcoincore.reviews/31363#l-26"
+
+  q1="What are the benefits of having a `TxGraph`, in your own words?
+  Can you think of drawbacks?"
+  a1="Benefits include: 1) `TxGraph` enables the implementation of
+  [cluster mempool][topic cluster mempool], with all of its benefits. 2)
+  Better encapsulation of mempool code, using more efficient data
+  structures. 3) Makes it easier to interface with and reason about the
+  mempool, abstracting away topological details such as not
+  double-counting replacements.
+  <br><br>Drawbacks include: 1) The significant review and testing efforts
+  associated with the large changes introduced. 2) It restricts how
+  validation can dictate per-transaction topology limits, as is for
+  example relevant to TRUC and other policies. 3) A very slight run-time
+  performance overhead caused by translation to-and-from the
+  `TxGraph::Ref*` pointers."
+  a1link="https://bitcoincore.reviews/31363#l-54"
+
+  q2="How many `Clusters` can an individual transaction be part of,
+  within a `TxGraph`?"
+  a2="Even though a transaction can conceptually only belong to a single
+  cluster, the answer is 2. This is because a `TxGraph` can encapsulate
+  2 parallel graphs: \"main\", and optionally \"staging\"."
+  a2link="https://bitcoincore.reviews/31363#l-116"
+
+  q3="What does it mean for a `TxGraph` to be oversized? Is that the
+  same as the mempool being full?"
+  a3="A `TxGraph` is oversized when at least one of its `Cluster`s
+  exceeds the `MAX_CLUSTER_COUNT_LIMIT`. This is not the same as the
+  mempool being full, because a `TxGraph` can have more than one
+  `Cluster`."
+  a3link="https://bitcoincore.reviews/31363#l-147"
+
+  q4="If a `TxGraph` is oversized, which functions can still be called,
+  and which ones can’t?"
+  a4="Operations that could require actually materializing an oversized
+  cluster, as well as functions that require O(n<sup>2</sup>) work or more, are
+  not allowed for an oversized `Cluster`. This includes operations such
+  as computing the ancestors/descendants of a transaction. Mutation
+  operations (`AddTransaction()`, `RemoveTransaction()`,
+  `AddDependency()`, and `SetTransactionFee()`), and operations such as
+  `Trim()` (roughly `O(n log n)`) are still allowed."
+  a4link="https://bitcoincore.reviews/31363#l-162"
 %}
 
 ## Releases and release candidates
@@ -176,3 +235,10 @@ This is an oversimplification; for the actual rules, please see a
 [runestone tx]: https://mempool.space/tx/ac8990b04469bad8630eaf2aa51561086d81a241deff6c95d96d27e41fa19f90
 [erhardt bip3]: https://mailing-list.bitcoindevs.xyz/bitcoindev/25449597-c5ed-42c5-8ac1-054feec8ad88@murch.one/
 [fn sigops]: /en/newsletters/2025/02/07/#fn:2kmultisig
+[review club 31363]: https://bitcoincore.reviews/31363
+[gh sipa]: https://github.com/sipa
+[news244 ebpf]: https://bitcoinops.org/en/newsletters/2023/03/29/#bitcoin-core-26531
+[news160 ebpf]: https://bitcoinops.org/en/newsletters/2021/08/04/#bitcoin-core-22006
+[ludpr]: https://github.com/lnurl/luds/pull/234
+[news232 deschash]: /en/newsletters/2023/01/04/#btcpay-server-4411
+[news194 deschash]: /en/newsletters/2022/04/06/#c-lightning-5121
