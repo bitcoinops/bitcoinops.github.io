@@ -109,7 +109,7 @@ Konsensänderungen weiter und verweist auf die erneute Diskussion
   Transaktions-Relay-Funktion (auch Fanout genannt) funktioniert und wie Erlay diese ändern will.
   Er bemerkt, dass ein gewisser Anteil an Fanout auch in einem Netzwerk, in dem jeder Knoten
   Erlay unterstützt, bestehen bleiben wird, da "Fanout effizienter und erheblich schneller ist
-  als der Mengenabgleich, vorausgesetzt, der empfangende Knoten kennt die angekündigte Transaktion
+  als der Synchronisierung, vorausgesetzt, der empfangende Knoten kennt die angekündigte Transaktion
   nicht".
 
   Die Verwendung einer Mischung aus Fanout und Synchronisierung erfordert die Entscheidung,
