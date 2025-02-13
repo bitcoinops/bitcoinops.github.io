@@ -1,7 +1,7 @@
 ---
 title: 'Bitcoin Optech Newsletter #340'
 permalink: /de/newsletters/2025/02/07/
-name: 2025-01-07-newsletter-de
+name: 2025-02-07-newsletter-de
 slug: 2025-02-07-newsletter-de
 type: newsletter
 layout: newsletter
