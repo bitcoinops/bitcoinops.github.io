@@ -194,17 +194,47 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #25832][] tracing: network connection tracepoints
+- [Bitcoin Core #25832][] adds five new tracepoints and documentation for
+  monitoring peer connection events such as connection lifetime, reconnection
+  frequency by IP and netgroup, peer discouragement, eviction, misbehaviour, and
+  more. Bitcoin Core users that have Extended Berkeley Packet Filter (eBPF)
+  tracing enabled can hook into the tracepoints using the sample scripts
+  provided, or write their own tracing scripts (see Newsletters [#160][news160
+  ebpf] and [#244][news244 ebpf]).
 
-- [Eclair #2989][] Add router support for batched splices
+- [Eclair #2989][] adds support for [batched][topic payment batching]
+  splices in the router, allowing the tracking of multiple
+  channels spent in a single [splice][topic splicing] transaction. Due to the
+  inability to deterministically map new [channel announcements][topic channel
+  announcements] to their respective channels, the router updates the first
+  matching channel it finds.
 
-- [LDK #3440][] Support receiving async payments
+- [LDK #3440][] completes support for receiving [async payments][topic async
+  payments] by verifying the sender’s invoice request embedded in the
+  [HTLC][topic htlc]’s (held by an upstream node) onion message and generating
+  the correct `PaymentPurpose` to claim the payment. An absolute expiry time is
+  now set for incoming async payments, preventing indefinite probing of a node’s
+  online status, and the necessary communication flow is added to release an
+  HTLC held by an upstream node when the recipient node comes back online. To
+  complete the full implementation of the async payment flow, nodes must also be
+  able to act as an LSP that serves invoices on behalf of async receivers.
 
-- [LND #9470][] Make BumpFee RPC user inputs more stricter.
+- [LND #9470][] adds a `deadline_delta` parameter to the `BumpFee` and
+  `BumpForceCloseFee` RPC commands, specifying the number of blocks over which a
+  given budget (also to be specified) will be fully allocated for fee bumping
+  and a [RBF][topic rbf] will be performed. In addition, the `conf_target`
+  parameter is redefined to specify number of blocks for which fee estimator
+  will be queried to obtain the current fee rate, for both the above RPC commands mentioned
+  above and the deprecated `BumpCloseFee`.
 
-- [BTCPay Server #6580][] Remove LNURL description hash check, see
-  https://bitcoinops.org/en/newsletters/2022/04/06/#c-lightning-5121 and
-  https://bitcoinops.org/en/newsletters/2023/01/04/#btcpay-server-4411
+- [BTCPay Server #6580][] removes a check that verifies the presence and
+  correctness of the description hash in [BOLT11][] invoices for [LNURL][topic
+  lnurl]-pay. This change aligns with a [proposed deprecation][ludpr] in the
+  LNURL Documents (LUD) specification, which deems the requirement to offer
+  minimal security benefits while posing a significant challenge to LNURL-pay
+  implementation. The description hash parameter field is implemented in
+  Core-Lightning (see Newsletter [#194][news194 deschash] and [#232][news232
+  deschash]).
 
 ## Corrections
 
@@ -237,8 +267,8 @@ This is an oversimplification; for the actual rules, please see a
 [fn sigops]: /en/newsletters/2025/02/07/#fn:2kmultisig
 [review club 31363]: https://bitcoincore.reviews/31363
 [gh sipa]: https://github.com/sipa
-[news244 ebpf]: https://bitcoinops.org/en/newsletters/2023/03/29/#bitcoin-core-26531
-[news160 ebpf]: https://bitcoinops.org/en/newsletters/2021/08/04/#bitcoin-core-22006
+[news244 ebpf]: /en/newsletters/2023/03/29/#bitcoin-core-26531
+[news160 ebpf]: /en/newsletters/2021/08/04/#bitcoin-core-22006
 [ludpr]: https://github.com/lnurl/luds/pull/234
 [news232 deschash]: /en/newsletters/2023/01/04/#btcpay-server-4411
 [news194 deschash]: /en/newsletters/2022/04/06/#c-lightning-5121
