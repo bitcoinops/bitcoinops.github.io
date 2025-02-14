@@ -444,7 +444,7 @@ Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo]._
 {% include linkers/issues.md v=2 issues="21590,2983,2968,3556,9456,26348" %}
 [dryja pp]: https://docs.google.com/presentation/d/1G4xchDGcO37DJ2lPC_XYyZIUkJc2khnLrCaZXgvDN0U/mobilepresent?pli=1#slide=id.g85f425098_0_219
 [morehouse forceclose]: https://delvingbitcoin.org/t/disclosure-ldk-duplicate-htlc-force-close-griefing/1410
-[news339 ldkvuln]: /en/newsletters/2025/01/31/#vulnerability-in-ldk-claim-processing
+[news339 ldkvuln]: /fr/newsletters/2025/01/31/#vulnerabilite-dans-le-traitement-des-reclamations-ldk
 [halseth zkgoss]: https://delvingbitcoin.org/t/zk-gossip-for-lightning-channel-announcements/1407
 [news321 zkgoss]: /fr/newsletters/2024/09/20/#prouver-l-inclusion-dans-l-ensemble-utxo-en-connaissance-nulle
 [richter cluster]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303/9
@@ -461,7 +461,7 @@ Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [sanders ephanc]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/2
 [harding ephanc]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/4
 [riard ephanc]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/3
-[news339 pincycle]: /en/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
+[news339 pincycle]: /fr/newsletters/2025/01/31/#attaques-de-remplacement-cyclique-avec-exploitation-des-mineurs
 [kurbatov rand]: https://delvingbitcoin.org/t/emulating-op-rand/1409
 [tonoski minrelay]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CAMHHROxVo_7ZRFy+nq_2YzyeYNO1ijR_r7d89bmBWv4f4wb9=g@mail.gmail.com/
 [news324 largeinv]: /fr/newsletters/2024/10/11/#dos-par-ensembles-d-inventaire-importants
@@ -486,13 +486,13 @@ Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [provoost dag]: https://delvingbitcoin.org/t/fastest-possible-pow-via-simple-dag/1331/13
 [ccbip]: https://github.com/TheBlueMatt/bips/blob/7f9670b643b7c943a0cc6d2197d3eabe661050c2/bip-XXXX.mediawiki#specification
 [news36 cc]: /en/newsletters/2019/03/05/#prevent-use-of-op-codeseparator-and-findanddelete-in-legacy-transactions
-[news335 cc]: /en/newsletters/2025/01/03/#consensus-cleanup-timewarp-grace-period
+[news335 cc]: /fr/newsletters/2025/01/03/#periode-de-grace-de-nettoyage-de-consensus-timewarp
 [wuille erlang]: https://delvingbitcoin.org/t/timewarp-attack-600-second-grace-period/1326/28?u=harding
 [erlang]: https://en.wikipedia.org/wiki/Erlang_distribution
 [sd4]: https://delvingbitcoin.org/t/erlay-define-fanout-rate-based-on-the-transaction-reception-method/1422
 [news136 gcd]: /en/newsletters/2021/02/17/#faster-signature-operations
 [news337 bdk]: /fr/newsletters/2025/01/17/#bdk-1789
-[news339 bdk-cpf]: /en/newsletters/2025/01/31/#bdk-1614
+[news339 bdk-cpf]: /fr/newsletters/2025/01/31/#bdk-1614
 [bdk wallet 1.1.0]: https://github.com/bitcoindevkit/bdk/releases/tag/wallet-1.1.0
 [lnd v0.18.5-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.5-beta.rc1
 [ap4]: https://mailing-list.bitcoindevs.xyz/bitcoindev/jiyMlvTX8BnG71f75SqChQZxyhZDQ65kldcugeIDJVJsvK4hadCO3GT46xFc7_cUlWdmOCG0B_WIz0HAO5ZugqYTuX5qxnNLRBn3MopuATI=@protonmail.com/
