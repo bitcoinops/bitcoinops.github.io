@@ -37,7 +37,7 @@ transaction feerate.
   channels, and reduce the victim's ability to earn forwarding fees.
 
   Morehouse's excellent post goes into additional detail and suggests
-  how future bugs from the same underlying cause might be avoided.
+  how future bugs from the same underlying cause might be avoided. {% assign timestamp="2:14" %}
 
 - **Zero-knowledge gossip for LN channel announcements:** Johan Halseth
   [posted][halseth zkgoss] to Delving Bitcoin with an extension to the
@@ -57,7 +57,7 @@ transaction feerate.
   all LN nodes can quickly verify proofs and the complexity of the proof
   and verification system since all LN nodes will need to implement it.
 
-  Discussion was ongoing at the time this summary was written.
+  Discussion was ongoing at the time this summary was written. {% assign timestamp="16:01" %}
 
 - **Discovery of previous research for finding optimal cluster linearization:**
   Stefan Richter [posted][richter cluster] to Delving Bitcoin about a
@@ -97,7 +97,7 @@ transaction feerate.
   appears that our problem, or rather, its generalized solution which is
   called _source-sink-monotone parametric min-cut_ has applications in
   something called polygon aggregation for map simplification and other
-  topics in computer vision."
+  topics in computer vision." {% assign timestamp="26:29" %}
 
 - **Erlay update:** Sergi Delgado made several posts to Delving Bitcoin
   about his work over the past year implementing [Erlay][topic erlay]
@@ -111,7 +111,7 @@ transaction feerate.
 
   Using a mix of fanout and reconciliation requires choosing when
   to use each method and which peers to use them with, so his research
-  has focused on making the optimal choices:
+  has focused on making the optimal choices: {% assign timestamp="46:38" %}
 
   - [Filtering based on transaction knowledge][sd1] examines whether a
     node should include a peer in its plans to fanout a transaction even
@@ -218,7 +218,7 @@ transaction feerate.
   of encouraging miner [transaction pinning][topic transaction pinning]
   (see [Newsletter #339][news339 pincycle]).
 
-  Discussion was ongoing at the time of writing.
+  Discussion was ongoing at the time of writing. {% assign timestamp="1:09:50" %}
 
 - **Emulating OP_RAND:** Oleksandr Kurbatov [posted][kurbatov rand] to
   Delving Bitcoin about an interactive protocol that allows two parties
@@ -234,7 +234,7 @@ transaction feerate.
   idea---probabilistic payments have multiple applications, including
   allowing users to send amounts onchain that would otherwise be
   [uneconomical][topic uneconomical outputs], such as for [trimmed
-  HTLCs][topic trimmed htlc].
+  HTLCs][topic trimmed htlc]. {% assign timestamp="1:30:30" %}
 
 - **Discussion about lowering the minimum transaction relay feerate:**
   Greg Tonoski [posted][tonoski minrelay] to the Bitcoin-Dev mailing
@@ -245,7 +245,7 @@ transaction feerate.
   Of note, a recently disclosed vulnerability (see [Newsletter
   #324][news324 largeinv]) did reveal a potential problem that could
   have affected users and miners who lowered the setting in the past.
-  Optech will provide updates if there is significant further discussion.
+  Optech will provide updates if there is significant further discussion. {% assign timestamp="1:36:33" %}
 
 ## Changing consensus
 
@@ -255,7 +255,7 @@ Bitcoin's consensus rules._
 - **Updates to cleanup soft fork proposal:** Antoine Poinsot made
   several posts to the Delving Bitcoin thread about the [consensus
   cleanup soft fork][topic consensus cleanup] suggesting parameter
-  changes:
+  changes: {% assign timestamp="1:43:46" %}
 
   - [Introduce legacy input sigops limit][ap1]: in a private thread,
     Poinsot and several other contributors have attempted to produce a
@@ -349,7 +349,7 @@ Bitcoin's consensus rules._
   contributions.  He provides a specific list of requirements in the
   post; he also welcomes a proof of impossibility.
 
-  As of this writing, there have been no replies.
+  As of this writing, there have been no replies. {% assign timestamp="2:28:59" %}
 
 - **Deterministic transaction selection from a committed mempool:** a
   thread from April 2024 received renewed attention this past month.
@@ -391,7 +391,7 @@ Bitcoin's consensus rules._
   section) showed how it could be especially useful for a pool that
   creates blocks at a much higher rate than Bitcoin, where transaction
   selection determinism significantly reduces bandwidth, latency, and
-  validation costs.
+  validation costs. {% assign timestamp="2:04:52" %}
 
 - **Fast difficulty adjustment algorithm for a DAG blockchain:**
   developer Zawy [posted][zawy daadag] to Delving Bitcoin about a mining
@@ -436,7 +436,7 @@ Bitcoin's consensus rules._
 
   The last post to the discussion thread was made about a month before this
   summary was written, but we expect Zawy and Braidpool developers are
-  continuing to analyze and implement the protocol.
+  continuing to analyze and implement the protocol. {% assign timestamp="2:19:24" %}
 
 ## Releases and release candidates
 
@@ -451,10 +451,10 @@ release candidates._
   for relative locktimes, see [Newsletter #337][news337 bdk]).  It also
   adds support for [compact block filters][topic compact block filters]
   (see [Newsletter #339][news339 bdk-cpf]), in addition to "various bug
-  fixes and improvements".
+  fixes and improvements". {% assign timestamp="2:39:15" %}
 
 - [LND v0.18.5-beta.rc1][] is a release candidate for a minor version of
-  this popular LN node implementation.
+  this popular LN node implementation. {% assign timestamp="2:39:43" %}
 
 ## Notable code and documentation changes
 
@@ -473,7 +473,7 @@ repo], and [BINANAs][binana repo]._
   support for both 32-bit and 64-bit architectures and specializing for the
   specific modulus. Benchmark results show an approximate 100× performance
   improvement on x86_64, reducing MuHash’s computation from 5.8 ms to 57 μs,
-  paving the way for more efficient state validation.
+  paving the way for more efficient state validation. {% assign timestamp="38:58" %}
 
 - [Eclair #2983][] modifies routing table synchronization on reconnection to
   only synchronize [channel announcements][topic channel announcements] with the node's
@@ -481,7 +481,7 @@ repo], and [BINANAs][binana repo]._
   reduce network overhead. In addition, the default behavior of the
   synchronization whitelist (see Newsletter [#62][news62 whitelist]) has been
   updated: to disable synchronization with non-whitelisted peers, users must now
-  set `router.sync.peer-limit` to 0 (the default value is 5).
+  set `router.sync.peer-limit` to 0 (the default value is 5). {% assign timestamp="1:23:30" %}
 
 - [Eclair #2968][] adds support for [splicing][topic splicing] on public
   channels. Once the splice transaction is confirmed and locked on both sides,
@@ -490,7 +490,7 @@ repo], and [BINANAs][binana repo]._
   of third-party splices as a prerequisite for this (see Newsletter
   [#337][news337 splicing]). This PR also disallows the use of
   `short_channel_id` for routing on private channels, instead prioritizing
-  `scid_alias` to ensure that the channel UTXO isn't revealed.
+  `scid_alias` to ensure that the channel UTXO isn't revealed. {% assign timestamp="1:27:53" %}
 
 - [LDK #3556][] improves [HTLC][topic htlc] handling by proactively failing
   HTLCs backwards if they are too close to expiration before waiting for an
@@ -499,13 +499,13 @@ repo], and [BINANAs][binana repo]._
   confirm. However, this delay ran the risk of forcibly closing its channel. In
   addition, the `historical_inbound_htlc_fulfills` field is removed to clean up
   the channel state, and a new `SentHTLCId` is introduced to eliminate confusion
-  from duplicate HTLC IDs on inbound channels.
+  from duplicate HTLC IDs on inbound channels. {% assign timestamp="2:40:31" %}
 
 - [LND #9456][] adds deprecation warnings to the `SendToRoute`,
   `SendToRouteSync`, `SendPayment`, and `SendPaymentSync` endpoints in
   preparation for their removal in the release after next (0.21). Users are
   encouraged to migrate to the new v2 methods `SendToRouteV2`, `SendPaymentV2`,
-  `TrackPaymentV2`.
+  `TrackPaymentV2`. {% assign timestamp="2:41:10" %}
 
 {% include snippets/recap-ad.md when="2025-02-11 15:30" %}
 
