@@ -144,6 +144,7 @@ inclus dans le PR.
   `RemoveTransaction()`, `AddDependency()`, et `SetTransactionFee()`), et des opérations telles que
   `Trim()` (approximativement `O(n log n)`) sont encore autorisées."
   a4link="https://bitcoincore.reviews/31363#l-162"
+%}
 
 ## Mises à jour et versions candidates
 
