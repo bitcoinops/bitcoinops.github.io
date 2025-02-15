@@ -88,7 +88,7 @@ Sitzung einzusehen.*
 
 [Cluster-Mempool: Einführung von TxGraph][review club 31363] ist ein PR von [sipa][gh sipa], der die
 `TxGraph`-Klasse einführt, die Kenntnisse über die (effektiven) Gebühren, Größen und Abhängigkeiten
-zwischen allen Mempool-Transaktionen kapselt, aber nichts anderes. Es ist Teil des Cluster-Mempool-Projekts
+zwischen allen Mempool-Transaktionen kapselt, aber nichts anderes. Es ist Teil des [Cluster-Mempool][topic cluster mempool]-Projekts
 und bringt eine umfassende Schnittstelle, die es ermöglicht, mit dem Mempool-Graphen über Mutation-,
 Inspector- und Staging-Funktionen zu interagieren.
 
@@ -103,7 +103,7 @@ Priorisierung, Gültigkeit, Richtlinienregeln und vieles mehr. Dies macht es ein
   durchlaufen werden können.'
   a0link='https://bitcoincore.reviews/31363#l-26'
   q1='Was sind die Vorteile von einem `TxGraph`, in Ihren eigenen Worten? Können Sie mögliche Nachteile nennen?'
-  a1='Vorteile sind: 1) `TxGraph` ermöglicht die Implementierung von [Cluster-Mempool](topic cluster mempool),
+  a1='Vorteile sind: 1) `TxGraph` ermöglicht die Implementierung von [Cluster-Mempool][topic cluster mempool],
   mit all seinen Vorteilen. 2) Bessere Kapselung des Mempool-Codes, mit effizienteren Datenstrukturen. 3) Es ist
   einfacher, mit dem Mempool zu interagieren und über ihn nachzudenken, indem topologische Details wie das Vermeiden
   von Doppelzählung von Ersetzungen abstrahiert werden. <br><br>Nachteile sind: 1) Die bedeutenden Review- und
