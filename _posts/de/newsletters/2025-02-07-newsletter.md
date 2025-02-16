@@ -461,10 +461,10 @@ _Die jüngsten, herausragenden Änderungen in [Bitcoin Core][bitcoin core repo],
 ## Footnotes
 
 [^2kmultisig]:
-  Bei P2SH und der vorgeschlagenen Zählweise der Input-Sigops wird ein `OP_CHECKMULTISIG`
-  mit mehr als 16 öffentlichen Schlüsseln als 20 Sigops gezählt, sodass jemand, der
-  `OP_CHECKMULTISIG` 125 Mal mit jeweils 17 Schlüsseln verwendet, insgesamt als 2.500
-  Sigops gewertet wird.
+    Bei P2SH und der vorgeschlagenen Zählweise der Input-Sigops wird ein `OP_CHECKMULTISIG`
+    mit mehr als 16 öffentlichen Schlüsseln als 20 Sigops gezählt, sodass jemand, der
+    `OP_CHECKMULTISIG` 125 Mal mit jeweils 17 Schlüsseln verwendet, insgesamt als 2.500
+    Sigops gewertet wird.
 
 
 {% include references.md %}

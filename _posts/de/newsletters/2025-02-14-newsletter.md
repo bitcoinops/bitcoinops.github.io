@@ -21,19 +21,19 @@ und prägnant dargestellt.
 [Beitrag][kurbatov pp] im Delving Bitcoin-Forum zur Emulation des OP_RAND-Opcodes
 (siehe [Newsletter #340][news340 pp]) wurden verschiedene Fragestellungen eingebracht:
 
-  - _Eignung als Alternative zu „trimmed“ HTLCs:_ Dave Harding [fragte][harding pp],
+  - _Eignung als Alternative zu „gekürzten“ HTLCs:_ Dave Harding [fragte][harding pp],
   ob Kurbatovs Methode in [LN-Penalty][topic ln-penalty]- oder [LN-Symmetry][topic eltoo]-Kanälen
   eingesetzt werden könne, bei denen HTLCs bei einer Force-Close an Wert verlieren – ein Problem,
-  das derzeit mit „trimmed“ HTLCs adressiert wird. Anthony Towns [äußerte Zweifel][towns pp1]
+  das derzeit mit „gekürzten“ HTLCs adressiert wird. Anthony Towns [äußerte Zweifel][towns pp1]
   aufgrund der invertierten Protokollrollen, sah aber Chancen durch gezielte Anpassungen.
 
   - _Erforderlicher Aufbauschritt:_ Towns [entdeckte][towns pp1], dass das ursprünglich
   veröffentlichte Protokoll einen Schritt fehlte. Kurbatov stimmte zu.
 
-  - _Einfachere Zero-Knowledge-Beweise:_ Adam Gibson [schlug][gibson pp1] vor, dass die
+  - _Einfachere Null-Wissen-Beweis:_ Adam Gibson [schlug][gibson pp1] vor, dass die
   Verwendung von [schnorr][topic schnorr signatures] und [taproot][topic taproot] anstelle
   von gehashten öffentlichen Schlüsseln die Konstruktion und Überprüfung des erforderlichen
-  Zero-Knowledge-Beweises erheblich vereinfachen und beschleunigen könnte. Towns [bot][towns pp2]
+  Null-Wissen-Beweis erheblich vereinfachen und beschleunigen könnte. Towns [bot][towns pp2]
   einen vorläufigen Ansatz an, den [Gibson][gibson pp2] analysierte.
 
   Die Diskussion war zum Zeitpunkt des Schreibens noch im Gange.
@@ -198,7 +198,7 @@ siehe bitte diesen [Beitrag][towns sigops] von Anthony Towns in dieser Woche.
 {% include linkers/issues.md v=2 issues="25832,2989,3440,9470,6580,1712" %}
 [lnd v0.18.5-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.5-beta
 [Bitcoin Inquisition 28.1]: https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v28.1-inq
-[news340 pp]: /en/newsletters/2025/02/07/#emulating-op-rand
+[news340 pp]: /de/newsletters/2025/02/07/#emulieren-von-op-rand
 [towns sigops]: https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/69
 [kurbatov pp]: https://delvingbitcoin.org/t/emulating-op-rand/1409
 [harding pp]: https://delvingbitcoin.org/t/emulating-op-rand/1409/2
@@ -207,7 +207,7 @@ siehe bitte diesen [Beitrag][towns sigops] von Anthony Towns in dieser Woche.
 [towns pp2]: https://delvingbitcoin.org/t/emulating-op-rand/1409/6
 [gibson pp2]: https://delvingbitcoin.org/t/emulating-op-rand/1409/7
 [morehouse eanchor]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/8
-[news340 eanchor]: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
+[news340 eanchor]: /de/newsletters/2025/02/07/#kompromisse-in-ln-ephemeral-anker-skripten
 [towns eanchor]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/9
 [sanders eanchor]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/11
 [b10c orphan]: https://delvingbitcoin.org/t/stats-on-orphanage-overflows/1421/
