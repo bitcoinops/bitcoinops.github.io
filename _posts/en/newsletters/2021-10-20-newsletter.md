@@ -166,7 +166,7 @@ seems worth publicizing the decision to use this value -->
 - [Bitcoin Core #22539][] considers replacement transactions seen by the
   local node when generating fee estimates.  Replacement transactions
   were [previously][bitcoin core #9519] not considered when they rarely
-  occurred, but currently about [20% of all transactions][optech rbf] send the
+  occurred, but currently about 20% of all transactions send the
   [BIP125][] signal for opting in to replacement and [several
   thousand][0xb10c stats] replacements occur in a typical day.
 
@@ -203,7 +203,6 @@ seems worth publicizing the decision to use this value -->
 [news170 ln cve]: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
 [BDK 0.12.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.12.0
 [0xb10c stats]: https://github.com/bitcoin/bitcoin/pull/22539#issuecomment-885763670
-[optech rbf]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1
 [zeus v0.6.0-alpha3]: https://github.com/ZeusLN/zeus/releases/tag/v0.6.0-alpha3
 [news167 lightning addresses]: /en/newsletters/2021/09/22/#lightning-address-identifiers-announced
 [sparrow 1.5.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.5.0

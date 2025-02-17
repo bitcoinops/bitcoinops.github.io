@@ -12,7 +12,7 @@ Bitcoin Optech helps Bitcoin users and businesses integrate scaling
 technologies.
 
 We provide [workshops][], [weekly
-newsletters][], [original research][dashboard], [case studies and
+newsletters][], [case studies and
 announcements][blog], [analysis of Bitcoin software and
 services][compatibility], a [podcast][], and help facilitate improved relations between
 businesses
@@ -22,7 +22,6 @@ and the open source community.
 
 [workshops]: /en/workshops
 [weekly newsletters]: /en/newsletters/
-[dashboard]: https://dashboard.bitcoinops.org/
 [blog]: /en/blog/
 [podcast]: /en/podcast/
 [about]: /en/about

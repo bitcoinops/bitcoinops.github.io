@@ -16,6 +16,9 @@ excerpt: >
 {:.post-meta}
 *by [Marcin Jachymiak](https://github.com/marcinja)<br>Intern at Bitcoin Optech*
 
+**Note: As of February 2025, the Bitcoin Optech Dashboard has been retired and
+is no longer accessible.**
+
 This summer I was an intern for [Bitcoin Optech](/), working on a Bitcoin metrics dashboard. In this post I'll be describing the purpose of the dashboard and how it was implemented.
 
 The goal of the Optech dashboard is to show a variety of metrics of how effectively blockspace is being used. Important metrics are those that show activity like:
@@ -23,9 +26,6 @@ The goal of the Optech dashboard is to show a variety of metrics of how effectiv
  - [consolidations](https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation): combining many UTXOs in a single UTXO during low fee period, to avoid paying a higher fee in the future
  - dust creation: creation of UTXOs that cost more to spend than they have value, at different fee-rates
  - SegWit adoption: creation of and spending from SegWit outputs
-
-
-The dashboard is live and is showing these stats and more at [dashboard.bitcoinops.org](https://dashboard.bitcoinops.org).
 
 The dataset used for the dashboard is also saved as a directory of JSON files, updated nightly. You can download the zipped dataset from our [S3 bucket](http://dashboard.dataset.s3.us-east-2.amazonaws.com/backups/bitcoinops-dataset.tar.gz). If you just want the JSON file for a specific block, you can get it at: `http://dashboard.dataset.s3.us-east-2.amazonaws.com/blocks/BLOCK_NUMBER.json` If you'd rather recreate the data using your own full node (it might take a few days), you can use the code with instructions at [github.com/bitcoinops/btc-dashboard](https://github.com/bitcoinops/btc-dashboard).
 
@@ -119,4 +119,4 @@ err := worker.pgClient.Insert(&data.DashboardDataRow)
 At this point I spent more time writing code to get information *out* of InfluxDB then on inserting it into Postgres. Once the switch to Postgres was done, the dashboard graphs came up much faster in Grafana.
 
 ## Results
-You can use the Bitcoin Optech dashboard to see these stats as historical trends from the entire history of Bitcoin, and also from new blocks as they get confirmed. All of this is available live on our dashboard at [dashboard.bitcoinops.org](https://dashboard.bitcoinops.org)!
+You can use the Bitcoin Optech dashboard to see these stats as historical trends from the entire history of Bitcoin, and also from new blocks as they get confirmed. All of this is available live on our dashboard!

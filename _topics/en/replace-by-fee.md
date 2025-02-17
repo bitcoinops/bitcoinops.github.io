@@ -211,9 +211,6 @@ see_also:
 
   - title: Opt-in RBF FAQ
     link: https://bitcoincore.org/en/faq/optin_rbf/
-
-  - title: "Optech Dashboard: BIP125 usage"
-    link: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1
 ---
 Different node software can use different RBF rules, so there have
 been several variations.  The most widely-used form of RBF today is

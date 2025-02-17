@@ -30,7 +30,7 @@ level of conversation around scaling Bitcoin][announcement]. This year, we’ve:
   book pages, they'd be over 100 pages long (36,000 words at 350 words per
   page). Over 1,800 Bitcoin engineers and enthusiasts have subscribed to the
   newsletter.
-- Built a [dashboard][] to track the state of the Bitcoin network and the
+- Built a dashboard to track the state of the Bitcoin network and the
   adoption rate of scaling technologies. Marcin wrote about [building the
   dashboard in an Optech blog post][dashboard blog post].
 - Started writing the first chapter of our [Scaling Book][scaling book].
@@ -82,7 +82,6 @@ scale.
 [announcement]: /en/announcing-bitcoin-optech/
 [workshops]: /en/workshops/
 [newsletters]: /en/newsletters/
-[dashboard]: https://dashboard.bitcoinops.org/
 [dashboard blog post]: /en/dashboard-announcement/
 [scaling book]: https://github.com/bitcoinops/scaling-book
 [scaling book feebumping]: https://github.com/bitcoinops/scaling-book/blob/master/1.fee_bumping/fee_bumping.md

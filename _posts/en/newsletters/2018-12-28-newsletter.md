@@ -359,8 +359,7 @@ developing the protocol has proceeded.
 
 After starting [Optech][] in May, we've signed up 15 companies as
 members, held two [workshops][optech workshops], produced 28 weekly
-[newsletters][optech newsletters], built a [dashboard][optech
-dashboard], and made a solid start on a book about
+[newsletters][optech newsletters], built a dashboard, and made a solid start on a book about
 individually-deployable scaling techniques.  To learn more about what we
 accomplished in 2018 and what we have planned for 2019, please see our
 short [annual report][optech annual report].
@@ -542,7 +541,7 @@ substantially lower costs than competitors that haven't optimized.
 within each block, smoothed using a simple moving average over 1,000
 blocks.  Empty blocks (those with only a generation transaction) were
 excluded from analysis.  Most of the above statistics may be obtained
-from the [Optech Dashboard][], which is updated after every block.
+from the Optech Dashboard, which is updated after every block.
 Note: After 1 January 2019, we will update the plots in this article to
 reflect all of 2018, at which point this sentence will be deleted.*
 </div>
@@ -658,7 +657,6 @@ newsletters] or follow our [RSS feed][].*
 [onchain pizza]: https://en.bitcoin.it/wiki/Laszlo_Hanyecz
 [optech]: /
 [optech annual report]: /en/2018-optech-annual-report/
-[optech dashboard]: https://dashboard.bitcoinops.org/
 [optech newsletters]: /en/newsletters/
 [optech workshops]: /en/workshops/
 [p2ep]: https://blockstream.com/2018/08/08/improving-privacy-using-pay-to-endpoint/
