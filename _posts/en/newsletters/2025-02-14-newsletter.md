@@ -23,8 +23,8 @@ infrastructure software.
   about emulating an `OP_RAND` opcode (see [Newsletter #340][news340
   pp]), several discussions were started:
 
-  - _Suitability as an alternative to trimmed HTLCs:_ Dave Harding
-    [asked][harding pp] if Kurbatov's method was suitable for use inside
+  - _Suitability as an alternative to trimmed HTLCs:_ Dave Harding [asked][harding pp]
+    if Kurbatov's method was suitable for use inside
     an [LN-Penalty][topic ln-penalty] or [LN-Symmetry][topic eltoo]
     payment channel for routing [HTLCs][topic htlc] that are currently
     [uneconomical][topic uneconomical outputs], which is currently done
@@ -46,7 +46,7 @@ infrastructure software.
     zero-knowledge proof.  Towns [offered][towns pp2] a tentative
     approach, which [Gibson][gibson pp2] analyzed.
 
-  Discussion was ongoing at the time of writing.
+  Discussion was ongoing at the time of writing. {% assign timestamp="0:34" %}
 
 - **Continued discussion about ephemeral anchor scripts for LN:** Matt
   Morehouse [replied][morehouse eanchor] to the thread about what
@@ -67,7 +67,7 @@ infrastructure software.
   transaction by 50%, but using a griefing-resistant method costs about
   10% extra, do you really expect to be griefed by a third party more
   often than one force close out of every five---especially if the
-  third-party griefer may lose money and doesn't benefit financially?
+  third-party griefer may lose money and doesn't benefit financially? {% assign timestamp="7:26" %}
 
 - **Stats on orphan evictions:** developer 0xB10C [posted][b10c orphan]
   to Delving Bitcoin with statistics about the number of transactions
@@ -84,14 +84,14 @@ infrastructure software.
   to this [transaction][runestone tx], which seems related to runestone
   mints [a colored coin (NFT) protocol]"  It appeared that many of the
   same orphan transactions were repeatedly requested, randomly evicted a
-  short time later, and then requested again.
+  short time later, and then requested again. {% assign timestamp="14:31" %}
 
 - **Updated proposal for updated BIP process:** Mark "Murch" Erhardt
   [posted][erhardt bip3] to the Bitcoin-Dev mailing list to announce that his draft
   BIP for a revised BIP process has been assigned the identifier BIP3
   and is ready for additional review---possibly its last round of review
   before being merged and activated.  Anyone with opinions is encouraged
-  to leave feedback on the [pull request][bips #1712].
+  to leave feedback on the [pull request][bips #1712]. {% assign timestamp="27:08" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -112,7 +112,7 @@ Notably, `TxGraph` does not have any knowledge about `CTransaction`,
 inputs, outputs, txids, wtxids, prioritization, validity, policy
 rules, and a lot more. This makes it easier to (almost) fully specify
 the class's behavior, allowing for simulation-based tests - which are
-included in the PR.
+included in the PR. {% assign timestamp="35:43" %}
 
 
 {% include functions/details-list.md
@@ -175,13 +175,13 @@ release candidates._
 
 - [LND v0.18.5-beta][] is a bug fix release of this popular LN node
   implementation.  Its bug fixes are described as "important"
-  and "critical" in its release notes.
+  and "critical" in its release notes. {% assign timestamp="43:48" %}
 
 - [Bitcoin Inquisition 28.1][] is a minor release of this [signet][topic
   signet] full node designed for experimenting with proposed soft forks
   and other major protocol changes.  It includes the bug fixes included
   in Bitcoin Core 28.1 plus support for [ephemeral dust][topic ephemeral
-  anchors].
+  anchors]. {% assign timestamp="44:10" %}
 
 ## Notable code and documentation changes
 
@@ -200,14 +200,14 @@ repo], and [BINANAs][binana repo]._
   more. Bitcoin Core users that have Extended Berkeley Packet Filter (eBPF)
   tracing enabled can hook into the tracepoints using the sample scripts
   provided, or write their own tracing scripts (see Newsletters [#160][news160
-  ebpf] and [#244][news244 ebpf]).
+  ebpf] and [#244][news244 ebpf]). {% assign timestamp="51:43" %}
 
 - [Eclair #2989][] adds support for [batched][topic payment batching]
   splices in the router, allowing the tracking of multiple
   channels spent in a single [splice][topic splicing] transaction. Due to the
   inability to deterministically map new [channel announcements][topic channel
   announcements] to their respective channels, the router updates the first
-  matching channel it finds.
+  matching channel it finds. {% assign timestamp="55:49" %}
 
 - [LDK #3440][] completes support for receiving [async payments][topic async
   payments] by verifying the sender’s invoice request embedded in the
@@ -217,7 +217,7 @@ repo], and [BINANAs][binana repo]._
   online status, and the necessary communication flow is added to release an
   HTLC held by an upstream node when the recipient node comes back online. To
   complete the full implementation of the async payment flow, nodes must also be
-  able to act as an LSP that serves invoices on behalf of async receivers.
+  able to act as an LSP that serves invoices on behalf of async receivers. {% assign timestamp="56:36" %}
 
 - [LND #9470][] adds a `deadline_delta` parameter to the `BumpFee` and
   `BumpForceCloseFee` RPC commands, specifying the number of blocks over which a
@@ -225,7 +225,7 @@ repo], and [BINANAs][binana repo]._
   and a [RBF][topic rbf] will be performed. In addition, the `conf_target`
   parameter is redefined to specify number of blocks for which fee estimator
   will be queried to obtain the current fee rate, for both the above RPC commands mentioned
-  above and the deprecated `BumpCloseFee`.
+  above and the deprecated `BumpCloseFee`. {% assign timestamp="57:14" %}
 
 - [BTCPay Server #6580][] removes a check that verifies the presence and
   correctness of the description hash in [BOLT11][] invoices for [LNURL][topic
@@ -234,7 +234,7 @@ repo], and [BINANAs][binana repo]._
   minimal security benefits while posing a significant challenge to LNURL-pay
   implementation. The description hash parameter field is implemented in
   Core-Lightning (see Newsletter [#194][news194 deschash] and [#232][news232
-  deschash]).
+  deschash]). {% assign timestamp="58:15" %}
 
 ## Corrections
 
