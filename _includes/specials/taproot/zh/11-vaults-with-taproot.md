@@ -33,7 +33,7 @@ ENDIF
 
 尽管在成功支出时撤销分支可以被隐藏（如果使用多签门限，它的存在和参与者的数量也会被模糊化），但隐私提升是有限的，因为保险库的使用模式在链上将是显而易见的。
 
-最后，像大多数预签名交易协议一样，保险库协议将极大受益于基于 Taproot 的进一步比特币升级，例如 [BIP118][] 的 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]。尽管这需要进一步的谨慎和协议调整，`ANYPREVOUT`和`ANYPREVOUTANYSCRIPT`将使*取消*签名可重新绑定，这将大大减少交互性并允许 0(1) 的签名存储。这对 [Revault 协议][evault protocol] 中的*紧急*签名尤为有趣，因为它将大大减少 DoS 攻击面。通过在输出中使用`ANYPREVOUTANYSCRIPT`签名，您实际上是在创建一个契约，通过限制该交易支出此币时如何创建其输出。未来更具可定制性的签名哈希将允许更灵活的限制。
+最后，像大多数预签名交易协议一样，保险库协议将极大受益于基于 Taproot 的进一步比特币升级，例如 [BIP118][] 的 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]。尽管这需要进一步的谨慎和协议调整，`ANYPREVOUT`和`ANYPREVOUTANYSCRIPT`将使*取消*签名可重新绑定，这将大大减少交互性并允许 0(1) 的签名存储。这对 [Revault 协议][revault protocol] 中的*紧急*签名尤为有趣，因为它将大大减少 DoS 攻击面。通过在输出中使用`ANYPREVOUTANYSCRIPT`签名，您实际上是在创建一个契约，通过限制该交易支出此币时如何创建其输出。未来更具可定制性的签名哈希将允许更灵活的限制。
 
 [^0]:
     如果已知，您可以预签 支出 交易并指定 nSequence，但这样您就不再需要“活跃”密钥的备用支出路径。而且，通常您在收到比特币时并不知道如何花费它们。
