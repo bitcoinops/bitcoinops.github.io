@@ -78,7 +78,7 @@ lang: zh
 
 - [BIPs #1143][] 引入了 BIPs 380-386，规范了[输出脚本描述符][topic descriptors]。输出脚本描述符是一种简单的语言，包含了所有必要的信息，允许钱包或其他程序跟踪发送到或从特定脚本或一组相关脚本中花费的支付。 [BIP380][] 描述了该方法的哲学、结构、共享表达式和校验和。其余的 BIPs 规范了每个描述符函数本身，按以下类别分类：非 SegWit（[BIP381][]）、SegWit（[BIP382][]）、多签（[BIP383][]）、组合输出（[BIP384][]）、原始脚本和地址（[BIP385][]）以及树形（[BIP386][]）描述符。
 
-- [BOLTs #847][] 允许两个通道对等方协商在共同关闭交易中应支付的费用。以前，只有一个费用被发送，另一方必须接受或拒绝该费用。 *[编辑：请参见下周的 Newsletter 获取[更准确][news166 fee negotiation] 的描述。]*
+- [BOLTs #847][] 允许两个通道对等方协商在共同关闭交易中应支付的费用。以前，只有一个费用被发送，另一方必须接受或拒绝该费用。 *[编辑：请参见下周的 Newsletter 获取[更准确][news166 fee negotiation]的描述。]*
 
 - [BOLTs #880][] 在 `openchannel` 和 `acceptchannel` 消息中添加了 `channel_type` 字段，允许发送方明确请求不同于节点广告功能位所隐含的通道功能。此向后兼容更改已在 [Eclair #1867][]、[LND #5669][] 实现，并正在作为 [C-Lightning #4616][] 合并。
 
@@ -102,4 +102,5 @@ lang: zh
 [pool2win post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019371.html
 [aj calculations]: https://github.com/bitcoin/bitcoin/pull/22340#issuecomment-872723147
 [headers first pr]: https://github.com/bitcoin/bitcoin/pull/4468
-[news166 fee negotiation]: /zh/newsletters/2021/09/15/#c-lightning-4599
+[news166 fee negotiation]: /en/newsletters/2021/09/15/#c-lightning-4599
+[series preparing for taproot]: /zh/preparing-for-taproot/
