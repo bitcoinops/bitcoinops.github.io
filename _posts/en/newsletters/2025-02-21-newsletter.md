@@ -100,7 +100,46 @@ clients, services, and popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Ark Wallet SDK released:**
+  The [Ark Wallet SDK][ark sdk github] is TypeScript library for building
+  wallets that support both onchain Bitcoin and the [Ark][topic ark] protocol
+  across [testnet][topic testnet], [signet][topic signet], [Mutinynet][new252
+  mutinynet], and mainnet (not currently recommended).
+
+- **Zaprite adds BTCPay Server support:**
+  Bitcoin and Lightning payment integrator [Zaprite][zaprite website] adds
+  BTCPay Server to their list of supported wallet connections.
+
+- **Iris Wallet desktop released:**
+  [Iris Wallet][iris github] supports sending, receiving, and issuing assets
+  using the [RGB][topic client-side validation] protocol.
+
+- **Sparrow 2.1.0 released:**
+  The Sparrow [2.1.0 release][sparrow 2.1.0] replaces the previous [HWI][topic hwi]
+  implementation with [Lark][news333 lark] and adds [PSBTv2][topic psbt] support, among other updates.
+
+- **Scure-btc-signer 1.6.0 released:**
+  [Scure-btc-signer][scure-btc-signer github]'s [1.6.0][scure-btc-signer 1.6.0]
+  release adds support for version 3 ([TRUC][topic v3 transaction relay])
+  transactions and [pay-to-anchors (P2A)][topic ephemeral anchors]. Scure-btc-signer is part
+  of the [scure][scure website] suite of libraries.
+
+- **Py-bitcoinkernel alpha:**
+  [Py-bitcoinkernel][py-bitcoinkernel github] is a Python library for
+  interacting with [libbitcoinkernel][Bitcoin Core #27587], a library
+  [encapsulating Bitcoin Core's validation logic][kernel blog].
+
+- **Rust-bitcoinkernel library:**
+  [Rust-bitcoinkernel][rust-bitcoinkernel github] is an experimental Rust library for
+  using libbitcoinkernel to read block data and validate transaction outputs and blocks.
+
+- **BIP32 cbip32 library:**
+  The [cbip32 library][cbip32 library] implements [BIP32][] in C using
+  libsecp256k1 and libsodium.
+
+- **Lightning Loop moves to MuSig2:**
+  Lightning Loop's swap service now uses [MuSig2][topic musig] as outlined in a
+  [recent blog post][loop blog].
 
 ## Notable code and documentation changes
 
@@ -201,7 +240,7 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-02-25 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="27432,30529,31384,8059,7985,7887,2967,2979,3002,3575,3562,1205" %}
+{% include linkers/issues.md v=2 issues="27432,30529,31384,8059,7985,7887,2967,2979,3002,3575,3562,1205,27587" %}
 [news239 qos]: /en/newsletters/2023/02/22/#ln-quality-of-service-flag
 [news163 pr paper]: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion
 [news270 ldk2547]: /en/newsletters/2023/09/27/#ldk-2547
@@ -218,3 +257,17 @@ repo], and [BINANAs][binana repo]._
 [news319 wakeup]: /en/newsletters/2024/09/06/#eclair-2865
 [news308 scorer]: /en/newsletters/2024/06/21/#ldk-3103
 [news336 weightbug]: /en/newsletters/2025/01/10/#investigating-mining-pool-behavior-before-fixing-a-bitcoin-core-bug
+[ark sdk github]: https://github.com/arklabshq/wallet-sdk
+[new252 mutinynet]: /en/newsletters/2023/05/24/#mutinynet-announces-new-signet-for-testing
+[zaprite website]: https://zaprite.com
+[iris github]: https://github.com/RGB-Tools/iris-wallet-desktop
+[sparrow 2.1.0]: https://github.com/sparrowwallet/sparrow/releases/tag/2.1.0
+[news333 lark]: /en/newsletters/2024/12/13/#java-based-hwi-released
+[scure-btc-signer github]: https://github.com/paulmillr/scure-btc-signer
+[scure-btc-signer 1.6.0]: https://github.com/paulmillr/scure-btc-signer/releases
+[scure website]: https://paulmillr.com/noble/#scure
+[py-bitcoinkernel github]: https://github.com/stickies-v/py-bitcoinkernel
+[rust-bitcoinkernel github]: https://github.com/TheCharlatan/rust-bitcoinkernel
+[kernel blog]: https://thecharlatan.ch/Kernel/
+[cbip32 library]: https://github.com/jamesob/cbip32
+[loop blog]: https://lightning.engineering/posts/2025-02-13-loop-musig2/
