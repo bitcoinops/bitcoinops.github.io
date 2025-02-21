@@ -39,6 +39,9 @@ optech_mentions:
   - title: "BOLTs #1110 merges the specification for the peer storage protocol"
     url: /en/newsletters/2025/01/31/#bolts-1110
 
+  - title: "LDK #3575 implements the peer storage protocol"
+    url: /en/newsletters/2025/02/21/#ldk-3575
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
