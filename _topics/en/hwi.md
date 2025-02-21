@@ -67,6 +67,9 @@ optech_mentions:
   - title: "Bitcoin Core #21576 allows wallets using an external signer to RBF fee bump"
     url: /en/newsletters/2023/01/04/#bitcoin-core-21576
 
+  - title: "Sparrow 2.1.0 begins using Lark as an alternative to HWI"
+    url: /en/newsletters/2025/02/21/#sparrow-2-1-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)

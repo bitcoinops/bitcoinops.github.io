@@ -36,6 +36,9 @@ optech_mentions:
   - title: "LDK #1835 adds support for JIT channel opens by LN service providers"
     url: /en/newsletters/2022/12/14/#ldk-1835
 
+  - title: "Concern about JIT rebalancing being more expensive than trust-based peering arrangements"
+    url: /en/newsletters/2025/02/21/#continued-discussion-about-an-ln-quality-of-service-flag
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
