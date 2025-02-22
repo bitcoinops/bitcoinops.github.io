@@ -37,7 +37,7 @@ lang: zh
 
   0xB10C 已收到多条反馈。我们鼓励对测试 signet 重组（或希望避免重组）的读者参与讨论。
 
-## 准备 taproot #13：备份与安全方案
+## 准备 Taproot #13：备份与安全方案
 
 *关于开发者和服务提供商如何为即将在区块高度 {{site.trb}} 激活的 taproot 做准备的[系列][series preparing for taproot]文章。*
 

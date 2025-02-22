@@ -26,5 +26,5 @@
 [cip amazon]: https://amazon.com/Cryptoasset-Inheritance-Planning-Simple-Owners/dp/1947910116
 [cip aantonop]: https://aantonop.com/product/cryptoasset-inheritance-planning-a-simple-guide-for-owners/
 [tree signatures]: https://blockstream.com/2015/08/24/en-treesignatures/#h.2lysjsnoo7jd
-[threshold signing]: /zh/preparing-for-taproot/#threshold-signing
+[threshold signing]: /zh/preparing-for-taproot/#多签
 [taproot workshop]: https://github.com/bitcoinops/taproot-workshop
