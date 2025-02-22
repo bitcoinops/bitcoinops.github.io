@@ -64,7 +64,7 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范(BOLTs)][bolts repo] 中的重要更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范(BOLTs)][bolts repo]中的重要更改。*
 
 - [Bitcoin Core #22009][] 更新了钱包，始终运行分支限界（BnB）和背包算法进行[币选择][topic coin selection]，然后使用新的*浪费分数*启发式方法来比较结果的成本效益，选择最佳结果。以前，如果找到了没有找零的 BnB 结果，总是优先选择。
 
@@ -102,5 +102,5 @@ lang: zh
 [pool2win post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019371.html
 [aj calculations]: https://github.com/bitcoin/bitcoin/pull/22340#issuecomment-872723147
 [headers first pr]: https://github.com/bitcoin/bitcoin/pull/4468
-[news166 fee negotiation]: /en/newsletters/2021/09/15/#c-lightning-4599
+[news166 fee negotiation]: /zh/newsletters/2021/09/15/#c-lightning-4599
 [series preparing for taproot]: /zh/preparing-for-taproot/
