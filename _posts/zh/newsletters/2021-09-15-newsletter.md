@@ -57,7 +57,7 @@ lang: zh
 
 *本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo]的显著变更。*
 
-- [Bitcoin Core #22079][] 为 [ZMQ 接口][]添加 IPv6 支持。
+- [Bitcoin Core #22079][] 为 [ZMQ 接口][ZMQ interface]添加 IPv6 支持。
 
 - [C-Lightning #4599][] 实现了 [BOLTs #843][] 描述的快速关闭手续费协商协议。我们曾在[上周 Newsletter][news165 bolts847] 描述该协议，但对其替代的旧协议描述[存在误差][russell tweet]。旧协议需基于试错的费率协商，且不允许设置高于当前承诺交易的手续费率。这在[锚定输出][topic anchor outputs]场景下不合理（低费率承诺交易设计为可追加手续费）。新协议允许支付更高费用，并在可能时使用更高效的区间协商。[Eclair #1768][] 也于本周合并实现该协议。
 
