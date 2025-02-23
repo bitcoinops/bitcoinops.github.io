@@ -7,25 +7,25 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine décrit une technique permettant aux portefeuilles mobiles de régler des
+Le bulletin de cette semaine décrit une technique permettant aux portefeuilles mobiles de configurer des
 canaux LN sans UTXO supplémentaire et résume la discussion en cours sur l'ajout d'un indicateur de
-qualité de service pour le routage de chemin LN. Sont également incluses nos sections hébituelles
+qualité de service pour le routage de chemin LN. Sont également incluses nos sections habituelles
 décrivant les changements récents apportés aux principaux clients, services et logiciels d'infrastructure
 Bitcoin.
 
 ## Nouvelles
 
 - **Permettre aux portefeuilles mobiles de régler les canaux sans UTXO supplémentaire :**
-  Bastien Teinturier a [publié][teinturier mobileclose] sur Delving Bitcoin une article présentant une variante
-  optionnelles des [engagements v3][topic v3 commitments] pour les canaux LN qui permettrait aux
+  Bastien Teinturier a [publié][teinturier mobileclose] sur Delving Bitcoin un article présentant une variante
+  optionnelle des [engagements v3][topic v3 commitments] (*commitements*) pour les canaux LN qui permettrait aux
   portefeuilles mobiles de fermer les canaux en utilisant les fonds du canal pour tous
-  les cas où un vol est possible. Ils n'auraient pas besoin de conserver un UTXO onchain en réserve
+  les cas où un vol est possible. Ils n'auraient pas besoin de conserver une UTXO on-chain en réserve
   pour payer les frais de clôture.
 
   Il présente d'abord les quatre cas qui nécessitent qu'un portefeuille mobile diffuse une
   transaction :
 
-  1. Leur pair diffuse une transaction d'engagement révoquée dans le cas, par exemple, où leur homologue tente de voler des
+  1. Leur pair diffuse une transaction d'engagement révoquée dans le cas, par exemple, où son homologue tente de voler des
      fonds. Dans ce cas, le portefeuille mobile a immédiatement la capacité de dépenser tous les
      fonds du canal, lui permettant d'utiliser ces fonds pour payer les frais.
 
@@ -57,7 +57,7 @@ Bitcoin.
   sur l'ajout d'un indicateur de qualité de service (QoS) au protocole LN pour permettre aux
   nœuds de signaler que l'un de leurs canaux était hautement disponible (HA)---capable de transférer
   des paiements jusqu'à un montant spécifié avec une fiabilité de 100% (voir le [Bulletin #239][news239
-  qos]). Si un celui qui dépense choisit un canal HA et que le paiement échoue sur ce canal, alors le
+  qos]). Si l'utilisateur choisit un canal HA et que le paiement échoue sur ce canal, alors
   il pénalisera l'opérateur en n'utilisant plus jamais ce canal. Depuis la précédente
   discussion, Jager a proposé un signal au niveau du nœud (peut-être simplement en ajoutant "HA" à
   l'alias textuel du nœud).Il a également noté que les messages d’erreur actuels du protocole ne garantissent pas
@@ -87,7 +87,7 @@ portefeuilles Bitcoin et des services.*
 
 - **Ark Wallet SDK publié :**
   Le [SDK du wallet Ark][ark sdk github] est une bibliothèque TypeScript pour construire des
-  portefeuilles qui prennent en charge à la fois Bitcoin onchain et le protocole [Ark][topic ark] sur
+  portefeuilles qui prennent en charge à la fois Bitcoin on-chain et le protocole [Ark][topic ark] sur
   [testnet][topic testnet], [signet][topic signet], [Mutinynet][new252 mutinynet], et le mainnet
   (actuellement non recommandé).
 
