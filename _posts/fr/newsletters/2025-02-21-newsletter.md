@@ -7,26 +7,26 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine décrit une idée permettant aux portefeuilles mobiles de régler les
-canaux LN sans UTXO supplémentaire et résume la discussion continue sur l'ajout d'un drapeau de
-qualité de service pour le routage de chemin LN. Sont également incluses nos sections régulières
-décrivant les changements récents apportés aux clients, services et logiciels d'infrastructure
-Bitcoin populaires.
+Le bulletin de cette semaine décrit une technique permettant aux portefeuilles mobiles de régler des
+canaux LN sans UTXO supplémentaire et résume la discussion en cours sur l'ajout d'un indicateur de
+qualité de service pour le routage de chemin LN. Sont également incluses nos sections hébituelles
+décrivant les changements récents apportés aux principaux clients, services et logiciels d'infrastructure
+Bitcoin.
 
 ## Nouvelles
 
 - **Permettre aux portefeuilles mobiles de régler les canaux sans UTXO supplémentaire :**
-  Bastien Teinturier a [posté][teinturier mobileclose] sur Delving Bitcoin à propos d'une variation
-  facultative des [engagements v3][topic v3 commitments] pour les canaux LN qui permettrait aux
-  portefeuilles mobiles de régler les canaux en utilisant les fonds à l'intérieur du canal pour tous
+  Bastien Teinturier a [publié][teinturier mobileclose] sur Delving Bitcoin une article présentant une variante
+  optionnelles des [engagements v3][topic v3 commitments] pour les canaux LN qui permettrait aux
+  portefeuilles mobiles de fermer les canaux en utilisant les fonds du canal pour tous
   les cas où un vol est possible. Ils n'auraient pas besoin de conserver un UTXO onchain en réserve
   pour payer les frais de clôture.
 
-  Teinturier commence par décrire les quatre cas qui nécessitent qu'un portefeuille mobile diffuse une
+  Il présente d'abord les quatre cas qui nécessitent qu'un portefeuille mobile diffuse une
   transaction :
 
-  1. Leur pair diffuse une transaction d'engagement révoquée, par exemple, le pair tente de voler des
-     fonds. Dans ce cas, le portefeuille mobile obtient immédiatement la capacité de dépenser tous les
+  1. Leur pair diffuse une transaction d'engagement révoquée dans le cas, par exemple, où leur homologue tente de voler des
+     fonds. Dans ce cas, le portefeuille mobile a immédiatement la capacité de dépenser tous les
      fonds du canal, lui permettant d'utiliser ces fonds pour payer les frais.
 
   2. Le portefeuille mobile a envoyé un paiement qui n'a pas encore été réglé. Le vol est impossible
@@ -40,43 +40,43 @@ Bitcoin populaires.
 
   4. Le portefeuille mobile reçoit un HTLC. Dans ce cas, le pair distant peut accepter la préimage
      HTLC (lui permettant de réclamer des fonds de ses pairs en amont) mais ne pas mettre à jour le solde
-     du canal réglé et révoquer l'HTLC. Dans ce cas, le portefeuille mobile doit forcer la fermeture du
-     canal dans un nombre relativement petit de blocs. C'est le cas abordé dans le reste du post.
+     du canal réglé et révoquer l'HTLC. Dans ce cas, le portefeuille mobile ne dispose que de peu de blocs pour forcer la fermeture du
+     canal. C'est le cas abordé dans le reste du post.
 
-  Teinturier propose que le pair distant signe deux versions différentes de chaque HTLC payant le
-  portefeuille mobile : une version sans frais selon la politique par défaut pour les engagements sans
-  frais et une version payant des frais à un taux de frais qui sera actuellement confirmé rapidement.
+  Bastien Teinturier propose que le pair distant signe deux versions différentes de chaque HTLC payant le
+  portefeuille mobile : une version sans frais conforme à la politique par défaut pour les engagements sans
+  frais et une version payant des frais à un taux qui permettra une confirmation rapide.
   Les frais sont déduits de la valeur HTLC payée au portefeuille mobile, donc cela ne coûte rien au
   pair distant d'offrir cette option et le portefeuille mobile a intérêt à l'utiliser seulement si
   vraiment nécessaire. Teinturier [note][teinturier mobileclose2] qu'il y a certaines considérations
   de sécurité pour le pair distant payant trop de frais, mais il s'attend à ce qu'elles soient faciles
   à adresser.
 
-- **Discussion continue sur un drapeau de qualité de service LN :** Joost Jager a [posté][jager
-  lnqos] sur Delving Bitcoin pour continuer la discussion
-  à propos de l'ajout d'un indicateur de qualité de service (QoS) au protocole LN pour permettre aux
+- **Discussion continue sur un drapeau de qualité de service LN :** Joost Jager a [poursuivi][jager
+  lnqos] sur Delving Bitcoin la discussion
+  sur l'ajout d'un indicateur de qualité de service (QoS) au protocole LN pour permettre aux
   nœuds de signaler que l'un de leurs canaux était hautement disponible (HA)---capable de transférer
   des paiements jusqu'à un montant spécifié avec une fiabilité de 100% (voir le [Bulletin #239][news239
-  qos]). Si un dépensier choisit un canal HA et que le paiement échoue sur ce canal, alors le
-  dépensier pénalisera l'opérateur en n'utilisant plus jamais ce canal. Depuis la précédente
+  qos]). Si un celui qui dépense choisit un canal HA et que le paiement échoue sur ce canal, alors le
+  il pénalisera l'opérateur en n'utilisant plus jamais ce canal. Depuis la précédente
   discussion, Jager a proposé un signal au niveau du nœud (peut-être simplement en ajoutant "HA" à
-  l'alias textuel du nœud), a noté que les messages d'erreur actuels du protocole ne garantissent pas
-  la détection du canal où un paiement a échoué, et a suggéré que ce n'est pas quelque chose qui peut
-  être à la fois signalé et utilisé sur une base entièrement facultative---donc ne nécessitant pas
-  un accord généralisé---donc cela devrait être spécifié pour la compatibilité même si très peu de
+  l'alias textuel du nœud).Il a également noté que les messages d’erreur actuels du protocole ne garantissent pas
+  l’identification du canal où un paiement a échoué. Il suggère enfin que cet indicateur ne peut pas
+  être à la fois signalé et utilisé de manière totalement facultative---son adoption nécessiterait donc
+  un large consensus---cela implique une spécification pour la compatibilité même si très peu de
   nœuds dépensiers et de transfert finissent par l'utiliser.
 
-  Matt Corallo [a répondu][corallo lnqos] que le routage LN fonctionne actuellement bien et a lié à un
+  Matt Corallo [a répondu][corallo lnqos] que le routage LN fonctionne actuellement bien et a fourni un lien vers un
   [document détaillé][ldk path] décrivant l'approche de LDK pour le routage, qui étend l'approche
   initialement décrite par René Pickhardt et Stefan Richter (voir le [Bulletin #163][news163 pr paper]
   et [deux éléments][news270 ldk2547] dans le [Bulletin #270][news270 ldk2534]). Cependant, il est
   préoccupé par le fait qu'un indicateur QoS encouragera les futurs logiciels à mettre en œuvre un
   routage moins fiable et à simplement préférer utiliser uniquement des canaux HA. Dans ce cas, les
-  grands nœuds peuvent signer des accords avec leurs grands pairs pour utiliser temporairement une
+  nœuds les plus importants peuvent signer des accords avec leurs principaux homoloques pour utiliser temporairement une
   liquidité basée sur la confiance lorsque un canal est épuisé, mais les petits nœuds dépendant de
   canaux sans confiance devront utiliser un [rééquilibrage JIT][topic jit routing] coûteux qui rendra
   leurs canaux moins rentables (s'ils absorbent le coût) ou moins désirables (s'ils répercutent le
-  coût sur les dépensiers).
+  coût sur les utilisateurs).
 
   Jager et Corallo ont continué à discuter sans parvenir à une résolution claire.
 
@@ -105,7 +105,7 @@ portefeuilles Bitcoin et des services.*
 
 - **Scure-btc-signer 1.6.0 publié :**
   [Scure-btc-signer][scure-btc-signer github] dans sa version [1.6.0][scure-btc-signer 1.6.0] ajoute
-  le support pour les transactions de version 3 ([TRUC][topic v3 transaction relay]) et les [paiements
+  la prise en charge des transactions de version 3 ([TRUC][topic v3 transaction relay]) et les [paiements
   vers des ancres (P2A)][topic ephemeral anchors]. Scure-btc-signer fait partie de la suite de
   bibliothèques [scure][scure website].
 
@@ -146,8 +146,8 @@ inquisition repo], et [BINANAs][binana repo]._
 
 - [Bitcoin Core #30529][] corrige le traitement des options négatives telles que `noseednode`,
   `nobind`, `nowhitebind`, `norpcbind`, `norpcallowip`, `norpcwhitelist`, `notest`, `noasmap`,
-  `norpcwallet`, `noonlynet`, et `noexternalip` pour se comporter comme prévu. Auparavant, la négation
-  de ces options provoquait des effets secondaires confus et non documentés, mais maintenant cela
+  `norpcwallet`, `noonlynet`, et `noexternalip` pour se comporter comme prévu. Auparavant, l'annulation
+  de ces options provoquait des effets secondaires déroutants et non documentés, mais maintenant cela
   efface simplement les paramètres spécifiés pour restaurer le comportement par défaut.
 
 - [Bitcoin Core #31384][] résout un problème où les 4 000 unités de poids (WU)
@@ -166,19 +166,19 @@ inquisition repo], et [BINANAs][binana repo]._
   version, car ce PR permet également de faire de la publicité sur les fonctionnalités BOLT12 aux
   plugins, autorisant explicitement le paiement des factures BOLT12 avec MPP.
 
-- [Core Lightning #7985][] ajoute le support pour le paiement des factures [BOLT12][topic offers]
+- [Core Lightning #7985][] ajoute la prise en charge du paiement des factures [BOLT12][topic offers]
   dans le plugin `renepay` (voir le Bulletin [#263][news263 renepay]) en permettant le routage à
   travers des [chemins masqués][topic rv routing] et en remplaçant l'utilisation interne de renepay de
   la commande RPC `sendpay` par `sendonion`.
 
-- [Core Lightning #7887][] ajoute le support pour la gestion des nouveaux champs [BIP353][] pour la
+- [Core Lightning #7887][] ajoute la prise en charge de la gestion des nouveaux champs [BIP353][] pour la
   résolution du Nom Lisible par l'Homme (HRN) pour se conformer aux dernières mises à jour des BOLTs
   (voir les Bulletins [#290][news290 hrn] et [#333][news333 hrn]). Le PR ajoute également le champ
   `invreq_bip_353_name` aux factures, impose des restrictions sur les champs de nom BIP353 entrants,
   et permet aux utilisateurs de spécifier des noms BIP353 sur la commande RPC `fetchinvoice`, ainsi
   que des changements de formulation.
 
-- [Eclair #2967][] ajoute le support pour le protocole `option_simple_close` tel que spécifié dans
+- [Eclair #2967][] ajoute la prise en charge de protocole `option_simple_close` tel que spécifié dans
   [BOLTs #1205][]. Cette variante simplifiée du protocole de fermeture mutuelle est une condition
   préalable pour les [canaux taproot simples][topic simple taproot channels], car elle permet aux
   nœuds d'échanger en toute sécurité des nonces pendant les phases `shutdown`, `closing_complete` et
@@ -193,8 +193,8 @@ inquisition repo], et [BINANAs][binana repo]._
 - [Eclair #3002][] introduit un mécanisme secondaire pour traiter les blocs et leurs transactions
   confirmées afin de déclencher des surveillances, pour une sécurité accrue. Cela est particulièrement
   utile lorsqu'un canal est dépensé mais que la transaction de dépense n'a pas été détectée dans le
-  mempool. Alors que le topic ZMQ `rawtx` gère cela, il peut être peu fiable et peut silencieusement
-  abandonner des événements lors de l'utilisation d'une instance de `bitcoind` à distance.
+  mempool. Alors que le topic ZMQ `rawtx` gère cela, il peut être peu fiable et peut supprimer silencieusement
+  des événements lors de l'utilisation d'une instance de `bitcoind` à distance.
   Chaque fois qu'un nouveau bloc est trouvé, le système secondaire récupère les derniers N
   blocs (6 par défaut) et retraite leurs transactions.
 
