@@ -34,13 +34,13 @@ an Clients, Diensten und beliebter Bitcoin-Infrastruktur-Software berichten.
      und kann diese Mittel verwenden, um Gebühren zu bezahlen.
 
   2. Das mobile Wallet hat eine Zahlung gesendet, die noch nicht abgeschlossen
-     wurde. In diesem Fall ist Diebstahl unmöglich, da der entfernte Peer die
-     Zahlung nur dann beanspruchen kann, wenn er die [HTLC][topic htlc]-Urbild
-     (d.h. den Beweis, dass der endgültige Empfänger bezahlt wurde) liefert.
-     Da Diebstahl nicht möglich ist, kann das mobile Wallet Zeit nehmen,
-     um eine UTXO zu finden, um Schließgebühren zu bezahlen.
+     wurde. In diesem Fall ist Diebstahl unmöglich, da der gegenüberstehender Peer
+     (engl.: Remote Peer) die Zahlung nur dann beanspruchen kann, wenn er die
+     [HTLC][topic htlc]-Urbild (d.h. den Beweis, dass der endgültige Empfänger
+     bezahlt wurde) liefert. Da Diebstahl nicht möglich ist, kann das mobile Wallet
+     Zeit nehmen, um eine UTXO zu finden, um Schließgebühren zu bezahlen.
 
-  3. Es gibt keine ausstehenden Zahlungen, aber der entfernte Peer antwortet
+  3. Es gibt keine ausstehenden Zahlungen, aber der gegenüberstehender Peer antwortet
      nicht. Auch hier ist Diebstahl nicht möglich, so dass das mobile Wallet
      Zeit nehmen kann, um den Kanal zu schließen.
 
@@ -52,15 +52,15 @@ an Clients, Diensten und beliebter Bitcoin-Infrastruktur-Software berichten.
      von Blöcken schließen. Um diesen Fall geht es im weiteren Verlauf des Beitrags.
 
 
-  Teinturier schlägt vor, dass der entfernte Peer zwei verschiedene Versionen
+  Teinturier schlägt vor, dass der gegenüberstehender Peer zwei verschiedene Versionen
   jeder HTLC unterzeichnet, die das mobile Wallet bezahlen: eine Version ohne
   Gebühren gemäß der Standardrichtlinie für Verpflichtungen ohne Gebühren und
   eine Version mit Gebühren zu einem Satz, der derzeit schnell bestätigt wird.
   Die Gebühren werden vom HTLC-Wert abgezogen, der an das mobile Wallet gezahlt
-  wird, so dass es dem remote Peer nichts kostet, diese Option anzubieten,
+  wird, so dass es dem gegenüberstehender Peer nichts kostet, diese Option anzubieten,
   und das mobile Wallet hat einen Anreiz, sie nur zu verwenden, wenn es wirklich
   notwendig ist. Teinturier [weist darauf hin][teinturier mobileclose2], dass
-  es einige Sicherheitsaspekte für den entfernten Peer gibt, der zu viele
+  es einige Sicherheitsaspekte für den gegenüberstehender Peer gibt, der zu viele
   Gebühren zahlt, aber er geht davon aus, dass diese leicht zu beheben sind.
 
 - **Weiterführende Diskussion über ein LN-Qualitätsflag:** Joost Jager
