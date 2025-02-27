@@ -68,17 +68,51 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Core Lightning #8116][] lightningd: redo closing negotiation even if we consider channel closed, see https://github.com/ElementsProject/lightning/pull/8116/commits/bc4a6591d30d5789f5955b7ed2863d2ed99599e0
+- [Core Lightning #8116][] changes the handling of interrupted channel closing
+  negotiations to retry the process even if it’s not needed. This fixes an issue
+  where a node missing the `CLOSING_SIGNED` message from its peer gets an error
+  when reconnecting and broadcasts a unilateral close transaction. Meanwhile,
+  the peer, already in the `CLOSINGD_COMPLETE` state, has broadcast the mutual
+  close transaction, potentially leading to a race between the two transactions.
+  This fix allows renegotiation to continue until the mutual close transaction
+  is confirmed.
 
-- [Core Lightning #8095][] setconfig: better handling of dynamic config vars
+- [Core Lightning #8095][] adds a `transient` flag to the `setconfig` command
+  (see Newsletter [#257][news257 setconfig]), introducing dynamic configuration
+  variables that are applied temporarily without modifying the configuration
+  file. These changes are reverted upon restart.
 
-- [Core Lightning #7772][] Update SCB on every commitment update and handle new format
+- [Core Lightning #7772][] adds a `commitment_revocation` hook to the
+  `chanbackup` plugin that updates the `emergency.recover` file (see Newsletter
+  [#324][news324 emergency]) whenever a new revocation secret is received. This
+  enables users to broadcast a penalty transaction when sweeping funds using
+  `emergency.recover` if the peer has published an outdated revoked state. This
+  PR extends the [static channel backup][topic static channel backups] SCB
+  format and updates the `chanbackup` plugin to serialize both the new and
+  legacy formats.
 
-- [Core Lightning #8094][] xpay: add xpay-slow-mode to force waiting for all parts before returning.
+- [Core Lightning #8094][] introduces a runtime-configurable `xpay-slow-mode`
+  variable to the `xpay` plugin (see Newsletter [#330][news330 xpay]), which
+  delays the return of success or failure until all parts of a [multipath
+  payments][topic multipath payments] (MPP) are resolved. Without this setting,
+  a failure status could be returned even if some [HTLCs][topic htlc] are still
+  pending. If a user retries and successfully pays the invoice from another
+  node, an overpayment could occur if the pending HTLC is also settled.
 
-- [Eclair #2993][] Allow recipient to pay for blinded route fees
+- [Eclair #2993][] enables the recipient to pay for fees associated with the
+  [blinded][topic rv routing] portion of a payment path, while the sender covers
+  fees for the non-blinded portion.  Previously, the sender paid all fees, which
+  could allow them to infer and potentially unblind the path.
 
-- [LND #9491][] Allow coop closing a channel with HTLCs on it via lncli
+- [LND #9491][] adds support for cooperative channel closures when there are
+  active [HTLCs][topic htlc] using the `lncli closechannel` command. When
+  initiated, LND will halt the channel to prevent the creation of new HTLCs and
+  wait for all existing HTLCs to be resolved before starting the negotiation
+  process. Users must set the `no_wait` parameter to enable this behavior;
+  otherwise, an error message will prompt them to specify it. This PR also
+  ensures that the `max_fee_rate` setting is enforced for both parties when a
+  cooperative channel closure is initiated; previously, it was only applied to
+  the remote party.
 
 {% include snippets/recap-ad.md when="2025-03-04 15:30" %}
 {% include references.md %}
@@ -87,3 +121,6 @@ repo], and [BINANAs][binana repo]._
 [news136 unsol]: /en/newsletters/2021/02/17/#proposal-to-stop-processing-unsolicited-transactions
 [news332 txcen]: /en/newsletters/2024/12/06/#transaction-censorship-vulnerability
 [Core Lightning 25.02rc3]: https://github.com/ElementsProject/lightning/releases/tag/v25.02rc3
+[news257 setconfig]: /en/newsletters/2023/06/28/#core-lightning-6303
+[news324 emergency]: /en/newsletters/2024/10/11/#core-lightning-7539
+[news330 xpay]: /en/newsletters/2024/11/22/#core-lightning-7799
