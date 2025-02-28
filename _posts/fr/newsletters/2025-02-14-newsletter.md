@@ -220,7 +220,7 @@ Towns.
 {% include linkers/issues.md v=2 issues="25832,2989,3440,9470,6580,1712" %}
 [lnd v0.18.5-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.5-beta
 [Bitcoin Inquisition 28.1]: https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v28.1-inq
-[news340 pp]: /en/newsletters/2025/02/07/#emulating-op-rand
+[news340 pp]: /fr/newsletters/2025/02/07/#emuler-op-rand
 [towns sigops]: https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710/69
 [kurbatov pp]: https://delvingbitcoin.org/t/emulating-op-rand/1409
 [harding pp]: https://delvingbitcoin.org/t/emulating-op-rand/1409/2
@@ -229,13 +229,13 @@ Towns.
 [towns pp2]: https://delvingbitcoin.org/t/emulating-op-rand/1409/6
 [gibson pp2]: https://delvingbitcoin.org/t/emulating-op-rand/1409/7
 [morehouse eanchor]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/8
-[news340 eanchor]: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
+[news340 eanchor]: /fr/newsletters/2025/02/07/#compromis-dans-les-scripts-d-ancrage-ephemeres-de-ln
 [towns eanchor]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/9
 [sanders eanchor]: https://delvingbitcoin.org/t/which-ephemeral-anchor-script-should-lightning-use/1412/11
 [b10c orphan]: https://delvingbitcoin.org/t/stats-on-orphanage-overflows/1421/
 [runestone tx]: https://mempool.space/tx/ac8990b04469bad8630eaf2aa51561086d81a241deff6c95d96d27e41fa19f90
 [erhardt bip3]: https://mailing-list.bitcoindevs.xyz/bitcoindev/25449597-c5ed-42c5-8ac1-054feec8ad88@murch.one/
-[fn sigops]: /en/newsletters/2025/02/07/#fn:2kmultisig
+[fn sigops]: /fr/newsletters/2025/02/07/#fnref:2kmultisig
 [review club 31363]: https://bitcoincore.reviews/31363
 [gh sipa]: https://github.com/sipa
 [news244 ebpf]: /fr/newsletters/2023/03/29/#bitcoin-core-26531
