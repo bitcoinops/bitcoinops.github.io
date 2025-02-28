@@ -53,6 +53,9 @@ optech_mentions:
   - title: "Bitcoin Core #31590 checks parity bits when retrieving privkeys for x-only pubkeys in descriptors"
     url: /en/newsletters/2025/01/31/#bitcoin-core-31590
 
+  - title: "Why batch validation makes it necessary to check the parity of the Y coordinate"
+    url: /en/newsletters/2025/02/28/#why-is-it-necessary-to-reveal-a-bit-in-a-script-path-spend-and-check-that-it-matches-the-parity-of-the-y-coordinate-of-q
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
