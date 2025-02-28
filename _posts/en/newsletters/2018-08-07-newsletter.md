@@ -30,13 +30,13 @@ Bitcoin Core, LND, and C-Lightning projects.
   It’s a good time to [consolidate UTXOs][consolidate info].
 
 - Adoption of opt-in RBF remains fairly low, but has materially grown the past
-  year, increasing from [1.5% to 5.7% of transactions][rbf data]. This data was
+  year, increasing from 1.5% to 5.7% of transactions. This data was
   sourced from Optech's beta dashboard, which we encourage people to try out and
   provide us feedback!
 
   ![{{img1_label}}](/img/posts/rbf.png)
   *{{img1_label}},
-  source: [Optech dashboard][rbf data]*
+  source: Optech dashboard*
 
 ## News
 
@@ -148,6 +148,5 @@ repo], and [C-lightning][core lightning repo].*
 [contract thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001383.html
 [fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
-[rbf data]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=now-1y&to=now
 [newsletter #5]: /en/newsletters/2018/07/24/#first-use-of-output-script-descriptors
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

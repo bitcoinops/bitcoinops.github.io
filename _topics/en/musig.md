@@ -157,6 +157,9 @@ optech_mentions:
   - title: "Zero-knowledge gossip for LN channel announcements compatible with MuSig2 simple taproot channels"
     url: /en/newsletters/2025/02/07/#zero-knowledge-gossip-for-ln-channel-announcements
 
+  - title: "Lightning Loop begins using MuSig2"
+    url: /en/newsletters/2025/02/21/#lightning-loop-moves-to-musig2
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures

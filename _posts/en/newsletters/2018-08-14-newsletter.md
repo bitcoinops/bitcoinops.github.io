@@ -46,11 +46,11 @@ It’s a good time to [consolidate UTXOs][consolidate info].
 
 - The number of transactions in each block. This metric is vaguely periodic in that it has peaks at around 13:00 to 17:00 UTC each
 day. The graph below shows a 25-block moving average of the number of transactions. It was sourced from the
-[Optech beta dashboard][periodic txn data] that we encourage people to try out and provide us feedback about.
+Optech beta dashboard that we encourage people to try out and provide us feedback about.
 
 ![{{img1_label}}](/img/posts/transactions-spikes.png)
 *{{img1_label}},
-source: [Optech dashboard][periodic txn data]*
+source: Optech dashboard*
 
 ## News
 
@@ -218,4 +218,3 @@ users and developers highly appreciate that work.*
 [fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [btc hash rate]: https://fork.lol/pow/hashrate
-[periodic txn data]: https://dashboard.bitcoinops.org/d/K7C9p0vmz/btc-number-of-txns-total-fee-per-block-volume?panelId=4&fullscreen&orgId=1

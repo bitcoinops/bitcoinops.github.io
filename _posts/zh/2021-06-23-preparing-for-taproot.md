@@ -85,15 +85,15 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 使用 Taproot 的闪电网络
 
-*最初发表于 [Newsletter #164](/en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot)*
+*最初发表于 [Newsletter #164](/zh/newsletters/2021/09/01/#准备-taproot-11使用-taproot-的闪电网络)*
 
-{% include specials/taproot/en/10-ln-with-taproot.md %}
+{% include specials/taproot/zh/10-ln-with-taproot.md %}
 
 ## 使用 Taproot 的保险库
 
-*最初发表于 [Newsletter #165](/en/newsletters/2021/09/08/#preparing-for-taproot-12-vaults-with-taproot)*
+*最初发表于 [Newsletter #165](/zh/newsletters/2021/09/08/#准备-taproot-12使用-taproot-的保险库)*
 
-{% include specials/taproot/en/11-vaults-with-taproot.md %}
+{% include specials/taproot/zh/11-vaults-with-taproot.md %}
 
 ## 备份与安全方案
 
