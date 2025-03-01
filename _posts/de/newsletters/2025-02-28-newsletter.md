@@ -66,8 +66,8 @@ Fragen und Antworten hervor, die seit unserem letzten Update gepostet wurden.*
   der Blockhöhe 10% der Zeit für die Privatsphäre oder 0, wenn die Blockchain
   nicht aktuell ist.
 
-- [Warum ist es notwendig, ein Bit in einem Skriptpfad auszugeben und zu überprüfen,
-  ob es mit der Parität der Y-Koordinate von Q übereinstimmt?]({{bse}}125502)
+- [Warum ist es notwendig,]({{bse}}125502) ein Bit in einem Skriptpfad auszugeben
+  und zu überprüfen, ob es mit der Parität der Y-Koordinate von Q übereinstimmt?
   Pieter Wuille erläutert die [BIP341-Rationale][bip341 rationale], die
   Y-Koordinaten-Paritätsprüfung während des [Taproot][topic taproot]
   Skriptpfad-Ausgebens beizubehalten, um die potenzielle zukünftige
