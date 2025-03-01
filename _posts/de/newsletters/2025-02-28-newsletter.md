@@ -79,7 +79,9 @@ Fragen und Antworten hervor, die seit unserem letzten Update gepostet wurden.*
   Diskussion über das [Entfernen von Checkpoints][Bitcoin Core #31649].
 
 - [Wie geht Bitcoin Core mit langen Reorganisationen um?]({{bse}}105525)
-  Pieter Wuille beschreibt, wie Bitcoin Core mit Reorganisationen der Blockchain umgeht und kommentiert, dass bei größeren Reorganisationen "das erneute Hinzufügen von Transaktionen zum Mempool nicht durchgeführt wird".
+  Pieter Wuille beschreibt, wie Bitcoin Core mit Reorganisationen der Blockchain
+  umgeht und kommentiert, dass bei größeren Reorganisationen "das erneute Hinzufügen
+  von Transaktionen zum Mempool nicht durchgeführt wird".
 
 - [Was ist die Definition der discard feerate?]({{bse}}125623)
   Murch definiert die discard feerate als die maximale Feerate zum Verwerfen von
