@@ -97,9 +97,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 备份与安全方案
 
-*最初发表于 [Newsletter #166](/en/newsletters/2021/09/15/#preparing-for-taproot-13-backup-and-security-schemes)*
+*最初发表于 [Newsletter #166](/zh/newsletters/2021/09/15/#准备-taproot-13备份与安全方案)*
 
-{% include specials/taproot/en/12-backups.md %}
+{% include specials/taproot/zh/12-backups.md %}
 
 ## 在 Signet 上测试
 
