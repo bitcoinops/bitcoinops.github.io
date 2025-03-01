@@ -7,10 +7,10 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine résume un post sur la possibilité pour les nœuds complets d'ignorer
+Le bulletin de cette semaine résume un article qui évoque la possibilité pour les nœuds complets d'ignorer
 les transactions qui sont relayées sans avoir été demandées au préalable. Sont également incluses
 nos sections régulières avec les questions et réponses populaires du Bitcoin Stack Exchange, les
-annonces de nouvelles versions et de candidats à la version, et les résumés des modifications
+annonces de nouvelles versions et de candidats à la publication, et les résumés des modifications
 notables apportées aux logiciels d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
@@ -23,11 +23,11 @@ notables apportées aux logiciels d'infrastructure Bitcoin populaires.
   leurs capacités et préférences de relais de transactions ; le deuxième BIP proposé utilise ce
   mécanisme de signalisation pour indiquer que le nœud ignorera les transactions non sollicitées.
 
-  Il y a plusieurs petits avantages à la proposition, comme discuté dans une [PR Bitcoin
+  Cette proposition présente plusieurs avantages mineurs, comme discuté dans une [PR Bitcoin
   Core][bitcoin core #30572], mais elle entre en conflit avec la conception de certains
   clients légers plus anciens et pourrait empêcher les utilisateurs de ce logiciel de pouvoir diffuser
   leurs transactions, donc un déploiement soigneux pourrait être nécessaire. Bien que Riard ait ouvert
-  la PR susmentionnée, il l'a plus tard fermée après avoir indiqué qu'il prévoyait de
+  la PR susmentionnée, il l'a fermée ensuite après avoir indiqué qu'il prévoyait de
   travailler sur sa propre implémentation de nœud complet basée sur libbitcoinkernel. Il a également
   indiqué que la proposition pourrait aider à adresser certaines attaques qu'il a récemment divulguées
   (voir le [Bulletin #332][news332 txcen]).
@@ -70,8 +70,8 @@ des questions et réponses les mieux votées publiées depuis notre dernière mi
   contrôle][Bitcoin Core #31649].
 
 - [Comment Bitcoin Core gère-t-il les longs reorgs ?]({{bse}}105525)
-  Pieter Wuille décrit comment Bitcoin Core gère les réorganisations de la blockchain, en commentant
-  qu'une différence dans les reorgs plus importants est que "la réajout des transactions au mempool
+  Pieter Wuille décrit comment Bitcoin Core gère les réorganisations de la blockchain, en faisant remarquer
+  qu'une différence dans les réorganisations plus importants est que "le retour de transactions au pool de mémoire
   n'est pas effectué".
 
 - [Quelle est la définition de discard feerate ?]({{bse}}125623)
@@ -112,7 +112,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 - [Core Lightning #8095][] ajoute un drapeau `transient` à la commande `setconfig` (voir le Bulletin
   [#257][news257 setconfig]), introduisant des variables de configuration dynamiques qui sont
   appliquées temporairement sans modifier le fichier de configuration. Ces modifications sont
-  révertées au redémarrage.
+  réinitialisés au redémarrage.
 
 - [Core Lightning #7772][] ajoute un crochet `commitment_revocation` au plugin `chanbackup` qui met
   à jour le fichier `emergency.recover` (voir le Bulletin [#324][news324 emergency]) chaque fois qu'un
@@ -125,7 +125,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 - [Core Lightning #8094][] introduit une variable `xpay-slow-mode` configurable à l'exécution pour
   le plugin `xpay` (voir le Bulletin [#330][news330 xpay]), qui retarde le retour de succès ou d'échec
   jusqu'à ce que toutes les parties d'un paiement [multipath payments][topic multipath payments] (MPP)
-  soient résolues. Sans ce paramètre, un statut d'échec pourrait être retourné même si certains
+  soient résolues. Sans ce paramètre, un statut d'échec pourrait être renvoyé même si certains
   [HTLCs][topic htlc] sont encore en attente. Si un utilisateur réessaie et paie avec succès la
   facture depuis un autre nœud, un surpaiement pourrait se produire si le HTLC en attente est
   également réglé.
@@ -135,7 +135,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
   aveuglée. Auparavant, l'expéditeur payait tous les frais, ce qui pourrait lui permettre d'inférer et
   potentiellement de dévoiler le chemin.
 
-- [LND #9491][] ajoute le support pour les fermetures de canaux coopératives lorsqu'il y a des
+- [LND #9491][] ajoute la prise en charge des fermetures de canaux coopératives lorsqu'il y a des
   [HTLCs][topic htlc] actifs en utilisant la commande `lncli closechannel`. Lorsqu'initiée, LND
   arrêtera le canal pour empêcher la création de nouveaux HTLCs et attendra que tous les HTLCs
   existants soient résolus avant de commencer le processus de négociation. Les utilisateurs doivent
