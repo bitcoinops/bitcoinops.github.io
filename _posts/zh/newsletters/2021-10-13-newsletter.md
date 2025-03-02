@@ -109,4 +109,4 @@ lang: zh
 [eclair 0.6.2]: https://github.com/ACINQ/eclair/releases/tag/v0.6.2
 [eclair rn]: https://github.com/ACINQ/eclair/blob/master/docs/release-notes/eclair-v0.6.2.md
 [transaction spends its outputs]: https://github.com/bitcoin/bitcoin/blob/0ed5ad102/src/validation.cpp#L774
-[PR review club 22340]: /zh/newsletters/2021/09/08/#bitcoin-core-pr-review-club
+[PR review club 22340]: /zh/newsletters/2021/09/08/#bitcoin-core-pr-审查俱乐部
