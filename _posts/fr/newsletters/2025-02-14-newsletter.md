@@ -235,7 +235,7 @@ Towns.
 [b10c orphan]: https://delvingbitcoin.org/t/stats-on-orphanage-overflows/1421/
 [runestone tx]: https://mempool.space/tx/ac8990b04469bad8630eaf2aa51561086d81a241deff6c95d96d27e41fa19f90
 [erhardt bip3]: https://mailing-list.bitcoindevs.xyz/bitcoindev/25449597-c5ed-42c5-8ac1-054feec8ad88@murch.one/
-[fn sigops]: /fr/newsletters/2025/02/07/#fnref:2kmultisig
+[fn sigops]: /fr/newsletters/2025/02/07/#fn:2kmultisig
 [review club 31363]: https://bitcoincore.reviews/31363
 [gh sipa]: https://github.com/sipa
 [news244 ebpf]: /fr/newsletters/2023/03/29/#bitcoin-core-26531
