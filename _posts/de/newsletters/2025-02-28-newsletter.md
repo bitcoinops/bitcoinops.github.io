@@ -78,7 +78,7 @@ Fragen und Antworten hervor, die seit unserem letzten Update gepostet wurden.*
   welchen Zweck sie erfüllten, und verweist auf einen offenen PR und die
   Diskussion über das [Entfernen von Checkpoints][Bitcoin Core #31649].
 
-- [Wie geht Bitcoin Core mit langen Reorganisationen um?]({{bse}}105525)
+- [Wie geht Bitcoin Core mit langen Blockchain-Reorganisationen um?]({{bse}}105525)
   Pieter Wuille beschreibt, wie Bitcoin Core mit Reorganisationen der Blockchain
   umgeht und kommentiert, dass bei größeren Reorganisationen "das erneute Hinzufügen
   von Transaktionen zum Mempool nicht durchgeführt wird".
