@@ -58,7 +58,7 @@ clients, services, and popular Bitcoin infrastructure software.
   wallet has an incentive to only use it if really necessary.
   Teinturier does [note][teinturier mobileclose2] that there are some
   safety considerations for the remote peer paying too much to fees, but
-  he expects those to be easy to address.
+  he expects those to be easy to address. {% assign timestamp="0:59" %}
 
 - **Continued discussion about an LN quality of service flag:** Joost
   Jager [posted][jager lnqos] to Delving Bitcoin to continue discussion
@@ -93,7 +93,7 @@ clients, services, and popular Bitcoin infrastructure software.
   (if they pass the cost on to spenders).
 
   Jager and Corallo continued discussing without coming to a clear
-  resolution.
+  resolution. {% assign timestamp="13:14" %}
 
 ## Changes to services and client software
 
@@ -104,42 +104,42 @@ wallets and services.*
   The [Ark Wallet SDK][ark sdk github] is TypeScript library for building
   wallets that support both onchain Bitcoin and the [Ark][topic ark] protocol
   across [testnet][topic testnet], [signet][topic signet], [Mutinynet][new252
-  mutinynet], and mainnet (not currently recommended).
+  mutinynet], and mainnet (not currently recommended). {% assign timestamp="40:28" %}
 
 - **Zaprite adds BTCPay Server support:**
   Bitcoin and Lightning payment integrator [Zaprite][zaprite website] adds
-  BTCPay Server to their list of supported wallet connections.
+  BTCPay Server to their list of supported wallet connections. {% assign timestamp="40:57" %}
 
 - **Iris Wallet desktop released:**
   [Iris Wallet][iris github] supports sending, receiving, and issuing assets
-  using the [RGB][topic client-side validation] protocol.
+  using the [RGB][topic client-side validation] protocol. {% assign timestamp="41:21" %}
 
 - **Sparrow 2.1.0 released:**
   The Sparrow [2.1.0 release][sparrow 2.1.0] replaces the previous [HWI][topic hwi]
-  implementation with [Lark][news333 lark] and adds [PSBTv2][topic psbt] support, among other updates.
+  implementation with [Lark][news333 lark] and adds [PSBTv2][topic psbt] support, among other updates. {% assign timestamp="41:41" %}
 
 - **Scure-btc-signer 1.6.0 released:**
   [Scure-btc-signer][scure-btc-signer github]'s [1.6.0][scure-btc-signer 1.6.0]
   release adds support for version 3 ([TRUC][topic v3 transaction relay])
   transactions and [pay-to-anchors (P2A)][topic ephemeral anchors]. Scure-btc-signer is part
-  of the [scure][scure website] suite of libraries.
+  of the [scure][scure website] suite of libraries. {% assign timestamp="42:38" %}
 
 - **Py-bitcoinkernel alpha:**
   [Py-bitcoinkernel][py-bitcoinkernel github] is a Python library for
   interacting with [libbitcoinkernel][Bitcoin Core #27587], a library
-  [encapsulating Bitcoin Core's validation logic][kernel blog].
+  [encapsulating Bitcoin Core's validation logic][kernel blog]. {% assign timestamp="43:48" %}
 
 - **Rust-bitcoinkernel library:**
   [Rust-bitcoinkernel][rust-bitcoinkernel github] is an experimental Rust library for
-  using libbitcoinkernel to read block data and validate transaction outputs and blocks.
+  using libbitcoinkernel to read block data and validate transaction outputs and blocks. {% assign timestamp="44:30" %}
 
 - **BIP32 cbip32 library:**
   The [cbip32 library][cbip32 library] implements [BIP32][] in C using
-  libsecp256k1 and libsodium.
+  libsecp256k1 and libsodium. {% assign timestamp="45:56" %}
 
 - **Lightning Loop moves to MuSig2:**
   Lightning Loop's swap service now uses [MuSig2][topic musig] as outlined in a
-  [recent blog post][loop blog].
+  [recent blog post][loop blog]. {% assign timestamp="46:22" %}
 
 ## Notable code and documentation changes
 
@@ -158,14 +158,14 @@ repo], and [BINANAs][binana repo]._
   database. While extending the `dumptxoutset` RPC itself to output a SQLite3
   database was considered, it was ultimately rejected due to the increased
   maintenance burden. The script adds no additional dependencies and the
-  resulting database is about twice the size of the compact serialized UTXO set.
+  resulting database is about twice the size of the compact serialized UTXO set. {% assign timestamp="47:01" %}
 
 - [Bitcoin Core #30529][] fixes the handling of negated options such as
   `noseednode`, `nobind`, `nowhitebind`, `norpcbind`, `norpcallowip`,
   `norpcwhitelist`, `notest`, `noasmap`, `norpcwallet`, `noonlynet`, and
   `noexternalip` to behave as expected. Previously, negating these options
   caused confusing and undocumented side effects, but now it simply clears the
-  specified settings to restore the default behaviour.
+  specified settings to restore the default behaviour. {% assign timestamp="48:29" %}
 
 - [Bitcoin Core #31384][] resolves an issue where the 4,000 weight units (WU)
   reserved for the block header, transaction count and coinbase transaction were
@@ -175,40 +175,40 @@ repo], and [BINANAs][binana repo]._
   and introduces a new `-blockreservedweight` startup option to allow users to
   customize the reserved weight. Safety checks are added to ensure that the
   reserved weight is set to a value between 2,000 WU and 4,000,000 WU, otherwise
-  Bitcoin Core will fail to start.
+  Bitcoin Core will fail to start. {% assign timestamp="49:42" %}
 
 - [Core Lightning #8059][] implements suppression of [multipath payments][topic
   multipath payments] (MPP) on the `xpay` plugin (see Newsletter [#330][news330
   xpay]) when paying a [BOLT11][] invoice that doesn't support this feature. The
   same logic will be extended to [BOLT12][topic offers] invoices, but will have
   to wait until the next release, as this PR also enables advertising BOLT12
-  features to plugins, explicitly allowing BOLT12 invoices to be paid with MPP.
+  features to plugins, explicitly allowing BOLT12 invoices to be paid with MPP. {% assign timestamp="50:52" %}
 
 - [Core Lightning #7985][] adds support for paying [BOLT12][topic offers]
   invoices in the `renepay` plugin (see Newsletter [#263][news263 renepay]) by
   enabling routing through [blinded paths][topic rv routing] and replacing
-  renepay's internal usage of the `sendpay` RPC command with `sendonion`.
+  renepay's internal usage of the `sendpay` RPC command with `sendonion`. {% assign timestamp="53:41" %}
 
 - [Core Lightning #7887][] adds support for handling the new [BIP353][] fields
   for Human Readable Name (HRN) resolution to conform with the latest BOLTs
   updates (see Newsletter [#290][news290 hrn] and [#333][news333 hrn]). The PR
   also adds the `invreq_bip_353_name` field to invoices, enforces restrictions
   on incoming BIP353 name fields, and allows users to specify BIP353 names on
-  the `fetchinvoice` RPC, as well as wording changes.
+  the `fetchinvoice` RPC, as well as wording changes. {% assign timestamp="54:32" %}
 
 - [Eclair #2967][] adds support for the `option_simple_close` protocol as
   specified in [BOLTs #1205][]. This simplified variant of the mutual close
   protocol is a prerequisite for [simple taproot channels][topic simple taproot
   channels], as it enables nodes to safely exchange nonces during the
   `shutdown`, `closing_complete` and `closing_sig` phases, which is required to
-  spend a [MuSig2][topic musig] channel output.
+  spend a [MuSig2][topic musig] channel output. {% assign timestamp="26:06" %}
 
 - [Eclair #2979][] adds a verification step to confirm that a node supports
   wake up notifications (see Newsletter [#319][news319 wakeup]) before
   initiating the wake up flow to relay a [trampoline payment][topic trampoline
   payments]. For standard channel payments, this check is unnecessary because
   the [BOLT11][] or [BOLT12][topic offers] invoice already indicates support for
-  wake-up notifications.
+  wake-up notifications. {% assign timestamp="32:24" %}
 
 - [Eclair #3002][] introduces a secondary mechanism to process blocks and their
   confirmed transactions to trigger watches, for added security. This is
@@ -216,14 +216,14 @@ repo], and [BINANAs][binana repo]._
   hasn't been detected in the mempool. While the ZMQ `rawtx` topic handles this,
   it can be unreliable and may silently drop events when using remote `bitcoind`
   instances. Whenever a new block is found, the secondary system fetches the
-  last N blocks (6 by default) and reprocesses their transactions.
+  last N blocks (6 by default) and reprocesses their transactions. {% assign timestamp="34:32" %}
 
 - [LDK #3575][] implements the [peer storage][topic peer storage] protocol as a
   feature that allows nodes to distribute and store backups for channel peers.
   It introduces two new message types, `PeerStorageMessage` and
   `PeerStorageRetrievalMessage`, along with their respective handlers, to enable
   the exchange of these backups between nodes.  Peer data is stored persistently
-  within `PeerState` in the `ChannelManager`.
+  within `PeerState` in the `ChannelManager`. {% assign timestamp="57:35" %}
 
 - [LDK #3562][] introduces a new scorer (see Newsletter [#308][news308 scorer])
   that merges scoring benchmarks based on frequent [probing][topic payment
@@ -231,12 +231,12 @@ repo], and [BINANAs][binana repo]._
   nodes, which typically have a limited view of the network, to improve payment
   success rates by incorporating external data such as scores provided by a
   Lightning Service Provider (LSP). The external score can either be combined
-  with or override the local score.
+  with or override the local score. {% assign timestamp="23:51" %}
 
 - [BOLTs #1205][] merges the `option_simple_close` protocol, which is a
   simplified variant of the mutual close protocol required for [simple taproot
   channels][topic simple taproot channels]. Changes are made to [BOLT2][] and
-  [BOLT3][].
+  [BOLT3][]. {% assign timestamp="26:13" %}
 
 {% include snippets/recap-ad.md when="2025-02-25 17:30" %}
 {% include references.md %}
