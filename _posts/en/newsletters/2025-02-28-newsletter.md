@@ -35,7 +35,7 @@ infrastructure software.
   after indicating that he planned to work on his own full node
   implementation based on libbitcoinkernel.  He also indicated the
   proposal may help address some attacks he recently disclosed (see
-  [Newsletter #332][news332 txcen]).
+  [Newsletter #332][news332 txcen]). {% assign timestamp="0:30" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -52,43 +52,43 @@ answers posted since our last update.*
   Pieter Wuille explains why [assumeUTXO's][topic assumeUTXO] value for
   representing the UTXO set is hardcoded at a particular block height, ways of
   distributing assumeUTXO snapshots in the future, and the benefits of assumeUTXO
-  compared with just copying Bitcoin Core's internal data stores.
+  compared with just copying Bitcoin Core's internal data stores. {% assign timestamp="19:52" %}
 
 - [Are there classes of pinning attacks that RBF rule #3 makes impossible?]({{bse}}125461)
   Murch points out that [RBF][topic rbf] rule #3 is not intended to prevent
   [pinning][topic transaction pinning] attacks and touches on Bitcoin Core's
-  [replacement policy][bitcoin core replacements].
+  [replacement policy][bitcoin core replacements]. {% assign timestamp="23:41" %}
 
 - [Unexpected locktime values]({{bse}}125562)
   User polespinasa lists the different reasons why Bitcoin Core sets specific
   [nLockTime][topic timelocks] values: to `block_height` to avoid [fee
   sniping][topic fee sniping], a random value less than the block height 10% of
-  the time for privacy, or 0 if the blockchain is not current.
+  the time for privacy, or 0 if the blockchain is not current. {% assign timestamp="25:38" %}
 
 - [Why is it necessary to reveal a bit in a script path spend and check that it matches the parity of the Y coordinate of Q?]({{bse}}125502)
   Pieter Wuille elaborates on [BIP341's rationale][bip341 rationale] to keep the
   Y coordinate parity check during [taproot][topic taproot] script path spending
-  to allow for the potential future addition of batch validation functionality.
+  to allow for the potential future addition of batch validation functionality. {% assign timestamp="28:42" %}
 
 - [Why does Bitcoin Core use checkpoints and not the assumevalid block?]({{bse}}125626)
   Pieter Wuille details a history of checkpoints in Bitcoin Core and what
   purpose they served, and points to an open PR and discussion of [removing
-  checkpoints][Bitcoin Core #31649].
+  checkpoints][Bitcoin Core #31649]. {% assign timestamp="32:19" %}
 
 - [How does Bitcoin Core handle long reorgs?]({{bse}}105525)
   Pieter Wuille outlines how Bitcoin Core handles blockchain reorgs, commenting
   that one difference in larger reorgs is that "re-adding transactions back to
-  the mempool is not performed".
+  the mempool is not performed". {% assign timestamp="36:58" %}
 
 - [What is the definition of discard feerate?]({{bse}}125623)
   Murch defines discard feerate as the maximum feerate for discarding change and
   summarizes the code to calculate the discard feerate as "the 1000-block target
-  feerate cropped to 3–10 ṩ/vB if it falls outside of that range".
+  feerate cropped to 3–10 ṩ/vB if it falls outside of that range". {% assign timestamp="37:59" %}
 
 - [Policy to miniscript compiler]({{bse}}125406)
   Brunoerg notes that the Liana wallet uses the policy language and points to
   both the [sipa/miniscript][miniscript github] and
-  [rust-miniscript][rust-miniscript github] libraries as examples of policy compilers.
+  [rust-miniscript][rust-miniscript github] libraries as examples of policy compilers. {% assign timestamp="40:37" %}
 
 ## Releases and release candidates
 
@@ -97,7 +97,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [Core Lightning 25.02rc3][] is a release candidate for the next major
-  version of this popular LN node.
+  version of this popular LN node. {% assign timestamp="43:01" %}
 
 ## Notable code and documentation changes
 
@@ -117,12 +117,12 @@ repo], and [BINANAs][binana repo]._
   the peer, already in the `CLOSINGD_COMPLETE` state, has broadcast the mutual
   close transaction, potentially leading to a race between the two transactions.
   This fix allows renegotiation to continue until the mutual close transaction
-  is confirmed.
+  is confirmed. {% assign timestamp="43:34" %}
 
 - [Core Lightning #8095][] adds a `transient` flag to the `setconfig` command
   (see Newsletter [#257][news257 setconfig]), introducing dynamic configuration
   variables that are applied temporarily without modifying the configuration
-  file. These changes are reverted upon restart.
+  file. These changes are reverted upon restart. {% assign timestamp="46:06" %}
 
 - [Core Lightning #7772][] adds a `commitment_revocation` hook to the
   `chanbackup` plugin that updates the `emergency.recover` file (see Newsletter
@@ -131,7 +131,7 @@ repo], and [BINANAs][binana repo]._
   `emergency.recover` if the peer has published an outdated revoked state. This
   PR extends the [static channel backup][topic static channel backups] SCB
   format and updates the `chanbackup` plugin to serialize both the new and
-  legacy formats.
+  legacy formats. {% assign timestamp="47:53" %}
 
 - [Core Lightning #8094][] introduces a runtime-configurable `xpay-slow-mode`
   variable to the `xpay` plugin (see Newsletter [#330][news330 xpay]), which
@@ -139,12 +139,12 @@ repo], and [BINANAs][binana repo]._
   payments][topic multipath payments] (MPP) are resolved. Without this setting,
   a failure status could be returned even if some [HTLCs][topic htlc] are still
   pending. If a user retries and successfully pays the invoice from another
-  node, an overpayment could occur if the pending HTLC is also settled.
+  node, an overpayment could occur if the pending HTLC is also settled. {% assign timestamp="48:31" %}
 
 - [Eclair #2993][] enables the recipient to pay for fees associated with the
   [blinded][topic rv routing] portion of a payment path, while the sender covers
   fees for the non-blinded portion.  Previously, the sender paid all fees, which
-  could allow them to infer and potentially unblind the path.
+  could allow them to infer and potentially unblind the path. {% assign timestamp="51:38" %}
 
 - [LND #9491][] adds support for cooperative channel closures when there are
   active [HTLCs][topic htlc] using the `lncli closechannel` command. When
@@ -154,7 +154,7 @@ repo], and [BINANAs][binana repo]._
   otherwise, an error message will prompt them to specify it. This PR also
   ensures that the `max_fee_rate` setting is enforced for both parties when a
   cooperative channel closure is initiated; previously, it was only applied to
-  the remote party.
+  the remote party. {% assign timestamp="53:14" %}
 
 {% include snippets/recap-ad.md when="2025-03-04 15:30" %}
 {% include references.md %}
