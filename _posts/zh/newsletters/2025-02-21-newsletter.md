@@ -1,7 +1,7 @@
 ---
 title: 'Bitcoin Optech Newsletter #342'
 permalink: /en/newsletters/2025/02/21/
-name: 2025-02-21-newsletter-zh  
+name: 2025-02-21-newsletter-zh
 slug: 2025-02-21-newsletter-zh
 type: newsletter
 layout: newsletter
@@ -11,7 +11,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--allowing-mobile-wallets-to-settle-channels-without-extra-utxos-->允许移动钱包在无需额外 UTXO 的情况下结算通道：**
+- **<!--allowing-mobile-wallets-to-settle-channels-without-extra-utxos-->****允许移动钱包在无需额外 UTXO 的情况下结算通道：**
   Bastien Teinturier 在 Delving Bitcoin 论坛上[发布了][teinturier mobileclose]关于 LN 通道的 [v3 承诺交易][topic v3 commitments]的一种可选变体，该变体允许移动钱包在所有可能发生盗窃的情况下使用通道内的资金来结算通道。他们不需要保留链上 UTXO 来支付关闭费用。
 
   Teinturier 首先概述了需要移动钱包广播交易的四种情况：
@@ -26,7 +26,7 @@ lang: zh
 
   Teinturier 建议让远程对等节点为支付给移动钱包的每个 HTLC 签署两个不同版本：一个根据零费用承诺的默认策略的零费用版本，和一个按当前能快速确认的费率支付费用的版本。费用从支付给移动钱包的 HTLC 价值中扣除，所以远程对等节点提供这个选项不需要任何成本，而移动钱包有动机只在真正必要时使用它。Teinturier 确实[指出][teinturier mobileclose2]远程对等节点支付过多费用存在一些安全考虑，但他预计这些问题很容易解决。
 
-- **<!--continued-discussion-about-an-ln-quality-of-service-flag-->关于 LN 服务质量标志的持续讨论：** Joost Jager 在 Delving Bitcoin 上[发布][jager lnqos]继续讨论关于在 LN 协议中添加服务质量（QoS）标志，以允许节点表明它们的某个通道具有高可用性（HA）————能够以 100% 的可靠性转发指定金额的付款（见[周报 #239][news239 qos]）。如果支付者选择了 HA 通道，而付款在该通道失败，那么支付者将通过永远不再使用该通道来惩罚运营者。自上次讨论以来，Jager 提出了节点级别的信号（可能只是通过在节点的文本别名中附加“HA”），指出协议当前的错误消息不能保证检测到付款失败的通道，并建议这不是可以完全选择性地进行信号和使用的东西，所以不需要广泛的一致，因此即使很少有支付和转发节点最终使用它，也应该为兼容性而指定它。
+- **<!--continued-discussion-about-an-ln-quality-of-service-flag-->****关于 LN 服务质量标志的持续讨论：** Joost Jager 在 Delving Bitcoin 上[发布][jager lnqos]继续讨论关于在 LN 协议中添加服务质量（QoS）标志，以允许节点表明它们的某个通道具有高可用性（HA）————能够以 100% 的可靠性转发指定金额的付款（见[周报 #239][news239 qos]）。如果支付者选择了 HA 通道，而付款在该通道失败，那么支付者将通过永远不再使用该通道来惩罚运营者。自上次讨论以来，Jager 提出了节点级别的信号（可能只是通过在节点的文本别名中附加“HA”），指出协议当前的错误消息不能保证检测到付款失败的通道，并建议这不是可以完全选择性地进行信号和使用的东西，所以不需要广泛的一致，因此即使很少有支付和转发节点最终使用它，也应该为兼容性而指定它。
 
   Matt Corallo [回复][corallo lnqos]说，LN 寻路目前运行良好，并链接到一个[详细文档][ldk path]描述 LDK 的寻路方法，该方法扩展了 René Pickhardt 和 Stefan Richter 最初描述的方法（见[周报 #163][news163 pr paper]和[周报 #270][news270 ldk2534]中的[两个条目][news270 ldk2547]）。然而，他担心 QoS 标志会鼓励未来的软件实现不那么可靠的寻路，而只是倾向于仅使用 HA 通道。在这种情况下，大型节点可以与其大型对等节点签署协议，在通道耗尽时临时使用基于信任的流动性，但依赖于无信任通道的较小节点将不得不使用昂贵的[即时再平衡][topic jit routing]，这将使它们的通道利润减少（如果他们承担成本）或不那么受欢迎（如果他们将成本转嫁给支付者）。
 
@@ -36,31 +36,31 @@ lang: zh
 
 *在这个月度栏目中，我们会标出比特币钱包和服务的有趣更新。*
 
-- **Ark 钱包 SDK 发布：**
+- **<!--ark-wallet-sdk-released-->****Ark 钱包 SDK 发布：**
   [Ark 钱包 SDK][ark sdk github] 是一个 TypeScript 库，用于构建同时支持链上比特币和 [Ark][topic ark] 协议的钱包，支持 [testnet][topic testnet]、[signet][topic signet]、[Mutinynet][new252 mutinynet] 和主网（目前不推荐）。
 
-- **Zaprite 添加 BTCPay Server 支持：**
+- **<!--zaprite-adds-btcpay-server-support-->****Zaprite 添加 BTCPay Server 支持：**
   比特币和闪电支付集成商 [Zaprite][zaprite website] 将 BTCPay Server 添加到其支持的钱包连接列表中。
 
-- **Iris 钱包桌面版发布：**
+- **<!--iris-wallet-desktop-released-->****Iris 钱包桌面版发布：**
   [Iris 钱包][iris github] 支持使用 [RGB][topic client-side validation] 协议发送、接收和发行资产。
 
-- **Sparrow 2.1.0 发布：**
+- **<!--sparrow-2-1-0-released-->****Sparrow 2.1.0 发布：**
   Sparrow [2.1.0 版本][sparrow 2.1.0] 用 [Lark][news333 lark] 替换了之前的 [HWI][topic hwi] 实现，并添加了 [PSBTv2][topic psbt] 支持，以及其他更新。
 
-- **Scure-btc-signer 1.6.0 发布：**
+- **<!--scure-btc-signer-1-6-0-released-->****Scure-btc-signer 1.6.0 发布：**
   [Scure-btc-signer][scure-btc-signer github] 的 [1.6.0][scure-btc-signer 1.6.0] 版本添加了对版本 3（[TRUC][topic v3 transaction relay]）交易和[支付到锚点（P2A）][topic ephemeral anchors]的支持。Scure-btc-signer 是 [scure][scure website] 库套件的一部分。
 
 - **Py-bitcoinkernel alpha：**
   [Py-bitcoinkernel][py-bitcoinkernel github] 是一个 Python 库，用于与 [libbitcoinkernel][Bitcoin Core #27587] 交互，后者是一个[封装 Bitcoin Core 验证逻辑][kernel blog]的库。
 
-- **Rust-bitcoinkernel 库：**
+- **<!--rust-bitcoinkernel-library-->****Rust-bitcoinkernel 库：**
   [Rust-bitcoinkernel][rust-bitcoinkernel github] 是一个实验性的 Rust 库，用于使用 libbitcoinkernel 读取区块数据并验证交易输出和区块。
 
-- **BIP32 cbip32 库：**
+- **<!--bip32-cbip32-library-->****BIP32 cbip32 库：**
   [cbip32 库][cbip32 library] 使用 libsecp256k1 和 libsodium 在 C 中实现 [BIP32][]。
 
-- **Lightning Loop 转向 MuSig2：**
+- **<!--lightning-loop-moves-to-musig2-->****Lightning Loop 转向 MuSig2：**
   Lightning Loop 的 Swap 服务现在使用 [MuSig2][topic musig]，如[最近的博客文章][loop blog]中所述。
 
 ## 重大的代码和文档变更
