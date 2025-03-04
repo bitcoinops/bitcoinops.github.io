@@ -1,6 +1,6 @@
 ---
 title: 'Bitcoin Optech Newsletter #342'
-permalink: /en/newsletters/2025/02/21/
+permalink: /zh/newsletters/2025/02/21/
 name: 2025-02-21-newsletter-zh
 slug: 2025-02-21-newsletter-zh
 type: newsletter
@@ -26,7 +26,7 @@ lang: zh
 
   Teinturier 建议让远程对等节点为支付给移动钱包的每个 HTLC 签署两个不同版本：一个根据零费用承诺的默认策略的零费用版本，和一个按当前能快速确认的费率支付费用的版本。费用从支付给移动钱包的 HTLC 价值中扣除，所以远程对等节点提供这个选项不需要任何成本，而移动钱包有动机只在真正必要时使用它。Teinturier 确实[指出][teinturier mobileclose2]远程对等节点支付过多费用存在一些安全考虑，但他预计这些问题很容易解决。
 
-- **<!--continued-discussion-about-an-ln-quality-of-service-flag-->****关于 LN 服务质量标志的持续讨论：** Joost Jager 在 Delving Bitcoin 上[发布][jager lnqos]继续讨论关于在 LN 协议中添加服务质量（QoS）标志，以允许节点表明它们的某个通道具有高可用性（HA）————能够以 100% 的可靠性转发指定金额的付款（见[周报 #239][news239 qos]）。如果支付者选择了 HA 通道，而付款在该通道失败，那么支付者将通过永远不再使用该通道来惩罚运营者。自上次讨论以来，Jager 提出了节点级别的信号（可能只是通过在节点的文本别名中附加“HA”），指出协议当前的错误消息不能保证检测到付款失败的通道，并建议这不是可以完全选择性地进行信号和使用的东西，所以不需要广泛的一致，因此即使很少有支付和转发节点最终使用它，也应该为兼容性而指定它。
+- **<!--continued-discussion-about-an-ln-quality-of-service-flag-->****关于 LN 服务质量标志的持续讨论：** Joost Jager 在 Delving Bitcoin 上[发布][jager lnqos]继续讨论关于在 LN 协议中添加服务质量（QoS）标志，以允许节点表明它们的某个通道具有高可用性（HA）————能够以 100% 的可靠性转发指定金额的付款（见[周报 #239][news239 qos]）。如果支付者选择了 HA 通道，而付款在该通道失败，那么支付者将通过永远不再使用该通道来惩罚运营者。自上次讨论以来，Jager 提出了节点级别的信号（可能只是通过在节点的文本别名中附加“HA”），指出协议当前的错误消息不能保证检测到付款失败的通道，并建议这不是可以完全选择性地出示和使用的东西 —— 如果是，就不需要广泛的一致 —— 因此即使很少有支付和转发节点最终使用它，也应该为兼容性而指定它。
 
   Matt Corallo [回复][corallo lnqos]说，LN 寻路目前运行良好，并链接到一个[详细文档][ldk path]描述 LDK 的寻路方法，该方法扩展了 René Pickhardt 和 Stefan Richter 最初描述的方法（见[周报 #163][news163 pr paper]和[周报 #270][news270 ldk2534]中的[两个条目][news270 ldk2547]）。然而，他担心 QoS 标志会鼓励未来的软件实现不那么可靠的寻路，而只是倾向于仅使用 HA 通道。在这种情况下，大型节点可以与其大型对等节点签署协议，在通道耗尽时临时使用基于信任的流动性，但依赖于无信任通道的较小节点将不得不使用昂贵的[即时再平衡][topic jit routing]，这将使它们的通道利润减少（如果他们承担成本）或不那么受欢迎（如果他们将成本转嫁给支付者）。
 
@@ -69,7 +69,7 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 
 - [Bitcoin Core #27432][] 引入了一个 Python 脚本，将由 `dumptxoutset` RPC 命令生成的紧凑序列化 UTXO 集（专为 [AssumeUTXO][topic assumeutxo] 快照设计）转换为 SQLite3 数据库。虽然考虑过扩展 `dumptxoutset` RPC 本身以输出 SQLite3 数据库，但由于增加的维护负担，最终被拒绝。该脚本不添加额外的依赖项，生成的数据库大小约为紧凑序列化 UTXO 集的两倍。
 
-- [Bitcoin Core #30529][] 修复了对否定选项如 `noseednode`、`nobind`、`nowhitebind`、`norpcbind`、`norpcallowip`、`norpcwhitelist`、`notest`、`noasmap`、`norpcwallet`、`noonlynet` 和 `noexternalip` 的处理，使其按预期行为。以前，否定这些选项会导致令人困惑且未记录的副作用，但现在它只是清除指定的设置以恢复默认行为。
+- [Bitcoin Core #30529][] 修复了对否定选项如 `noseednode`、`nobind`、`nowhitebind`、`norpcbind`、`norpcallowip`、`norpcwhitelist`、`notest`、`noasmap`、`norpcwallet`、`noonlynet` 和 `noexternalip` 的处理，使其按预期行为。以前，否定这些选项会导致令人困惑且没有得到文档说明的副作用，但现在它只是清除指定的设置以恢复默认行为。
 
 - [Bitcoin Core #31384][] 解决了一个问题，即为区块头、交易计数和 coinbase 交易保留的 4000 权重单位（WU）被无意中应用了两次，将最大区块模板大小不必要地减少了 4000 WU 至 3992000 WU（见周报 [#336][news336 weightbug]）。此修复将保留的权重合并为单个实例，并引入了一个新的 `-blockreservedweight` 启动选项，允许用户自定义保留的权重。添加了安全检查，确保保留的权重设置为 2000 WU 到 4000000 WU 之间的值，否则 Bitcoin Core 将无法启动。
 
@@ -104,13 +104,13 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 [ldk path]: https://lightningdevkit.org/blog/ldk-pathfinding/
 [news330 xpay]: /zh/newsletters/2024/11/22/#core-lightning-7799
 [news263 renepay]: /zh/newsletters/2023/08/09/#core-lightning-6376
-[news290 hrn]: /zh/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
+[news290 hrn]: /zh/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-dns
 [news333 hrn]: /zh/newsletters/2024/12/13/#bolts-1180
 [news319 wakeup]: /zh/newsletters/2024/09/06/#eclair-2865
 [news308 scorer]: /zh/newsletters/2024/06/21/#ldk-3103
-[news336 weightbug]: /zh/newsletters/2025/01/10/#investigating-mining-pool-behavior-before-fixing-a-bitcoin-core-bug
+[news336 weightbug]: /zh/newsletters/2025/01/10/#investigating-pool-behavior-before-before-a-bitcoin-core-bug
 [ark sdk github]: https://github.com/arklabshq/wallet-sdk
-[new252 mutinynet]: /zh/newsletters/2023/05/24/#mutinynet-announces-new-signet-for-testing
+[new252 mutinynet]: /zh/newsletters/2023/05/24/#mutinynet-announces-new-signet-for-testing-mutinynet-signet
 [zaprite website]: https://zaprite.com
 [iris github]: https://github.com/RGB-Tools/iris-wallet-desktop
 [sparrow 2.1.0]: https://github.com/sparrowwallet/sparrow/releases/tag/2.1.0
