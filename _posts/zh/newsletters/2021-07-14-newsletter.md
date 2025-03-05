@@ -57,7 +57,7 @@ lang: zh
   a6link="https://bitcoincore.reviews/22363#l-153"
 %}
 
-## 准备 taproot #4：从 P2WPKH 到单签 P2TR
+## 准备 Taproot #4：从 P2WPKH 到单签 P2TR
 
 *这是一个[系列][series preparing for taproot]的每周内容，介绍在区块高度 {{site.trb}} 激活 taproot 前，开发者和服务提供商如何做好准备。*
 
