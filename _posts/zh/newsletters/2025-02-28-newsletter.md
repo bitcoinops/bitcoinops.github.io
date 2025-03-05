@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的周报总结了一篇关于让全节点忽略未经请求而转发的交易的文章。此外还包括我们的常规部分，其中有来自比特币 Stack Exchange 的热门问题和答案，新版本和候选版本的公告，以及对流行的比特币基础设施软件的重要变更摘要。
+本周的周报总结了一篇关于让全节点忽略未经请求而转发过来的交易的文章。此外还包括我们的常规部分，其中有来自比特币 Stack Exchange 的热门问题和答案，新版本和候选版本的公告，以及对流行的比特币基础设施软件的重要变更摘要。
 
 ## 新闻
 
@@ -23,7 +23,7 @@ lang: zh
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
 - [<!what-s-the-rationale-for-how-the-loadtxsoutset-rpc-is-set-up-->loadtxsoutset RPC 的设置原理是什么？]({{bse}}125627)
-  Pieter Wuille 解释了为什么 [assumeUTXO][topic assumeUTXO] 表示 UTXO 集的值在特定区块高度被硬编码，未来分发 assumeUTXO 快照的方式，以及与仅复制 Bitcoin Core 内部数据存储相比 assumeUTXO 的好处。
+  Pieter Wuille 解释了为什么 [assumeUTXO][topic assumeUTXO] 表示 UTXO 集的值是硬编码在软件中的（绑定了区块高度），未来分发 assumeUTXO 快照的方式，以及与仅复制 Bitcoin Core 内部数据存储相比 assumeUTXO 的好处。
 
 - [<!--are-there-classes-of-pinning-attacks-that-rbf-rule-3-makes-impossible-->有哪些类型的交易钉死攻击是 RBF 规则 #3 使其不可能发生的？]({{bse}}125461)
   Murch 指出 [RBF][topic rbf] 规则 #3 并非旨在防止[交易钉死][topic transaction pinning]攻击，并简要介绍了 Bitcoin Core 的[替换政策][bitcoin core replacements]。
@@ -43,7 +43,7 @@ lang: zh
 - [<!--what-is-the-definition-of-discard-feerate-->丢弃手续费率的定义是什么？]({{bse}}125623)
   Murch 将丢弃手续费率定义为丢弃找零的最大手续费率，并总结了计算丢弃手续费率的代码为“1000 区块目标手续费率，如果超出 3-10 ṩ/vB 的范围则裁剪到该范围内”。
 
-- [<!--policy-to-miniscript-compiler-->miniscript 编译器的策略]({{bse}}125406)
+- [<!--policy-to-miniscript-compiler-->从花费条款到 miniscript 的编译器]({{bse}}125406)
   Brunoerg 指出 Liana 钱包使用策略语言，并指向 [sipa/miniscript][miniscript github] 和 [rust-miniscript][rust-miniscript github] 库作为策略编译器的例子。
 
 ## 新版本和候选版本
@@ -56,7 +56,7 @@ _流行的比特币基础设施项目的新版本和候选版本。请考虑升�
 
 _以下是[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs][blips repo]、[Bitcoin Inquisition][bitcoin inquisition repo] 和 [BINANAs][binana repo] 中最近的重要变更。_
 
-- [Core Lightning #8116][] 改变了中断通道关闭协商的处理方式，即使不需要也会重试该过程。这修复了一个问题，即当节点错过对等节点的 `CLOSING_SIGNED` 消息时，重新连接时会出错并广播单方面关闭交易。同时，已处于 `CLOSINGD_COMPLETE` 状态的对等节点已广播了双方同意的关闭交易，可能导致两个交易之间的竞争。此修复允许重新协商继续进行，直到双方同意的关闭交易得到确认。
+- [Core Lightning #8116][] 改变了通道关闭协商中断的处理方式，即使不需要也会重试该过程。这修复了一个问题，即当节点错过对等节点的 `CLOSING_SIGNED` 消息时，重新连接时会出错并广播单方面关闭交易。同时，已处于 `CLOSINGD_COMPLETE` 状态的对等节点已广播了双方同意的关闭交易，可能导致两个交易之间的竞争。此修复允许重新协商继续进行，直到双方同意的关闭交易得到确认。
 
 - [Core Lightning #8095][] 为 `setconfig` 命令（参见周报 [#257][news257 setconfig]）添加了 `transient` 标志；引入了临时启用的动态配置变量，而不修改配置文件。这些更改在重启时会被恢复。
 
