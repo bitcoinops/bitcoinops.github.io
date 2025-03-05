@@ -11,7 +11,22 @@ This week's newsletter FIXME
 
 ## News
 
-- FIXME:harding Morehouse disclosure https://delvingbitcoin.org/t/disclosure-lnd-excessive-failback-exploit/1493
+- **Disclosure of fixed LND vulnerability allowing theft:** Matt
+  Morehouse [posted][morehouse failback] to Delving Bitcoin to announce
+  the [responsible disclosure][topic responsible disclosures] of a
+  vulnerability that affected LND versions before 0.18.  Upgarding to
+  0.18 or (ideally) the [current version][lnd current] is recommended.
+  An attacker who shares a channel with a victim node and who can also
+  somehow cause the victim's node to restart at a particular time can
+  trick LND into both paying for and refunding the same HTLC, allowing
+  the attacker to steal nearly the entire value of a channel.
+
+  Morehouse notes that the other LN implementations have all
+  independently discovered and fixed this vulnerability, including as
+  early as 2018 (see [Newsletter #17][news17 cln2000]), but the LN
+  specification doesn't describe the correct behavior (and may even
+  require the incorrect behavior).  He has [opened a PR][bolts #1233] to
+  update the specification.
 
 - **Discussion about Bitcoin Core's priorities:** several blog posts
   written by Antoine Poinsot about the future of the Bitcoin Core
@@ -97,7 +112,7 @@ Bitcoin's consensus rules._
 
 - **Private block template marketplace to prevent centralizing MEV:** Matt
   Corallo and developer 7d5x9 [posted][c7 mev] to Delving Bitcoin about
-  allowing parties to bid in a public market for selected space within
+  allowing parties to bid in a public markets for selected space within
   miner block templates.  For example, "I’ll pay X [BTC] to include
   transaction Y as long as it comes before any other transactions which
   interact with the smart contract identified by Z".  This is something
@@ -112,9 +127,9 @@ Bitcoin's consensus rules._
   probable that it will instead be provided by large miners, who will
   compete with users of the various protocols.  This will require the
   miners obtain large amounts of capital and technical sophistication,
-  leading to them earning significantly higher profits than smaller
-  miners, centralizing mining and allowing the large miners to more
-  easily censor Bitcoin transactions.
+  likely leading to them earning significantly higher profits than smaller
+  miners without those capabilities.  This will centralize mining and
+  allow the large miners to more easily censor Bitcoin transactions.
 
   The developers propose providing trust reduction by allowing miners to
   work on blinded block templates whose complete transactions aren't
@@ -122,14 +137,15 @@ Bitcoin's consensus rules._
   to publish the block.  The developers propose two mechanisms for
   achieving this without requiring any consensus changes:
 
-  - **Trusted block templates** a miner connects to a marketplace, selects
+  - **Trusted block templates:** a miner connects to a marketplace, selects
     the bids it wants to include in a block, and asks the marketplace to
     construct a block template.  The marketplace responds with a block
     header, coinbase transaction, and partial merkle branch that allow
     the miner to generate proof of work for that template without
     learning its exact contents.  If the miner does produce the network
     _target_ amount of proof of work, it submits the header and coinbase
-    transaction to the marketplace, which verifies the proof of work and
+    transaction to the marketplace, which verifies the proof of work,
+    adds it to the block template, and
     broadcasts the block.  The marketplace might include a transaction
     paying the miner in the block template or it might pay the miner
     separately at a later time.
@@ -142,12 +158,12 @@ Bitcoin's consensus rules._
     system with the header, coinbase transaction, and partial merkle
     branch.  If the target proof of work is generated, the miner
     provides it to the TEE, which verifies it and returns the full
-    decrypted block for the miner to broadcast.  Again, the block
-    template might include a transaction paying the miner from UTXO
+    decrypted block template for the miner to add to the header and broadcast.  Again, the block
+    template might include a transaction paying the miner from a UTXO
     belonging to the marketplace or the marketplace might pay the miner
     later.
 
-  Both schemes would require there to be multiple competing
+  Both schemes would effectively require there to be multiple competing
   marketplaces, with the proposal noting that the expectation would be
   that some community members and organizations would operate marketplaces
   on a non-profit basis to help preserve decentralization against the
@@ -193,7 +209,7 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-03-11 15:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="3019,3016,3342,4114,4111,1758,1750,1712,1771" %}
+{% include linkers/issues.md v=2 issues="3019,3016,3342,4114,4111,1758,1750,1712,1771,1233" %}
 [Core Lightning 25.02rc3]: https://github.com/ElementsProject/lightning/releases/tag/v25.02rc3
 [news39 multiprocess]: /en/newsletters/2019/03/26/#bitcoin-core-10973
 [news141 p2trh]: /en/newsletters/2021/03/24/#we-could-add-a-hash-style-address-after-taproot-is-activated
@@ -208,3 +224,6 @@ repo], and [BINANAs][binana repo]._
 [beast p2qrh]: https://mailing-list.bitcoindevs.xyz/bitcoindev/8797807d-e017-44e2-b419-803291779007n@googlegroups.com/
 [c7 mev]: https://delvingbitcoin.org/t/best-worst-case-mevil-response/1465
 [tee]: https://en.wikipedia.org/wiki/Trusted_execution_environment
+[news17 cln2000]: /en/newsletters/2018/10/16/#c-lightning-2000
+[morehouse failback]: https://delvingbitcoin.org/t/disclosure-lnd-excessive-failback-exploit/1493
+[lnd current]: https://github.com/lightningnetwork/lnd/releases
