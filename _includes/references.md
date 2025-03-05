@@ -66,6 +66,7 @@ included in documents.  See https://github.com/jekyll/jekyll/pull/7108
 for details --> {% endcomment %}
 [BIP1]: https://github.com/bitcoin/bips/blob/master/bip-0001.mediawiki
 [BIP2]: https://github.com/bitcoin/bips/blob/master/bip-0002.mediawiki
+[BIP3]: https://github.com/bitcoin/bips/blob/master/bip-0003.md
 [BIP8]: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
 [BIP9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
 [BIP12]: https://github.com/bitcoin/bips/blob/master/bip-0012.mediawiki
@@ -211,6 +212,7 @@ for details --> {% endcomment %}
 {% comment %}<!-- Later link definitions supersede earlier definitions.
 When more recent information about a BIP is available not in the regular
 place, put links here. -->{% endcomment %}
+[BIP360]: https://github.com/bitcoin/bips/pull/1670
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
 [BOLT1]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md
