@@ -80,7 +80,7 @@ Different algorithms exist for creating threshold signatures, but
 perhaps the simplest of these is a slight extension of a typical
 algorithm for creating a [scriptless multisignature][topic multisignature].  This
 is easiest explained with an example: participants A, B, and C want to receive
-funds that can be spent by any three of them.  They cooperate to create
+funds that can be spent by any two of them.  They cooperate to create
 an ordinary multisignature public key for receiving the funds, then they
 each take the extra step of deriving two [secret shares][vss] from their
 private key---one share for each of the other two participants.  The
