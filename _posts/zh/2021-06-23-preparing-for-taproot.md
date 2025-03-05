@@ -31,7 +31,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## Taproot 对单签名是否有意义？
 
-*最初发表于 [Newsletter #155](/zh/newsletters/2021/06/30/#准备-taproot-2对于单签名来说-taproot-真的值得吗)*
+*最初发表于 [Newsletter #155](/zh/newsletters/2021/06/30/#准备-taproot-2taproot-对单签名是否有意义)*
 
 {% include specials/taproot/zh/01-single-sig.md %}
 
@@ -103,21 +103,21 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 在 Signet 上测试
 
-*最初发表于 [Newsletter #167](/en/newsletters/2021/09/22/#preparing-for-taproot-14-testing-on-signet)*
+*最初发表于 [Newsletter #167](/zh/newsletters/2021/09/22/#准备-taproot-14在-signet-上测试)*
 
-{% include specials/taproot/en/13-signet.md %}
+{% include specials/taproot/zh/13-signet.md %}
 
-## 仍然需要 Signmessage 协议
+## 仍需 Signmessage 协议
 
-*最初发表于 [Newsletter #168](/en/newsletters/2021/09/29/#preparing-for-taproot-15-signmessage-protocol-still-needed)*
+*最初发表于 [Newsletter #168](/zh/newsletters/2021/09/29/#准备-taproot-15仍需-signmessage-协议)*
 
-{% include specials/taproot/en/14-signmessage.md %}
+{% include specials/taproot/zh/14-signmessage.md %}
 
 ## 输出关联
 
-*最初发表于 [Newsletter #169](/en/newsletters/2021/10/06/#preparing-for-taproot-16-output-linking)*
+*最初发表于 [Newsletter #169](/zh/newsletters/2021/10/06/#准备-taproot-16输出关联)*
 
-{% include specials/taproot/en/15-output-linking.md %}
+{% include specials/taproot/zh/15-output-linking.md %}
 
 ## 合作始终是一个选项吗？
 
