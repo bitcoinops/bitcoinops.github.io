@@ -44,7 +44,7 @@ lang: zh
   Murch 将丢弃手续费率定义为丢弃找零的最大手续费率，并总结了计算丢弃手续费率的代码为“1000 区块目标手续费率，如果超出 3-10 ṩ/vB 的范围则裁剪到该范围内”。
 
 - [<!--policy-to-miniscript-compiler-->从花费条款到 miniscript 的编译器]({{bse}}125406)
-  Brunoerg 指出 Liana 钱包使用策略语言，并指向 [sipa/miniscript][miniscript github] 和 [rust-miniscript][rust-miniscript github] 库作为策略编译器的例子。
+  Brunoerg 指出 Liana 钱包使用 miniscript 的 policy（花费条款）语言，并指向 [sipa/miniscript][miniscript github] 和 [rust-miniscript][rust-miniscript github] 库作为条款编译器的例子。
 
 ## 新版本和候选版本
 
