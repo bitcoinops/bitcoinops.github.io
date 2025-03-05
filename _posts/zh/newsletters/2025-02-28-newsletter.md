@@ -1,8 +1,8 @@
 ---
 title: 'Bitcoin Optech Newsletter #343'
 permalink: /zh/newsletters/2025/02/28/
-name: 2025-02-28-newsletter
-slug: 2025-02-28-newsletter
+name: 2025-02-28-newsletter-zh
+slug: 2025-02-28-newsletter-zh
 type: newsletter
 layout: newsletter
 lang: zh
