@@ -197,25 +197,61 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Eclair #3019][] Prioritize remote commitment instead of local one
+- [Eclair #3019][] modifies a node’s behavior to favor a remote commitment
+  transaction seen in the mempool over broadcasting a local one during a
+  peer-initiated unilateral close. Previously, the node would broadcast its
+  local commitment, potentially causing a race between the two transactions.
+  Opting for the remote commitment transaction is beneficial to the local node because
+  it avoids local `OP_CHECKSEQUENCEVERIFY` (CSV) [timelock][topic timelocks] delays
+  and eliminates the need for additional transactions from the local node to resolve pending
+  [HTLCs][topic htlc].
 
-- [Eclair #3016][] Add scripts for taproot channels
+- [Eclair #3016][] introduces low-level methods for creating Lightning
+  transactions in [simple taproot channels][topic simple taproot channels],
+  without making any functional changes. These methods are generated with
+  [miniscript][topic miniscript], and differ from those outlined in the [BOLTs
+  #995][] specification.
 
-- [LDK #3342][] Introduce RouteParametersConfig
+- [LDK #3342][] adds a `RouteParametersConfig` struct that enables users to
+  customize routing parameters for [BOLT12][topic offers] invoice payments.
+  Previously limited to `max_total_routing_fee_msat`, the new struct now
+  includes [`max_total_cltv_expiry_delta`][topic cltv expiry delta],
+  `max_path_count`, and `max_channel_saturation_power_of_half`. This change
+  brings the [BOLT12][] parameter setting in line with that of [BOLT11][].
 
-- [Rust Bitcoin #4114][] Policy: Relax MIN_STANDARD_TX_NONWITNESS_SIZE to 65
+- [Rust Bitcoin #4114][] lowers the minimum non-witness transaction size from 85
+  bytes to 65 bytes, aligning with Bitcoin Core’s policy (see Newsletter
+  [#222][news222 minsize] and [#232][news232 minsize]). This change allows for
+  more minimal transactions, such as those with one input and one `OP_RETURN`
+  output.
 
-- [Rust Bitcoin #4111][] Add support for pay to anchor outputs
+- [Rust Bitcoin #4111][] adds support for the new [P2A][topic ephemeral anchors]
+  standard output type, introduced in Bitcoin Core 28.0 (see Newsletter
+  [#315][news315 p2a]).
 
-- [BIPs #1758][] BIP374: Add message to rand computation
+- [BIPs #1758][] updates [BIP374][], which defines Discrete Log Equality Proofs
+  ([DLEQ][topic dleq]) (see newsletter [#335][news335 dleq]), by incorporating the message
+  field into the `rand` computation. This change prevents the potential leakage
+  of `a` (the private key) that could occur if two proofs were constructed with
+  the same `a`, `b`, and `g` but with different messages and an all-zero `r`.
 
-- [BIPs #1750][] BIP329: add optional data fields, fix a JSON type
+- [BIPs #1750][] updates [BIP329][], which defines a format for exporting
+  [wallet labels][topic wallet labels], by adding optional fields associated
+  with addresses, transactions and outputs. A JSON type fix is also included.
 
-- [BIPs #1712][] and [#1771][bips #1771] BIP3 updated BIP process
+- [BIPs #1712][] and [BIPs #1771][] add [BIP3][], replacing [BIP2][] by making
+  several updates to the BIP process. Changes include reducing the status field
+  values to four (from nine), allowing a Draft BIP to be marked Closed by anyone
+  after a year of no progress if authors do not confirm ongoing work, permitting
+  BIPs to remain in Complete status indefinitely, enabling continuous updates to
+  process BIPs like this one, reassigning some editorial decisions from BIP
+  editors to authors or the repository’s audience, eliminating the comment
+  system, and requiring a BIP to be on-topic to receive a number, along with
+  several updates to the BIP format and preamble.
 
 {% include snippets/recap-ad.md when="2025-03-11 15:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="3019,3016,3342,4114,4111,1758,1750,1712,1771,1233" %}
+{% include linkers/issues.md v=2 issues="3019,3016,3342,4114,4111,1758,1750,1712,1771,1233,995" %}
 [Core Lightning 25.02]: https://github.com/ElementsProject/lightning/releases/tag/v25.02
 [news39 multiprocess]: /en/newsletters/2019/03/26/#bitcoin-core-10973
 [news141 p2trh]: /en/newsletters/2021/03/24/#we-could-add-a-hash-style-address-after-taproot-is-activated
@@ -233,3 +269,7 @@ repo], and [BINANAs][binana repo]._
 [news17 cln2000]: /en/newsletters/2018/10/16/#c-lightning-2000
 [morehouse failback]: https://delvingbitcoin.org/t/disclosure-lnd-excessive-failback-exploit/1493
 [lnd current]: https://github.com/lightningnetwork/lnd/releases
+[news222 minsize]: /en/newsletters/2022/10/19/#minimum-relayable-transaction-size
+[news232 minsize]: /en/newsletters/2023/01/04/#bitcoin-core-26265
+[news315 p2a]: /en/newsletters/2024/08/09/#bitcoin-core-30352
+[news335 dleq]: /en/newsletters/2025/01/03/#bips-1689
