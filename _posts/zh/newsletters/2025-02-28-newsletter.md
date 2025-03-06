@@ -22,7 +22,7 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [<!what-s-the-rationale-for-how-the-loadtxsoutset-rpc-is-set-up-->loadtxsoutset RPC 的设置原理是什么？]({{bse}}125627)
+- [<!--what-s-the-rationale-for-how-the-loadtxsoutset-rpc-is-set-up-->loadtxsoutset RPC 的设置原理是什么？]({{bse}}125627)
   Pieter Wuille 解释了为什么 [assumeUTXO][topic assumeUTXO] 表示 UTXO 集的值是硬编码在软件中的（绑定了区块高度），未来分发 assumeUTXO 快照的方式，以及与仅复制 Bitcoin Core 内部数据存储相比 assumeUTXO 的好处。
 
 - [<!--are-there-classes-of-pinning-attacks-that-rbf-rule-3-makes-impossible-->有哪些类型的交易钉死攻击是 RBF 规则 #3 使其不可能发生的？]({{bse}}125461)
