@@ -50,6 +50,9 @@ optech_mentions:
   - title: "Zero-knowledge gossip for LN channel announcements compatible with MuSig2 simple taproot channels"
     url: /en/newsletters/2025/02/07/#zero-knowledge-gossip-for-ln-channel-announcements
 
+  - title: "Eclair #3016 introduces low-level methods for creating LN transactions in simple taproot channels"
+    url: /en/newsletters/2025/03/07/#eclair-3016
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

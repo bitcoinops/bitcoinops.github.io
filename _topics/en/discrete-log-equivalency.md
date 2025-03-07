@@ -50,6 +50,9 @@ optech_mentions:
   - title: "BIPs #1687 adds BIP375 to specify sending DLEQs for multi-signer silent payments using PSBT"
     url: /en/newsletters/2025/01/17/#bips-1687
 
+  - title: "BIPs #1758 updates BIP374 to prevent potential leakage of the private key"
+    url: /en/newsletters/2025/03/07/#bips-1758
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

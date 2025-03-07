@@ -148,6 +148,9 @@ optech_mentions:
   - title: "Trustless onchain betting on potential soft forks"
     url: /en/newsletters/2024/03/13/#trustless-onchain-betting-on-potential-soft-forks
 
+  - title: "Bitcoin Forking Guide announced"
+    url: /en/newsletters/2025/03/07/#bitcoin-forking-guide
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds

@@ -88,6 +88,9 @@ optech_mentions:
   - title: "Discussion of tradeoffs in ephemeral anchor scripts related to spending trimmed HTLC value"
     url: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
 
+  - title: "Rust Bitcoin #4111 adds support for the new P2A standard output type"
+    url: /en/newsletters/2025/03/07/#rust-bitcoin-4111
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
