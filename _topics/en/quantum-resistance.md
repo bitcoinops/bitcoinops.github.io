@@ -61,6 +61,9 @@ optech_mentions:
   - title: "Discussion about an upgrade path using taproot in case fast quantum computers are created"
     url: /en/newsletters/2025/01/03/#quantum-computer-upgrade-path
 
+  - title: "Update on BIP360 pay-to-quantum-resistant-hash (P2QRH)"
+    url: /en/newsletters/2025/03/07/#update-on-bip360-pay-to-quantum-resistant-hash-p2qrh
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

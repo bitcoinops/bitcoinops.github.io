@@ -48,8 +48,11 @@ optech_mentions:
   - title: "Nunchuk wallet adds BIP329 wallet label export"
     url: /en/newsletters/2023/05/24/#nunchuk-adds-coin-control-bip329-support
 
-  - title: " BIPs #1452 updates BIP329 with a new optional spendable tag"
+  - title: "BIPs #1452 updates BIP329 with a new optional spendable tag"
     url: /en/newsletters/2023/07/05/#bips-1452
+
+  - title: "BIPs #1750 updates BIP329 with optional fields associated with addresses, transactions and outputs"
+    url: /en/newsletters/2025/03/07/#bips-1750
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

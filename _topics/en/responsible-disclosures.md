@@ -161,6 +161,9 @@ optech_mentions:
   - title: "Matt Morehouse responsibly disclosed an excessive fees and DoS vulnerability affecting LDK nodes"
     url: /en/newsletters/2025/02/07/#channel-force-closure-vulnerability-in-ldk
 
+  - title: "Matt Morehouse responsibly disclosed a vulnerability allowing theft from LND"
+    url: /en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
