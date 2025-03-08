@@ -1,8 +1,8 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Optech #344'
 permalink: /fr/newsletters/2025/03/07/
-name: 2025-03-07-newsletter
-slug: 2025-03-07-newsletter
+name: 2025-03-07-newsletter-fr
+slug: 2025-03-07-newsletter-fr
 type: newsletter
 layout: newsletter
 lang: fr
