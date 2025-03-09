@@ -64,7 +64,7 @@ Bitcoin-Infrastruktursoftware berichtet wird.
   Mittel sei, die Sicherheit der Nutzung von Bitcoin durch eine dezentrale Gemeinschaft
   von Entwicklern zu gewährleisten, anstatt nur großen Investoren oder etablierten
   Unternehmen mit umfangreichen Investitionen den Zugang zu ermöglichen.
-  
+
   David Harding äußert [Bedenken][harding pri], dass eine Neuorientierung des Hauptprojekts
   Bitcoin Core ausschließlich auf Konsenscode und P2P-Relay es für Alltag Nutzer schwieriger
   machen könnte, einen Full Node zu betreiben, um ihre eigenen eingehenden Wallet
@@ -93,13 +93,13 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen über Änderungen d
   Entwicklung, Power-User-Erkundung, Industrieevaluation und Investorenprüfung.
   Anschließend geht er kurz auf die technischen Schritte ein, die am Ende des
   Prozesses zur Aktivierung der Änderung in der Bitcoin-Software erforderlich sind.
-  
+
   In seinem Beitrag stellt er fest, dass es sich bei dem Leitfaden um eine Richtlinie
   für einen kooperativen Prozess handelt, bei dem eine Änderung implementiert wird,
   die das Leben aller verbessert. Dies führt in der Regel zu einer breiten Zustimmung.
   Zudem warnt er davor, dass es sich bei dem Leitfaden um ein oberflächliches Dokument
   handelt.
-  
+
 - **Update zu BIP360 pay-to-quantum-resistant-hash (P2QRH):**
   Der Entwickler Hunter Beast [postete][beast p2qrh] ein Update zu seinen Untersuchungen
   zur [Quantenresistenz][topic quantum resistance] für [BIP360][] an die Bitcoin-Dev-Mailingliste.
@@ -108,7 +108,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen über Änderungen d
   übernimmt, und erwägt, dass ein Sicherheitsniveau wie aktuell von Bitcoin (NIST II)
   gefordert wird – anstelle eines höheren NIST V, welches mehr Blockplatz und CPU-Prüfzeit
   erfordert. Sein Beitrag erhielt mehrere Rückmeldungen.
-  
+
 - **Marktplatz für private Blockvorlagen zur Verhinderung der Zentralisierung von MEV:**
   Matt Corallo und der Entwickler 7d5x9 [posteten][c7 mev] auf Delving Bitcoin über die Möglichkeit,
   dass Parteien in öffentlichen Märkten auf ausgewählten Raum innerhalb von Miner-Blockvorlagen
@@ -118,20 +118,20 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen über Änderungen d
   für gewisse [colored coin protocols][topic client-side validation]. Es wird wahrscheinlich in
   Zukunft noch begehrter werden, da neue Protokolle entwickelt werden (einschließlich solcher,
   die Konsensänderungen, wie beispielsweise bestimmte [covenants][topic covenants], erfordern).
-  
+
   Falls der Dienst der bevorzugten Transaktionsreihenfolge innerhalb von Blockvorlagen nicht durch
   einen vertrauensreduzierten öffentlichen Markt bereitgestellt wird, werden vermutlich große Miner
   diesen Service selbst anbieten. Dies würde erfordern, dass diese Miner große Mengen an Kapital
   und technischer Expertise aufbringen, was zu deutlich höheren Gewinnen im Vergleich zu kleineren
   Minern führen könnte – ein Umstand, der zur Zentralisierung im Mining beiträgt und es den großen
   Minern erleichtert, Bitcoin-Transaktionen zu zensieren.
-  
+
   Die Entwickler schlagen vor, das Vertrauensverhältnis zu verringern, indem Miner an der Arbeit
   an verdeckten Blockvorlagen beteiligt werden, deren vollständige Transaktionen dem Miner erst
   bekannt werden, wenn sie ausreichend Proof-of-Work erbracht haben, um den Block zu
   veröffentlichen. Konkret werden zwei Mechanismen vorgeschlagen:
-  
-  - **Vertrauenswürdige Blockvorlagen:**  
+
+  - **Vertrauenswürdige Blockvorlagen:**
     Ein Miner verbindet sich mit einem Marktplatz, wählt die Gebote aus, die in einen Block
     aufgenommen werden sollen, und fordert den Marktplatz auf, eine Blockvorlage zu erstellen.
     Der Marktplatz liefert daraufhin einen Blockheader, eine Coinbase-Transaktion und einen
@@ -141,8 +141,8 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen über Änderungen d
     der diese überprüft, in die Blockvorlage einfügt und den Block broadcastet. Möglicherweise
     enthält die Blockvorlage eine Transaktion, die den Miner bezahlt, oder die Bezahlung erfolgt
     separat.
-  
-  - **Trusted Execution Environments (TEE):**  
+
+  - **Trusted Execution Environments (TEE):**
     Miner nutzen ein Gerät mit einer [TEE][tee]-sicheren Enklave, verbinden sich mit Marktplätzen,
     wählen die Gebote aus, die sie in ihren Blocks einfügen möchten, und erhalten die zugehörigen
     Transaktionen verschlüsselt mit dem Enklaveschlüssel des TEE. Die Blockvorlage wird innerhalb
@@ -153,7 +153,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen über Änderungen d
     vervollständigen und den Block senden kann. Auch hier könnte die Blockvorlage eine Zahlung an
     den Miner enthalten, entweder direkt aus einem UTXO des Marktplatzbetreibers oder als
     nachträgliche Bezahlung.
-  
+
   Beide Ansätze würden effektiv mehrere konkurrierende Marktplätze erfordern. Es wird erwartet,
   dass einige Community-Mitglieder und Organisationen Marktplätze auf gemeinnütziger Basis betreiben,
   um die Dezentralisierung gegenüber der Dominanz eines einzelnen vertrauenswürdigen Marktplatzes
