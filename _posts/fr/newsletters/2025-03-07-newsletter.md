@@ -76,7 +76,7 @@ notables apportés aux logiciels d'infrastructure Bitcoin populaires.
 _Une section mensuelle résumant les propositions et discussions sur le changement des règles de
 consensus de Bitcoin._
 
-- **Guide de Forking Bitcoin :** Anthony Towns [a annoncé][towns bfg] à Delving Bitcoin un guide sur
+- **Guide de Forking Bitcoin :** Anthony Towns [a annoncé][towns bfg] depuis Delving Bitcoin un guide sur
   comment construire un consensus communautaire pour des changements aux règles de consensus de
   Bitcoin. Il divise la construction du consensus social en quatre étapes : recherche et
   développement, exploration par les utilisateurs avancés, évaluation par l'industrie, et révision par
@@ -101,10 +101,10 @@ consensus de Bitcoin._
   Corallo et le développeur 7d5x9 ont [publié][c7 mev] sur Delving Bitcoin concernant la possibilité
   pour les parties de faire des offres sur les marchés publics pour un espace sélectionné au sein des
   modèles de blocs des mineurs. Par exemple, "Je paierai X [BTC] pour inclure la transaction Y tant
-  qu'elle précède toute autre transaction qui interagit avec le contrat intelligent identifié par Z".
+  qu'elle précède toute autre transaction qui interagit avec le contrat identifié par Z".
   C'est quelque chose que les créateurs de transactions sur Bitcoin veulent déjà pour divers
   protocoles, tels que certains [protocoles de pièces colorées][topic client-side validation], et cela
-  deviendra probablement encore plus souhaitable à l'avenir à mesure que de nouveaux protocoles sont
+  deviendra probablement encore plus souhaitable à l'avenir à mesure que de nouveaux protocoles seront
   développés (y compris les propositions nécessitant des changements de consensus tels que certains
   [covenants][topic covenants]).
 
@@ -131,9 +131,9 @@ consensus de Bitcoin._
     et diffuse le bloc. Le marché pourrait inclure une transaction payant le mineur dans le modèle de
     bloc ou il pourrait payer le mineur séparément à un moment ultérieur.
 
-  - **Environnements d'exécution fiables :** les mineurs obtiennent un dispositif avec un enclave
+  - **Environnements d'exécution fiables :** les mineurs obtiennent un dispositif avec une enclave
     sécurisée [TEE][], se connectent aux marchés et sélectionnent les offres qu'ils souhaitent inclure
-    dans leurs blocs, et reçoivent les transactions de ces offres chiffrées pour la clé d'enclave du
+    dans leurs blocs, ils reçoivent les transactions de ces offres chiffrées pour la clé d'enclave du
     TEE. Le modèle de bloc est construit au sein du TEE et le TEE fournit au système d'exploitation hôte
     l'en-tête, la transaction coinbase, et la branche de merkle partielle. Si la preuve de travail cible
     est générée, le mineur la fournit au TEE, qui la vérifie et retourne le modèle de bloc déchiffré
@@ -167,8 +167,8 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement Proposals (BI
 inquisition repo], et [BINANAs][binana repo]._
 
 - [Eclair #3019][] modifie le comportement d'un nœud pour favoriser une transaction de commitment à
-  distance vue dans le mempool plutôt que de diffuser une locale lors d'une fermeture unilatérale
-  initiée par un pair. Auparavant, le nœud diffuserait son engagement local, provoquant
+  distance vue dans la mempool plutôt que de diffuser une locale lors d'une fermeture unilatérale
+  initiée par un pair. Auparavant, le nœud diffusait son engagement local, provoquant
   potentiellement une course entre les deux transactions. Opter pour la transaction de commitment à
   distance est bénéfique pour le nœud local car cela évite les délais de [timelock][topic timelocks] locaux
   `OP_CHECKSEQUENCEVERIFY` (CSV)  et élimine le besoin de transactions supplémentaires du
