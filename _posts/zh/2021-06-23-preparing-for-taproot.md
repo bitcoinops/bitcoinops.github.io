@@ -107,17 +107,17 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/zh/13-signet.md %}
 
-## 仍然需要 Signmessage 协议
+## 仍需 Signmessage 协议
 
-*最初发表于 [Newsletter #168](/en/newsletters/2021/09/29/#preparing-for-taproot-15-signmessage-protocol-still-needed)*
+*最初发表于 [Newsletter #168](/zh/newsletters/2021/09/29/#准备-taproot-15仍需-signmessage-协议)*
 
-{% include specials/taproot/en/14-signmessage.md %}
+{% include specials/taproot/zh/14-signmessage.md %}
 
 ## 输出关联
 
-*最初发表于 [Newsletter #169](/en/newsletters/2021/10/06/#preparing-for-taproot-16-output-linking)*
+*最初发表于 [Newsletter #169](/zh/newsletters/2021/10/06/#准备-taproot-16输出关联)*
 
-{% include specials/taproot/en/15-output-linking.md %}
+{% include specials/taproot/zh/15-output-linking.md %}
 
 ## 合作始终是一个选项吗？
 

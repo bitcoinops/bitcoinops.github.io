@@ -28,7 +28,7 @@ lang: zh
 
   一些闪电网络实现已经以非标准方式支持了这种想法，而所有讨论参与者似乎都倾向于对其进行标准化。截至撰写时，仍在讨论使用的具体细节。
 
-## 准备 taproot #3：taproot 描述符
+## 准备 Taproot #3：taproot 描述符
 
 *每周一篇的[系列][series preparing for taproot]文章，讲述开发者和服务提供商如何为将在区块高度 {{site.trb}} 激活的 taproot 做好准备。*
 
