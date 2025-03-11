@@ -31,7 +31,7 @@ popular Bitcoin infrastructure software.
   early as 2018 (see [Newsletter #17][news17 cln2000]), but the LN
   specification doesn't describe the correct behavior (and may even
   require the incorrect behavior).  He has [opened a PR][bolts #1233] to
-  update the specification.
+  update the specification. {% assign timestamp="0:57" %}
 
 - **Discussion about Bitcoin Core's priorities:** several blog posts
   by Antoine Poinsot about the future of the Bitcoin Core
@@ -83,7 +83,7 @@ popular Bitcoin infrastructure software.
   rules, Harding argues that making it easy for everyday users to
   personally validate their wallet transactions is as important for
   security as preventing and eliminating bugs that could lead to severe
-  vulnerabilities.
+  vulnerabilities. {% assign timestamp="10:49" %}
 
 ## Changing consensus
 
@@ -102,7 +102,7 @@ Bitcoin's consensus rules._
   you make a change that makes everyone’s life better, and more or less
   everyone ends up agreeing that the change makes everyone’s lives
   better."  He also warns that "it's also only a fairly high-level
-  guide."
+  guide." {% assign timestamp="1:01:11" %}
 
 - **Update on BIP360 pay-to-quantum-resistant-hash (P2QRH):** developer
   Hunter Beast [posted][beast p2qrh] an update on his research into
@@ -113,7 +113,7 @@ Bitcoin's consensus rules._
   scheme (see [Newsletter #141][news141 p2trh]), and is considering
   targeting the same security level as currently provided by Bitcoin
   (NIST II) rather than a higher level (NIST V) that requires more block
-  space and CPU verification time.  His post received multiple replies.
+  space and CPU verification time.  His post received multiple replies. {% assign timestamp="34:37" %}
 
 - **Private block template marketplace to prevent centralizing MEV:** Matt
   Corallo and developer 7d5x9 [posted][c7 mev] to Delving Bitcoin about
@@ -140,7 +140,7 @@ Bitcoin's consensus rules._
   work on blinded block templates whose complete transactions aren't
   revealed to the miner until they've produced sufficient proof of work
   to publish the block.  The developers propose two mechanisms for
-  achieving this without requiring any consensus changes:
+  achieving this without requiring any consensus changes: {% assign timestamp="21:06" %}
 
   - **Trusted block templates:** a miner connects to a marketplace, selects
     the bids it wants to include in a block, and asks the marketplace to
@@ -184,7 +184,7 @@ release candidates._
   this popular LN node.  It includes support for [peer storage][topic
   peer storage] (used for storing encrypted penalty transactions that can be
   retrieved and decrypted to provide a type of [watchtower][topic
-  watchtowers]) in addition to other improvements and bug fixes.
+  watchtowers]) in addition to other improvements and bug fixes. {% assign timestamp="1:09:57" %}
 
 ## Notable code and documentation changes
 
@@ -204,40 +204,40 @@ repo], and [BINANAs][binana repo]._
   Opting for the remote commitment transaction is beneficial to the local node because
   it avoids local `OP_CHECKSEQUENCEVERIFY` (CSV) [timelock][topic timelocks] delays
   and eliminates the need for additional transactions from the local node to resolve pending
-  [HTLCs][topic htlc].
+  [HTLCs][topic htlc]. {% assign timestamp="1:11:21" %}
 
 - [Eclair #3016][] introduces low-level methods for creating Lightning
   transactions in [simple taproot channels][topic simple taproot channels],
   without making any functional changes. These methods are generated with
   [miniscript][topic miniscript], and differ from those outlined in the [BOLTs
-  #995][] specification.
+  #995][] specification. {% assign timestamp="1:12:05" %}
 
 - [LDK #3342][] adds a `RouteParametersConfig` struct that enables users to
   customize routing parameters for [BOLT12][topic offers] invoice payments.
   Previously limited to `max_total_routing_fee_msat`, the new struct now
   includes [`max_total_cltv_expiry_delta`][topic cltv expiry delta],
   `max_path_count`, and `max_channel_saturation_power_of_half`. This change
-  brings the [BOLT12][] parameter setting in line with that of [BOLT11][].
+  brings the [BOLT12][] parameter setting in line with that of [BOLT11][]. {% assign timestamp="33:13" %}
 
 - [Rust Bitcoin #4114][] lowers the minimum non-witness transaction size from 85
   bytes to 65 bytes, aligning with Bitcoin Core’s policy (see Newsletter
   [#222][news222 minsize] and [#232][news232 minsize]). This change allows for
   more minimal transactions, such as those with one input and one `OP_RETURN`
-  output.
+  output. {% assign timestamp="1:12:50" %}
 
 - [Rust Bitcoin #4111][] adds support for the new [P2A][topic ephemeral anchors]
   standard output type, introduced in Bitcoin Core 28.0 (see Newsletter
-  [#315][news315 p2a]).
+  [#315][news315 p2a]). {% assign timestamp="1:14:29" %}
 
 - [BIPs #1758][] updates [BIP374][], which defines Discrete Log Equality Proofs
   ([DLEQ][topic dleq]) (see newsletter [#335][news335 dleq]), by incorporating the message
   field into the `rand` computation. This change prevents the potential leakage
   of `a` (the private key) that could occur if two proofs were constructed with
-  the same `a`, `b`, and `g` but with different messages and an all-zero `r`.
+  the same `a`, `b`, and `g` but with different messages and an all-zero `r`. {% assign timestamp="1:15:09" %}
 
 - [BIPs #1750][] updates [BIP329][], which defines a format for exporting
   [wallet labels][topic wallet labels], by adding optional fields associated
-  with addresses, transactions and outputs. A JSON type fix is also included.
+  with addresses, transactions and outputs. A JSON type fix is also included. {% assign timestamp="1:17:07" %}
 
 - [BIPs #1712][] and [BIPs #1771][] add [BIP3][], replacing [BIP2][] by making
   several updates to the BIP process. Changes include reducing the status field
@@ -247,7 +247,7 @@ repo], and [BINANAs][binana repo]._
   process BIPs like this one, reassigning some editorial decisions from BIP
   editors to authors or the repository’s audience, eliminating the comment
   system, and requiring a BIP to be on-topic to receive a number, along with
-  several updates to the BIP format and preamble.
+  several updates to the BIP format and preamble. {% assign timestamp="1:18:10" %}
 
 {% include snippets/recap-ad.md when="2025-03-11 15:30" %}
 {% include references.md %}
