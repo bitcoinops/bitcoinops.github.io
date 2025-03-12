@@ -115,9 +115,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 输出关联
 
-*最初发表于 [Newsletter #169](/en/newsletters/2021/10/06/#preparing-for-taproot-16-output-linking)*
+*最初发表于 [Newsletter #169](/zh/newsletters/2021/10/06/#准备-taproot-16输出关联)*
 
-{% include specials/taproot/en/15-output-linking.md %}
+{% include specials/taproot/zh/15-output-linking.md %}
 
 ## 合作始终是一个选项吗？
 
