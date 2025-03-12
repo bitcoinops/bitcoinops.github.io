@@ -108,12 +108,76 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Stricter internal handling of invalid blocks][review club 31405] is a
+PR by [mzumsande][gh mzumsande] that improves the correctness of two
+non-consensus-critical and expensive-to-calculate validation fields by
+immediately updating them when a block is marked as invalid. Prior to
+this PR, these updates were delayed until a later event to minimize
+resource usage. However, since [Bitcoin Core #25717][], an attacker
+would need to invest much more work to exploit this.
+
+Specifically, this PR ensures that `ChainstateManager`'s `m_best_header`
+always points to the most-work header not known to be valid, and that
+a block's `BLOCK_FAILED_CHILD` `nStatus` is always correct.
+
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/31363#l-26FIXME"
+  q0="Which purpose(s) does `ChainstateManager::m_best_header` serve?"
+  a0="`m_best_header` represents the most-PoW header the node has seen
+  so far which it hasn't yet invalidated but also can't guarantee to be
+  valid. It has many uses, but the main one is to serve as a target to
+  which the node can progress its best chain. Other use cases include
+  providing an estimate of the current time, and an estimate of the best
+  chain's height when requesting missing headers from a peer. A more
+  complete overview can be found in the ~6-year old pull request
+  [Bitcoin Core #16974][]."
+  a0link="https://bitcoincore.reviews/31405#l-36"
+
+  q1="Prior to this PR, which of these statements are true, if any?
+  1) a `CBlockIndex` with an INVALID predecessor will ALWAYS have a
+     `BLOCK_FAILED_CHILD` `nStatus`.
+  2) a `CBlockIndex` with a VALID predecessor will NEVER have a
+     `BLOCK_FAILED_CHILD` `nStatus`"
+  a1="Statement 1) is false, and directly addressed in this PR. Prior to
+  this PR, `AcceptBlock()` would mark an invalid block as such, but for
+  performance reasons not immediately update its descendants as such.
+  The Review Club attendees could not think of a scenario where
+  statement 2) was false."
+  a1link="https://bitcoincore.reviews/31405#l-68"
+
+  q2="One of the goals of this PR is to ensure `m_best_header`, and the
+  `nStatus` of successors of an invalid block are always correctly set.
+  Which functions are directly responsible for updating these values?"
+  a2="`SetBlockFailureFlags()` is responsible for updating `nStatus`. In
+  normal operation, `m_best_header` is most commonly set via the
+  out-parameter in `AddToBlockIndex()`, but it can also be calculated
+  and set via `RecalculateBestHeader()`."
+  a2link="https://bitcoincore.reviews/31405#l-110"
+
+  q3="Most of the logic in commit `4100495` `validation: in
+  invalidateblock, calculate m_best_header right away` implements
+  finding the new best header. What prevents us from just using
+  `RecalculateBestHeader()` here?"
+  a3="`RecalculateBestHeader()` traverses the entire `m_block_index`,
+  which is an expensive operation. Commit `4100495` optimizes this by
+  instead caching and iterating over a set of candidates with high-PoW
+  headers."
+  a3link="https://bitcoincore.reviews/31405#l-114"
+
+  q4="Would we still need the `cand_invalid_descendants` cache if we
+  were able to iterate forwards (i.e. away from the genesis block) over
+  the block tree? What would be the pros and cons of such an approach,
+  compared to the one taken in this PR?"
+  a4="If `CBlockIndex` objects held references to all their descendants,
+  we wouldn't need to iterate over the entire `m_block_index` to
+  invalidate descendants, and consequently wouldn't need the
+  `cand_invalid_descendants` cache. However, this approach would have
+  significant downsides. First, it would increase the memory footprint
+  of each `CBlockIndex` object, which needs to be kept in-memory for the
+  entire `m_block_index`. Second, the iteration logic would still be
+  non-trivial since while each `CBlockIndex` has exactly one ancestor,
+  it may have no or multiple descendants."
+  a4link="https://bitcoincore.reviews/31405#l-136"
 %}
 
 ## Releases and release candidates
@@ -162,9 +226,11 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-03-18 15:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="31407,3027,3007,2976,3608,3624,3016,3629,1838" %}
+{% include linkers/issues.md v=2 issues="31407,3027,3007,2976,3608,3624,3016,3629,1838,16974,25717" %}
 [virtu traffic]: https://delvingbitcoin.org/t/bitcoin-node-p2p-traffic-analysis/1490/
 [saraswathi path]: https://delvingbitcoin.org/t/an-exposition-of-pathfinding-strategies-within-lightning-network-clients/1500
 [sk path]: https://arxiv.org/pdf/2410.13784
 [linus pp]: https://delvingbitcoin.org/t/emulating-op-rand/1409/10
 [eclair v0.12.0]: https://github.com/ACINQ/eclair/releases/tag/v0.12.0
+[review club 31405]: https://bitcoincore.reviews/31405
+[gh mzumsande]: https://github.com/mzumsande
