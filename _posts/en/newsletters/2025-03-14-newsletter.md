@@ -206,23 +206,74 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31407][] guix: Notarize MacOS app bundle and codesign all MacOS and Windows binaries
+- [Bitcoin Core #31407][] adds support for notarizing macOS application bundles
+  and binaries by updating the `detached-sig-create.sh` script. The script now
+  also signs standalone macOS and Windows binaries. The recently updated
+  [signapple] tool is used to perform these tasks.
 
-- [Eclair #3027][] Add path finding for blinded routes
+- [Eclair #3027][] adds pathfinding functionality for [blinded paths][topic rv
+  routing] when generating [BOLT12][topic offers] invoices by introducing the
+  `routeBlindingPaths` function, which computes a path from a selected
+  initiating node to the receiver node using only nodes that support blinded
+  paths. The blinded path is then included in the invoice.
 
-- [Eclair #3007][] Add support for your_last_funding_locked and my_current_funding_locked tlvs in channel_reestablish
+- [Eclair #3007][] adds a `last_funding_locked` TLV parameter in
+  `channel_reestablish` messages to improve synchronization between peers during
+  channel [splicing][topic splicing] after a disconnect. It fixes a race
+  condition where a node sends a `channel_update` after receiving a
+  `channel_reestablish` but before `splice_locked`, which is harmless for
+  regular channels but could disrupt [simple taproot channels][topic simple
+  taproot channels] that require nonce exchanges between peers.
 
-- [Eclair #2976][] Offers without extra plugin
+- [Eclair #2976][] adds support for creating [offers][topic offers] without
+  additional plugins by introducing the `createoffer` command, which takes
+  optional parameters for description, amount, expiration in seconds, issuer,
+  and `blindedPathsFirstNodeId` to define an initiating node for a [blinded
+  path][topic rv routing]. In addition, this PR introduces the `disableoffer`
+  and `listoffers` commands to manage existing offers.
 
-- [LDK #3608][] TheBlueMatt/2025-02-better-block-constants
+- [LDK #3608][] redefines the `CLTV_CLAIM_BUFFER` to represent twice the
+  expected maximum number of blocks required to confirm a transaction, adapting
+  to [anchor][topic anchor outputs] channels where [HTLCs][topic htlc] claim
+  transactions are delayed by an `OP_CHECKSEQUENCEVERIFY` (CSV) [timelock][topic
+  timelocks] of 1 block. Previously, it was set to a single maximum confirmation
+  period, which was sufficient for pre-anchor channels where HTLC claim
+  transactions were broadcast alongside commitment transactions. A new
+  `MAX_BLOCKS_FOR_CONF` constant is added as the base value.
 
-- [LDK #3624][] wpaulino/funding-key-tweak
+- [LDK #3624][] enables funding key rotation after successful channel
+  [splices][topic splicing] by applying a scalar tweak to the base funding key
+  to obtain the channel's 2-of-2 [multisig][topic multisignature] key. This
+  allows a node to derive additional keys from the same secret. The tweak
+  computation follows the [BOLT3][] specification, but replaces
+  `per_commitment_point` with the splice funding txid to ensure uniqueness, and
+  uses the `revocation_basepoint` to restrict derivation to channel
+  participants.
 
-- [LDK #3016][] lightning-signer/2024-04-ext-test
+- [LDK #3016][] adds support for external projects to run functional tests and
+  replace components like the signer by introducing an `xtest` macro. It
+  includes a `MutGlobal` utility and a `DynSigner` struct to support dynamic
+  test components like the signer, exposes these tests under the
+  `_externalize_tests` feature flag, and provides a `TestSignerFactory` for
+  creating dynamic signers.
 
-- [LDK #3629][] joostjager/log-attribution-failures
+- [LDK #3629][] improves logging of remote
+  failures that can't be attributed or interpreted to provide more visibility
+  into these edge cases. This PR modifies `onion_utils.rs` to log
+  non-attributable failures that could disrupt sender operation, and introduces
+  a `decrypt_failure_onion_error_packet` function for decryption handling. It
+  also fixes a bug where an unreadable failure with a valid hash-based message
+  authentication code (HMAC) was not properly attributed to a node.
+  This may be related to allowing spenders to avoid using nodes that
+  advertise [high availability][news342 qos] but fail to deliver.
 
-- [BDK #1838][] Make full-scan/sync flow easier to reason about.
+- [BDK #1838][] improves the clarity of the full-scan and sync flow by adding a
+  mandatory `sync_time` to `SyncRequest` and `FullScanRequest`, applying this
+  `sync_time` as the `seen_at` property for unconfirmed transactions while
+  allowing non-canonical (see Newsletter [#335][news335 noncanonical])
+  transactions to exclude a `seen_at` timestamp. It updates `TxUpdate::seen_ats`
+  to a `HashSet` of (Txid, u64) to support multiple `seen_at` timestamps per
+  transaction, and changes `TxGraph` to be non-exhaustive, among other changes.
 
 {% include snippets/recap-ad.md when="2025-03-18 15:30" %}
 {% include references.md %}
@@ -234,3 +285,6 @@ repo], and [BINANAs][binana repo]._
 [eclair v0.12.0]: https://github.com/ACINQ/eclair/releases/tag/v0.12.0
 [review club 31405]: https://bitcoincore.reviews/31405
 [gh mzumsande]: https://github.com/mzumsande
+[signapple]: https://github.com/achow101/signapple
+[news335 noncanonical]: /en/newsletters/2025/01/03/#bdk-1670
+[news342 qos]: /en/newsletters/2025/02/21/#continued-discussion-about-an-ln-quality-of-service-flag
