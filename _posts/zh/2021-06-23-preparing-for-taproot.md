@@ -119,11 +119,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/zh/15-output-linking.md %}
 
-## 合作始终是一个选项吗？
+## 合作永远是可行选项吗？
 
-*最初发表于 [Newsletter #170](/en/newsletters/2021/10/13/#preparing-for-taproot-17-is-cooperation-always-an-option)*
+*最初发表于 [Newsletter #170](/zh/newsletters/2021/10/13/#准备-taproot-17合作永远是可行选项吗)*
 
-{% include specials/taproot/en/17-keypath-universality.md %}
+{% include specials/taproot/zh/17-keypath-universality.md %}
 
 ## 趣闻
 
