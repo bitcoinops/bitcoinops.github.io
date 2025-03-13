@@ -2,8 +2,8 @@
 FROM ruby:2.6.4
 
 # Install program to configure locales
-RUN apt-get update
-RUN apt-get install -y locales
+RUN apt-get update && \
+    apt-get install -y locales
 RUN dpkg-reconfigure locales && \
   locale-gen C.UTF-8 && \
   /usr/sbin/update-locale LANG=C.UTF-8
