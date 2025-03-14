@@ -95,6 +95,9 @@ optech_mentions:
   - title: "Eclair #2968 adds support for splicing on public channels"
     url: /en/newsletters/2025/02/07/#eclair-2968
 
+  - title: "LDK #3624 enables funding key rotation after successful channel splices"
+    url: /en/newsletters/2025/03/14/#ldk-3624
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

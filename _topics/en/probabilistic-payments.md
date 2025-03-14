@@ -30,6 +30,9 @@ optech_mentions:
   - title: "Emulating `OP_RAND`"
     url: /en/newsletters/2025/02/07/#emulating-op-rand
 
+  - title: "Probabilistic payments using different hash functions as an xor function"
+    url: /en/newsletters/2025/03/14/#probabilistic-payments-using-different-hash-functions-as-an-xor-function
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
