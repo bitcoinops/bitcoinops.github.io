@@ -169,7 +169,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 - [Bitcoin Core #31407][]は、`detached-sig-create.sh`スクリプトを更新することで、
   macOSアプリケーションバンドルとバイナリの公証をサポートします。このスクリプトは、
   スタンドアロンのmacOSおよびWindowsバイナリにも署名するようになりました。
-  これらのタスクを実行するには、最近更新された[signapple]ツールが使用されます。
+  これらのタスクを実行するには、最近更新された[signapple][]ツールが使用されます。
 
 - [Eclair #3027][]は、`routeBlindingPaths`関数を導入することで、
   [BOLT12][topic offers]インボイスを生成する際に、[ブラインドパス][topic rv

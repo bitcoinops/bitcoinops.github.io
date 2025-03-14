@@ -209,7 +209,7 @@ repo], and [BINANAs][binana repo]._
 - [Bitcoin Core #31407][] adds support for notarizing macOS application bundles
   and binaries by updating the `detached-sig-create.sh` script. The script now
   also signs standalone macOS and Windows binaries. The recently updated
-  [signapple] tool is used to perform these tasks.
+  [signapple][] tool is used to perform these tasks.
 
 - [Eclair #3027][] adds pathfinding functionality for [blinded paths][topic rv
   routing] when generating [BOLT12][topic offers] invoices by introducing the
