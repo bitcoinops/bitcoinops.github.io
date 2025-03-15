@@ -7,8 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周周报概述了关于向频繁离线的闪电网络（LN）节点支付的讨论主题，描述了旨在降低闪电网络支付路径探测成本以提高特定攻击实施成本的提案集，并提供了在 signet 和 testnet 上创建 Taproot 交易的操作指南链接。同时包含常规栏目：近期客户端和服务更新、新版本与候选版本发布，以及主流比特币基础设施软件的显著变更。
-
+本周周报概述了关于向频繁离线的闪电网络节点支付的讨论主题，描述了旨在降低闪电网络支付路径探测成本以提高特定攻击实施成本的提案集，并提供了在 signet 和 testnet 上创建 Taproot 交易的操作指南链接。同时包含常规栏目：近期客户端和服务更新、新版本与候选版本发布，以及主流比特币基础设施软件的显著变更。
 
 ## 新闻
 
@@ -31,19 +30,19 @@ lang: zh
 *本栏目每月精选比特币钱包和服务的有趣更新。*
 
 - ​**<!--zeus-wallet-adds-ln-features-->**​**Zeus 钱包新增闪电网络功能：​**
-  移动端比特币和闪电网络钱包 Zeus 在 [v0.6.0-alpha3][zeus v0.6.0-alpha3] 版本中新增对[原子化多路径支付（AMP）][topic amp]、[闪电网络地址][news167 lightning addresses]和[币控制][topic coin selection]功能的支持。
+  移动端比特币和闪电网络钱包 Zeus 在 [v0.6.0-alpha3][zeus v0.6.0-alpha3] 版本中新增对[原子化多路径支付（AMP）][topic amp]、[闪电网络地址][news167 lightning addresses]和[币选择][topic coin selection]功能的支持。
 
 - ​**<!--sparrow-adds-coinjoin-support-->**​**Sparrow 新增 Coinjoin 支持：​**
   [Sparrow 1.5.0][] 通过集成 Samourai 的 [Whirlpool][whirlpool] 新增 [Coinjoin][topic coinjoin] 功能。
 
 - ​**<!--joinmarket-fixes-a-critical-bug-for-makers-and-adds-rbf-support-->**​**JoinMarket 修复做市商关键漏洞并支持 RBF：​**
-  [JoinMarket 0.9.3][joinmarket 0.9.3] 修复了做市商的关键漏洞，建议所有做市商升级。0.9.2 版本默认在 UI 中使用[保真债券][news161 fidelity bonds]并支持对非 Coinjoin 交易使用 [RBF（费用替换）][topic rbf]。
+  [JoinMarket 0.9.3][joinmarket 0.9.3] 修复了做市商的关键漏洞，建议所有做市商升级。0.9.2 版本默认在 UI 中使用[保真债券][news161 fidelity bonds]并支持对非 Coinjoin 交易使用 [RBF][topic rbf]。
 
 - ​**<!--coldcard-supports-descriptor-based-wallets-->**​**Coldcard 支持描述符钱包：​**
   [Coldcard 4.1.3][coldcard 4.1.3] 现支持 Bitcoin Core 的 `importdescriptors` 命令，实现了[描述符][topic descriptors]钱包和基于 [PSBT][topic psbt] 的工作流。
 
 - ​**<!--simple-bitcoin-wallet-adds-cpfp-rbf-hold-invoices-->**​**Simple Bitcoin Wallet 新增 CPFP、RBF 和 hold invoices：​**
-  Simple Bitcoin Wallet（原 Bitcoin Lightning Wallet）在 2.2.14 版本新增 [CPFP][topic cpfp] 和 RBF（手续费提升与取消）功能，并在 [2.2.15][slw 2.2.15] 版本支持 [hold invoices][topic hold invoices]。
+  Simple Bitcoin Wallet（原 Bitcoin Lightning Wallet）在 2.2.14 版本新增 [CPFP][topic cpfp] 和 RBF 功能，并在 [2.2.15][slw 2.2.15] 版本支持 [hold invoices][topic hold invoices]。
 
 - ​**<!--electrs-0-9-0-released-->**​**Electrs 0.9.0 发布：​**
   [Electrs 0.9.0][] 现改用比特币 P2P 协议替代从磁盘或 JSON RPC 读取区块。用户升级时请参考[升级指南][Electrs 0.9.0 upgrading guide]。
