@@ -125,11 +125,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/zh/17-keypath-universality.md %}
 
-## 趣闻
+## 琐事
 
-*最初发表于 [Newsletter #171](/en/newsletters/2021/10/20/#preparing-for-taproot-18-trivia)*
+*最初发表于 [Newsletter #171](/zh/newsletters/2021/10/20/#准备-taproot-18琐事)*
 
-{% include specials/taproot/en/18-trivia.md %}
+{% include specials/taproot/zh/18-trivia.md %}
 
 ## 未来的共识变化
 
