@@ -18,16 +18,13 @@
 
 - ​**<!--schnorr-signatures-for-twisted-edwards-curves-->**​**扭曲爱德华曲线的 Schnorr 签名：​** 2011 年发布的 [EdDSA][] 方案将 schnorr 签名应用于椭圆曲线，现已成为多项标准的基础。虽然未用于比特币共识层，但 Optech 追踪的多个比特币代码库中可见其相关引用。
 
-  <!-- source: quick git grep -i -->
 
 - ​**<!--pay-to-contract-->**​**支付到合约：​** Ilja Gerhardt 和 Timo Hanke 在 2013 年圣何塞比特币大会上提出的[协议][gh p2c]， <!-- source: Wuille; I found some independent confirmation in dead links on Google -harding -->允许支付承诺至合约哈希。持有合约和防攻击随机数的任何人都可验证该承诺，但对他人而言该支付与普通比特币支付无异。
 
   2014 年[侧链论文][sidechains.pdf]中的改进版 P2C 额外承诺原始公钥。Taproot 采用相同结构，但其承诺对象为接收方设定的链上花费条件（而非链下合约条款）。
 
 - ​**<!--a-good-morning-->**​**灵感诞生地：​** 使脚本支付与公钥支付在链上表现相同的 P2C 创意，由 Andrew Poelstra 和 Gregory Maxwell 于 2018 年 1 月 22 日在加利福尼亚州洛斯阿尔托斯的 "A Good Morning" 餐厅构思。Pieter Wuille 回忆："这个想法在我暂时离开餐桌时诞生... !$%@" [原文如此]
-  <!-- personal correspondence with Wuille -harding -->
 
-<!-- weird comment below because HTML has silly rules about anchor ids -->
 - ​**<!--x-2-5-years-in-1-5-days-->**​**2.5 年浓缩至 1.5 天：​** 确定 [bech32m][topic bech32] 的最佳常数消耗了[约][wuille matrix elimination] 2.5 年 CPU 时间，最终借 Gregory Maxwell 的 CPU 集群在 1.5 天内完成计算。
 
 *感谢 Anthony Towns、Gregory Maxwell、Jonas Nick、Pieter Wuille 和 Tim Ruffing 为本栏目提供的见解。文中错误由作者负责。*
