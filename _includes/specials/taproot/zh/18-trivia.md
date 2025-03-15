@@ -4,9 +4,9 @@
 
   这与比特币有何关联？
 
-  - "我一直认为这个名字源于'接入默克尔根（taps into the Merkle root）'，但实际并不清楚 Gregory Maxwell 的命名思路。" ——Pieter Wuille（[来源][wuille taproot name]）
+  - ​**<!--I-always-assumed-->**"我一直认为这个名字源于'接入默克尔根（taps into the Merkle root）'，但实际并不清楚 Gregory Maxwell 的命名思路。" ——Pieter Wuille（[来源][wuille taproot name]）
 
-  - "我最初不得不查阅这个词的含义；但将其理解为密钥路径是'主根'，因为这是可食用的部分（用于制作胡萝卜汤），而默克尔化的脚本则是其他次要根须（希望被忽略）。" ——Anthony Towns（[来源][towns taproot name]）
+  - ​**<!--I-originally-had-->**"我最初不得不查阅这个词的含义；但将其理解为密钥路径是'主根'，因为这是可食用的部分（用于制作胡萝卜汤），而默克尔化的脚本则是其他次要根须（希望被忽略）。" ——Anthony Towns（[来源][towns taproot name]）
 
   - "该名称源自对蒲公英主根般粗壮中心树干的视觉化想象——该技术的主要价值在于假设存在一条高概率路径（其他为杂乱次要路径）。此外，'taproot' 的双关含义也贴切，因为其通过根部的隐藏承诺来验证脚本路径支付。
 
