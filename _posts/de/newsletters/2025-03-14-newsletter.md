@@ -250,14 +250,13 @@ _Wichtige kürzliche Änderungen in [Bitcoin Core][bitcoin core repo],
   Dies kann in Zusammenhang stehen mit der Erlaubnis für Ausgeber, Knoten zu vermeiden, die
   [hohe Verfügbarkeit][news342 qos] ankündigen, aber nicht liefern.
 
-- [BDK #1838][] verbessert die Klarheit des Full-Scan- und Synchronisationsflusses, indem ein
-  obligatorisches `sync_time` zu `SyncRequest` und `FullScanRequest` hinzugefügt wird, dieses
-  `sync_time` als `seen_at`-Eigenschaft für unbestätigte Transaktionen anwendet, während es
-  nicht-Standard (siehe Newsletter [#335][news335 noncanonical]) Transaktionen ermöglicht,
-  ein `seen_at`-Timestamp auszuschließen. Es aktualisiert `TxUpdate::seen_ats` zu einem
-  `HashSet` von (Txid, u64), um mehrere `seen_at`-Timestamps pro Transaktion zu unterstützen,
-  und ändert `TxGraph` in nicht-exhaustiv, unter anderen Änderungen.
-
+- [BDK #1838][] verbessert die Klarheit des Full-Scan- und Synchronisationsflusses durch
+  Hinzufügen einer obligatorischen `sync_time` zu `SyncRequest` und `FullScanRequest`,
+  verwendet diese `sync_time` als `seen_at` Eigenschaft für unbestätigte Transaktionen
+  und erlaubt nicht-kanonischen Transaktionen (siehe Newsletter [#335][news335 noncanonical]),
+  einen `seen_at` Zeitstempel auszuschließen. Es aktualisiert `TxUpdate::seen_ats` zu einem
+  `HashSet` von (Txid, u64), um mehrere `seen_at` Zeitstempel pro Transaktion zu unterstützen,
+  und ändert `TxGraph` zu nicht-exhaustiv, neben anderen Änderungen.
 
 {% include snippets/recap-ad.md when="2025-03-18 15:30" %}
 {% include references.md %}
