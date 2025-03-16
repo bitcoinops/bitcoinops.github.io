@@ -181,7 +181,7 @@ Bitte denken Sie daran, auf neue Versionen zu aktualisieren oder Release-Kandida
   ([Peer-Speicherung][topic peer storage]) hinzu, sowie weitere Verbesserungen und
   Fehlerkorrekturen. Die Veröffentlichungshinweise erwähnen, dass mehrere wichtige
   Abhängigkeiten aktualisiert wurden, was bedeutet, dass Benutzer diese Aktualisierungen
-  vor der Bereitstellung der neuen Version von Eclair durchführen müssen.  
+  vor der Bereitstellung der neuen Version von Eclair durchführen müssen.
 
 ## Wichtige Code- und Dokumentationsänderungen
 
