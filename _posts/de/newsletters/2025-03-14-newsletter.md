@@ -24,17 +24,17 @@ ankündigen und wichtige Änderungen an beliebten Bitcoin-Infrastrukturprojekten
   die Ergebnisse für seinen einzelnen Knoten nicht in allen Fällen repräsentativ gewesen
   sein mögen, fanden wir einige seiner Entdeckungen interessant:
 
-    - *Hoher Blockverkehr als archivierender erreichbarer Knoten:* Virtus Knoten lieferte
+  - *Hoher Blockverkehr als archivierender erreichbarer Knoten:* Virtus Knoten lieferte
     mehrere Gigabyte Blöcke pro Stunde an andere Knoten, wenn er als nicht-pruned
     erreichbarer Knoten betrieben wurde. Viele der Blöcke waren ältere Blöcke, die von
     eingehenden Verbindungen angefordert wurden, um IBD durchzuführen.
 
-    - *Hoher inv-Datenübertragung als nicht-archivierender erreichbarer Knoten:* etwa 20%
+  - *Hoher inv-Datenübertragung als nicht-archivierender erreichbarer Knoten:* etwa 20%
     der gesamten Knoten-Datenübertragung bestand aus `inv`-Nachrichten, bevor er den Service
     für ältere Blöcke aktiviert hatte. [Erlay][topic erlay] könnte diesen 20%-Overhead erheblich
     reduzieren, der etwa 100 Megabyte pro Tag ausmachte.
 
-    - *Die Mehrheit der eingehenden Peers scheint aus Spion-Knoten zu bestehen:* "Interessanterweise
+  - *Die Mehrheit der eingehenden Peers scheint aus Spion-Knoten zu bestehen:* "Interessanterweise
     tauschen die meisten eingehenden Peers nur etwa 1 MB Datenübertragung mit meinem Knoten, was
     zu niedrig ist (unter Verwendung der Datenübertragung über meine ausgehenden Verbindungen als
     Basis), um sie als reguläre Verbindungen zu betrachten. Alles, was diese Knoten tun, ist, die
