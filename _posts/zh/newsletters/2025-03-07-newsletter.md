@@ -26,7 +26,7 @@ lang: zh
 
 *在这个月度栏目中，我们会总结关于变更比特币公式规则的提议和讨论。*
 
-- **<!--bitcoin-forking-guide-->比特币分叉指南**：Anthony Towns 在 Delving Bitcoin 中[发布][beast p2qrh]了一份关于如何为变更比特币共识规则的想法建立社区共识的指南。他将社会共识的建立分成四个阶段 —— 研究和开发、关键用户探究、行业评估和投资者审核。然后，他简要介绍了最终在比特币软件中激活变更的技术步骤。
+- **<!--bitcoin-forking-guide-->比特币分叉指南**：Anthony Towns 在 Delving Bitcoin 中[发布][towns bfg]了一份关于如何为变更比特币共识规则的想法建立社区共识的指南。他将社会共识的建立分成四个阶段 —— 研究和开发、关键用户探究、行业评估和投资者审核。然后，他简要介绍了最终在比特币软件中激活变更的技术步骤。
 
   他的帖子指出，“本文只是一份关于合作式路径的指南，这就是说，你提出了一项变更，可以让每个用户都得到好处，并且最终每个人都或多或少同意这项变更对每个人都好。” 他也警告，“这只是非常简略的指南。”
 
@@ -37,10 +37,11 @@ lang: zh
   如果区块模板内优先交易排序的服务不是由减少信任需求的公开市场提供的，那么它就有可能由较大的矿工来提供，他们会跟多种协议的用户竞争。这将要求矿工获得大量的资本和技术机密，可能会导致他们赚得比没有这些资本的较小矿工高得多的收益。这会导致挖矿中心化，而且让大矿工可以更容易地审查比特币交易。
 
   这些开发者们提议，让矿工可以在盲化的区块模板上挖矿，模板中全部交易都不向矿工揭晓，直至矿工提供足够多的工作量证明、能够广播该区块，从而减少所需的信任因素。这些开发者提出了两种能够实现这一特性而不需要共识变更的机制：
-  
+
   - **<!--trusted-block-templates-->受信任的区块模板**：一个矿工连接到一个市场，选择自己想要包含在一个区块中的投标，然后请求市场构造出区块模板。市场会响应以一个区块头、coinbase 交易和部分默克尔分支，让这个矿工可以为这个模板生成工作量证明（但不知道其具体内容）。如果这个矿工产生了符合网络 *难度* 的工作量证明，就把区块头和 coinbase 交易提交给市场，市场会验证工作量证明，然后添加到区块模板中，然后广播完整的交易。市场可能会包含一笔交易，给挖矿的矿工支付，或者可能会稍晚另外给矿工支付。
+
   - **<!--trusted-execution-environments-->受信任的执行环境（TEE）**：矿工获得一个带有 [TEE][] 安全飞地的设备，连接到市场、选择自己想要包含在区块中的投标，然后获得这些投标中的交易的加密形式，密钥是 TEE 的飞地密钥。区块模板会在 TEE 中构造，然后 TEE 会给主管操作系统提供区块头、coinbase 交易以及部分默克尔分支。如果生成了目标工作量证明，矿工就会将工作量证明提供给 TEE，后者验证它，然后返回完整的解密的区块模板，让矿工可以添加区块头并广播出去。同样地，区块模板中可能包含一笔来自市场的给矿工的支付，或者市场可能会另外支付给矿工。
-  
+
   两种方法都在实质上要求存在多个相互竞争的市场；提议还指出，预期一些社区成员和组织会以非盈利形式运行市场，以保护去中心化、防止一家受信任的市场独大。
 
 ## 新版本和候选版本
@@ -54,21 +55,26 @@ lang: zh
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs][blips repo]、[Bitcoin Inquisition][bitcoin inquisition repo] 和 [BINANAs][binana repo]。*
 
 - [Eclair #3019][] 修改了节点的动作，在通道对手发起单方退出的情形中，偏向在交易池中看到的对方的承诺交易，而不是广播己方的承诺交易。以往，节点会广播己方的承诺交易，可能会导致两笔交易间的赛跑。偏向对方的承诺交易对己方也有好处，因为这避免了己方的 `OP_CHECKSEQUENCEVERIFY`（CSV）[时间锁][topic timelocks]延迟，并且不再需要从己方节点发出额外的交易来解决等待中的 [HTLCs][topic htlc] 。
+
 - [Eclair #3016][] 加入了在 “[简单 taproot 通道][topic simple taproot channels]” 中创建闪电交易的底层方法，而不变更任何功能。这些方法是使用 [miniscript][topic miniscript] 创建出来的，并且跟在 [BOLTs #995][] 规范中列举出来的不同。
+
 - [LDK #3342][] 添加了一种 `RouteParametersConfig` 构造体，让用户能够为 [BOLT12][topic offers] 发票支付定制路由参数。以往受制于 `max_total_routing_fee_msat`，新的构造体包含了 [`max_total_cltv_expiry_delta`][topic cltv expiry delta]、`max_path_count` 和 `max_channel_saturation_power_of_half`。这一变更让 [BOLT12][] 的参数设定跟 [BOLT11][] 的一致。
+
 - [Rust Bitcoin #4114][] 将见证以外的交易体积的下限从 85 字节降低到 65 字节，跟 Bitcoin Core 的策略保持一致（详见周报 [#222][news222 minsize] 和 [#232][news232 minsize]）。这一变更允许更小的交易得到传播，比如那些只有一个输入和一个 `OP_RETURN` 输出的。
+
 - [Rust Bitcoin #4111][] 加入对新的 [P2A][topic ephemeral anchors] 标准输出类型的支持（在 Bitcoin Core 中由 28.0 引入，详见[#315][news315 p2a]）。
+
 - [BIPs #1758][] 更新了 [BIP374][]，将消息字段的内容合并到了 `rand` 的计算中；该 BIP 定义了 “离散对数等式证据（[DLEQ][topic dleq]）”（详见周报 [#335][news335 dleq]）。这一变更防止了如果两个证据基于相同的 `a`、`b` 和 `g` 构造，但使用不同的消息和一个全部为 0 的 `r`，从而泄露 `a`（私钥）的情形。
+
 - [BIPs #1750][] 更新了 [BIP329][]，添加了跟地址、交易和输出相关的可选字段，还包含了一项 JSON 类型修复。该 BIP 定义了一种导出[钱包标签][topic wallet labels]的格式。
+
 - [BIPs #1712][] 和 [BIPs #1771][] 添加了 [BIP3][]，替代了 [BIP2][] 并对 BIP 流程做了多项更新。变更内容包括减少状态字段的值（从 9 个减少到 4 个）、允许处在 “Draft（草案）” 状态的 BIP 在长达一年时间里没有进展（作者也不确认持续工作）之后被任何人标记为 “Closed（关闭）”、防止 BIP 无限期处于 “Complete（完成）” 状态、支持持续更新、将部分编辑决定从 BIP 编辑重新分配给作者（或者库的观众）、取消评论系统，并要求 BIP 被讨论才能获得编号，还对 BIP 的格式和序言作了多项更新。
-
-
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="3019,3016,3342,4114,4111,1758,1750,1712,1771,1233,995" %}
 [Core Lightning 25.02]: https://github.com/ElementsProject/lightning/releases/tag/v25.02
-[news39 multiprocess]: /en/newsletters/2019/03/26/#bitcoin-core-10973
-[news141 p2trh]: /en/newsletters/2021/03/24/#we-could-add-a-hash-style-address-after-taproot-is-activated
+[news39 multiprocess]: /zh/newsletters/2019/03/26/#bitcoin-core-10973
+[news141 p2trh]: /zh/newsletters/2021/03/24/#we-could-add-a-hash-style-address-after-taproot-is-activated
 [poinsot pri]: https://delvingbitcoin.org/t/antoine-poinsot-on-bitcoin-cores-priorities/1470/
 [poinsot pri1]: https://antoinep.com/posts/core_project_direction/
 [poinsot pri2]: https://antoinep.com/posts/stating_the_obvious/
@@ -79,8 +85,8 @@ lang: zh
 [towns bfg]: https://delvingbitcoin.org/t/bitcoin-forking-guide/1451
 [beast p2qrh]: https://mailing-list.bitcoindevs.xyz/bitcoindev/8797807d-e017-44e2-b419-803291779007n@googlegroups.com/
 [c7 mev]: https://delvingbitcoin.org/t/best-worst-case-mevil-response/1465
-[tee]: https://en.wikipedia.org/wiki/Trusted_execution_environment
-[news17 cln2000]: /en/newsletters/2018/10/16/#c-lightning-2000
+[tee]: https://zh.wikipedia.org/wiki/%E5%8F%AF%E4%BF%A1%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83
+[news17 cln2000]: /zh/newsletters/2018/10/16/#c-lightning-2000
 [morehouse failback]: https://delvingbitcoin.org/t/disclosure-lnd-excessive-failback-exploit/1493
 [lnd current]: https://github.com/lightningnetwork/lnd/releases
 [news222 minsize]: /zh/newsletters/2022/10/19/#minimum-relayable-transaction-size
