@@ -270,4 +270,4 @@ _Wichtige kürzliche Änderungen in [Bitcoin Core][bitcoin core repo],
 [gh mzumsande]: https://github.com/mzumsande
 [signapple]: https://github.com/achow101/signapple
 [news335 noncanonical]: /en/newsletters/2025/01/03/#bdk-1670
-[news342 qos]: /en/newsletters/2025/02/21/#continued-discussion-about-an-ln-quality-of-service-flag
+[news342 qos]: /de/newsletters/2025/02/21/#weiterfuhrende-diskussion-uber-ein-ln-qualitatsflag
