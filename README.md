@@ -26,14 +26,25 @@ site an unlimited number of times with no extra work.
 
 **Docker**
 
-Ensure docker and docker-compose are installed. Run the command in the project
-directory.
+Using Docker eliminates the need for local Ruby installation and
+simplifies the setup process. Ensure Docker and Docker Compose are
+installed, then run the following command in the project directory:
 
-    docker-compose up --build
+    docker compose up
 
-To restart (in the event of code change).
+This will build the Docker image if needed and start the Jekyll server.
+The site preview will be available at http://localhost:4000.
 
-    docker-compose down -v && docker-compose up --build
+For most code changes, Jekyll's live reload will automatically update
+the preview. You only need to restart the container when making changes
+such as:
+
+- Changing dependencies in the Gemfile
+- Modifying Docker configuration files
+
+To rebuild and restart the container:
+
+    docker compose down && docker compose up --build
 
 ##### Install The Dependencies
 
