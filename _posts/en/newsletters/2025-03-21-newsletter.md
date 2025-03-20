@@ -88,21 +88,64 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31649][] consensus: Remove checkpoints (take 2)
+- [Bitcoin Core #31649][] removes all checkpoint logic, which is no longer
+  necessary following the headers presync step implemented years ago (see
+  Newsletter [#216][news216 presync]) that enables a node during Initial Block
+  Download (IBD) to determine if a chain of headers is valid by comparing its
+  total proof of work (PoW) to a predefined threshold `nMinimumChainWork`. Only
+  chains with a total proof of work exceeding this value are considered valid
+  and stored, effectively preventing memory DoS attacks from low-work headers.
+  This eliminates the need for checkpoints, which were often seen as a
+  centralized element.
 
-- [Bitcoin Core #31283][] Add waitNext() to BlockTemplate interface
+- [Bitcoin Core #31283][] introduces a new `waitNext()` method to the
+  `BlockTemplate` interface, which will only return a new template if the chain
+  tip changes or the mempool fees increase above the `MAX_MONEY` threshold.
+  Previously, miners would receive a new template with every request, resulting
+  in unnecessary template generation. This change aligns with the [Stratum
+  V2][topic pooled mining] protocol specification.
 
-- [Eclair #3037][] Improve Bolt12 offer APIs
+- [Eclair #3037][] enhances the `listoffers` command (See Newsletter
+  [#345][news345 offers]) to return all relevant [offer][topic offers] data,
+  including the `createdAt` and `disabledAt` timestamps, instead of just raw
+  Type-Length-Value (TLV) data. In addition, this PR fixes a bug that caused the
+  node to crash when attempting to register the same offer twice.
 
-- [LND #9546][] macaroons: ip range constraint
+- [LND #9546][] adds an `ip_range` flag to the `lncli constrainmacaroon` (see
+  Newsletter [#201][news201 constrain]) subcommand, allowing users to restrict
+  access to a resource to a specific IP range when using a macaroon
+  (authentication token). Previously, macaroons could only allow or deny access
+  based on specific IP addresses, not ranges.
 
-- [LND #9458][] multi+server.go: add initial permissions for some peers
+- [LND #9458][] introduces restricted access slots for certain peers,
+  configurable via the `--num-restricted-slots` flag, to manage initial access
+  permissions on the server. Peers are assigned access levels based on their
+  channel history: those with a confirmed channel receive protected access,
+  those with an unconfirmed channel receive temporary access, and all others are
+  given restricted access.
 
-- [BTCPay Server #6581][] Feature: RBF and UX improvement to fee bumping
+- [BTCPay Server #6581][] adds [RBF][topic rbf] support, enabling fee bumping
+  for transactions that have no descendants, where all inputs are from the
+  store’s wallet, and which include one of the store’s change addresses. Users
+  can now choose between [CPFP][topic cpfp] and RBF when choosing to fee bump a
+  transaction. Fee bumping requires NBXplorer version 2.5.22 or higher.
 
-- [BDK #1839][] Introduce `evicted-at`/`last-evicted` timestamps
+- [BDK #1839][] adds support for detecting and handling canceled (double-spent)
+  transactions by introducing a new `TxUpdate::evicted_ats` field, which updates
+  the `last_evicted` timestamps in `TxGraph`. Transactions are considered
+  evicted if their `last_evicted` timestamp exceeds their `last_seen` timestamp.
+  The canonicalization algorithm (see Newsletter [#335][news335 algorithm]) is
+  updated to ignore evicted transactions except when a canonical descendant
+  exists due to rules of transitivity.
 
-- [BOLTs #1233][] Check for preimage before failing back missing HTLCs, c.f. https://bitcoinops.org/en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
+- [BOLTs #1233][] updates a node’s behavior to never fail an [HTLC][topic htlc]
+  upstream if the node knows the preimage, ensuring that the HTLC can be
+  properly settled. Previously, the recommendation was to fail an outstanding
+  HTLC upstream if it was missing from a confirmed commitment, even if the
+  preimage was known. A bug in LND versions before 0.18 caused nodes under DoS
+  attack to fail HTLCs upstream after a restart, despite knowing the preimage,
+  resulting in the loss of the HTLC’s value (see Newsletter [#344][news344
+  lnd]).
 
 {% include snippets/recap-ad.md when="2025-03-25 15:30" %}
 {% include references.md %}
@@ -110,3 +153,8 @@ repo], and [BINANAs][binana repo]._
 [bitcoin core 29.0rc2]: https://bitcoincore.org/bin/bitcoin-core-29.0/
 [morehouse sweep]: https://delvingbitcoin.org/t/lnds-deadline-aware-budget-sweeper/1512
 [ismail sweep]: https://delvingbitcoin.org/t/lnds-deadline-aware-budget-sweeper/1512/3
+[news216 presync]: /en/newsletters/2022/09/07/#bitcoin-core-25717
+[news345 offers]: /en/newsletters/2025/03/14/#eclair-2976
+[news201 constrain]: /en/newsletters/2022/05/25/#lnd-6529
+[news344 lnd]: /en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
+[news335 algorithm]: /en/newsletters/2025/01/03/#bdk-1670
