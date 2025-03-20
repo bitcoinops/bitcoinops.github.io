@@ -66,7 +66,61 @@ merges to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Wally 1.4.0 released:**
+  The [libwally-core 1.4.0 release][wally 1.4.0] adds [taproot][topic
+  taproot] support, support for deriving [BIP85][] RSA keys, as well as additional
+  [PSBT][topic psbt] and [descriptor][topic descriptors] features.
+
+- **Bitcoin Core Config Generator announced:**
+  The [Bitcoin Core Config Generator][bccg github] project is a terminal interface
+  for creating Bitcoin Core `bitcoin.conf` configuration files.
+
+- **A regtest development environment container:**
+  The [regtest-in-a-pod][riap github] repository provides a [Podman][podman
+  website] container configured with Bitcoin Core, Electrum, and Esplora, as outlined
+  in the [Using Podman Containers for Regtest Bitcoin Development][podman
+  bitcoin blog] blog post.
+
+- **Explora transaction visualization tool:**
+  [Explora][explora github] is a web-based explorer for visualizing and
+  navigating between transaction inputs and outputs.
+
+- **Hashpool v0.1 tagged:**
+  [Hashpool][hashpool github] is a [mining pool][topic pooled mining] based on
+  the [Stratum v2 reference implementation][news247 sri] where mining shares are
+  represented as [ecash][topic ecash] tokens (see [Podcast #337][pod337 hashpool]).
+
+- **DMND launching pooled mining:**
+  [DMND][dmnd website] is launching Stratum v2 pooled mining, building on their
+  previous solo mining [announcement][news281 demand].
+
+- **Krux adds taproot and miniscript:**
+  [Krux][news273 krux] adds [miniscript][topic miniscript] and taproot support,
+  leveraging the [embit][embit website] library.
+
+- **Source-available secure element announced:**
+  The [TROPIC01][tropic01 website] is a secure element built on RISC-V with
+  an [open architecture][tropicsquare github] for auditability.
+
+- **Nunchuk launches Group Wallet:**
+  [Group Wallet][nunchuk blog] supports [multisignature][topic
+  multisignature] signing, taproot, coin control, [Musig2][topic musig], and
+  secure communication between participants by repurposing the output descriptors in the
+  [BIP129][] Bitcoin Secure Multisig Setup (BSMS) file.
+
+- **FROSTR protocol announced:**
+  [FROSTR][frostr github] uses the FROST [threshold signature scheme][topic
+  threshold signature] to achieve k-of-n signing and key management for nostr.
+
+- **Bark launches on signet:**
+  The [Bark][new325 bark] implementation of [Ark][topic ark] is now
+  [available][second blog] on [signet][topic signet] with a faucet and demo
+  store for testing.
+
+- **Cove Bitcoin wallet announced:**
+  [Cove Wallet][cove wallet github] is an open source Bitcoin mobile wallet based on
+  BDK that supports technologies like PSBTs, [wallet labels][topic wallet labels],
+  hardware signing devices, and more.
 
 ## Releases and release candidates
 
@@ -158,3 +212,23 @@ repo], and [BINANAs][binana repo]._
 [news201 constrain]: /en/newsletters/2022/05/25/#lnd-6529
 [news344 lnd]: /en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
 [news335 algorithm]: /en/newsletters/2025/01/03/#bdk-1670
+[wally 1.4.0]: https://github.com/ElementsProject/libwally-core/releases/tag/release_1.4.0
+[bccg github]: https://github.com/jurraca/core-config-tui
+[riap github]: https://github.com/thunderbiscuit/regtest-in-a-pod
+[podman website]: https://podman.io/
+[podman bitcoin blog]: https://thunderbiscuit.com/posts/podman-bitcoin/
+[explora github]: https://github.com/lontivero/explora
+[hashpool github]: https://github.com/vnprc/hashpool
+[news247 sri]: /en/newsletters/2023/04/19/#stratum-v2-reference-implementation-update-announced
+[pod337 hashpool]: /en/podcast/2025/01/21/#continued-discussion-about-rewarding-pool-miners-with-tradeable-ecash-shares-transcript
+[news281 demand]: /en/newsletters/2023/12/13/#stratum-v2-mining-pool-launches
+[dmnd website]: https://www.dmnd.work/
+[embit website]: https://embit.rocks/
+[news273 krux]: /en/newsletters/2023/10/18/#krux-signing-device-firmware
+[tropic01 website]: https://tropicsquare.com/tropic01
+[tropicsquare github]: https://github.com/tropicsquare
+[nunchuk blog]: https://nunchuk.io/blog/group-wallet
+[frostr github]: https://github.com/FROSTR-ORG
+[new325 bark]: /en/newsletters/2024/10/18/#bark-ark-implementation-announced
+[second blog]: https://blog.second.tech/try-ark-on-signet/
+[cove wallet github]: https://github.com/bitcoinppl/cove
