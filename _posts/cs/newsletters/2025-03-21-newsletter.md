@@ -193,7 +193,7 @@ repo] a [repozitáři BINANA][binana repo]._
 [ismail sweep]: https://delvingbitcoin.org/t/lnds-deadline-aware-budget-sweeper/1512/3
 [news216 presync]: /en/newsletters/2022/09/07/#bitcoin-core-25717
 [news345 offers]: /cs/newsletters/2025/03/14/#eclair-2976
-[news201 constrain]: /en/newsletters/2022/05/25/#lnd-6529
+[news201 constrain]: /cs/newsletters/2022/05/25/#lnd-6529
 [news344 lnd]: /cs/newsletters/2025/03/07/#odhaleni-opravene-zranitelnosti-v-lnd-umoznujici-kradez
 [news335 algorithm]: /cs/newsletters/2025/01/03/#bdk-1670
 [wally 1.4.0]: https://github.com/ElementsProject/libwally-core/releases/tag/release_1.4.0
