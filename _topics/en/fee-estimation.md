@@ -59,6 +59,9 @@ optech_mentions:
   - title: "LDK #3268 adds a more conservative fee estimation method for dust calculations"
     url: /en/newsletters/2024/09/06/#ldk-3268
 
+  - title: "Updated LND sweeper subsystem using multiple feerate estimation methods"
+    url: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coin selection

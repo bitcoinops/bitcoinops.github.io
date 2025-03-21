@@ -86,6 +86,12 @@ optech_mentions:
   - title: "Deterministic transaction selection from a committed mempool for Braidpool decentralized mining"
     url: /en/newsletters/2025/02/07/#deterministic-transaction-selection-from-a-committed-mempool
 
+  - title: "Hashpool 0.1 tagged based on the Stratum v2 reference implementation with ecash-based shares"
+    url: /en/newsletters/2025/03/21/#hashpool-v0-1-tagged
+
+  - title: "DMND pool launches Stratum v2 pooled mining"
+    url: /en/newsletters/2025/03/21/#dmnd-launching-pooled-mining
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:
