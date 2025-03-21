@@ -93,6 +93,9 @@ optech_mentions:
   - title: "LDK #3340 introduces batching of on-chain claim transactions with pinnable outputs"
     url: /en/newsletters/2025/01/03/#ldk-3340
 
+  - title: "Updated LND sweeper subsystem for fee bumping to improve transaction pinning resistance"
+    url: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out

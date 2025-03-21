@@ -38,6 +38,9 @@ optech_mentions:
   - title: "Variant of replacement cycling attack that could benefit exploitative miners"
     url: /en/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
 
+  - title: "Updated LND sweeper subsystem for fee bumping to improve replacement cycling resistance"
+    url: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction replacement

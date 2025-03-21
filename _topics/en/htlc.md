@@ -99,6 +99,9 @@ optech_mentions:
   - title: "LDK #3556 proactively fails HTLCs backwards near expiration even before upstream confirmation"
     url: /en/newsletters/2025/02/07/#ldk-3556
 
+  - title: "BOLTs #1233 adds recommendation to never fail an HTLC upstream if the node knows the preimage"
+    url: /en/newsletters/2025/03/21/#bolts-1233
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contracts from Bitcoin Wiki

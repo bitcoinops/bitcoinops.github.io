@@ -36,6 +36,9 @@ optech_mentions:
   - title: "Ark Wallet SDK released"
     url: /en/newsletters/2025/02/21/#ark-wallet-sdk-released
 
+  - title: "Bark implementation of Ark is now available on signet"
+    url: /en/newsletters/2025/03/21/#bark-launches-on-signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools
