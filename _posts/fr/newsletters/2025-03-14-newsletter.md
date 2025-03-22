@@ -157,7 +157,7 @@ séparation claire entre les blocs et leurs états d'invalidation.
   Premièrement, cela augmenterait l'empreinte mémoire de chaque objet `CBlockIndex`, qui doit être
   conservé en mémoire pour l'ensemble du `m_block_index`. Deuxièmement, la logique d'itération
   resterait non triviale puisque, bien que chaque `CBlockIndex` ait exactement un ancêtre, il peut
-  n'avoir aucun ou plusieurs descendants.
+  n'avoir aucun ou plusieurs descendants."
   a4link="https://bitcoincore.reviews/31405#l-136"
 
 ## Mises à jour et versions candidates
