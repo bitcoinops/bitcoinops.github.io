@@ -159,6 +159,7 @@ séparation claire entre les blocs et leurs états d'invalidation.
   resterait non triviale puisque, bien que chaque `CBlockIndex` ait exactement un ancêtre, il peut
   n'avoir aucun ou plusieurs descendants."
   a4link="https://bitcoincore.reviews/31405#l-136"
+%}
 
 ## Mises à jour et versions candidates
 
