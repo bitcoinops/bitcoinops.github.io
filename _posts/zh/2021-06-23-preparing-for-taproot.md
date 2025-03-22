@@ -133,9 +133,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 未来的共识变化
 
-*最初发表于 [Newsletter #172](/en/newsletters/2021/10/27/#preparing-for-taproot-19-future-consensus-changes)*
+*最初发表于 [Newsletter #172](/zh/newsletters/2021/10/27/#准备-taproot-19未来的共识变化)*
 
-{% include specials/taproot/en/19-future.md %}
+{% include specials/taproot/zh/19-future.md %}
 
 ## 激活时会发生什么？
 
