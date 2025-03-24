@@ -43,7 +43,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
     Other than that, they just suck up our `inv` messages."
 
   Virtu's post contains additional insights and multiple charts
-  illustrating the traffic experienced by his node.
+  illustrating the traffic experienced by his node. {% assign timestamp="1:35" %}
 
 - **Research into single-path LN pathfinding:** Sindura Saraswathi
   [posted][saraswathi path] to Delving Bitcoin about [research][sk path]
@@ -64,7 +64,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
   for a few more weeks).  She also notes that "[although]  beyond the
   scope of this study, we note that the insights gained in this study
   are also relevant for future improvements in [multi-part
-  payment][topic multipath payments] pathfinding algorithms."
+  payment][topic multipath payments] pathfinding algorithms." {% assign timestamp="6:45" %}
 
 - **Probabilistic payments using different hash functions as an xor function:**
   Robin Linus [replied][linus pp] to the Delving Bitcoin thread about
@@ -101,6 +101,8 @@ describing notable changes to popular Bitcoin infrastructure projects.
     xor of `1 0 0` and `1 1 0` is `0 1 0`, which sums to `1`, allowing
     Alice to claim the payment.
 
+{% assign timestamp="21:17" %}
+
 ## Bitcoin Core PR Review Club
 
 *In this monthly section, we summarize a recent [Bitcoin Core PR Review
@@ -120,6 +122,7 @@ Specifically, this PR ensures that `ChainstateManager`'s `m_best_header`
 always points to the most-work header not known to be valid, and that
 a block's `BLOCK_FAILED_CHILD` `nStatus` is always correct.
 
+{% assign timestamp="26:12" %}
 
 {% include functions/details-list.md
   q0="Which purpose(s) does `ChainstateManager::m_best_header` serve?"
@@ -193,7 +196,7 @@ release candidates._
   storage][topic peer storage]), among other improvements and bug fixes.
   The release notes mention that several major dependencies have been
   updated, requiring users to make those updates before deploying the
-  new version of Eclair.
+  new version of Eclair. {% assign timestamp="37:49" %}
 
 ## Notable code and documentation changes
 
@@ -209,13 +212,13 @@ repo], and [BINANAs][binana repo]._
 - [Bitcoin Core #31407][] adds support for notarizing macOS application bundles
   and binaries by updating the `detached-sig-create.sh` script. The script now
   also signs standalone macOS and Windows binaries. The recently updated
-  [signapple][] tool is used to perform these tasks.
+  [signapple][] tool is used to perform these tasks. {% assign timestamp="38:52" %}
 
 - [Eclair #3027][] adds pathfinding functionality for [blinded paths][topic rv
   routing] when generating [BOLT12][topic offers] invoices by introducing the
   `routeBlindingPaths` function, which computes a path from a selected
   initiating node to the receiver node using only nodes that support blinded
-  paths. The blinded path is then included in the invoice.
+  paths. The blinded path is then included in the invoice. {% assign timestamp="43:22" %}
 
 - [Eclair #3007][] adds a `last_funding_locked` TLV parameter in
   `channel_reestablish` messages to improve synchronization between peers during
@@ -223,14 +226,14 @@ repo], and [BINANAs][binana repo]._
   condition where a node sends a `channel_update` after receiving a
   `channel_reestablish` but before `splice_locked`, which is harmless for
   regular channels but could disrupt [simple taproot channels][topic simple
-  taproot channels] that require nonce exchanges between peers.
+  taproot channels] that require nonce exchanges between peers. {% assign timestamp="44:17" %}
 
 - [Eclair #2976][] adds support for creating [offers][topic offers] without
   additional plugins by introducing the `createoffer` command, which takes
   optional parameters for description, amount, expiration in seconds, issuer,
   and `blindedPathsFirstNodeId` to define an initiating node for a [blinded
   path][topic rv routing]. In addition, this PR introduces the `disableoffer`
-  and `listoffers` commands to manage existing offers.
+  and `listoffers` commands to manage existing offers. {% assign timestamp="44:57" %}
 
 - [LDK #3608][] redefines the `CLTV_CLAIM_BUFFER` to represent twice the
   expected maximum number of blocks required to confirm a transaction, adapting
@@ -239,7 +242,7 @@ repo], and [BINANAs][binana repo]._
   timelocks] of 1 block. Previously, it was set to a single maximum confirmation
   period, which was sufficient for pre-anchor channels where HTLC claim
   transactions were broadcast alongside commitment transactions. A new
-  `MAX_BLOCKS_FOR_CONF` constant is added as the base value.
+  `MAX_BLOCKS_FOR_CONF` constant is added as the base value. {% assign timestamp="47:17" %}
 
 - [LDK #3624][] enables funding key rotation after successful channel
   [splices][topic splicing] by applying a scalar tweak to the base funding key
@@ -248,14 +251,14 @@ repo], and [BINANAs][binana repo]._
   computation follows the [BOLT3][] specification, but replaces
   `per_commitment_point` with the splice funding txid to ensure uniqueness, and
   uses the `revocation_basepoint` to restrict derivation to channel
-  participants.
+  participants. {% assign timestamp="48:12" %}
 
 - [LDK #3016][] adds support for external projects to run functional tests and
   replace components like the signer by introducing an `xtest` macro. It
   includes a `MutGlobal` utility and a `DynSigner` struct to support dynamic
   test components like the signer, exposes these tests under the
   `_externalize_tests` feature flag, and provides a `TestSignerFactory` for
-  creating dynamic signers.
+  creating dynamic signers. {% assign timestamp="50:28" %}
 
 - [LDK #3629][] improves logging of remote
   failures that can't be attributed or interpreted to provide more visibility
@@ -265,7 +268,7 @@ repo], and [BINANAs][binana repo]._
   also fixes a bug where an unreadable failure with a valid hash-based message
   authentication code (HMAC) was not properly attributed to a node.
   This may be related to allowing spenders to avoid using nodes that
-  advertise [high availability][news342 qos] but fail to deliver.
+  advertise [high availability][news342 qos] but fail to deliver. {% assign timestamp="52:15" %}
 
 - [BDK #1838][] improves the clarity of the full-scan and sync flow by adding a
   mandatory `sync_time` to `SyncRequest` and `FullScanRequest`, applying this
@@ -273,7 +276,7 @@ repo], and [BINANAs][binana repo]._
   allowing non-canonical (see Newsletter [#335][news335 noncanonical])
   transactions to exclude a `seen_at` timestamp. It updates `TxUpdate::seen_ats`
   to a `HashSet` of (Txid, u64) to support multiple `seen_at` timestamps per
-  transaction, and changes `TxGraph` to be non-exhaustive, among other changes.
+  transaction, and changes `TxGraph` to be non-exhaustive, among other changes. {% assign timestamp="53:06" %}
 
 {% include snippets/recap-ad.md when="2025-03-18 15:30" %}
 {% include references.md %}
