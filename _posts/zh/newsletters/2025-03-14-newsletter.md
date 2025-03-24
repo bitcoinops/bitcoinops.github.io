@@ -13,11 +13,11 @@ lang: zh
 
 - **<!--p2p-traffic-analysis-->P2P 网络流量分析：** 开发者 Virtu 在 Delving Bitcoin 论坛[发布][virtu traffic]了他的节点在四种不同模式下的网络流量分析：初始区块下载（IBD）、非监听（仅出站连接）、非归档（已修剪）监听和归档监听模式。虽然他单个节点的结果可能并不具有普遍代表性，但我们发现他的几个发现很有意思：
 
-  - *归档监听节点的高区块流量：* 当作为非修剪的监听节点运行时，Virtu 的节点每小时向其他节点提供了数 GB 的区块数据。许多区块是较旧的区块，被入站连接请求用于执行初始区块下载。
+  - *<!--high-block-traffic-as-an-archival-listening-node-->归档监听节点的高区块流量：* 当作为非修剪的监听节点运行时，Virtu 的节点每小时向其他节点提供了数 GB 的区块数据。许多区块是较旧的区块，被入站连接请求用于执行初始区块下载。
 
-  - *非归档监听节点的高 inv 消息流量：* 在启用旧区块服务之前，节点总流量的约 20% 是 `inv` 消息。[Erlay][topic erlay] 技术可能会显著减少这 20% 的开销，这相当于每天约 100MB 的数据量。
+  - *<!--high-inv-traffic-as-a-non-archival-listener-->非归档监听节点的高 inv 消息流量：* 在启用旧区块服务之前，节点总流量的约 20% 是 `inv` 消息。[Erlay][topic erlay] 技术可能会显著减少这 20% 的开销，这相当于每天约 100MB 的数据量。
 
-  - *大部分入站对等节点似乎是监视节点：* “有趣的是，大部分入站对等节点与我的节点之间只交换了约 1MB 的流量，这个数值太低了（以我的出站连接流量为基准），不足以构成正常连接。这些节点只是完成 P2P 握手，礼貌地回复 ping 消息，除此之外，它们只是吸收我们的 `inv` 消息。”
+  - *<!--bulk-of-inbound-peers-appear-to-be-spy-nodes-->大部分入站对等节点似乎是监视节点：* “有趣的是，大部分入站对等节点与我的节点之间只交换了约 1MB 的流量，这个数值太低了（以我的出站连接流量为基准），不足以构成正常连接。这些节点只是完成 P2P 握手，礼貌地回复 ping 消息，除此之外，它们只是吸收我们的 `inv` 消息。”
 
   Virtu 的帖子包含了更多见解和多个图表，直观展示了他的节点经历的流量情况。
 
@@ -25,44 +25,43 @@ lang: zh
 
 - **<!--probabilistic-payments-using-different-hash-functions-as-as-xor-function-->使用不同哈希函数作为异或函数的概率支付：** Robin Linus 在关于[概率支付][topic probabilistic payments]的 Delving Bitcoin 讨论中[回复][linus pp]了一个概念简单的脚本，允许双方各自承诺任意数量的熵值，之后可以揭示并进行异或运算，产生一个用于确定哪一方接收支付的值。使用（并稍微扩展）Linus 在帖子中的例子：
 
-  - Alice 私下选择值 `1 0 0` 以及一个单独的随机数。Bob 私下选择值 `1 1 0` 以及另一个单独的随机数。
+  * Alice 私下选择值 `1 0 0` 以及一个单独的随机数。Bob 私下选择值 `1 1 0` 以及另一个单独的随机数。
 
-  - 双方依次对其随机数进行哈希处理，其值中的数字决定使用哪个哈希函数。当栈顶的值为 `0` 时，使用 `HASH160` 操作码；当值为 `1` 时，使用 `SHA256` 操作码。在 Alice 的情况下，她执行 `sha256(hash160(hash160(alice_nonce)))`；在 Bob 的情况下，他执行 `sha256(sha256(hash160(bob_nonce)))`。这为双方各自生成一个承诺，他们互相发送这些承诺，但不透露各自的值或随机数。
+  * 双方依次对其随机数进行哈希处理，其值中的数字决定使用哪个哈希函数。当栈顶的值为 `0` 时，使用 `HASH160` 操作码；当值为 `1` 时，使用 `SHA256` 操作码。在 Alice 的情况下，她执行 `sha256(hash160(hash160(alice_nonce)))`；在 Bob 的情况下，他执行 `sha256(sha256(hash160(bob_nonce)))`。这为双方各自生成一个承诺，他们互相发送这些承诺，但不透露各自的值或随机数。
 
-  - 承诺共享后，他们创建一个链上注资交易，其脚本将使用 `OP_IF` 验证输入，在不同的哈希函数之间选择，并允许其中一方领取付款。例如，如果他们两个异或值的总和为 0 或 1，Alice 收到资金；如果是 2 或 3，Bob 收到资金。合约还可能包含一个超时条款和一个节省空间的相互协议条款。
+  * 承诺共享后，他们创建一个链上注资交易，其脚本将使用 `OP_IF` 验证输入，在不同的哈希函数之间选择，并允许其中一方领取付款。例如，如果他们两个异或值的总和为 0 或 1，Alice 收到资金；如果是 2 或 3，Bob 收到资金。合约还可能包含一个超时条款和一个节省空间的相互协议条款。
 
-  - 在注资交易确认到足够深度后，Alice 和 Bob 向对方披露各自的值和随机数。`1 0 0` 和 `1 1 0` 的异或结果是 `0 1 0`，总和为 `1`，因此 Alice 可以领取付款。
+  * 在注资交易确认到足够深度后，Alice 和 Bob 向对方披露各自的值和随机数。`1 0 0` 和 `1 1 0` 的异或结果是 `0 1 0`，总和为 `1`，因此 Alice 可以领取付款。
 
 ## Bitcoin Core PR 审核俱乐部
 
-*在这个月度部分，我们总结了 [Bitcoin Core PR 审核俱乐部][]会议，重点介绍了一些重要的问题和答案。单击下面的问题以查看会议答案的总结。*
+*在这个月度部分，我们总结了 [Bitcoin Core PR 审核俱乐部][Bitcoin Core PR Review Club]会议，重点介绍了一些重要的问题和答案。单击下面的问题以查看会议答案的总结。*
 
 [更严格地内部处理无效区块][review club 31405]是由 [mzumsande][gh mzumsande] 提出的 PR，它通过在区块被标记为无效时立即更新两个“非共识关键且计算成本高”的验证字段，从而提高了这些字段的正确性。在此 PR 之前，这些更新被延迟到后续事件以最小化资源使用。然而，自 [Bitcoin Core #25717][] 以来，攻击者需要投入更多工作才能利用这一点。
 
 具体来说，这个 PR 确保 `ChainstateManager` 的 `m_best_header` 始终指向已知非有效的最大区块工作量头部，并且区块的 `BLOCK_FAILED_CHILD` `nStatus` 始终正确。
 
-
 {% include functions/details-list.md
-  q0=“`ChainstateManager::m_best_header` 有什么用途？”
-  a0=“`m_best_header` 代表节点迄今为止看到的最大工作量证明头部，它尚未被节点无效化，但也不能保证有效。它有许多用途，但主要用途是作为节点可以推进其最佳链的目标。其他用途包括提供当前时间的估计，以及在向对等节点请求缺失头部时估计最佳链的高度。更完整的概述可以在约 6 年前的 PR 请求 [Bitcoin Core #16974][] 中找到。”
+  q0="<!--which-purpose-s-does-chainstatemanager-m-best-header-serve-->`ChainstateManager::m_best_header` 有什么用途？"
+  a0="`m_best_header` 代表节点迄今为止看到的最大工作量证明头部，它尚未被节点无效化，但也不能保证有效。它有许多用途，但主要用途是作为节点可以推进其最佳链的目标。其他用途包括提供当前时间的估计，以及在向对等节点请求缺失头部时估计最佳链的高度。更完整的概述可以在约 6 年前的 PR 请求 [Bitcoin Core #16974][] 中找到。"
   a0link="https://bitcoincore.reviews/31405#l-36"
 
-  q1=“在此 PR 之前，以下哪些陈述是正确的（如果有）？
+  q1="<!--prior-to-this-pr-which-of-these-statements-are-true-if-any-1-a-cblockindex-with-an-invalid-predecessor-will-always-have-a-block-failed-child-nstatus-2-a-cblockindex-with-a-valid-predecessor-will-never-have-a-block-failed-child-nstatus-->在此 PR 之前，以下哪些陈述是正确的（如果有）？
   1）具有无效前置区块的 `CBlockIndex` 将始终具有 `BLOCK_FAILED_CHILD` `nStatus`。
-  2）具有有效前置区块的 `CBlockIndex` 将永远不会具有 `BLOCK_FAILED_CHILD` `nStatus`”
-  a1=“陈述 1）是错误的，这正是此 PR 直接解决的问题。在此 PR 之前，`AcceptBlock()` 会将无效区块标记为无效，但出于性能考虑不会立即将其后代更新为无效。审核俱乐部参与者无法想到陈述 2）为假的情况。”
+  2）具有有效前置区块的 `CBlockIndex` 将永远不会具有 `BLOCK_FAILED_CHILD` `nStatus`"
+  a1="陈述 1）是错误的，这正是此 PR 直接解决的问题。在此 PR 之前，`AcceptBlock()` 会将无效区块标记为无效，但出于性能考虑不会立即将其后代更新为无效。审核俱乐部参与者无法想到陈述 2）为假的情况。"
   a1link="https://bitcoincore.reviews/31405#l-68"
 
-  q2=“此 PR 的目标之一是确保 `m_best_header` 和无效区块的后继者的 `nStatus` 始终正确设置。哪些函数直接负责更新这些值？”
-  a2=“`SetBlockFailureFlags()` 负责更新 `nStatus`。在正常操作中，`m_best_header` 最常通过 `AddToBlockIndex()` 中的输出参数设置，但也可以通过 `RecalculateBestHeader()` 计算和设置。”
+  q2="<!--one-of-the-goals-of-this-pr-is-to-ensure-m-best-header-and-the-nstatus-of-successors-of-an-invalid-block-are-always-correctly-set-which-functions-are-directly-responsible-for-updating-these-values-->此 PR 的目标之一是确保 `m_best_header` 和无效区块的后继者的 `nStatus` 始终正确设置。哪些函数直接负责更新这些值？"
+  a2="`SetBlockFailureFlags()` 负责更新 `nStatus`。在正常操作中，`m_best_header` 最常通过 `AddToBlockIndex()` 中的输出参数设置，但也可以通过 `RecalculateBestHeader()` 计算和设置。"
   a2link="https://bitcoincore.reviews/31405#l-110"
 
-  q3=“commit `4100495` 里的 `validation: in invalidateblock, calculate m_best_header right away` 中的大部分逻辑实现了查找新的最佳头部。是什么阻止我们在这里直接使用 `RecalculateBestHeader()`？”
-  a3=“`RecalculateBestHeader()` 遍历整个 `m_block_index`，这是一个计算成本高昂的操作。commit `4100495` 通过缓存并迭代一组具有高工作量证明头部的候选者来优化这一点。”
+  q3="<!--most-of-the-logic-in-commit-4100495-validation-in-invalidateblock-calculate-m-best-header-right-away-implements-finding-the-new-best-header-what-prevents-us-from-just-using-recalculatebestheader-here-->commit `4100495` 里的 `validation: in invalidateblock, calculate m_best_header right away` 中的大部分逻辑实现了查找新的最佳头部。是什么阻止我们在这里直接使用 `RecalculateBestHeader()`？"
+  a3="`RecalculateBestHeader()` 遍历整个 `m_block_index`，这是一个计算成本高昂的操作。commit `4100495` 通过缓存并迭代一组具有高工作量证明头部的候选者来优化这一点。"
   a3link="https://bitcoincore.reviews/31405#l-114"
 
-  q4=“如果我们能够在区块树上向前迭代（即远离创世区块），我们是否仍然需要 `cand_invalid_descendants` 缓存？与此 PR 采用的方法相比，这种方法的优缺点是什么？”
-  a4=“如果 `CBlockIndex` 对象持有对其所有后代的引用，我们就不需要遍历整个 `m_block_index` 来使后代无效，因此也不需要 `cand_invalid_descendants` 缓存。然而，这种方法有显著的缺点。首先，它会增加每个 `CBlockIndex` 对象的内存占用，它需要为整个 `m_block_index` 保持在内存中。其次，迭代逻辑仍然不简单，因为虽然每个 `CBlockIndex` 只有一个祖先，但它可能没有或有多个后代。”
+  q4="<!--would-we-still-need-the-cand-invalid-descendants-cache-if-we-were-able-to-iterate-forwards-i-e-away-from-the-genesis-block-over-the-block-tree-what-would-be-the-pros-and-cons-of-such-an-approach-compared-to-the-one-taken-in-this-pr-->如果我们能够在区块树上向前迭代（即远离创世区块），我们是否仍然需要 `cand_invalid_descendants` 缓存？与此 PR 采用的方法相比，这种方法的优缺点是什么？"
+  a4="如果 `CBlockIndex` 对象持有对其所有后代的引用，我们就不需要遍历整个 `m_block_index` 来使后代无效，因此也不需要 `cand_invalid_descendants` 缓存。然而，这种方法有显著的缺点。首先，它会增加每个 `CBlockIndex` 对象的内存占用，它需要为整个 `m_block_index` 保持在内存中。其次，迭代逻辑仍然不简单，因为虽然每个 `CBlockIndex` 只有一个祖先，但它可能没有或有多个后代。"
   a4link="https://bitcoincore.reviews/31405#l-136"
 %}
 
