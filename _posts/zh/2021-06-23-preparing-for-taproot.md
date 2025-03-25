@@ -139,9 +139,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 激活时会发生什么？
 
-*最初发表于 [Newsletter #173](/en/newsletters/2021/11/03/#preparing-for-taproot-20-what-happens-at-activation)*
+*最初发表于 [Newsletter #173](/zh/newsletters/2021/11/03/#准备-taproot-20激活时会发生什么)*
 
-{% include specials/taproot/en/20-activation.md %}
+{% include specials/taproot/zh/20-activation.md %}
 
 ## 感谢！
 
