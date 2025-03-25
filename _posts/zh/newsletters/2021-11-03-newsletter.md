@@ -20,7 +20,7 @@ lang: zh
 
   - ​**<!--rbf-cpfp-and-package-complexity-->**​**RBF、CPFP 及规则复杂性：​** 节点运营商确实比矿工更关注资源浪费型攻击，但 Gloria Zhao [强调][zhao relay]，这更多是程度问题。大规模的同类型攻击仍会影响矿工，因此矿工仍需采取与节点类似的防御措施。
 
-  - ​**<!--feerate-communication-->**​**手续费率沟通：​** Bitcoin Core 当前手续费率估算基于观察未确认交易的确认时长。此方法虽滞后于实时费率信息，但 Pieter Wuille [建议][wuille relay]，可通过[弱区块][topic weak blocks]广播等已有提案改进。弱区块验证门槛低于有效工作量证明区块，能更及时反映矿工当前处理的交易。
+  - ​**<!--feerate-communication-->**​**手续费率沟通：​** Bitcoin Core 当前手续费率估算基于观察未确认交易的确认时长。此方法虽滞后于实时费率信息，但 Pieter Wuille [建议][wuille relay]，可通过弱区块广播等已有提案改进。弱区块验证门槛低于有效工作量证明区块，能更及时反映矿工当前处理的交易。
 
   此外，现有系统的优势也得到强调：
 
