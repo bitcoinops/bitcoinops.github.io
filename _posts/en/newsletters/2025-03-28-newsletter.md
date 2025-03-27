@@ -118,7 +118,66 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why is the witness commitment optional?]({{bse}}125948)
+  Pieter Wuille and Antoine Poinsot explain [BIP30][] "Duplicate transactions",
+  [BIP34][] "Block v2, Height in Coinbase", and [consensus cleanup][topic
+  consensus cleanup] considerations around the [block 1,983,702 problem][topic
+  duplicate transactions] and how making the witness commitment mandatory would
+  resolve the problem.
+
+- [Can all consensus valid 64 byte transactions be (third party) malleated to change their size?]({{bse}}125971)
+  Sjors Provoost explores ideas for malleating any [64-byte transactions][news27
+  64tx] that would be consensus invalid if the [consensus cleanup][topic
+  consensus cleanup] soft fork were activated.  Vojtěch Strnad argues
+  that not every 64-byte transaction can be mutated by a third party,
+  but it would still be the case that the output of a 64-byte
+  would either be insecure (spendable by anyone) or provably
+  unspendable (e.g., an `OP_RETURN`).
+
+- [How long does it take for a transaction to propagate through the network?]({{bse}}125776)
+  Sr_gi points out that a single node cannot measure network-wide transaction
+  propagation times and that multiple nodes throughout the Bitcoin network would
+  be required to measure and estimate propagation times. He points to a
+  [website][dsn kit] run by the Decentralized Systems and Network Services
+  Research Group at KIT that measures, among other things, transaction
+  propagation times that shows "a transaction takes about ~7 seconds to reach
+  50% of the network, and about ~17 seconds to reach 90%".
+
+- [Utility of longterm fee estimation]({{bse}}124227)
+  Abubakar Sadiq Ismail is seeking feedback from projects, protocols, or users
+  that rely on long-term fee estimates for his work on [fee estimation][topic
+  fee estimation].
+
+- [Why are two anchor outputs are used in the LN?]({{bse}}125883)
+  Instagibbs provides historical context for the [anchor outputs][topic anchor
+  outputs] used currently in Lightning and points out that with changes to
+  [Bitcoin Core policies in 28.0][28.0 wallet guide], there is a planned update
+  to [v3 commitments][topic v3 commitments].
+
+- [Why are there no BIPs in the 2xx range?]({{bse}}125914)
+  Michael Folkson points out that BIP numbers 200-299 were at some point
+  reserved for Lightning-related BIPs.
+
+- [Why doesn't Bech32 use the character "b"?]({{bse}}125902)
+  Bordalix answers that the visual similarity between "B" and "8" was the rationale for
+  not allowing "B" in the [bech32 and bech32m][topic bech32] address formats. He
+  also provides additional trivia around bech32.
+
+- [Bech32 error detection and correction reference implementation]({{bse}}125961)
+  Pieter Wuille notes that bech32 can detect up to four errors in address encoding
+  and correct two substitution errors.
+
+- [How to safely spend/burn dust?]({{bse}}125702)
+  Murch lists things to consider when sending [dust][topic
+  uneconomical outputs] out of an existing wallet.
+
+- [How is the refund transaction in Asymmetric Revocable Commitments constructed?]({{bse}}125905)
+  Biel Castellarnau walks through the examples of commitment transactions from the
+  Mastering Bitcoin book.
+
+- [Which applications use ZMQ with Bitcoin Core?]({{bse}}125920)
+  Sjors Provoost is looking for users of Bitcoin Core's ZMQ services as part of
+  investigating whether [IPC][news320 ipc] could replace those uses.
 
 ## Releases and release candidates
 
@@ -230,3 +289,7 @@ repo], and [BINANAs][binana repo]._
 [news120 upfront]: /en/newsletters/2020/10/21/#more-ln-upfront-fees-discussion
 [news342 closev2]: /en/newsletters/2025/02/21/#bolts-1205
 [rust miniscript]: https://github.com/rust-bitcoin/rust-miniscript
+[dsn kit]: https://www.dsn.kastel.kit.edu/bitcoin/#propdelaytx
+[28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
+[news320 ipc]: /en/newsletters/2024/09/13/#bitcoin-core-30509
+[news27 64tx]: /en/newsletters/2018/12/28/#cve-2017-12842
