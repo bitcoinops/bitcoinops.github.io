@@ -258,5 +258,5 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [review club 31405]: https://bitcoincore.reviews/31405
 [gh mzumsande]: https://github.com/mzumsande
 [signapple]: https://github.com/achow101/signapple
-[news335 noncanonical]: /en/newsletters/2025/01/03/#bdk-1670
-[news342 qos]: /en/newsletters/2025/02/21/#continued-discussion-about-an-ln-quality-of-service-flag
+[news335 noncanonical]: /fr/newsletters/2025/01/03/#bdk-1670
+[news342 qos]: /fr/newsletters/2025/02/21/#discussion-continue-sur-un-drapeau-de-qualite-de-service-ln
