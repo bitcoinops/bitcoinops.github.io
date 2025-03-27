@@ -10,23 +10,23 @@ lang: fr
 Le bulletin de cette semaine examine une analyse du trafic P2P vécu par un nœud complet typique,
 résume la recherche sur le cheminement de LN (Lightning Network) et décrit une nouvelle approche
 pour créer des paiements probabilistes. Sont également incluses nos sections régulières résumant une
-réunion du Bitcoin Core PR Review Club, annonçant ddes mises à jour et des versions candidates,
+réunion du Bitcoin Core PR Review Club, annonçant des mises à jour et des versions candidates,
 et décrivant les changements notables dans les projets d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
 
 - **Analyse du trafic P2P :** le développeur Virtu a [posté][virtu traffic] sur Delving Bitcoin une
   analyse du trafic réseau généré et reçu par son nœud dans quatre modes différents : téléchargement
-  initial de bloc (IBD), non-écoute (connexions sortantes uniquement), écoute non-archivale (tronquée)
-  et écoute archivale. Bien que les résultats pour son seul nœud puissent ne pas être représentatifs
+  initial de bloc (IBD), non-écoute (connexions sortantes uniquement), écoute non-archiviste (tronquée)
+  et écoute archiviste. Bien que les résultats pour son seul nœud puissent ne pas être représentatifs
   dans tous les cas, nous avons trouvé plusieurs de ses découvertes intéressantes :
 
-  - *Trafic de blocs élevé en tant que nœud d'écoute archivale :* le nœud de Virtu a servi plusieurs
+  - *Trafic de blocs élevé en tant que nœud d'écoute archiviste :* le nœud de Virtu a servi plusieurs
     gigaoctets de blocs chaque heure à d'autres nœuds lorsqu'il fonctionnait comme un nœud d'écoute
     non-tronqué. De nombreux blocs étaient des blocs plus anciens demandés par des connexions entrantes
     afin qu'ils puissent effectuer l'IBD.
 
-  - *Trafic inv élevé en tant qu'auditeur non-archival :* environ 20% du trafic total du nœud étaient
+  - *Trafic inv élevé en tant qu'auditeur non-archiviste :* environ 20% du trafic total du nœud étaient
     des messages `inv` avant qu'il n'active le service de blocs plus anciens. [Erlay][topic erlay]
     pourrait réduire significativement cet excédent de 20%, qui représentait environ 100 mégaoctets par
     jour.
@@ -40,7 +40,7 @@ et décrivant les changements notables dans les projets d'infrastructure Bitcoin
   Le post de Virtu contient des insights supplémentaires et plusieurs graphiques illustrant le trafic
   vécu par son nœud.
 
-- **Recherche sur le cheminement de chemin unique LN :** Sindura Saraswathi a [posté][saraswathi
+- **Recherche sur le parcours de chemin unique LN :** Sindura Saraswathi a [posté][saraswathi
   path] sur Delving Bitcoin à propos de la [recherche][sk path] qu'elle a menée avec Christian
   Kümmerle sur la recherche de chemins optimaux entre les nœuds LN pour envoyer des paiements en une
   seule partie. Son post décrit les stratégies actuellement utilisées par Core Lightning, Eclair, LDK
@@ -66,10 +66,10 @@ et décrivant les changements notables dans les projets d'infrastructure Bitcoin
   révélée et xorée ensemble, pour produire une valeur qui peut être utilisée pour déterminer lequel
   d'entre eux reçoit un paiement. En utilisant (et en étendant légèrement) l'exemple de Linus du post :
 
-  - Alice choisit privément la valeur `1 0 0` plus un nonce séparé.
-    Bob choisit privément la valeur `1 1 0` plus un autre nonce séparé.
+  - Alice choisit en privé la valeur `1 0 0` plus une nonce séparée.
+    Bob choisit en privé la valeur `1 1 0` plus une autre nonce séparée.
 
-  - Chaque partie hache successivement son nonce, avec les nombres dans leur valeur déterminant quelle
+  - Chaque partie hache successivement sa nonce, avec les nombres dans leur valeur déterminant quelle
     fonction de hachage est utilisée. Quand la valeur en haut de la pile est `0`, ils utilisent l'opcode
     `HASH160`; quand la valeur est `1`, ils utilisent l'opcode `SHA256`. Dans le cas d'Alice, elle
     effectue `sha256(hash160(hash160(alice_nonce)))`; dans le cas de Bob, il effectue
@@ -92,10 +92,10 @@ et décrivant les changements notables dans les projets d'infrastructure Bitcoin
 en soulignant certaines des questions et réponses importantes. Cliquez sur une question ci-dessous
 pour voir un résumé de la réponse de la réunion.*
 
-[Un traitement interne plus strict des blocs invalides][review club 31405] est un PR par
+[Un traitement interne plus strict des blocs invalides][review club 31405] est une PR par
 [mzumsande][gh mzumsande] qui améliore la justesse de deux champs de validation non critiques pour
 le consensus et coûteux à calculer en les mettant à jour immédiatement lorsqu'un bloc est marqué
-comme invalide. Avant ce PR, ces mises à jour étaient retardées jusqu'à un événement ultérieur pour
+comme invalide. Avant cette PR, ces mises à jour étaient retardées jusqu'à un événement ultérieur pour
 minimiser l'utilisation des ressources. Cependant, depuis [Bitcoin Core #25717][], un attaquant
 aurait besoin d'investir beaucoup plus de travail pour exploiter cela.
 
