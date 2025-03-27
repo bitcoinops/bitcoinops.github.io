@@ -9,7 +9,7 @@ lang: fr
 ---
 Le bulletin de cette semaine résume une discussion sur le système de réajustement dynamique du
 taux de frais de LND mis à jour. Sont également incluses nos sections régulières décrivant les
-changements récents apportés aux services et aux logiciels clients, annonçant ddes mises à jour et des versions candidates,
+changements récents apportés aux services et aux logiciels clients, annonçant des mises à jour et des versions candidates,
 et résumant les fusions récentes dans les logiciels d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
@@ -26,7 +26,7 @@ et résumant les fusions récentes dans les logiciels d'infrastructure Bitcoin p
     frais des transactions non urgentes.
 
   - Augmentation exponentielle des frais, utilisée lorsqu'une échéance approche pour s'assurer que les
-    problèmes avec le mempool d'un nœud ou son [estimation de frais][topic fee estimation] n'empêchent
+    problèmes avec la mempool d'un nœud ou son [estimation de frais][topic fee estimation] n'empêchent
     pas une confirmation en temps voulu. Par exemple, Eclair utilise l'augmentation exponentielle des
     frais lorsque les échéances sont dans les six blocs.
 
@@ -44,7 +44,7 @@ et résumant les fusions récentes dans les logiciels d'infrastructure Bitcoin p
   remplacement][topic replacement cycling], concluant : "avec les paramètres par défaut de LND, un
   attaquant doit généralement dépenser au moins 20 fois la valeur du HTLC pour mener à bien une
   attaque de cycle de remplacement." Il ajoute que le nouveau système améliore également la défense
-  de LND contre les [attaques d'épinglage'][topic transaction pinning].
+  de LND contre les [attaques d'épinglage][topic transaction pinning].
 
   Il conclut avec un résumé rempli de liens de plusieurs "corrections de bugs et vulnérabilités
   spécifiques à LND" réalisées grâce à la logique améliorée. Abubakar Sadiq Ismail a [répondu][ismail
@@ -60,7 +60,7 @@ portefeuilles et services Bitcoin.*
 
 - **Wally 1.4.0 publié :** La [libwally-core version 1.4.0][wally 1.4.0] ajoute le support de
   [taproot][topic taproot], le support pour la dérivation des clés RSA [BIP85][], ainsi que des
-  fonctionnalités supplémentaires pour [PSBT][topic psbt] et les [descripteurs][topic descriptors].
+  fonctionnalités supplémentaires pour les [PSBTs][topic psbt] et les [descripteurs][topic descriptors].
 
 - **Générateur de configuration Bitcoin Core annoncé :**
   Le projet [Bitcoin Core Config Generator][bccg github] est une interface de terminal pour créer des
@@ -116,7 +116,7 @@ portefeuilles et services Bitcoin.*
 _Nouvelles versions et versions candidates pour des projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les versions candidates._
 
-- [Bitcoin Core 29.0rc2][] est un candidat à la version pour la prochaine version majeure du nœud
+- [Bitcoin Core 29.0rc2][] est une version candidate pour la prochaine version majeure du nœud
   complet prédominant du réseau.
 
 ## Changements notables dans le code et la documentation
@@ -146,7 +146,7 @@ inquisition repo], et [BINANAs][binana repo]._
 - [Eclair #3037][] améliore la commande `listoffers` (Voir le Bulletin [#345][news345 offers]) pour
   retourner toutes les données pertinentes d'[offre][topic offers], y compris les horodatages
   `createdAt` et `disabledAt`, au lieu de simplement des données Type-Longueur-Valeur (TLV) brutes. De
-  plus, ce PR corrige un bug qui causait le crash du nœud lors de la tentative d'enregistrement de la
+  plus, cette PR corrige un bug qui causait le crash du nœud lors de la tentative d'enregistrement de la
   même offre deux fois.
 
 - [LND #9546][] ajoute un drapeau `ip_range` à la sous-commande `lncli constrainmacaroon` (voir
@@ -175,10 +175,10 @@ inquisition repo], et [BINANAs][binana repo]._
   lorsqu'un descendant canonique existe en raison des règles de transitivité.
 
 - [BOLTs #1233][] met à jour le comportement d'un nœud pour ne jamais échouer un [HTLC][topic htlc]
-  en amont si le nœud connaît le préimage, assurant que le HTLC peut être correctement réglé.
-  Auparavant, la recommandation était de faire échouer un HTLC en attente en amont s'il manquait d'un
-  engagement confirmé, même si le préimage était connu. Un bug dans les versions de LND avant 0.18
-  causait l'échec des HTLCs en amont après un redémarrage sous attaque DoS, malgré la connaissance du
+  en amont si le nœud connaît la préimage, assurant que le HTLC peut être correctement réglé.
+  Auparavant, la recommandation était de faire échouer un HTLC en attente en amont s'il manquait un
+  engagement confirmé, même si la préimage était connu. Un bug dans les versions de LND avant 0.18
+  causait l'échec des HTLCs en amont après un redémarrage sous attaque DoS, malgré la connaissance de la
   préimage, résultant dans la perte de la valeur du HTLC (voir le Bulletin [#344][news344 lnd]).
 
 {% include snippets/recap-ad.md when="2025-03-25 15:30" %}
