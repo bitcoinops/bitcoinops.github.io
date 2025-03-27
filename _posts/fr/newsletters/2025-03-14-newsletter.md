@@ -139,7 +139,7 @@ séparation claire entre les blocs et leurs états d'invalidation.
   a2link="https://bitcoincore.reviews/31405#l-110"
 
   q3="La majorité de la logique dans le commit `4100495` `validation: in invalidateblock, calculate m_best_header right away`
-  met en œuvre la recherche du nouvel meilleur en-tête.
+  met en œuvre la recherche du nouveau meilleur en-tête.
   Qu'est-ce qui nous empêche d'utiliser simplement `RecalculateBestHeader()` ici ?"
   a3="`RecalculateBestHeader()` traverse l'ensemble de `m_block_index`, ce qui est une opération
   coûteuse. Le commit `4100495` optimise cela en mettant en cache et en itérant plutôt sur un ensemble
