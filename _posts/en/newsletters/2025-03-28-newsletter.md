@@ -148,25 +148,62 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31603][] descriptor: check whitespace in keys within fragments
+- [Bitcoin Core #31603][] updates the `ParsePubkeyInner` parser to reject public
+  keys with leading or trailing whitespace, matching the parsing behavior of the
+  [rust-miniscript][rust miniscript] project.  It shouldn't have been
+  possible to accidentally add whitespace previously due to the
+  protection of the descriptor checksum. The `getdescriptorinfo` and
+  `importdescriptors` RPC commands now throw an error if the public key fragment
+  of a [descriptor][topic descriptors] contains such whitespace.
 
-- [Eclair #3044][] Remove amount-based confirmation scaling
+- [Eclair #3044][] increases the default minimum confirmations for channel
+  safety against block reorganizations from 6 to 8.  It also removes the scaling of
+  this value based on the channel funding amount because channel capacity can be changed
+  significantly during [splicing][topic splicing], convincing the node
+  to accept a low number of confirmations for what is actually a large
+  amount of money at stake.
 
-- [Eclair #3026][] Support p2tr bitcoin wallet
+- [Eclair #3026][] adds support for Bitcoin Core wallets using [Pay-to-Taproot
+  (P2TR)][topic taproot] addresses, including watch-only wallets managed by
+  Eclair, as a basis for implementing [simple taproot channels][topic simple
+  taproot channels]. P2WPKH scripts are still required for some mutual close
+  transactions, even when using a P2TR wallet.
 
-- [LDK #3649][] Add BOLT12 support to bLIP-51 / LSPS1
+- [LDK #3649][] adds support for paying Lightning Service Providers (LSPs) with
+  [BOLT12 offers][topic offers] by adding the necessary fields. Previously, only
+  [BOLT11][] and on-chain payment options were enabled. This was also proposed
+  in [BLIPs #59][].
 
-- [LDK #3665][] lightning-invoice: explicitly enforce a 7089 B max length on BOLT11 invoice deser
+- [LDK #3665][] increases the [BOLT11][] invoice size limit from 1,023 bytes to
+  7,089 bytes to match LND's limit, which is based on the maximum number
+  of bytes that can fit on a QR code.  The PR author argues that QR
+  codes compatible with the encoding used in a BOLT11 invoice are
+  actually limited to 4,296 characters, but the 7,089 value is chosen
+  for LDK because "system-wide consistency is probably more important."
 
-- [LND #9610][] multi: integrate rbf changes from staging branch
+- [LND #8453][], [#9559][lnd #9559], [#9575][lnd #9575], [#9568][lnd
+  #9568], and [LND #9610][] introduce an [RBF][topic rbf] cooperative
+  close flow based on [BOLTs #1205][] (see [Newsletter #342][news342
+  closev2]) that
+  allows either peer to bump the fee rate using their own channel funds.
+  Previously, peers sometimes had to convince their counterparty to pay
+  for fee bumps, which often resulted in failed
+  attempts. To enable this feature, the `protocol.rbf-coop-close` configuration
+  flag must be set.
 
-- [BIPs #1792][] BIP119 language overhaul & cleanup
+- [BIPs #1792][] updates [BIP119][] which specifies
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] by revising the
+  language for better clarity, removing the activation logic, renaming Eltoo to
+  [LN-Symmetry][topic eltoo], and adding mentions of new [covenant][topic
+  covenants] proposals and projects like [Ark][topic ark] that use `OP_CTV`.
 
-- [BIPs #1782][] BIP94: reformat specification section for clarity and readability
+- [BIPs #1782][] reformats the specification section of [BIP94][], which
+  outlines the consensus rules of [testnet4][topic testnet], for better clarity
+  and readability.
 
 {% include snippets/recap-ad.md when="2025-04-01 15:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="31603,3044,3026,3649,3665,9610,1792,1782,27926,8453,9559,9575,9568,1205" %}
+{% include linkers/issues.md v=2 issues="31603,3044,3026,3649,3665,9610,1792,1782,27926,8453,9559,9575,9568,1205,59" %}
 [bitcoin core 29.0rc2]: https://bitcoincore.org/bin/bitcoin-core-29.0/
 [bcc29 testing guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/29.0-Release-Candidate-Testing-Guide
 [lnd 0.19.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.0-beta.rc1
@@ -192,3 +229,4 @@ repo], and [BINANAs][binana repo]._
 [news119 trusted upfront]: /en/newsletters/2020/10/14/#trusted-upfront-payment
 [news120 upfront]: /en/newsletters/2020/10/21/#more-ln-upfront-fees-discussion
 [news342 closev2]: /en/newsletters/2025/02/21/#bolts-1205
+[rust miniscript]: https://github.com/rust-bitcoin/rust-miniscript
