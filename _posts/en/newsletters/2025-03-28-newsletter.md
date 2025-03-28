@@ -194,8 +194,6 @@ release candidates._
   is the new RBF-based fee bumping for cooperative closes described
   below in the notable code changes section.
 
-<!-- FIXME:harding to update Thursday -->
-
 ## Notable code and documentation changes
 
 _Notable recent changes in [Bitcoin Core][bitcoin core repo], [Core
