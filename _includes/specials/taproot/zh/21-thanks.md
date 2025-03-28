@@ -1,7 +1,7 @@
 Taproot 将在区块 {{site.trb}} 激活，预计于本文发布后数日内完成。作为本系列的终篇，我们谨向众多参与开发与激活 Taproot 的人士致谢——他们即将开始执行这一升级。未提及的诸多贡献者同样值得感谢，我们为所有疏漏致歉。
 
 {:#mailing_list_discussion}
-## Bitcoin-Dev 邮件列表讨论
+**Bitcoin-Dev 邮件列表讨论**
 
 Taproot 的核心构想[萌芽][good morning]于 2019 年 1 月 22 日早晨几位密码学家的会议，并于当日通过邮件列表[发布][maxwell taproot post]。以下人士参与了主题含 "taproot" 的讨论：
 
@@ -84,7 +84,7 @@ ZmnSCPxj。
 Taproot 整合的 [schnorr 签名][topic schnorr signatures] 和 [MAST][topic mast] 等概念源起更早，我们同样感谢相关贡献者。
 
 {:#taproot-bip-review}
-## Taproot BIP 审查
+**Taproot BIP 审查**
 
 自 2019 年 11 月起，大量用户和开发者参与了 Taproot 的[系统化审查][news69 review]：
 
@@ -171,7 +171,7 @@ ZmnSCPxj。
 </i>
 
 {:#github-prs}
-## GitHub 拉取请求
+**GitHub 拉取请求**
 
 Taproot 在 Bitcoin Core 中的主要实现于 2020 年 1 月通过[两个][bitcoin core #17977]拉取[请求][bitcoin core #19953]提交审查。以下人士参与了代码审查：
 
@@ -216,7 +216,7 @@ Yan Pritzker (skwp)。
 </i>
 
 {:#taproot-activation-discussion}
-## Taproot 激活讨论
+**Taproot 激活讨论**
 
 社区围绕激活方式展开了数月讨论，主要参与者包括：
 
@@ -436,19 +436,19 @@ zmnscpxj、
 zndtoshi。
 </i>
 
-## 矿工信号
+**矿工信号**
 
 我们感谢自区块 681,408 以来所有发出 Taproot 准备就绪信号的矿工。
 
-## 生态项目
+**生态项目**
 
 Taproot 激活仅是起点，开发者与用户将开始运用其新特性。我们感谢多年筹备 [MuSig][topic musig] 等生态项目的贡献者。
 
-## 全节点运营者
+**全节点运营者**
 
 最关键的致谢致予数千名 Bitcoin Core 0.21.1 及以上版本（或兼容软件）的运营者。他们通过升级节点确保从区块 {{site.trb}} 开始仅接受符合 Taproot 规则的交易，为全网的升级安全提供经济保障。
 
 {% include linkers/issues.md issues="17977,19953" %}
 [maxwell taproot post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
-[good morning]: /en/preparing-for-taproot/#a-good-morning
+[good morning]: /zh/preparing-for-taproot/#a-good-morning
 [news69 review]: /zh/newsletters/2019/10/23/#taproot-review
