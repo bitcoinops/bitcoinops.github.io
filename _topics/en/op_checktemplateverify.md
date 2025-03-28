@@ -136,6 +136,9 @@ optech_mentions:
   - title: "Proposed CTV enhancement opcodes: `OP_TEMPLATEHASH` and `OP_INPUTAMOUNTS`"
     url: /en/newsletters/2025/01/03/#ctv-enhancement-opcodes
 
+  - title: "BIPs #1792 updates BIP119 with a revised introduction and mention of protocols using CTV"
+    url: /en/newsletters/2025/03/28/#bips-1792
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

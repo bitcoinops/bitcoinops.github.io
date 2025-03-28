@@ -135,6 +135,9 @@ optech_mentions:
   - title: "BOLT12 update to allow optional inclusion of BIP353 human-readable Bitcoin payment instructions"
     url: /en/newsletters/2024/12/13/#bolts-1180
 
+  - title: "LDK #3649 adds support for paying Lightning Service Providers (LSPs) with BOLT12 offers"
+    url: /en/newsletters/2025/03/28/#ldk-3649
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

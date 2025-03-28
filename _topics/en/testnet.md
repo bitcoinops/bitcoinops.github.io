@@ -17,10 +17,8 @@ topic-categories:
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
-#primary_sources:
-#    - title: Test
-#    - title: Example
-#      link: https://example.com
+primary_sources:
+  - title: BIP94
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -108,6 +106,9 @@ optech_mentions:
 
   - title: "Rust Bitcoin #2945 introduces support for testnet4"
     url: /en/newsletters/2024/10/11/#rust-bitcoin-2945
+
+  - title: "Discussion about retiring testnet3 and hard forking testnet4 to remove difficulty reset rule"
+    url: /en/newsletters/2025/03/28/#discussion-of-testnets-3-and-4
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
