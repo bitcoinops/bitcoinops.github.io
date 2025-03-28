@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Discussion about mitigating merkle tree vulnerabilities"
     url: /en/newsletters/2024/09/06/#mitigating-merkle-tree-vulnerabilities
 
+  - title: "Question about whether 64-byte transactions can be third-party malleated to change their size"
+    url: /en/newsletters/2025/03/28/#can-all-consensus-valid-64-byte-transactions-be-third-party-malleated-to-change-their-size
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CVEs

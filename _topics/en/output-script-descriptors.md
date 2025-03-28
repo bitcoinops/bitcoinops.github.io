@@ -191,6 +191,9 @@ optech_mentions:
   - title: "Bitcoin Core #31590 checks parity bits when retrieving privkeys for x-only pubkeys in descriptors"
     url: /en/newsletters/2025/01/31/#bitcoin-core-31590
 
+  - title: "Bitcoin Core #31603 begins rejecting descriptors containing unnecessary whitespace"
+    url: /en/newsletters/2025/03/28/#bitcoin-core-31603
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
