@@ -187,11 +187,11 @@ inquisition repo], et [BINANAs][binana repo]._
 [bitcoin core 29.0rc2]: https://bitcoincore.org/bin/bitcoin-core-29.0/
 [morehouse sweep]: https://delvingbitcoin.org/t/lnds-deadline-aware-budget-sweeper/1512
 [ismail sweep]: https://delvingbitcoin.org/t/lnds-deadline-aware-budget-sweeper/1512/3
-[news216 presync]: /en/newsletters/2022/09/07/#bitcoin-core-25717
+[news216 presync]: /fr/newsletters/2022/09/07/#bitcoin-core-25717
 [news345 offers]: /en/newsletters/2025/03/14/#eclair-2976
 [news201 constrain]: /en/newsletters/2022/05/25/#lnd-6529
-[news344 lnd]: /en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
-[news335 algorithm]: /en/newsletters/2025/01/03/#bdk-1670
+[news344 lnd]: /fr/newsletters/2025/03/07/#divulgation-d-une-vulnerabilite-corrigee-lnd-permettant-le-vol
+[news335 algorithm]: /fr/newsletters/2025/01/03/#bdk-1670
 [wally 1.4.0]: https://github.com/ElementsProject/libwally-core/releases/tag/release_1.4.0
 [bccg github]: https://github.com/jurraca/core-config-tui
 [riap github]: https://github.com/thunderbiscuit/regtest-in-a-pod
@@ -199,16 +199,16 @@ inquisition repo], et [BINANAs][binana repo]._
 [podman bitcoin blog]: https://thunderbiscuit.com/posts/podman-bitcoin/
 [explora github]: https://github.com/lontivero/explora
 [hashpool github]: https://github.com/vnprc/hashpool
-[news247 sri]: /en/newsletters/2023/04/19/#stratum-v2-reference-implementation-update-announced
+[news247 sri]: /fr/newsletters/2023/04/19/#annonce-de-la-mise-a-jour-de-la-mise-en-oeuvre-de-reference-de-stratum-v2
 [pod337 hashpool]: /en/podcast/2025/01/21/#continued-discussion-about-rewarding-pool-miners-with-tradeable-ecash-shares-transcript
-[news281 demand]: /en/newsletters/2023/12/13/#stratum-v2-mining-pool-launches
+[news281 demand]: /fr/newsletters/2023/12/13/#lancement-d-un-pool-de-minage-stratum-v2
 [dmnd website]: https://www.dmnd.work/
 [embit website]: https://embit.rocks/
-[news273 krux]: /en/newsletters/2023/10/18/#krux-signing-device-firmware
+[news273 krux]: /fr/newsletters/2023/10/18/#krux-firmware-de-dispositif-de-signature
 [tropic01 website]: https://tropicsquare.com/tropic01
 [tropicsquare github]: https://github.com/tropicsquare
 [nunchuk blog]: https://nunchuk.io/blog/group-wallet
 [frostr github]: https://github.com/FROSTR-ORG
-[new325 bark]: /en/newsletters/2024/10/18/#bark-ark-implementation-announced
+[new325 bark]: /fr/newsletters/2024/10/18/#annonce-de-l-implementation-de-bark-ark
 [second blog]: https://blog.second.tech/try-ark-on-signet/
 [cove wallet github]: https://github.com/bitcoinppl/cove
