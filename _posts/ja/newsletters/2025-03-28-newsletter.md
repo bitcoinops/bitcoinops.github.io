@@ -121,7 +121,7 @@ Taproot annexを含む特定のトランザクションのリレーを開始す�
   [Bitcoin Core 28.0でのポリシー][28.0 wallet guide]変更により、
   [v3コミットメント][topic v3 commitments]への更新が計画されていることを指摘しています。
 
-- [2xxの範囲のBIPがないのは何故ですか？]({{bse}}125914)
+- [<!--why-are-there-no-bips-in-the-2xx-range-->2xxの範囲のBIPがないのは何故ですか？]({{bse}}125914)
   Michael Folksonは、BIP番号200-299は、ある時点でライトニング関連のBIP用に確保されていたと指摘しています。
 
 - [Bech32で文字"b"を使用しないのは何故ですか？]({{bse}}125902)
