@@ -97,7 +97,7 @@ _以下是[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning re
 [ismail sweep]: https://delvingbitcoin.org/t/lnds-deadline-aware-budget-sweeper/1512/3
 [news216 presync]: /en/newsletters/2022/09/07/#bitcoin-core-25717
 [news345 offers]: /zh/newsletters/2025/03/14/#eclair-2976
-[news201 constrain]: /zh/newsletters/2022/05/25/#lnd-6529
+[news201 constrain]: /en/newsletters/2022/05/25/#lnd-6529
 [news344 lnd]: /zh/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
 [news335 algorithm]: /zh/newsletters/2025/01/03/#bdk-1670
 [wally 1.4.0]: https://github.com/ElementsProject/libwally-core/releases/tag/release_1.4.0
