@@ -118,6 +118,9 @@ optech_mentions:
   - title: "Testing of hybrid jamming mitigation and addition of bidirectional reputation"
     url: /en/newsletters/2024/09/27/#hybrid-jamming-mitigation-testing-and-changes
 
+  - title: Protocol proposed for upfront and hold fees to address channel jamming
+    url: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs

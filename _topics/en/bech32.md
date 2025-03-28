@@ -129,6 +129,9 @@ optech_mentions:
   - title: "Bitcoin Core GUI #459 allows users to choose to create bech32m addresses"
     url: /en/newsletters/2022/01/05/#bitcoin-core-gui-459
 
+  - title: "Information about the selection and order of characters in the bech32 alphabet"
+    url: /en/newsletters/2025/03/28/#why-doesn-t-bech32-use-the-character-b
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder

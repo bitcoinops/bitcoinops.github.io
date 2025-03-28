@@ -204,6 +204,9 @@ optech_mentions:
   - title: "Updated LND sweeper subsystem for choosing appropriate RBF feerates"
     url: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
 
+  - title: "LND introduces an RBF cooperative close flow that allows either peer to bump the fee rate"
+    url: /en/newsletters/2025/03/28/#lnd-8453
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

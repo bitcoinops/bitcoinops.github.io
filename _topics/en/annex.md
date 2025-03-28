@@ -32,6 +32,9 @@ optech_mentions:
   - title: Suggestion to store fee-dependent timelock parameters in the taproot annex
     url: /en/newsletters/2024/01/03/#fee-dependent-timelocks
 
+  - title: Plan to begin relaying transactions with certain taproot annexes in Libre Relay
+    url: /en/newsletters/2025/03/28/#plan-to-relay-certain-taproot-annexes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

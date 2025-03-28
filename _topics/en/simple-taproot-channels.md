@@ -53,6 +53,9 @@ optech_mentions:
   - title: "Eclair #3016 introduces low-level methods for creating LN transactions in simple taproot channels"
     url: /en/newsletters/2025/03/07/#eclair-3016
 
+  - title: "Eclair #3026 adds support for wallets containing P2TR addresses in preparation for taproot channels"
+    url: /en/newsletters/2025/03/28/#eclair-3026
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
