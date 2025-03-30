@@ -339,7 +339,7 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 [fi bonds]: /zh/newsletters/2021/08/11/#implementation-of-fidelity-bonds
 [0base]: /zh/newsletters/2021/08/25/#zero-base-fee-ln-discussion
 [newsletters]: /zh/newsletters/
-[topics index]: /zh/topics/
+[topics index]: /en/topics/
 [additive batching]: /zh/cardcoins-rbf-batching/
 [zmn guest]: /zh/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
 [darosior guest]: /zh/newsletters/2021/09/08/#preparing-for-taproot-12-vaults-with-taproot
