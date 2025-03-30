@@ -271,7 +271,7 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 [bcc21]: /zh/newsletters/2021/01/20/#bitcoin-core-0-21-0
 [cl#2816]: /zh/newsletters/2019/07/24/#c-lightning-2816
 [jam1]: /zh/newsletters/2021/02/17/#renewed-discussion-about-bidirectional-upfront-ln-fees
-[jam2]: /zh/newsletters/2021/10/20/#lowering-the-cost-of-probing-to-make-attacks-more-expzhsive
+[jam2]: /zh/newsletters/2021/10/20/#lowering-the-cost-of-probing-to-make-attacks-more-expensive
 [jam3]: /zh/newsletters/2021/11/10/#ln-summit-2021-notes
 [quant]: /zh/newsletters/2021/03/24/#discussion-of-quantum-computer-attacks-on-taproot
 [tapa1]: /zh/newsletters/2021/01/27/#scheduled-meeting-to-discuss-taproot-activation
@@ -341,12 +341,12 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 [newsletters]: /zh/newsletters/
 [topics index]: /en/topics/
 [additive batching]: /zh/cardcoins-rbf-batching/
-[zmn guest]: /zh/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
-[darosior guest]: /zh/newsletters/2021/09/08/#preparing-for-taproot-12-vaults-with-taproot
+[zmn guest]: /zh/newsletters/2021/09/01/#准备-taproot-11使用-taproot-的闪电网络
+[darosior guest]: /zh/newsletters/2021/09/08/#准备-taproot-12使用-taproot-的保险库
 [heritage identifiers]: /zh/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
 [ptlcs extreme]: /zh/newsletters/2021/10/13/#multiple-proposed-ln-improvements
 [lnd#5709]: /zh/newsletters/2021/10/27/#lnd-5709
-[2018 ln summit]: /zh/newsletters/2018/11/20/#feature-news-lightning-network-protocol-11-goals
+[2018 ln summit]: /zh/newsletters/2018/11/20/#特性新闻闪电网络协议-11-目标
 [2021 ln summit]: /zh/newsletters/2021/11/10/#ln-summit-2021-notes
 [stuckless payments]: /zh/newsletters/2019/07/03/#stuckless-payments
 [bcc#19953]: /zh/newsletters/2020/10/21/#bitcoin-core-19953
@@ -373,8 +373,8 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 [wiki contract]: https://en.bitcoin.it/wiki/Contract#Example_1:_Providing_a_deposit
 [cl#4771]: /zh/newsletters/2021/10/27/#c-lightning-4771
 [fee bump research]: /zh/newsletters/2021/12/08/#fee-bumping-research
-[nov cs]: /zh/newsletters/2021/11/17/#changes-to-services-and-client-software
-[dec cs]: /zh/newsletters/2021/12/15/#changes-to-services-and-client-software
+[nov cs]: /zh/newsletters/2021/11/17/#服务和客户端软件的更改
+[dec cs]: /zh/newsletters/2021/12/15/#服务和客户端软件的更改
 [mpa ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
 [ff orig]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
 [2020 conclusion]: /zh/newsletters/2020/12/23/#conclusion
