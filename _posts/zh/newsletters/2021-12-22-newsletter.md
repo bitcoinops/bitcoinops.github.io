@@ -158,7 +158,7 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 
 - ​[C-Lightning 0.10.0][] 增强 API 功能，并实验性支持[双向资助][topic dual funding]通道。
 
-- ​**[BTCPay Server 1.1.0][] 集成[闪电网络循环（Lightning Loop）][news53 lightning loop]支持，新增 [WebAuthN/FIDO2][fido2 website] 作为双因素认证选项，优化界面设计，并宣布未来版本号将采用[语义化版本控制][semantic versioning website]。
+- ​[BTCPay Server 1.1.0][] 集成[闪电网络循环（Lightning Loop）][news53 lightning loop]支持，新增 [WebAuthN/FIDO2][fido2 website] 作为双因素认证选项，优化界面设计，并宣布未来版本号将采用[语义化版本控制][semantic versioning website]。
 
 - ​[Eclair 0.6.0][] 包含多项提升用户安全与隐私的改进，同时兼容未来可能使用[Bech32m][topic bech32]地址的软件。
 
