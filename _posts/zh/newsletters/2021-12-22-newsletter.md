@@ -97,7 +97,7 @@ C-Lightning 0.9.3 版本[首次发布][cl 0.9.3]了[洋葱消息][topic onion me
 
   同期，针对 Taproot 设计中使用裸公钥可能增加量子计算机攻击风险的[讨论][quant]再度引发关注。多位开发者认为担忧缺乏依据或被过度放大。
 
-  Bitcoin Core 本月还合并了[BIP350][][支持][bcc#20861]，使其可支付至[Bech32m][topic bech32]地址。这一改进修复了原 Bech32 地址在极端情况下可能导致 Taproot 用户资金丢失的隐患（原隔离见证版本地址不受此影响）。
+  Bitcoin Core 本月还合并了[BIP350][] 支持，使其可支付至 [Bech32m][topic bech32] 地址。这一改进修复了原 Bech32 地址在极端情况下可能导致 Taproot 用户资金丢失的隐患（原隔离见证版本地址不受此影响）。
 
   {% comment %}
   /zh/newsletters/2021/03/03/#rust-lightning-794
