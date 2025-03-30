@@ -24,7 +24,7 @@ lang: zh
 - ​**<!--why-is-it-important-that-nonces-when-signing-not-be-related-->**[为何签名时 nonce 必须不可关联？]({{bse}}110811)
   Pieter Wuille 数学推导了三种可能泄露私钥信息的情形：使用相同 nonce、已知偏移量的 nonce、已知因子的 nonce。他列举了三种安全 nonce 生成方法、两种不安全方法，并指出存在大量既未被证实安全也未证实不安全的中间态技术。
 
-- [​**<!--how-could-a-2-byte-witness-program-make-sense-->**2 字节见证程序有何意义？]({{bse}}110660)
+- **<!--how-could-a-2-byte-witness-program-make-sense-->**[​2 字节见证程序有何意义？]({{bse}}110660)
   围绕 [BIP141][] 对见证程序 2-40 字节的要求，Kalle Rosenbaum 探讨了 2 字节长度的潜在用例场景。
 
 - ​**<!--what-is-the-xpriv-xpub-type-for-p2tr-->**[P2TR 的 xpriv/xpub 类型是什么？]({{bse}}110733)
