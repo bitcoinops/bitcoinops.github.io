@@ -7,12 +7,11 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周Newsletter 探讨如何让闪电网络用户在手续费与支付可靠性之间进行权衡，并包含常规的 Bitcoin Stack Exchange 精选问答、新版本发布与候选版本，以及热门比特币基础设施软件的重要更新。
-
+本周 Newsletter 探讨如何让闪电网络用户在手续费与支付可靠性之间进行权衡，并包含常规的 Bitcoin Stack Exchange 精选问答、新版本发布与候选版本，以及热门比特币基础设施软件的重要更新。
 
 ## 新闻
 
-- ​**<!--n1-->****闪电网络可靠性 vs 手续费参数化：**
+- ​**<!--ln-reliability-versus-fee-parameterization-->****闪电网络可靠性 vs 手续费参数化：**
   Joost Jager 在 Lightning-Dev 邮件列表发起[讨论][jager params]，探讨如何让用户在支付速度（更高手续费）与成本节省（更长时间等待）之间做出选择。讨论焦点之一是如何将用户连续性的偏好与路径算法返回的离散多因素路由相关联。
 
 ## Bitcoin Stack Exchange 精选问答
@@ -22,13 +21,13 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [为何签名时 nonce 必须不可关联？]({{bse}}110811)
+- ​**<!--why-is-it-important-that-nonces-when-signing-not-be-related-->**[为何签名时 nonce 必须不可关联？]({{bse}}110811)
   Pieter Wuille 数学推导了三种可能泄露私钥信息的情形：使用相同 nonce、已知偏移量的 nonce、已知因子的 nonce。他列举了三种安全 nonce 生成方法、两种不安全方法，并指出存在大量既未被证实安全也未证实不安全的中间态技术。
 
-- [2 字节见证程序有何意义？]({{bse}}110660)
+- [​**<!--how-could-a-2-byte-witness-program-make-sense-->**2 字节见证程序有何意义？]({{bse}}110660)
   围绕 [BIP141][] 对见证程序 2-40 字节的要求，Kalle Rosenbaum 探讨了 2 字节长度的潜在用例场景。
 
-- [P2TR 的 xpriv/xpub 类型是什么？]({{bse}}110733)
+- ​**<!--what-is-the-xpriv-xpub-type-for-p2tr-->**[P2TR 的 xpriv/xpub 类型是什么？]({{bse}}110733)
   Andrew Chow 指出，随着脚本复杂度提升和关注点分离需求，Taproot 没有等效的 xpub/ypub/zpub 类型。他建议"使用 xpriv/xpub 并附加 Taproot 标识信息（例如通过 `tr()` 描述符）"。
 
 ## 发布与候选发布
