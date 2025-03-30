@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周周报探讨如何让闪电网络用户在手续费与支付可靠性之间进行权衡，并包含常规的 Bitcoin Stack Exchange 精选问答、新版本发布与候选版本，以及热门比特币基础设施软件的重要更新。
+本周Newsletter 探讨如何让闪电网络用户在手续费与支付可靠性之间进行权衡，并包含常规的 Bitcoin Stack Exchange 精选问答、新版本发布与候选版本，以及热门比特币基础设施软件的重要更新。
 
 
 ## 新闻
@@ -35,7 +35,7 @@ lang: zh
 
 *新版本发布与候选版本：*
 
-- [LND 0.14.0-beta][] 正式版包含：增强[日蚀攻击][topic eclipse attacks]防护（参见[周报 #164][news164 ping]），远程数据库支持（[周报 #157][news157 db]），快速路径发现（[周报 #170][news170 path]），Lightning Pool 改进（[周报 #172][news172 pool]），可复用 [AMP][topic amp] 发票（[周报 #173][news173 amp]），其他多项功能优化与错误修复。
+- [LND 0.14.0-beta][] 正式版包含：增强[日蚀攻击][topic eclipse attacks]防护（参见[Newsletter #164][news164 ping]），远程数据库支持（[Newsletter #157][news157 db]），快速路径发现（[Newsletter #170][news170 path]），Lightning Pool 改进（[Newsletter #172][news172 pool]），可复用 [AMP][topic amp] 发票（[Newsletter #173][news173 amp]），其他多项功能优化与错误修复。
 
 ## 重要代码与文档变更
 
