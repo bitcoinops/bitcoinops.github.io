@@ -18,7 +18,7 @@ sowie wesentliche Änderungen populärer Bitcoin-Infrastrukturprojekte vorgestel
 
 ## News
 
-- **LN-Vorab- und Haltegebühren mittels verbrennbarer Outputs:**  
+- **LN-Vorab- und Haltegebühren mittels verbrennbarer Outputs:**
   John Law hat im Delving Bitcoin-Forum [einen Beitrag][law fees] veröffentlicht,
   in dem er ein [Papier][law fee paper] zusammenfasst, das ein Protokoll beschreibt,
   mit dem Nodes zwei zusätzliche Gebührenarten für das Weiterleiten von Zahlungen erheben
@@ -52,7 +52,7 @@ sowie wesentliche Änderungen populärer Bitcoin-Infrastrukturprojekte vorgestel
   darauf hingewiesen, dass die Einführung von Haltegebühren möglicherweise
   [Hold Invoices][topic hold invoices] für das Netzwerk nachhaltiger machen könnte.
 
-- **Diskussion zu Testnetzen 3 und 4:**  
+- **Diskussion zu Testnetzen 3 und 4:**
   Sjors Provoost fragte in der Bitcoin-Dev-Mailingliste [nach][provoost testnet3],
   ob noch jemand Testnet3 verwendet, da Testnet4 nun seit etwa sechs Monaten im Einsatz
   ist (siehe [Newsletter #315][news315 testnet4]). Andres Schildbach antwortete
@@ -74,7 +74,7 @@ sowie wesentliche Änderungen populärer Bitcoin-Infrastrukturprojekte vorgestel
   Testnet4 vor, um die Regel zu entfernen. Mark Erhardt [schlägt][erhardt testnet4] ein
   Datum für den Fork vor: 08.01.2026.
 
-- **Plan zur Weiterleitung bestimmter Taproot-Anhänge:**  
+- **Plan zur Weiterleitung bestimmter Taproot-Anhänge:**
   Peter Todd kündigte in der Bitcoin-Dev-Mailingliste [an][todd annex], dass er plant,
   seinen auf Bitcoin Core basierenden Node, Libre Relay, so zu aktualisieren, dass er
   Transaktionen mit Taproot-[annexes][topic annex] weiterleitet – vorausgesetzt, diese
