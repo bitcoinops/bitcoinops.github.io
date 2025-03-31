@@ -260,7 +260,7 @@ hinzufügt, die `OP_CTV` verwenden.
 [news86 reverse upfront]: /en/newsletters/2020/02/26/#reverse-up-front-payments
 [news119 trusted upfront]: /en/newsletters/2020/10/14/#trusted-upfront-payment
 [news120 upfront]: /en/newsletters/2020/10/21/#more-ln-upfront-fees-discussion
-[news342 closev2]: /en/newsletters/2025/02/21/#bolts-1205
+[news342 closev2]: /de/newsletters/2025/02/21/#bolts-1205
 [rust miniscript]: https://github.com/rust-bitcoin/rust-miniscript
 [dsn kit]: https://www.dsn.kastel.kit.edu/bitcoin/#propdelaytx
 [28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
