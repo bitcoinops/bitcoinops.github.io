@@ -21,7 +21,6 @@ Bitcoin populaires.
   fees] sur Delving Bitcoin le résumé d'un [document][law fee paper] qu'il a écrit concernant un
   protocole que les nœuds peuvent utiliser pour facturer deux types supplémentaires de frais pour le
   transfert de paiements. Un _frais initial_ serait payé par le dépensier final pour compenser les
-  nœuds de transfert pour l'utilisation temporaire d'un _slot HTLC_ (l'un des nombres limités
   d'allocations concurrentes disponibles dans un canal pour faire respecter les [HTLCs][topic htlc]).
   Des _frais de rétention_ seront payés par tout nœud qui retarde le règlement d'un HTLC ; le montant de
   ces frais augmenterait avec la longueur du retard jusqu'à ce que le montant maximum soit atteint au
@@ -61,9 +60,9 @@ Bitcoin populaires.
   ![Fork Monitor montrant l'arbre des blocs sur testnet4 le 2025-03-25](/img/posts/2025-03-fork-monitor-testnet3.png)
 
   Après le post d'Osuntokun, Antoine Poinsot a commencé un [fil séparé][poinsot testnet4] pour se
-  concentrer sur les problèmes de testnet4. Il argue que les problèmes de testnet4 sont une
+  concentrer sur les problèmes de testnet4. Il dit que les problèmes de testnet4 sont une
   conséquence de la règle de réinitialisation de la difficulté. Cette règle, qui s'applique uniquement
-  à testnet, permet à un bloc d'être valide avec une difficulté minimale si son temps d'en-tête est 20
+  au testnet, permet à un bloc d'être valide avec une difficulté minimale si son temps d'en-tête est 20
   minutes plus tard que son bloc parent. Provoost donne plus de [détails][provoost testnet4] sur le
   problème. Poinsot propose un hard fork de testnet4 pour supprimer la règle. Mark Erhardt
   [suggère][erhardt testnet4] une date pour le fork : le 08-01-2026.
@@ -76,7 +75,7 @@ Bitcoin populaires.
   - _Préfixe 0x00 :_ "toutes les annexes non vides commencent par l'octet 0x00, pour les distinguer
     des annexes [futures] pertinentes pour le consensus."
 
-  - _Tout ou rien :_ "Tous les inputs ont une annexe. Cela garantit que l'utilisation de l'annexe est
+  - _Tout ou rien :_ "Toutes les inputs ont une annexe. Cela garantit que l'utilisation de l'annexe est
     sur une base volontaire, prévenant les attaques de [fixation de transaction][topic transaction
     pinning] dans les protocoles multi-parties."
 
@@ -112,7 +111,7 @@ réponses les plus votées postées depuis notre dernière mise à jour.*
 - [Toutes les transactions valides par consensus de 64 octets peuvent-elles être (par une tierce partie) altérées pour changer leur taille ?]({{bse}}125971)
   Sjors Provoost explore des idées pour altérer toute [transaction de 64 octets][news27
   64tx] qui serait invalide par consensus si le soft fork de nettoyage de consensus était activé.
-  Vojtěch Strnad argue
+  Vojtěch Strnad argumente
   que toutes les transactions de 64 octets ne peuvent pas être mutées par une tierce partie,
   mais il resterait encore que le résultat d'une transaction de 64 octets
   serait soit non sécurisé (dépensable par n'importe qui) soit prouvablement
@@ -164,15 +163,15 @@ réponses les plus votées postées depuis notre dernière mise à jour.*
 
 ## Mises à jour et versions candidates
 
-_Nouvelles mises à jour et versions candidates à la sortie pour des projets d'infrastructure Bitcoin populaires.
+_Nouvelles mises à jour et versions candidates pour des projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de passer aux nouvelles versions ou d'aider à tester
 les versions candidates._
 
-- [Bitcoin Core 29.0rc2][] est un candidat à la sortie pour la prochaine version majeure
+- [Bitcoin Core 29.0rc2][] est une version candidate pour la prochaine mise-à-jour majeure
   du nœud complet prédominant du réseau. Veuillez consulter le
   [guide de test de la version 29][bcc29 testing guide].
 
-- [LND 0.19.0-beta.rc1][] est un candidat à la sortie pour ce nœud LN populaire.
+- [LND 0.19.0-beta.rc1][] est une version candidate pour ce nœud LN populaire.
   L'une des principales améliorations qui pourrait probablement nécessiter des tests
   est le nouveau bumping de frais basé sur RBF pour les fermetures coopératives décrit
   ci-dessous dans la section des changements de code notables.
