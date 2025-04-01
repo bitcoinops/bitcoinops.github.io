@@ -153,7 +153,7 @@ réponses les plus votées postées depuis notre dernière mise à jour.*
 
 - [Comment dépenser/brûler de la poussière en toute sécurité ?]({{bse}}125702)
   Murch énumère les choses à considérer lors de l'envoi de [poussière][topic
-  sorties non économiques] hors d'un portefeuille existant.
+  uneconomical outputs] hors d'un portefeuille existant.
 
 - [Comment est construite la transaction de remboursement dans les Engagements Révocables Asymétriques ?]({{bse}}125905)
   Biel Castellarnau parcourt les exemples de transactions d'engagement du livre Mastering Bitcoin.
