@@ -48,8 +48,8 @@ Bitcoin populaires.
   que l'ajout de frais de rétention pourrait rendre les [factures de rétention][topic hold invoices]
   plus durables pour le réseau.
 
-- **Discussion sur les testnets 3 et 4 :** Sjors Provoost a [publié][provoost]
-  testnet3] sur la liste de diffusion Bitcoin-Dev pour demander si quelqu'un utilisait encore testnet3
+- **Discussion sur les testnets 3 et 4 :** Sjors Provoost a [publié][provoost testnet3]
+  sur la liste de diffusion Bitcoin-Dev pour demander si quelqu'un utilisait encore testnet3
   maintenant que testnet4 était disponible depuis environ six mois (voir le [Bulletin #315][news315
   testnet4]). Andres Schildbach a [répondu][schildbach testnet3] avec l'intention de continuer à
   utiliser testnet3 dans la version testnet de son portefeuille populaire pendant au moins un an.
