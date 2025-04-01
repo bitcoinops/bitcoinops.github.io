@@ -53,7 +53,7 @@ infrastructure projects.
   to almost costlessly prevent other nodes from using some or all of
   their funds.  In a [reply][harding fee], it was noted that the
   addition of hold fees might make [hold invoices][topic hold invoices]
-  more sustainable for the network.
+  more sustainable for the network. {% assign timestamp="0:54" %}
 
 - **Discussion of testnets 3 and 4:** Sjors Provoost [posted][provoost
   testnet3] to the Bitcoin-Dev mailing list to ask whether anyone was
@@ -78,7 +78,7 @@ infrastructure projects.
   than its parent block.  Provoost goes into more [detail][provoost
   testnet4] about the problem.  Poinsot proposes a testnet4 hard fork
   to remove the rule.  Mark Erhardt [suggests][erhardt testnet4] a date
-  for the fork: 2026-01-08.
+  for the fork: 2026-01-08. {% assign timestamp="5:11" %}
 
 - **Plan to relay certain taproot annexes:** Peter Todd [announced][todd
   annex] to the Bitcoin-Dev mailing list his plan to update his Bitcoin
@@ -105,7 +105,7 @@ infrastructure projects.
   counterparty pinning.
 
   As of this writing, nobody in the current mailing list thread has
-  described how they expect the annex to be used.
+  described how they expect the annex to be used. {% assign timestamp="19:01" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -123,7 +123,7 @@ answers posted since our last update.*
   [BIP34][] "Block v2, Height in Coinbase", and [consensus cleanup][topic
   consensus cleanup] considerations around the [block 1,983,702 problem][topic
   duplicate transactions] and how making the witness commitment mandatory would
-  resolve the problem.
+  resolve the problem. {% assign timestamp="24:58" %}
 
 - [Can all consensus valid 64 byte transactions be (third party) malleated to change their size?]({{bse}}125971)
   Sjors Provoost explores ideas for malleating any [64-byte transactions][news27
@@ -132,7 +132,7 @@ answers posted since our last update.*
   that not every 64-byte transaction can be mutated by a third party,
   but it would still be the case that the output of a 64-byte
   would either be insecure (spendable by anyone) or provably
-  unspendable (e.g., an `OP_RETURN`).
+  unspendable (e.g., an `OP_RETURN`). {% assign timestamp="36:39" %}
 
 - [How long does it take for a transaction to propagate through the network?]({{bse}}125776)
   Sr_gi points out that a single node cannot measure network-wide transaction
@@ -141,43 +141,43 @@ answers posted since our last update.*
   [website][dsn kit] run by the Decentralized Systems and Network Services
   Research Group at KIT that measures, among other things, transaction
   propagation times that shows "a transaction takes about ~7 seconds to reach
-  50% of the network, and about ~17 seconds to reach 90%".
+  50% of the network, and about ~17 seconds to reach 90%". {% assign timestamp="47:37" %}
 
 - [Utility of longterm fee estimation]({{bse}}124227)
   Abubakar Sadiq Ismail is seeking feedback from projects, protocols, or users
   that rely on long-term fee estimates for his work on [fee estimation][topic
-  fee estimation].
+  fee estimation]. {% assign timestamp="49:31" %}
 
 - [Why are two anchor outputs are used in the LN?]({{bse}}125883)
   Instagibbs provides historical context for the [anchor outputs][topic anchor
   outputs] used currently in Lightning and points out that with changes to
   [Bitcoin Core policies in 28.0][28.0 wallet guide], there is a planned update
-  to [v3 commitments][topic v3 commitments].
+  to [v3 commitments][topic v3 commitments]. {% assign timestamp="54:34" %}
 
 - [Why are there no BIPs in the 2xx range?]({{bse}}125914)
   Michael Folkson points out that BIP numbers 200-299 were at some point
-  reserved for Lightning-related BIPs.
+  reserved for Lightning-related BIPs. {% assign timestamp="57:19" %}
 
 - [Why doesn't Bech32 use the character "b"?]({{bse}}125902)
   Bordalix answers that the visual similarity between "B" and "8" was the rationale for
   not allowing "B" in the [bech32 and bech32m][topic bech32] address formats. He
-  also provides additional trivia around bech32.
+  also provides additional trivia around bech32. {% assign timestamp="59:55" %}
 
 - [Bech32 error detection and correction reference implementation]({{bse}}125961)
   Pieter Wuille notes that bech32 can detect up to four errors in address encoding
-  and correct two substitution errors.
+  and correct two substitution errors. {% assign timestamp="1:00:23" %}
 
 - [How to safely spend/burn dust?]({{bse}}125702)
   Murch lists things to consider when sending [dust][topic
-  uneconomical outputs] out of an existing wallet.
+  uneconomical outputs] out of an existing wallet. {% assign timestamp="1:02:48" %}
 
 - [How is the refund transaction in Asymmetric Revocable Commitments constructed?]({{bse}}125905)
   Biel Castellarnau walks through the examples of commitment transactions from the
-  Mastering Bitcoin book.
+  Mastering Bitcoin book. {% assign timestamp="1:07:34" %}
 
 - [Which applications use ZMQ with Bitcoin Core?]({{bse}}125920)
   Sjors Provoost is looking for users of Bitcoin Core's ZMQ services as part of
-  investigating whether [IPC][news320 ipc] could replace those uses.
+  investigating whether [IPC][news320 ipc] could replace those uses. {% assign timestamp="42:15" %}
 
 ## Releases and release candidates
 
@@ -187,12 +187,12 @@ release candidates._
 
 - [Bitcoin Core 29.0rc2][] is a release candidate for the next major
   version of the network's predominate full node.  Please see the
-  [version 29 testing guide][bcc29 testing guide].
+  [version 29 testing guide][bcc29 testing guide]. {% assign timestamp="1:08:21" %}
 
 - [LND 0.19.0-beta.rc1][] is a release candidate for this popular LN
   node.  One of the major improvements that could probably use testing
   is the new RBF-based fee bumping for cooperative closes described
-  below in the notable code changes section.
+  below in the notable code changes section. {% assign timestamp="1:08:55" %}
 
 ## Notable code and documentation changes
 
@@ -211,32 +211,32 @@ repo], and [BINANAs][binana repo]._
   possible to accidentally add whitespace previously due to the
   protection of the descriptor checksum. The `getdescriptorinfo` and
   `importdescriptors` RPC commands now throw an error if the public key fragment
-  of a [descriptor][topic descriptors] contains such whitespace.
+  of a [descriptor][topic descriptors] contains such whitespace. {% assign timestamp="45:12" %}
 
 - [Eclair #3044][] increases the default minimum confirmations for channel
   safety against block reorganizations from 6 to 8.  It also removes the scaling of
   this value based on the channel funding amount because channel capacity can be changed
   significantly during [splicing][topic splicing], convincing the node
   to accept a low number of confirmations for what is actually a large
-  amount of money at stake.
+  amount of money at stake. {% assign timestamp="1:09:45" %}
 
 - [Eclair #3026][] adds support for Bitcoin Core wallets using [Pay-to-Taproot
   (P2TR)][topic taproot] addresses, including watch-only wallets managed by
   Eclair, as a basis for implementing [simple taproot channels][topic simple
   taproot channels]. P2WPKH scripts are still required for some mutual close
-  transactions, even when using a P2TR wallet.
+  transactions, even when using a P2TR wallet. {% assign timestamp="1:10:38" %}
 
 - [LDK #3649][] adds support for paying Lightning Service Providers (LSPs) with
   [BOLT12 offers][topic offers] by adding the necessary fields. Previously, only
   [BOLT11][] and on-chain payment options were enabled. This was also proposed
-  in [BLIPs #59][].
+  in [BLIPs #59][]. {% assign timestamp="1:11:02" %}
 
 - [LDK #3665][] increases the [BOLT11][] invoice size limit from 1,023 bytes to
   7,089 bytes to match LND's limit, which is based on the maximum number
   of bytes that can fit on a QR code.  The PR author argues that QR
   codes compatible with the encoding used in a BOLT11 invoice are
   actually limited to 4,296 characters, but the 7,089 value is chosen
-  for LDK because "system-wide consistency is probably more important."
+  for LDK because "system-wide consistency is probably more important." {% assign timestamp="1:11:59" %}
 
 - [LND #8453][], [#9559][lnd #9559], [#9575][lnd #9575], [#9568][lnd
   #9568], and [LND #9610][] introduce an [RBF][topic rbf] cooperative
@@ -246,17 +246,17 @@ repo], and [BINANAs][binana repo]._
   Previously, peers sometimes had to convince their counterparty to pay
   for fee bumps, which often resulted in failed
   attempts. To enable this feature, the `protocol.rbf-coop-close` configuration
-  flag must be set.
+  flag must be set.{% assign timestamp="1:14:28" %}
 
 - [BIPs #1792][] updates [BIP119][] which specifies
   [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] by revising the
   language for better clarity, removing the activation logic, renaming Eltoo to
   [LN-Symmetry][topic eltoo], and adding mentions of new [covenant][topic
-  covenants] proposals and projects like [Ark][topic ark] that use `OP_CTV`.
+  covenants] proposals and projects like [Ark][topic ark] that use `OP_CTV`. {% assign timestamp="1:16:00" %}
 
 - [BIPs #1782][] reformats the specification section of [BIP94][], which
   outlines the consensus rules of [testnet4][topic testnet], for better clarity
-  and readability.
+  and readability. {% assign timestamp="1:16:40" %}
 
 {% include snippets/recap-ad.md when="2025-04-01 15:30" %}
 {% include references.md %}
