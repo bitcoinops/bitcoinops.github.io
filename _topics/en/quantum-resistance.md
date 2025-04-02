@@ -110,10 +110,7 @@ of vulnerability to fast quantum computers:
   Optech has not seen discussion of its quantum resistance, but we
   believe the way LN currently uses it depends on the security of ECDSA,
   so if fast quantum computers are developed, they may be able to
-  decrypt old communication between LN nodes.  Alternative key exchange
-  mechanisms such as [NewHope][] are known and are proposed for
-  implementation in other parts of Bitcoin, such as the [version 2
-  Bitcoin transport protocol][topic v2 p2p transport].
+  decrypt old communication between LN nodes.
 
 The worst case for attacks assumes an idealized quantum computer with
 sufficient capacity and reliability to perform the attack.  It's likely
