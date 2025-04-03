@@ -655,19 +655,55 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31363][] cluster mempool: introduce TxGraph
+- [Bitcoin Core #31363][] introduces the `TxGraph` class (see [Newsletter
+  #341][news341 pr review]), a lightweight
+  in-memory model of mempool transactions that tracks only feerates and
+  dependencies between transactions. It includes mutation functions such as
+  `AddTransaction`, `RemoveTransaction`, and `AddDependency`, and inspection
+  functions such as `GetAncestors`, `GetCluster`, and `CountDistinctClusters`.
+  `TxGraph` also supports staging of changes with commit and abort
+  functionality. This is part of the [cluster mempool][topic cluster mempool]
+  project, and prepares for future improvements to mempool eviction,
+  reorganization handling, and cluster-aware mining logic.
 
-- [Bitcoin Core #31278][] wallet, rpc: deprecate settxfee and paytxfee
+- [Bitcoin Core #31278][] deprecates the `settxfee` RPC command and the
+  `-paytxfee` startup option, which allow users to set a static fee rate for all
+  transactions. Users should instead rely on [fee estimation][topic fee estimation] or set a
+  per-transaction fee rate. They are marked for removal in Bitcoin Core 31.0.
 
-- [Eclair #3050][] Relay non-blinded failure from wallet nodes
+- [Eclair #3050][] updates how [BOLT12][topic offers] payment failures are
+  relayed when the recipient is a directly connected node, to always forward the
+  failure message instead of overriding it with an unreadable
+  `invalidOnionBlinding` failure. If the failure includes a `channel_update`,
+  Eclair overrides it with `TemporaryNodeFailure` to avoid revealing details
+  about [unannounced channels][topic unannounced channels]. For [blinded
+  routes][topic rv routing] involving other nodes, Eclair continues to override
+  failures with `invalidOnionBlinding`. All failure messages are encrypted using
+  the wallet’s `blinded_node_id`.
 
-- [Eclair #2963][] Use package relay for anchor force-close
+- [Eclair #2963][] implements one-parent-one-child (1p1c) [package relay][topic package relay] by
+  calling Bitcoin Core’s `submitpackage` RPC command during channel force
+  closures to broadcast both the commitment transaction and its anchor together.
+  This allows commitment transactions to propagate even if their feerate is
+  below the mempool minimum, but requires connecting to peers running Bitcoin
+  Core 28.0 or later. This change removes the need to dynamically set the
+  feerate of commitment transactions, and ensures that force closures don’t get
+  stuck when nodes disagree on the current feerate.
 
-- [Eclair #3045][] Optional `payment_secret` in trampoline outer payload
+- [Eclair #3045][] makes the `payment_secret` field in the outer onion payload
+  optional for single-part [trampoline payments][topic trampoline payments].
+  Previously, every trampoline payment included a `payment_secret`, even if
+  a [multipath payment][topic multipath payments] (MPP) wasn't used. Since
+  payment secrets may be required when handling modern [BOLT11][] invoices, Eclair inserts a
+  dummy one on decryption if one isn’t provided.
 
-- [LDK #3670][] Handle receiving payments via Trampoline
+- [LDK #3670][] adds support for handling and receiving [trampoline
+  payments][topic trampoline payments], but does not yet implement providing a
+  trampoline routing service. This is a prerequisite for a type of [async
+  payment][topic async payments] that LDK plans to deploy.
 
-- [LND #9620][] chain: add testnet4 support
+- [LND #9620][] adds [testnet4][topic testnet] support by adding the necessary
+  parameters and blockchain constants such as its genesis hash.
 
 {% include snippets/recap-ad.md when="2025-04-08 15:30" %}
 {% include references.md %}
@@ -740,3 +776,4 @@ repo], and [BINANAs][binana repo]._
 [corallo eltoo]: https://x.com/TheBlueMatt/status/1857119394104500484
 [bdk wallet 1.2.0]: https://github.com/bitcoindevkit/bdk/releases/tag/wallet-1.2.0
 [ldk v0.1.2]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.2
+[news341 pr review]: /en/newsletters/2025/02/14/#bitcoin-core-pr-review-club
