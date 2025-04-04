@@ -145,9 +145,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 感谢！
 
-*最初发表于 [Newsletter #174](/en/newsletters/2021/11/10/#preparing-for-taproot-21-thank-you)*
+*最初发表于 [Newsletter #174](/zh/newsletters/2021/11/10/#准备-taproot-21感谢)*
 
-{% include specials/taproot/en/21-thanks.md %}
+{% include specials/taproot/zh/21-thanks.md %}
 
 ## 脚注
 {:.no_toc}

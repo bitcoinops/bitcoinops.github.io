@@ -82,9 +82,9 @@ see_also:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Async payments** are LN payments that are made when the receiver is
-  offline, are held by a forwarding node (ideally in a trustless
-  manner), and are delivered when the receiver comes back online.
+  **Async payments** are payments that are made when the receiver is
+  offline.  Onchain payments are async but interactive protocols like LN
+  may require cooperation of a third party to enable async payments.
 ---
 Traditional onchain Bitcoin payments are asynchronous (async) because
 the receiver can generate an output script (Bitcoin address) and give
@@ -112,6 +112,8 @@ described trustless method in that discussion required the use of
 of 2022.  An alternative [method][trampoline method], which could be
 implemented in the existing protocol, involved the use of trampoline
 relays.
+
+Async payments are also a key feature of the [Ark][topic ark] protocol.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
