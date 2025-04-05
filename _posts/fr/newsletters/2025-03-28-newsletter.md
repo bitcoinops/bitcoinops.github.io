@@ -239,12 +239,12 @@ repo], et [BINANAs][binana repo]._
 [bitcoin core 29.0rc2]: https://bitcoincore.org/bin/bitcoin-core-29.0/
 [bcc29 testing guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/29.0-Release-Candidate-Testing-Guide
 [lnd 0.19.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.0-beta.rc1
-[news255 annex]: /en/newsletters/2023/06/14/#discussion-about-the-taproot-annex
-[news315 testnet4]: /en/newsletters/2024/08/09/#bitcoin-core-29775
+[news255 annex]: /fr/newsletters/2023/06/14/#discussion-sur-les-annexes-a-taproot
+[news315 testnet4]: /fr/newsletters/2024/08/09/#bitcoin-core-29775
 [fork.observer]: https://fork.observer/
 [law fees]: https://delvingbitcoin.org/t/fee-based-spam-prevention-for-lightning/1524/
 [law fee paper]: https://github.com/JohnLaw2/ln-spam-prevention
-[news329 opr]: /en/newsletters/2024/11/15/#mad-based-offchain-payment-resolution-opr-protocol
+[news329 opr]: /fr/newsletters/2024/11/15/#protocole-de-resolution-de-paiement-offchain-base-sur-mad-opr
 [harding fee]: https://delvingbitcoin.org/t/fee-based-spam-prevention-for-lightning/1524/4
 [provoost testnet3]: https://mailing-list.bitcoindevs.xyz/bitcoindev/9FAA7EEC-BD22-491E-B21B-732AEA15F556@sprovoost.nl/
 [schildbach testnet3]: https://mailing-list.bitcoindevs.xyz/bitcoindev/7c28f8e9-d221-4633-8b71-53b4db07fa78@schildbach.de/
@@ -254,15 +254,15 @@ repo], et [BINANAs][binana repo]._
 [erhardt testnet4]: https://mailing-list.bitcoindevs.xyz/bitcoindev/7c6800f0-7b77-4aca-a4f9-2506a2410b29@murch.one/
 [todd annex]: https://mailing-list.bitcoindevs.xyz/bitcoindev/Z9tg-NbTNnYciSOh@petertodd.org/
 [russell loop]: https://diyhpl.us/~bryan/irc/bitcoin/bitcoin-dev/linuxfoundation-pipermail/lightning-dev/2015-August/000135.txt
-[news263 dos philosophy]: /en/newsletters/2023/08/09/#denial-of-service-dos-protection-design-philosophy
+[news263 dos philosophy]: /fr/newsletters/2023/08/09/#philosophie-de-conception-de-la-protection-contre-les-attaques-par-deni-de-service-dos
 [news136 more fee]: /en/newsletters/2021/02/17/#renewed-discussion-about-bidirectional-upfront-ln-fees
 [news122 bi-directional]: /en/newsletters/2020/11/04/#bi-directional-upfront-fees-for-ln
 [news86 reverse upfront]: /en/newsletters/2020/02/26/#reverse-up-front-payments
 [news119 trusted upfront]: /en/newsletters/2020/10/14/#trusted-upfront-payment
 [news120 upfront]: /en/newsletters/2020/10/21/#more-ln-upfront-fees-discussion
-[news342 closev2]: /en/newsletters/2025/02/21/#bolts-1205
+[news342 closev2]: /fr/newsletters/2025/02/21/#bolts-1205
 [rust miniscript]: https://github.com/rust-bitcoin/rust-miniscript
 [dsn kit]: https://www.dsn.kastel.kit.edu/bitcoin/#propdelaytx
 [28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
-[news320 ipc]: /en/newsletters/2024/09/13/#bitcoin-core-30509
-[news27 64tx]: /en/newsletters/2018/12/28/#cve-2017-12842
+[news320 ipc]: /fr/newsletters/2024/09/13/#bitcoin-core-30509
+[news27 64tx]: /fr/newsletters/2018/12/28/#cve-2017-12842
