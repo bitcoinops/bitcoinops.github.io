@@ -265,4 +265,4 @@ repo], et [BINANAs][binana repo]._
 [dsn kit]: https://www.dsn.kastel.kit.edu/bitcoin/#propdelaytx
 [28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
 [news320 ipc]: /fr/newsletters/2024/09/13/#bitcoin-core-30509
-[news27 64tx]: /fr/newsletters/2018/12/28/#cve-2017-12842
+[news27 64tx]: /en/newsletters/2018/12/28/#cve-2017-12842
