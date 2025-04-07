@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine contient un lien vers une implémentation éducative de la
-cryptographie sur courbe elliptique pour la courbe secp256k1 de Bitcoin. SSont également incluses
+cryptographie sur courbe elliptique pour la courbe secp256k1 de Bitcoin. Sont également incluses
 nos sections régulières résumant les discussions sur la modification des règles de consensus de
 Bitcoin, annonçant de nouvelles versions et versions candidates, et décrivant les changements
 notables apportés aux logiciels d'infrastructure Bitcoin populaires.
@@ -44,19 +44,19 @@ règles de consensus de Bitcoin._
 
     - *Argument de la préférence commune :* il croit que la plupart des gens préféreraient que leurs
       fonds soient détruits plutôt que volés par quelqu'un avec un ordinateur quantique rapide. Surtout,
-      argue-t-il, puisque le voleur sera parmi "les quelques privilégiés qui accèdent tôt aux ordinateurs
+      dit-il, puisque le voleur sera parmi "les quelques privilégiés qui accèdent tôt aux ordinateurs
       quantiques".
 
     - *Argument du dommage commun :* beaucoup des bitcoins volés seront soit des pièces perdues, soit
       celles qui étaient prévues pour être conservées à long terme. En contraste, les voleurs pourraient
       rapidement dépenser leurs bitcoins volés, ce qui réduit le pouvoir d'achat des autres bitcoins
-      (similaire à l'inflation de l'offre monétaire). Il note que le pouvoir d'achat réduit des bitcoins
-      réduit les revenus des mineurs, réduisant la sécurité du réseau, et (selon son observation) résulte
+      (similaire à l'inflation de l'offre monétaire). Il note que le pouvoir d'achat dimuinué des bitcoins,
+      réduit les revenus des mineurs, ainsi que la sécurité du réseau, et (selon son observation) résulte
       en une acceptation moindre des bitcoins par les commerçants.
 
     - *Argument du bénéfice minimal :* bien que permettre le vol pourrait être utilisé pour financer le
       développement de l'informatique quantique, voler des pièces ne procure aucun bénéfice direct aux
-      participants honnêtes au protocole Bitcoin.
+      participants honnêtes du protocole Bitcoin.
 
     - *Argument des échéances claires :* personne ne peut connaître longtemps à l'avance la date à
       laquelle quelqu'un avec un ordinateur quantique peut commencer à voler des bitcoins, mais une date
@@ -78,9 +78,9 @@ règles de consensus de Bitcoin._
     les pièges existants des longs verrouillages temporels et dit qu'il devient personnellement "un peu
     nerveux à l'idée de verrouiller des fonds pour plus d'un an ou deux."
 
-  - *Prouver de manière sécurisée la propriété d'un UTXO en révélant une préimage SHA256 :* Martin
+  - *Prouver de manière sécurisée la propriété d'une UTXO en révélant une préimage SHA256 :* Martin
     Habovštiak [a posté][habovstiak gfsig] sur la liste de diffusion Bitcoin-Dev une idée qui pourrait
-    permettre à quelqu'un de prouver qu'il contrôlait un UTXO même si les signatures ECDSA et
+    permettre à quelqu'un de prouver qu'il contrôlait une UTXO même si les signatures ECDSA et
     [schnorr][topic schnorr signatures] étaient insécurisées (par exemple, après l'existence de
     calculateurs quantiques rapides). Si l'UTXO contenait un engagement SHA256 (ou un autre engagement
     résistant au quantique) envers une préimage qui n'avait jamais été révélée auparavant, alors un
@@ -106,31 +106,31 @@ règles de consensus de Bitcoin._
        sécurisé quantique afin de pouvoir payer les frais de transaction.
 
     4. Dans une transaction dépensant certains des bitcoins sécurisés quantiquement, elle s'engage sur
-       les bitcoins insécurisés quantiquement qu'elle veut dépenser et s'engage également sur la
+       les bitcoins non sécurisé (quantiquement) qu'elle veut dépenser et s'engage également sur la
        transaction de dépense privée (sans la révéler). Elle attend que cette transaction soit profondément
        confirmée.
 
     5. Après s'être assurée que sa transaction précédente ne peut
-       pratiquement pas être réorganisée, elle révèle son préimage précédemment privé
+       pratiquement pas être réorganisée, elle révèle sa préimage précédemment privée
        et sa dépense non sécurisée face aux quantiques.
 
     6. Les nœuds sur le réseau cherchent dans la blockchain la première
-       transaction qui s'engage sur le préimage. Si cette transaction
+       transaction qui s'engage sur la préimage. Si cette transaction
        s'engage sur la dépense non sécurisée face aux quantiques d'Alice, alors ils exécutent sa
        dépense. Sinon, ils ne font rien.
 
-    Cela garantit qu'Alice n'a pas à révéler des informations vulnérables aux quantiques
-    jusqu'après s'être déjà assurée que sa version de la transaction de dépense
+    Cela garantit qu'Alice n'a pas à révéler des informations vulnérables aux [attaques] quantiques
+    après s'être déjà assurée que sa version de la transaction de dépense
     aura la priorité sur toute tentative de dépense par l'opérateur d'un ordinateur quantique. Pour une
     description plus précise du protocole, veuillez voir le post de [Ruffing en 2018][ruffing gfsig].
     Bien que non discuté dans le fil, nous pensons que le protocole ci-dessus pourrait être déployé comme un soft fork.
 
     Habovštiak soutient que les bitcoins qui peuvent être dépensés de manière sécurisée en utilisant
-    ce protocole (par exemple, leur préimage n'a pas déjà été révélé)
+    ce protocole (par exemple, leur préimage n'a pas déjà été révélée)
     ne devraient pas être détruits même si la communauté décide qu'elle veut détruire les bitcoins
-    vulnérables aux quantiques en général. Il soutient également que
+    vulnérables aux [attaques] quantiques en général. Il soutient également que
     la capacité de dépenser de manière sécurisée certains bitcoins en cas d'urgence
-    réduit l'urgence de déployer un schéma résistant aux quantiques à court terme.
+    réduit l'urgence de déployer un schéma résistant aux [attaques] quantiques à court terme.
 
     Lloyd Fournier [dit][fournier gfsig], "si cette approche est acceptée, je pense que l'action
     immédiate principale que les utilisateurs peuvent prendre est de
@@ -157,7 +157,7 @@ règles de consensus de Bitcoin._
 
     Très peu de discussions sur le fil se sont concentrées sur le brouillon
     du BIP. La plupart portaient sur la question de savoir si détruire
-    les bitcoins vulnérables aux quantiques était une bonne idée, similaire au fil plus tard
+    les bitcoins vulnérables aux [attaques] quantiques était une bonne idée, similaire au fil plus tard
     commencé par Jameson Lopp (décrit dans un sous-élément précédent).
 
 - **Plusieurs discussions sur un soft fork CTV+CSFS :** plusieurs
@@ -165,7 +165,7 @@ règles de consensus de Bitcoin._
   opcodes [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) et
   [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS).
 
-  - *Critique de la motivation du CTV :* Anthony Towns [a posté][towns ctvmot]
+  - *Critique de la motivation de CTV :* Anthony Towns [a posté][towns ctvmot]
     une critique de la motivation décrite pour CTV dans [BIP119][], une motivation que l'on a argumenté
     serait compromise par l'ajout simultané de CTV et de CSFS à Bitcoin. Plusieurs jours après le début
     de la discussion, BIP119 a été mis à jour par son auteur pour retirer la plupart (et possiblement la
@@ -284,7 +284,7 @@ règles de consensus de Bitcoin._
 
     - *Ark :* Roose est le PDG d'une entreprise qui développe une implémentation d'[Ark][topic ark]. Il
       dit : "CTV est un changement de jeu pour Ark [...] les avantages de CTV pour l'expérience
-      utilisateur sont indéniables, et il est sans doute que les deux implémentations d'[Ark] utiliseront
+      utilisateur sont indéniables, et il ne fait aucun doute que les deux implémentations d'[Ark] utiliseront
       CTV dès qu'il sera disponible." Towns [a noté][towns nonrepo] que personne n'a implémenté Ark avec
       APO ou CTV pour les tests ; Roose a écrit [du code][roose ctv-ark] faisant cela peu après, le
       qualifiant de "remarquablement simple" et disant qu'il a passé les tests d'intégration de
@@ -305,17 +305,17 @@ règles de consensus de Bitcoin._
 
     Un objectif de conception pour Ark est de permettre des [paiements asynchrones][topic async
     payments] : des paiements effectués lorsque le destinataire est hors ligne. Dans clArk, cela est
-    réalisé par le dépensier plus un serveur Ark étendant la chaîne existante de transactions
-    pré-signées du dépensier, permettant au destinataire de prendre finalement le contrôle exclusif sur
+    réalisé par l'envoyeur plus un serveur Ark étendant la chaîne existante de transactions
+    pré-signées de l'envoyeur, permettant au destinataire de prendre finalement le contrôle exclusif sur
     les fonds. Le paiement est appelé un paiement Ark [hors-tour][oor doc] (_arkoor_). Lorsque le
     destinataire se connecte, il peut choisir ce qu'il veut faire :
 
     - *Sortir, après un délai :* diffuser toute la chaîne de transactions pré-signées, sortant du
       [joinpool][topic joinpools] (appelé un _Ark_). Cela nécessite d'attendre l'expiration d'un
-      verrouillage temporel convenu par le dépensier. Lorsque les transactions pré-signées sont confirmées
+      verrouillage temporel convenu par l'envoyeur. Lorsque les transactions pré-signées sont confirmées
       à une profondeur appropriée, le destinataire peut être certain d'avoir un contrôle sans confiance
-      sur les fonds. Cependant, ils perdent les avantages de faire partie d'un joinpool, tels que le
-      règlement rapide et des frais plus bas découlant du partage de UTXO. Ils peuvent également devoir
+      sur les fonds. Cependant, ils perdent les avantages de faire partie d'une joinpool, tels que le
+      règlement rapide et des frais plus bas découlant du partage d'UTXO. Ils peuvent également devoir
       payer des frais de transaction pour confirmer la chaîne de transactions.
 
     - *Rien :* dans le cas normal, une transaction pré-signée dans la chaîne de transactions expirera
@@ -324,18 +324,18 @@ règles de consensus de Bitcoin._
       l'utilisateur d'une manière ou d'une autre. Jusqu'à ce que l'expiration approche, le destinataire
       peut juste attendre.
 
-      Dans le cas pathologique, le serveur et le dépensier peuvent (à tout moment) conspirer pour signer
+      Dans le cas pathologique, le serveur et l'envoyeur peuvent (à tout moment) conspirer pour signer
       une chaîne alternative de transactions pour voler les
       fonds envoyés au destinataire. Note : Les propriétés de confidentialité de Bitcoin permettent au
-      serveur et au dépensier d'être la même personne, donc la collusion pourrait ne même pas être
+      serveur et à l'envoyeur d'être la même personne, donc la collusion pourrait ne même pas être
       nécessaire. Cependant, si le destinataire conserve une copie de la chaîne de transactions cosignée
       par le serveur, il peut prouver que le serveur a volé des fonds, ce qui pourrait être suffisant pour
       dissuader d'autres personnes d'utiliser ce serveur.
 
     - *Rafraîchissement :* avec la coopération du serveur, le destinataire peut transférer de manière
-      atomique la propriété des fonds dans la transaction cosignée par le dépensier pour une autre
+      atomique la propriété des fonds dans la transaction cosignée par l'envoyeur pour une autre
       transaction présignée avec le destinataire en tant que cosignataire. Cela prolonge la date
-      d'expiration et élimine la capacité pour le serveur et le dépensier précédent de conspirer pour
+      d'expiration et élimine la capacité pour le serveur et l'envoyeur précédent de conspirer pour
       voler les fonds précédemment envoyés. Cependant, le rafraîchissement exige que le serveur conserve
       les fonds rafraîchis jusqu'à leur expiration, réduisant la liquidité du serveur, donc le serveur
       facture au destinataire un taux d'intérêt jusqu'à l'expiration (payé à l'avance puisque le temps
@@ -343,24 +343,24 @@ règles de consensus de Bitcoin._
 
     Un autre objectif de conception pour Ark est de permettre aux participants de recevoir des paiements
     LN. Dans son post original et une [réponse][roose ctv-ark-ln], Roose décrit que les participants
-    existants qui ont déjà des fonds dans le joinpool peuvent être pénalisés jusqu'au coût d'une
+    existants qui ont déjà des fonds dans la joinpool peuvent être pénalisés jusqu'au coût d'une
     transaction onchain s'ils échouent à effectuer l'interactivité requise pour recevoir un paiement LN.
-    Cependant, ceux qui n'ont pas déjà de fonds dans le joinpool ne peuvent pas être pénalisés, donc ils
+    Cependant, ceux qui n'ont pas déjà des fonds dans la joinpool ne peuvent pas être pénalisés, donc ils
     peuvent refuser d'effectuer les étapes interactives et créer des problèmes sans coût pour les
     participants honnêtes. Cela semble effectivement empêcher les utilisateurs d'Ark de recevoir des
     paiements LN à moins qu'ils n'aient déjà une quantité modérée de fonds déposés avec le serveur Ark
     qu'ils souhaitent utiliser.
 
     Roose décrit ensuite comment la disponibilité de CTV permettrait d'améliorer le protocole. Le
-    principal changement concerne la manière dont les tours Ark sont créés. Un _tour Ark_ consiste en
+    principal changement concerne la manière dont les tours Ark sont créés. Une _tour Ark_ consiste en
     une petite transaction onchain qui s'engage sur un arbre de transactions offchain. Ce sont des
-    transactions présignées dans le cas de clArk, nécessitant que tous les dépensiers de ce tour soient
+    transactions présignées dans le cas de clArk, nécessitant que tous les envoyeurs de ce tour soient
     disponibles pour signer. Si CTV était disponible, chaque branche dans l'arbre de transactions peut
     s'engager sur ses descendants en utilisant CTV sans nécessité de signature. Cela permet la création
     de transactions même pour les participants qui ne sont pas disponibles au moment où le tour est
     créé, avec les avantages suivants :
 
-    - *Paiements non interactifs en tour :* au lieu des paiements Ark hors tour (arkoor), un dépensier
+    - *Paiements non interactifs en tour :* au lieu des paiements Ark hors tour (arkoor), un envoyeur
       qui est prêt à attendre le prochain tour peut payer le destinataire en tour. Pour le destinataire,
       cela a un avantage majeur : dès que le tour est confirmé à une profondeur appropriée, ils reçoivent
       un contrôle sans confiance sur leurs fonds reçus (jusqu'à ce que l'expiration approche, à ce moment
@@ -374,9 +374,9 @@ règles de consensus de Bitcoin._
       ([HTLC][topic htlc]) soit envoyé à un serveur Ark, le serveur
       retiendrait alors le paiement jusqu'à son prochain cycle, et utiliserait CTV pour inclure un
       paiement verrouillé par HTLC à l'utilisateur dans le cycle---après quoi l'utilisateur pourrait
-      révéler le préimage HTLC pour réclamer le paiement. Cependant, Roose a noté que cela nécessiterait
+      révéler la préimage HTLC pour réclamer le paiement. Cependant, Roose a noté que cela nécessiterait
       toujours l'utilisation de "diverses mesures anti-abus" (nous pensons que cela est dû au risque que
-      le destinataire ne divulgue pas le préimage, conduisant à ce que les fonds du serveur restent
+      le destinataire ne divulgue pas la préimage, conduisant à ce que les fonds du serveur restent
       verrouillés jusqu'à la fin du cycle Ark, qui pourrait s'étendre sur deux mois ou plus).
 
       David Harding a répondu à Roose en demandant des détails supplémentaires et en comparant la
