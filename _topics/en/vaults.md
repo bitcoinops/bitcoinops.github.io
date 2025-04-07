@@ -24,7 +24,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: Möser-Eyal-Sirer vault proposal
-      link: https://hackingdistributed.com/2016/02/26/how-to-implement-secure-bitcoin-vaults/
+      link: https://archive.is/rZYWF
 
     - title: Vaults using OP_CHECKSIGFROMSTACK and OP_CAT
       link: https://blockstream.com/2016/11/02/en-covenants-in-elements-alpha/
