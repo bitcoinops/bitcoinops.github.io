@@ -119,7 +119,7 @@ règles de consensus de Bitcoin._
        s'engage sur la dépense non sécurisée face aux quantiques d'Alice, alors ils exécutent sa
        dépense. Sinon, ils ne font rien.
 
-    Cela garantit qu'Alice n'a pas à révéler des informations vulnérables aux [attaques] quantiques
+    Cela garantit qu'Alice n'a pas à révéler des informations vulnérables aux attaques quantiques
     après s'être déjà assurée que sa version de la transaction de dépense
     aura la priorité sur toute tentative de dépense par l'opérateur d'un ordinateur quantique. Pour une
     description plus précise du protocole, veuillez voir le post de [Ruffing en 2018][ruffing gfsig].
@@ -128,9 +128,9 @@ règles de consensus de Bitcoin._
     Habovštiak soutient que les bitcoins qui peuvent être dépensés de manière sécurisée en utilisant
     ce protocole (par exemple, leur préimage n'a pas déjà été révélée)
     ne devraient pas être détruits même si la communauté décide qu'elle veut détruire les bitcoins
-    vulnérables aux [attaques] quantiques en général. Il soutient également que
+    vulnérables aux attaques quantiques en général. Il soutient également que
     la capacité de dépenser de manière sécurisée certains bitcoins en cas d'urgence
-    réduit l'urgence de déployer un schéma résistant aux [attaques] quantiques à court terme.
+    réduit l'urgence de déployer un schéma résistant aux attaques quantiques à court terme.
 
     Lloyd Fournier [dit][fournier gfsig], "si cette approche est acceptée, je pense que l'action
     immédiate principale que les utilisateurs peuvent prendre est de
@@ -157,7 +157,7 @@ règles de consensus de Bitcoin._
 
     Très peu de discussions sur le fil se sont concentrées sur le brouillon
     du BIP. La plupart portaient sur la question de savoir si détruire
-    les bitcoins vulnérables aux [attaques] quantiques était une bonne idée, similaire au fil plus tard
+    les bitcoins vulnérables aux attaques quantiques était une bonne idée, similaire au fil plus tard
     commencé par Jameson Lopp (décrit dans un sous-élément précédent).
 
 - **Plusieurs discussions sur un soft fork CTV+CSFS :** plusieurs
