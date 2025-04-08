@@ -364,7 +364,7 @@ Bitcoin's consensus rules._
   - *Benefit of CTV to Ark users:* Steven Roose [posted][roose
     ctv-for-ark] to Delving Bitcoin a short description of the
     [Ark][topic ark] protocol currently deployed to [signet][topic
-    signet], called [coventless Ark][clark doc] (clArk), and how the
+    signet], called [covenantless Ark][clark doc] (clArk), and how the
     availability of the [OP_CHECKTEMPLATEVERIFY][topic
     op_checktemplateverify] (CTV) opcode could make a [covenant][topic
     covenants]-using version of the protocol more appealing to users when
@@ -512,7 +512,7 @@ Bitcoin's consensus rules._
     SHA256 operations.
 
   Only transferring the spending conditions from the output being spent
-  to an output being can be useful, but many covenants will want to
+  to an output being created can be useful, but many covenants will want to
   ensure some or all of the bitcoins in the output being spent are
   passed through to the output being created.  Ingala describes CCV's
   three options for handling values.
