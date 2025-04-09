@@ -352,7 +352,7 @@ règles de consensus de Bitcoin._
     qu'ils souhaitent utiliser.
 
     Roose décrit ensuite comment la disponibilité de CTV permettrait d'améliorer le protocole. Le
-    principal changement concerne la manière dont les tours Ark sont créés. Une _tour Ark_ consiste en
+    principal changement concerne la manière dont les tours Ark sont créés. Un _tour Ark_ consiste en
     une petite transaction onchain qui s'engage sur un arbre de transactions offchain. Ce sont des
     transactions présignées dans le cas de clArk, nécessitant que tous les envoyeurs de ce tour soient
     disponibles pour signer. Si CTV était disponible, chaque branche dans l'arbre de transactions peut
@@ -424,8 +424,8 @@ règles de consensus de Bitcoin._
 
   - *Déduire :* le montant d'une sortie créée à un index particulier (par exemple, la troisième
     sortie) est déduit du montant de la sortie dépensée au même index et la valeur résiduelle est
-    suivie. Par exemple, si la sortie dépensée à l'index trois vaut 100 BTC et la sortie créée à l'index
-    trois vaut 70 BTC, alors le code garde une trace des 30 BTC résiduels. La transaction est marquée
+    suivie. Par exemple, si la sortie dépensée à l'index 3 vaut 100 BTC et la sortie créée à l'index
+    3 vaut 70 BTC, alors le code garde une trace des 30 BTC résiduels. La transaction est marquée
     comme invalide si la sortie créée est supérieure à la sortie dépensée (car cela réduirait la valeur
     résiduelle, peut-être en dessous de zéro).
 
@@ -438,7 +438,7 @@ règles de consensus de Bitcoin._
 
   Ingala fournit plusieurs exemples visuels de combinaisons des opérations ci-dessus. Voici notre
   description textuelle de son exemple "envoyer un montant partiel", qui pourrait être utile pour un
-  [coffre-fort][topic vaults] : une transaction a une entrée (dépensant une sortie) valant 100 BTC et deux
+  [coffre-fort][topic vaults] (vault) : une transaction a une entrée (dépensant une sortie) valant 100 BTC et deux
   sorties, une pour 70 BTC et l'autre pour 30 BTC. CCV est exécuté deux fois lors de la validation de
   la transaction :
 
@@ -492,8 +492,8 @@ règles de consensus de Bitcoin._
   les transactions de 64 octets n'existent pas et devoir utiliser la méthode alternative pour prévenir
   les vulnérabilités de l'arbre de Merkle.
 
-  La seconde objection concernait un changement tardif des idées incluses dans le BIP, qui a été
-  décrit dans un [post][poinsot nsequence] sur Delving Bitcoin par Poinsot. Le changement exige que
+  La seconde objection concernait un changement tardif des idées incluses dans la BIP, qui a été
+  décrite dans un [post][poinsot nsequence] sur Delving Bitcoin par Poinsot. Le changement exige que
   les blocs créés après l'activation du nettoyage du consensus définissent le drapeau rendant
   exécutoire le verrouillage temporel de leur transaction coinbase. Comme précédemment proposé, les
   transactions coinbase dans les blocs post-activation fixeront leur verrouillage temporel à la
@@ -519,11 +519,11 @@ les versions candidates._
 - [LDK v0.1.2][] est une version de cette bibliothèque pour la construction d'applications
   compatibles LN. Elle contient plusieurs améliorations de performance et corrections de bugs.
 
-- [Bitcoin Core 29.0rc3][] est un candidat à la version pour la prochaine version majeure du nœud
+- [Bitcoin Core 29.0rc3][] est une version candidate pour la prochaine version majeure du nœud
   complet prédominant du réseau. Veuillez consulter le [guide de test de la version 29][bcc29 testing
   guide].
 
-- [LND 0.19.0-beta.rc1][] est un candidat à la version pour ce nœud LN populaire. L'une des
+- [LND 0.19.0-beta.rc1][] est une version candidate pour ce nœud LN populaire. L'une des
   principales améliorations qui pourrait probablement nécessiter des tests est le nouveau bumping de
   frais basé sur RBF pour les fermetures coopératives.
 
@@ -537,12 +537,12 @@ repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin In
 inquisition repo], et [BINANAs][binana repo]._
 
 - [Bitcoin Core #31363][] introduit la classe `TxGraph` (voir le [Bulletin #341][news341 pr review]),
-  un modèle léger en mémoire des transactions du mempool qui suit uniquement les taux de frais et les
+  un modèle léger en mémoire, des transactions de la mempool qui suit uniquement les taux de frais et les
   dépendances entre transactions. Il inclut des fonctions de mutation telles que `AddTransaction`,
   `RemoveTransaction`, et `AddDependency`, et des fonctions d'inspection telles que `GetAncestors`,
   `GetCluster`, et `CountDistinctClusters`. `TxGraph` supporte également la mise en scène des
   changements avec des fonctionnalités de validation et d'abandon. Cela fait partie du projet [cluster
-  de mempool][topic cluster mempool] et prépare pour de futures améliorations sur l'éviction du mempool,
+  de mempool][topic cluster mempool] et prépare pour de futures améliorations sur l'éviction de la mempool,
   le traitement de la réorganisation, et la logique de minage consciente des clusters.
 
 - [Bitcoin Core #31278][] déprécie la commande RPC `settxfee` et l'option de démarrage `-paytxfee`,
@@ -556,14 +556,14 @@ inquisition repo], et [BINANAs][binana repo]._
   inclut une `channel_update`, Eclair le remplace par `TemporaryNodeFailure` pour éviter de révéler
   des détails sur [les canaux non annoncés][topic unannounced channels]. Pour [les routes
   aveuglées][topic rv routing] impliquant d'autres nœuds, Eclair continue de remplacer les échecs par
-  `invalidOnionBlinding`. Tous les messages d'échec sont cryptés en utilisant l'`blinded_node_id` du
+  `invalidOnionBlinding`. Tous les messages d'échec sont cryptés en utilisant le `blinded_node_id` du
   portefeuille.
 
 - [Eclair #2963][] implémente le relais de paquets un-parent-un-enfant (1p1c) [package relay][topic
   package relay] en appelant la commande RPC `submitpackage` de Bitcoin Core lors des fermetures
   forcées de canaux pour diffuser à la fois la transaction d'engagement et son ancre ensemble. Cela
   permet aux transactions d'engagement de se propager même si leur taux de frais est inférieur au
-  minimum du mempool, mais nécessite de se connecter à des pairs exécutant Bitcoin Core 28.0 ou
+  minimum de la mempool, mais nécessite de se connecter à des pairs exécutant Bitcoin Core 28.0 ou
   ultérieur. Ce changement élimine le besoin de définir dynamiquement le taux de frais des
   transactions d'engagement et assure que les fermetures forcées ne restent pas bloquées lorsque les
   nœuds ne sont pas d'accord sur le taux de frais actuel.
