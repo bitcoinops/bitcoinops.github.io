@@ -142,15 +142,33 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [LDK #2256][] and [#3709][ldk #3709] Attributable failures
+- [LDK #2256][] and [LDK #3709][] improve attributable failures (see
+  Newsletter [#224][news224 failures]) as specified in [BOLTs #1044][] by adding
+  an optional `attribution_data` field to the `UpdateFailHTLC` struct and
+  introducing the `AttributionData` struct. In this protocol, each forwarding
+  node appends to the failure message a `hop_payload` flag, a duration field
+  that records how long the node held the HTLC, and HMACs corresponding to
+  different assumed positions in the route. If a node corrupts the failure
+  message, the mismatch in the HMAC chain helps identify the pair of nodes
+  between which this happened.
 
-- [LND #9669][] multi: downgrade to legacy coop close for taproot channels
+- [LND #9669][] downgrades [simple taproot channels][topic simple taproot
+  channels] to always use the legacy cooperative close flow, even if the
+  [RBF][topic rbf] cooperative close flow (see Newsletter [#347][news347 coop])
+  is configured. Previously, a node that had both features configured would fail
+  to start up.
 
-- [Rust Bitcoin #4302][] Add push_relative_lock_time() and deprecate push_sequence()
+- [Rust Bitcoin #4302][] adds a new `push_relative_lock_time()` method to the
+  script builder API, which takes a relative [timelock][topic timelocks]
+  parameter, and deprecates `push_sequence()` which takes a raw sequence number
+  as a parameter. This change resolves a potential confusion where developers
+  would mistakenly push a raw sequence number in scripts instead of a relative
+  timelock value, which is then checked against an input's sequence number
+  using `CHECKSEQUENCEVERIFY`.
 
 {% include snippets/recap-ad.md when="2025-04-15 15:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="2256,3709,9669,4302" %}
+{% include linkers/issues.md v=2 issues="2256,3709,9669,4302,1044" %}
 [bitcoin core 29.0rc3]: https://bitcoincore.org/bin/bitcoin-core-29.0/
 [bcc29 testing guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/29.0-Release-Candidate-Testing-Guide
 [lnd 0.19.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.0-beta.rc2
@@ -171,3 +189,5 @@ repo], and [BINANAs][binana repo]._
 [core lightning 25.02.1]: https://github.com/ElementsProject/lightning/releases/tag/v25.02.1
 [core lightning 24.11.2]: https://github.com/ElementsProject/lightning/releases/tag/v24.11.2
 [btcpay server 2.1.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.1.0
+[news224 failures]: /en/newsletters/2022/11/02/#ln-routing-failure-attribution
+[news347 coop]: /en/newsletters/2025/03/28/#lnd-8453
