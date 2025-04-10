@@ -96,12 +96,49 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Add Fee rate Forecaster Manager][review club 31664] is a PR by
+[ismaelsadeeq][gh ismaelsadeeq] that upgrades the transaction fee
+forecasting (also called [estimation][topic fee estimation]) logic. It introduces a new
+`ForecasterManager` class to which multiple `Forecaster`s can be
+registered. The existing `CBlockPolicyEstimator` (which only considers
+confirmed transactions) is refactored to become one such forecaster, but
+notably a new `MemPoolForecaster` is introduced. `MemPoolForecaster`
+considers unconfirmed transactions that are in the mempool, and as such
+can react to feerate changes more quickly.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/31405#l-36FIXME"
+  q0="Why is the new system called a “Forecaster” and
+  “ForecasterManager” rather than an “Estimator” and “Fee Estimation
+  Manager”?"
+  a0="The system predicts future outcomes based on current and past
+  data. Unlike an estimator, which approximates present conditions with
+  some randomization, a forecaster projects future events, which aligns
+  with this system’s predictive nature and its output of
+  uncertainty/risk levels."
+  a0link="https://bitcoincore.reviews/31664#l-19"
+
+  q1="Why is `CBlockPolicyEstimator` not modified to hold the mempool
+  reference, similar to the approach in PR #12966? What is the current
+  approach and why is it better than holding a reference to mempool?
+  (Hint: see PR #28368)"
+  a1="`CBlockPolicyEstimator` inherits from `CValidationInterface` and
+  implements its virtual methods `TransactionAddedToMempool`,
+  `TransactionRemovedFromMempool`, and
+  `MempoolTransactionsRemovedForBlock`. This gives
+  `CBlockPolicyEstimator` all the mempool information it needs without
+  being unnecessarily tightly coupled to the mempool via a reference."
+  a1link="https://bitcoincore.reviews/31664#l-26"
+
+  q2="What are the trade-offs between the new architecture and a direct
+  modification of `CBlockPolicyEstimator`?"
+  a2="The new architecture with a `FeeRateForecasterManager` class to
+  which multiple `Forecaster`s can be registered is a more modular
+  approach which allows for better testing, and enforces a better
+  separation of concerns. It allows easily plugging in new forecasting
+  strategies later on. This comes at the cost of a bit more code to
+  maintain, and potentially confusing users about which estimation
+  method to use."
+  a2link="https://bitcoincore.reviews/31664#l-43"
 %}
 
 ## Releases and release candidates
@@ -191,3 +228,6 @@ repo], and [BINANAs][binana repo]._
 [btcpay server 2.1.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.1.0
 [news224 failures]: /en/newsletters/2022/11/02/#ln-routing-failure-attribution
 [news347 coop]: /en/newsletters/2025/03/28/#lnd-8453
+[review club 31664]: https://bitcoincore.reviews/31664
+[gh ismaelsadeeq]: https://github.com/ismaelsadeeq
+[forecastresult compare]: https://github.com/bitcoin-core-review-club/bitcoin/commit/1e6ce06bf34eb3179f807efbddb0e9bca2d27f28#diff-5baaa59bccb2c7365d516b648dea557eb50e63837de71531dc460dbcc62eb9adR74-R77
