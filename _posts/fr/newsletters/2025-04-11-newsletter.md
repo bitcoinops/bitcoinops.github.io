@@ -187,7 +187,7 @@ Propositions (BIPs)][bips repo], [Lightning BOLTs][bolts repo],[Lightning BLIPs]
 [somsen ssgist]: https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd
 [falbesoner ss2]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/7
 [assumevalid]: https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks
-[cryptographic accumulator]: https://en.wikipedia.org/wiki/Accumulator_(cryptography)
+[accumulateur cryptographique]: https://en.wikipedia.org/wiki/Accumulator_(cryptography)
 [news123 muhash]: /en/newsletters/2020/11/11/#bitcoin-core-pr-review-club
 [muhash]: https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf
 [generalized birthday attack]: https://www.iacr.org/archive/crypto2002/24420288/24420288.pdf
