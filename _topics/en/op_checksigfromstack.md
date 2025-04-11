@@ -64,6 +64,21 @@ optech_mentions:
   - title: "BIP348 merged with specification of OP_CSFS"
     url: /en/newsletters/2024/12/13/#bips-1535
 
+  - title: "Criticism of CTV motivation in a joint activation with CSFS"
+    url: /en/newsletters/2025/04/04/#criticism-of-ctv-motivation
+
+  - title: "Summary and criticism of CTV + CSFS benefits for discreet log contracts (DLCs)"
+    url: /en/newsletters/2025/04/04/#dlcs
+
+  - title: "Summary and criticism of CTV + CSFS benefits for accountable computing contracts"
+    url: /en/newsletters/2025/04/04/#accountable-computing-contracts
+
+  - title: "Summary and criticism of CTV + CSFS benefits for LN-Symmetry"
+    url: /en/newsletters/2025/04/04/#ln-symmetry
+
+  - title: "Summary and criticism of CTV + CSFS benefits for Ark"
+    url: /en/newsletters/2025/04/04/#ark
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
