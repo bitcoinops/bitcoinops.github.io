@@ -47,7 +47,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
     gefährdet sind, nach einer hinreichenden Migrationsfrist zu vernichten.
     Zu seinen Argumenten zählen:
 
-    - *Argument der gemeinsamen Präferenz:*
+    - *Argument der Präferenz der Allgemeinheit:*
       Er geht davon aus, dass die Mehrheit es vorziehen würde, ihr Geld zu vernichten,
       statt es einem Angreifer mit schnellem Quantencomputer zu überlassen – zumal dieser
       zu den wenigen privilegierten Personen gehören würde, die frühzeitig Zugang zu
