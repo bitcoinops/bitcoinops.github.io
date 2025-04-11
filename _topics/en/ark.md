@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Bark implementation of Ark is now available on signet"
     url: /en/newsletters/2025/03/21/#bark-launches-on-signet
 
+  - title: "Summary and criticism of CTV + CSFS benefits for Ark"
+    url: /en/newsletters/2025/04/04/#ark
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools

@@ -134,6 +134,9 @@ optech_mentions:
   - title: "Bitcoin Core #31397 improves the orphan resolution process, making 1p1c package relay safer"
     url: /en/newsletters/2025/01/24/#bitcoin-core-31397
 
+  - title: "Eclair #2963 implements one-parent-one-child (1p1c) package relay"
+    url: /en/newsletters/2025/04/04/#eclair-2963
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping
