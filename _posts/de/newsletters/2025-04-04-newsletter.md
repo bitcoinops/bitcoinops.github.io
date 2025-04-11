@@ -231,9 +231,9 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       vollständigen Aufzählung untergräbt. Er bat um eine Aktualisierung der
       CTV- oder CSFS-BIPs, um Anwendungsfälle zu beschreiben, die "irgendwie
       sowohl beunruhigend sind als auch nach Kombination von CTV und CSFS nicht möglich bleiben".
-      Dies könnte in der jüngsten Aktualisierung von BIP119 geschehen sein, die eine
-      "self-reproduzierende Automaten (umgangssprachlich als SpookChains bezeichnet)"
-      beschreibt, die mit [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] möglich wären,
+      Dies könnte in der jüngsten Aktualisierung von BIP119 geschehen sein, die einen
+      "selbstreplizierenden Automaten (umgangssprachlich als SpookChains bezeichnet)"
+      beschreibt, der mit [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] möglich wäre,
       aber nicht mit CTV+CSFS.
 
     - *Werkzeuge für CTV und CSFS:* Towns [notierte][towns ctvmot],
