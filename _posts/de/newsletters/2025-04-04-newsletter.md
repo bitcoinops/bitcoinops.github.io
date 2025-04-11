@@ -56,7 +56,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
     - *Argument des kollektiven Schadens:*
       Viele der gestohlenen Bitcoins wären entweder dauerhaft
       verloren oder für den langfristigen Halter vorgesehen.
-      Durch einen schnellen Verbrauch der gestohlenen Coins
+      Durch einen schnellen Gebrauch der gestohlenen Coins
       könnte die Kaufkraft der verbleibenden Bitcoins
       sinken, was unter anderem die Miner-Einnahmen reduziert
       und die Netzwerksicherheit beeinträchtigt.
