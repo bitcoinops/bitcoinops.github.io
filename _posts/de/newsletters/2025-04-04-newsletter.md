@@ -255,7 +255,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       weniger riskant sein könnte als eine kleine Änderung des aktuellen Systems,
       die schwer zu verstehen ist. Der Entwickler Moonsettler [argumentiert][moonsettler express],
       dass die schrittweise Einführung neuer Funktionen in das
-      Bitcoin-Skript es sicherer macht, weitere Funktionen hinzuzufügen,
+      Bitcoin-Script es sicherer macht, weitere Funktionen hinzuzufügen,
       da jede Erhöhung der Ausdrucksfähigkeit es weniger wahrscheinlich macht,
       dass wir auf eine Überraschung stoßen.
 
