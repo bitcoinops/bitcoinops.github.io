@@ -190,7 +190,7 @@ Propositions (BIPs)][bips repo], [Lightning BOLTs][bolts repo],[Lightning BLIPs]
 [accumulateur cryptographique]: https://en.wikipedia.org/wiki/Accumulator_(cryptography)
 [news123 muhash]: /en/newsletters/2020/11/11/#bitcoin-core-pr-review-club
 [muhash]: https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf
-[generalized birthday attack]: https://www.iacr.org/archive/crypto2002/24420288/24420288.pdf
+[attaque d'anniversaire généralisée]: https://www.iacr.org/archive/crypto2002/24420288/24420288.pdf
 [somsen ss1]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/2
 [obeirne ss]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/5
 [somsen ss2]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/6
