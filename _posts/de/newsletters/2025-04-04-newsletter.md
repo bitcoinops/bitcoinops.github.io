@@ -245,7 +245,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       welche Werkzeuge sie verwendet haben. Nadav Ivgi [stelle][ivgi minsc]
       ein Beispiel mit seiner [Minsc][]-Sprache vor und sagte, dass er daran arbeitet,
       Minsc zu verbessern, um solche Dinge einfacher zu machen.
-      Es unterstützt Taproot, CTV, PSBT, Deskriptoren, Miniscript, rohe Skripte,
+      Es unterstützt Taproot, CTV, PSBT, Deskriptoren, Miniscript, pures Script,
       BIP32 und mehr. Allerdings gab er zu, dass viel davon noch nicht dokumentiert ist.
 
     - *Alternativen:* Towns vergleicht CTV+CSFS mit seinem Basic Bitcoin Lisp Language
