@@ -44,7 +44,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
     Jameson Lopp [veröffentlicht][lopp destroy] in der
     Bitcoin-Dev-Mailingliste verschiedene Argumente, die
     dafür sprechen, Bitcoins, die durch [Quantenangriffe][topic quantum resistance]
-    gefährdet sind, nach einer geltenden Migrationsfrist zu vernichten.
+    gefährdet sind, nach einer hinreichenden Migrationsfrist zu vernichten.
     Zu seinen Argumenten zählen:
 
     - *Argument der gemeinsamen Präferenz:*
