@@ -223,7 +223,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       Olaoluwa Osuntokun [verteidigte][osuntokun enum] CTVs
       Motivation in Bezug auf Skripte, die es verwenden,
       die "vollständig aufgezählt" und "ohne dynamischen Zustand" bleiben.
-      Dies scheint ähnlich zu sein wie ein [Argument][rubin enumeration],
+      Dies scheint einem [Argument][rubin enumeration] zu ähneln,
       das der Autor von CTV (Jeremy Rubin) 2022 gemacht hat, als er den
       Typ der pay-to-self-Covenant, den Towns entworfen hat, als "rekursiv,
       aber vollständig aufgezählt" bezeichnete. Towns [entgegnete][towns enum],
