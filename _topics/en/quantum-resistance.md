@@ -64,6 +64,15 @@ optech_mentions:
   - title: "Update on BIP360 pay-to-quantum-resistant-hash (P2QRH)"
     url: /en/newsletters/2025/03/07/#update-on-bip360-pay-to-quantum-resistant-hash-p2qrh
 
+  - title: "Discussion about whether quantum-vulnerable bitcoins should be destroyed to prevent theft"
+    url: /en/newsletters/2025/04/04/#should-vulnerable-bitcoins-be-destroyed
+
+  - title: "Discussion of Guy Fawkes signatures to protect some current bitcoins against quantum theft"
+    url: /en/newsletters/2025/04/04/#securely-proving-utxo-ownership-by-revealing-a-sha256-preimage
+
+  - title: "Draft BIP for destroying quantum-insecure bitcoins"
+    url: /en/newsletters/2025/04/04/#draft-bip-for-destroying-quantum-insecure-bitcoins
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

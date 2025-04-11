@@ -49,6 +49,9 @@ optech_mentions:
   - title: "Utreexo might make it easier to manage a DAG-style blockchain"
     url: /en/newsletters/2025/02/07/#fast-difficulty-adjustment-algorithm-for-a-dag-blockchain
 
+  - title: "SwiftSync faster sync allows parallel block validation, similar to Utreexo"
+    url: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs

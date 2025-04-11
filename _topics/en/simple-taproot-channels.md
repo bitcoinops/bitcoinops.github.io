@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Eclair #3026 adds support for wallets containing P2TR addresses in preparation for taproot channels"
     url: /en/newsletters/2025/03/28/#eclair-3026
 
+  - title: "LND #9669 downgrades simple taproot channels to always use the legacy cooperative close flow"
+    url: /en/newsletters/2025/04/11/#lnd-9669
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
