@@ -53,7 +53,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       zu den wenigen privilegierten Personen gehören würde, die frühzeitig Zugang zu
       Quantencomputern erhalten.
 
-    - *Argument des gemeinsamen Schadens:*
+    - *Argument des kollektiven Schadens:*
       Viele der gestohlenen Bitcoins wären entweder dauerhaft
       verloren oder für den langfristigen Halter vorgesehen.
       Durch einen schnellen Verbrauch der gestohlenen Coins
