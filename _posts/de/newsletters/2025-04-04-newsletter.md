@@ -16,7 +16,7 @@ populärer Bitcoin-Infrastruktur-Software.
 
 ## Nachrichten
 
-- **Lehrreiche und experimentelle Implementierung von secp256k1:**
+- **Lehrreiche Implementierung für Versuchszwecke von secp256k1:**
   Sebastian Falbesoner, Jonas Nick und Tim Ruffing haben in der
   Bitcoin-Dev-Mailingliste [bekanntgegeben][fnr secp], dass eine
   Python-[Implementierung][secp256k1lab] verschiedener Funktionen
