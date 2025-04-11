@@ -230,7 +230,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       dass die Hinzufügung von CSFS den angeblichen Vorteil der
       vollständigen Aufzählung untergräbt. Er bat um eine Aktualisierung der
       CTV- oder CSFS-BIPs, um Anwendungsfälle zu beschreiben, die "irgendwie
-      sowohl beunruhigend als auch durch die Kombination von CTV und CSFS verhindert werden".
+      sowohl beunruhigend sind als auch nach Kombination von CTV und CSFS nicht möglich bleiben".
       Dies könnte in der jüngsten Aktualisierung von BIP119 geschehen sein, die eine
       "self-reproduzierende Automaten (umgangssprachlich als SpookChains bezeichnet)"
       beschreibt, die mit [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] möglich wären,
