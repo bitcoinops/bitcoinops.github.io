@@ -62,6 +62,9 @@ optech_mentions:
   - title: "Updated LND sweeper subsystem using multiple feerate estimation methods"
     url: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
 
+  - title: "PR Review Club about improved feerate forecasting for Bitcoin Core"
+    url: /en/newsletters/2025/04/11/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coin selection
