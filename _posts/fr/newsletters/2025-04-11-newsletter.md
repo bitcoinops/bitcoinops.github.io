@@ -9,7 +9,7 @@ lang: fr
 ---
 Le bulletin de cette semaine décrit une proposition pour accélérer le téléchargement initial des
 blocs de Bitcoin Core, avec une implémentation de preuve de concept qui montre une accélération
-d'environ 5x par rapport aux paramètres par défaut de Bitcoin Core. Sont également inclus nos
+d'environ cinq fois par rapport aux paramètres par défaut de Bitcoin Core. Sont également inclus nos
 sections régulières résumant une réunion du Bitcoin Core PR Review Club, annoncant des mises à jour
 et des versions candidates, et décrivant les changements notables dans les projets
 d'infrastructure Bitcoin populaires.
@@ -19,9 +19,9 @@ d'infrastructure Bitcoin populaires.
 - **Accélération SwiftSync pour le téléchargement initial des blocs :** Sebastian Falbesoner a
   [posté][falbesoner ss1] sur Delving Bitcoin une démonstration d'implémentation et les résultats de
   performance pour _SwiftSync_, une idée [proposée][somsen ssgist] par Ruben Somsen lors d'une récente
-  réunion de développeurs de Bitcoin Core et plus tard [postée][somsen ssml] sur la liste de
+  réunion de développeurs de Bitcoin Core et plus tard [publiée][somsen ssml] sur la liste de
   diffusion. À l'heure actuelle, les [résultats les plus récents][falbesoner ss2] publiés dans le fil
-  montrent une accélération de 5,28x du _téléchargement initial des blocs_ (IBD) par rapport aux
+  montrent une accélération de 5,28x du _téléchargement initial des blocs_ (IBD pour _initial block download_) par rapport aux
   paramètres IBD par défaut de Bitcoin Core (qui utilise [assumevalid][] mais pas [assumeUTXO][topic
   assumeutxo]), réduisant le temps de synchronisation initial d'environ 41 heures à environ 8 heures.
 
@@ -63,9 +63,9 @@ d'infrastructure Bitcoin populaires.
 
   James O'Beirne [a demandé][obeirne ss] si SwiftSync est utile étant donné que assumeUTXO offre une
   accélération encore plus grande. Somsen [a répondu][somsen ss2] que SwiftSync accélère la validation
-  en arrière-plan d'assumeUTXO, ce qui en fait un bel ajout pour les utilisateurs d'assumeUTXO. Il
+  en arrière-plan d'assumeUTXO, ce qui en fait un ajout intéressant pour les utilisateurs d'assumeUTXO. Il
   note en outre que quiconque télécharge les données requises d'assumeUTXO (la base de données UTXO à
-  un bloc particulier) n'a pas besoin d'un fichier d'indices séparé s'ils utilisent ce même bloc comme
+  un bloc particulier) n'a pas besoin d'un fichier d'indices séparé s'il utilise ce même bloc comme
   bloc terminal SwiftSync.
 
   Vojtěch Strnad, 0xB10C, et Somsen [ont discuté][b10c ss] de la compression des données du fichier
@@ -107,7 +107,7 @@ de taux de frais.
   `TransactionRemovedFromMempool`, et
   `MempoolTransactionsRemovedForBlock`. Cela donne à
   `CBlockPolicyEstimator` toutes les informations mempool dont il a besoin sans
-  être inutilement étroitement couplé au mempool via une référence."
+  être inutilement couplé au mempool via une référence."
   a1link="https://bitcoincore.reviews/31664#l-26"
 
   q2="Quels sont les compromis entre la nouvelle architecture et une
@@ -170,8 +170,8 @@ Propositions (BIPs)][bips repo], [Lightning BOLTs][bolts repo],[Lightning BLIPs]
   deux fonctionnalités configurées échouerait à démarrer.
 
 - [Rust Bitcoin #4302][] ajoute une nouvelle méthode `push_relative_lock_time()` à l'API du
-  constructeur de script, qui prend un paramètre de [verrouillage temporel relatif][topic timelocks],
-  et déprécie `push_sequence()` qui prend un numéro de séquence brut comme paramètre. Ce changement
+  générateur de script, qui prend un paramètre de [verrouillage temporel relatif][topic timelocks],
+  et rend obsolète `push_sequence()` qui prend un numéro de séquence brut comme paramètre. Ce changement
   résout une confusion potentielle où les développeurs pousseraient par erreur un numéro de séquence
   brut dans les scripts au lieu d'une valeur de verrouillage temporel relatif, qui est ensuite
   vérifiée contre le numéro de séquence d'une entrée en utilisant `CHECKSEQUENCEVERIFY`.
