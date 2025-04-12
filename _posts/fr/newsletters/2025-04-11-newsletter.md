@@ -149,7 +149,7 @@ Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à
 
 ## Changements de code et de documentation notables
 
-_Changements récents notables dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning
+_Changements récents dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning
 repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1 repo],
 [Interface de Portefeuille Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Amélioration de Bitcoin]
