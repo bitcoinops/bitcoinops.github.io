@@ -200,7 +200,7 @@ Propositions (BIPs)][bips repo], [Lightning BOLTs][bolts repo],[Lightning BLIPs]
 [core lightning 24.11.2]: https://github.com/ElementsProject/lightning/releases/tag/v24.11.2
 [btcpay server 2.1.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.1.0
 [news224 failures]: /fr/newsletters/2022/11/02/#attribution-de-l-echec-du-routage-ln
-[news347 coop]: /fr/newsletters/2025/03/28/#lnd-8453
+[news347 coop]: /en/newsletters/2025/03/28/#lnd-8453
 [review club 31664]: https://bitcoincore.reviews/31664
 [gh ismaelsadeeq]: https://github.com/ismaelsadeeq
 [forecastresult compare]: https://github.com/bitcoin-core-review-club/bitcoin/commit/1e6ce06bf34eb3179f807efbddb0e9bca2d27f28#diff-5baaa59bccb2c7365d516b648dea557eb50e63837de71531dc460dbcc62eb9adR74-R77
