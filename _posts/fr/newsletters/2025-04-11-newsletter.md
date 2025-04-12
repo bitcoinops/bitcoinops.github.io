@@ -56,7 +56,7 @@ d'infrastructure Bitcoin populaires.
 
   La discussion a examiné plusieurs aspects de la proposition. L'implémentation originale de
   Falbesoner utilisait l'accumulateur [MuHash][] (voir le [Bulletin #123][news123 muhash]), qui [a été
-  montré][wuille muhash] résistant à l'[attaque d'anniversaire généralisée][]. Somsen [a
+  montré][wuille muhash] résistant à l'[attaque d'anniversaire généralisée][attaque anniversaire]. Somsen [a
   décrit][somsen ss1] une approche alternative qui pourrait être plus rapide. Falbesoner s'est
   interrogé sur la sécurité cryptographique de l'approche alternative mais, puisqu'elle était simple,
   l'a quand même mise en œuvre et a trouvé qu'elle accélérait davantage SwiftSync.
@@ -190,7 +190,7 @@ Propositions (BIPs)][bips repo], [Lightning BOLTs][bolts repo],[Lightning BLIPs]
 [accumulateur cryptographique]: https://en.wikipedia.org/wiki/Accumulator_(cryptography)
 [news123 muhash]: /en/newsletters/2020/11/11/#bitcoin-core-pr-review-club
 [muhash]: https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf
-[attaque d anniversaire generalisee]: https://www.iacr.org/archive/crypto2002/24420288/24420288.pdf
+[attaque anniversaire]: https://www.iacr.org/archive/crypto2002/24420288/24420288.pdf
 [somsen ss1]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/2
 [obeirne ss]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/5
 [somsen ss2]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/6
