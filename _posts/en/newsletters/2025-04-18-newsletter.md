@@ -22,7 +22,48 @@ details from our story last week about SwiftSync.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Bitcoin Knots version 28.1.knots20250305 released:**
+  This Bitcoin Knots [release][knots 28.1] includes support for [signing
+  messages][topic generic signmessage] for a segwit or taproot address as well
+  as verifying [BIP137][], [BIP322][], and Electrum signed messages, among other
+  changes.
+
+- **PSBTv2 explorer announced:**
+  [Bitcoin PSBTv2 Explorer][bip370 website] inspects [PSBTs][topic psbt] encoded
+  using the version 2 data format.
+
+- **LNbits v1.0.0 released:**
+  The [LNbits][lnbits github] software provides accounting and additional
+  functionality on top of a variety of underlying Lightning Network wallets.
+
+- **The Mempool Open Source Project® v3.2.0 released:**
+  The [v3.2.0 release][mempool 3.2.0] adds support for [v3 transactions][topic
+  v3 transaction relay], anchor outputs, broadcasting of [1P1C packages][topic
+  package relay], visualizing Stratum mining pool jobs, and other features.
+
+- **Coinbase MPC library released:**
+  The [Coinbase MPC][coinbase mpc blog] project is a [C++ library][coinbase mpc
+  github] for securing keys for use in multi-party computation (MPC) schemes, including
+  a custom secp256k1 implementation.
+
+- **Lightning Network liquidity tool released:**
+  [Hydrus][hydrus github] uses the state of LN network, including past
+  performance, to automatically open and close Lightning channels for LND. It
+  also supports [batching][topic payment batching].
+
+- **Versioned Storage Service announced:**
+  The [Versioned Storage Service (VSS) framework][vss blog] is an open-source
+  cloud storage solution for Lightning and Bitcoin wallet state data focusing on
+  non-custodial wallets.
+
+- **Fuzz testing tool for Bitcoin nodes:**
+  [Fuzzamoto][fuzzamoto github] is a framework for using fuzz testing to find
+  bugs in different Bitcoin protocol implementations through external
+  interfaces like P2P and RPC.
+
+- **Bitcoin Control Board components open-sourced:**
+  Braiins [announced][braiins tweet] the open-source availability of some of the
+  hardware and software components of their BCB100 mining control board.
 
 ## Releases and release candidates
 
@@ -121,3 +162,13 @@ reporting them.
 [sources]: /en/internal/sources/
 [news349 ss]: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
 [bcc rn]: https://bitcoincore.org/en/releases/29.0/
+[knots 28.1]: https://github.com/bitcoinknots/bitcoin/releases/tag/v28.1.knots20250305
+[bip370 website]: https://bip370.org/
+[lnbits github]: https://github.com/lnbits/lnbits
+[mempool 3.2.0]: https://github.com/mempool/mempool/releases/tag/v3.2.0
+[coinbase mpc blog]: https://www.coinbase.com/blog/innovation-matters-coinbase-breaks-new-ground-with-mpc-security-technology
+[coinbase mpc github]: https://github.com/coinbase/cb-mpc
+[hydrus github]: https://github.com/aftermath2/hydrus
+[vss blog]: https://lightningdevkit.org/blog/announcing-vss/
+[fuzzamoto github]: https://github.com/dergoegge/fuzzamoto
+[braiins tweet]: https://x.com/BraiinsMining/status/1904601547855573458
