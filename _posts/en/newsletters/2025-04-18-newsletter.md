@@ -99,9 +99,18 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [LDK #3593][] Implement a way to do BOLT 12 Proof of Payment
+- [LDK #3593][] allows users to provide a [BOLT12][topic offers] proof of
+  payment by including the BOLT12 invoice in the `PaymentSent` event upon
+  payment completion. This is accomplished by adding the `bolt12` field to the
+  `PendingOutboundPayment::Retryable` enum, which can then be attached to the
+  `PaymentSent` event.
 
-- [BOLTs #1242][] Make payment_secret mandatory and ASSUMED
+- [BOLTs #1242][] makes the [payment secret][topic payment secrets] mandatory for
+  [BOLT11][] invoice payments by requiring readers (payers) to fail a payment if
+  the `s` (payment secret) field is absent. Previously, the specification only
+  made it mandatory for writers (receivers), and readers could ignore `s` fields
+  with incorrect lengths (see Newsletter [#163][news163 secret]). This PR also
+  updates the payment secret feature to `ASSUMED` status in [BOLT9][].
 
 ## Correction
 
@@ -172,3 +181,4 @@ reporting them.
 [vss blog]: https://lightningdevkit.org/blog/announcing-vss/
 [fuzzamoto github]: https://github.com/dergoegge/fuzzamoto
 [braiins tweet]: https://x.com/BraiinsMining/status/1904601547855573458
+[news163 secret]: /en/newsletters/2021/08/25/#bolts-887
