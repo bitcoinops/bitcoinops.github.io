@@ -76,6 +76,9 @@ optech_mentions:
   - title: "Sparrow 1.7.8 adds support for BIP322 generic signmessage"
     url: /en/newsletters/2023/08/23/#sparrow-1-7-8-released
 
+  - title: "Bitcoin Knots 28.1 adds support for BIP322 generic signmessage"
+    url: /en/newsletters/2025/04/18/
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

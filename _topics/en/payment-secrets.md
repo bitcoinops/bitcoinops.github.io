@@ -60,6 +60,9 @@ optech_mentions:
   - title: "LDK #2156 adds support for multipath keysend payments, which require payment secrets"
     url: /en/newsletters/2023/06/21/#ldk-2156
 
+  - title: "BOLTs #1242 makes payment secrets mandatory (and assumed to be enabled) for all BOLT11 invoices"
+    url: /en/newsletters/2025/04/18/#bolts-1242
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simplified multipath payments
