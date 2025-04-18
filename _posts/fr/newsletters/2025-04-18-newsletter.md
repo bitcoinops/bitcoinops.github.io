@@ -7,11 +7,11 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine inclut nos sections régulières décrivant les récents
+Le bulletin de cette semaine comporte nos sections régulières décrivant les récents
 changements apportés aux services et aux logiciels clients, les annonces de mises à jour
 et des versions candidates, ainsi que les descriptions des changements notables apportés
-aux logiciels d'infrastructure Bitcoin populaires. Un correctif concernant certains
-détails de notre histoire de la semaine dernière à propos de SwiftSync est également inclus.
+aux logiciels populaires d'infrastructure Bitcoin. Un correctif concernant certains
+détails de notre article de la semaine dernière sur SwiftSync est également inclus.
 
 ## Nouvelles
 
@@ -23,7 +23,7 @@ détails de notre histoire de la semaine dernière à propos de SwiftSync est é
 portefeuilles Bitcoin et des services.*
 
 - **Version 28.1.knots20250305 de Bitcoin Knots publiée :**
-  Cette version de Bitcoin Knots [release][knots 28.1] inclut le support pour [signer
+  Cette version de Bitcoin Knots [release][knots 28.1] inclut la prise en charge de la [signature
   des messages][topic generic signmessage] pour une adresse segwit ou taproot ainsi
   que la vérification des messages signés [BIP137][], [BIP322][], et Electrum, parmi d'autres
   changements.
@@ -37,17 +37,17 @@ portefeuilles Bitcoin et des services.*
   sur une variété de portefeuilles sous-jacents du Lightning Network.
 
 - **Le projet Open Source Mempool® v3.2.0 publié :**
-  La [version v3.2.0][mempool 3.2.0] ajoute le support pour les [transactions v3][topic
+  La [version v3.2.0][mempool 3.2.0] prend en charge les [transactions v3][topic
   v3 transaction relay], les sorties d'ancrage, la diffusion de [paquets 1P1C][topic
   package relay], la visualisation des jobs de pool de minage Stratum, et d'autres fonctionnalités.
 
 - **Bibliothèque MPC de Coinbase publiée :**
   Le projet [Coinbase MPC][coinbase mpc blog] est une [bibliothèque C++][coinbase mpc
-  github] pour sécuriser les clés utilisées dans les schémas de calcul multipartite (MPC), incluant
+  github] destinée à sécuriser les clés utilisées dans les schémas de calcul multipartite (MPC), incluant
   une implémentation personnalisée de secp256k1.
 
 - **Outil de liquidité pour le Lightning Network publié :**
-  [Hydrus][hydrus github] utilise l'état du réseau LN, incluant les performances passées,
+  [Hydrus][hydrus github] utilise l'état du réseau LN, y compris les performances passées,
   pour ouvrir et fermer automatiquement des canaux Lightning pour LND. Il
   supporte également le [regroupement][topic payment batching].
 
@@ -82,7 +82,7 @@ les candidats à la version finale._
   accidentellement entraîner une perte de revenus si les timewarps sont interdits dans un [soft fork
   futur][topic consensus cleanup], et une migration du système de construction d'autotools à cmake.
 
-- [LND 0.19.0-beta.rc2][] est un candidat à la version pour ce nœud LN populaire. L'une des
+- [LND 0.19.0-beta.rc2][] est un candidat à la publication pour ce nœud LN populaire. L'une des
   principales améliorations qui pourrait probablement nécessiter des tests est le nouveau bumping de
   frais basé sur RBF pour les fermetures coopératives.
 
@@ -101,7 +101,7 @@ inquisition repo], et [BINANAs][binana repo]._
   peut ensuite être attaché à l'événement `PaymentSent`.
 
 - [BOLTs #1242][] rend le [secret de paiement][topic payment secrets] obligatoire pour les paiements
-  de factures [BOLT11][] en exigeant des lecteurs (payeurs) d'échouer un paiement si le champ `s`
+  [BOLT11][] en exigeant des lecteurs (payeurs) de mettre en échec un paiement si le champ `s`
   (secret de paiement) est absent. Auparavant, la spécification le rendait obligatoire uniquement pour
   les émetteurs (receveurs), et les lecteurs pouvaient ignorer les champs `s` avec des longueurs
   incorrectes (voir le Bulletin [#163][news163 secret]). Cette PR met également à jour la
@@ -138,7 +138,7 @@ erreurs et déclarations confuses.
   bloc (ou une série de blocs pour l'efficacité) en commençant par un engagement sur l'ensemble des
   UTXO, en effectuant tous les changements sur l'ensemble des UTXO, et en produisant un engagement sur
   le nouvel ensemble des UTXO. Cela permet de diviser le travail de validation en fonction du nombre
-  de threads CPU ; par exemple : un thread valide les premiers mille blocs et un autre thread valide
+  de fils d'exécution CPU ; par exemple : un fils d'exécution valide les premiers mille blocs et un autre fils d'exécution valide
   les mille blocs suivants. À la fin de la validation, le nœud vérifie que l'engagement à la fin des
   premiers mille blocs est le même que l'engagement avec lequel il a commencé pour les mille blocs
   suivants.
