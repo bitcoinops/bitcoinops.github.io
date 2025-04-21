@@ -153,13 +153,13 @@ _在这个月度部分，我们总结了关于更改比特币共识规则的提�
 
 - **<!--draft-bip-published-for-consensus-cleanup-->****共识清理的 BIP 草案发布：** Antoine Poinsot 在 Bitcoin-Dev 邮件列表上[发布][poinsot cleanup]了他为[共识清理][topic consensus cleanup]软分叉提案编写的[BIP 草案][cleanup bip]链接。它包括几个修复：
 
-  - 修复两种不同的[时间扭曲][topic time warp]攻击，这些攻击可能被大多数算力用来加快速率产生区块。
+  * 修复两种不同的[时间扭曲][topic time warp]攻击，这些攻击可能被大多数算力用来加快速率产生区块。
 
-  - 对传统交易的签名操作（sigops）执行限制，以防止创建验证过慢的区块。
+  * 对传统交易的签名操作（sigops）执行限制，以防止创建验证过慢的区块。
 
-  - 修复 [BIP34][] coinbase 交易唯一性，应该完全防止[重复交易][topic duplicate transactions]。
+  * 修复 [BIP34][] coinbase 交易唯一性，应该完全防止[重复交易][topic duplicate transactions]。
 
-  - 使未来的 64 字节交易（使用剥离大小计算）无效，以防止一种[默克尔树漏洞][topic merkle tree vulnerabilities]。
+  * 使未来的 64 字节交易（使用剥离大小计算）无效，以防止一种[默克尔树漏洞][topic merkle tree vulnerabilities]。
 
   技术回复对提案的所有部分都表示赞同，除了两个部分。第一个反对意见，在几个回复中提出，是关于使 64 字节交易无效。这些回复重申了先前的批评（见[周报 #319][news319 64byte]）。存在一种解决默克尔树漏洞的替代方法。该方法对轻量级（SPV）钱包使用相对容易，但可能对智能合约中的 SPV 验证带来挑战，例如比特币和其他系统之间的 _桥_。Sjors Provoost [建议][provoost bridge]实现链上可执行桥的人提供代码，说明能够假设 64 字节交易不存在与必须使用替代方法防止默克尔树漏洞之间的区别。
 
