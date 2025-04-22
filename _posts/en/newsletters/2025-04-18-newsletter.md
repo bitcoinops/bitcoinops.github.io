@@ -26,44 +26,44 @@ wallets and services.*
   This Bitcoin Knots [release][knots 28.1] includes support for [signing
   messages][topic generic signmessage] for a segwit or taproot address as well
   as verifying [BIP137][], [BIP322][], and Electrum signed messages, among other
-  changes.
+  changes. {% assign timestamp="11:26" %}
 
 - **PSBTv2 explorer announced:**
   [Bitcoin PSBTv2 Explorer][bip370 website] inspects [PSBTs][topic psbt] encoded
-  using the version 2 data format.
+  using the version 2 data format. {% assign timestamp="13:51" %}
 
 - **LNbits v1.0.0 released:**
   The [LNbits][lnbits github] software provides accounting and additional
-  functionality on top of a variety of underlying Lightning Network wallets.
+  functionality on top of a variety of underlying Lightning Network wallets. {% assign timestamp="14:38" %}
 
 - **The Mempool Open Source Project® v3.2.0 released:**
   The [v3.2.0 release][mempool 3.2.0] adds support for [v3 transactions][topic
   v3 transaction relay], anchor outputs, broadcasting of [1P1C packages][topic
-  package relay], visualizing Stratum mining pool jobs, and other features.
+  package relay], visualizing Stratum mining pool jobs, and other features. {% assign timestamp="15:22" %}
 
 - **Coinbase MPC library released:**
   The [Coinbase MPC][coinbase mpc blog] project is a [C++ library][coinbase mpc
   github] for securing keys for use in multi-party computation (MPC) schemes, including
-  a custom secp256k1 implementation.
+  a custom secp256k1 implementation. {% assign timestamp="17:25" %}
 
 - **Lightning Network liquidity tool released:**
   [Hydrus][hydrus github] uses the state of LN network, including past
   performance, to automatically open and close Lightning channels for LND. It
-  also supports [batching][topic payment batching].
+  also supports [batching][topic payment batching]. {% assign timestamp="21:20" %}
 
 - **Versioned Storage Service announced:**
   The [Versioned Storage Service (VSS) framework][vss blog] is an open-source
   cloud storage solution for Lightning and Bitcoin wallet state data focusing on
-  non-custodial wallets.
+  non-custodial wallets. {% assign timestamp="22:25" %}
 
 - **Fuzz testing tool for Bitcoin nodes:**
   [Fuzzamoto][fuzzamoto github] is a framework for using fuzz testing to find
   bugs in different Bitcoin protocol implementations through external
-  interfaces like P2P and RPC.
+  interfaces like P2P and RPC. {% assign timestamp="1:17" %}
 
 - **Bitcoin Control Board components open-sourced:**
   Braiins [announced][braiins tweet] the open-source availability of some of the
-  hardware and software components of their BCB100 mining control board.
+  hardware and software components of their BCB100 mining control board. {% assign timestamp="23:50" %}
 
 ## Releases and release candidates
 
@@ -82,11 +82,11 @@ release candidates._
   revenue), improvements in avoiding accidental [timewarps][topic
   time warp] for miners that might accidentally result in revenue loss
   if timewarps are forbidden in a [future soft fork][topic consensus
-  cleanup], and a migration of the build system from autotools to cmake.
+  cleanup], and a migration of the build system from autotools to cmake. {% assign timestamp="25:13" %}
 
 - [LND 0.19.0-beta.rc2][] is a release candidate for this popular LN
   node.  One of the major improvements that could probably use testing
-  is the new RBF-based fee bumping for cooperative closes.
+  is the new RBF-based fee bumping for cooperative closes. {% assign timestamp="34:41" %}
 
 ## Notable code and documentation changes
 
@@ -103,14 +103,14 @@ repo], and [BINANAs][binana repo]._
   payment by including the BOLT12 invoice in the `PaymentSent` event upon
   payment completion. This is accomplished by adding the `bolt12` field to the
   `PendingOutboundPayment::Retryable` enum, which can then be attached to the
-  `PaymentSent` event.
+  `PaymentSent` event. {% assign timestamp="35:04" %}
 
 - [BOLTs #1242][] makes the [payment secret][topic payment secrets] mandatory for
   [BOLT11][] invoice payments by requiring readers (payers) to fail a payment if
   the `s` (payment secret) field is absent. Previously, the specification only
   made it mandatory for writers (receivers), and readers could ignore `s` fields
   with incorrect lengths (see Newsletter [#163][news163 secret]). This PR also
-  updates the payment secret feature to `ASSUMED` status in [BOLT9][].
+  updates the payment secret feature to `ASSUMED` status in [BOLT9][]. {% assign timestamp="35:57" %}
 
 ## Correction
 
@@ -160,7 +160,7 @@ several errors and confusing statements.
   which is what gets checked at the end of SwiftSync validation.
 
 We apologize to our readers for our mistakes and thank Ruben Somsen for
-reporting them.
+reporting them. {% assign timestamp="37:38" %}
 
 {% include snippets/recap-ad.md when="2025-04-22 15:30" %}
 {% include references.md %}
