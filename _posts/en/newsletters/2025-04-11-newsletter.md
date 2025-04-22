@@ -87,7 +87,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
   the hint file data, with an expected savings of about 75%, bringing the
   test hints file (for block 850,900) down to about 88 MB.
 
-  Discussion was ongoing at the time of writing.
+  Discussion was ongoing at the time of writing. {% assign timestamp="0:34" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -141,6 +141,8 @@ can react to feerate changes more quickly.
   a2link="https://bitcoincore.reviews/31664#l-43"
 %}
 
+{% assign timestamp="29:33" %}
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -148,25 +150,25 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [Core Lightning 25.02.1][] is a maintenance release for the current
-  major version of this popular LN node that includes several bug fixes.
+  major version of this popular LN node that includes several bug fixes. {% assign timestamp="46:54" %}
 
 - [Core Lightning 24.11.2][] is a maintenance release for a prior major
   version of this popular LN node.  It includes several bug fixes, some
-  of them the same bug fixes that were released in version 25.02.1.
+  of them the same bug fixes that were released in version 25.02.1. {% assign timestamp="47:03" %}
 
 - [BTCPay Server 2.1.0][] is a major release of this self-hosted payment
   processing software.  It includes breaking changes for users of some
   altcoins, improvements for [RBF][topic rbf] and [CPFP][topic cpfp] fee
   bumping, and a better flow for multisig when all signers are using
-  BTCPay Server.
+  BTCPay Server. {% assign timestamp="48:14" %}
 
 - [Bitcoin Core 29.0rc3][] is a release candidate for the next major
   version of the network's predominate full node.  Please see the
-  [version 29 testing guide][bcc29 testing guide].
+  [version 29 testing guide][bcc29 testing guide]. {% assign timestamp="49:25" %}
 
 - [LND 0.19.0-beta.rc2][] is a release candidate for this popular LN
   node.  One of the major improvements that could probably use testing
-  is the new RBF-based fee bumping for cooperative closes.
+  is the new RBF-based fee bumping for cooperative closes. {% assign timestamp="51:21" %}
 
 ## Notable code and documentation changes
 
@@ -187,13 +189,13 @@ repo], and [BINANAs][binana repo]._
   that records how long the node held the HTLC, and HMACs corresponding to
   different assumed positions in the route. If a node corrupts the failure
   message, the mismatch in the HMAC chain helps identify the pair of nodes
-  between which this happened.
+  between which this happened. {% assign timestamp="53:52" %}
 
 - [LND #9669][] downgrades [simple taproot channels][topic simple taproot
   channels] to always use the legacy cooperative close flow, even if the
   [RBF][topic rbf] cooperative close flow (see Newsletter [#347][news347 coop])
   is configured. Previously, a node that had both features configured would fail
-  to start up.
+  to start up. {% assign timestamp="56:16" %}
 
 - [Rust Bitcoin #4302][] adds a new `push_relative_lock_time()` method to the
   script builder API, which takes a relative [timelock][topic timelocks]
@@ -201,7 +203,7 @@ repo], and [BINANAs][binana repo]._
   as a parameter. This change resolves a potential confusion where developers
   would mistakenly push a raw sequence number in scripts instead of a relative
   timelock value, which is then checked against an input's sequence number
-  using `CHECKSEQUENCEVERIFY`.
+  using `CHECKSEQUENCEVERIFY`. {% assign timestamp="57:24" %}
 
 {% include snippets/recap-ad.md when="2025-04-15 15:30" %}
 {% include references.md %}
