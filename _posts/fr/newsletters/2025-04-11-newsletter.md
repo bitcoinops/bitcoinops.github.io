@@ -80,26 +80,26 @@ d'infrastructure Bitcoin populaires.
 en soulignant certaines des questions et réponses importantes. Cliquez sur une question ci-dessous
 pour voir un résumé de la réponse de la réunion.*
 
-[Add Fee rate Forecaster Manager][review club 31664] est un PR par [ismaelsadeeq][gh ismaelsadeeq]
+[Add Fee rate Forecaster Manager][review club 31664] est une PR par [ismaelsadeeq][gh ismaelsadeeq]
 qui améliore la logique de prévision des frais de transaction (également appelée [estimation][topic
 fee estimation]). Il introduit une nouvelle classe `ForecasterManager` à laquelle plusieurs
 `Forecaster`s peuvent être enregistrés. Le `CBlockPolicyEstimator` existant (qui ne considère que
 les transactions confirmées) est refactorisé pour devenir un de ces prévisionnistes, mais notablement un
 nouveau `MemPoolForecaster` est introduit. `MemPoolForecaster` considère les transactions non
-confirmées qui sont dans le mempool, et en tant que tel peut réagir plus rapidement aux changements
+confirmées qui sont dans la mempool, et en tant que tel peut réagir plus rapidement aux changements
 de taux de frais.
 
 {% include functions/details-list.md
   q0="Pourquoi le nouveau système est-il appelé un « Forecaster » et « ForecasterManager » plutôt
   qu' « Estimator » et « Fee Estimation Manager » ?"
   a0="Le système prédit les résultats futurs basés sur les données actuelles et passées. Contrairement
-  à un estimateur, qui approximise les conditions présentes avec une certaine randomisation, un
+  à un estimateur, qui approxime les conditions présentes avec une certaine randomisation, un
   prévisionniste projette des événements futurs, ce qui s'aligne avec la nature prédictive de ce
   système et sa sortie de niveaux d'incertitude/risque."
   a0link="https://bitcoincore.reviews/31664#l-19"
 
   q1="Pourquoi `CBlockPolicyEstimator` n'est-il pas modifié pour contenir la référence mempool,
-  comme dans le PR #12966 ? Quelle est l'approche actuelle
+  comme dans la PR #12966 ? Quelle est l'approche actuelle
   et pourquoi est-elle meilleure que de conserver une référence à mempool ?
   (Hint : see PR #28368)"
   a1="`CBlockPolicyEstimator` hérite de `CValidationInterface` et
@@ -107,7 +107,7 @@ de taux de frais.
   `TransactionRemovedFromMempool`, et
   `MempoolTransactionsRemovedForBlock`. Cela donne à
   `CBlockPolicyEstimator` toutes les informations mempool dont il a besoin sans
-  être inutilement couplé au mempool via une référence."
+  être inutilement couplé à mempool via une référence."
   a1link="https://bitcoincore.reviews/31664#l-26"
 
   q2="Quels sont les compromis entre la nouvelle architecture et une
@@ -139,11 +139,11 @@ Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à
   des améliorations pour le [RBF][topic rbf] et le [CPFP][topic cpfp] pour augmenter les frais, et un
   meilleur flux pour le multisig lorsque tous les signataires utilisent BTCPay Server.
 
-- [Bitcoin Core 29.0rc3][] est un candidat à la sortie pour la prochaine version majeure du nœud
+- [Bitcoin Core 29.0rc3][] est une version candidate pour la prochaine version majeure du nœud
   complet prédominant du réseau. Veuillez consulter le [guide de test de la version 29][bcc29 testing
   guide].
 
-- [LND 0.19.0-beta.rc2][] est un candidat à la sortie pour ce nœud LN populaire. L'une des
+- [LND 0.19.0-beta.rc2][] est une version candidate pour ce nœud LN populaire. L'une des
   principales améliorations qui pourrait probablement nécessiter des tests est le nouveau bumping de
   frais basé sur RBF pour les fermetures coopératives.
 
@@ -167,7 +167,7 @@ Propositions (BIPs)][bips repo], [Lightning BOLTs][bolts repo],[Lightning BLIPs]
 - [LND #9669][] rétrograde les [canaux taproot simples][topic simple taproot channels] pour toujours
   utiliser le flux de fermeture coopérative classique, même si le flux de fermeture coopérative
   [RBF][topic rbf] (voir le Bulletin [#347][news347 coop]) est configuré. Auparavant, un nœud ayant les
-  deux fonctionnalités configurées échouerait à démarrer.
+  deux fonctionnalités configurées échouait à démarrer.
 
 - [Rust Bitcoin #4302][] ajoute une nouvelle méthode `push_relative_lock_time()` à l'API du
   générateur de script, qui prend un paramètre de [verrouillage temporel relatif][topic timelocks],
