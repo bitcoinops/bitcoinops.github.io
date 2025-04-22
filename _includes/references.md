@@ -222,6 +222,7 @@ place, put links here. -->{% endcomment %}
 [BOLT5]: https://github.com/lightningnetwork/lightning-rfc/blob/master/05-onchain.md
 [BOLT7]: https://github.com/lightningnetwork/lightning-rfc/blob/master/07-routing-gossip.md
 [BOLT8]: https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md
+[BOLT9]: https://github.com/lightning/bolts/blob/master/09-features.md
 [BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md
 [BOLT12]: https://github.com/lightning/bolts/blob/master/12-offer-encoding.md
 
