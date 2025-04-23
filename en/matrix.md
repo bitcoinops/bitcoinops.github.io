@@ -384,7 +384,7 @@ th, td {
 
 <br/>
 _Contributions and corrections are welcome. Please see the [contibuting
-guidelines](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/CONTRIBUTING.md)
+guidelines](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/CONTRIBUTING.md#compatibility-matrix-data)
 for details._
 {: style="text-align: center;"}
 
