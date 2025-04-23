@@ -48,6 +48,18 @@ optech_mentions:
   - title: "New time warp vulnernability affecting testnet4 despite previous time warp fixes"
     url: /en/newsletters/2024/08/16/#new-time-warp-vulnerability-in-testnet4
 
+  - title: "Discussion about fixing Murch-Zawy time warp in consensus cleanup"
+    url: /en/newsletters/2024/12/06/#continued-discussion-about-consensus-cleanup-soft-fork-proposal
+
+  - title: "Discussion about the proposed solution to classic time warp being too stringent"
+    url: /en/newsletters/2025/01/03/#consensus-cleanup-timewarp-grace-period
+
+  - title: "Bitcoin Core #31376 prevents creating block templates that exploit the timewarp bug"
+    url: /en/newsletters/2025/01/31/#bitcoin-core-31376
+
+  - title: "Consensus cleanup proposal updates time warp grace period to 2 hours"
+    url: /en/newsletters/2025/02/07/#increase-timewarp-grace-period-to-2-hours
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal

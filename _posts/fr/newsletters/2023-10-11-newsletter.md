@@ -159,7 +159,7 @@ les versions candidates.*
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27596,28590,28562,28589,28331,28588,28577,28553,754,27609,764,6676,1500" %}
-[roose txhash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021975.html
+[roose txhash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021975.html
 [news185 txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
 [ldk 0.0.117]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.117
 [bdk 0.29.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.29.0
@@ -168,4 +168,4 @@ les versions candidates.*
 [GenTxid]: https://github.com/bitcoin/bitcoin/blob/dcfbf3c2107c3cb9d343ebfa0eee78278dea8d66/src/primitives/transaction.h#L425
 [news104 wtxid]: /en/newsletters/2020/07/01/#bips-933
 [assumeutxo core dev]: https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-07-priorities/#:~:text=“Assume%20UTXO”
-[assumeutxo 2019 mailing list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
+[assumeutxo 2019 mailing list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html

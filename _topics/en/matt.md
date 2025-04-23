@@ -18,7 +18,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Merkleize All The Things
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021182.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021182.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -37,6 +37,9 @@ optech_mentions:
 
   - title: Verification of arbitrary programs using proposed opcode from MATT
     url: /en/newsletters/2024/01/03/#verification-of-arbitrary-programs-using-proposed-opcode-from-matt
+
+  - title: "Draft CCV BIP and details about amount semantic"
+    url: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

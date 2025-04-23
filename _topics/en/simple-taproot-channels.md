@@ -44,6 +44,21 @@ optech_mentions:
   - title: "Updated channel announcements that include support for simple taproot channels"
     url: /en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
 
+  - title: "Eclair #2896 enables the storage of MuSig2 partial signatures for simple taproot channels"
+    url: /en/newsletters/2025/01/24/#eclair-2896
+
+  - title: "Zero-knowledge gossip for LN channel announcements compatible with MuSig2 simple taproot channels"
+    url: /en/newsletters/2025/02/07/#zero-knowledge-gossip-for-ln-channel-announcements
+
+  - title: "Eclair #3016 introduces low-level methods for creating LN transactions in simple taproot channels"
+    url: /en/newsletters/2025/03/07/#eclair-3016
+
+  - title: "Eclair #3026 adds support for wallets containing P2TR addresses in preparation for taproot channels"
+    url: /en/newsletters/2025/03/28/#eclair-3026
+
+  - title: "LND #9669 downgrades simple taproot channels to always use the legacy cooperative close flow"
+    url: /en/newsletters/2025/04/11/#lnd-9669
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

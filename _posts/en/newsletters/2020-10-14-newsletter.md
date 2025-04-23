@@ -223,18 +223,18 @@ release candidates.*
 {% include linkers/issues.md issues="19954,1537,18267" %}
 [hwi 1.2.0]: https://github.com/bitcoin-core/HWI/releases/tag/1.2.0
 [eclair 0.4.2]: https://github.com/ACINQ/eclair/releases/tag/v0.4.2
-[lnd warning]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002819.html
-[lnd pgp]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002822.html
+[lnd warning]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002819.html
+[lnd pgp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002822.html
 [news72 upfront payments]: /en/newsletters/2019/11/13/#ln-up-front-payments
-[teinturier dynamic]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002803.html
-[zmnscpxj tunneling]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002811.html
-[riard trust]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002817.html
-[russell bech32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018236.html
+[teinturier dynamic]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002803.html
+[zmnscpxj tunneling]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002811.html
+[riard trust]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002817.html
+[russell bech32]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018236.html
 [news107 bech32]: /en/newsletters/2020/07/22/#bech32-address-updates
 [bech32 extension bug]: https://github.com/sipa/bech32/issues/51
-[harding bech32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018239.html
-[o'connor bech32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018240.html
-[fournier update]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002812.html
+[harding bech32]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018239.html
+[o'connor bech32]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018240.html
+[fournier update]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002812.html
 [news113 witasym]: /en/newsletters/2020/09/02/#witness-asymmetric-payment-channels
 [fournier v2]: https://github.com/LLFourn/witness-asymmetric-channel
 [wuille new bech32]: https://gist.github.com/sipa/a9845b37c1b298a7301c33a04090b2eb#improving-detection-of-insertion-errors

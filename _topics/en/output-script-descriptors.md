@@ -182,6 +182,18 @@ optech_mentions:
   - title: "Bitcoin Core #22838 implements multiple derivation path descriptors (BIP389)"
     url: /en/newsletters/2024/09/06/#bitcoin-core-22838
 
+  - title: "Bitcoin Core #30708 adds `getdescriptoractivity` RPC command"
+    url: /en/newsletters/2024/12/06/#bitcoin-core-30708
+
+  - title: "Draft BIP for unspendable keys in descriptors"
+    url: /en/newsletters/2025/01/24/#draft-bip-for-unspendable-keys-in-descriptors
+
+  - title: "Bitcoin Core #31590 checks parity bits when retrieving privkeys for x-only pubkeys in descriptors"
+    url: /en/newsletters/2025/01/31/#bitcoin-core-31590
+
+  - title: "Bitcoin Core #31603 begins rejecting descriptors containing unnecessary whitespace"
+    url: /en/newsletters/2025/03/28/#bitcoin-core-31603
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

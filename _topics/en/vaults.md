@@ -24,13 +24,13 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: Möser-Eyal-Sirer vault proposal
-      link: https://hackingdistributed.com/2016/02/26/how-to-implement-secure-bitcoin-vaults/
+      link: https://archive.is/rZYWF
 
     - title: Vaults using OP_CHECKSIGFROMSTACK and OP_CAT
       link: https://blockstream.com/2016/11/02/en-covenants-in-elements-alpha/
 
     - title: Vaults without changing Bitcoin consensus rules
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html
 
     - title: Custody Protocols Using Bitcoin Vaults
       link: https://arxiv.org/abs/2005.11776
@@ -103,6 +103,9 @@ optech_mentions:
 
   - title: "BIPs #1421 adds BIP345 for the OP_VAULT opcode and related consensus changes"
     url: /en/newsletters/2024/03/06/#bips-1421
+
+  - title: "Proposed CTV enhancement opcodes for more flexible vaults and accountable computing"
+    url: /en/newsletters/2025/01/03/#ctv-enhancement-opcodes
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

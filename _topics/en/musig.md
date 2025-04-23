@@ -148,6 +148,18 @@ optech_mentions:
   - title: Libsecp256k1 adds MuSig2 BIP340-compatible multisig as specified in BIP327
     url: /en/newsletters/2024/10/11/#libsecp256k1-1479
 
+  - title: "Eclair #2896 enables the storage of MuSig2 partial signatures for simple taproot channels"
+    url: /en/newsletters/2025/01/24/#eclair-2896
+
+  - title: Interplay between Musig1 interactive aggregated signature and cross-input signature aggregation
+    url: /en/newsletters/2025/01/31/#how-does-musig-work-in-real-bitcoin-scenarios
+
+  - title: "Zero-knowledge gossip for LN channel announcements compatible with MuSig2 simple taproot channels"
+    url: /en/newsletters/2025/02/07/#zero-knowledge-gossip-for-ln-channel-announcements
+
+  - title: "Lightning Loop begins using MuSig2"
+    url: /en/newsletters/2025/02/21/#lightning-loop-moves-to-musig2
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures

@@ -58,6 +58,12 @@ optech_mentions:
   - title: "BIP proposed for creating FROST scriptless threshold signatures for Bitcoin"
     url: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
 
+  - title: "Updated ChillDKG draft for distributed key generation for FROST"
+    url: /en/newsletters/2025/01/03/#updated-chilldkg-draft
+
+  - title: "FROSTR library for k-of-n signing and key management on nostr"
+    url: /en/newsletters/2025/03/21/#frostr-protocol-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignature
@@ -77,7 +83,7 @@ Different algorithms exist for creating threshold signatures, but
 perhaps the simplest of these is a slight extension of a typical
 algorithm for creating a [scriptless multisignature][topic multisignature].  This
 is easiest explained with an example: participants A, B, and C want to receive
-funds that can be spent by any three of them.  They cooperate to create
+funds that can be spent by any two of them.  They cooperate to create
 an ordinary multisignature public key for receiving the funds, then they
 each take the extra step of deriving two [secret shares][vss] from their
 private key---one share for each of the other two participants.  The
@@ -103,7 +109,7 @@ resistance to communication problems.
 
 ### Comparison to multisig scripts
 
-Bitcoin's Script language (including the proposed [tapscript][topic
+Bitcoin's Script language (including the [tapscript][topic
 tapscript] modified alternative) allows providing a threshold *k* of
 signatures for a group of *n* keys, commonly called k-of-n multisig.
 This requires providing *k* signatures and *n* public keys in any

@@ -32,6 +32,9 @@ optech_mentions:
   - title: Continued discussion about placing trimmed HTLC value in ephemeral anchor outputs
     url: /en/newsletters/2024/01/24/#trimming-redirect
 
+  - title: "Discussion of tradeoffs in ephemeral anchor scripts related to spending trimmed HTLC value"
+    url: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs

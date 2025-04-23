@@ -19,8 +19,8 @@ topic-categories:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Offers** is a proposed protocol enhancement for Lightning that would
-  allow nodes to request and receive invoices over LN.
+  **Offers** is a protocol for Lightning that
+  allows nodes to request and receive invoices over LN.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
@@ -126,6 +126,18 @@ optech_mentions:
   - title: "BOLTs #798 merges the offers protocol specification which introduces BOLT12"
     url: /en/newsletters/2024/10/04/#bolts-798
 
+  - title: "Core Lightning #7833 enables the offers protocol by default"
+    url: /en/newsletters/2024/11/22/#core-lightning-7833
+
+  - title: "LDK #3446 adds support for including a trampoline payment flag in a BOLT12 invoice"
+    url: /en/newsletters/2024/12/13/#ldk-3446
+
+  - title: "BOLT12 update to allow optional inclusion of BIP353 human-readable Bitcoin payment instructions"
+    url: /en/newsletters/2024/12/13/#bolts-1180
+
+  - title: "LDK #3649 adds support for paying Lightning Service Providers (LSPs) with BOLT12 offers"
+    url: /en/newsletters/2025/03/28/#ldk-3649
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
@@ -138,7 +150,7 @@ number) to the merchant’s node over LN, the merchant’s node returns an
 invoice (also over LN), the invoice is displayed to the user (who
 agrees to pay), and the payment is sent.
 
-Although the above use case is already addressed today using
+Although the above use case was previously addressed using
 [BOLT11][] invoices, the ability for the spending and receiving nodes
 to communicate directly before attempting payment provides much more
 flexibility. For example, the requested amount could be specified in

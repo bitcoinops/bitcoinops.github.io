@@ -11,8 +11,8 @@ topic-categories:
 excerpt: >
   **Schnorr signatures** are digital signatures that provide similar
   security to the ECDSA scheme used since Bitcoin's original
-  implementation and which can use Bitcoin's same elliptic curve
-  parameters, but which can provide other benefits.
+  implementation, but which provide other benefits. They were
+  added to Bitcoin as part of the taproot soft fork.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
@@ -134,8 +134,8 @@ see_also:
 Schnorr is secure under the same cryptographic assumptions as
 [ECDSA][] and it is easier and faster to create secure multiparty
 signatures using schnorr with protocols such as [MuSig][topic musig].  A new
-signature type also provides an opportunity to change the signature
-serialization format from [BER/DER][] to something that's more compact
+signature type also provided an opportunity to change the signature
+serialization format from [BER/DER][] to one that is more compact
 and simpler to implement.
 
 {% include references.md %}

@@ -10,6 +10,8 @@
 [scaling payment batching]: /en/payment-batching/
 [series preparing for taproot]: /en/preparing-for-taproot/
 
+[topic fpps]: /en/topics/pooled-mining/#full-pay-per-share-fpps
+[topic pplns]: /en/topics/pooled-mining/#pay-per-last-n-shares-pplns
 {% comment %}<!-- links for topics -->{% endcomment %}
 {% for topic in site.topics %}
   [topic {{topic.shortname | default: topic.title}}]: {{topic.url}}
@@ -64,6 +66,7 @@ included in documents.  See https://github.com/jekyll/jekyll/pull/7108
 for details --> {% endcomment %}
 [BIP1]: https://github.com/bitcoin/bips/blob/master/bip-0001.mediawiki
 [BIP2]: https://github.com/bitcoin/bips/blob/master/bip-0002.mediawiki
+[BIP3]: https://github.com/bitcoin/bips/blob/master/bip-0003.md
 [BIP8]: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
 [BIP9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
 [BIP12]: https://github.com/bitcoin/bips/blob/master/bip-0012.mediawiki
@@ -89,6 +92,7 @@ for details --> {% endcomment %}
 [BIP47]: https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki
 [BIP48]: https://github.com/bitcoin/bips/blob/master/bip-0048.mediawiki
 [BIP49]: https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki
+[BIP50]: https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki
 [BIP52]: https://github.com/bitcoin/bips/blob/master/bip-0052.mediawiki
 [BIP61]: https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki
 [BIP62]: https://github.com/bitcoin/bips/blob/master/bip-0062.mediawiki
@@ -169,6 +173,8 @@ for details --> {% endcomment %}
 [BIP342]: https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki
 [BIP345]: https://github.com/bitcoin/bips/blob/master/bip-0345.mediawiki
 [BIP347]: https://github.com/bitcoin/bips/blob/master/bip-0347.mediawiki
+[BIP348]: https://github.com/bitcoin/bips/blob/master/bip-0348.md
+[BIP349]: https://github.com/bitcoin/bips/blob/master/bip-0349.md
 [BIP350]: https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki
 [BIP351]: https://github.com/bitcoin/bips/blob/master/bip-0351.mediawiki
 [BIP352]: https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki
@@ -177,6 +183,8 @@ for details --> {% endcomment %}
 [BIP371]: https://github.com/bitcoin/bips/blob/master/bip-0371.mediawiki
 [BIP372]: https://github.com/bitcoin/bips/blob/master/bip-0372.mediawiki
 [BIP373]: https://github.com/bitcoin/bips/blob/master/bip-0373.mediawiki
+[BIP374]: https://github.com/bitcoin/bips/blob/master/bip-0374.mediawiki
+[BIP375]: https://github.com/bitcoin/bips/blob/master/bip-0375.mediawiki
 [BIP379]: https://github.com/bitcoin/bips/blob/master/bip-0379.md
 [BIP380]: https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki
 [BIP381]: https://github.com/bitcoin/bips/blob/master/bip-0381.mediawiki
@@ -196,7 +204,7 @@ for details --> {% endcomment %}
 [BIN24-{{i}}]: https://github.com/bitcoin-inquisition/binana/blob/master/2024/BIN-2024-{{i_padded}}.md
 {% endfor %}
 
-{% for i in (1..50) %}
+{% for i in (1..100) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}
 [BLIP{{i}}]: https://github.com/lightning/blips/blob/master/blip-{{i_padded}}.md
 {% endfor %}
@@ -204,6 +212,7 @@ for details --> {% endcomment %}
 {% comment %}<!-- Later link definitions supersede earlier definitions.
 When more recent information about a BIP is available not in the regular
 place, put links here. -->{% endcomment %}
+[BIP360]: https://github.com/bitcoin/bips/pull/1670
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
 [BOLT1]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md
@@ -213,6 +222,7 @@ place, put links here. -->{% endcomment %}
 [BOLT5]: https://github.com/lightningnetwork/lightning-rfc/blob/master/05-onchain.md
 [BOLT7]: https://github.com/lightningnetwork/lightning-rfc/blob/master/07-routing-gossip.md
 [BOLT8]: https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md
+[BOLT9]: https://github.com/lightning/bolts/blob/master/09-features.md
 [BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md
 [BOLT12]: https://github.com/lightning/bolts/blob/master/12-offer-encoding.md
 

@@ -17,11 +17,11 @@ topic-categories:
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: "BOLT 2: upgrade protocol on reestablish"
-      link: https://github.com/lightning/bolts/pull/868
+    - title: "Extension/dynamic commitments"
+      link: https://github.com/lightning/bolts/pull/1117
 
     - title: Dynamic commitments
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003531.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003531.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -46,6 +46,9 @@ optech_mentions:
 
   - title: "LND #8967 adds Stfu wire message to lock channel state before initiating protocol upgrades"
     url: /en/newsletters/2024/08/16/#lnd-8967
+
+  - title: "LND #8270 implements the channel quiescence protocol designed in part for channel upgrades"
+    url: /en/newsletters/2024/12/06/#lnd-8270
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

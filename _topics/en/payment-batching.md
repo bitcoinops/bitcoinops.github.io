@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Proposal for a pool exit protocol that allows highly efficient payment batching"
     url: /en/newsletters/2024/01/03/#pool-exit-payment-batching-with-delegation-using-fraud-proofs
 
+  - title: "LDK #3340 introduces batching of on-chain claim transactions with pinnable outputs"
+    url: /en/newsletters/2025/01/03/#ldk-3340
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKTEMPLATEVERIFY

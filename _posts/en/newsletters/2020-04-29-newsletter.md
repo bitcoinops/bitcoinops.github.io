@@ -307,15 +307,15 @@ issue.  Any remaining errors are the fault of the newsletter author.
 [lnd 0.10.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.0-beta.rc6
 [c-lightning 0.8.2]: https://github.com/ElementsProject/lightning/releases/tag/v0.8.2rc3
 [news78 anchor outputs]: /en/newsletters/2019/12/28/#anchor-outputs
-[corallo thread bd]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017757.html
-[corallo thread ld]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002639.html
-[harding reject]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002650.html
-[corallo targeted relay]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002652.html
-[harding pay]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002664.html
-[zmn ptlcs]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002667.html
-[osuntokun reasonable]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002641.html
-[corallo mempool not guaranteed]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002648.html
-[darosior revault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017793.html
+[corallo thread bd]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017757.html
+[corallo thread ld]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002639.html
+[harding reject]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002650.html
+[corallo targeted relay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002652.html
+[harding pay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002664.html
+[zmn ptlcs]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002667.html
+[osuntokun reasonable]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002641.html
+[corallo mempool not guaranteed]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002648.html
+[darosior revault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017793.html
 [news94 bishop vault]: /en/newsletters/2020/04/22/#vaults-prototype
 [cltv_expiry_delta]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md#cltv_expiry_delta-selection
 [cl ced]: https://github.com/ElementsProject/lightning/blob/10f47b41fa3192638442ef04d816380950cc32c9/lightningd/options.c#L630

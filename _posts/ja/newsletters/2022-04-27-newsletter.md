@@ -63,8 +63,8 @@ Bitcoin Stack Exchangeのトップの質問とその回答、
     しかし、それ以上に、より一般的な`OP_TXHASH`の設計（[ニュースレター #185][news185 txhash]参照）を好んでいます。
     Rubinは、いくつかの反論を[返信しました][rubin bare]。
 
-  - David Hardingは、CTVの用途が明白でないか、他のCovenantの構成がより一般的な用途に適しているため、
-    CTVが長期的にはあまり使用されないかもしれないという懸念を[伝えました][harding transitory]。
+  - [David Harding][harding transitory]は、CTVの用途が明白でないか、他のCovenantの構成がより一般的な用途に適しているため、
+    CTVが長期的にはあまり使用されないかもしれないという懸念を伝えました。
     この場合、将来のコンセンサスコードの開発者は、CTVのコードを維持し、
     後で提案されるコンセンサスの変更との潜在的な相互作用性を分析するという永続的な負担を負わなければならなくなります。
     Hardingは、5年間BitcoinにCTVを一時的に追加し、
@@ -175,18 +175,18 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [core lightning 0.11.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.11.0.1
 [rust-bitcoin 0.28]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/0.28.0
 [rb28 rn]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/CHANGELOG.md#028---2022-04-20-the-taproot-release
-[rubin ctv-st]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020233.html
-[towns ctv signet]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020234.html
+[rubin ctv-st]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020233.html
+[towns ctv signet]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020234.html
 [sapio]: https://learn.sapio-lang.org/
-[corallo ctv cost]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020263.html
-[corallo not clear]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020289.html
+[corallo ctv cost]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020263.html
+[corallo not clear]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020289.html
 [oconnor wizards]: https://gnusha.org/bitcoin-wizards/2022-04-19.log
-[towns bare]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020245.html
-[oconnor bare]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020256.html
-[rubin bare]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020260.html
-[harding transitory]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020242.html
-[darosior apo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020276.html
-[obeirne benchmark]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020280.html
+[towns bare]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020245.html
+[oconnor bare]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020256.html
+[rubin bare]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020260.html
+[harding transitory]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020242.html
+[darosior apo]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020276.html
+[obeirne benchmark]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020280.html
 [simple vault]: https://github.com/jamesob/simple-ctv-vault
 [news185 txhash]: /ja/newsletters/2022/02/02/#ctv-apo
 [fiatjaf vault]: https://twitter.com/fiatjaf/status/1517836181240782850

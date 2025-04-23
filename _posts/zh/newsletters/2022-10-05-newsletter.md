@@ -76,14 +76,14 @@ lang: zh
 [bitcoin core 24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bolt7 htlc_max]: https://github.com/lightning/bolts/blob/48fed66e26b80031d898c6492434fa9926237d64/07-routing-gossip.md#requirements-3
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
-[zhao tx3]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html
+[zhao tx3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html
 [news167 packages]: /en/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
-[sanders tx3]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020938.html
-[pickhardt ml valve]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003686.html
+[sanders tx3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020938.html
+[pickhardt ml valve]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003686.html
 [pickhardt bitmex valve]: https://blog.bitmex.com/the-power-of-htlc_maximum_msat-as-a-control-valve-for-better-flow-control-improved-reliability-and-lower-expected-payment-failure-rates-on-the-lightning-network/
-[pickhardt ratecards]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003696.html
+[pickhardt ratecards]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003696.html
 [news219 ratecards]: /zh/newsletters/2022/09/28/#ln-fee-ratecards
-[towns ratecards]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003695.html
-[zmnscpxj valve]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003703.html
+[towns ratecards]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003695.html
+[zmnscpxj valve]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003703.html
 [news171 async]: /en/newsletters/2021/10/20/#paying-offline-ln-nodes
 [news184 psbt]: /en/newsletters/2022/01/26/#psbt-extension-for-p2c-fields

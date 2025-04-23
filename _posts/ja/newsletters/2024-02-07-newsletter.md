@@ -254,9 +254,9 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 [teinturier splice]: https://delvingbitcoin.org/t/0conf-ln-channels-and-v3-anchors/494/2
 [teinturier segwit]: https://delvingbitcoin.org/t/malleability-issues-when-creating-shared-transactions-with-segwit-v0/497
 [news97 spk]: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
-[todd rbfr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022298.html
-[erhardt rbfr1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022302.html
-[erhardt rbfr2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022316.html
+[todd rbfr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022298.html
+[erhardt rbfr1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022302.html
+[erhardt rbfr2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022316.html
 [sz rbfr]: https://delvingbitcoin.org/t/replace-by-fee-rate-vs-v3/488/
 [libre relay]: https://github.com/petertodd/bitcoin/tree/libre-relay-v26.0
 [libbitcoinkernel]: https://github.com/bitcoin/bitcoin/issues/27587

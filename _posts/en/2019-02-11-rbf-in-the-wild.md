@@ -72,8 +72,7 @@ incentive issues mentioned above by requiring higher transaction fees for
 replacement transactions.
 
 ![rbf-transactions-in-2018](/img/posts/rbf-in-the-wild/rbf-transactions-in-2018.png)
-*~6% of transactions signaled opt-in RBF in 2018. Source: [Bitcoin Optech
-Dashboard](https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=1514835702976&to=1546285302976)*
+*~6% of transactions signaled opt-in RBF in 2018.*
 
 ## What was evaluated?
 
@@ -405,12 +404,11 @@ reach out to [mike@bitcoinops.org](mailto:mike@bitcoinops.org).
 [announcement]: /en/announcing-bitcoin-optech/
 [workshops]: /en/workshops/
 [newsletters]: /en/newsletters/
-[dashboard]: https://dashboard.bitcoinops.org/
 [dashboard blog post]: /en/dashboard-announcement/
 [scaling book]: https://github.com/bitcoinops/scaling-book
 [scaling book feebumping]: https://github.com/bitcoinops/scaling-book/blob/master/1.fee_bumping/fee_bumping.md
 [softfork]: /en/newsletters/2018/12/18/#news
-[lightning cpfp carve-out]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
+[lightning cpfp carve-out]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 [finney attack]: https://bitcoin.stackexchange.com/questions/4942/what-is-a-finney-attack
 [todd reddit gold]: https://www.coingecko.com/buzz/peter-todd-explains-how-he-double-spent-coinbase
 [betcoin dice]: https://bitcointalk.org/index.php?topic=327767.0

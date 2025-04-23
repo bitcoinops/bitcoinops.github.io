@@ -53,6 +53,12 @@ optech_mentions:
   - title: "Announcement of new Hyperion network simulator intended for eventual testing of Erlay"
     url: /en/newsletters/2024/08/02/#hyperion-network-event-simulator-for-the-bitcoin-p2p-network
 
+  - title: "Erlay update and summary of results from multiple research questions"
+    url: /en/newsletters/2025/02/07/#erlay-update
+
+  - title: "Erlay may save 100 MB a day of node bandwidth, 20% of total bandwidth for some nodes"
+    url: /en/newsletters/2025/03/14/#high-inv-traffic-as-a-non-archival-listener
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch

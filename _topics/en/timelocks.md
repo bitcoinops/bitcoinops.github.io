@@ -67,6 +67,15 @@ optech_mentions:
   - title: "BIP46 added for timelocked fidelity bonds"
     url: /en/newsletters/2024/07/19/#bips-1599
 
+  - title: "Discussion about the impact of time warp attacks on timelocks"
+    url: /en/newsletters/2024/12/06/#continued-discussion-about-consensus-cleanup-soft-fork-proposal
+
+  - title: "Discussion about contract-level relative timelocks to solve LN-Symmetry's 2x delay problem"
+    url: /en/newsletters/2025/01/10/#contract-level-relative-timelocks
+
+  - title: "Discussion about whether timelocked quantum-vulnerable bitcoins should be destroyed to prevent theft"
+    url: /en/newsletters/2025/04/04/#should-vulnerable-bitcoins-be-destroyed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs

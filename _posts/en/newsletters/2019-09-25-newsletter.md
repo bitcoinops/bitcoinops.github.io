@@ -127,8 +127,8 @@ clarifies that since 0.10.0, Bitcoin Core uses [headers-first][] IBD
   hash.
 
 {% include linkers/issues.md issues="16400,557" %}
-[p2sh taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017307.html
-[tapscript limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017306.html
-[watchtower discussion]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002156.html
+[p2sh taproot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017307.html
+[tapscript limits]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017306.html
+[watchtower discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002156.html
 [headers-first]: https://bitcoin.org/en/p2p-network-guide#headers-first
 [eltoo]: https://blockstream.com/eltoo.pdf

@@ -18,8 +18,8 @@
 
 这些摩擦点不仅显示了交易池作为比特币生态系统中的应用和协议的接口的重要性，还指明了需要提升的地方。下周，我们会讨论交易池规则的变更提议以及悬而未决的问题。
 
-[full rbf pinning]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
-[rbf ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
+[full rbf pinning]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
+[rbf ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
 [n25038 notes]: https://bitcoincore.reviews/25038
 [policy01]: /zh/newsletters/2023/05/17/#等待确认-1-我们为什么需要一个交易池
 [policy02]: /zh/newsletters/2023/05/24/#等待确认-2激励

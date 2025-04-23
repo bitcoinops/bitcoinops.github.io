@@ -14,7 +14,7 @@ lang: ja
 
 ## ニュース
 
-* **<!--trustless-onchain-betting-on-potential-soft-forks-->潜在的なソフトフォークに対するトラストレスなオンチェーンでの賭け:**
+- **<!--trustless-onchain-betting-on-potential-soft-forks-->潜在的なソフトフォークに対するトラストレスなオンチェーンでの賭け:**
   ZmnSCPxjは、特定のソフトフォークが有効になるかどうかを正確に予測する参加者に
   UTXOの制御を与えるためのプロトコルをDelving Bitcoinに[投稿しました][zmnscpxj bet]。
   たとえば、アリスは特定のソフトフォークが有効になると考えており、

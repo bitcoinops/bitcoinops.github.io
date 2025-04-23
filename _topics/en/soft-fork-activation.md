@@ -148,6 +148,9 @@ optech_mentions:
   - title: "Trustless onchain betting on potential soft forks"
     url: /en/newsletters/2024/03/13/#trustless-onchain-betting-on-potential-soft-forks
 
+  - title: "Bitcoin Forking Guide announced"
+    url: /en/newsletters/2025/03/07/#bitcoin-forking-guide
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds
@@ -493,13 +496,13 @@ occasions included:
 
 - **Fix value overflow bug (August 2010):** someone
   created a transaction that spent 0.5 BTC to two outputs worth
-  92,233,720,368.54277039 BTC.  Bitcoin requires that the output
+  92,233,720,368.54275808 BTC.  Bitcoin requires that the output
   amount be less than or equal to the input amount, but this was
   checked by adding the output values into a single 64-bit
   integer which can only hold a maximum value of
-  9,223,372,036,854,776 sats (about 92 billion BTC) before rolling over to negative numbers,
-  starting with -9,223,372,036,854,776 sats.  This meant it looked like the
-  transaction spent a total of -0.1 BTC (negative 0.1 BTC).  This
+  9,223,372,036,854,775,807 sats (about 92 billion BTC) before rolling over to negative numbers,
+  starting with -9,223,372,036,854,775,808 sats.  This meant it looked like the
+  transaction outputs summed to a total of -0.01 BTC (negative 0.01 BTC) and left 0.51 BTC to be collected as a transaction fee.  This
   bypassed another rule that forbid individual negative outputs---but
   not negative aggregate amounts---since it assumed the sum of any set
   of positive values would also be positive.  This gave the person who
@@ -579,21 +582,21 @@ ongoing.
 <!-- "in all possible scenarios, LOT=False puts users and the network at
 significant risk." -->
 
-[dashjr lot=false]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018498.html
+[dashjr lot=false]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018498.html
 
 <!-- "I'm still incredibly worried about users pushing for some
 UASF-style forced-signaling guerilla faster-activation. [...] However,
 as we saw with BIP 148/UASF, even a tiny minority of transacting users
 can set the tone and claim victory over how a soft-fork activates." -->
 
-[corallo co-opt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018595.html
+[corallo co-opt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018595.html
 
 <!-- "With lot=false and lot=true nodes active on the network, a chain
 split occurs if the activation is blocked [...] as default scenario
 for every consensus change [...] It doesn't seem as focussed on safety
 as I'd expect from bitcoin." -->
 
-[towns chain split]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018723.html
+[towns chain split]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018723.html
 
 <!-- "As for a "mandatory signaling period" as a part of BIP 8 [...]
 in practice, we've seen that version bits are set on the pool side,
@@ -601,12 +604,12 @@ and not on the node side, meaning the goal of ensuring miners have
 upgraded isn't really accomplished in practice, you just end up
 forking the chain for no gain." -->
 
-[corallo pool side]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017582.html
+[corallo pool side]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017582.html
 
 <!-- "[LOT=true does not prove] that developers don't control changes
 to the system." -->
 
-[harding f7]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
+[harding f7]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
 
 Other activation ideas have also been discussed, including
 probabilistic soft fork activation ([sporks][]), multi-stage
@@ -629,7 +632,7 @@ an activation delay ([speedy trial][]).
 [bip30 commit]: https://github.com/bitcoin/bitcoin/commit/a206b0ea12eb4606b93323268fc81a4f1f952531#diff-34d21af3c614ea3cee120df276c9c4ae95053830d7f1d3deaf009a4625409ad2R1271
 [ism rule 1]: https://github.com/bitcoin/bitcoin/commit/de237cbfa4c1aa7d4f9888e650f870a50b77de73#diff-34d21af3c614ea3cee120df276c9c4ae95053830d7f1d3deaf009a4625409ad2R1829-R1841
 [ism rule 2]: https://github.com/bitcoin/bitcoin/commit/d18f2fd9d6927b1a132c5e0094479cf44fc54aeb#diff-34d21af3c614ea3cee120df276c9c4ae95053830d7f1d3deaf009a4625409ad2R1829-R1837
-[strictder disclosure]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
+[strictder disclosure]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
 [news78 openssl]: /en/newsletters/2019/12/28/#openssl
 [july 2015 chain forks]: https://en.bitcoin.it/wiki/July_2015_chain_forks
 [bitcoin core version 0.10.0]: https://bitcoin.org/en/release/v0.10.0#bip-66-strict-der-encoding-for-signatures

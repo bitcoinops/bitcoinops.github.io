@@ -88,7 +88,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 {% include references.md %}
 {% include linkers/issues.md v=1 issues="2164,3395,1279" %}
-[russell op_tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019871.html
+[russell op_tx]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019871.html
 [news185 composable]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
 [blockchain.com v202201.2.0(18481)]: https://github.com/blockchain/My-Wallet-V3-Android/releases/tag/v202201.2.0(18481)
 [sensei website]: https://l2.technology/sensei

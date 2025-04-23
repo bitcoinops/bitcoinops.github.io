@@ -278,7 +278,7 @@ release candidates.*
 [news105 fee overpayment]: /en/newsletters/2020/07/08/#bitcoin-core-19215
 [news107 notable]: /en/newsletters/2020/07/22/#notable-code-and-documentation-changes
 [anchor spec discuss]: https://github.com/lightningnetwork/lightning-rfc/pull/688#issuecomment-661669232
-[ivgi minsc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018062.html
+[ivgi minsc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018062.html
 [min.sc]: https://min.sc
 [htlc script]: https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#received-htlc-outputs
 [htlc minsc]: https://min.sc/#c=fn%20htlc_received%28%24revocationpubkey%2C%20%24local_htlcpubkey%2C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24remote_htlcpubkey%2C%20%24payment_hash%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24cltv_expiry%29%0A%7B%0A%20%20%2F%2F%20To%20local%20node%20via%20HTLC-success%20transaction%0A%20%20%24success%20%3D%20pk%28%24local_htlcpubkey%29%20%26%26%20hash160%28%24payment_hash%29%3B%0A%0A%20%20%2F%2F%20To%20remote%20node%20after%20timeout%0A%20%20%24timeout%20%3D%20older%28%24cltv_expiry%29%3B%0A%0A%20%20%2F%2F%20To%20remote%20node%20with%20revocation%20key%2C%20or%20use%20success%2Ftimeout%20with%20remote%20consent%0A%20%20pk%28%24revocationpubkey%29%20%7C%7C%20%28pk%28%24remote_htlcpubkey%29%20%26%26%20%28%24success%20%7C%7C%20%24timeout%29%29%0A%7D%0A%0Ahtlc_received%28A%2C%20B%2C%20C%2C%20H%2C%203%20hours%29

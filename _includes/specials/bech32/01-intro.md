@@ -98,5 +98,5 @@ addresses.  For most platforms, it should be a very easy change.  See
 set of test vectors you can use to ensure your implementation works
 correctly.
 
-[bech32 proposed]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013749.html
+[bech32 proposed]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013749.html
 [bech32 ref libs]: https://github.com/sipa/bech32/tree/master/ref

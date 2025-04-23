@@ -101,6 +101,9 @@ optech_mentions:
   - title: "BLIPs #39 adds BLIP39 for an optional field b in BOLT11 invoices to communicate a blinded path"
     url: /en/newsletters/2024/08/23/#blips-39
 
+  - title: "Eclair #2993 allows the recipient to pay fees associated with the blinded portion of a path"
+    url: /en/newsletters/2025/02/28/#eclair-2993
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

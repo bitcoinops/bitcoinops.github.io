@@ -118,7 +118,7 @@ _在本节中，我们总结了一次最近的 Bitcoin Core PR 审查俱乐部�
 [lightning hacksprint]: https://wiki.fulmo.org/index.php?title=Main_Page
 [fournier otves]: https://github.com/LLFourn/one-time-VES/blob/master/main.pdf
 [news16 2pecdsa scriptless]: /zh/newsletters/2018/10/09/#多方-ecdsa-用于无脚本的闪电网络支付通道
-[uSEkaCIO email]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002316.html
+[uSEkaCIO email]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002316.html
 [jonasnick otves]: https://github.com/jonasnick/secp256k1/pull/14/
 [nkohen otves]: https://github.com/bitcoin-s/bitcoin-s/pull/1302
 [lnd psbt]: //github.com/lightningnetwork/lnd/blob/master/docs/psbt.md

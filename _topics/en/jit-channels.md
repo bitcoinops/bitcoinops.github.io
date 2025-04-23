@@ -19,7 +19,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
    - title: "LSPS2: JIT channel negotiation"
-     link: https://github.com/BitcoinAndLightningLayerSpecs/lsp/blob/d812a6481f9ff08cc16ab94807483205040de53b/LSPS2/README.md
+     link: https://github.com/lightning/blips/blob/master/blip-0052.md
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"

@@ -149,6 +149,21 @@ optech_mentions:
   - title: "Antoine Poinsot and Niklas Gögge responsibly disclosed a consensus vulnerability affecting btcd"
     url: /en/newsletters/2024/10/11/#cve-2024-38365-btcd-consensus-failure
 
+  - title: "Antoine Riard responsibly disclosed a transaction censorship vulnerability"
+    url: /en/newsletters/2024/12/06/#transaction-censorship-vulnerability
+
+  - title: "David Harding responsibly disclosed an LN vulnerability allowing theft with miner assistance"
+    url: /en/newsletters/2024/12/13/#vulnerability-allowing-theft-from-ln-channels-with-miner-assistance
+
+  - title: "Matt Morehouse responsibly disclosed a vulnerability allowing theft from pre-release LDK nodes"
+    url: /en/newsletters/2025/01/31/#vulnerability-in-ldk-claim-processing
+
+  - title: "Matt Morehouse responsibly disclosed an excessive fees and DoS vulnerability affecting LDK nodes"
+    url: /en/newsletters/2025/02/07/#channel-force-closure-vulnerability-in-ldk
+
+  - title: "Matt Morehouse responsibly disclosed a vulnerability allowing theft from LND"
+    url: /en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

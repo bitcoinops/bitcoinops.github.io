@@ -18,6 +18,6 @@ Bitcoin Core 的一些规则配置选项存在是为了适应节点操作环境�
 
 [policy01]: /zh/newsletters/2023/05/17/#等待确认-1-我们为什么需要一个交易池
 [policy04]: /zh/newsletters/2023/06/07/#等待确认-4费率估算
-[aj mempool consistency]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
+[aj mempool consistency]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
 [se maxmempool]: https://bitcoin.stackexchange.com/questions/118137/how-does-it-contribute-to-the-bitcoin-network-when-i-run-a-node-with-a-bigger-th
 

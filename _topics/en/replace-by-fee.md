@@ -198,6 +198,15 @@ optech_mentions:
   - title: "Bitcoin Core #30493 enables full RBF by default"
     url: /en/newsletters/2024/08/09/#bitcoin-core-30493
 
+  - title: "Bitcoin Core #30592 removes the `mempoolfullrbf` setting"
+    url: /en/newsletters/2024/11/15/#bitcoin-core-30592
+
+  - title: "Updated LND sweeper subsystem for choosing appropriate RBF feerates"
+    url: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
+
+  - title: "LND introduces an RBF cooperative close flow that allows either peer to bump the fee rate"
+    url: /en/newsletters/2025/03/28/#lnd-8453
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
@@ -208,9 +217,6 @@ see_also:
 
   - title: Opt-in RBF FAQ
     link: https://bitcoincore.org/en/faq/optin_rbf/
-
-  - title: "Optech Dashboard: BIP125 usage"
-    link: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1
 ---
 Different node software can use different RBF rules, so there have
 been several variations.  The most widely-used form of RBF today is

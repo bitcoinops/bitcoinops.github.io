@@ -44,6 +44,15 @@ optech_mentions:
   - title: Draft BIP for DLEQ proofs
     url: /en/newsletters/2024/11/01/#draft-bip-for-dleq-proofs
 
+  - title: "BIPs #1689 merges BIP374 to specify a standard way to generate and verify DLEQs"
+    url: /en/newsletters/2025/01/03/#bips-1689
+
+  - title: "BIPs #1687 adds BIP375 to specify sending DLEQs for multi-signer silent payments using PSBT"
+    url: /en/newsletters/2025/01/17/#bips-1687
+
+  - title: "BIPs #1758 updates BIP374 to prevent potential leakage of the private key"
+    url: /en/newsletters/2025/03/07/#bips-1758
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -30,13 +30,13 @@ Bitcoin Core, LND, and C-Lightning projects.
   It’s a good time to [consolidate UTXOs][consolidate info].
 
 - Adoption of opt-in RBF remains fairly low, but has materially grown the past
-  year, increasing from [1.5% to 5.7% of transactions][rbf data]. This data was
+  year, increasing from 1.5% to 5.7% of transactions. This data was
   sourced from Optech's beta dashboard, which we encourage people to try out and
   provide us feedback!
 
   ![{{img1_label}}](/img/posts/rbf.png)
   *{{img1_label}},
-  source: [Optech dashboard][rbf data]*
+  source: Optech dashboard*
 
 ## News
 
@@ -138,16 +138,15 @@ repo], and [C-lightning][core lightning repo].*
 {% include references.md %}
 {% include linkers/issues.md issues="13697,13799,1579,1543" %}
 
-[bls announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016273.html
+[bls announce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016273.html
 [#3 schnorr]: /en/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
 [musig]: https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html
 [bls signatures]: https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham
 [mimblewimble paper]: https://scalingbitcoin.org/papers/mimblewimble.txt
 [c-lightning 55d450ff]: https://github.com/ElementsProject/lightning/commit/55d450ff00ce80b01c5c64c072a47fea42657673
 [satoshis.place]: https://satoshis.place/
-[contract thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001383.html
+[contract thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001383.html
 [fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
-[rbf data]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=now-1y&to=now
 [newsletter #5]: /en/newsletters/2018/07/24/#first-use-of-output-script-descriptors
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

@@ -19,7 +19,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: JIT routing proposal
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001891.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001891.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -35,6 +35,9 @@ optech_mentions:
 
   - title: "LDK #1835 adds support for JIT channel opens by LN service providers"
     url: /en/newsletters/2022/12/14/#ldk-1835
+
+  - title: "Concern about JIT rebalancing being more expensive than trust-based peering arrangements"
+    url: /en/newsletters/2025/02/21/#continued-discussion-about-an-ln-quality-of-service-flag
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

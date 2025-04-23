@@ -26,6 +26,8 @@ primary_sources:
     - title: OP_CHECKSIGFROMSTACK code from ElementsProject.org
       link: https://github.com/ElementsProject/elements/blob/f08447909101bfbbcaf89e382f55c87b2086198a/src/script/interpreter.cpp#L1399
 
+    - title: BIP348
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -58,6 +60,24 @@ optech_mentions:
 
   - title: "Lamport signatures providing OP_CSFS alternative without consensus changes"
     url: /en/newsletters/2024/05/08/#consensus-enforced-lamport-signatures-on-top-of-ecdsa-signatures
+
+  - title: "BIP348 merged with specification of OP_CSFS"
+    url: /en/newsletters/2024/12/13/#bips-1535
+
+  - title: "Criticism of CTV motivation in a joint activation with CSFS"
+    url: /en/newsletters/2025/04/04/#criticism-of-ctv-motivation
+
+  - title: "Summary and criticism of CTV + CSFS benefits for discreet log contracts (DLCs)"
+    url: /en/newsletters/2025/04/04/#dlcs
+
+  - title: "Summary and criticism of CTV + CSFS benefits for accountable computing contracts"
+    url: /en/newsletters/2025/04/04/#accountable-computing-contracts
+
+  - title: "Summary and criticism of CTV + CSFS benefits for LN-Symmetry"
+    url: /en/newsletters/2025/04/04/#ln-symmetry
+
+  - title: "Summary and criticism of CTV + CSFS benefits for Ark"
+    url: /en/newsletters/2025/04/04/#ark
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
@@ -186,8 +206,8 @@ those parts.
 [dead cat]: https://github.com/bitcoin/bitcoin/commit/4bd188c4383d6e614e18f79dc337fbabe8464c82#diff-8458adcedc17d046942185cb709ff5c3R94
 [value overflow incident]: https://en.bitcoin.it/wiki/Value_overflow_incident
 [catenates]: https://english.stackexchange.com/questions/125416/concatenate-vs-catenate
-[kohen selling sigs]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002077.html
+[kohen selling sigs]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002077.html
 [dlcs]: https://dci.mit.edu/smart-contracts
-[single-show signatures]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-December/007038.html
-[graftroot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
-[oconnor generic]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016946.html
+[single-show signatures]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-December/007038.html
+[graftroot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
+[oconnor generic]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016946.html

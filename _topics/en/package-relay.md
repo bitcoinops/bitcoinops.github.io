@@ -32,7 +32,7 @@ primary_sources:
       link: https://github.com/bitcoin/bitcoin/issues/27463
 
     - title: Package Relay Proposal
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
 
     - title: Package relay strawman proposal
       link: https://gist.github.com/sdaftuar/8756699bfcad4d3806ba9f3396d4e66a
@@ -130,6 +130,12 @@ optech_mentions:
   - title: "Guide for Wallets Employing Bitcoin Core 28.0 Policies: one parent one child (1P1C) package relay"
     url: /en/bitcoin-core-28-wallet-integration-guide/
     date: 2024-10-10
+
+  - title: "Bitcoin Core #31397 improves the orphan resolution process, making 1p1c package relay safer"
+    url: /en/newsletters/2025/01/24/#bitcoin-core-31397
+
+  - title: "Eclair #2963 implements one-parent-one-child (1p1c) package relay"
+    url: /en/newsletters/2025/04/04/#eclair-2963
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

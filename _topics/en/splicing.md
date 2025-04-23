@@ -24,10 +24,10 @@ primary_sources:
       link: https://github.com/lightning/bolts/pull/863
 
     - title: Splice proposal (Rusty Russell)
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
 
     - title: Splice proposal (Rene Pickhardt)
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001437.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001437.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -82,6 +82,21 @@ optech_mentions:
 
   - title: "Eclair #2925 introduces support for using RBF with splicing transactions"
     url: /en/newsletters/2024/10/25/#eclair-2925
+
+  - title: "Core Lightning #7719 achieves interoperability with Eclair for splicing"
+    url: /en/newsletters/2024/11/29/#core-lightning-7719
+
+  - title: "LND #8270 implements the channel quiescence protocol designed in part for splicing"
+    url: /en/newsletters/2024/12/06/#lnd-8270
+
+  - title: "Eclair #2936 begins tracking splices created by third-parties"
+    url: /en/newsletters/2025/01/17/#eclair-2936
+
+  - title: "Eclair #2968 adds support for splicing on public channels"
+    url: /en/newsletters/2025/02/07/#eclair-2968
+
+  - title: "LDK #3624 enables funding key rotation after successful channel splices"
+    url: /en/newsletters/2025/03/14/#ldk-3624
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

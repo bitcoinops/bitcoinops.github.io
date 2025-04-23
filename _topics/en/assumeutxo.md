@@ -73,13 +73,16 @@ optech_mentions:
   - title: "Bitcoin Core #30807 has assumeUTXO nodes during background sync signal NODE_NETWORK_LIMITED"
     url: /en/newsletters/2024/09/20/#bitcoin-core-30807
 
+  - title: "SwiftSync faster syncs compatible and complementary with assumeUTXO"
+    url: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
     link: https://github.com/bitcoin/bitcoin/issues/15605
 
   - title: "[bitcoin-dev] assumeutxo and UTXO snapshots"
-    link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
+    link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
 ---
 Embedded in the code of the node would be a hash of the set of all
 spendable bitcoins and the conditions necessary to spend them (the

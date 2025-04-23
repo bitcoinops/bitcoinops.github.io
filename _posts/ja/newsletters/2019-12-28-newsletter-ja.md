@@ -398,11 +398,11 @@ implementation]を達成しました。ペイメントを複数パートに分�
 [news61 miniscript feedback]: /en/newsletters/2019/08/28/#miniscript-request-for-comments
 [news67 bolts676]: /ja/newsletters/2019/10/09/#bolts-676
 [newsletters]: /en/newsletters/
-[non-strict der]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
+[non-strict der]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
 [optech executive briefing]: /en/2019-exec-briefing/
 [proof of reserves tool]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
 [rm openssl]: /ja/newsletters/2019/11/27/#bitcoin-core-17265
-[roose reserves]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016633.html
+[roose reserves]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016633.html
 [scalability workbook]: https://github.com/bitcoinops/scaling-book
 [scaling bitcoin]: /en/newsletters/2019/09/18/#scaling-bitcoin
 [schnorr/taproot workshops]: /en/schorr-taproot-workshop/

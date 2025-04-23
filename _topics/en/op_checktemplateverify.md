@@ -130,6 +130,36 @@ optech_mentions:
   - title: "BIP119 extensions for smaller hashes and arbitrary data commitments"
     url: /en/newsletters/2024/05/15/#bip119-extensions-for-smaller-hashes-and-arbitrary-data-commitments
 
+  - title: "Post and website examining `OP_CHECKTEMPLATEVERIFY` testing on the default signet"
+    url: /en/newsletters/2024/11/22/#signet-activity-report
+
+  - title: "Proposed CTV enhancement opcodes: `OP_TEMPLATEHASH` and `OP_INPUTAMOUNTS`"
+    url: /en/newsletters/2025/01/03/#ctv-enhancement-opcodes
+
+  - title: "BIPs #1792 updates BIP119 with a revised introduction and mention of protocols using CTV"
+    url: /en/newsletters/2025/03/28/#bips-1792
+
+  - title: "Criticism of CTV motivation in a joint activation with CSFS"
+    url: /en/newsletters/2025/04/04/#criticism-of-ctv-motivation
+
+  - title: "CTV + CSFS allow creation of a perpetual covenant"
+    url: /en/newsletters/2025/04/04/#ctv-csfs-allows-the-creation-of-a-perpetual-covenant
+
+  - title: "Summary and criticism of CTV + CSFS benefits for discreet log contracts (DLCs)"
+    url: /en/newsletters/2025/04/04/#dlcs
+
+  - title: "Summary and criticism of CTV + CSFS benefits for accountable computing contracts"
+    url: /en/newsletters/2025/04/04/#accountable-computing-contracts
+
+  - title: "Summary and criticism of CTV + CSFS benefits for LN-Symmetry"
+    url: /en/newsletters/2025/04/04/#ln-symmetry
+
+  - title: "Summary and criticism of CTV + CSFS benefits for Ark"
+    url: /en/newsletters/2025/04/04/#ark
+
+  - title: "Details about how Ark could make use of CTV if activated"
+    url: /en/newsletters/2025/04/04/#benefit-of-ctv-to-ark-users
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

@@ -20,7 +20,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: Outsourcing route computation with trampoline payments
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001939.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001939.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -57,6 +57,12 @@ optech_mentions:
 
   - title: "LDK #2756 adds support for including a trampoline routing packet in its messages"
     url: /en/newsletters/2024/03/27/#ldk-2756
+
+  - title: "LDK #3446 adds support for including a trampoline payment flag in a BOLT12 invoice"
+    url: /en/newsletters/2024/12/13/#ldk-3446
+
+  - title: "LDK #3670 adds support for handling and receiving trampoline payments"
+    url: /en/newsletters/2025/04/04/#ldk-3670
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -58,6 +58,21 @@ optech_mentions:
   - title: "Draft BIP for quantum-safe address format"
     url: /en/newsletters/2024/06/14/#draft-bip-for-quantum-safe-address-format
 
+  - title: "Discussion about an upgrade path using taproot in case fast quantum computers are created"
+    url: /en/newsletters/2025/01/03/#quantum-computer-upgrade-path
+
+  - title: "Update on BIP360 pay-to-quantum-resistant-hash (P2QRH)"
+    url: /en/newsletters/2025/03/07/#update-on-bip360-pay-to-quantum-resistant-hash-p2qrh
+
+  - title: "Discussion about whether quantum-vulnerable bitcoins should be destroyed to prevent theft"
+    url: /en/newsletters/2025/04/04/#should-vulnerable-bitcoins-be-destroyed
+
+  - title: "Discussion of Guy Fawkes signatures to protect some current bitcoins against quantum theft"
+    url: /en/newsletters/2025/04/04/#securely-proving-utxo-ownership-by-revealing-a-sha256-preimage
+
+  - title: "Draft BIP for destroying quantum-insecure bitcoins"
+    url: /en/newsletters/2025/04/04/#draft-bip-for-destroying-quantum-insecure-bitcoins
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
@@ -104,10 +119,7 @@ of vulnerability to fast quantum computers:
   Optech has not seen discussion of its quantum resistance, but we
   believe the way LN currently uses it depends on the security of ECDSA,
   so if fast quantum computers are developed, they may be able to
-  decrypt old communication between LN nodes.  Alternative key exchange
-  mechanisms such as [NewHope][] are known and are proposed for
-  implementation in other parts of Bitcoin, such as the [version 2
-  Bitcoin transport protocol][topic v2 p2p transport].
+  decrypt old communication between LN nodes.
 
 The worst case for attacks assumes an idealized quantum computer with
 sufficient capacity and reliability to perform the attack.  It's likely

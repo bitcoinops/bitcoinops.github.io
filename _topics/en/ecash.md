@@ -39,7 +39,13 @@ optech_mentions:
     url: /en/newsletters/2024/02/28/#sending-and-receiving-ecash-using-ln-and-zkcps
 
   - title: Proposal to pay miners with ecash
-    url: /en/newsletters/2024/05/24/#upgrading-existing-ln-channels
+    url: /en/newsletters/2024/05/24/#challenges-in-rewarding-pool-miners
+
+  - title: "Continued discussion about rewarding pool miners with tradeable ecash shares"
+    url: /en/newsletters/2025/01/17/#continued-discussion-about-rewarding-pool-miners-with-tradeable-ecash-shares
+
+  - title: "Hashpool 0.1 tagged based on the Stratum v2 reference implementation with ecash-based shares"
+    url: /en/newsletters/2025/03/21/#hashpool-v0-1-tagged
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

@@ -26,7 +26,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
   - title: "Loop attack (original description)"
-    link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
+    link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
 
   - title: LN spam prevention
     link: https://github.com/t-bast/lightning-docs/blob/master/spam-prevention.md
@@ -118,6 +118,9 @@ optech_mentions:
   - title: "Testing of hybrid jamming mitigation and addition of bidirectional reputation"
     url: /en/newsletters/2024/09/27/#hybrid-jamming-mitigation-testing-and-changes
 
+  - title: Protocol proposed for upfront and hold fees to address channel jamming
+    url: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs
@@ -157,7 +160,7 @@ gained widespread support and developers continue to discuss the issue.
 
 {% include references.md %}
 [news120 upfront]: /en/newsletters/2020/10/21/#more-ln-upfront-fees-discussion
-[russell loop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
+[russell loop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
 [news86 backwards upfront]: /en/newsletters/2020/02/26/#reverse-up-front-payments
 [news122 bidir fees]: /en/newsletters/2020/11/04/#bi-directional-upfront-fees-for-ln
 [news119 nested routing]: /en/newsletters/2020/10/14/#incremental-routing

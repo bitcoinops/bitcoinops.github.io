@@ -10,7 +10,7 @@ topic-categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Taproot** is a proposed soft fork change to Bitcoin that will allow
+  **Taproot** is an activated soft fork change to Bitcoin that allows
   payments to schnorr public keys that may optionally commit to a script
   that can be revealed at spend time.
 
@@ -18,7 +18,7 @@ excerpt: >
 primary_sources:
     - title: BIP341
     - title: Original description
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
     - title: Original implementation
       link: https://github.com/bitcoin/bitcoin/pull/19953
 
@@ -245,6 +245,9 @@ optech_mentions:
   - title: "Rust Bitcoin #2652 begins returning the internal taproot key when signing for a taproot input"
     url: /en/newsletters/2024/04/10/#rust-bitcoin-2652
 
+  - title: "Core Lightning #7800 sets P2TR as the default script for anchor output spends and unilateral closes"
+    url: /en/newsletters/2024/11/22/#core-lightning-7800
+
 ## Optional
 see_also:
   - title: MAST
@@ -261,9 +264,9 @@ see_also:
 ---
 Coins protected by taproot may be spent either by satisfying one of
 the committed scripts or by simply providing a signature that verifies
-against the public key (allowing the script to be kept private).
-Taproot is intended for use with schnorr signatures that simplify
-multiparty construction (e.g. using [MuSig][topic musig]) and with MAST to
+against the public key (allowing the scripts to be kept private).
+Taproot uses schnorr signatures that simplify multiparty construction
+(e.g. using [MuSig][topic musig]) and [MAST][topic mast] to
 allow committing to more than one script, any one of which may be
 used at spend time.
 

@@ -69,6 +69,9 @@ optech_mentions:
   - title: "LDK #3268 adds a more conservative fee estimation method for dust calculations"
     url: /en/newsletters/2024/09/06/#ldk-3268
 
+  - title: "Bitcoin Core PR Review Club about exempting ephemeral anchors from the dust limit"
+    url: /en/newsletters/2024/11/08/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)

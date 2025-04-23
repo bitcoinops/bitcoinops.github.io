@@ -80,6 +80,15 @@ optech_mentions:
   - title: "Lava Loans: DLC-based loan contract execution"
     url: /en/newsletters/2024/09/13/#dlc-based-loan-contract-execution
 
+  - title: Offchain DLCs
+    url: /en/newsletters/2025/01/17/#offchain-dlcs
+
+  - title: "Offchain DLCs: DLC channels compared to DLC factories"
+    url: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
+
+  - title: "Summary and criticism of CTV + CSFS benefits for discreet log contracts (DLCs)"
+    url: /en/newsletters/2025/04/04/#dlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signature adaptors

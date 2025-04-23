@@ -164,7 +164,7 @@ Bitcoin Core PR #22387 に関する私たちの最初の説明では、
 [sidecar channels]: https://lightning.engineering/posts/2021-05-26-sidecar-channels/
 [news123 lightning pool]: /en/newsletters/2020/11/11/#incoming-channel-marketplace
 [news155 tr psbts]: /ja/newsletters/2021/06/30/#taproot-psbt
-[zmn liquidity providers]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
+[zmn liquidity providers]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
 [lightning pool]: https://lightning.engineering/posts/2020-11-02-pool-deep-dive/
 [compat matrix]: /en/matrix/
 [news158 taproot]: /ja/newsletters/2021/07/21/#taprootの準備-5-なぜ待つ必要があるのか

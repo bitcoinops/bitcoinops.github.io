@@ -18,7 +18,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
   - title: "Weaknesses in Bitcoin's Merkle Root Construction"
-    link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/attachments/20190225/a27d8837/attachment-0001.pdf
+    link: https://gnusha.org/pi/bitcoindev/CAFp6fsGtEm9p-ZQF_XqfqyQGzZK7BS2SNp2z680QBsJiFDraEA@mail.gmail.com/2-BitcoinMerkle.pdf
 
   - title: "CVE-2012-2459: block merkle calculation exploit"
     link: https://bitcointalk.org/?topic=102395
@@ -58,6 +58,9 @@ optech_mentions:
 
   - title: "Discussion about mitigating merkle tree vulnerabilities"
     url: /en/newsletters/2024/09/06/#mitigating-merkle-tree-vulnerabilities
+
+  - title: "Question about whether 64-byte transactions can be third-party malleated to change their size"
+    url: /en/newsletters/2025/03/28/#can-all-consensus-valid-64-byte-transactions-be-third-party-malleated-to-change-their-size
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

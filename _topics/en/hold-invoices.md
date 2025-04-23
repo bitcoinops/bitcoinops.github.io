@@ -44,6 +44,9 @@ optech_mentions:
   - title: Discussion about bi-directional fees to allow charging for hold invoices
     url: /en/newsletters/2020/11/04/#bi-directional-upfront-fees-for-ln
 
+  - title: Protocol proposed for hold fees that could make hold invoices sustainable
+    url: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel jamming attacks

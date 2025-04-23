@@ -50,6 +50,6 @@ lang: zh
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
 [dashboard post]: /zh/dashboard-announcement/
-[testnet reset]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016337.html
-[signed testnet]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016348.html
-[sighash changes]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016345.html
+[testnet reset]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016337.html
+[signed testnet]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016348.html
+[sighash changes]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016345.html

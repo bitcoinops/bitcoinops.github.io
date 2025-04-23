@@ -20,11 +20,31 @@ contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
 
 ## Building The Site Locally
 
-To build the site, you need to go through a one-time installation
+To build the site without docker, you need to go through a one-time installation
 procedure that takes 15 to 30 minutes.  After that you can build the
 site an unlimited number of times with no extra work.
 
-**[You also can choose to build the site locally by docker, click here to get a guide.](./docker.md)**
+**Docker**
+
+Using Docker eliminates the need for local Ruby installation and
+simplifies the setup process. Ensure Docker and Docker Compose are
+installed, then run the following command in the project directory:
+
+    docker compose up
+
+This will build the Docker image if needed and start the Jekyll server.
+The site preview will be available at http://localhost:4000.
+
+For most code changes, Jekyll's live reload will automatically update
+the preview. You only need to restart the container when making changes
+such as:
+
+- Changing dependencies in the Gemfile
+- Modifying Docker configuration files
+
+To rebuild and restart the container:
+
+    docker compose down && docker compose up --build
 
 ##### Install The Dependencies
 

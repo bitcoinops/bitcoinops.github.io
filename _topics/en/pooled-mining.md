@@ -74,6 +74,24 @@ optech_mentions:
   - title: "Bitcoin Core #30955 introduces two new methods to the Mining interface for Stratum v2 support"
     url: /en/newsletters/2024/10/18/#bitcoin-core-30955
 
+  - title: "Discussion of potential Stratum v2 high validation cost and invalid shares attack"
+    url: /en/newsletters/2024/08/09/#block-withholding-attacks-and-potential-solutions
+
+  - title: "Continued discussion about rewarding pool miners with tradeable ecash shares"
+    url: /en/newsletters/2025/01/17/#continued-discussion-about-rewarding-pool-miners-with-tradeable-ecash-shares
+
+  - title: "Request for a covenant to fairly distribute rewards in the Braidpool decentralized mining pool"
+    url: /en/newsletters/2025/02/07/#request-for-a-covenant-design-supporting-braidpool
+
+  - title: "Deterministic transaction selection from a committed mempool for Braidpool decentralized mining"
+    url: /en/newsletters/2025/02/07/#deterministic-transaction-selection-from-a-committed-mempool
+
+  - title: "Hashpool 0.1 tagged based on the Stratum v2 reference implementation with ecash-based shares"
+    url: /en/newsletters/2025/03/21/#hashpool-v0-1-tagged
+
+  - title: "DMND pool launches Stratum v2 pooled mining"
+    url: /en/newsletters/2025/03/21/#dmnd-launching-pooled-mining
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:
@@ -279,7 +297,7 @@ for contributing a particular amount of hashrate.
 {% include linkers/issues.md issues="" %}
 [betcoindice]: https://bitcointalk.org/index.php?topic=327767.0
 [jul2015 chainsplits]: https://en.bitcoin.it/wiki/July_2015_chain_forks
-[betterhash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016077.html
+[betterhash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016077.html
 [stratum v2]: https://stratumprotocol.org/
 [braidpool]: https://github.com/braidpool/braidpool
 [p2pool]: https://bitcointalk.org/index.php?topic=18313.0

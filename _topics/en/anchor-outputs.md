@@ -173,6 +173,15 @@ optech_mentions:
   - title: "Core Lightning #7388 removes the ability to create old non-zero-fee anchor-style channels"
     url: /en/newsletters/2024/06/28/#core-lightning-7388
 
+  - title: "Eclair v0.11.0 stops accepting new non-anchor channels"
+    url: /en/newsletters/2024/12/06/#eclair-v0-11-0
+
+  - title: "Core Lightning #7832 spends from anchor outputs even when not urgent"
+    url: /en/newsletters/2024/12/06/#core-lightning-7832
+
+  - title: "LDK #3608 doubles the expected max blocks required to confirm an HTLC due to `1 CSV` delay"
+    url: /en/newsletters/2025/03/14/#ldk-3608
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

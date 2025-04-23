@@ -79,7 +79,7 @@ software.
   additional offchain state.  However, the proposal has the advantage of being
   something that could be implemented by a single team and made
   interoperable with the standard LN without requiring many changes to
-  the LN protocol.
+  the LN protocol. {% assign timestamp="0:50" %}
 
 - **Draft BIP for DLEQ proofs:** Andrew Toth [posted][toth dleq] to the
   Bitcoin-Dev mailing list a draft BIP and a link to an
@@ -102,7 +102,7 @@ software.
   previously implemented a DLEQ proof system for the JoinMarket
   [coinjoin][topic coinjoin] implementation.  He suggested several
   changes that would make the BIP's version of DLEQ more flexible for
-  other uses beyond silent payments.
+  other uses beyond silent payments. {% assign timestamp="10:53" %}
 
 ## Releases and release candidates
 
@@ -111,11 +111,11 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [BTCPay Server 2.0.0][] is the latest release of this self-hosted
-  payment processor.  It's new features includes "improved localization,
+  payment processor.  Its new features include "improved localization,
   sidebar navigation, improved onboarding flow, improved branding
   options, support for pluginable rate providers" and more.  The upgrade
   includes some breaking changes and database migrations; it is
-  recommended to read the [announcement][btcpay post] before upgrading.
+  recommended to read the [announcement][btcpay post] before upgrading. {% assign timestamp="20:02" %}
 
 ## Notable code and documentation changes
 
@@ -135,17 +135,17 @@ repo], and [BINANAs][binana repo]._
   Protocol (PCP) implementation with a Network Address Translation-Port Mapping
   Protocol (NAT-PMP) fallback  (see Newsletter [#323][news323 pcp]), which
   allows nodes to be reachable without manual configuration, but removes the
-  security risks associated with the `miniupnp` dependency.
+  security risks associated with the `miniupnp` dependency. {% assign timestamp="22:56" %}
 
 - [LDK #3007][] adds two new variants `BlindedForward` and `BlindedReceive` to
   the `OutboundTrampolinePayload` enum to introduce support for [blinded
   paths][topic rv routing] in [trampoline routing][topic trampoline payments] as
-  a basis for implementing the [BOLT12][] [offers][topic offers] protocol.
+  a basis for implementing the [BOLT12][] [offers][topic offers] protocol. {% assign timestamp="25:14" %}
 
 - [BIPs #1676][] updates the status of [BIP85][] to final, as it's widely
   deployed and past the point of introducing breaking changes. This was proposed
   after a recent breaking change was merged and later reverted (see
-  Newsletter[#324][news324 bip85]).
+  Newsletter [#324][news324 bip85]). {% assign timestamp="27:15" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}

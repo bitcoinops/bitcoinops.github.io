@@ -21,7 +21,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Full Disclosure of replacement cycling vulnerabilities
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021999.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021999.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -31,6 +31,15 @@ optech_mentions:
 
   - title: Replacement cycle attack against pay-to-anchor
     url: /en/newsletters/2024/08/09/#replacement-cycle-attack-against-pay-to-anchor
+
+  - title: "Comparison of replacement cycling HTLCs to repeatedly broadcasting old states in LN-Symmetry"
+    url: /en/newsletters/2025/01/10/#multiparty-ln-symmetry-variant-with-penalties-for-limiting-published-updates
+
+  - title: "Variant of replacement cycling attack that could benefit exploitative miners"
+    url: /en/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
+
+  - title: "Updated LND sweeper subsystem for fee bumping to improve replacement cycling resistance"
+    url: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

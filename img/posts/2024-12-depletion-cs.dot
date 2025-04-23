@@ -1,0 +1,85 @@
+graph ln {
+  size = "8,10"
+
+  node [shape = circle, width = 0.2, label = "", style = filled, color = black, fixedsize = true];
+  edge [penwidth = 2];
+  nodesep = 0.9;
+  ranksep = 0.9;
+
+  subgraph cluster_foo {
+    A1 -- B1;
+    B1 -- C1;
+
+    A2 -- B2;
+    B2 -- C2;
+
+    A3 -- B3;
+
+    A1 -- A2;
+    B1 -- B2;
+    C1 -- C2;
+    A2 -- A3;
+    B2 -- B3;
+
+    label = <<br/>Distribuovaná síť<br/>(stav<sub>0</sub>)>;
+    labelloc = b;
+  }
+
+  subgraph cluster_bar {
+    xA1 -- xB1 [color = red];
+    xB1 -- xC1;
+
+    xA2 -- xB2 [color = red];
+    xB2 -- xC2;
+
+    xA3 -- xB3;
+
+    xA1 -- xA2 [color = red];
+    xB1 -- xB2 [color = red];
+    xC1 -- xC2;
+    xA2 -- xA3;
+    xB2 -- xB3;
+
+    label = <<br/><br/>Příklad cyklu v grafu<sub>&nbsp;</sub>>;
+    labelloc = b;
+  }
+
+  subgraph cluster_break {
+    yA1 -- yB1 [style = invis];
+    yB1 -- yC1;
+
+    yA2 -- yB2;
+    yB2 -- yC2;
+
+    yA3 -- yB3;
+
+    yA1 -- yA2;
+    yB1 -- yB2;
+    yC1 -- yC2;
+    yA2 -- yA3;
+    yB2 -- yB3;
+
+    label = <Hrana je vyčerpána,<br/>cyklus porušen<br/>(stav<sub>1</sub>)>;
+    labelloc = b;
+  }
+
+  subgraph cluster_span {
+    zA1 -- zB1 [style = invis];
+    zB1 -- zC1;
+
+    zA2 -- zB2 [style = invis];
+    zB2 -- zC2 [style = invis];
+
+    zA3 -- zB3;
+
+    zA1 -- zA2;
+    zB1 -- zB2;
+    zC1 -- zC2;
+    zA2 -- zA3;
+    zB2 -- zB3;
+
+    label = <Každý cyklus porušen,<br/>zůstává kostra grafu<br/>(stav<sub>N</sub>)>;
+    labelloc = b;
+  }
+
+}

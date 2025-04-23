@@ -24,7 +24,7 @@ primary_sources:
       link: https://github.com/lightning/bolts/pull/1059
 
     - title: "V2 gossip protocol"
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -106,6 +106,12 @@ optech_mentions:
 
   - title: "Updates to the version 1.75 channel announcements proposal"
     url: /en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
+
+  - title: "Utreexo-based zero-knowledge gossip for LN channel announcements compatible with MuSig2 STCs"
+    url: /en/newsletters/2025/02/07/#zero-knowledge-gossip-for-ln-channel-announcements
+
+  - title: "Eclair #2983 only synchronizes channel announcements with the node's top peers on reconnection"
+    url: /en/newsletters/2025/02/07/#eclair-2983
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

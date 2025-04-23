@@ -44,12 +44,12 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md issues="17843,1247,1283,3900" %}
 [lnd 0.9.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.9.0-beta-rc3
-[wormhole thread]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017585.html
+[wormhole thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017585.html
 [wasabi design discussion]: https://github.com/zkSNACKs/Meta/issues/49
 [tumblebit]: https://eprint.iacr.org/2016/575.pdf
-[zmn note]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017587.html
+[zmn note]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017587.html
 [dlcs]: https://adiabat.github.io/dlc.pdf
-[stewart dlc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017563.html
+[stewart dlc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017563.html
 [dlcspecs]: https://github.com/discreetlogcontracts/dlcspecs/
 [scriptless scripts examples]: https://github.com/ElementsProject/scriptless-scripts
 [whatsat]: https://github.com/joostjager/whatsat

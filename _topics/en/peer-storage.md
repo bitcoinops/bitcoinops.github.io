@@ -18,8 +18,8 @@ topic-categories:
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: "BOLTs #881: Peer backup storage"
-      link: https://github.com/lightning/bolts/pull/881
+    - title: "BOLTs #1110: peer storage"
+      link: https://github.com/lightning/bolts/pull/1110
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -32,6 +32,15 @@ optech_mentions:
 
   - title: "Fraud proofs for outdated state compared to peer storage backups"
     url: /en/newsletters/2023/08/23/#fraud-proofs-for-outdated-backup-state
+
+  - title: "Eclair #2888 implements support for the peer storage protocol as specified in BOLTs #1110"
+    url: /en/newsletters/2025/01/03/#eclair-2888
+
+  - title: "BOLTs #1110 merges the specification for the peer storage protocol"
+    url: /en/newsletters/2025/01/31/#bolts-1110
+
+  - title: "LDK #3575 implements the peer storage protocol"
+    url: /en/newsletters/2025/02/21/#ldk-3575
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:
