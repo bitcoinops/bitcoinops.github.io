@@ -19,7 +19,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: Draft BIP for Consensus Cleanup
-      link: https://github.com/darosior/bips/blob/consensus_cleanup/bip-cc.md
+      link: https://github.com/darosior/bips/blob/consensus_cleanup/bip-0054.md
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
