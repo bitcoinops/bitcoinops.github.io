@@ -21,7 +21,7 @@ feature:
   psbt_version: "V0"
   psbt_export: "Yes"
   psbt_update_finalize: "Yes"
-  musig2: "No Support"
+  musig2: "Yes"
   coinjoin: "No Support"
   payjoin_BIP78: "No Support"
   payjoin_alternate: "No Support"
