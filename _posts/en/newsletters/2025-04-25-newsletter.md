@@ -62,7 +62,49 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Practicality of half-aggregated schnorr signatures?]({{bse}}125982)
+  Fjahr discusses why independent, unaggregated signatures are not required in order to
+  validate a half-aggregated signature in [cross-input signature aggregation
+  (CISA)][topic cisa] and why unaggregated signatures can actually be problematic.
+
+- [What's the largest size OP_RETURN payload ever created?]({{bse}}126131)
+  Vojtěch Strnad [links][op_return tx] to a Runes [meta-protocol][topic
+  client-side validation] transaction with 79,870 bytes as the largest
+  `OP_RETURN`.
+
+- [Non-LN explanation of pay-to-anchor?]({{bse}}126098)
+  Murch details the rationale and structure of [pay-to-anchor (P2A)][topic
+  ephemeral anchors] output scripts.
+
+- [Up-to-date statistics about chain reorganizations?]({{bse}}126019)
+  0xb10c and Murch point to sources of reorg data, including the
+  [stale-blocks][stale-blocks github] repository, the [forkmonitor.info][] website,
+  and the [fork.observer][] website.
+
+- [Are Lightning channels always P2WSH?]({{bse}}125967)
+  Polespinasa notes the ongoing development of P2TR [simple taproot channels][topic
+  simple taproot channels] and summarizes current support across Lightning implementations.
+
+- [Child-pays-for-parent as a defense against a double spend?]({{bse}}126056)
+  Murch lists complications with using a high fee [CPFP][topic cpfp] child
+  transaction to incentivize a blockchain reorg in defense of an
+  already-confirmed double-spent output.
+
+- [What values does CHECKTEMPLATEVERIFY hash?]({{bse}}126133)
+  Average-gray outlines the fields that [OP_CHECKTEMPLATEVERIFY][topic
+  op_checktemplateverify] commits to: nVersion, nLockTime, input count,
+  sequences hash, output count, outputs hash, input index, and in some cases the
+  scriptSig hash.
+
+- [Why can't Lightning nodes opt to reveal channel balances for better routing efficiency?]({{bse}}125985)
+  Rene Pickhardt explains concerns about the staleness and trustworthiness of
+  the data, privacy implications, and points to a [similar proposal][BOLTs #780] from 2020.
+
+- [Does post-quantum require hard fork or soft fork?]({{bse}}126122)
+  Vojtěch Strnad outlines an approach of how a [post-quantum][topic quantum
+  resistance] (PQC) signature scheme could be [soft-fork activated][topic soft
+  fork activation] as well as how a hard or soft fork could lock
+  quantum-vulnerable coins.
 
 ## Releases and release candidates
 
@@ -100,8 +142,12 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-04-29 15:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="31247,3601" %}
+{% include linkers/issues.md v=2 issues="31247,3601,780" %}
 [lnd 0.19.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.0-beta.rc3
 [nrs dahlias]: https://mailing-list.bitcoindevs.xyz/bitcoindev/be3813bf-467d-4880-9383-2a0b0223e7e5@gmail.com/
 [dahlias paper]: https://eprint.iacr.org/2025/692.pdf
 [ingala backdes]: https://delvingbitcoin.org/t/a-simple-backup-scheme-for-wallet-accounts/1607
+[op_return tx]: https://mempool.space/tx/fd3c5762e882489a62da3ba75a04ed283543bfc15737e3d6576042810ab553bc
+[stale-blocks github]: https://github.com/bitcoin-data/stale-blocks
+[forkmonitor.info]: https://forkmonitor.info/nodes/btc
+[fork.observer]: https://fork.observer/
