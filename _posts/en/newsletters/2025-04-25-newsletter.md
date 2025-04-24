@@ -85,9 +85,18 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31247][] psbt: MuSig2 Fields
+- [Bitcoin Core #31247][] adds support for serializing and parsing
+  [MuSig2][topic musig] [PSBT][topic psbt] fields as specified in [BIP373][] to
+  allow wallets to sign and spend [MuSig2][topic musig] inputs. On the input
+  side, this consists of a field listing the participant pubkeys, plus a
+  separate public nonce field and a separate partial signature field for each
+  signer. On the output side, it is a single field listing the participant
+  pubkeys for the new UTXO.
 
-- [LDK #3601][] carlaKC/3541-failure-reason
+- [LDK #3601][] adds a new `LocalHTLCFailureReason` enum to represent each
+  standard [BOLT4][] error code, along with some variants that surface
+  additional information to the user that was previously removed for privacy
+  reasons.
 
 {% include snippets/recap-ad.md when="2025-04-29 15:30" %}
 {% include references.md %}
