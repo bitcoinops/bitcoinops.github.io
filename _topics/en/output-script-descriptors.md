@@ -194,6 +194,9 @@ optech_mentions:
   - title: "Bitcoin Core #31603 begins rejecting descriptors containing unnecessary whitespace"
     url: /en/newsletters/2025/03/28/#bitcoin-core-31603
 
+  - title: "Proposed standard for backing up wallet descriptors"
+    url: /en/newsletters/2025/04/25/#standardized-backup-for-wallet-descriptors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
