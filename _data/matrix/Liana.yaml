@@ -1,7 +1,7 @@
 ---
 name: "Liana"
 category: "Software Wallet (L1)"
-keyfeatures: "Liana is a simple self-custody wallet with recovery and inheritance features using Miniscript.."
+keyfeatures: "Liana is a simple self-custody wallet with recovery and inheritance features using Miniscript."
 homepage: "https://wizardsardine.com/liana/"
 
 feature:
