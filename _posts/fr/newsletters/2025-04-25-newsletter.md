@@ -1,144 +1,128 @@
 ---
-title: 'Bitcoin Optech Newsletter #351'
-permalink: /en/newsletters/2025/04/25/
-name: 2025-04-25-newsletter
-slug: 2025-04-25-newsletter
+title: 'Bulletin Hebdomadaire Bitcoin Optech #351'
+permalink: /fr/newsletters/2025/04/25/
+name: 2025-04-25-newsletter-fr
+slug: 2025-04-25-newsletter-fr
 type: newsletter
 layout: newsletter
-lang: en
+lang: fr
 ---
-This week's newsletter announces a new aggregate signature protocol
-compatible with secp256k1 and describes a standardized backup scheme for
-wallet descriptors.  Also included are our regular sections summarizing
-recent Bitcoin Stack Exchange questions and answers, announcing new
-releases and release candidates, and describing notable changes to
-popular Bitcoin infrastructure software.
+Le bulettin de cette semaine annonce un nouveau protocole de signature agrégée compatible avec
+secp256k1 et décrit un schéma de sauvegarde standardisé pour les descripteurs de portefeuille. Sont
+également incluses nos sections régulières résumant les récentes questions et réponses de Bitcoin
+Stack Exchange, annoncant de nouvelles versions et de candidats à la publication, et les résumés des modifications
+notables apportées aux logiciels d'infrastructure Bitcoin populaires.
 
-## News
+## Nouvelles
 
-- **Interactive aggregate signatures compatible with secp256k1:** Jonas
-  Nick, Tim Ruffing, Yannick Seurin [posted][nrs dahlias] to the
-  Bitcoin-Dev mailing list to announce a [paper][dahlias paper] they've
-  written about creating 64-byte aggregate signatures compatible with
-  the cryptographic primitives already used by Bitcoin.  Aggregate
-  signatures are the cryptographic requirement for [cross-input
-  signature aggregation][topic cisa] (CISA), a feature proposed for
-  Bitcoin that could reduce the size of transactions with multiple
-  inputs, which would reduce the cost of many different types of
-  spending---including privacy-enhanced spending through
-  [coinjoins][topic coinjoin] and [payjoins][topic payjoin].
+- **Signatures agrégées interactives compatibles avec secp256k1 :** Jonas Nick, Tim Ruffing, Yannick
+  Seurin [ont posté][nrs dahlias] sur la liste de diffusion Bitcoin-Dev pour annoncer un
+  [article][dahlias paper] qu'ils ont écrit sur la création de signatures agrégées de 64 octets
+  compatibles avec les primitives cryptographiques déjà utilisées par Bitcoin. Les signatures agrégées
+  sont la condition cryptographique pour l'[agrégation de signatures entre entrées][topic cisa]
+  (CISA), une fonctionnalité proposée pour Bitcoin qui pourrait réduire la taille des transactions
+  avec plusieurs entrées, ce qui réduirait le coût de nombreux types de dépenses, y compris les
+  dépenses améliorant la confidentialité à travers les [coinjoins][topic coinjoin] et [payjoins][topic
+  payjoin].
 
-  In addition to an aggregate signature scheme like the DahLIAS scheme proposed
-  by the authors, adding support for CISA to Bitcoin would require a
-  consensus change and possible interactions between signature
-  aggregation and other proposed consensus changes that may warrant further
-  study.
+  En plus d'un schéma de signature agrégée comme le schéma DahLIAS proposé par les auteurs, l'ajout du
+  support pour CISA à Bitcoin nécessiterait un changement de consensus et des interactions possibles
+  entre l'agrégation de signatures et d'autres changements de consensus proposés qui peuvent
+  nécessiter une étude plus approfondie.
 
-- **Standardized backup for wallet descriptors:** Salvatore Ingala
-  [posted][ingala backdes] to Delving Bitcoin a summary of various
-  tradeoffs related to backing up wallet [descriptors][topic
-  descriptors] and a proposed scheme that should be useful for many
-  different types of wallets, including those using complex scripts.
-  His scheme encrypts descriptors using a deterministically generated
-  32-byte secret.  For each public key (or extended public key) in the
-  descriptor, a copy of the secret is xored with a variant of the public
-  key, creating _n_ 32-byte secret encryptions for _n_ public keys.
-  Anyone who knows one of the public keys used in the descriptor can xor
-  it with the 32-byte secret encryption to get the 32-byte secret that
-  can decrypt the descriptor.  This simple and efficient scheme allows
-  anyone to store many encrypted copies of a descriptor across multiple
-  media and network locations, and then use their [BIP32 wallet
-  seed][topic bip32] to generate their xpub, which they can use to
-  decrypt the descriptor if they ever lose their wallet data.
+- **Sauvegarde standardisée pour les descripteurs de portefeuille :** Salvatore Ingala [a
+  posté][ingala backdes] sur Delving Bitcoin un résumé des différents compromis liés à la sauvegarde
+  des [descripteurs][topic descriptors] de portefeuille et un schéma proposé qui devrait être utile
+  pour de nombreux types de portefeuilles, y compris ceux utilisant des scripts complexes. Son schéma
+  chiffre les descripteurs en utilisant un secret de 32 octets généré de manière déterministe. Pour
+  chaque clé publique (ou clé publique étendue) dans le descripteur, une copie du secret est xorée
+  avec une variante de la clé publique, créant _n_ chiffrements secrets de 32 octets pour _n_ clés
+  publiques. Quiconque connaît l'une des clés publiques utilisées dans le descripteur peut la xor avec
+  le chiffrement secret de 32 octets pour obtenir le secret de 32 octets qui peut déchiffrer le
+  descripteur. Ce schéma simple et efficace permet à quiconque de stocker de nombreuses copies
+  chiffrées d'un descripteur sur plusieurs supports et emplacements réseau, puis d'utiliser leur
+  [graine de portefeuille BIP32][topic bip32] pour générer leur xpub, qu'ils peuvent utiliser pour
+  déchiffrer le descripteur s'ils perdent jamais leurs données de portefeuille.
 
-## Selected Q&A from Bitcoin Stack Exchange
+## Questions et réponses sélectionnées du Bitcoin Stack Exchange
 
-*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
-contributors look for answers to their questions---or when we have a
-few spare moments to help curious or confused users.  In
-this monthly feature, we highlight some of the top-voted questions and
-answers posted since our last update.*
+*[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les contributeurs d'Optech
+cherchent des réponses à leurs questions - ou quand nous avons quelques moments libres pour aider
+les utilisateurs curieux ou confus. Dans cette rubrique mensuelle, nous mettons en lumière certaines
+des questions et réponses les mieux votées postées depuis notre dernière mise à jour.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [Practicality of half-aggregated schnorr signatures?]({{bse}}125982)
-  Fjahr discusses why independent, unaggregated signatures are not required in order to
-  validate a half-aggregated signature in [cross-input signature aggregation
-  (CISA)][topic cisa] and why unaggregated signatures can actually be problematic.
+- [Praticité des signatures Schnorr semi-agrégées ?]({{bse}}125982) Fjahr discute pourquoi des
+  signatures indépendantes, non agrégées, ne sont pas nécessaires pour valider une signature
+  semi-agrégée dans l'[agrégation de signature inter-entrées (CISA)][topic cisa] et pourquoi les
+  signatures non agrégées peuvent en fait poser problème.
 
-- [What's the largest size OP_RETURN payload ever created?]({{bse}}126131)
-  Vojtěch Strnad [links][op_return tx] to a Runes [meta-protocol][topic
-  client-side validation] transaction with 79,870 bytes as the largest
-  `OP_RETURN`.
+- [Quelle est la plus grande taille de payload OP_RETURN jamais créée ?]({{bse}}126131) Vojtěch
+  Strnad [lie][op_return tx] à une transaction du [meta-protocole][topic client-side validation] Runes
+  avec 79 870 octets comme le plus grand `OP_RETURN`.
 
-- [Non-LN explanation of pay-to-anchor?]({{bse}}126098)
-  Murch details the rationale and structure of [pay-to-anchor (P2A)][topic
-  ephemeral anchors] output scripts.
+- [Explication hors-LN du pay-to-anchor ?]({{bse}}126098) Murch détaille la logique et la structure
+  des scripts de sortie [pay-to-anchor (P2A)][topic ephemeral anchors].
 
-- [Up-to-date statistics about chain reorganizations?]({{bse}}126019)
-  0xb10c and Murch point to sources of reorg data, including the
-  [stale-blocks][stale-blocks github] repository, the [forkmonitor.info][] website,
-  and the [fork.observer][] website.
+- [Statistiques à jour sur les réorganisations de chaîne ?]({{bse}}126019) 0xb10c et Murch indiquent
+  des sources de données sur les réorg, incluant le dépôt [stale-blocks][stale-blocks github], le site
+  web [forkmonitor.info][], et le site web [fork.observer][].
 
-- [Are Lightning channels always P2WSH?]({{bse}}125967)
-  Polespinasa notes the ongoing development of P2TR [simple taproot channels][topic
-  simple taproot channels] and summarizes current support across Lightning implementations.
+- [Les canaux Lightning sont-ils toujours P2WSH ?]({{bse}}125967) Polespinasa note le développement
+  en cours des canaux [simple taproot][topic simple taproot channels] P2TR et résume le support actuel
+  à travers les implémentations Lightning.
 
-- [Child-pays-for-parent as a defense against a double spend?]({{bse}}126056)
-  Murch lists complications with using a high fee [CPFP][topic cpfp] child
-  transaction to incentivize a blockchain reorg in defense of an
-  already-confirmed double-spent output.
+- [Child-pays-for-parent comme défense contre un double dépense ?]({{bse}}126056) Murch liste les
+  complications à utiliser une transaction enfant [CPFP][topic cpfp] à frais élevé pour inciter à une
+  réorg de la blockchain en défense d'une sortie déjà confirmée et doublement dépensée.
 
-- [What values does CHECKTEMPLATEVERIFY hash?]({{bse}}126133)
-  Average-gray outlines the fields that [OP_CHECKTEMPLATEVERIFY][topic
-  op_checktemplateverify] commits to: nVersion, nLockTime, input count,
-  sequences hash, output count, outputs hash, input index, and in some cases the
-  scriptSig hash.
+- [Quelles valeurs CHECKTEMPLATEVERIFY hache-t-il ?]({{bse}}126133) Average-gray décrit les champs
+  auxquels [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] s'engage : nVersion, nLockTime,
+  nombre d'entrées, hash des séquences, nombre de sorties, hash des sorties, indice d'entrée, et dans
+  certains cas le hash de scriptSig.
 
-- [Why can't Lightning nodes opt to reveal channel balances for better routing efficiency?]({{bse}}125985)
-  Rene Pickhardt explains concerns about the staleness and trustworthiness of
-  the data, privacy implications, and points to a [similar proposal][BOLTs #780] from 2020.
+- [Pourquoi les nœuds Lightning ne peuvent-ils pas choisir de révéler les soldes des canaux pour une
+  meilleure efficacité de routage ?]({{bse}}125985) Rene Pickhardt explique les préoccupations
+  concernant l'obsolescence et la fiabilité des données, les implications sur la vie privée, et
+  renvoie à une [proposition similaire][BOLTs #780] de 2020.
 
-- [Does post-quantum require hard fork or soft fork?]({{bse}}126122)
-  Vojtěch Strnad outlines an approach of how a [post-quantum][topic quantum
-  resistance] (PQC) signature scheme could be [soft-fork activated][topic soft
-  fork activation] as well as how a hard or soft fork could lock
-  quantum-vulnerable coins.
+- [Le post-quantique nécessite-t-il un hard fork ou un soft fork ?]({{bse}}126122) Vojtěch Strnad
+  décrit une approche de la manière dont un schéma de signature [post-quantique][topic quantum
+  resistance] (PQC) pourrait être [activé par soft-fork][topic soft fork activation] ainsi que comment
+  un hard ou soft fork pourrait verrouiller les pièces vulnérables au quantique.
 
-## Releases and release candidates
+## Mises à jour et versions candidates
 
-_New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates._
+_Nouvelles mises-à-jours et versions candidates pour des projets d'infrastructure Bitcoin populaires.
+Veuillez envisager de mettre à niveau vers les nouvelles mises-à-jour ou d'aider à tester les versions candidates._
 
-- [LND 0.19.0-beta.rc3][] is a release candidate for this popular LN
-  node.  One of the major improvements that could probably use testing
-  is the new RBF-based fee bumping for cooperative closes.
+- [LND 0.19.0-beta.rc3][] est un candidat à la sortie pour ce nœud LN populaire. L'une des
+  principales améliorations qui pourrait probablement nécessiter des tests est le nouveau bumping de
+  frais basé sur RBF pour les fermetures coopératives.
 
-## Notable code and documentation changes
+## Changements notables dans le code et la documentation
 
-_Notable recent changes in [Bitcoin Core][bitcoin core repo], [Core
-Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
-[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
-Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
-Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
-[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
-repo], and [BINANAs][binana repo]._
+_Changements récents notables dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core
+lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
+[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware WalletInterface (HWI)][hwi repo],
+[Rust Bitcoin][rust bitcoin repo], [BTCPay Server][btcpay server repo], [BDK][bdk repo],
+[Propositions d'Amélioration de Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
+[Lightning BLIPs][blips repo], [Interrogatoire Bitcoin][bitcoin inquisition repo], et
+[BINANAs][binana repo]._
 
-- [Bitcoin Core #31247][] adds support for serializing and parsing
-  [MuSig2][topic musig] [PSBT][topic psbt] fields as specified in [BIP373][] to
-  allow wallets to sign and spend [MuSig2][topic musig] inputs. On the input
-  side, this consists of a field listing the participant pubkeys, plus a
-  separate public nonce field and a separate partial signature field for each
-  signer. On the output side, it is a single field listing the participant
-  pubkeys for the new UTXO.
+- [Bitcoin Core #31247][] ajoute le support pour la sérialisation et l'analyse des champs
+  [MuSig2][topic musig] [PSBT][topic psbt] comme spécifié dans [BIP373][] pour permettre aux
+  portefeuilles de signer et dépenser des entrées [MuSig2][topic musig]. Du côté de l'entrée, cela
+  consiste en un champ listant les clés publiques des participants, plus un champ de nonce public
+  séparé et un champ de signature partielle séparé pour chaque signataire. Du côté de la sortie, c'est
+  un champ unique listant les clés publiques des participants pour le nouveau UTXO.
 
-- [LDK #3601][] adds a new `LocalHTLCFailureReason` enum to represent each
-  standard [BOLT4][] error code, along with some variants that surface
-  additional information to the user that was previously removed for privacy
-  reasons.
+- [LDK #3601][] ajoute une nouvelle énumération `LocalHTLCFailureReason` pour représenter chaque
+  code d'erreur standard [BOLT4][], ainsi que quelques variantes qui fournissent des informations
+  supplémentaires à l'utilisateur qui étaient précédemment supprimées pour des raisons de
+  confidentialité.
 
 {% include snippets/recap-ad.md when="2025-04-29 15:30" %}
 {% include references.md %}
