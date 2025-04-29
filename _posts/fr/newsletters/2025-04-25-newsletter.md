@@ -83,7 +83,7 @@ des questions et réponses les mieux votées postées depuis notre dernière mis
   nombre d'entrées, hash des séquences, nombre de sorties, hash des sorties, indice d'entrée, et dans
   certains cas le hash de scriptSig.
 
-- [Pourquoi les nœuds Lightning ne peuvent-ils pas choisir de révéler les soldes des canaux pour une meilleure efficacité de routage ?]({{bse}}125985) 
+- [Pourquoi les nœuds Lightning ne peuvent-ils pas choisir de révéler les soldes des canaux pour une meilleure efficacité de routage ?]({{bse}}125985)
   Rene Pickhardt explique les préoccupations
   concernant l'obsolescence et la fiabilité des données, les implications sur la vie privée, et
   renvoie à une [proposition similaire][BOLTs #780] de 2020.
