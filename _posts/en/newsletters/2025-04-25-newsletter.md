@@ -32,7 +32,7 @@ popular Bitcoin infrastructure software.
   by the authors, adding support for CISA to Bitcoin would require a
   consensus change and possible interactions between signature
   aggregation and other proposed consensus changes that may warrant further
-  study.
+  study. {% assign timestamp="0:50" %}
 
 - **Standardized backup for wallet descriptors:** Salvatore Ingala
   [posted][ingala backdes] to Delving Bitcoin a summary of various
@@ -49,7 +49,7 @@ popular Bitcoin infrastructure software.
   anyone to store many encrypted copies of a descriptor across multiple
   media and network locations, and then use their [BIP32 wallet
   seed][topic bip32] to generate their xpub, which they can use to
-  decrypt the descriptor if they ever lose their wallet data.
+  decrypt the descriptor if they ever lose their wallet data. {% assign timestamp="21:34" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -65,46 +65,46 @@ answers posted since our last update.*
 - [Practicality of half-aggregated schnorr signatures?]({{bse}}125982)
   Fjahr discusses why independent, unaggregated signatures are not required in order to
   validate a half-aggregated signature in [cross-input signature aggregation
-  (CISA)][topic cisa] and why unaggregated signatures can actually be problematic.
+  (CISA)][topic cisa] and why unaggregated signatures can actually be problematic. {% assign timestamp="17:16" %}
 
 - [What's the largest size OP_RETURN payload ever created?]({{bse}}126131)
   Vojtěch Strnad [links][op_return tx] to a Runes [meta-protocol][topic
   client-side validation] transaction with 79,870 bytes as the largest
-  `OP_RETURN`.
+  `OP_RETURN`. {% assign timestamp="41:17" %}
 
 - [Non-LN explanation of pay-to-anchor?]({{bse}}126098)
   Murch details the rationale and structure of [pay-to-anchor (P2A)][topic
-  ephemeral anchors] output scripts.
+  ephemeral anchors] output scripts. {% assign timestamp="43:29" %}
 
 - [Up-to-date statistics about chain reorganizations?]({{bse}}126019)
   0xb10c and Murch point to sources of reorg data, including the
   [stale-blocks][stale-blocks github] repository, the [forkmonitor.info][] website,
-  and the [fork.observer][] website.
+  and the [fork.observer][] website. {% assign timestamp="48:08" %}
 
 - [Are Lightning channels always P2WSH?]({{bse}}125967)
   Polespinasa notes the ongoing development of P2TR [simple taproot channels][topic
-  simple taproot channels] and summarizes current support across Lightning implementations.
+  simple taproot channels] and summarizes current support across Lightning implementations. {% assign timestamp="52:33" %}
 
 - [Child-pays-for-parent as a defense against a double spend?]({{bse}}126056)
   Murch lists complications with using a high fee [CPFP][topic cpfp] child
   transaction to incentivize a blockchain reorg in defense of an
-  already-confirmed double-spent output.
+  already-confirmed double-spent output. {% assign timestamp="53:40" %}
 
 - [What values does CHECKTEMPLATEVERIFY hash?]({{bse}}126133)
   Average-gray outlines the fields that [OP_CHECKTEMPLATEVERIFY][topic
   op_checktemplateverify] commits to: nVersion, nLockTime, input count,
   sequences hash, output count, outputs hash, input index, and in some cases the
-  scriptSig hash.
+  scriptSig hash. {% assign timestamp="59:06" %}
 
 - [Why can't Lightning nodes opt to reveal channel balances for better routing efficiency?]({{bse}}125985)
   Rene Pickhardt explains concerns about the staleness and trustworthiness of
-  the data, privacy implications, and points to a [similar proposal][BOLTs #780] from 2020.
+  the data, privacy implications, and points to a [similar proposal][BOLTs #780] from 2020. {% assign timestamp="59:32" %}
 
 - [Does post-quantum require hard fork or soft fork?]({{bse}}126122)
   Vojtěch Strnad outlines an approach of how a [post-quantum][topic quantum
   resistance] (PQC) signature scheme could be [soft-fork activated][topic soft
   fork activation] as well as how a hard or soft fork could lock
-  quantum-vulnerable coins.
+  quantum-vulnerable coins. {% assign timestamp="1:02:27" %}
 
 ## Releases and release candidates
 
@@ -114,7 +114,7 @@ release candidates._
 
 - [LND 0.19.0-beta.rc3][] is a release candidate for this popular LN
   node.  One of the major improvements that could probably use testing
-  is the new RBF-based fee bumping for cooperative closes.
+  is the new RBF-based fee bumping for cooperative closes. {% assign timestamp="1:07:39" %}
 
 ## Notable code and documentation changes
 
@@ -133,12 +133,12 @@ repo], and [BINANAs][binana repo]._
   side, this consists of a field listing the participant pubkeys, plus a
   separate public nonce field and a separate partial signature field for each
   signer. On the output side, it is a single field listing the participant
-  pubkeys for the new UTXO.
+  pubkeys for the new UTXO. {% assign timestamp="1:07:58" %}
 
 - [LDK #3601][] adds a new `LocalHTLCFailureReason` enum to represent each
   standard [BOLT4][] error code, along with some variants that surface
   additional information to the user that was previously removed for privacy
-  reasons.
+  reasons. {% assign timestamp="1:10:14" %}
 
 {% include snippets/recap-ad.md when="2025-04-29 15:30" %}
 {% include references.md %}
