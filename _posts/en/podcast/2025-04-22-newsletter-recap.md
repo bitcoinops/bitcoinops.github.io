@@ -2,8 +2,8 @@
 title: 'Bitcoin Optech Newsletter #350 Recap Podcast'
 permalink: /en/podcast/2025/04/22/
 reference: /en/newsletters/2025/04/18/
-name: 2025-04-18-recap
-slug: 2025-04-18-recap
+name: 2025-04-22-recap
+slug: 2025-04-22-recap
 type: podcast
 layout: podcast-episode
 lang: en
