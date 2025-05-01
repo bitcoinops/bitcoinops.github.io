@@ -10,7 +10,7 @@ lang: fr
 Le bulettin de cette semaine annonce un nouveau protocole de signature agrégée compatible avec
 secp256k1 et décrit un schéma de sauvegarde standardisé pour les descripteurs de portefeuille. Sont
 également incluses nos sections régulières résumant les récentes questions et réponses de Bitcoin
-Stack Exchange, annoncant de nouvelles versions et de candidats à la publication, et les résumés des modifications
+Stack Exchange, annoncant de nouvelles versions et des candidats à la publication, ainsi que les résumés des modifications
 notables apportées aux logiciels d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
@@ -21,7 +21,7 @@ notables apportées aux logiciels d'infrastructure Bitcoin populaires.
   compatibles avec les primitives cryptographiques déjà utilisées par Bitcoin. Les signatures agrégées
   sont la condition cryptographique pour l'[agrégation de signatures entre entrées][topic cisa]
   (CISA), une fonctionnalité proposée pour Bitcoin qui pourrait réduire la taille des transactions
-  avec plusieurs entrées, ce qui réduirait le coût de nombreux types de dépenses, y compris les
+  avec plusieurs entrées, ce qui diminuerait le coût de nombreux types de dépenses, y compris les
   dépenses améliorant la confidentialité à travers les [coinjoins][topic coinjoin] et [payjoins][topic
   payjoin].
 
@@ -75,8 +75,8 @@ des questions et réponses les mieux votées postées depuis notre dernière mis
   à travers les implémentations Lightning.
 
 - [Child-pays-for-parent comme défense contre un double dépense ?]({{bse}}126056) Murch liste les
-  complications à utiliser une transaction enfant [CPFP][topic cpfp] à frais élevé pour inciter à une
-  réorg de la blockchain en défense d'une sortie déjà confirmée et doublement dépensée.
+  complications à utiliser une transaction enfant [CPFP][topic cpfp] à frais élevés pour inciter à une
+  réorganisation de la blockchain et annuler une sortie déjà confirmée et doublement dépensée.
 
 - [Quelles valeurs CHECKTEMPLATEVERIFY hache-t-il ?]({{bse}}126133) Average-gray décrit les champs
   auxquels [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] s'engage : nVersion, nLockTime,
@@ -91,7 +91,7 @@ des questions et réponses les mieux votées postées depuis notre dernière mis
 - [Le post-quantique nécessite-t-il un hard fork ou un soft fork ?]({{bse}}126122) Vojtěch Strnad
   décrit une approche de la manière dont un schéma de signature [post-quantique][topic quantum
   resistance] (PQC) pourrait être [activé par soft-fork][topic soft fork activation] ainsi que comment
-  un hard ou soft fork pourrait verrouiller les pièces vulnérables au quantique.
+  un hard ou soft fork pourrait verrouiller les pièces vulnérables aux attaques quantiques.
 
 ## Mises à jour et versions candidates
 
