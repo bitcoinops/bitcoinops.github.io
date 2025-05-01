@@ -71,13 +71,40 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31250][] wallet: Disable creating and loading legacy wallets
+- [Bitcoin Core #31250][] disables the creation and loading of legacy wallets,
+  completing the migration to [descriptor][topic descriptors] wallets that have
+  been the default since October 2021 (see Newsletter [#172][news172
+  descriptors]). Berkeley DB files used by legacy wallets can no longer be
+  loaded, and all unit and functional tests for legacy wallets are deleted. Some
+  legacy wallet code remains, but will be removed in follow up PRs.
+  Bitcoin Core is still able to migrate legacy wallets to the new
+  descriptor wallet format (see [Newsletter #305][news305 bdbro]).
 
-- [Eclair #3064][] Simplify channel keys management
+- [Eclair #3064][] refactors channel key management by introducing a
+  `ChannelKeys` class. Each channel now has its own `ChannelKeys` object which,
+  together with the commitment points, derives a `CommitmentKeys` set for
+  signing remote/local commitment and [HTLC][topic htlc] transactions. The force
+  close logic and script/witness creation are also updated to rely on
+  `CommitmentKeys`. Previously, key generation was scattered across several
+  parts of the codebase to support external signers, which was prone to errors
+  because it relied on naming rather than types to ensure the correct pubkey was
+  provided.
 
-- [BTCPay Server #6684][] btcpayserver/wallet-policy
+- [BTCPay Server #6684][] adds support for a subset of [BIP388][] wallet policy
+  [descriptors][topic descriptors], allowing users to import and export both
+  single-sig and k-of-n policies. It includes the formats supported by Sparrow
+  such as P2PKH, P2WPKH, P2SH-P2WPKH, and P2TR, with corresponding multisig
+  variants, except for P2TR. Improving the use of multisig wallets is the
+  intended goal of this PR.
 
-- [BIPs #1555][] TheBlueMatt/2024-03-uris-without-bodies
+- [BIPs #1555][] merges [BIP321][], which proposes a URI scheme for describing
+  bitcoin payment instructions that modernizes and extends [BIP21][]. It keeps
+  the legacy path‐based address but standardizes the use of query parameters by
+  making new payment methods identifiable by their own parameters, and allows
+  the address field to be left empty if at least one instruction appears in a
+  query parameter. It adds an optional extension to provide a proof of payment
+  to the spender, and provides guidance on how to incorporate new payment
+  instructions.
 
 {% include snippets/recap-ad.md when="2025-05-06 16:30" %}
 {% include references.md %}
@@ -88,3 +115,5 @@ repo], and [BINANAs][binana repo]._
 [hughes opr]: https://mailing-list.bitcoindevs.xyz/bitcoindev/f4f6831a-d6b8-4f32-8a4e-c0669cc0a7b8n@googlegroups.com/
 [wuille opr]: https://mailing-list.bitcoindevs.xyz/bitcoindev/QMywWcEgJgWmiQzASR17Dt42oLGgG-t3bkf0vzGemDVNVnvVaD64eM34nOQHlBLv8nDmeBEyTXvBUkM2hZEfjwMTrzzoLl1_62MYPz8ZThs=@wuille.net/
 [news316 blockxor]: /en/newsletters/2024/08/16/#bitcoin-core-28052
+[news172 descriptors]: /en/newsletters/2021/10/27/#bitcoin-core-23002
+[news305 bdbro]: /en/newsletters/2024/05/31/#bitcoin-core-26606
