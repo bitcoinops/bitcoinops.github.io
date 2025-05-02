@@ -90,6 +90,8 @@ optech_mentions:
 
   - title: "Discovery of previous research for finding optimal cluster linearization"
     url: /en/newsletters/2025/02/07/#discovery-of-previous-research-for-finding-optimal-cluster-linearization
+  - title: "Comparison of cluster linearization techniques"
+    url: /en/newsletters/2025/05/02/#comparison-of-cluster-linearization-techniques
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
