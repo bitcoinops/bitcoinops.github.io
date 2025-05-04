@@ -265,7 +265,7 @@ th, td {
           <td><font size="3">{{tool.category}}</font></td>
           <td>
                 <div class="tooltip-container"> <!-- Everything within this division activates the tooltip container -->
-                <span class="tooltip">{{tool.keyfeatures}}</span> <!-- This span contains the tooltip text for the tooltip container -->
+                <span class="tooltip">"<em>{{tool.keyfeatures}}</em>"</span> <!-- This span contains the tooltip text for the tooltip container -->
                 &#x1F4A1;
                 </div>
           </td>
