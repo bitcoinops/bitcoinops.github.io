@@ -28,11 +28,11 @@ modifications notables apportées aux logiciels d'infrastructure Bitcoin populai
   supplémentaire. Plutôt que de tenter de résumer l'ensemble de la discussion volumineuse, nous
   résumerons ce que nous pensions être l'argument le plus convaincant pour et contre le changement.
 
-- *Pour augmenter (ou éliminer) la limite :* Pieter Wuille a [argumenté][wuille opr] que la
+- *Pour augmenter (ou éliminer) la limite :* Pieter Wuille a [fait valoir][wuille opr] que la
   politique de standardisation des transactions est peu susceptible d'empêcher de manière significative la
   confirmation de transactions portant des données créées par des organisations bien financées qui
-  mettront l'effort nécessaire pour envoyer les transactions directement aux mineurs. De plus, il
-  soutient que les blocs sont généralement pleins, qu'ils contiennent ou non des transactions portant
+  feront les efforts nécessaires pour envoyer les transactions directement aux mineurs. Il
+  ajoute que les blocs sont généralement pleins, qu'ils contiennent ou non des transactions portant
   des données, donc la quantité totale de données qu'un nœud doit stocker est à peu près la même dans
   les deux cas.
 
@@ -77,12 +77,12 @@ Propositions (BIPs)][bips repo], [Lightning BOLTs][bolts repo],[Lightning BLIPs]
   remote/local et [HTLC][topic htlc]. La logique de fermeture forcée et la création de script/témoin
   sont également mises à jour pour dépendre de `CommitmentKeys`. Auparavant, la génération de clés
   était dispersée à travers plusieurs parties du code pour supporter les signataires externes, ce qui
-  était sujet à des erreurs car elle reposait sur des noms plutôt que sur des types pour assurer que
+  pouvait provoquer des erreurs car elle reposait sur des noms plutôt que sur des types pour assurer que
   la pubkey correcte était fournie.
 
 - [BTCPay Server #6684][] ajoute le support pour un sous-ensemble de politiques de portefeuille
   [BIP388][] [descriptors][topic descriptors], permettant aux utilisateurs d'importer et d'exporter
-  des politiques à signature unique et k-de-n. Il inclut les formats pris en charge par Sparrow tels
+  à la fois des portefeuilles à signature unique et k-de-n. Il inclut les formats pris en charge par Sparrow tels
   que P2PKH, P2WPKH, P2SH-P2WPKH, et P2TR, avec les variantes multisig correspondantes, à l'exception
   de P2TR. L'amélioration de l'utilisation des portefeuilles multisig est l'objectif visé par ce PR.
 
@@ -90,9 +90,9 @@ Propositions (BIPs)][bips repo], [Lightning BOLTs][bolts repo],[Lightning BLIPs]
   paiement en bitcoin qui modernise et étend [BIP21][]. Il conserve le chemin d'adresse hérité mais
   standardise l'utilisation des paramètres de requête en rendant les nouvelles méthodes de paiement
   identifiables par leurs propres paramètres, et permet de laisser le champ d'adresse vide si au moins
-  une instruction apparaît dans un paramètre de requête. Il ajoute une extension optionnelle pour
-  fournir une preuve de paiement au dépensier, et fournit des orientations sur comment incorporer de
-  nouvelles instructions de paiement.
+  une instruction apparaît dans un paramètre de requête. Une extension optionnelle permet de
+  fournir une preuve de paiement, avec des recommandations
+  d’intégration.
 
 {% include snippets/recap-ad.md when="2025-05-06 16:30" %}
 {% include references.md %}
