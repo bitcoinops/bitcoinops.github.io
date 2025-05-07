@@ -49,7 +49,7 @@ _Nouvelles mises à jour et versions candidates pour des projets d'infrastructur
 Veuillez envisager de passer aux nouvelles versions ou d'aider à tester
 les versions candidates._
 
-- [LND 0.19.0-beta.rc3][] est un candidat à la version pour ce nœud LN populaire. L'une des
+- [LND 0.19.0-beta.rc3][] est une version candidate pour ce nœud LN populaire. L'une des
   principales améliorations qui pourrait probablement nécessiter des tests est le nouveau bumping de
   frais basé sur RBF pour les fermetures coopératives.
 
@@ -84,7 +84,7 @@ Propositions (BIPs)][bips repo], [Lightning BOLTs][bolts repo],[Lightning BLIPs]
   [BIP388][] [descriptors][topic descriptors], permettant aux utilisateurs d'importer et d'exporter
   à la fois des portefeuilles à signature unique et k-de-n. Il inclut les formats pris en charge par Sparrow tels
   que P2PKH, P2WPKH, P2SH-P2WPKH, et P2TR, avec les variantes multisig correspondantes, à l'exception
-  de P2TR. L'amélioration de l'utilisation des portefeuilles multisig est l'objectif visé par ce PR.
+  de P2TR. L'amélioration de l'utilisation des portefeuilles multisig est l'objectif visé par cette PR.
 
 - [BIPs #1555][] fusionne [BIP321][], qui propose un schéma d'URI pour décrire les instructions de
   paiement en bitcoin qui modernise et étend [BIP21][]. Il conserve le chemin d'adresse hérité mais
