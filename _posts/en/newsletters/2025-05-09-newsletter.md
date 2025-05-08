@@ -94,30 +94,69 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Core Lightning #8227][] lsps: Add service implementation for LSPS0
+- [Core Lightning #8227][] adds Rust-based `lsps-client` and `lsps-service`
+  plugins that implement a communication protocol between LSP nodes and their
+  clients, using a JSON-RPC format over [BOLT8][] peer-to-peer messages, as
+  specified in [BLIP50][] (see Newsletter [#335][news335 blip50]). This lays
+  the foundation for implementing incoming liquidity requests as specified in
+  [BLIP51][], and [JIT channels][topic jit channels] as specified in [BLIP52][].
 
-- [Core Lightning #8162][] lightningd: allow up to 100 "slow open" channels before forgetting them.
+- [Core Lightning #8162][] updates the handling of peer-initiated pending
+  channel opens by retaining them indefinitely, up to a limit of the 100 most
+  recent. Previously, unconfirmed channel opens were forgotten after 2016
+  blocks. In addition, closed channels are now held in memory to allow a node to
+  respond to a peer’s `channel_reestablish` message.
 
-- [Core Lightning #8166][] lightningd: improve wait API by making details fields per-subsystem.
+- [Core Lightning #8166][] enhances the `wait` RPC command by replacing its
+  single `details` object with subsystem-specific objects: `invoices`,
+  `forwards`,`sendpays`, and [`htlcs`][topic htlc]. In addition, the `listhtlcs`
+  RPC now supports pagination via new `created_index` and `updated_index` fields
+  and the `index`, `start`, and `end` parameters.
 
-- [Core Lightning #8237][] lightningd: add `short_channel_id` option to listpeerchannels.
+- [Core Lightning #8237][] adds a `short_channel_id` parameter to the
+  `listpeerchannels` RPC command to return only a specific channel, if provided.
 
-- [LDK #3700][] (3/3) Add Failure Reason to HTLCHandlingFailed
+- [LDK #3700][] adds a new `failure_reason` field to the `HTLCHandlingFailed`
+  event to provide additional information about why the [HTLC][topic htlc]
+  failed, and whether the cause was local or downstream. The
+  `failed_next_destination` field is renamed to `failure_type` and the
+  `UnknownNextHop` variant is deprecated, and replaced by the more general
+  `InvalidForward`.
 
-- [Rust Bitcoin #4387][] bip32: overhaul error types and add a "maximum depth exceeded" error
+- [Rust Bitcoin #4387][] refactors [BIP32][topic bip32] error handling by
+  replacing the single `bip32::Error` with separate enums for derivation, child
+  number/path parsing, and extended key parsing. This PR also introduces a new
+  `DerivationError::MaximumDepthExceeded` variant for paths exceeding 256
+  levels. These API changes break the backwards compatibility.
 
-- [BIPs #1835][] BIP48: Add p2tr script type derivation
+- [BIPs #1835][] updates [BIP48][] (see Newsletter [#135][news135 bip48]) to
+  reserve the script type value 3 for [taproot][topic taproot] (P2TR)
+  derivations in deterministic multisig wallets with the m/48' prefix, in
+  addition to the existing P2SH-P2WSH (1′) and P2WSH (2′) script types.
 
-- [BIPs #1800][] BIP 54: Consensus Cleanup
+- [BIPs #1800][] merges [BIP54][], which specifies the [consensus cleanup soft
+  fork][topic consensus cleanup] proposal to fix a number of long-standing
+  vulnerabilities in the Bitcoin protocol. See Newsletter [#348][news348
+  cleanup] for a detailed description of this BIP.
 
-- [BOLTs #1245][] Require minimally-encoded fields in BOLT 11 invoices
+- [BOLTs #1245][] tightens [BOLT11][] by disallowing non-minimal length
+  encodings in invoices: the expiry (x), the [CLTV expiry delta][topic cltv
+  expiry delta] for the last hop (c), and feature bits (9) fields must be
+  serialized in minimal length without leading zeros, and readers should reject
+  any invoice that contains leading zeros. This change was motivated by fuzz
+  testing that detected that when LDK reserialize non-minimal invoices to
+  minimal (stripping out the extra zeros), it causes the invoice’s ECDSA
+  signature to fail validation.
 
 {% include snippets/recap-ad.md when="2025-05-13 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="8227,8162,8166,8237,3700,4387,1835,1800,1245" %}
+{% include linkers/issues.md v=2 issues="8227,8162,8166,8237,3700,4387,1835,1800,1245,50,51,52" %}
 [lnd 0.19.0-beta.rc4]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.0-beta.rc4
 [wuille clustrade]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303/68
 [somsen bip30]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CAPv7TjZTWhgzzdps3vb0YoU3EYJwThDFhNLkf4XmmdfhbORTaw@mail.gmail.com/
 [loaec bip32reuse]: https://delvingbitcoin.org/t/avoiding-xpub-derivation-reuse-across-wallets-in-a-ux-friendly-manner/1644
 [ingala bip48]: https://delvingbitcoin.org/t/avoiding-xpub-derivation-reuse-across-wallets-in-a-ux-friendly-manner/1644/3
 [news346 checkpoints]: /en/newsletters/2025/03/21/#bitcoin-core-31649
+[news335 blip50]: /en/newsletters/2025/01/03/#blips-52
+[news135 bip48]: /en/newsletters/2021/07/28/#bips-1072
+[news348 cleanup]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
