@@ -65,12 +65,71 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Add bitcoin wrapper executable][review club 31375] is a PR by
+[ryanofsky][gh ryanofsky] that introduces a new `bitcoin` binary which
+can be used to discover and launch the various Bitcoin Core binaries.
+
+Bitcoin Core v29 shipped with 7 binaries (e.g. `bitcoind`, `bitcoin-qt`
+and `bitcoin-cli`), but that number is set to [increase][Bitcoin Core
+#30983] in the future when [multiprocess][multiprocess design] binaries
+are shipped as well. The new `bitcoin` wrapper maps commands (e.g.
+`gui`) to the correct monolithic (`bitcoin-qt`) or multiprocess
+(`bitcoin-gui`) binary. In addition to discoverability, the wrapper also
+provides forward compatibility so binaries can be reorganized without
+the user interface changing.
+
+With this PR, a user can launch Bitcoin Core with `bitcoin daemon` or
+`bitcoin gui`. Directly launching the `bitcoind` or `bitcoin-qt`
+binaries is still possible and not affected by this PR.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/31664#l-19FIXME"
+  q0="From issue #30983, four packaging strategies were listed. Which
+  specific drawbacks of the “side‑binaries” approach does this PR
+  address?"
+  a0="The side-binaries approach assumed by this PR involves releasing
+  the new multiprocess binaries alongside the existing monolithic
+  binaries. With this many binaries, it can be confusing for users to
+  find and figure out the binary they need for their purpose. This PR
+  takes a lot of the confusion away by providing a single entry point,
+  with an overview of options and a help string. One reviewer suggested
+  the addition of fuzzy search to facilitate this even further."
+  a0link="https://bitcoincore.reviews/31375#l-40"
+  q1="`GetExePath()` does not use `readlink(\"/proc/self/exe\")` on
+  Linux even though it would be more direct. What advantages does the
+  current implementation have? What corner cases might it miss?"
+  a1="There may be other non-Windows platforms that do not have the proc
+  filesystem. Other than that, neither the author nor guests could
+  identify any drawbacks of using procfs."
+  a1link="https://bitcoincore.reviews/31375#l-71"
+  q2="In `ExecCommand`, explain the purpose of the `fallback_os_search`
+  Boolean. Under what circumstances is it better to avoid letting the OS
+  search for the binary on the `PATH`?"
+  a2="If it looks like the wrapper executable was invoked by path (e.g.
+  \"/build/bin/bitcoin\") rather than by search (e.g. \"bitcoin\"), it
+  is assumed the user is using a local build and `fallback_os_search` is
+  set to `false`. This boolean is introduced to unintentionally mix
+  binaries from different sources. For example, if the user didn't
+  locally build `gui`, then `/build/bin/bitcoin gui` should not fall
+  back to the system installed `bitcoin-gui`. The author is considering
+  removing the `PATH` search entirely, and user feedback would be
+  helpful."
+  a2link="https://bitcoincore.reviews/31375#l-75"
+  q3="The wrapper searches `${prefix}/libexec` only when it detects that
+  it is running from an installed `bin/` directory. Why not always
+  search `libexec`?"
+  a3="The wrapper should be conservative about what paths it tries to
+  execute, and encourage standard `PREFIX/{bin,libexec}` layouts, not
+  encourage packagers to create nonstandard layouts or work when
+  binaries are arranged in unexpected ways."
+  a3link="https://bitcoincore.reviews/31375#l-75"
+  q4="The PR adds an exemption in `security-check.py` because the
+  wrapper contains no fortified `glibc` calls. Why does it not contain
+  them, and would adding a trivial `printf` to `bitcoin.cpp` break
+  reproducible builds under the current rules?"
+  a4="The wrapper binary is so simple it does not contain any calls that
+  can be fortified. If it does in the future, the exemption in
+  security-check.py can be removed."
+  a4link="https://bitcoincore.reviews/31375#l-117"
 %}
 
 ## Releases and release candidates
@@ -150,7 +209,7 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-05-13 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="8227,8162,8166,8237,3700,4387,1835,1800,1245,50,51,52" %}
+{% include linkers/issues.md v=2 issues="8227,8162,8166,8237,3700,4387,1835,1800,1245,50,51,52,30983" %}
 [lnd 0.19.0-beta.rc4]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.0-beta.rc4
 [wuille clustrade]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303/68
 [somsen bip30]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CAPv7TjZTWhgzzdps3vb0YoU3EYJwThDFhNLkf4XmmdfhbORTaw@mail.gmail.com/
@@ -160,3 +219,6 @@ repo], and [BINANAs][binana repo]._
 [news335 blip50]: /en/newsletters/2025/01/03/#blips-52
 [news135 bip48]: /en/newsletters/2021/07/28/#bips-1072
 [news348 cleanup]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
+[review club 31375]: https://bitcoincore.reviews/31375
+[gh ryanofsky]: https://github.com/ryanofsky
+[multiprocess design]: https://github.com/bitcoin/bitcoin/blob/master/doc/design/multiprocess.md
