@@ -21,7 +21,7 @@ infrastructure software.
   tradeoffs between three different cluster linearization techniques,
   following up with [benchmarks][wuille clusbench] of implementations of
   each.  Several other developers discussed the results and asked
-  clarifying questions, to which Wuille responded.
+  clarifying questions, to which Wuille responded. {% assign timestamp="0:41" %}
 
 - **Increasing or removing Bitcoin Core's `OP_RETURN` size limit:**
   in a thread on Bitcoin-Dev, several developers discussed changing or
@@ -50,6 +50,8 @@ infrastructure software.
     ability to retrieve it using Bitcoin Core RPCs could be problematic
     for many users.
 
+{% assign timestamp="6:46" %}
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -58,7 +60,7 @@ release candidates._
 
 - [LND 0.19.0-beta.rc3][] is a release candidate for this popular LN
   node.  One of the major improvements that could probably use testing
-  is the new RBF-based fee bumping for cooperative closes.
+  is the new RBF-based fee bumping for cooperative closes. {% assign timestamp="1:01:16" %}
 
 ## Notable code and documentation changes
 
@@ -78,7 +80,7 @@ repo], and [BINANAs][binana repo]._
   loaded, and all unit and functional tests for legacy wallets are deleted. Some
   legacy wallet code remains, but will be removed in follow up PRs.
   Bitcoin Core is still able to migrate legacy wallets to the new
-  descriptor wallet format (see [Newsletter #305][news305 bdbro]).
+  descriptor wallet format (see [Newsletter #305][news305 bdbro]). {% assign timestamp="1:02:10" %}
 
 - [Eclair #3064][] refactors channel key management by introducing a
   `ChannelKeys` class. Each channel now has its own `ChannelKeys` object which,
@@ -88,14 +90,14 @@ repo], and [BINANAs][binana repo]._
   `CommitmentKeys`. Previously, key generation was scattered across several
   parts of the codebase to support external signers, which was prone to errors
   because it relied on naming rather than types to ensure the correct pubkey was
-  provided.
+  provided. {% assign timestamp="1:06:02" %}
 
 - [BTCPay Server #6684][] adds support for a subset of [BIP388][] wallet policy
   [descriptors][topic descriptors], allowing users to import and export both
   single-sig and k-of-n policies. It includes the formats supported by Sparrow
   such as P2PKH, P2WPKH, P2SH-P2WPKH, and P2TR, with corresponding multisig
   variants, except for P2TR. Improving the use of multisig wallets is the
-  intended goal of this PR.
+  intended goal of this PR. {% assign timestamp="1:07:46" %}
 
 - [BIPs #1555][] merges [BIP321][], which proposes a URI scheme for describing
   bitcoin payment instructions that modernizes and extends [BIP21][]. It keeps
@@ -104,7 +106,7 @@ repo], and [BINANAs][binana repo]._
   the address field to be left empty if at least one instruction appears in a
   query parameter. It adds an optional extension to provide a proof of payment
   to the spender, and provides guidance on how to incorporate new payment
-  instructions.
+  instructions. {% assign timestamp="1:10:34" %}
 
 {% include snippets/recap-ad.md when="2025-05-06 16:30" %}
 {% include references.md %}
