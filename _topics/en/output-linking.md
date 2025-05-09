@@ -78,6 +78,9 @@ optech_mentions:
   - title: "Recommendations for unique address servers"
     url: /en/newsletters/2022/10/12/#recommendations-for-unique-address-servers
 
+  - title: "Proposed scheme to prevent BIP32 path reuse to avoid output linking and other problems"
+    url: /en/newsletters/2025/05/09/#avoiding-bip32-path-reuse
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs (dust)
