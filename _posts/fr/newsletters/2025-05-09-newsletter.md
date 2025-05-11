@@ -54,8 +54,8 @@ et décrivant les changements notables dans les projets d'infrastructure Bitcoin
 
 ## Bitcoin Core PR Review Club
 
-*Dans cette section mensuelle, nous résumons une récente [Bitcoin Core PR Review
-Réunion du Club][], mettant en lumière certaines des questions importantes et des réponses. Cliquez
+*Dans cette section mensuelle, nous résumons une récente réunion du [Bitcoin Core PR Review Club][],
+mettant en lumière certaines des questions importantes et des réponses. Cliquez
 sur une question ci-dessous pour voir un résumé de la réponse donnée lors de la réunion.*
 
 [L'ajout d'un exécutable wrapper bitcoin][review club 31375] est une PR par [ryanofsky][gh
