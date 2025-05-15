@@ -86,21 +86,63 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #32155][] miner: timelock the coinbase to the mined block's height
+- [Bitcoin Core #32155][] updates the internal miner to [timelock][topic
+  timelocks] coinbase transactions by setting the `nLockTime` field to the
+  current block’s height minus one and requiring the `nSequence` field not to be
+  final (to enforce the timelock). Although the built-in miner isn’t typically
+  used on mainnet, updating it encourages mining pools to adopt these changes
+  early in their own software in preparation for the
+  [consensus cleanup][topic consensus cleanup] soft fork proposed in [BIP54][]. Timelocking coinbase
+  transactions solves the [duplicate transaction][topic duplicate transactions]
+  vulnerability, and would allow the costly [BIP30][] checks to be lifted.
 
-- [Bitcoin Core #28710][] Remove the legacy wallet and BDB dependency
+- [Bitcoin Core #28710][] removes the remaining legacy wallet code,
+  documentation, and related tests. This includes the legacy-only RPCs, such as
+  `importmulti`, `sethdseed`, `addmultisigaddress`, `importaddress`,
+  `importpubkey`, `dumpwallet`, `importwallet`, and `newkeypool`. As the final
+  step for legacy wallet removal, the BerkeleyDB dependency and related
+  functions are also removed. However, the bare minimum of legacy code and an
+  independent BDB parser (see Newsletter [#305][news305 bdb]) are retained in
+  order to perform wallet migration to [descriptor][topic descriptors] wallets.
 
-- [Core Lightning #8272][] connectd: remove DNS seed lookups.
+- [Core Lightning #8272][] disables the DNS seed lookup peer discovery fallback
+  from the connection daemon `connectd` to resolve call block issues caused by
+  offline DNS seeds.
 
-- [LND #8330][] bitromortac/2401-bimodal-improvements
+- [LND #8330][] adds a small constant (1/c) to the pathfinding bimodal
+  probability model to address numerical instability. In edge cases where the
+  calculation would otherwise fail due to rounding errors and produce a zero
+  probability, this regularization provides a fallback by causing the model to
+  revert to a uniform distribution. This resolves normalization bugs that occur
+  in scenarios involving very large channels or channels that don't fit a
+  bimodal distribution. Additionally, the model now skips unnecessary
+  probability calculations and automatically corrects outdated channel liquidity
+  observations and contradictory historical information.
 
-- [Rust Bitcoin #4458][] locktimes: replace `MtpAndHeight` type with pair of `BlockMtp` and `BlockHeight`
+- [Rust Bitcoin #4458][] replaces the `MtpAndHeight` struct with an explicit
+  pair of the newly added `BlockMtp` and the already existing `BlockHeight`,
+  enabling better modeling of both block height and Median Time Past (MTP)
+  values in relative [timelocks][topic timelocks]. Unlike
+  `locktime::absolute::MedianTimePast`, which is constrained to values above 500 million
+  (roughly after 1985), `BlockMtp` can represent any 32-bit timestamp. This
+  makes it suitable for theoretical edge cases, such as chains with unusual
+  timestamps. This update also introduces `BlockMtpInterval`, and renames
+  `BlockInterval` to `BlockHeightInterval`.
 
-- [BIPs #1848][] 'jamesob-25-05-withdraw-vault' - See also https://delvingbitcoin.org/t/withdrawing-op-vault-bip-345/1670
+- [BIPs #1848][] updates the status of [BIP345][] to `Withdrawn`, as the author
+  [believes][obeirne vaultwithdraw] its proposed `OP_VAULT` opcode has been superseded by
+  [`OP_CHECKCONTRACTVERIFY`][topic matt] (OP_CCV), a more general [vault][topic vaults] design
+  and a new type of [covenant][topic covenants].
 
-- [BIPs #1841][] Adds BIP172: Define Bitcoin Subunits as Satoshis
+- [BIPs #1841][] merges [BIP172][], which proposes formally defining Bitcoin’s
+  indivisible base unit as a “satoshi,” reflecting current widespread usage and
+  helping standardize terminology across applications and documentation.
 
-- [BIPs #1821][] BIP177: Redefine Bitcoin’s Base Unit
+- [BIPs #1821][] merges [BIP177][], which proposes redefining “bitcoin” to
+  represent the smallest indivisible unit (commonly referred to as 1 satoshi),
+  rather than 100,000,000 units. The proposal argues that aligning terminology
+  with the actual base unit would reduce confusion caused by arbitrary decimal
+  conventions.
 
 {% include snippets/recap-ad.md when="2025-05-20 16:30" %}
 {% include references.md %}
@@ -118,3 +160,5 @@ repo], and [BINANAs][binana repo]._
 [cohen quine]: https://delvingbitcoin.org/t/a-simple-approach-to-allowing-recursive-covenants-by-enabling-quines/1655/
 [linus bitvm-sf]: https://delvingbitcoin.org/t/how-ctv-csfs-improves-bitvm-bridges/1591/
 [quines]: https://en.wikipedia.org/wiki/Quine_(computing)
+[news305 bdb]: /en/newsletters/2024/05/31/#bitcoin-core-26606
+[obeirne vaultwithdraw]: https://delvingbitcoin.org/t/withdrawing-op-vault-bip-345/1670/
