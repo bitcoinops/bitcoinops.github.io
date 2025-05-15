@@ -38,7 +38,7 @@ Bitcoin infrastructure software.
   blockchain.  It's not really an issue now, except in a theoretical
   case where Bitcoin's proof-of-work security mechanism breaks.  Several
   possible solutions were discussed, such as hardcoding additional
-  special case logic for these two exceptions.
+  special case logic for these two exceptions. {% assign timestamp="0:52" %}
 
 - **Avoiding BIP32 path reuse:** Kevin Loaec [posted][loaec bip32reuse]
   to Delving Bitcoin to discuss options for preventing the same
@@ -56,7 +56,7 @@ Bitcoin infrastructure software.
   Salvatore Ingala [replied][ingala bip48] to suggest keeping the _coin
   type_ part of the BIP48 path as it helps ensure keys for use with
   different cryptocurrencies are kept segregated, which is enforced by
-  some hardware signing devices.
+  some hardware signing devices. {% assign timestamp="28:33" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -132,6 +132,8 @@ binaries is still possible and not affected by this PR.
   a4link="https://bitcoincore.reviews/31375#l-117"
 %}
 
+{% assign timestamp="16:38" %}
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -140,7 +142,7 @@ release candidates._
 
 - [LND 0.19.0-beta.rc4][] is a release candidate for this popular LN
   node.  One of the major improvements that could probably use testing
-  is the new RBF-based fee bumping for cooperative closes.
+  is the new RBF-based fee bumping for cooperative closes. {% assign timestamp="45:01" %}
 
 ## Notable code and documentation changes
 
@@ -158,45 +160,45 @@ repo], and [BINANAs][binana repo]._
   clients, using a JSON-RPC format over [BOLT8][] peer-to-peer messages, as
   specified in [BLIP50][] (see Newsletter [#335][news335 blip50]). This lays
   the foundation for implementing incoming liquidity requests as specified in
-  [BLIP51][], and [JIT channels][topic jit channels] as specified in [BLIP52][].
+  [BLIP51][], and [JIT channels][topic jit channels] as specified in [BLIP52][]. {% assign timestamp="45:18" %}
 
 - [Core Lightning #8162][] updates the handling of peer-initiated pending
   channel opens by retaining them indefinitely, up to a limit of the 100 most
   recent. Previously, unconfirmed channel opens were forgotten after 2016
   blocks. In addition, closed channels are now held in memory to allow a node to
-  respond to a peer’s `channel_reestablish` message.
+  respond to a peer’s `channel_reestablish` message. {% assign timestamp="46:43" %}
 
 - [Core Lightning #8166][] enhances the `wait` RPC command by replacing its
   single `details` object with subsystem-specific objects: `invoices`,
   `forwards`,`sendpays`, and [`htlcs`][topic htlc]. In addition, the `listhtlcs`
   RPC now supports pagination via new `created_index` and `updated_index` fields
-  and the `index`, `start`, and `end` parameters.
+  and the `index`, `start`, and `end` parameters. {% assign timestamp="47:44" %}
 
 - [Core Lightning #8237][] adds a `short_channel_id` parameter to the
-  `listpeerchannels` RPC command to return only a specific channel, if provided.
+  `listpeerchannels` RPC command to return only a specific channel, if provided. {% assign timestamp="48:49" %}
 
 - [LDK #3700][] adds a new `failure_reason` field to the `HTLCHandlingFailed`
   event to provide additional information about why the [HTLC][topic htlc]
   failed, and whether the cause was local or downstream. The
   `failed_next_destination` field is renamed to `failure_type` and the
   `UnknownNextHop` variant is deprecated, and replaced by the more general
-  `InvalidForward`.
+  `InvalidForward`. {% assign timestamp="49:28" %}
 
 - [Rust Bitcoin #4387][] refactors [BIP32][topic bip32] error handling by
   replacing the single `bip32::Error` with separate enums for derivation, child
   number/path parsing, and extended key parsing. This PR also introduces a new
   `DerivationError::MaximumDepthExceeded` variant for paths exceeding 256
-  levels. These API changes break the backwards compatibility.
+  levels. These API changes break the backwards compatibility. {% assign timestamp="49:55" %}
 
 - [BIPs #1835][] updates [BIP48][] (see Newsletter [#135][news135 bip48]) to
   reserve the script type value 3 for [taproot][topic taproot] (P2TR)
   derivations in deterministic multisig wallets with the m/48' prefix, in
-  addition to the existing P2SH-P2WSH (1′) and P2WSH (2′) script types.
+  addition to the existing P2SH-P2WSH (1′) and P2WSH (2′) script types. {% assign timestamp="50:15" %}
 
 - [BIPs #1800][] merges [BIP54][], which specifies the [consensus cleanup soft
   fork][topic consensus cleanup] proposal to fix a number of long-standing
   vulnerabilities in the Bitcoin protocol. See Newsletter [#348][news348
-  cleanup] for a detailed description of this BIP.
+  cleanup] for a detailed description of this BIP. {% assign timestamp="55:03" %}
 
 - [BOLTs #1245][] tightens [BOLT11][] by disallowing non-minimal length
   encodings in invoices: the expiry (x), the [CLTV expiry delta][topic cltv
@@ -205,7 +207,7 @@ repo], and [BINANAs][binana repo]._
   any invoice that contains leading zeros. This change was motivated by fuzz
   testing that detected that when LDK reserialize non-minimal invoices to
   minimal (stripping out the extra zeros), it causes the invoice’s ECDSA
-  signature to fail validation.
+  signature to fail validation. {% assign timestamp="56:37" %}
 
 {% include snippets/recap-ad.md when="2025-05-13 16:30" %}
 {% include references.md %}
