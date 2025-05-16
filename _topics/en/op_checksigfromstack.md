@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Summary and criticism of CTV + CSFS benefits for Ark"
     url: /en/newsletters/2025/04/04/#ark
 
+  - title: "Description of benefits to BitVM from `OP_CTV` and `OP_CSFS`"
+    url: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
