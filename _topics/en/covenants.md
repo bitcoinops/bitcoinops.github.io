@@ -124,6 +124,9 @@ optech_mentions:
   - title: "Request for a covenant to fairly distribute rewards in the Braidpool decentralized mining pool"
     url: /en/newsletters/2025/02/07/#request-for-a-covenant-design-supporting-braidpool
 
+  - title: "Suggestion for opcodes to enable recursive covenants through quines"
+    url: /en/newsletters/2025/05/16/#proposed-opcodes-for-enabling-recursive-covenants-through-quines
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
