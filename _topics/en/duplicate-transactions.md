@@ -99,8 +99,8 @@ impossible.
 
 The [BIP30][] soft fork limited the damage by forbidding any transaction
 in a new block from having the same txid as a partly unspent previous
-transaction.  A later soft fork [BIP34][] attempted to fix the problem
-entirely by requiring each coinbase transaction include unique data,
+transaction.  A later soft fork, [BIP34][], attempted to fix the problem
+entirely by requiring each coinbase transaction to include unique data,
 ensuring it was a unique transaction with a unique txid.  Unfortunately,
 it was later discovered that some pre-BIP34 blocks contained the unique
 data necessary for a later block to pass the BIP34 rule, called the
