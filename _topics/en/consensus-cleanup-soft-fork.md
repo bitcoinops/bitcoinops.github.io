@@ -65,6 +65,9 @@ optech_mentions:
   - title: "BIPs #1800 merges BIP54, which specifies the consensus cleanup soft fork proposal"
     url: /en/newsletters/2025/05/09/#bips-1800
 
+  - title: "Bitcoin Core #32155 updates the internal miner to comply with consensus cleanup requirements"
+    url: /en/newsletters/2025/05/16/#bitcoin-core-32155
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation
