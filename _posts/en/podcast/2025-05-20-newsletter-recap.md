@@ -9,7 +9,7 @@ layout: podcast-episode
 lang: en
 ---
 Mark “Murch” Erhardt and Mike Schmidt are joined by Eugene Siegel, Chris
-Stewart, Bram Cohen, and Robin Linus to discuss [Newsletter #353]({{page.reference}}).
+Stewart, Bram Cohen, and Robin Linus to discuss [Newsletter #354]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
