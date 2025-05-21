@@ -29,7 +29,7 @@ changes to popular Bitcoin infrastructure software.
   prevent overflow unless the node was continuously attacked for over 10
   years. <!-- 2**32 * 10 / 125 / (60 * 60 * 24 * 365) --> The
   vulnerability was completely fixed by using 64-bit identifiers,
-  starting with last month's release of Bitcoin Core 29.0.
+  starting with last month's release of Bitcoin Core 29.0. {% assign timestamp="1:17" %}
 
 ## Changing consensus
 
@@ -45,7 +45,7 @@ Bitcoin's consensus rules._
   earlier discussion, the new proposal uses numbers in the same
   compactSize data format currently used in Bitcoin.  Additional related
   [discussion][stewart inout] occurred on two [threads][stewart
-  overflow] on Delving Bitcoin.
+  overflow] on Delving Bitcoin. {% assign timestamp="5:28" %}
 
 - **Proposed opcodes for enabling recursive covenants through quines:**
   Bram Cohen [posted][cohen quine] to Delving Bitcoin to suggest a set
@@ -53,7 +53,7 @@ Bitcoin's consensus rules._
   [covenants][topic covenants] through self-reproducing scripts
   ([quines][]).  Cohen describes how the opcodes could be used to create a
   simple [vault][topic vaults] and mentions a more advanced system that
-  he's been working on.
+  he's been working on. {% assign timestamp="23:11" %}
 
 - **Description of benefits to BitVM from `OP_CTV` and `OP_CSFS`:**
   Robin Linus [posted][linus bitvm-sf] to Delving Bitcoin about several
@@ -63,7 +63,7 @@ Bitcoin's consensus rules._
   The benefits he describes includes increasing the number of operators
   without downsides, "reducing transaction sizes by approximately 10x"
   (which reduces worst-case costs), and allowing non-interactive peg-ins
-  for certain contracts.
+  for certain contracts. {% assign timestamp="36:39" %}
 
 ## Releases and release candidates
 
@@ -73,7 +73,7 @@ release candidates._
 
 - [LND 0.19.0-beta.rc4][] is a release candidate for this popular LN
   node.  One of the major improvements that could probably use testing
-  is the new RBF-based fee bumping for cooperative closes.
+  is the new RBF-based fee bumping for cooperative closes. {% assign timestamp="1:07:28" %}
 
 ## Notable code and documentation changes
 
@@ -94,7 +94,7 @@ repo], and [BINANAs][binana repo]._
   early in their own software in preparation for the
   [consensus cleanup][topic consensus cleanup] soft fork proposed in [BIP54][]. Timelocking coinbase
   transactions solves the [duplicate transaction][topic duplicate transactions]
-  vulnerability, and would allow the costly [BIP30][] checks to be lifted.
+  vulnerability, and would allow the costly [BIP30][] checks to be lifted. {% assign timestamp="1:08:27" %}
 
 - [Bitcoin Core #28710][] removes the remaining legacy wallet code,
   documentation, and related tests. This includes the legacy-only RPCs, such as
@@ -103,11 +103,11 @@ repo], and [BINANAs][binana repo]._
   step for legacy wallet removal, the BerkeleyDB dependency and related
   functions are also removed. However, the bare minimum of legacy code and an
   independent BDB parser (see Newsletter [#305][news305 bdb]) are retained in
-  order to perform wallet migration to [descriptor][topic descriptors] wallets.
+  order to perform wallet migration to [descriptor][topic descriptors] wallets. {% assign timestamp="1:09:38" %}
 
 - [Core Lightning #8272][] disables the DNS seed lookup peer discovery fallback
   from the connection daemon `connectd` to resolve call block issues caused by
-  offline DNS seeds.
+  offline DNS seeds. {% assign timestamp="1:13:28" %}
 
 - [LND #8330][] adds a small constant (1/c) to the pathfinding bimodal
   probability model to address numerical instability. In edge cases where the
@@ -117,7 +117,7 @@ repo], and [BINANAs][binana repo]._
   in scenarios involving very large channels or channels that don't fit a
   bimodal distribution. Additionally, the model now skips unnecessary
   probability calculations and automatically corrects outdated channel liquidity
-  observations and contradictory historical information.
+  observations and contradictory historical information. {% assign timestamp="1:14:09" %}
 
 - [Rust Bitcoin #4458][] replaces the `MtpAndHeight` struct with an explicit
   pair of the newly added `BlockMtp` and the already existing `BlockHeight`,
@@ -127,22 +127,22 @@ repo], and [BINANAs][binana repo]._
   (roughly after 1985), `BlockMtp` can represent any 32-bit timestamp. This
   makes it suitable for theoretical edge cases, such as chains with unusual
   timestamps. This update also introduces `BlockMtpInterval`, and renames
-  `BlockInterval` to `BlockHeightInterval`.
+  `BlockInterval` to `BlockHeightInterval`. {% assign timestamp="1:14:52" %}
 
 - [BIPs #1848][] updates the status of [BIP345][] to `Withdrawn`, as the author
   [believes][obeirne vaultwithdraw] its proposed `OP_VAULT` opcode has been superseded by
   [`OP_CHECKCONTRACTVERIFY`][topic matt] (OP_CCV), a more general [vault][topic vaults] design
-  and a new type of [covenant][topic covenants].
+  and a new type of [covenant][topic covenants]. {% assign timestamp="1:04:33" %}
 
 - [BIPs #1841][] merges [BIP172][], which proposes formally defining Bitcoin’s
   indivisible base unit as a “satoshi,” reflecting current widespread usage and
-  helping standardize terminology across applications and documentation.
+  helping standardize terminology across applications and documentation. {% assign timestamp="1:16:25" %}
 
 - [BIPs #1821][] merges [BIP177][], which proposes redefining “bitcoin” to
   represent the smallest indivisible unit (commonly referred to as 1 satoshi),
   rather than 100,000,000 units. The proposal argues that aligning terminology
   with the actual base unit would reduce confusion caused by arbitrary decimal
-  conventions.
+  conventions. {% assign timestamp="1:16:42" %}
 
 {% include snippets/recap-ad.md when="2025-05-20 16:30" %}
 {% include references.md %}
