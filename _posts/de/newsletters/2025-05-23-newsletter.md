@@ -63,7 +63,7 @@ _Neue Veröffentlichungen und Release-Kandidaten für beliebte Bitcoin-Infrastru
 
 _Nennenswerte kürzliche Änderungen in [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo] und [BINANAs][binana repo]._
 
-- [Bitcoin Core #32423][] entfernt den Hinweis, dass `rpcuser/rpcpassword` als veraltet markiert ist, und ersetzt ihn durch eine Sicherheitswarnungbezüglich der Speicherung von Klartext-Anmeldedaten in der Konfigurationsdatei. Diese Option wurde ursprünglich als veraltet markiert, als `rpcauth`
+- [Bitcoin Core #32423][] entfernt den Hinweis, dass `rpcuser/rpcpassword` als veraltet markiert ist, und ersetzt ihn durch eine Sicherheitswarnung bezüglich der Speicherung von Klartext-Anmeldedaten in der Konfigurationsdatei. Diese Option wurde ursprünglich als veraltet markiert, als `rpcauth`
   in [Bitcoin Core #7044][] eingeführt wurde, welches mehrere RPC-Benutzer unterstützt und
   seinen Cookie hasht. Der PR fügt außerdem ein zufälliges 16-Byte-Salt zu Anmeldedaten aus
   beiden Methoden hinzu und hasht diese, bevor sie im Speicher gespeichert werden.
@@ -120,7 +120,7 @@ _Nennenswerte kürzliche Änderungen in [Bitcoin Core][bitcoin core repo], [Core
 [Quellen]: /en/internal/sources/
 [lnd rn]: https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.19.0.md
 [Core Lightning 25.05rc1]: https://github.com/ElementsProject/lightning/releases/tag/v25.05rc1
-[news348 txgraph]: /de/newsletters/2025/04/04/#bitcoin-core-31363)
+[news348 txgraph]: /de/newsletters/2025/04/04/#bitcoin-core-31363
 [news238 storage]: /en/newsletters/2023/02/15/#core-lightning-5361
 [news226 reckless]: /en/newsletters/2022/11/16/#core-lightning-5647
 [news331 interop]: /en/newsletters/2024/11/29/#core-lightning-7719
