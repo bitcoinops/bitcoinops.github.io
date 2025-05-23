@@ -21,7 +21,41 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Cake Wallet added payjoin v2 support:**
+  Cake Wallet [v4.28.0][cake wallet 4.28.0] adds [the ability][cake blog] to
+  receive payments using the [payjoin][topic payjoin] v2 protocol.
+
+- **Sparrow adds pay-to-anchor features:**
+  Sparrow [2.2.0][sparrow 2.2.0] displays and can send [pay-to-anchor
+  (P2A)][topic ephemeral anchors] outputs.
+
+- **Safe Wallet 1.3.0 released:**
+  [Safe Wallet][safe wallet github] is a desktop multisig wallet with hardware
+  signing device support that added [CPFP][topic cpfp] fee bumping for incoming
+  transactions in [1.3.0][safe wallet 1.3.0].
+
+- **COLDCARD Q v1.3.2 released:**
+  COLDCARD Q's [v1.3.2 release][coldcard blog] includes additional multisig
+  [spending policy support][coldcard ccc] and new features for [sharing
+  sensitive data][coldcard kt].
+
+- **Transaction batching using payjoin:**
+  [Private Pond][private pond post] is an [experimental implementation][private
+  pond github] of a [transaction batching][topic payment batching] service that
+  uses payjoin to generate smaller transactions that pay less in fees.
+
+- **JoinMarket Fidelity Bond Simulator:**
+  The [JoinMarket Fidelity Bond Simulator][jmfbs github] provides tools for
+  JoinMarket participants to simulate their performance in the market based on
+  [fidelity bonds][news161 fb].
+
+- **Bitcoin opcodes documented:**
+  The [Opcode Explained][opcode explained website] website documents
+  each Bitcoin script opcode.
+
+- **Bitkey code open sourced:**
+  The Bitkey hardware signing device [announced][bitkey blog] their [source
+  code][bitkey github] is open-source for non-commercial uses.
 
 ## Releases and release candidates
 
@@ -121,3 +155,18 @@ repo], and [BINANAs][binana repo]._
 [news331 interop]: /en/newsletters/2024/11/29/#core-lightning-7719
 [news345 splicing]: /en/newsletters/2025/03/14/#eclair-3007
 [news275 ping]: /en/newsletters/2023/11/01/#lnd-7828
+[cake wallet 4.28.0]: https://github.com/cake-tech/cake_wallet/releases/tag/v4.28.0
+[cake blog]: https://blog.cakewallet.com/bitcoin-privacy-takes-a-leap-forward-cake-wallet-introduces-payjoin-v2/
+[sparrow 2.2.0]: https://github.com/sparrowwallet/sparrow/releases/tag/2.2.0
+[safe wallet github]: https://github.com/andreasgriffin/bitcoin-safe
+[safe wallet 1.3.0]: https://github.com/andreasgriffin/bitcoin-safe/releases/tag/1.3.0
+[coldcard blog]: https://blog.coinkite.com/ccc-and-keyteleport/
+[coldcard ccc]: https://coldcard.com/docs/coldcard-cosigning/
+[coldcard kt]: https://github.com/Coldcard/firmware/blob/master/docs/key-teleport.md
+[private pond post]: https://njump.me/naddr1qvzqqqr4gupzqg42s9gsae3lu2cketskuzfp778fh2vg9c5x3elx8ttdpzhfkk25qq2nv5nzddgxxdjtd4u9vwrdv939vmnswfzk6j85dxk
+[private pond github]: https://github.com/Kukks/PrivatePond
+[jmfbs github]: https://github.com/m0wer/joinmarket-fidelity-bond-simulator
+[news161 fb]: /en/newsletters/2021/08/11/#implementation-of-fidelity-bonds
+[opcode explained website]: https://opcodeexplained.com/
+[bitkey blog]: https://x.com/BEN0WHERE/status/1918073429791785086
+[bitkey github]: https://github.com/proto-at-block/bitkey
