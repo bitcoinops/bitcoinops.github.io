@@ -90,6 +90,9 @@ optech_mentions:
   - title: "Multiparty LN-Symmetry variant with penalties for limiting published updates"
     url: /en/newsletters/2025/01/10/#multiparty-ln-symmetry-variant-with-penalties-for-limiting-published-updates
 
+  - title: "Summary and criticism of CTV + CSFS benefits for LN-Symmetry"
+    url: /en/newsletters/2025/04/04/#ln-symmetry
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT

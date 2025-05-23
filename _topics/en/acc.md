@@ -58,6 +58,12 @@ optech_mentions:
   - title: "Proposed CTV enhancement opcodes for more flexible vaults and accountable computing"
     url: /en/newsletters/2025/01/03/#ctv-enhancement-opcodes
 
+  - title: "Summary and criticism of CTV + CSFS benefits for accountable computing contracts"
+    url: /en/newsletters/2025/04/04/#accountable-computing-contracts
+
+  - title: "Description of benefits to BitVM from `OP_CTV` and `OP_CSFS`"
+    url: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"

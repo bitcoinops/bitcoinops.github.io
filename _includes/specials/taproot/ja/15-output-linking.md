@@ -51,5 +51,4 @@ Taprootの[プライバシー上の利点][p4tr benefits]を無視すべきだ�
 [p4tr benefits]: /ja/preparing-for-taproot/#マルチシグの概要
 [p4tr safety]: /ja/preparing-for-taproot/#なぜ待つ必要があるのか？
 [coindesk experts]: https://www.coindesk.com/tech/2020/12/01/privacy-concerns-over-bitcoin-upgrade-taproot-are-a-non-issue-experts-say/
-[compat bcc]: /en/compatibility/bitcoin-core/
 [news155 bcc22154]: /ja/newsletters/2021/06/30/#bitcoin-core-22154

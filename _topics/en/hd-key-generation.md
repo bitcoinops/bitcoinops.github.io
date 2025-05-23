@@ -90,6 +90,9 @@ optech_mentions:
   - title: "BIP328 added with a specifications BIP32-compatible MuSig2 key derivation"
     url: /en/newsletters/2024/07/05/#bips-1540
 
+  - title: "Proposed scheme to prevent BIP32 path reuse to avoid output linking and other problems"
+    url: /en/newsletters/2025/05/09/#avoiding-bip32-path-reuse
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output script descriptors

@@ -18,7 +18,7 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: bip-cleanup
+    - title: BIP54
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -58,6 +58,15 @@ optech_mentions:
 
   - title: "Announcement of updates to the consensus cleanup soft fork proposal"
     url: /en/newsletters/2025/02/07/#updates-to-cleanup-soft-fork-proposal
+
+  - title: "Draft BIP published for consensus cleanup"
+    url: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
+
+  - title: "BIPs #1800 merges BIP54, which specifies the consensus cleanup soft fork proposal"
+    url: /en/newsletters/2025/05/09/#bips-1800
+
+  - title: "Bitcoin Core #32155 updates the internal miner to comply with consensus cleanup requirements"
+    url: /en/newsletters/2025/05/16/#bitcoin-core-32155
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

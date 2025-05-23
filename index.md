@@ -14,7 +14,7 @@ technologies.
 We provide [workshops][], [weekly
 newsletters][], [case studies and
 announcements][blog], [analysis of Bitcoin software and
-services][compatibility], a [podcast][], and help facilitate improved relations between
+services][matrix], a [podcast][], and help facilitate improved relations between
 businesses
 and the open source community.
 
@@ -25,7 +25,7 @@ and the open source community.
 [blog]: /en/blog/
 [podcast]: /en/podcast/
 [about]: /en/about
-[compatibility]: /en/compatibility/
+[matrix]: /en/matrix/
 
 {% assign posts_en = site.posts | where:"lang","en" %}
 

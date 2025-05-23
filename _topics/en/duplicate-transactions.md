@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Consensus cleanup proposal updated to require setting coinbase lock time to previous block height"
     url: /en/newsletters/2025/02/07/#duplicate-transaction-fix
 
+  - title: "BIP30 consensus failure vulnerability if chain is reorged below block 91880"
+    url: /en/newsletters/2025/05/09/#bip30-consensus-failure-vulnerability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork

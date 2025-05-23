@@ -38,6 +38,12 @@ optech_mentions:
   - title: Verification of arbitrary programs using proposed opcode from MATT
     url: /en/newsletters/2024/01/03/#verification-of-arbitrary-programs-using-proposed-opcode-from-matt
 
+  - title: "Draft CCV BIP and details about amount semantic"
+    url: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
+
+  - title: "OP_VAULT proposal withdrawn in favor of OP_CCV"
+    url: /en/newsletters/2025/05/16/#bips-1848
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

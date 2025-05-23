@@ -1,6 +1,6 @@
 {% comment %}<!-- internal site links, alphabetical order -->{% endcomment %}
 [bech32 series]: /en/bech32-sending-support/
-[compatibility matrix]: /en/compatibility/
+[compatibility matrix]: /en/matrix/
 [topics]: /en/topics/
 [podcast]: /en/podcast/
 [op_cat]: /en/topics/op_cat/
@@ -94,6 +94,7 @@ for details --> {% endcomment %}
 [BIP49]: https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki
 [BIP50]: https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki
 [BIP52]: https://github.com/bitcoin/bips/blob/master/bip-0052.mediawiki
+[BIP54]: https://github.com/bitcoin/bips/blob/master/bip-0054.md
 [BIP61]: https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki
 [BIP62]: https://github.com/bitcoin/bips/blob/master/bip-0062.mediawiki
 [BIP65]: https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki
@@ -149,13 +150,16 @@ for details --> {% endcomment %}
 [BIP157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
 [BIP158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
 [BIP159]: https://github.com/bitcoin/bips/blob/master/bip-0159.mediawiki
+[BIP172]: https://github.com/bitcoin/bips/blob/master/bip-0172.mediawiki
 [BIP173]: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
+[BIP177]: https://github.com/bitcoin/bips/blob/master/bip-0177.mediawiki
 [BIP179]: https://github.com/bitcoin/bips/blob/master/bip-0179.mediawiki
 [BIP199]: https://github.com/bitcoin/bips/blob/master/bip-0199.mediawiki
 [BIP300]: https://github.com/bitcoin/bips/blob/master/bip-0300.mediawiki
 [BIP301]: https://github.com/bitcoin/bips/blob/master/bip-0301.mediawiki
 [BIP320]: https://github.com/bitcoin/bips/blob/master/bip-0320.mediawiki
+[BIP321]: https://github.com/bitcoin/bips/blob/master/bip-0321.mediawiki
 [BIP322]: https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki
 [BIP324]: https://github.com/bitcoin/bips/blob/master/bip-0324.mediawiki
 [BIP325]: https://github.com/bitcoin/bips/blob/master/bip-0325.mediawiki
@@ -222,6 +226,7 @@ place, put links here. -->{% endcomment %}
 [BOLT5]: https://github.com/lightningnetwork/lightning-rfc/blob/master/05-onchain.md
 [BOLT7]: https://github.com/lightningnetwork/lightning-rfc/blob/master/07-routing-gossip.md
 [BOLT8]: https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md
+[BOLT9]: https://github.com/lightning/bolts/blob/master/09-features.md
 [BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md
 [BOLT12]: https://github.com/lightning/bolts/blob/master/12-offer-encoding.md
 

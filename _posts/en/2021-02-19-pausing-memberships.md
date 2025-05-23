@@ -70,7 +70,7 @@ future we'll be able to get back to running workshops and social events.
 [Optech launch]: /en/announcing-bitcoin-optech/
 [weekly newsletter]: /en/newsletters/
 [blog posts and field reports]: /en/blog/
-[compatibility matrix]: /en/compatibility/
+[compatibility matrix]: /en/matrix/
 [topic index]: /en/topics/
 [taproot workbooks]: /en/schnorr-taproot-workshop/
 [workshops]: /en/workshops/

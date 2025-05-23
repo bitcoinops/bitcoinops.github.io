@@ -139,6 +139,30 @@ optech_mentions:
   - title: "BIPs #1792 updates BIP119 with a revised introduction and mention of protocols using CTV"
     url: /en/newsletters/2025/03/28/#bips-1792
 
+  - title: "Criticism of CTV motivation in a joint activation with CSFS"
+    url: /en/newsletters/2025/04/04/#criticism-of-ctv-motivation
+
+  - title: "CTV + CSFS allow creation of a perpetual covenant"
+    url: /en/newsletters/2025/04/04/#ctv-csfs-allows-the-creation-of-a-perpetual-covenant
+
+  - title: "Summary and criticism of CTV + CSFS benefits for discreet log contracts (DLCs)"
+    url: /en/newsletters/2025/04/04/#dlcs
+
+  - title: "Summary and criticism of CTV + CSFS benefits for accountable computing contracts"
+    url: /en/newsletters/2025/04/04/#accountable-computing-contracts
+
+  - title: "Summary and criticism of CTV + CSFS benefits for LN-Symmetry"
+    url: /en/newsletters/2025/04/04/#ln-symmetry
+
+  - title: "Summary and criticism of CTV + CSFS benefits for Ark"
+    url: /en/newsletters/2025/04/04/#ark
+
+  - title: "Details about how Ark could make use of CTV if activated"
+    url: /en/newsletters/2025/04/04/#benefit-of-ctv-to-ark-users
+
+  - title: "Description of benefits to BitVM from `OP_CTV` and `OP_CSFS`"
+    url: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
