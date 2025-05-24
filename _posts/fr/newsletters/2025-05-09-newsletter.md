@@ -194,7 +194,7 @@ inquisition repo], et [BINANAs][binana repo]._
 [loaec bip32reuse]: https://delvingbitcoin.org/t/avoiding-xpub-derivation-reuse-across-wallets-in-a-ux-friendly-manner/1644
 [ingala bip48]: https://delvingbitcoin.org/t/avoiding-xpub-derivation-reuse-across-wallets-in-a-ux-friendly-manner/1644/3
 [news346 checkpoints]: /fr/newsletters/2025/03/21/#bitcoin-core-31649
-[news335 blip50]: /en/newsletters/2025/01/03/#blips-52
+[news335 blip50]: /fr/newsletters/2025/01/03/#blips-52
 [news135 bip48]: /en/newsletters/2021/07/28/#bips-1072
 [news348 cleanup]: /fr/newsletters/2025/04/04/#brouillon-de-bip-publie-pour-le-nettoyage-du-consensus
 [review club 31375]: https://bitcoincore.reviews/31375
