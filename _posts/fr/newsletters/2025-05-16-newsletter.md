@@ -131,7 +131,7 @@ inquisition repo], et [BINANAs][binana repo]._
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="32155,28710,8272,8330,4458,1848,1841,1821" %}
 [lnd 0.19.0-beta.rc4]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.0-beta.rc4
-[news314 excess addr]: /en/newsletters/2024/08/02/#remote-crash-by-sending-excessive-addr-messages
+[news314 excess addr]: /fr/newsletters/2024/08/02/#crash-a-distance-en-envoyant-des-messages-addr-excessifs
 [stewart bippost]: https://groups.google.com/g/bitcoindev/c/j1zEky-3QEE
 [64bit bip]: https://github.com/Christewart/bips/blob/2025-03-17-64bit-pt2/bip-XXXX.mediawiki
 [news285 64bit]: /fr/newsletters/2024/01/17/#proposition-de-soft-fork-pour-l-arithmetique-sur-64-bits
