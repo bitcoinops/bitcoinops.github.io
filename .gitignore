@@ -21,3 +21,6 @@ vendor
 
 # Avoid pushing .gz files created during rsync
 *.gz
+_posts/de/newsletters/fragen.txt
+_posts/de/newsletters/Korrektorat.txt
+scripts/check_text_issues.py
