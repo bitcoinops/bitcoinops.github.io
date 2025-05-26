@@ -110,6 +110,9 @@ optech_mentions:
   - title: "Rust-payjoin 0.21.0 release adds transaction cut-through capabilities"
     url: /en/newsletters/2025/01/24/#rust-payjoin-0-21-0-released
 
+  - title: "Cake Wallet adds payjoin v2 support"
+    url: /en/newsletters/2025/05/23/#cake-wallet-added-payjoin-v2-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

@@ -160,6 +160,9 @@ optech_mentions:
   - title: "Details about how Ark could make use of CTV if activated"
     url: /en/newsletters/2025/04/04/#benefit-of-ctv-to-ark-users
 
+  - title: "Description of benefits to BitVM from `OP_CTV` and `OP_CSFS`"
+    url: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

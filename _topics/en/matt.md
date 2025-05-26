@@ -41,6 +41,9 @@ optech_mentions:
   - title: "Draft CCV BIP and details about amount semantic"
     url: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
 
+  - title: "OP_VAULT proposal withdrawn in favor of OP_CCV"
+    url: /en/newsletters/2025/05/16/#bips-1848
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
