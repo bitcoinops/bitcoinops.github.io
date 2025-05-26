@@ -14,7 +14,7 @@ layout: default
 
 <h1 class="post-title">Podcast</h1>
 
-Join Bitcoin Optech as we discuss Bitcoin and Lightning technology each week and review our newsletters.
+Join us for the weekly Bitcoin Optech Recap on <a href="https://riverside.fm/studio/bitcoin-optech">Riverside</a> at 16:30 UTC as we discuss Bitcoin and Lightning technology and review our newsletters.
 
 {% include functions/podcast-links.md %}
 

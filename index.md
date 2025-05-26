@@ -11,10 +11,9 @@ layout: home
 Bitcoin Optech helps Bitcoin users and businesses integrate scaling
 technologies.
 
-We provide [workshops][], [weekly
-newsletters][], [case studies and
-announcements][blog], [analysis of Bitcoin software and
-services][matrix], a [podcast][], and help facilitate improved relations between
+We provide [weekly newsletters][], a [podcast][], [case studies and
+announcements][blog], [analyses of Bitcoin software and
+services][matrix], [workshops][] and help to facilitate improved relations between
 businesses
 and the open source community.
 
