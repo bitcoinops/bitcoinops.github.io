@@ -14,15 +14,15 @@ lang: zh
 - **<!--limiting-script-language-expressiveness-->****限制 Script 语言表达能力：**
   在 Bitcoin-Dev 邮件列表上，由于向 Script 提议新增 `OP_TXHASH` 或 `OP_TX` 操作码（见 Newsletter [#185][news185 optxhash] 与 [#187][news187 optx]），衍生出了若干子讨论。Jeremy Rubin [指出][rubin recurse]，这些提议（可能再结合如 [OP_CAT 操作码][OP_CAT]等其他操作码提案）或将允许创建递归[契约][topic covenants]——也就是随后重花这些比特币或与其合并的任何比特币时，交易都必须永久满足的条件。[有人][harding recurse]询问是否有人担心在比特币中允许递归契约，下面总结了一些最“值得注意的”担忧：
 
-  - <!--gradual-loss-of-censorship-resistance-->*渐进式丧失抗审查性：* 贡献者 Shinobi [重申][shinobi recurse]他在 [Newsletter #157][news157 csfs] 中提出过的担忧，即递归契约可能让强大的第三方控制其当前掌握的任意币后续的花费。例如，政府可以（通过立法）要求其公民只接受政府之后可没收的币（由比特币共识规则强制实施）。
+  - **<!--gradual-loss-of-censorship-resistance-->***渐进式丧失抗审查性：* 贡献者 Shinobi [重申][shinobi recurse]他在 [Newsletter #157][news157 csfs] 中提出过的担忧，即递归契约可能让强大的第三方控制其当前掌握的任意币后续的花费。例如，政府可以（通过立法）要求其公民只接受政府之后可没收的币（由比特币共识规则强制实施）。
 
     对 Shinobi 帖子的[回复][aj reply]以及另一位开发者的[回应][darosior reply]呼应了[一年前][harding altcoin]的论点：用户切换到具有同样第三方控制要求的替代加密货币（altcoin）或类似侧链的结构，同样也可能导致抗审查性的逐步丧失。
 
-  - <!--encouraging-unnecessary-computation-->*鼓励不必要的计算：* 开发者 James O'Beirne [表达][obeirne reply] 了担忧，认为过度提升 Bitcoin Script 或[Tapscript][topic tapscript] 的表达能力，会鼓励创建包含多于花费授权所必需操作的脚本。理想情况下，任何 UTXO（币）今天都可以用一条简洁的证明来花费，例如 64 字节的 [schnorr 签名][topic schnorr signatures]。比特币已允许更复杂的脚本来创建合约，如多签合约与 LN 之类协议，但这种能力也可能被滥用于在脚本中加入并非合约必要的操作。例如，比特币过去曾因被精心设计以重复消耗大量 CPU 或内存的交易而面临[拒绝服务风险][cve-2013-2292]。O'Beirne 担心增加表达能力既可能产生新的 DoS 向量，也可能导致程序员编写未优化、消耗节点资源超出必要的脚本。
+  - **<!--encouraging-unnecessary-computation-->***鼓励不必要的计算：* 开发者 James O'Beirne [表达][obeirne reply]了担忧，认为过度提升 Bitcoin Script 或 [Tapscript][topic tapscript] 的表达能力，会鼓励创建包含多于花费授权所必需操作的脚本。理想情况下，任何 UTXO（币）今天都可以用一条简洁的证明来花费，例如 64 字节的 [schnorr 签名][topic schnorr signatures]。比特币已允许更复杂的脚本来创建合约，如多签合约与 LN 之类协议，但这种能力也可能被滥用于在脚本中加入并非合约必要的操作。例如，比特币过去曾因被精心设计以重复消耗大量 CPU 或内存的交易而面临[拒绝服务风险][cve-2013-2292]。O'Beirne 担心增加表达能力既可能产生新的 DoS 向量，也可能导致程序员编写未优化、消耗节点资源超出必要的脚本。
 
-  - <!--introduction-of-turing-completeness-->*引入图灵完备性：* 开发者 ZmnSCPxj [批评][zmn turing] 允许创建*故意*递归契约的操作码，也可能导致*意外*创建递归契约。投入递归契约的资金，无论故意还是意外，都再也无法与普通比特币完全同质化。ZmnSCPxj 将此担忧置于[图灵完备性][turing completeness]与[停机问题][halting problem]的语境下阐述。
+  - **<!--introduction-of-turing-completeness-->***引入图灵完备性：* 开发者 ZmnSCPxj [批评][zmn turing]允许创建*故意*递归契约的操作码，也可能导致*意外*创建递归契约。投入递归契约的资金，无论故意还是意外，都再也无法与普通比特币完全同质化。ZmnSCPxj 将此担忧置于[图灵完备性][turing completeness]与[停机问题][halting problem]的语境下阐述。
 
-  - <!--enablement-of-drivechains-->*促成 drivechain：* 在前述图灵完备性的论点基础上，ZmnSCPxj 进一步[主张][zmn drivechains]，提升 Script 表达能力还会促成类似 [BIP300][] 所述的[侧链][topic sidechains]（drivechains）的实现，而多位 Bitcoin 开发者曾[指出][towns drivechains]这可能导致用户资金损失或抗审查性下降。如果比特币经济体中不够多的节点选择运行全节点并强制执行 drivechain 规则，那么 drivechain 用户可能丢失资金；但若经济体中大部分节点都选择执行 drivechain 规则，则其他想保持共识的用户就得验证该 drivechain 的全部数据，事实上在未经过显式软分叉修改比特币规则的情况下，把 drivechain 纳入了比特币。
+  - **<!--enablement-of-drivechains-->***促成 drivechain：* 在前述图灵完备性的论点基础上，ZmnSCPxj 进一步[主张][zmn drivechains]，提升 Script 表达能力还会促成类似 [BIP300][] 所述的[侧链][topic sidechains]（drivechains）的实现，而多位 Bitcoin 开发者曾[指出][towns drivechains]这可能导致用户资金损失或抗审查性下降。如果比特币经济体中不够多的节点选择运行全节点并强制执行 drivechain 规则，那么 drivechain 用户可能丢失资金；但若经济体中大部分节点都选择执行 drivechain 规则，则其他想保持共识的用户就得验证该 drivechain 的全部数据，事实上在未经过显式软分叉修改比特币规则的情况下，把 drivechain 纳入了比特币。
 
     该子话题展开了长时间讨论，产生了一个[衍生线程][drivechains vs ln]，比较在多数算力试图窃币时 drivechain 与 LN 的安全性。
 
@@ -33,9 +33,9 @@ lang: zh
 
   Rusty Russell[回复][russell reply]并提出数点批评，主要包括：
 
-  - <!--htlcs-are-already-currently-free-->*HTLC 当前已基本免费：* 针对“洋葱消息免费转发”担忧的主要反驳是，使用 HTLC 本就可以在 LN 上几乎免费转发流量。[^htlcs-essentially-free] 但尚不确定这种情况能否永久维持——许多修复[通道阻塞攻击][topic channel jamming attacks]的提案都建议对失败的 HTLC 收费，而这正是目前可用于免费传输数据的手段。
+  - **<!--htlcs-are-already-currently-free-->***HTLC 当前已基本免费：* 针对“洋葱消息免费转发”担忧的主要反驳是，使用 HTLC 本就可以在 LN 上几乎免费转发流量。[^htlcs-essentially-free] 但尚不确定这种情况能否永久维持——许多修复[通道阻塞攻击][topic channel jamming attacks]的提案都建议对失败的 HTLC 收费，而这正是目前可用于免费传输数据的手段。
 
-  - <!--session-identifiers-reduce-privacy-->*会话标识符削弱隐私：* 在前述例子中，Alice 在 Bob 与 Carol 处注册的会话 ID 让两者可以知道哪些消息源自同一用户。若无会话 ID，他们无法分辨消息是否来自同一用户，或是来自多位使用同一路径片段的不同用户。Russell 指出，他在洋葱消息研究过程中考虑过盲化令牌，但担心“很快会变得复杂”。
+  - **<!--session-identifiers-reduce-privacy-->***会话标识符削弱隐私：* 在前述例子中，Alice 在 Bob 与 Carol 处注册的会话 ID 让两者可以知道哪些消息源自同一用户。若无会话 ID，他们无法分辨消息是否来自同一用户，或是来自多位使用同一路径片段的不同用户。Russell 指出，他在洋葱消息研究过程中考虑过盲化令牌，但担心“很快会变得复杂”。
 
   Russell 因此建议，仅对节点转发的洋葱消息数量进行速率限制（针对不同类别的对等体设定不同上限）。
 
