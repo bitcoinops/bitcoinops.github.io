@@ -57,5 +57,5 @@ lang: zh
 [nick apo dlc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019812.html
 [oconnor txhash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019813.html
 [towns pop_sigdata]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019819.html
-[news184 eclair auto bump]: /en/newsletters/2022/01/26/#eclair-2113
-[news170 external inputs]: /en/newsletters/2021/10/13/#bitcoin-core-17211
+[news184 eclair auto bump]: /zh/newsletters/2022/01/26/#eclair-2113
+[news170 external inputs]: /zh/newsletters/2021/10/13/#bitcoin-core-17211
