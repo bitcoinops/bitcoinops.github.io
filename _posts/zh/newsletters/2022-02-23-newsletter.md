@@ -57,7 +57,7 @@ lang: zh
 [obeirne bump]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019879.html
 [news116 sponsorship]: /zh/newsletters/2020/09/23/#transaction-fee-sponsorship
 [russell gossip]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
-[news72 xonly]: /zh/newsletters/2019/11/13/#信息丰富的博客文章
+[news72 xonly]: /zh/newsletters/2019/11/13/#taproot-review-discussion-and-related-information
 [news55 gossip]: /zh/newsletters/2019/07/17/#gossip-update-proposal
 [rubin ctv signet]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019925.html
 [news181 rl1177]: /zh/newsletters/2022/01/05/#rust-lightning-1177
