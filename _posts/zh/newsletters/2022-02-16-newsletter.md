@@ -49,7 +49,7 @@ lang: zh
 [bdk website]: https://bitcoindevkit.org/
 [ldk website]: https://lightningdevkit.org/
 [bitmex blog]: https://blog.bitmex.com/bitmex-supports-sending-to-taproot-addresses/
-[news141 bitmex bech32 receive]: /en/newsletters/2021/03/24/#bitmex-announces-bech32-support
+[news141 bitmex bech32 receive]: /zh/newsletters/2021/03/24/#bitmex-announces-bech32-support
 [bitbox02 v9.9.0 multi]: https://github.com/digitalbitbox/bitbox02-firmware/releases/tag/firmware%2Fv9.9.0
 [bitbox02 v9.9.0 bitcoin]: https://github.com/digitalbitbox/bitbox02-firmware/releases/tag/firmware-btc-only%2Fv9.9.0
 [fulcrum 1.6.0]: https://github.com/cculianu/Fulcrum/releases/tag/v1.6.0
