@@ -84,7 +84,7 @@ lang: zh
 ## 脚注
 
 [^htlcs-essentially-free]:
-    当用户 Alice 通过路由节点 Bob 与 Carol 把基于 HTLC 的 keysend 消息转发给用户 Zed 时，Alice 可构造一个没有已知先像的哈希，使 HTLC 注定失败，从而 Bob 与 Carol 都拿不到钱。Alice 发送此类消息所承担的唯一成本，是她（若由她创建）创建通道的费用及随后关闭通道（若由她承担）时的费用——再加上如果攻击者盗取其 LN 热钱包私钥或其他可能危及通道的数据的风险。对于一个安全且无漏洞、有长期通道的节点而言，这些成本应当基本为零，因此基于 HTLC 的 keysend 消息当前可视作免费。[^htlcs-essentially-free]
+    当用户 Alice 通过路由节点 Bob 与 Carol 把基于 HTLC 的 keysend 消息转发给用户 Zed 时，Alice 可构造一个没有已知先像的哈希，使 HTLC 注定失败，从而 Bob 与 Carol 都拿不到钱。Alice 发送此类消息所承担的唯一成本，是她（若由她创建）创建通道的费用及随后关闭通道（若由她承担）时的费用——再加上如果攻击者盗取其 LN 热钱包私钥或其他可能危及通道的数据的风险。对于一个安全且无漏洞、有长期通道的节点而言，这些成本应当基本为零，因此基于 HTLC 的 keysend 消息当前可视作免费。
 
 {% include references.md %}
 {% include linkers/issues.md v=1 issues="23542,522,537" %}
