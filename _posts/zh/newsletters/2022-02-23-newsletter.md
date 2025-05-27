@@ -51,6 +51,7 @@ lang: zh
   {:.center}
   ![phantom 节点路径提示示意图](/img/posts/2022-02-phantom-node-payments.dot.png)
 
+
 {% include references.md %}
 {% include linkers/issues.md v=1 issues="24307,5010,1199," %}
 [news186 rbf]: /zh/newsletters/2022/02/09/#discussion-about-rbf-policy
