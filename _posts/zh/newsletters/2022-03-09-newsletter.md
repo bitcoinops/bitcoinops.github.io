@@ -98,7 +98,7 @@ lang: zh
 [aj reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019923.html
 [harding altcoin]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019203.html
 [obeirne reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019890.html
-[cve-2013-2292]: /zh/topics/cve/#CVE-2013-2292
+[cve-2013-2292]: /en/topics/cve/#CVE-2013-2292
 [zmn turing]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019928.html
 [zmn drivechains]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019976.html
 [turing completeness]: https://en.wikipedia.org/wiki/Turing_completeness
