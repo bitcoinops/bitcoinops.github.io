@@ -6,9 +6,6 @@ layout: default
 
 <div class="localization">
   <a href="/en/workshops/">en</a>
-  {% for lang in site.languages %}
-    | <a href="/{{ lang.code }}/workshops/">{{lang.code}}</a>
-  {% endfor %}
 </div>
 
 <h1 class="post-title">Workshops</h1>
