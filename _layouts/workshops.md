@@ -118,7 +118,7 @@ organization.</p>
 function toggleWorkshopHistory() {
   const historyDiv = document.getElementById('workshopHistory');
   const button = document.getElementById('historyToggle');
-  
+
   if (historyDiv.style.display === 'none') {
     historyDiv.style.display = 'block';
     button.innerHTML = '📚 Hide Workshop History';
