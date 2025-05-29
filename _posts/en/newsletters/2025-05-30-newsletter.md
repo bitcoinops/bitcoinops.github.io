@@ -103,24 +103,58 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31622][] psbt: add non-default sighash types to PSBTs and unify sighash type match checking
+- [Bitcoin Core #31622][] adds a signature hash (sighash) type field to
+  [PSBTs][topic psbt] when it is different from `SIGHASH_DEFAULT` or
+  `SIGHASH_ALL`. [MuSig2][topic musig] support requires everyone to sign with
+  the same sighash type, so this field must be present in the PSBT.
+  Additionally, the `descriptorprocesspsbt` RPC command is updated to use the
+  `SignPSBTInput` function, which ensures that the PSBT's sighash type matches
+  the one provided in the CLI, if applicable.
 
-- [Eclair #3065][] Attributable failures Implements lightning/bolts#1044
+- [Eclair #3065][] adds support for attributable failures (see Newsletter
+  [#224][news224 failures]) as specified in [BOLTs #1044][]. It’s disabled by
+  default because the specification isn't finalized, but can be enabled with the
+  setting `eclair.features.option_attributable_failure = optional`.
+  Cross-compatibility with LDK has been successfully tested, see Newsletter
+  [#349][news349 failures] for more information on LDK’s implementation and how
+  this protocol works.
 
-- [LDK #3796][] tankyleo/2025-05-dont-dip-into-reserve
+- [LDK #3796][] tightens the channel balance checks so that funders have
+  sufficient funds to cover the commitment transaction fee, the two 330 sat
+  [anchor outputs][topic anchor outputs], and the channel reserve. Previously,
+  funders could dip into the channel reserve funds to cover for the two anchors.
 
-- [BIPs #1760][] BIP 53: Disallow 64-byte transactions
+- [BIPs #1760][] merges [BIP53][] which specifies a consensus soft-fork rule
+  that disallows 64-byte transactions (measured without witness data) to prevent
+  a type of [merkle tree vulnerability][topic merkle tree vulnerabilities]
+  exploitable against SPV clients. This PR proposes a similar fix to one
+  of the fixes included in the [consensus cleanup softfork][topic consensus cleanup].
 
-- [BIPs #1850][] murchandamus/Revert-bip48-update
+- [BIPs #1850][] reverts an earlier update to [BIP48][] which reserved the
+  script type value 3 for [taproot][topic taproot] (P2TR) derivations (see
+  Newsletter [#353][news353 bip48]). This is because [tapscript][topic tapscript]
+  lacks `OP_CHECKMULTISIG`, so the referenced output script in [BIP67][] (which
+  [BIP48][] relies on) cannot be expressed in P2TR. This PR also marks
+  [BIP48][]’s status as `Final`, reflecting that its purpose was to define the
+  industry use of `m/48'` [HD wallet][topic bip32] derivation paths when the BIP
+  was introduced, rather than prescribe new behavior.
 
-- [BIPs #1793][] BIP 443: OP_CHECKCONTRACTVERIFY
+- [BIPs #1793][] merges [BIP443][] which proposes the
+  [OP_CHECKCONTRACTVERIFY][topic matt] (OP_CCV) opcode that
+  allows checking that a public key (of both the outputs and the inputs) commits
+  to an arbitrary piece of data. See Newsletter [#348][news348 op_ccv] for more
+  information on this proposed [covenant][topic covenants].
 
 {% include snippets/recap-ad.md when="2025-06-03 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="31622,3065,3796,1760,1850,1793" %}
+{% include linkers/issues.md v=2 issues="31622,3065,3796,1760,1850,1793,1044" %}
 [Core Lightning 25.05rc1]: https://github.com/ElementsProject/lightning/releases/tag/v25.05rc1
 [ldk 0.1.3]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.3
 [ldk 0.1.4]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.4
 [news208 slowln]: /en/newsletters/2022/07/13/#allowing-deliberately-slow-ln-payment-forwarding
 [autonomous system]: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
 [kirkcohen af]: https://delvingbitcoin.org/t/latency-and-privacy-in-lightning/1723
+[news224 failures]: /en/newsletters/2022/11/02/#ln-routing-failure-attribution
+[news349 failures]: /en/newsletters/2025/04/11/#ldk-2256
+[news353 bip48]: /en/newsletters/2025/05/09/#bips-1835
+[news348 op_ccv]: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
