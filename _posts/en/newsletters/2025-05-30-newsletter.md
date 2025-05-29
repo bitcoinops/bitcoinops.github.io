@@ -74,7 +74,43 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Which transactions get into blockreconstructionextratxn?]({{bse}}116519)
+  Glozow explains how the extrapool data structure (see [Newsletter #339][news339
+  extrapool]) caches rejected and replaced transactions seen by the node
+  and lists the criteria for exclusion and eviction.
+
+- [Why would anyone use OP_RETURN over inscriptions, aside from fees?]({{bse}}126208)
+  Sjors Provoost notes that in addition to sometimes being cheaper, `OP_RETURN`
+  can also be used for protocols that need data to be available before a transaction
+  is spent, as opposed to witness data that is revealed in the spending transaction.
+
+- [Why is my Bitcoin node not receiving incoming connections?]({{bse}}126338)
+  Lightlike points out that a new node on the network can take time to have its
+  address widely advertised on the P2P network and that nodes will not
+  advertise their address until IBD has completed.
+
+- [How do I configure my node to filter out transactions larger than 400 bytes?]({{bse}}126347)
+  Antoine Poinsot confirms there is no configuration option in Bitcoin Core to
+  customize the maximum standard transaction size. He outlines that users
+  wanting to customize that value can update their source code, but warns about
+  potential downsides of both larger and smaller maximum values.
+
+- [What does "not publicly routable" node in Bitcoin Core P2P mean?]({{bse}}126225)
+  Pieter Wuille and Vasil Dimov provide examples of P2P connections, such as
+  [Tor][topic anonymity networks], that cannot be routed on the global internet
+  and that appear in Bitcoin Core's `netinfo` output in the "npr" bucket.
+
+- [Why would a node would ever relay a transaction?]({{bse}}127391)
+  Pieter Wuille lists benefits of relaying transactions for a node operator:
+  privacy when relaying your own transactions from your node, faster block
+  propagation if the user is mining, and improved network decentralization with
+  minimal incremental costs beyond just relaying blocks.
+
+- [Is selfish mining still an option with compact blocks and FIBRE?]({{bse}}49515)
+  Antoine Poinsot follows up to a 2016 question noting, "Yes, selfish mining is
+  still a possible optimisation even with improved block propagation. It's not
+  correct to conclude that selfish mining is now only a theoretical attack". He
+  also points to a [mining simulation][miningsimulation github] he created.
 
 ## Releases and release candidates
 
@@ -158,3 +194,5 @@ repo], and [BINANAs][binana repo]._
 [news349 failures]: /en/newsletters/2025/04/11/#ldk-2256
 [news353 bip48]: /en/newsletters/2025/05/09/#bips-1835
 [news348 op_ccv]: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
+[news339 extrapool]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
+[miningsimulation github]: https://github.com/darosior/miningsimulation
