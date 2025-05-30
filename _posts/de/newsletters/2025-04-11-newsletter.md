@@ -31,7 +31,7 @@ Der Newsletter dieser Woche beschreibt einen Vorschlag zur Beschleunigung des In
 
 ## Bitcoin Core PR Review Club
 
-*In diesem monatlichen Abschnitt fassen wir ein aktuelles [Bitcoin Core PR Review Club][]-Meeting zusammen, heben einige wichtige Fragen und Antworten hervor. Klicken Sie auf eine Frage, um eine Zusammenfassung der Antwort aus dem Meeting zu sehen.*
+*In diesem monatlichen Abschnitt fassen wir ein aktuelles [Bitcoin Core PR Review Club][]-Meeting zusammen, und heben einige wichtige Fragen und Antworten hervor. Klicken Sie auf eine Frage, um eine Zusammenfassung der Antwort aus dem Meeting zu sehen.*
 
 [Add Fee rate Forecaster Manager][review club 31664] ist ein PR von [ismaelsadeeq][gh ismaelsadeeq], der die Logik zur Transaktionsgebühr-Vorhersage (auch [Schätzung][topic fee estimation] genannt) verbessert. Es führt eine neue `ForecasterManager`-Klasse ein, bei der mehrere `Forecaster` registriert werden können. Der bestehende `CBlockPolicyEstimator` (der nur bestätigte Transaktionen betrachtet) wird zu einem solchen Forecaster umgebaut, aber insbesondere wird ein neuer `MemPoolForecaster` eingeführt. `MemPoolForecaster` berücksichtigt unbestätigte Transaktionen im Mempool und kann daher schneller auf Änderungen der Feerate reagieren.
 
