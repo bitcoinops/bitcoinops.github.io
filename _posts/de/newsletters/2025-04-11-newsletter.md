@@ -41,7 +41,7 @@ Der Newsletter dieser Woche beschreibt einen Vorschlag zur Beschleunigung des In
   a0link="https://bitcoincore.reviews/31664#l-19"
 
   q1="Warum wird `CBlockPolicyEstimator` nicht so geändert, dass er eine Referenz auf den Mempool hält, ähnlich wie in PR #12966? Was ist der aktuelle Ansatz und warum ist er besser als eine Referenz auf den Mempool zu halten? (Hinweis: siehe PR #28368)"
-  a1="`CBlockPolicyEstimator` erbt von `CValidationInterface` und implementiert deren virtuelle Methoden `TransactionAddedToMempool`, `TransactionRemovedFromMempool` und `MempoolTransactionsRemovedForBlock`. Das gibt `CBlockPolicyEstimator` alle nötigen Mempool-Informationen, ohne unnötig eng an den Mempool gekoppelt zu sein."
+  a1="`CBlockPolicyEstimator` erbt von `CValidationInterface` und implementiert dessen virtuelle Methoden `TransactionAddedToMempool`, `TransactionRemovedFromMempool` und `MempoolTransactionsRemovedForBlock`. Das gibt `CBlockPolicyEstimator` alle nötigen Mempool-Informationen, ohne unnötig eng an den Mempool gekoppelt zu sein."
   a1link="https://bitcoincore.reviews/31664#l-26"
 
   q2="Was sind die Vor- und Nachteile der neuen Architektur im Vergleich zu einer direkten Änderung von `CBlockPolicyEstimator`?"
