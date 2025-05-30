@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Bitcoin Core #32155 updates the internal miner to comply with consensus cleanup requirements"
     url: /en/newsletters/2025/05/16/#bitcoin-core-32155
 
+  - title: "BIPs #1760 merges BIP53, which specifies a consensus change to forbid 64 byte transactions"
+    url: /en/newsletters/2025/05/30/#bips-1760
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation
