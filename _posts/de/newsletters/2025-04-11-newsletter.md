@@ -73,7 +73,7 @@ _Bedeutende kürzliche Änderungen in [Bitcoin Core][bitcoin core repo], [Core L
 
 - [LND #9669][] stuft [Simple Taproot Channels][topic simple taproot channels] so zurück, dass immer der Legacy-Cooperative-Close-Flow verwendet wird, auch wenn der [RBF][topic rbf] Cooperative-Close-Flow (siehe [Newsletter #347][news347 coop]) konfiguriert ist. Zuvor konnte ein Knoten, bei dem beide Features konfiguriert waren, nicht starten. {% assign timestamp="56:16" %}
 
-- [Rust Bitcoin #4302][] fügt der Script-Builder-API eine neue Methode `push_relative_lock_time()` hinzu, die einen relativen [Timelock][topic timelocks] als Parameter nimmt, und depreziert `push_sequence()`, die eine rohe Sequenznummer als Parameter nimmt. Diese Änderung behebt eine potenzielle Verwirrung, bei der Entwickler versehentlich eine rohe Sequenznummer in Skripte einfügen, anstatt einen relativen Timelock-Wert, der dann mit `CHECKSEQUENCEVERIFY` gegen die Sequenznummer eines Inputs geprüft wird. {% assign timestamp="57:24" %}
+- [Rust Bitcoin #4302][] fügt der Script-Builder-API eine neue Methode `push_relative_lock_time()` hinzu, die einen relativen [Timelock][topic timelocks] als Parameter nimmt, und depreziert `push_sequence()`, die eine rohe Sequenznummer als Parameter nimmt. Diese Änderung behebt eine potenzielle Verwirrung, bei der Entwickler versehentlich eine rohe Sequenznummer in Skripte einfügen, anstatt eines relativen Timelock-Wertes, der dann mit `CHECKSEQUENCEVERIFY` gegen die Sequenznummer eines Inputs geprüft wird. {% assign timestamp="57:24" %}
 
 {% include snippets/recap-ad.md when="2025-04-15 15:30" %}
 {% include references.md %}
