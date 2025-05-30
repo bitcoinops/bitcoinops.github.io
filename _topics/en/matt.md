@@ -44,6 +44,9 @@ optech_mentions:
   - title: "OP_VAULT proposal withdrawn in favor of OP_CCV"
     url: /en/newsletters/2025/05/16/#bips-1848
 
+  - title: "BIPs #1793 merges BIP443 which proposes the OP_CHECKCONTRACTVERIFY opcode"
+    url: /en/newsletters/2025/05/30/#bips-1793
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
