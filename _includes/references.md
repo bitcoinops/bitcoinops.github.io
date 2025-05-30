@@ -94,6 +94,7 @@ for details --> {% endcomment %}
 [BIP49]: https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki
 [BIP50]: https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki
 [BIP52]: https://github.com/bitcoin/bips/blob/master/bip-0052.mediawiki
+[BIP53]: https://github.com/bitcoin/bips/blob/master/bip-0053.mediawiki
 [BIP54]: https://github.com/bitcoin/bips/blob/master/bip-0054.md
 [BIP61]: https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki
 [BIP62]: https://github.com/bitcoin/bips/blob/master/bip-0062.mediawiki
@@ -202,6 +203,7 @@ for details --> {% endcomment %}
 [BIP389]: https://github.com/bitcoin/bips/blob/master/bip-0389.mediawiki
 [BIP390]: https://github.com/bitcoin/bips/blob/master/bip-0390.mediawiki
 [BIP431]: https://github.com/bitcoin/bips/blob/master/bip-0431.mediawiki
+[BIP443]: https://github.com/bitcoin/bips/blob/master/bip-0443.mediawiki
 
 {% for i in (1..10) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}

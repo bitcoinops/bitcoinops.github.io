@@ -160,7 +160,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
     findet, denke ich, dass die Hauptmaßnahme, die Benutzer ergreifen können,
     darin besteht, zu einer Taproot-Wallet zu wechseln", da diese die Möglichkeit bietet,
     Keypath-Ausgaben unter den aktuellen Konsensregeln zu ermöglichen, einschließlich
-    im Fall von [Output linking][topic output linking], aber auch Widerstand gegen
+    des Falles von [Output linking][topic output linking], aber auch Widerstand gegen
     Quanten-Diebstahl, wenn Keypath-Ausgaben später deaktiviert werden.
 
     In einem separaten Thread (siehe nächster Punkt) stellt Pieter Wuille
@@ -176,7 +176,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
     (falls dies zu einem erwarteten Risiko wird). Cruz argumentiert,
     "indem wir eine Frist für die Migration durchsetzen, bieten wir rechtmäßigen
     Eigentümern eine klare, nicht verhandelbare Gelegenheit,
-    ihre Gelder zu sichern [...] eine erzwungene Migration mit
+    ihre Gelder zu sichern [...], eine erzwungene Migration mit
     ausreichender Vorankündigung und robusten Schutzmaßnahmen ist sowohl
     realistisch als auch notwendig, um die langfristige Sicherheit von Bitcoin zu schützen."
 
@@ -192,7 +192,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
 
   - *Kritik an der CTV-Motivation:* Anthony Towns [postete][towns ctvmot]
     eine Kritik an der in [BIP119][] beschriebenen Motivation für CTV,
-    die er argumentierte, durch die Hinzufügung von CTV und CSFS zu
+    die, wie er argumentierte, durch die Hinzufügung von CTV und CSFS zu
     Bitcoin untergraben würde.
     Einige Tage nach Beginn der Diskussion wurde BIP119 von seinem
     Autor aktualisiert, um den umstrittenen Text zu entfernen;
@@ -201,7 +201,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
     von BIP119 für den Referenzwert. Einige der diskutierten Themen umfassten:
 
     - *CTV+CSFS ermöglicht die Erstellung einer perpetuellen Covenant:*
-      CTVs Motivation sagte: "Covenants wurden historisch gesehen als nicht
+      CTVs Motivation sagte: "Covenants wurden aus historischer Sicht als nicht
       geeignet für Bitcoin angesehen, da sie zu komplex sind und das
       Risiko bergen, die Fungibilität der durch sie gebundenen Coins zu
       verringern. Dieses BIP führt eine einfache Covenant namens
@@ -213,7 +213,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       Towns beschreibt ein Skript, das sowohl CTV als auch CSFS verwendet,
       und verlinkt auf eine [Transaktion][mn recursive], die es auf dem MutinyNet
       [Signet][topic signet] verwendet, die nur durch das Senden des gleichen
-      Betrags an die Skript selbst ausgegeben werden kann.
+      Betrags an das Skript selbst ausgegeben werden kann.
       Obwohl es einige Debatten über Definitionen gab,
       hat der Autor von CTV zuvor eine funktional identische Konstruktion
       als rekursive Covenant beschrieben, und Optech folgte dieser Konvention in seiner
@@ -239,14 +239,14 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
     - *Werkzeuge für CTV und CSFS:* Towns [notierte][towns ctvmot],
       dass er es schwierig fand, bestehende Werkzeuge zu verwenden,
       um sein rekursives Skript zu entwickeln, was auf einen Mangel
-      an Bereitschaft für die Bereitstellung hinweist. Osuntokun
+      an Einsatzbereitschaft für die Bereitstellung hinweist. Osuntokun
       [sagte][osuntokun enum], dass die Werkzeuge, die er verwendet,
       "ziemlich einfach" seien. Weder Towns noch Osuntokun erwähnten,
-      welche Werkzeuge sie verwendet haben. Nadav Ivgi [stelle][ivgi minsc]
+      welche Werkzeuge sie verwendet haben. Nadav Ivgi [stellte][ivgi minsc]
       ein Beispiel mit seiner [Minsc][]-Sprache vor und sagte, dass er daran arbeitet,
       Minsc zu verbessern, um solche Dinge einfacher zu machen.
       Es unterstützt Taproot, CTV, PSBT, Deskriptoren, Miniscript, pures Script,
-      BIP32 und mehr. Allerdings gab er zu, dass viel davon noch nicht dokumentiert ist.
+      BIP32 und mehr. Allerdings gab er zu, dass vieles davon noch nicht dokumentiert ist.
 
     - *Alternativen:* Towns vergleicht CTV+CSFS mit seinem Basic Bitcoin Lisp Language
       ([bll][topic bll]) und [Simplicity][topic simplicity], die eine alternative
@@ -267,7 +267,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
     auf Delving Bitcoin, um vorzuschlagen, CTV und CSFS zu Bitcoin hinzuzufügen,
     als ersten Schritt zu weiteren Änderungen, welche die Ausdrucksfähigkeit weiter
     erhöhen würden. Der Großteil der Diskussion konzentrierte sich auf die
-    Qualifizierung der möglichen Vorteile von CTV, CSFS oder beiden zusammen.
+    Qualifizierung der möglichen Vorteile von CTV, CSFS oder beider zusammen.
     Dies umfasste:
 
     - *DLCs:* Sowohl CTV als auch CSFS können einzeln die Anzahl der benötigten
@@ -281,8 +281,8 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       der sagte: "DLCs haben auf Bitcoin keine bedeutende Akzeptanz erlangt,
       und ihre begrenzte Verwendung scheint nicht auf Leistungsbeschränkungen zurückzuführen zu sein.
       " Antworten verlinkten auf andere noch funktionierende DLC-Service-Provider,
-      einschließlich eines, der [behauptet][lava 30m],
-      30 Millionen US-Dollar an Finanzierung aufgebracht zu haben.
+      einschließlich einem, der [behauptet][lava 30m],
+      30 Millionen US-Dollar an Finanzierung beschafft zu haben.
 
     - *Vaults:* CTV vereinfacht die Implementierung von [Vaults][topic  vaults],
       die heute auf  Bitcoin mithilfe von presigned Transaktionen und (optional)
@@ -296,7 +296,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       [rechenschaftspflichtigen Computing-Verträgen][topic acc] wie BitVM eliminieren,
       indem es die aktuelle Notwendigkeit ersetzt, Script-basierte Lamport-Signaturen
       auszuführen. CTV könnte in der Lage sein, einige zusätzliche Signaturoperationen zu
-      reduzieren. Poinsot [fragt][poinsot ctvcsfs1] wieder , ob es eine signifikante
+      reduzieren. Poinsot [fragt][poinsot ctvcsfs1] wiederum, ob es eine signifikante
       Nachfrage nach BitVM gibt. Gregory Sanders [antwortet][sanders bitvm],
       dass er es interessant finden würde, Token in beide Richtungen zu überbrücken,
       als Teil der geschützten [Client-seitigen Validierung][topic client-side validation]
@@ -307,7 +307,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       Weise zu reduzieren.
 
     - *Verbesserung im Liquid-Timelock-Skript:* James O'Beirne
-      [weiterleitete][obeirne liquid] Kommentare von zwei Blockstream-Ingenieuren,
+      [leitete][obeirne liquid] Kommentare von zwei Blockstream-Ingenieuren,
       dass CTV, in seinen Worten, "drastisch das [Blockstream]
       Liquid Timelock-Fallback-Skript verbessern würde, das eine
       periodische Verschiebung von Coins erfordert."
@@ -328,7 +328,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] (APO) implementiert hat,
       [bemerkt][sanders versus], dass die CTV+CSFS-Version von LN-Symmetrie
       nicht so funktionsreich ist wie die APO-Version und Kompromisse erfordert.
-      Anthony Towns [fügt hinzu][towns nonrepo], dass niemand bekanntermaßen Sanders'
+      Anthony Towns [fügt hinzu][towns nonrepo], dass niemand bekannterweise Sanders'
       experimentellen Code für APO aktualisiert hat, um ihn auf moderner Software zu
       verwenden und neu eingeführte Relay-Features wie [TRUC][topic v3 transaction relay]
       und [ephemeral Anchors][topic ephemeral anchors] zu nutzen, geschweige denn,
@@ -340,7 +340,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       wenn ein Soft Fork es ermöglichen würde. Zitate von zwei Core
       Lightning-Entwicklern (die auch Co-Autoren des Papiers sind,
       das wir jetzt LN-Symmetrie nennen), deuteten darauf hin, dass es
-      für sie eine Priorität ist. Im Vergleich dazu sagte Matt Corallo,
+      für sie eine Priorität ist. Im Gegensatz dazu sagte Matt Corallo,
       der Leitende Entwickler von LDK, [zuvor][corallo eltoo],
       "Ich finde [LN-Symmetrie] nicht besonders interessant in Bezug auf 'wir müssen das erledigen'".
 
@@ -350,9 +350,9 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       Benutzererfahrung sind unbestreitbar, und es ist ohne Zweifel, dass beide
       [Ark]-Implementierungen CTV nutzen werden, sobald es verfügbar ist."
       Towns [bemerkte][towns nonrepo], dass niemand Ark mit entweder APO oder
-      CTV für Tests implementiert hat; Roose schrieb [Code][roose ctv-ark]
-      dazu kurz darauf, nannte es "erstaunlich einfach" und sagte, dass es die
-      IntegrationsTests der bestehenden Implementierung bestanden hat.
+      CTV für Tests implementiert hat; Roose schrieb kurz darauf [Code][roose ctv-ark]
+      dazu, nannte es "erstaunlich einfach", und sagte, dass es die
+      Integrationstests der bestehenden Implementierung bestanden hat.
       Er quantifizierte einige der Verbesserungen: Wenn sie zu CTV wechseln,
       "könnten wir etwa 900 Zeilen Code entfernen [...]
       und unser eigenes Rundprotokoll auf zwei statt drei reduzieren,
@@ -381,11 +381,11 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       Wenn der Empfänger online kommt, kann er wählen, was er tun möchte:
 
       - *Ausstieg nach einer Verzögerung:* Die gesamte Kette von presigned Transaktionen
-      wird übertragen, um die [Joinpool][topic joinpools] (genannt Ark) zu verlassen.
-      Dies erfordert das Warten auf die Ablaufzeit einer Timelock, die vom Ausgeber
+      wird übertragen, um den [Joinpool][topic joinpools] (genannt Ark) zu verlassen.
+      Dies erfordert das Warten auf die Ablaufzeit eines Timelocks, der vom Ausgeber
       vereinbart wurde. Wenn die presigned Transaktionen zu einer angemessenen Tiefe
       bestätigt sind, kann der Empfänger sicher sein, dass er treuhänderische Kontrolle
-      über die Mittel hat. Allerdings verliert er die Vorteile, die mit der Teilnahme an einer
+      über die Mittel hat. Allerdings verliert er die Vorteile, die mit der Teilnahme an einem
       Joinpool verbunden sind, wie z.B. schnelle Abwicklung und geringere
       Gebühren durch UTXO-Teilung. Er muss möglicherweise auch Transaktionsgebühren
       zahlen, um die Kette von Transaktionen zu bestätigen.
@@ -420,10 +420,10 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       Ein weiteres Designziel für Ark ist es, es Teilnehmern zu ermöglichen,
       LN-Zahlungen zu empfangen. In seinem ursprünglichen Beitrag und einer
       [Antwort][roose ctv-ark-ln] beschreibt Roose, dass bestehende Teilnehmer,
-      die bereits Mittel innerhalb der Joinpool haben, bis zu den Kosten einer
+      die bereits Mittel innerhalb des Joinpools haben, bis zu den Kosten einer
       On-Chain-Transaktion bestraft werden können, wenn sie die erforderliche
       Interaktivität für den Empfang einer LN-Zahlung nicht ausführen.
-      Allerdings können diejenigen, die noch keine Mittel in der Joinpool haben,
+      Allerdings können diejenigen, die noch keine Mittel in dem Joinpool haben,
       nicht bestraft werden, sodass sie die interaktiven Schritte verweigern und
       kostenlos Probleme für ehrliche Teilnehmer verursachen können.
       Dies scheint effektiv zu verhindern, dass Ark-Benutzer LN-Zahlungen empfangen können,
@@ -434,18 +434,18 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
       Eine Ark-Runde besteht aus einer kleinen On-Chain-Transaktion, die sich auf einen
       Baum von Off-Chain-Transaktionen bezieht. Dies sind presigned Transaktionen
       im Falle von clArk, die erfordern, dass alle Ausgeber in dieser Runde für die
-      Signierung verfügbar sind. Wenn CTV verfügbar wäre, kann jede Zweigstelle
+      Signierung verfügbar sind. Wenn CTV verfügbar wäre, könnte jede Zweigstelle
       im Baum von Transaktionen ihre Nachfolger mithilfe von CTV ohne Signierung verpflichten.
       Dies ermöglicht die Erstellung von Transaktionen sogar für Teilnehmer,
       die zum Zeitpunkt der Erstellung der Runde nicht verfügbar sind,
       mit folgenden Vorteilen:
 
-    - *In-Runde nicht-interaktive Zahlungen:* Anstatt Ark-out-of-round
+    - *In-Runde nicht-interaktive Zahlungen:* Anstatt mit Ark-out-of-round
       (arkoor)-Zahlungen, kann ein Ausgeber, der bereit ist, auf die nächste
       Runde zu warten, den Empfänger in der Runde bezahlen. Für den Empfänger
       hat dies einen großen Vorteil: Sobald die Runde zu einer angemessenen
       Tiefe bestätigt ist, erhält er treuhänderische Kontrolle über die empfangenen
-      Mittel (bis das Ablaufdatum näher kommt, zu dem Zeitpunkt kann er entweder
+      Mittel (bis das Ablaufdatum näherkommt, zu dem Zeitpunkt kann er entweder
       aussteigen oder günstig aktualisieren). Anstatt auf mehrere Bestätigungen zu warten,
       kann der Empfänger wählen, sofort den Anreizen zu vertrauen, die durch das
       Ark-Protokoll für den Server geschaffen werden, um ehrlich zu operieren
@@ -500,7 +500,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
   die auf der ausgegebenen Ausgabe platziert wurden, auf die erstellte Ausgabe zu übertragen -
   allgemein (aber [umstritten][towns anticov]) als [Covenant][topic covenants] im Bitcoin-Jargon bezeichnet.
   Der Covenant kann die Erfüllung oder Modifikation der Belastung ermöglichen,
-  was (respektive) den Covenant beenden oder seine Bedingungen für zukünftige Iterationen modifizieren würde.
+  was (jeweils) den Covenant beenden oder seine Bedingungen für zukünftige Iterationen modifizieren würde.
   Ingala beschreibt einige der Vorteile und Nachteile dieses Ansatzes:
 
   - *Vorteile:* native Unterstützung für Taproot, erhöht nicht die Größe von
@@ -569,7 +569,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
   Er bemerkt auch, dass er "vollständig ausgestattete Vault-Implementierungen mit `OP_CCV`
   plus [OP_CTV][topic op_checktemplateverify] erstellt hat, die ungefähr äquivalent sind zu
   [...[BIP345][]...]". Darüber hinaus sei eine Version mit reduzierter Funktionalität, die nur
-  `OP_CCV` verwendet, als FunktionsTest in der Bitcoin Core-Implementierung von
+  `OP_CCV` verwendet, als Funktionstest in der Bitcoin Core-Implementierung von
   `OP_CCV` implementiert worden.
 
 - **Entwurf für BIP veröffentlicht für Konsens-Reinigung:** Antoine Poinsot
@@ -592,7 +592,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
     um eine Art von [Merkle-Baum-Schwachstelle][topic merkle tree vulnerabilities]
     zu verhindern.
 
-  Technische Antworten waren für alle Teile des Vorschlags außer zwei positiv.
+  Technische Antworten waren für alle Teile des Vorschlags mit Ausnahme von zwei positiv.
   Der erste Einwand, der in mehreren Antworten geäußert wurde, war die Ungültigmachung
   von 64-Byte-Transaktionen. Die Antworten wiederholten vorherige Kritik (siehe
   [Newsletter #319][news319 64byte]). Es gibt eine alternative Methode,
@@ -600,7 +600,7 @@ _Ein monatlicher Abschnitt, der Vorschläge und Diskussionen zu
   einfach für leichte (SPV) Wallets zu verwenden, aber könnte Herausforderungen
   für die SPV-Validierung in Smart Contracts, wie z.B. Bridges zwischen Bitcoin
   und anderen Systemen, darstellen. Sjors Provoost [schlug vor][provoost bridge],
-  dass jemand, der einen onchain-durchsetzbaren Bridge implementiert, Code bereitstellt,
+  dass jemand, der eine on-chain-durchsetzbare Bridge implementiert, Code bereitstellt,
   der den Unterschied zwischen der Annahme, dass 64-Byte-Transaktionen nicht existieren,
   und der Verwendung der alternativen Methode zur Verhinderung von
   Merkle-Baum-Schwachstellen illustriert.
@@ -678,7 +678,7 @@ bleiben, wenn Knoten sich über die aktuelle Feerate uneinig sind.
 
 - [Eclair #3045][] macht das `payment_secret`-Feld im äußeren Onion-Payload optional für
 Single-Part-[Trampoline payments][topic trampoline payments]. Zuvor enthielt jede Trampoline-Zahlung ein `payment_secret`,
-auch wenn keine [Multipath payments][topic multipath payments] (MPP) verwendet wurde. Da Zahlungsschlüssel möglicherweise
+auch wenn keine [Multipath payments][topic multipath payments] (MPP) verwendet wurden. Da Zahlungsschlüssel möglicherweise
 erforderlich sind, wenn moderne [BOLT11][]-Rechnungen verarbeitet werden, fügt Eclair einen Dummy ein, wenn keiner
 bereitgestellt wird.
 
