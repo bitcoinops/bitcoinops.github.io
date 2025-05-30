@@ -73,6 +73,9 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | Tapscript                         |                               |                      |                                           |
 | Orakel-Bestätigung                |                               |                      |                                           |
 | Timelock                          |                               |                      |                                           |
+| payer                             | Zahlender                     | Zahler, Spender      | Für Lightning-Kontext                     |
+| receiver                          | Empfänger                     | Receiver             | Für Lightning-Kontext                     |
+| mitigation                        | Gegenmaßnahme                 | Lösung               | Im technischen Kontext                    |
 
 ### Nicht übersetzte Begriffe
 
