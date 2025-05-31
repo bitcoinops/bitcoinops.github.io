@@ -5,6 +5,18 @@
 Die deutsche Übersetzung von Optech Inhalten sollte wo immer möglich den Regeln
 des englischen [Hauptleitfaden](STYLE.md) folgen.
 
+## Abschnittsüberschriften (Standardübersetzungen)
+
+| Englisch                                 | Deutsch                                      |
+|-------------------------------------------|----------------------------------------------|
+| News                                     | Nachrichten                                  |
+| Changes to services and client software   | Änderungen an Diensten und Client-Software   |
+| Releases and release candidates           | Veröffentlichungen und Release-Kandidaten    |
+| Notable code and documentation changes    | Wichtige Code- und Dokumentationsänderungen  |
+| Selected Q&A from Bitcoin Stack Exchange  | Ausgewählte Fragen & Antworten von Bitcoin Stack Exchange |
+| Correction                               | Korrektur                                    |
+| Consensus changes                        | Konsensänderungen                            |
+
 ## Vokabular
 
 ### Eigennamen
