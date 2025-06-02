@@ -23,39 +23,39 @@ wallets and services.*
 
 - **Cake Wallet added payjoin v2 support:**
   Cake Wallet [v4.28.0][cake wallet 4.28.0] adds [the ability][cake blog] to
-  receive payments using the [payjoin][topic payjoin] v2 protocol.
+  receive payments using the [payjoin][topic payjoin] v2 protocol. {% assign timestamp="2:38" %}
 
 - **Sparrow adds pay-to-anchor features:**
   Sparrow [2.2.0][sparrow 2.2.0] displays and can send [pay-to-anchor
-  (P2A)][topic ephemeral anchors] outputs.
+  (P2A)][topic ephemeral anchors] outputs. {% assign timestamp="6:37" %}
 
 - **Safe Wallet 1.3.0 released:**
   [Safe Wallet][safe wallet github] is a desktop multisig wallet with hardware
   signing device support that added [CPFP][topic cpfp] fee bumping for incoming
-  transactions in [1.3.0][safe wallet 1.3.0].
+  transactions in [1.3.0][safe wallet 1.3.0]. {% assign timestamp="8:00" %}
 
 - **COLDCARD Q v1.3.2 released:**
   COLDCARD Q's [v1.3.2 release][coldcard blog] includes additional multisig
   [spending policy support][coldcard ccc] and new features for [sharing
-  sensitive data][coldcard kt].
+  sensitive data][coldcard kt]. {% assign timestamp="9:15" %}
 
 - **Transaction batching using payjoin:**
   [Private Pond][private pond post] is an [experimental implementation][private
   pond github] of a [transaction batching][topic payment batching] service that
-  uses payjoin to generate smaller transactions that pay less in fees.
+  uses payjoin to generate smaller transactions that pay less in fees. {% assign timestamp="19:07" %}
 
 - **JoinMarket Fidelity Bond Simulator:**
   The [JoinMarket Fidelity Bond Simulator][jmfbs github] provides tools for
   JoinMarket participants to simulate their performance in the market based on
-  [fidelity bonds][news161 fb].
+  [fidelity bonds][news161 fb]. {% assign timestamp="20:45" %}
 
 - **Bitcoin opcodes documented:**
   The [Opcode Explained][opcode explained website] website documents
-  each Bitcoin script opcode.
+  each Bitcoin script opcode. {% assign timestamp="26:39" %}
 
 - **Bitkey code open sourced:**
   The Bitkey hardware signing device [announced][bitkey blog] their [source
-  code][bitkey github] is open-source for non-commercial uses.
+  code][bitkey github] is open-source for non-commercial uses. {% assign timestamp="27:59" %}
 
 ## Releases and release candidates
 
@@ -65,10 +65,10 @@ release candidates._
 
 - [LND 0.19.0-beta][] is the latest major release of this popular LN
   node.  Its contains many [improvements][lnd rn] and bug fixes,
-  including new RBF-based fee bumping for cooperative closes.
+  including new RBF-based fee bumping for cooperative closes. {% assign timestamp="33:43" %}
 
 - [Core Lightning 25.05rc1][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="40:12" %}
 
 ## Notable code and documentation changes
 
@@ -87,7 +87,7 @@ repo], and [BINANAs][binana repo]._
   deprecated when `rpcauth` was introduced in [Bitcoin Core #7044][], which
   supports multiple RPC users and hashes its cookie. The PR also adds a random
   16-byte salt to credentials from both methods and hashes them before they’re
-  stored in memory.
+  stored in memory. {% assign timestamp="46:47" %}
 
 - [Bitcoin Core #31444][] extends the `TxGraph` class (see Newsletter
   [#348][news348 txgraph]) with three new helper functions:
@@ -97,7 +97,7 @@ repo], and [BINANAs][binana repo]._
   for optimized block construction, and `GetWorstMainChunk()` pinpoints the
   lowest feerate chunk for eviction decisions. This PR is one of the final
   building blocks of the full initial implementation of the [cluster mempool][topic
-  cluster mempool] project.
+  cluster mempool] project. {% assign timestamp="49:51" %}
 
 - [Core Lightning #8140][] enables [peer storage][topic peer storage] of channel
   backups by default (see Newsletter [#238][news238 storage]), making it viable
@@ -105,18 +105,18 @@ repo], and [BINANAs][binana repo]._
   caching backups and peer lists in memory instead of making repeated
   `listdatastore`/`listpeerchannels` calls, capping concurrent backup uploads at
   two peers, skipping backups larger than 65 kB, and randomizing peer selection when
-  sending.
+  sending. {% assign timestamp="52:08" %}
 
 - [Core Lightning #8136][] updates the exchange of announcement signatures to
   occur when the channel is ready rather than after six blocks, to align with
   the recent [BOLTs #1215][] specification update. It's still required to wait
-  six blocks to [announce the channel][topic channel announcements].
+  six blocks to [announce the channel][topic channel announcements]. {% assign timestamp="54:16" %}
 
 - [Core Lightning #8266][] adds an `update` command to the Reckless plugin
   manager (see Newsletter [#226][news226 reckless]) that updates a specified
   plugin or all installed plugins if none is specified, except those installed
   from a fixed Git tag or commit. This PR also extends the `install` command to
-  take a source path or URL in addition to a plugin name.
+  take a source path or URL in addition to a plugin name. {% assign timestamp="55:52" %}
 
 - [Core Lightning #8021][] finalizes [splicing][topic splicing] interoperability
   with Eclair (see Newsletter [#331][news331 interop]) by fixing the rotation of
@@ -125,14 +125,14 @@ repo], and [BINANAs][binana repo]._
   splicing]), relaxing the requirement that commitment-signed messages arrive in
   a particular order, enabling receiving and initiating splice [RBF][topic rbf]
   transactions, automatically converting outgoing [PSBTs][topic psbt] to version
-  2 when needed, and other refactoring changes.
+  2 when needed, and other refactoring changes. {% assign timestamp="58:38" %}
 
 - [Core Lightning #8226][] implements [BIP137][] by adding a new
   `signmessagewithkey` RPC command that allows users to sign messages with any
   key from the wallet by specifying a Bitcoin address. Previously, signing a
   message with a Core Lightning key required finding the xpriv and the key
   index, deriving the private key with an external library, and then signing the
-  message with Bitcoin Core.
+  message with Bitcoin Core. {% assign timestamp="1:01:29" %}
 
 - [LND #9801][] adds a new `--no-disconnect-on-pong-failure` option, which
   controls whether a peer is disconnected if a pong response is late or
@@ -140,7 +140,7 @@ repo], and [BINANAs][binana repo]._
   behavior of LND disconnecting from a peer on a pong message failure (see
   Newsletter [#275][news275 ping]); otherwise, LND would only log the event. The
   PR refactors the ping watchdog to continue its loop when disconnection is
-  suppressed.
+  suppressed. {% assign timestamp="1:02:54" %}
 
 {% include snippets/recap-ad.md when="2025-05-27 16:30" %}
 {% include references.md %}
