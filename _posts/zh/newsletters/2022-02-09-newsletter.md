@@ -52,12 +52,19 @@ lang: zh
 *本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的变更。*
 
 - [Bitcoin Core #23508][Bitcoin Core #23508] 将软分叉部署状态信息从 `getblockchaininfo` 移至新的 `getdeploymentinfo` RPC，同时支持按特定区块高度查询部署状态，而非仅限链尖。
+
 - [Bitcoin Core #21851][Bitcoin Core #21851] 为 arm64-apple-darwin（Apple M1） 平台添加构建支持。随着变更合并，社区可在下一个版本中期待可用的 M1 二进制文件。
+
 - [Bitcoin Core #16795][Bitcoin Core #16795] 更新 `getrawtransaction`、`gettxout`、`decoderawtransaction` 与 `decodescript` RPC，使其在解码任意 scriptPubKey 时返回推断出的[输出脚本描述符][topic descriptors]。
+
 - [LND #6226][LND #6226] 将通过遗留 `SendPayment`、`SendPaymentSync` 与 `QueryRoutes` RPC 创建的 LN 路由支付默认手续费设为 5%。使用新版 `SendPaymentV2` RPC 发送的支付默认手续费为 0%，基本上要求用户显式指定。另一合并的拉取请求 [LND #6234][LND #6234] 将通过遗留 RPC 发送且金额低于 1,000 satoshi 的支付默认手续费设为 100%。
+
 - [LND #6177][LND #6177] 允许 [HTLC][topic HTLC] 拦截器的使用者指定 HTLC 失败的原因，使拦截器在测试 LND 上层软件处理失败情形时更加实用。
+
 - [LDK #1227][LDK #1227] 改进路由查找逻辑，纳入已知的历史支付失败/成功信息。这些信息用于推断通道余额的上限与下限，从而在评估路由时为路由查找逻辑提供更准确的成功概率。这实现了 René Pickhardt 等人在之前多期 Newsletter（包括 [#142][news142 pps]、[#163][news163 pickhardt richter paper] 与 [#172][news172 cl4771]）中提到的部分想法。
+
 - [HWI #549][HWI #549] 添加对 [PSBT][topic psbt] 版本 2 的支持（见 [BIP370][]）。当使用仅原生支持 v0 PSBT 的设备（如现有 Coldcard 硬件签名设备）时，v2 PSBT 会被转换为 v0 PSBT。
+
 - [HWI #544][] 为 Trezor 硬件签名设备添加接收与支出 [taproot][topic taproot] 付款的支持。
 
 
