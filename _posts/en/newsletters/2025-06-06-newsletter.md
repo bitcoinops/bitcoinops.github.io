@@ -145,11 +145,32 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #32582][] log: Additional compact block logging
+- [Bitcoin Core #32582][] adds new logging to measure the performance of
+  [compact block reconstruction][topic compact block relay] by tracking the
+  total size of transactions that a node requests from its peers
+  (`getblocktxn`), the number and total size of transactions that a node sends
+  to its peers (`blocktxn`), and adding a timestamp at the start of
+  `PartiallyDownloadedBlock::InitData()` to track how long the mempool lookup
+  step alone takes (in both high and low-bandwidth modes). See Newsletter
+  [#315][news315 compact] for a previous statistics report on compact block
+  reconstruction.
 
-- [Bitcoin Core #31375][] multiprocess: Add bitcoin wrapper executable
+- [Bitcoin Core #31375][] adds a new `bitcoin -m` CLI tool that wraps and
+  executes the [multiprocess][multiprocess project] binaries `bitcoin node`
+  (`bitcoind`), `bitcoin gui` (`bitcoinqt`), `bitcoin rpc` (`bitcoin-cli
+  -named`). Currently, these function in the same way as the monolithic
+  binaries, except they support the `-ipcbind` option (see Newsletter
+  [#320][news320 ipc]), but future improvements will enable a node runner to
+  start and stop components independently on different machines and
+  environments. See [Newsletter #353][news353 pr review] for a Bitcoin Core PR
+  Review Club covering this PR.
 
-- [BIPs #1483][] BIP 77: Async Payjoin
+- [BIPs #1483][] merges [BIP77][] which proposes [payjoin v2][topic payjoin], an
+  asynchronous serverless variant in which the sender and receiver hand their
+  encrypted PSBTs to a payjoin directory server that only stores and forwards
+  messages. As the directory cannot read or alter the payloads, neither wallet
+  needs to host a public server or be online at the same time. See Newsletter
+  [#264][news264 payjoin] for additional context on payjoin v2.
 
 {% include snippets/recap-ad.md when="2025-06-10 16:30" %}
 {% include references.md %}
@@ -167,3 +188,8 @@ repo], and [BINANAs][binana repo]._
 [maxwell limit]: https://delvingbitcoin.org/t/non-confiscatory-transaction-weight-limit/1732/4
 [linus dust]: https://delvingbitcoin.org/t/dust-expiry-clean-the-utxo-set-from-spam/1707/
 [lnd 0.19.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.1-beta.rc1
+[news315 compact]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
+[multiprocess project]: https://github.com/ryanofsky/bitcoin/blob/pr/ipc/doc/design/multiprocess.md
+[news320 ipc]: /en/newsletters/2024/09/13/#bitcoin-core-30509
+[news264 payjoin]: /en/newsletters/2023/08/16/#serverless-payjoin
+[news353 pr review]: /en/newsletters/2025/05/09/#bitcoin-core-pr-review-club

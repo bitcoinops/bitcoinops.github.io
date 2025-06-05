@@ -107,6 +107,7 @@ for details --> {% endcomment %}
 [BIP71]: https://github.com/bitcoin/bips/blob/master/bip-0071.mediawiki
 [BIP72]: https://github.com/bitcoin/bips/blob/master/bip-0072.mediawiki
 [BIP75]: https://github.com/bitcoin/bips/blob/master/bip-0075.mediawiki
+[BIP77]: https://github.com/bitcoin/bips/blob/master/bip-0077.md
 [BIP78]: https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki
 [BIP79]: https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki
 [BIP84]: https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki
