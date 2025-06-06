@@ -74,7 +74,7 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | lightning network                 | Lightning Netzwerk            |                      |                                           |
 | node                              | Knoten                        | Node                 |                                           |
 | relay                             | Weiterleitung                 |                      |                                           |
-| output                            | Ausgabe                       | Output               | Im Kontext von UTXO                       |
+| input/output                      |                               |                      |                                           |
 | silent payment                    | Stille Zahlung                |                      |                                           |
 | UTXO                              |                               |                      | Genus Maskulinum                          |
 | wallet                            | Wallet                        | Geldbörse            | Genus Neutrum                             |
@@ -85,6 +85,7 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | Tapscript                         |                               |                      |                                           |
 | Orakel-Bestätigung                |                               |                      |                                           |
 | Timelock                          |                               |                      |                                           |
+| non-custodial                     | non-custodial                 | nicht-verwahrt       | ist im deutschsprachigen Raum etablierte  |
 
 ### Nicht übersetzte Begriffe
 
