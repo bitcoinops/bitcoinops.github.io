@@ -162,3 +162,11 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 ### Maßeinheiten
 
 Siehe [Hauptleitfaden](STYLE.md).
+
+### Nicht zu übersetzende Begriffe und Ausnahmen
+
+| Englischer Ausdruck  | Nicht übersetzen, wenn ...                                      | Beispiel/Anmerkung                                 |
+|----------------------|-----------------------------------------------------------------|----------------------------------------------------|
+| Full Node /Full Nodes| immer                                                           | Nicht als "Vollknoten" übersetzen                  |
+| output / input       | im Zusammenhang mit UTXO (z.B. "UTXO output", "UTXO input")     | Nicht als "Ausgabe/Eingabe" übersetzen             |
+| non-custodial        | immer                                                           | Nicht als "nicht-verwahrt" übersetzen              |
