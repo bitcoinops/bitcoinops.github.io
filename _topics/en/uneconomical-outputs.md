@@ -72,6 +72,9 @@ optech_mentions:
   - title: "Bitcoin Core PR Review Club about exempting ephemeral anchors from the dust limit"
     url: /en/newsletters/2024/11/08/#bitcoin-core-pr-review-club
 
+  - title: "Proposal for removing uneconomical outputs from the stored UTXO set"
+    url: /en/newsletters/2025/06/06/#removing-outputs-from-the-utxo-set-based-on-value-and-time
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)

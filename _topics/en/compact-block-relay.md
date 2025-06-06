@@ -66,6 +66,9 @@ optech_mentions:
   - title: "Renewed discussion about compact block reconstruction success rates"
     url: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
 
+  - title: "Bitcoin Core #32582 adds logging to measure performance of compact block reconstruction"
+    url: /en/newsletters/2025/06/06/#bitcoin-core-32582
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
