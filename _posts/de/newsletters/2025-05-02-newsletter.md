@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: de
 ---
-Der Newsletter dieser Woche verweist auf Vergleiche verschiedener Cluster-Linearisationstechniken und fasst kurz die Diskussion über die Erhöhung oder Abschaffung des `OP_RETURN`-Größenlimits in Bitcoin Core zusammen. Ebenfalls enthalten sind unsere regulären Abschnitte mit Ankündigungen neuer Releases und Release-Kandidaten sowie Zusammenfassungen wichtiger Änderungen an populärer Bitcoin-Infrastruktur.
+Der Newsletter dieser Woche verweist auf Vergleiche verschiedener Cluster-Linearisierungstechniken und fasst kurz die Diskussion über die Erhöhung oder Abschaffung des `OP_RETURN`-Größenlimits in Bitcoin Core zusammen. Ebenfalls enthalten sind unsere regulären Abschnitte mit Ankündigungen neuer Releases und Release-Kandidaten sowie Zusammenfassungen wichtiger Änderungen an populärer Bitcoin-Infrastruktur.
 
 ## Nachrichten
 
