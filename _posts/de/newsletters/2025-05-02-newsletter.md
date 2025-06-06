@@ -21,7 +21,7 @@ Der Newsletter dieser Woche verweist auf Vergleiche verschiedener Cluster-Linear
     Pieter Wuille [argumentierte][wuille opr], dass die Standardness-Policy von Transaktionen kaum verhindern kann, dass gut finanzierte Organisationen datentragende Transaktionen direkt an Miner senden und so in Blöcke bringen. Außerdem seien Blöcke ohnehin meist voll, egal ob sie Daten enthalten oder nicht, sodass sich die Gesamtmenge der zu speichernden Daten für einen Knoten kaum ändert.
 
   - *Gegen die Erhöhung des Limits:*
-    Jason Hughes [argumentierte][hughes opr], dass eine Erhöhung des Limits es einfacher machen würde, beliebige Daten auf Rechnern zu speichern, die Full Knoten betreiben – darunter auch potenziell anstößige oder in vielen Ländern illegale Inhalte. Selbst wenn der Knoten die Daten auf der Festplatte verschlüsselt (siehe [Newsletter #316][news316 blockxor]), könnte das Speichern und Abrufen solcher Daten über Bitcoin Core RPCs für viele Nutzer problematisch sein.
+    Jason Hughes [argumentierte][hughes opr], dass eine Erhöhung des Limits es einfacher machen würde, beliebige Daten auf Rechnern zu speichern, die Full Nodes betreiben – darunter auch potenziell anstößige oder in vielen Ländern illegale Inhalte. Selbst wenn der Knoten die Daten auf der Festplatte verschlüsselt (siehe [Newsletter #316][news316 blockxor]), könnte das Speichern und Abrufen solcher Daten über Bitcoin Core RPCs für viele Nutzer problematisch sein.
 
 
 ## Veröffentlichungen und Release-Kandidaten
