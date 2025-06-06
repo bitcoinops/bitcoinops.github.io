@@ -11,7 +11,7 @@ Der Newsletter dieser Woche verweist auf Vergleiche verschiedener Cluster-Linear
 
 ## Nachrichten
 
-- **Vergleich von Cluster-Linearisationstechniken:**
+- **Vergleich von Cluster-Linearisierungstechniken:**
   Pieter Wuille [veröffentlichte][wuille clustrade] auf Delving Bitcoin einige grundlegende Abwägungen zwischen drei verschiedenen Cluster-Linearisierungstechniken und ergänzte dies durch [Benchmarks][wuille clusbench] der jeweiligen Implementierungen. Mehrere andere Entwickler diskutierten die Ergebnisse und stellten Rückfragen, auf die Wuille antwortete.
 
 - **Erhöhung oder Abschaffung des `OP_RETURN`-Größenlimits in Bitcoin Core:**
