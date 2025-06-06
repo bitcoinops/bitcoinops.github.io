@@ -12,7 +12,7 @@ Der Newsletter dieser Woche verweist auf Vergleiche verschiedener Cluster-Linear
 ## Nachrichten
 
 - **Vergleich von Cluster-Linearisationstechniken:**
-  Pieter Wuille [veröffentlichte][wuille clustrade] auf Delving Bitcoin einige grundlegende Abwägungen zwischen drei verschiedenen Cluster-Linearisationstechniken und ergänzte dies durch [Benchmarks][wuille clusbench] der jeweiligen Implementierungen. Mehrere andere Entwickler diskutierten die Ergebnisse und stellten Rückfragen, auf die Wuille antwortete.
+  Pieter Wuille [veröffentlichte][wuille clustrade] auf Delving Bitcoin einige grundlegende Abwägungen zwischen drei verschiedenen Cluster-Linearisierungstechniken und ergänzte dies durch [Benchmarks][wuille clusbench] der jeweiligen Implementierungen. Mehrere andere Entwickler diskutierten die Ergebnisse und stellten Rückfragen, auf die Wuille antwortete.
 
 - **Erhöhung oder Abschaffung des `OP_RETURN`-Größenlimits in Bitcoin Core:**
   In einem Thread auf der Bitcoin-Dev-Mailingliste diskutierten mehrere Entwickler, das Standardlimit für `OP_RETURN`-Data-Carrier-Outputs in Bitcoin Core zu ändern oder ganz abzuschaffen. Eine nachfolgende [Pull-Request-Diskussion][bitcoin core #32359] brachte weitere Argumente. Anstatt die gesamte umfangreiche Diskussion zusammenzufassen, stellen wir das aus unserer Sicht überzeugendste Argument für und gegen die Änderung vor.
