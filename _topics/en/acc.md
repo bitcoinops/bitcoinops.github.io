@@ -64,6 +64,9 @@ optech_mentions:
   - title: "Description of benefits to BitVM from `OP_CTV` and `OP_CSFS`"
     url: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
 
+  - title: Discussion about transaction weight limit in response to large BitVM transactions
+    url: /en/newsletters/2025/06/06/#transaction-weight-limit-with-exception-to-prevent-confiscation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"

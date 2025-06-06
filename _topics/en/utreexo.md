@@ -52,6 +52,9 @@ optech_mentions:
   - title: "SwiftSync faster sync allows parallel block validation, similar to Utreexo"
     url: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
 
+  - title: Discussion of alternatives to Utreexo for proving UTXO existence without a UTXO set
+    url: /en/newsletters/2025/06/06/#removing-outputs-from-the-utxo-set-based-on-value-and-time
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs

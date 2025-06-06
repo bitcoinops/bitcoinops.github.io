@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Draft BIP for destroying quantum-insecure bitcoins"
     url: /en/newsletters/2025/04/04/#draft-bip-for-destroying-quantum-insecure-bitcoins
 
+  - title: Report about quantum computing and Bitcoin
+    url: /en/newsletters/2025/06/06/#quantum-computing-report
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
