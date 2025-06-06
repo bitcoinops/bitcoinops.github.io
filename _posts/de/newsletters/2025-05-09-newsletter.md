@@ -86,7 +86,7 @@ _Bemerkenswerte aktuelle Änderungen in [Bitcoin Core][bitcoin core repo], [Core
 [news346 checkpoints]: /de/newsletters/2025/03/21/#bitcoin-core-31649
 [news335 blip50]: /en/newsletters/2025/01/03/#blips-52
 [news135 bip48]: /en/newsletters/2021/07/28/#bips-1072
-[news348 cleanup]: /de/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
+[news348 cleanup]: /de/newsletters/2025/04/04/#entwurf-fur-bip-veroffentlicht-fur-konsens-reinigung
 [review club 31375]: https://bitcoincore.reviews/31375
 [gh ryanofsky]: https://github.com/ryanofsky
 [multiprocess design]: https://github.com/bitcoin/bitcoin/blob/master/doc/design/multiprocess.md
