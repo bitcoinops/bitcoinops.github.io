@@ -84,5 +84,7 @@ languages:
     name: German
   - code: fr
     name: French
+  - code: pt
+    name: Portuguese
 ## In-text aliases
 trb: "709,632" # TapRoot Block (activation)
