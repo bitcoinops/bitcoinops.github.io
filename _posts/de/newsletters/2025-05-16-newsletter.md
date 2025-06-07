@@ -47,7 +47,7 @@ _Wichtige aktuelle Änderungen in [Bitcoin Core][bitcoin core repo], [Core Light
 
 - [Rust Bitcoin #4458][] ersetzt die Struktur `MtpAndHeight` durch ein explizites Paar aus dem neu hinzugefügten `BlockMtp` und dem bereits existierenden `BlockHeight`, um Blockhöhe und Median Time Past (MTP) bei relativen [Timelocks][topic timelocks] besser modellieren zu können. Im Gegensatz zu `locktime::absolute::MedianTimePast`, das auf Werte über 500 Millionen (etwa nach 1985) beschränkt ist, kann `BlockMtp` jeden 32-Bit-Timestamp darstellen. Das macht ihn geeignet für theoretische Spezialfälle, wie Chains mit ungewöhnlichen Zeitstempeln. Das Update führt außerdem `BlockMtpInterval` ein und benennt `BlockInterval` in `BlockHeightInterval` um.
 
-- [BIPs #1848][] aktualisiert den Status von [BIP345][] auf „Withdrawn“, da der Autor [glaubt][obeirne vaultwithdraw], dass der vorgeschlagene Opcode `OP_VAULT` durch [`OP_CHECKCONTRACTVERIFY`][topic matt] (OP_CCV), ein allgemeineres [Vault][topic vaults]-Design und eine neue Art von [Covenant][topic covenants] ersetzt wurde.
+- [BIPs #1848][] aktualisiert den Status von [BIP345][] auf „Withdrawn“, da der Autor [glaubt][obeirne vaultwithdraw], dass der vorgeschlagene Opcode `OP_VAULT` durch [`OP_CHECKCONTRACTVERIFY`][topic matt] (OP_CCV), ein allgemeineres [Vault][topic vaults]-Design und eine neue Art von [Covenant][topic covenants] verdrängt wurde.
 
 - [BIPs #1841][] merged [BIP172][], das vorschlägt, die unteilbare Basiseinheit von Bitcoin als „Satoshi“ formell zu definieren, um die aktuelle, weit verbreitete Nutzung widerzuspiegeln und die Terminologie in Anwendungen und Dokumentation zu standardisieren.
 
