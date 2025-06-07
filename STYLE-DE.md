@@ -72,9 +72,8 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | funds                             | Kapital                       |                      |                                           |
 | HTLC                              |                               |                      | Genus Maskulinum                          |
 | lightning network                 | Lightning Netzwerk            |                      |                                           |
-| node                              | Knoten                        | Node                 |                                           |
+| node                              | Knoten                        | Node                 | Full Node wird nicht übersetzt            |
 | relay                             | Weiterleitung                 |                      |                                           |
-| output                            | Ausgabe                       | Output               | Im Kontext von UTXO                       |
 | silent payment                    | Stille Zahlung                |                      |                                           |
 | UTXO                              |                               |                      | Genus Maskulinum                          |
 | wallet                            | Wallet                        | Geldbörse            | Genus Neutrum                             |
