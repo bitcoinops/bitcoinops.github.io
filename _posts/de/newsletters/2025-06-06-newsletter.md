@@ -7,16 +7,38 @@ type: newsletter
 layout: newsletter
 lang: de
 ---
-Der Newsletter dieser Woche enthält eine Analyse zum Synchronisieren von Full Nodes ohne alte Witness-Daten. Ebenfalls enthalten sind unsere regulären Abschnitte mit Beschreibungen von Diskussionen zu Konsensänderungen, Ankündigungen neuer Veröffentlichungen und Release-Kandidaten sowie Zusammenfassungen wichtiger Änderungen an populärer Bitcoin-Infrastruktur.
+Der Newsletter dieser Woche enthält eine Analyse zum Synchronisieren von Full Nodes
+ohne alte Witness-Daten. Ebenfalls enthalten sind unsere regulären Abschnitte mit
+Beschreibungen von Diskussionen zu Konsensänderungen, Ankündigungen neuer
+Veröffentlichungen und Release-Kandidaten sowie Zusammenfassungen wichtiger
+Änderungen an populärer Bitcoin-Infrastruktur.
 
 ## Nachrichten
 
 - **Synchronisation von Full Nodes ohne Witness-Daten:**
-  Jose SK [veröffentlichte][sk nowit] auf Delving Bitcoin eine Zusammenfassung einer [Analyse][sk nowit gist], in der er die Sicherheitserwägungen untersucht, wenn neu gestartete Full Nodes mit einer bestimmten Konfiguration auf das Herunterladen einiger historischer Blockchain-Daten verzichten. Standardmäßig verwenden Bitcoin-Core-Knoten die `assumevalid`-Konfiguration. Diese überspringt die Validierung von Scripts in Blöcken, die mehr als ein oder zwei Monate vor der aktuell ausgeführten Version von Bitcoin Core erstellt wurden. Viele Nutzer aktivieren außerdem die `prune`-Option, die Blöcke nach der Validierung nach einer gewissen Zeit löscht. Wie lange Blöcke aufbewahrt werden, hängt von der Blockgröße und der gewählten Einstellung ab.
+  Jose SK [veröffentlichte][sk nowit] auf Delving Bitcoin eine Zusammenfassung einer
+  [Analyse][sk nowit gist], in der er die Sicherheitserwägungen untersucht, wenn neu
+  gestartete Full Nodes mit einer bestimmten Konfiguration auf das Herunterladen einiger
+  historischer Blockchain-Daten verzichten. Standardmäßig verwenden Bitcoin-Core-Knoten die
+  `assumevalid`-Konfiguration. Diese überspringt die Validierung von Scripts in Blöcken,
+  die mehr als ein oder zwei Monate vor der aktuell ausgeführten Version von Bitcoin Core
+  erstellt wurden. Viele Nutzer aktivieren außerdem die `prune`-Option, die Blöcke nach der
+  Validierung nach einer gewissen Zeit löscht. Wie lange Blöcke aufbewahrt werden,
+  hängt von der Blockgröße und der gewählten Einstellung ab.
 
-  SK argumentiert, dass Witness-Daten, die nur zur Script-Validierung benötigt werden, von geprunten Nodes für assumevalid-Blöcke nicht heruntergeladen werden sollten, da sie nicht zur Script-Validierung genutzt und später ohnehin gelöscht werden. Das Überspringen des Witness-Downloads „kann den Bandbreitenverbrauch um über 40 % reduzieren“, schreibt er.
+  SK argumentiert, dass Witness-Daten, die nur zur Script-Validierung benötigt werden,
+  von geprunten Knoten für assumevalid-Blöcke nicht heruntergeladen werden sollten,
+  da sie nicht zur Script-Validierung genutzt und später ohnehin gelöscht werden.
+  Das Überspringen des Witness-Downloads „kann den Bandbreitenverbrauch um über 40 %
+  reduzieren“, schreibt er.
 
-  Ruben Somsen [argumentiert][somsen nowit], dass dies das Sicherheitsmodell in gewissem Maße verändert. Auch wenn Scripts nicht validiert werden, wird die heruntergeladene Datenmenge gegen das Commitment vom Blockheader-Merkel-Root zur Coinbase-Transaktion bis zu den Witness-Daten geprüft. Das stellt sicher, dass die Daten zum Zeitpunkt der ersten Synchronisation verfügbar und unverfälscht waren. Wenn jedoch niemand regelmäßig die Existenz dieser Daten prüft, könnten sie verloren gehen – wie es [bei mindestens einem Altcoin][ripple loss] bereits passiert ist.
+  Ruben Somsen [argumentiert][somsen nowit], dass dies das Sicherheitsmodell in gewissem
+  Maße verändert. Auch wenn Scripts nicht validiert werden, wird die heruntergeladene
+  Datenmenge gegen das Commitment vom Blockheader-Merkel-Root zur Coinbase-Transaktion
+  bis zu den Witness-Daten geprüft. Das stellt sicher, dass die Daten zum Zeitpunkt der
+  ersten Synchronisation verfügbar und unverfälscht waren. Wenn jedoch niemand regelmäßig
+  die Existenz dieser Daten prüft, könnten sie verloren gehen – wie es
+  [bei mindestens einem Altcoin][ripple loss] bereits passiert ist.
 
   Die Diskussion war zum Zeitpunkt des Schreibens noch im Gange.
 
@@ -88,21 +110,46 @@ _Ein monatlicher Abschnitt mit Zusammenfassungen von Vorschlägen und Diskussion
 
 ## Veröffentlichungen und Release-Kandidaten
 
-_Neue Veröffentlichungen und Release-Kandidaten für populäre Bitcoin-Infrastrukturprojekte. Bitte erwäge, auf neue Veröffentlichungen zu aktualisieren oder Release-Kandidaten zu testen._
+_Neue Veröffentlichungen und Release-Kandidaten für populäre Bitcoin-Infrastrukturprojekte.
+Bitte erwäge, auf neue Veröffentlichungen zu aktualisieren oder Release-Kandidaten zu testen._
 
-- [Core Lightning 25.05rc1][] ist ein Release-Kandidat für die nächste Hauptversion dieser beliebten LN-Knoten-Implementierung.
+- [Core Lightning 25.05rc1][] ist ein Release-Kandidat für die nächste Hauptversion dieser
+beliebten LN-Knoten-Implementierung.
 
-- [LND 0.19.1-beta.rc1][] ist ein Release-Kandidat für eine Wartungsversion dieser beliebten LN-Knoten-Implementierung.
+- [LND 0.19.1-beta.rc1][] ist ein Release-Kandidat für eine Wartungsversion dieser
+beliebten LN-Knoten-Implementierung.
 
 ## Wichtige Code- und Dokumentationsänderungen
 
-_Bemerkenswerte aktuelle Änderungen in [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo] und [BINANAs][binana repo]._
+_Bemerkenswerte aktuelle Änderungen in [Bitcoin Core][bitcoin core repo],
+[Core Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo],
+[libsecp256k1][libsecp256k1 repo], [Hardware Wallet Interface (HWI)][hwi repo],
+[Rust Bitcoin][rust bitcoin repo], [BTCPay Server][btcpay server repo], [BDK][bdk repo],
+[Bitcoin Improvement Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
+[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo] und [BINANAs][binana repo]._
 
-- [Bitcoin Core #32582][] fügt neues Logging hinzu, um die Performance der [Compact-Block-Rekonstruktion][topic compact block relay] zu messen: Es werden die Gesamtgröße der von Peers angeforderten Transaktionen (`getblocktxn`), die Anzahl und Gesamtgröße der an Peers gesendeten Transaktionen (`blocktxn`) sowie ein Timestamp am Start von `PartiallyDownloadedBlock::InitData()` geloggt, um die Dauer des Mempool-Lookups zu messen (sowohl im High- als auch im Low-Bandwidth-Modus). Siehe Newsletter [#315][news315 compact] für einen früheren Statistikbericht zur Compact-Block-Rekonstruktion.
+- [Bitcoin Core #32582][] fügt neues Logging hinzu, um die Performance der
+[Compact-Block-Rekonstruktion][topic compact block relay] zu messen: Es werden die
+Gesamtgröße der von Peers angeforderten Transaktionen (`getblocktxn`), die Anzahl und
+Gesamtgröße der an Peers gesendeten Transaktionen (`blocktxn`) sowie ein Timestamp am Start von
+`PartiallyDownloadedBlock::InitData()` geloggt, um die Dauer des Mempool-Lookups zu messen
+(sowohl im High- als auch im Low-Bandwidth-Modus). Siehe Newsletter [#315][news315 compact]
+für einen früheren Statistikbericht zur Compact-Block-Rekonstruktion.
 
-- [Bitcoin Core #31375][] fügt ein neues CLI-Tool `bitcoin -m` hinzu, das die [Multiprozess][multiprocess project]-Binaries `bitcoin node` (`bitcoind`), `bitcoin gui` (`bitcoinqt`), `bitcoin rpc` (`bitcoin-cli -named`) kapselt und ausführt. Aktuell funktionieren diese wie die monolithischen Binaries, unterstützen aber die Option `-ipcbind` (siehe Newsletter [#320][news320 ipc]). Zukünftige Verbesserungen werden es ermöglichen, Node-Komponenten unabhängig auf verschiedenen Maschinen und Umgebungen zu starten und zu stoppen. Siehe [Newsletter #353][news353 pr review] für einen Bitcoin Core PR Review Club zu diesem PR.
+- [Bitcoin Core #31375][] fügt ein neues CLI-Tool `bitcoin -m` hinzu, das die
+[Multiprozess][multiprocess project]-Binaries `bitcoin node` (`bitcoind`),
+`bitcoin gui` (`bitcoinqt`), `bitcoin rpc` (`bitcoin-cli -named`) kapselt und ausführt.
+Aktuell funktionieren diese wie die monolithischen Binaries, unterstützen aber die Option
+`-ipcbind` (siehe Newsletter [#320][news320 ipc]). Zukünftige Verbesserungen werden es ermöglichen,
+Knoten-Komponenten unabhängig auf verschiedenen Maschinen und Umgebungen zu starten und zu stoppen.
+Siehe [Newsletter #353][news353 pr review] für einen Bitcoin Core PR Review Club zu diesem PR.
 
-- [BIPs #1483][] merged [BIP77][], das [Payjoin v2][topic payjoin] vorschlägt – eine asynchrone, serverlose Variante, bei der Sender und Empfänger ihre verschlüsselten PSBTs an einen Payjoin-Directory-Server übergeben, der nur Nachrichten speichert und weiterleitet. Da das Directory die Payloads weder lesen noch verändern kann, muss keine Wallet einen öffentlichen Server betreiben oder gleichzeitig online sein. Siehe Newsletter [#264][news264 payjoin] für weitere Informationen zu Payjoin v2.
+- [BIPs #1483][] merged [BIP77][], das [Payjoin v2][topic payjoin] vorschlägt – eine asynchrone,
+serverlose Variante, bei der Sender und Empfänger ihre verschlüsselten PSBTs an einen
+Payjoin-Directory-Server übergeben, der nur Nachrichten speichert und weiterleitet.
+Da das Directory die Payloads weder lesen noch verändern kann, muss keine Wallet einen öffentlichen
+Server betreiben oder gleichzeitig online sein. Siehe Newsletter [#264][news264 payjoin]
+für weitere Informationen zu Payjoin v2.
 
 {% include snippets/recap-ad.md when="2025-06-10 16:30" %}
 {% include references.md %}
