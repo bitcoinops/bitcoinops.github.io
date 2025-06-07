@@ -17,7 +17,7 @@ Veröffentlichungen und Release-Kandidaten sowie Zusammenfassungen wichtiger
 
 - **Synchronisation von Full Nodes ohne Witness-Daten:**
   Jose SK [veröffentlichte][sk nowit] auf Delving Bitcoin eine Zusammenfassung einer
-  [Analyse][sk nowit gist], in der er die Sicherheitserwägungen untersucht, wenn neu
+  [Analyse][sk nowit gist], in der er die Sicherheitsabwägungen untersucht, wenn neu
   gestartete Full Nodes mit einer bestimmten Konfiguration auf das Herunterladen einiger
   historischer Blockchain-Daten verzichten. Standardmäßig verwenden Bitcoin-Core-Knoten die
   `assumevalid`-Konfiguration. Diese überspringt die Validierung von Scripts in Blöcken,
