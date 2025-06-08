@@ -84,6 +84,7 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | Tapscript                         |                               |                      |                                           |
 | Orakel-Bestätigung                |                               |                      |                                           |
 | Timelock                          |                               |                      |                                           |
+| non-custodial                     | non-custodial                 | nicht-verwahrt       | ist im deutschsprachigen Raum etablierte  |
 
 ### Nicht übersetzte Begriffe
 
