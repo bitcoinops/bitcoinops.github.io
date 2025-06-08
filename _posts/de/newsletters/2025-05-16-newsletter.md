@@ -27,7 +27,7 @@ _Ein monatlicher Abschnitt mit Zusammenfassungen von Vorschlägen und Diskussion
 - **Beschreibung der Vorteile für BitVM durch `OP_CTV` und `OP_CSFS`:**
   Robin Linus [beschrieb][linus bitvm-sf] auf Delving Bitcoin mehrere Verbesserungen für [BitVM][topic acc], die durch die vorgeschlagenen Opcodes [OP_CTV][topic op_checktemplateverify] und [OP_CSFS][topic op_checksigfromstack] per Soft Fork möglich würden. Zu den Vorteilen zählen eine höhere Anzahl von Operatoren ohne Nachteile, „etwa 10-fach kleinere Transaktionen“ (was die Worst-Case-Kosten reduziert) und die Möglichkeit nicht-interaktiver Peg-ins für bestimmte Verträge.
 
-## Veröffentlichungen und Release-Kandidaten
+## Releases und Release-Kandidaten
 
 _Neue Veröffentlichungen und Release-Kandidaten für populäre Bitcoin-Infrastrukturprojekte. Bitte erwäge, auf neue Releases zu aktualisieren oder Release-Kandidaten zu testen._
 
