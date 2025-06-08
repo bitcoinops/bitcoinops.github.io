@@ -29,7 +29,7 @@ _Ein monatlicher Abschnitt mit Zusammenfassungen von Vorschlägen und Diskussion
 
 ## Releases und Release-Kandidaten
 
-_Neue Veröffentlichungen und Release-Kandidaten für populäre Bitcoin-Infrastrukturprojekte. Bitte erwäge, auf neue Releases zu aktualisieren oder Release-Kandidaten zu testen._
+_Neue Releases und Release-Kandidaten für populäre Bitcoin-Infrastrukturprojekte. Bitte erwäge, auf neue Releases zu aktualisieren oder Release-Kandidaten zu testen._
 
 - [LND 0.19.0-beta.rc4][] ist ein Release-Kandidat für diesen populären LN-Knoten. Eine der wichtigsten Verbesserungen, die getestet werden sollte, ist das neue RBF-basierte Fee-Bumping für kooperative Channel-Schließungen.
 
