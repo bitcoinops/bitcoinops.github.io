@@ -10,7 +10,7 @@ lang: de
 Der Newsletter dieser Woche enthält eine Analyse zum Synchronisieren von Full Nodes
 ohne alte Witness-Daten. Ebenfalls enthalten sind unsere regulären Abschnitte mit
 Beschreibungen von Diskussionen zu Konsensänderungen, Ankündigungen neuer
-Veröffentlichungen und Release-Kandidaten sowie Zusammenfassungen wichtiger
+Releases und Release-Kandidaten sowie Zusammenfassungen wichtiger
 Änderungen an populärer Bitcoin-Infrastruktur.
 
 ## Nachrichten
@@ -108,10 +108,10 @@ _Ein monatlicher Abschnitt mit Zusammenfassungen von Vorschlägen und Diskussion
   (bei Mindestwert und 21 Millionen Bitcoin). Es wurden verschiedene technische
   Aspekte und Alternativen zu utreexo-Proofs für diesen Anwendungsfall diskutiert.
 
-## Veröffentlichungen und Release-Kandidaten
+## Releases und Release-Kandidaten
 
-_Neue Veröffentlichungen und Release-Kandidaten für populäre Bitcoin-Infrastrukturprojekte.
-Bitte erwäge, auf neue Veröffentlichungen zu aktualisieren oder Release-Kandidaten zu testen._
+_Neue Releases und Release-Kandidaten für populäre Bitcoin-Infrastrukturprojekte.
+Bitte erwäge, auf neue Releases zu aktualisieren oder Release-Kandidaten zu testen._
 
 - [Core Lightning 25.05rc1][] ist ein Release-Kandidat für die nächste Hauptversion dieser
 beliebten LN-Knoten-Implementierung.
