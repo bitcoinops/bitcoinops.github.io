@@ -17,7 +17,7 @@ Releases und Release-Kandidaten sowie Zusammenfassungen wichtiger
 
 - **Synchronisation von Full Nodes ohne Witness-Daten:**
   Jose SK [veröffentlichte][sk nowit] auf Delving Bitcoin eine Zusammenfassung einer
-  [Analyse][sk nowit gist], in der er die Sicherheitserwägungen untersucht, wenn neu
+  [Analyse][sk nowit gist], in der er die Sicherheitsabwägungen untersucht, wenn neu
   gestartete Full Nodes mit einer bestimmten Konfiguration auf das Herunterladen einiger
   historischer Blockchain-Daten verzichten. Standardmäßig verwenden Bitcoin-Core-Knoten die
   `assumevalid`-Konfiguration. Diese überspringt die Validierung von Scripts in Blöcken,
@@ -171,4 +171,4 @@ für weitere Informationen zu Payjoin v2.
 [multiprocess project]: https://github.com/ryanofsky/bitcoin/blob/pr/ipc/doc/design/multiprocess.md
 [news320 ipc]: /en/newsletters/2024/09/13/#bitcoin-core-30509
 [news264 payjoin]: /en/newsletters/2023/08/16/#serverless-payjoin
-[news353 pr review]: /en/newsletters/2025/05/09/#bitcoin-core-pr-review-club
+[news353 pr review]: /de/newsletters/2025/05/09/#bitcoin-core-pr-review-club
