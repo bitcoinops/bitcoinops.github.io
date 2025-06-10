@@ -55,7 +55,7 @@ d'infrastructure Bitcoin populaires.
 
   La discussion de plusieurs participants a évalué les préoccupations et les solutions proposées plus
   en détail, ainsi que la considération d'autres attaques possibles et des atténuations.
- 
+
 ## Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les contributeurs d'Optech
@@ -104,7 +104,6 @@ des questions et réponses les mieux votées postées depuis notre dernière mis
   optimisation possible même avec une amélioration de la propagation des blocs. Il n'est pas correct
   de conclure que le minage égoïste est maintenant seulement une attaque théorique". Il pointe
   également vers une [simulation de minage][miningsimulation github] qu'il a créée.
-
 
 ## Mises à jour et versions candidates
 
@@ -170,8 +169,6 @@ Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][bli
   un morceau de données arbitraire. Voir le Bulletin [#348][news348 op_ccv] pour plus d'informations
   sur cette proposition de [covenant][topic covenants].
 
-
-{% include snippets/recap-ad.md when="2025-06-03 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="31622,3065,3796,1760,1850,1793,1044" %}
 [Core Lightning 25.05rc1]: https://github.com/ElementsProject/lightning/releases/tag/v25.05rc1
