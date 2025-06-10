@@ -72,9 +72,8 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | funds                             | Kapital                       |                      |                                           |
 | HTLC                              |                               |                      | Genus Maskulinum                          |
 | lightning network                 | Lightning Netzwerk            |                      |                                           |
-| node                              | Knoten                        | Node                 |                                           |
+| node                              | Knoten                        | Node                 | Full Node wird nicht übersetzt            |
 | relay                             | Weiterleitung                 |                      |                                           |
-| output                            | Ausgabe                       | Output               | Im Kontext von UTXO                       |
 | silent payment                    | Stille Zahlung                |                      |                                           |
 | UTXO                              |                               |                      | Genus Maskulinum                          |
 | wallet                            | Wallet                        | Geldbörse            | Genus Neutrum                             |
@@ -85,6 +84,7 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | Tapscript                         |                               |                      |                                           |
 | Orakel-Bestätigung                |                               |                      |                                           |
 | Timelock                          |                               |                      |                                           |
+| non-custodial                     | non-custodial                 | nicht-verwahrt       | ist im deutschsprachigen Raum etablierte  |
 
 ### Nicht übersetzte Begriffe
 
@@ -162,3 +162,11 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 ### Maßeinheiten
 
 Siehe [Hauptleitfaden](STYLE.md).
+
+### Nicht zu übersetzende Begriffe und Ausnahmen
+
+| Englischer Ausdruck  | Nicht übersetzen, wenn ...                                      | Beispiel/Anmerkung                                 |
+|----------------------|-----------------------------------------------------------------|----------------------------------------------------|
+| Full Node /Full Nodes| immer                                                           | Nicht als "Vollknoten" übersetzen                  |
+| output / input       | im Zusammenhang mit UTXO (z.B. "UTXO output", "UTXO input")     | Nicht als "Ausgabe/Eingabe" übersetzen             |
+| non-custodial        | immer                                                           | Nicht als "nicht-verwahrt" übersetzen              |
