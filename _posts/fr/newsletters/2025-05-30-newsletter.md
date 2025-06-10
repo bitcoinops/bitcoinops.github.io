@@ -175,7 +175,7 @@ Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][bli
 [ldk 0.1.3]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.3
 [ldk 0.1.4]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.4
 [news208 slowln]: /en/newsletters/2022/07/13/#allowing-deliberately-slow-ln-payment-forwarding
-[systeme autonome]: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
+[système autonome]: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
 [kirkcohen af]: https://delvingbitcoin.org/t/latency-and-privacy-in-lightning/1723
 [news224 failures]: /fr/newsletters/2022/11/02/#attribution-de-l-echec-du-routage-ln
 [news349 failures]: /fr/newsletters/2025/04/11/#ldk-2256
