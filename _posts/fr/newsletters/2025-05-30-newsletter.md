@@ -181,5 +181,5 @@ Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][bli
 [news349 failures]: /fr/newsletters/2025/04/11/#ldk-2256
 [news353 bip48]: /fr/newsletters/2025/05/09/#bips-1835
 [news348 op_ccv]: /fr/newsletters/2025/04/04/#semantique-de-op-checkcontractverify
-[news339 extrapool]: /fr/newsletters/2025/01/31/statistiques-mises-a-jour-sur-la-reconstruction-de-blocs-compacts
+[news339 extrapool]: /fr/newsletters/2025/01/31/#statistiques-mises-a-jour-sur-la-reconstruction-de-blocs-compacts
 [miningsimulation github]: https://github.com/darosior/miningsimulation
