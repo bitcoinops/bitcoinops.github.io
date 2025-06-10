@@ -28,7 +28,7 @@ Eigennamen werden wie im Hauptleitfaden groß geschrieben.
 
 ### Gebräuchliche Substantive
 
-Im Deutschen werden Substantive groß geschrieben, außer bei den unten gelisteten Ausnahmen.
+Im Deutschen werden Substantive groß geschrieben.
 
 - Bech32
 - Bitcoin (die Währung)
