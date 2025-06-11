@@ -27,8 +27,8 @@ d'infrastructure Bitcoin populaires.
     combiné avec la connaissance de la topographie du réseau public pour réduire l'ensemble des nœuds
     qui auraient pu être le receveur.
 
-  - Un attaquant utilise un achemineur de trafic réseau IP ([système autonome][]) pour surveiller
-    passivement le trafic et combine cela avec la connaissance de la latence du réseau IP entre les
+  - Un attaquant utilise un achemineur de trafic réseau IP
+    ([système autonome][]) pour surveiller passivement le trafic et combine cela avec la connaissance de la latence du réseau IP entre les
     nœuds (c'est-à-dire, leurs temps de ping) plus la connaissance de la topographie (et d'autres
     caractéristiques) du réseau Lightning public.
 
