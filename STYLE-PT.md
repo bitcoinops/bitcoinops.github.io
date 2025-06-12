@@ -6,7 +6,7 @@ A tradução para português de conteúdos do Optech devem seguir as regres o [G
 
 ## Títulos de seção (traduções padrão)
 
-| Englisch                                 | Deutsch                                                      |
+| Englisch                                 | Português                                                    |
 |------------------------------------------|--------------------------------------------------------------|
 | News                                     | Notícias                                                     |
 | Changes to services and client software  | Alterações nos serviços e software do cliente                |
