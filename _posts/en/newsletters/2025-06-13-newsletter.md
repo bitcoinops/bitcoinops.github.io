@@ -133,17 +133,54 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #32406][] policy: uncap datacarrier by default
+- [Bitcoin Core #32406][] uncaps the `OP_RETURN` output size limit
+  (standardness rule) by raising the default `-datacarriersize` setting
+  from 83 to 100,000 bytes (the maximum transaction size limit). The
+  `-datacarrier` and `-datacarriersize` options remain, but are marked
+  as deprecated and are expected to be removed in an undetermined future release.
+  Additionally, this PR also lifts the one-per-transaction policy
+  restriction for OP_RETURN outputs, and the size limit is now allocated
+  across all such outputs in a transaction. See [Newsletter
+  #352][news352 opreturn] for additional context on this change.
 
-- [LDK #3793][] Implement `start_batch` message batching
+- [LDK #3793][] adds a new `start_batch` message that signals peers to
+  treat the next `n` (`batch_size`) messages as a single logical unit.
+  It also updates `PeerManager` to rely on this for `commitment_signed`
+  messages during [splicing][topic splicing], rather than adding a TLV
+  and a `batch_size` field to each message in the batch.  This is an
+  attempt to allow additional LN protocol messages to be batched rather
+  than only `commitment_signed` messages, which is the only batching
+  defined in the LN specification.
 
-- [LDK #3792][] Channel Establishment for V3 Channels
+- [LDK #3792][] introduces initial support for [v3 commitment
+  transactions][topic v3 commitments] (see [Newsletter #325][news325
+  v3]) that rely on [TRUC transactions][topic v3 transaction relay] and
+  [ephemeral anchors][topic ephemeral anchors], behind a test flag. A
+  node now rejects any `open_channel` proposal that sets a non-zero
+  feerate, ensures that it never initiates such channels itself, and
+  stops automatically accepting v3 channels to first reserve a UTXO for
+  later fee-bumping.  The PR also lowers the per-channel [HTLC][topic
+  htlc] limit from 483 to 114 because TRUC transactions must remain
+  under 10 kvB.
 
-- [LND #9127][] Add the option on path creator to specify the incoming channel on blinded path
+- [LND #9127][] adds a `--blinded_path_incoming_channel_list` option to
+  the `lncli addinvoice` command, allowing a recipient to embed one or
+  more (for multiple hops) preferred channel IDs for the payer to
+  attempt to forward through on a [blinded path][topic rv routing].
 
-- [LND #9858][] peer+feature: start to signal the prod rbf coop close bit
+- [LND #9858][] begins signaling the production feature bit 61 for the
+  [RBF][topic rbf] cooperative close flow (see [Newsletter #347][news347
+  rbf]) to properly enable interoperability with Eclair. It retains the
+  staging bit 161 to maintain interoperability with nodes testing the
+  feature.
 
-- [BOLTs #1243][] Clarify Mandatory Field Length Requirements (#1243)
+- [BOLTs #1243][] updates the [BOLT11][] specification to indicate that
+  a reader (sender) must not pay an invoice if a mandatory field, such
+  as p (payment hash), h (description hash), or s (secret), has an
+  incorrect length. Previously, nodes could ignore this issue. This PR
+  also adds a note to the Examples section explaining that [Low R
+  signatures][topic low-r grinding], even if they save one byte of
+  space, are not enforced in the specification.
 
 {% include snippets/recap-ad.md when="2025-06-17 16:30" %}
 {% include references.md %}
@@ -160,3 +197,6 @@ repo], and [BINANAs][binana repo]._
 [news351 salvacrypt]: /en/newsletters/2025/04/25/#standardized-backup-for-wallet-descriptors
 [es selfish]: https://arxiv.org/pdf/1311.0243
 [lnd rn]: https://github.com/lightningnetwork/lnd/blob/v0.19.1-beta/docs/release-notes/release-notes-0.19.1.md
+[news352 opreturn]: /en/newsletters/2025/05/02/#increasing-or-removing-bitcoin-core-s-op-return-size-limit
+[news325 v3]: /en/newsletters/2024/10/18/#version-3-commitment-transactions
+[news347 rbf]: /en/newsletters/2025/03/28/#lnd-8453
