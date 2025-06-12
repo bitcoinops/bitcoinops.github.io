@@ -83,8 +83,8 @@ infrastructure projects.
   > - If your wallet requires 2-of-3 keys to spend, it will require
   >   exactly 2-of-3 keys to decrypt.
   >
-  > - If your wallet uses a complex miniscript policy like “Either 2
-  >   keys OR (a timelock AND another key)”, encryption follows the same
+  > - If your wallet uses a complex miniscript policy like "Either 2
+  >   keys OR (a timelock AND another key)", encryption follows the same
   >   structure, as if all timelocks and hash-locks are satisfied.
 
   This differs from the encrypted descriptor backup scheme discussed in
@@ -101,12 +101,73 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Separate UTXO set access from validation functions][review club 32317]
+is a PR by [TheCharlatan][gh thecharlatan] that allows calling
+validation functions by passing just the required UTXOs, instead of
+requiring the complete UTXO set. It is part of the [`bitcoinkernel`
+project][Bitcoin Core #27587], and is an important step to make the
+library more usable for full-node implementations that do not implement
+a UTXO set, such as [Utreexo][topic utreexo] or [SwiftSync][somsen
+swiftsync] nodes (see [Newsletter #349][news349 swiftsync]).
+
+In the first 4 commits, this PR reduces coupling between transaction
+validation functions and the UTXO set by requiring the caller to first
+fetch the `Coin`s or `CTxOut`s they require and passing those to the
+validation function, instead of letting the validation function access
+the UTXO set directly.
+
+In subsequent commits, the dependency of `ConnectBlock()` on the UTXO set
+is removed entirely by carving out the remaining logic that requires UTXO
+set interaction into a separate `SpendBlock()` method.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/31375#l-40FIXME"
+  q0="Why is carving out the new `SpendBlock()` function from
+  `ConnectBlock()` helpful for this PR? How would you compare the
+  purpose of the two functions?"
+  a0="The `ConnectBlock()` function originally performed both block
+  validation and UTXO set modifications. This refactor splits these
+  responsibilities: `ConnectBlock()` is now only responsible for
+  validation logic that doesn't require the UTXO set, while the new
+  `SpendBlock()` function handles all UTXO set interactions. This allows
+  a caller to use `ConnectBlock()` to do block validation without a UTXO
+  set."
+  a0link="https://bitcoincore.reviews/32317#l-37"
+
+  q1="Do you see another benefit of this decoupling, besides allowing
+  kernel usage without a UTXO set?"
+  a1="Besides enabling kernel usage for projects without a UTXO set,
+  this decoupling makes the code easier to test in isolation and simpler
+  to maintain. One reviewer also notes that removing the need for UTXO
+  set access opens the door for validating blocks in parallel, which is
+  an important feature of SwiftSync."
+  a1link="https://bitcoincore.reviews/32317#l-64"
+
+  q2="`SpendBlock()` takes a `CBlock block`, `CBlockIndex pindex` and
+  `uint256 block_hash` parameter, all referencing the block being spent.
+  Why do we need 3 parameters to do that?"
+  a2="Validation code is performance-critical, it affects important
+  parameters such as block propagation speed. Calculating the block hash
+  from a `CBlock` or `CBlockIndex` is not free, because the value is not
+  cached. For that reason, the author decided to prioritize performance
+  by passing an already calculated `block_hash` as a separate parameter.
+  Similarly, the `pindex` could be fetched from the block index, but this
+  would involve an additional map lookup that is not strictly necessary.
+  <br>_Note: the author later [changed][32317 updated approach] the
+  approach, removing the `block_hash` performance optimization._"
+  a2link="https://bitcoincore.reviews/32317#l-97"
+
+  q3="The first commits in this PR refactor `CCoinsViewCache` out of the
+  function signature of a couple of validation functions. Does
+  `CCoinsViewCache` hold the entire UTXO set? Why is that (not) a
+  problem? Does this PR change that behaviour?"
+  a3="`CCoinsViewCache` does not hold the entire UTXO set; it is an
+  in-memory cache that sits in front of `CCoinsViewDB`, which stores the
+  full UTXO set on disk. If a requested coin is not in the cache, it
+  must be fetched from disk. This PR does not change this caching
+  behavior itself. By removing `CCoinsViewCache` from function
+  signatures, it makes the UTXO dependency explicit, requiring the
+  caller to fetch coins before calling the validation function."
+  a3link="https://bitcoincore.reviews/32317#l-116"
 %}
 
 ## Releases and release candidates
@@ -184,7 +245,7 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-06-17 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="32406,3793,3792,9127,1867,9858,1243" %}
+{% include linkers/issues.md v=2 issues="32406,3793,3792,9127,1867,9858,1243,27587" %}
 [Core Lightning 25.05rc1]: https://github.com/ElementsProject/lightning/releases/tag/v25.05rc1
 [lnd 0.19.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.1-beta
 [poinsot selfish]: https://delvingbitcoin.org/t/where-does-the-33-33-threshold-for-selfish-mining-come-from/1757
@@ -200,3 +261,8 @@ repo], and [BINANAs][binana repo]._
 [news352 opreturn]: /en/newsletters/2025/05/02/#increasing-or-removing-bitcoin-core-s-op-return-size-limit
 [news325 v3]: /en/newsletters/2024/10/18/#version-3-commitment-transactions
 [news347 rbf]: /en/newsletters/2025/03/28/#lnd-8453
+[review club 32317]: https://bitcoincore.reviews/32317
+[gh thecharlatan]: https://github.com/TheCharlatan
+[somsen swiftsync]: https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd
+[32317 updated approach]: https://github.com/bitcoin/bitcoin/pull/32317#issuecomment-2883841466
+[news349 swiftsync]: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
