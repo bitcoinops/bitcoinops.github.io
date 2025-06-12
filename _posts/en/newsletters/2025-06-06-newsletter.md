@@ -43,7 +43,7 @@ popular Bitcoin infrastructure software.
   existence of the data, it could conceivably be lost, as [has
   happened][ripple loss] to at least one altcoin.
 
-  The discussion was ongoing at the time of writing.
+  The discussion was ongoing at the time of writing. {% assign timestamp="1:30" %}
 
 ## Changing consensus
 
@@ -59,7 +59,7 @@ Bitcoin's consensus rules._
   million BTC are potentially vulnerable to quantum theft, some
   mitigation now is possible, Bitcoin mining is unlikely to be
   threatened by quantum computing in the short or medium term, and
-  upgrading requires widespread agreement.
+  upgrading requires widespread agreement. {% assign timestamp="17:38" %}
 
 - **Transaction weight limit with exception to prevent confiscation:**
   Vojtěch Strnad [posted][strnad limit] to Delving Bitcoin to propose
@@ -98,7 +98,7 @@ Bitcoin's consensus rules._
 
   Additional discussion examined the needs of parties wanting
   large transactions, mainly [BitVM][topic acc] users in the near term,
-  and whether alternative approaches were available to them.
+  and whether alternative approaches were available to them. {% assign timestamp="41:49" %}
 
 - **Removing outputs from the UTXO set based on value and time:** Robin
   Linus [posted][linus dust] to Delving Bitcoin to propose a soft fork
@@ -120,7 +120,7 @@ Bitcoin's consensus rules._
   set (assuming a minimum value and the 21 million bitcoin limit).
   Several interesting technical aspects of a design were discussed,
   including alternatives to utreexo proofs for this application that
-  could be more practical.
+  could be more practical. {% assign timestamp="53:47" %}
 
 ## Releases and release candidates
 
@@ -129,10 +129,10 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [Core Lightning 25.05rc1][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="1:07:45" %}
 
 - [LND 0.19.1-beta.rc1][] is a release candidate for a maintenance
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="1:08:02" %}
 
 ## Notable code and documentation changes
 
@@ -153,7 +153,7 @@ repo], and [BINANAs][binana repo]._
   `PartiallyDownloadedBlock::InitData()` to track how long the mempool lookup
   step alone takes (in both high and low-bandwidth modes). See Newsletter
   [#315][news315 compact] for a previous statistics report on compact block
-  reconstruction.
+  reconstruction. {% assign timestamp="1:09:08" %}
 
 - [Bitcoin Core #31375][] adds a new `bitcoin -m` CLI tool that wraps and
   executes the [multiprocess][multiprocess project] binaries `bitcoin node`
@@ -163,14 +163,14 @@ repo], and [BINANAs][binana repo]._
   [#320][news320 ipc]), but future improvements will enable a node runner to
   start and stop components independently on different machines and
   environments. See [Newsletter #353][news353 pr review] for a Bitcoin Core PR
-  Review Club covering this PR.
+  Review Club covering this PR. {% assign timestamp="1:11:07" %}
 
 - [BIPs #1483][] merges [BIP77][] which proposes [payjoin v2][topic payjoin], an
   asynchronous serverless variant in which the sender and receiver hand their
   encrypted PSBTs to a payjoin directory server that only stores and forwards
   messages. As the directory cannot read or alter the payloads, neither wallet
   needs to host a public server or be online at the same time. See Newsletter
-  [#264][news264 payjoin] for additional context on payjoin v2.
+  [#264][news264 payjoin] for additional context on payjoin v2. {% assign timestamp="1:14:16" %}
 
 {% include snippets/recap-ad.md when="2025-06-10 16:30" %}
 {% include references.md %}
