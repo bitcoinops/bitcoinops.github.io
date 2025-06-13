@@ -82,7 +82,7 @@ lang: zh
 [news71 lowr]: /zh/newsletters/2019/11/06/#c-lightning-3220
 [news108 upcom]: /zh/newsletters/2020/07/29/#upgrading-channel-commitment-formats
 [news152 cl4532]: /zh/newsletters/2021/06/09/#c-lightning-4532
-[zmn post]: /zh/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
+[zmn post]: /zh/newsletters/2021/09/01/##准备-taproot-11使用-taproot-的闪电网络
 [osuntokun dyncom]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003531.html
 [somsen silpay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020180.html
 [wasabi2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020032.html
