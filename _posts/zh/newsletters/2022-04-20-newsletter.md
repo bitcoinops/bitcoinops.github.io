@@ -56,7 +56,7 @@ lang: zh
 [qc issue]: https://github.com/bitcoin-problems/bitcoin-problems.github.io/issues/4
 [bitcoinproblems.org]: https://bitcoinproblems.org/
 [news55 tlv]: /zh/newsletters/2019/07/17/#bolts-607
-[news158 cl4646]: zh/newsletters/2021/07/21/#c-lightning-4646
+[news158 cl4646]: /zh/newsletters/2021/07/21/#c-lightning-4646
 [bitcoin.com segwit]: https://support.bitcoin.com/en/articles/3919131-can-i-send-to-a-bc1-address
 [kraken lightning]: https://blog.kraken.com/post/13502/kraken-now-supports-instant-lightning-network-btc-transactions/
 [news183 cash app ln send]: /zh/newsletters/2022/01/19/#cash-app-adds-lightning-support
