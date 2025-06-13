@@ -79,15 +79,15 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | HTLC                           | Immer im Original belassen                          |                            |
 | Human Readable Names           | Produkt-/Technikname                                |                            |
 | LDK                            | Produkt-/Technikname                                |                            |
-| LN                             | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |  
+| LN                             | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
 | LSPS                           | Produkt-/Technikname                                |                            |
-| merged                         | Git/GitHub-Terminologie                             |                            |   
+| merged                         | Git/GitHub-Terminologie                             |                            |
 | Mining                         | Etablierter Fachbegriff                             |                            |
 | non-custodial                  | Immer im Original belassen, ist etabliert           |                            |
 | Offchain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
 | On-Chain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
 | OP_CHECKTEMPLATEVERIFY (CTV)   | Protokoll-/Standardbegriff                          |                            |
-| Oracle                         | Lightning/DLC-Technik                               |                            |   
+| Oracle                         | Lightning/DLC-Technik                               |                            |
 | output / input (bei UTXO)      | Nur im UTXO-Kontext nicht übersetzen                |                            |
 | Pay-per-Last-N-Shares          | Technische Begriffe/Auszahlungssysteme              |                            |
 | Pool                           | Etablierter Fachbegriff                             |                            |
@@ -96,7 +96,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Proxy                          | Technischer Begriff                                 |                            |
 | PSBT                           | Protokoll-/Standardbegriff                          |                            |
 | PPLNS                          | Technischer Begriff/Auszahlungssystem               |                            |
-| Release                        | Softwarebegriff                                     |                            |  
+| Release                        | Softwarebegriff                                     |                            |
 | Releases                       | Softwarebegriff                                     |                            |
 | Reviewer                       | Softwarebegriff                                     |                            |
 | Rust Bitcoin                   | Produktname                                         |                            |
@@ -104,7 +104,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Simple Taproot Channels        | Lightning/DLC-Technik                               |                            |
 | Splice                         | Protokoll-/Standardbegriff                          |                            |
 | TIDES                          | Name des Systems                                    |                            |
-| UTXO                           | Immer im Original belassen                          |                            | 
+| UTXO                           | Immer im Original belassen                          |                            |
 | Wallet                         | Produkt-/Technikname                                |                            |
 
 ---
