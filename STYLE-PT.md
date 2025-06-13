@@ -39,7 +39,7 @@ Os nomes próprios devem ser capitalizados como no guia principal.
 | Inglês                         | Contexto / observações                                    |
 |------------------------------- |-----------------------------------------------------------|
 | BDK                            | Nome do produto                                           |
-| BIP(número)                    | Protocolo/Termo técnico                                   | 
+| BIP(número)                    | Protocolo/Termo técnico                                   |
 | BLIP                           | Protocolo/Termo técnico                                   |
 | BTCPay Server                  | Nome do produto                                           |
 | Channel                        | Termo técnico estabelecido                                |
