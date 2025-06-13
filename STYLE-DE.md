@@ -59,54 +59,52 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 
 ## Nicht übersetzte Begriffe und Ausnahmen
 
-| Englischer Ausdruck            | Kontext / Anmerkung                                 |
-|------------------------------- |-----------------------------------------------------|
-| BDK                            | Produktname                                         |
-| BIP(mit nummer)                | Protokoll-/Standardbegriff                          |
-| BLIP                           | Protokoll-/Standardbegriff                          |
-| BTCPay Server                  | Produktname                                         |
-| Channel                        | Etablierter Fachbegriff                             |
-| Core Lightning                 | Produktname                                         |
-| Countersign                    | Eigenname des Verfahrens                            |
-| Delving Bitcoin                | Plattform-/Listenname                               |
-| DLC                            | Layer-2/Smart-Contract/Transaktionsbegriff          |
-| DLC-Dev                        | Plattform-/Listenname                               |
-| E-Cash-Shares                  | Korrigiert von "E-Cash-Anteile"                     |
-| Eclair                         | Produktname                                         |
-| FPPS                           | Technischer Begriff/Auszahlungssystem               |
-| Full Node / Full Nodes         | Immer im Original belassen                          |
-| HTLC                           | Immer im Original belassen                          |
-| Human Readable Names           | Produkt-/Technikname                                |
-| LDK                            | Produkt-/Technikname                                |
-| LN                             | Layer-2/Smart-Contract/Transaktionsbegriff          |
-| LSPS                           | Produkt-/Technikname                                |
-| Mining                         | Etablierter Fachbegriff                             |
-| On-Chain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |
-| OP_CHECKTEMPLATEVERIFY (CTV)   | Protokoll-/Standardbegriff                          |
-| Oracle                         | Lightning/DLC-Technik                               |
-| output / input (bei UTXO)      | Nur im UTXO-Kontext nicht übersetzen                |
-| Pay-per-Last-N-Shares          | Technische Begriffe/Auszahlungssysteme              |
-| Pool                           | Etablierter Fachbegriff                             |
-| Pool-Miner                     | Etablierter Fachbegriff                             |
-| PR                             | Git/GitHub-Terminologie                             |
-| Proxy                          | Technischer Begriff                                 |
-| PSBT                           | Protokoll-/Standardbegriff                          |
-| PPLNS                          | Technischer Begriff/Auszahlungssystem               |
-| Release                        | Softwarebegriff                                     |
-| Releases                       | Softwarebegriff                                     |
-| Rust Bitcoin                   | Produktname                                         |
-| SCID                           | Protokoll-/Standardbegriff                          |
-| Simple Taproot Channels        | Lightning/DLC-Technik                               |
-| Splice                         | Protokoll-/Standardbegriff                          |
-| TIDES                          | Name des Systems                                    |
-| UTXO                           | Immer im Original belassen                          |
-| Wallet                         | Produkt-/Technikname                                |
-| merged                         | Git/GitHub-Terminologie                             |
-| non-custodial                  | Immer im Original belassen, ist etabliert           |
-| Offchain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |
+| Englischer Ausdruck            | Kontext / Anmerkung                                 | Genus                      |
+|------------------------------- |-----------------------------------------------------|----------------------------|
+| BDK                            | Produktname                                         |                            |
+| BIP(mit nummer)                | Protokoll-/Standardbegriff                          |                            |
+| BLIP                           | Protokoll-/Standardbegriff                          |                            |
+| BTCPay Server                  | Produktname                                         |                            |
+| Channel                        | Etablierter Fachbegriff                             |                            |
+| coin / coins                   | Coin ist im Kontext ein Fachbegriff                 |                            |
+| Core Lightning                 | Produktname                                         |                            |
+| Countersign                    | Eigenname des Verfahrens                            |                            |
+| Delving Bitcoin                | Plattform-/Listenname                               |                            |
+| DLC                            | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
+| DLC-Dev                        | Plattform-/Listenname                               |                            |
+| E-Cash-Shares                  | Korrigiert von "E-Cash-Anteile"                     |                            |
+| Eclair                         | Produktname                                         |                            |
+| FPPS                           | Technischer Begriff/Auszahlungssystem               |                            |
+| Full Node / Full Nodes         | Immer im Original belassen                          |                            |
+| HTLC                           | Immer im Original belassen                          |                            |
+| Human Readable Names           | Produkt-/Technikname                                |                            |
+| LDK                            | Produkt-/Technikname                                |                            |
+| LN                             | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |  
+| LSPS                           | Produkt-/Technikname                                |                            |
+| merged                         | Git/GitHub-Terminologie                             |                            |   
+| Mining                         | Etablierter Fachbegriff                             |                            |
+| non-custodial                  | Immer im Original belassen, ist etabliert           |                            |
+| Offchain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
+| On-Chain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
+| OP_CHECKTEMPLATEVERIFY (CTV)   | Protokoll-/Standardbegriff                          |                            |
+| Oracle                         | Lightning/DLC-Technik                               |                            |   
+| output / input (bei UTXO)      | Nur im UTXO-Kontext nicht übersetzen                |                            |
+| Pay-per-Last-N-Shares          | Technische Begriffe/Auszahlungssysteme              |                            |
+| Pool                           | Etablierter Fachbegriff                             |                            |
+| Pool-Miner                     | Etablierter Fachbegriff                             |                            |
+| PR                             | Git/GitHub-Terminologie                             |                            |
+| Proxy                          | Technischer Begriff                                 |                            |
+| PSBT                           | Protokoll-/Standardbegriff                          |                            |
+| PPLNS                          | Technischer Begriff/Auszahlungssystem               |                            |
+| Release                        | Softwarebegriff                                     |                            |  
+| Releases                       | Softwarebegriff                                     |                            |
+| Reviewer                       | Softwarebegriff                                     |                            |
+| Rust Bitcoin                   | Produktname                                         |                            |
+| SCID                           | Protokoll-/Standardbegriff                          |                            |
+| Simple Taproot Channels        | Lightning/DLC-Technik                               |                            |
+| Splice                         | Protokoll-/Standardbegriff                          |                            |
+| TIDES                          | Name des Systems                                    |                            |
+| UTXO                           | Immer im Original belassen                          |                            | 
+| Wallet                         | Produkt-/Technikname                                |                            |
 
 ---
-
-## Maßeinheiten
-
-Siehe [Hauptleitfaden](STYLE.md).
