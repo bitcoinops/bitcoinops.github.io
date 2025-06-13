@@ -6,7 +6,7 @@ A tradução para português de conteúdos do Optech devem seguir as regres o [G
 
 ## Títulos de seção (traduções padrão)
 
-| Englisch                                 | Português                                                    |
+| Inglês                                   | Português                                                    |
 |------------------------------------------|--------------------------------------------------------------|
 | News                                     | Notícias                                                     |
 | Changes to services and client software  | Alterações nos serviços e software do cliente                |
@@ -23,7 +23,7 @@ Os nomes próprios devem ser capitalizados como no guia principal.
 
 ## Termos preferidos para tradução para a lingua portuguesa
 
-| Englisch                | Preferido (PT)           | Evitar               | Observações                              |
+| Inglês                  | Preferido (PT)           | Evitar               | Observações                              |
 |-------------------------|--------------------------|----------------------|------------------------------------------|
 | channel                 | canal                    |                      |                                          |
 | fee                     | taxa                     |                      |                                          |
@@ -38,7 +38,7 @@ Os nomes próprios devem ser capitalizados como no guia principal.
 
 ## Termos e exceções não traduzidos
 
-| Englischer Ausdruck            | Contexto / observações                                    |
+| Inglês                         | Contexto / observações                                    |
 |------------------------------- |-----------------------------------------------------------|
 | BDK                            | Nome do produto                                           |
 | BIP(mit nummer)                | Protocolo/Termo técnico                                   | 
