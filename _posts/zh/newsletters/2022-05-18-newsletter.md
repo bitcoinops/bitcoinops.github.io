@@ -402,7 +402,7 @@ praise:
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="22235,6450,6345,1309" %}
 [lnd 0.15.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.0-beta.rc1
-[news27 eltoo]: /zh/newsletters/2018/12/28/#april
+[news27 eltoo]: /zh/newsletters/2018/12/28/#四月
 [news166 tluv]: /zh/newsletters/2021/09/15/#amount-introspection
 [news190 recov]: /zh/newsletters/2022/03/09/#limiting-script-language-expressiveness
 [rubin op_tx recursive]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019872.html
