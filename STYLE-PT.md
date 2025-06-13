@@ -34,14 +34,12 @@ Os nomes próprios devem ser capitalizados como no guia principal.
 | proof of work           | prova de trabalho	     |                      |                                          |
 | wallet                  | carteira                 |                      |                                          |
 
-### Possiveis 
-
 ## Termos e exceções não traduzidos
 
 | Inglês                         | Contexto / observações                                    |
 |------------------------------- |-----------------------------------------------------------|
 | BDK                            | Nome do produto                                           |
-| BIP(mit nummer)                | Protocolo/Termo técnico                                   | 
+| BIP(número)                    | Protocolo/Termo técnico                                   | 
 | BLIP                           | Protocolo/Termo técnico                                   |
 | BTCPay Server                  | Nome do produto                                           |
 | Channel                        | Termo técnico estabelecido                                |
