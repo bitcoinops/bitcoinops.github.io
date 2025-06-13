@@ -35,6 +35,9 @@ optech_mentions:
   - title: Using v3 commitments to allow mobile wallets to settle channels without extra UTXOs
     url: /en/newsletters/2025/02/21/#allowing-mobile-wallets-to-settle-channels-without-extra-utxos
 
+  - title: "LDK #3792 introduces initial support for v3 commitment transactions"
+    url: /en/newsletters/2025/06/13/#ldk-3792
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel commitment upgrades
