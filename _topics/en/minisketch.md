@@ -38,6 +38,12 @@ optech_mentions:
   - title: Research into interaction between LN rate limiting and minisketch gossiping
     url: /en/newsletters/2022/05/04/#ln-gossip-rate-limiting
 
+  - title: "Relay censorship resistance using cluster mempool and efficient set reconciliation"
+    url: /en/newsletters/2025/06/13/#relay-censorship-resistance-through-top-mempool-set-reconciliation
+
+  - title: "New library for encrypting descriptors and miniscript to the included public keys"
+    url: /en/newsletters/2025/06/13/#descriptor-encryption-library
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Erlay

@@ -197,6 +197,9 @@ optech_mentions:
   - title: "Proposed standard for backing up wallet descriptors"
     url: /en/newsletters/2025/04/25/#standardized-backup-for-wallet-descriptors
 
+  - title: "New library for encrypting descriptors and miniscript to the included public keys"
+    url: /en/newsletters/2025/06/13/#descriptor-encryption-library
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
