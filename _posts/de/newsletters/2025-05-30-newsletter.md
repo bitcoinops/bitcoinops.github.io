@@ -90,7 +90,7 @@ _Bedeutende kürzliche Änderungen in [Bitcoin Core][bitcoin core repo], [Core L
 [kirkcohen af]: https://delvingbitcoin.org/t/latency-and-privacy-in-lightning/1723
 [news224 failures]: /de/newsletters/2022/11/02/#zuordnung-von-ln-routing-fehlern
 [news349 failures]: /en/newsletters/2025/04/11/#ldk-2256
-[news353 bip48]: /en/newsletters/2025/05/09/#bips-1835
+[news353 bip48]: /de/newsletters/2025/05/09/#bips-1835
 [news348 op_ccv]: /de/newsletters/2025/04/04/#op-checkcontractverify-semantik
 [news339 extrapool]: /de/newsletters/2025/01/31/#aktualisierte-statistiken-zur-kompaktblock-rekonstruktion
 [miningsimulation github]: https://github.com/darosior/miningsimulationq
