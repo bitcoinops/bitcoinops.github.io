@@ -96,7 +96,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Proxy                          | Technischer Begriff                                 |                            |
 | PSBT                           | Protokoll-/Standardbegriff                          |                            |
 | PPLNS                          | Technischer Begriff/Auszahlungssystem               |                            |
-| Release                        | Softwarebegriff                                     |                            |
+| Release                        | Softwarebegriff                                     | Neutrum                    |
 | Releases                       | Softwarebegriff                                     |                            |
 | Reviewer                       | Softwarebegriff                                     | Maskulinum                 |
 | Rust Bitcoin                   | Produktname                                         |                            |
