@@ -102,7 +102,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | SCID                           | Protokoll-/Standardbegriff                          |                            |
 | Simple Taproot Channels        | Lightning/DLC-Technik                               |                            |
 | Splice                         | Protokoll-/Standardbegriff                          |                            |
-| Splicing                       | Protokoll-/Standardbegriff                          | Neutrum                    | 
+| Splicing                       | Protokoll-/Standardbegriff                          | Neutrum                    |
 | TIDES                          | Name des Systems                                    |                            |
 | UTXO                           | Immer im Original belassen                          |                            |
 | Wallet                         | Produkt-/Technikname                                |                            |
