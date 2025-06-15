@@ -65,7 +65,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | BIP(mit nummer)                | Protokoll-/Standardbegriff                          |                            |
 | BLIP                           | Protokoll-/Standardbegriff                          |                            |
 | BTCPay Server                  | Produktname                                         | Maskulinum                 |
-| Channel                        | Etablierter Fachbegriff                             |                            |
+| Channel                        | Etablierter Fachbegriff                             | Maskulinum                 |
 | coin / coins                   | Coin ist im Kontext ein Fachbegriff                 | Maskulinum                 |
 | Core Lightning                 | Produktname                                         |                            |
 | Countersign                    | Eigenname des Verfahrens                            |                            |
