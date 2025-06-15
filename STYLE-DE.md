@@ -68,7 +68,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Channel                        | Etablierter Fachbegriff                             | Maskulinum                 |
 | coin / coins                   | Coin ist im Kontext ein Fachbegriff                 | Maskulinum                 |
 | Core Lightning                 | Produktname                                         |                            |
-| Countersign                    | Eigenname des Verfahrens                            |                            |
+| Countersign                    | Eigenname des Verfahrens                            | Neutrum                    |
 | Delving Bitcoin                | Plattform-/Listenname                               |                            |
 | DLC                            | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
 | DLC-Dev                        | Plattform-/Listenname                               |                            |
