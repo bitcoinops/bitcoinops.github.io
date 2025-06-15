@@ -71,7 +71,7 @@ Beschreibungen aktueller Änderungen an populärer Bitcoin-Infrastruktur.
 - **Bibliothek zur Verschlüsselung von Deskriptoren:**
   Josh Doman [kündigte][doman descrypt] auf Delving Bitcoin eine Bibliothek an, die
   sensible Teile eines [Output Script Deskriptors][topic descriptors] oder
-  [Miniscript][topic miniscript] für die darin enthaltenen Public Keys verschlüsselt.
+  [Miniscripts][topic miniscript] für die darin enthaltenen Public Keys verschlüsselt.
 
   Er beschreibt, welche Informationen zum Entschlüsseln benötigt werden:
 
