@@ -75,7 +75,7 @@ Beschreibungen aktueller Änderungen an populärer Bitcoin-Infrastruktur.
 
   Er beschreibt, welche Informationen zum Entschlüsseln benötigt werden:
 
-  > - Wenn deine Wallet 2-von-3 Schlüsseln zum Ausgeben benötigt, werden genau
+  > - Wenn deine Wallet 2-von-3 Schlüsseln zum Ausgeben verlangt, werden genau
   >   2-von-3 Schlüssel zum Entschlüsseln benötigt.
   >
   > - Wenn deine Wallet eine komplexe Miniscript-Policy wie „Entweder 2 Schlüssel
