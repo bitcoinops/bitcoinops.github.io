@@ -91,7 +91,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | output / input (bei UTXO)      | Nur im UTXO-Kontext nicht übersetzen                |                            |
 | Pay-per-Last-N-Shares          | Technische Begriffe/Auszahlungssysteme              |                            |
 | Pool                           | Etablierter Fachbegriff                             |                            |
-| Pool-Miner                     | Etablierter Fachbegriff                             |                            |
+| Pool-Miner                     | Etablierter Fachbegriff                             | Maskulinum                 |
 | PR                             | Git/GitHub-Terminologie                             | Maskulinum                 |
 | Proxy                          | Technischer Begriff                                 | Maskulinum                 |
 | PSBT                           | Protokoll-/Standardbegriff                          |                            |
