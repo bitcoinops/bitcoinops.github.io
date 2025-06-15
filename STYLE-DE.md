@@ -90,7 +90,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Oracle                         | Lightning/DLC-Technik                               |                            |
 | output / input (bei UTXO)      | Nur im UTXO-Kontext nicht übersetzen                | Maskulinum                 |
 | Pay-per-Last-N-Shares          | Technische Begriffe/Auszahlungssysteme              |                            |
-| Pool                           | Etablierter Fachbegriff                             |                            |
+| Pool                           | Etablierter Fachbegriff                             | Maskulinum                 |
 | Pool-Miner                     | Etablierter Fachbegriff                             | Maskulinum                 |
 | PR                             | Git/GitHub-Terminologie                             | Maskulinum                 |
 | Proxy                          | Technischer Begriff                                 | Maskulinum                 |
