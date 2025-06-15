@@ -72,7 +72,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Delving Bitcoin                | Plattform-/Listenname                               |                            |
 | DLC                            | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
 | DLC-Dev                        | Plattform-/Listenname                               |                            |
-| E-Cash-Shares                  | Korrigiert von "E-Cash-Anteile"                     |                            |
+| E-Cash-Share                   | Korrigiert von "E-Cash-Anteil"                      | Maskulinum                |
 | Eclair                         | Produktname                                         |                            |
 | FPPS                           | Technischer Begriff/Auszahlungssystem               |                            |
 | Full Node / Full Nodes         | Immer im Original belassen                          |                            |
