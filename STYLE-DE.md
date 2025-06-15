@@ -92,7 +92,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Pay-per-Last-N-Shares          | Technische Begriffe/Auszahlungssysteme              |                            |
 | Pool                           | Etablierter Fachbegriff                             |                            |
 | Pool-Miner                     | Etablierter Fachbegriff                             |                            |
-| PR                             | Git/GitHub-Terminologie                             |                            |
+| PR                             | Git/GitHub-Terminologie                             | Maskulinum                 |
 | Proxy                          | Technischer Begriff                                 | Maskulinum                 |
 | PSBT                           | Protokoll-/Standardbegriff                          |                            |
 | PPLNS                          | Technischer Begriff/Auszahlungssystem               |                            |
