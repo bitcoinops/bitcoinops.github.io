@@ -82,7 +82,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | LN                             | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
 | LSPS                           | Produkt-/Technikname                                |                            |
 | merged                         | Git/GitHub-Terminologie                             |                            |
-| Mining                         | Etablierter Fachbegriff                             |                            |
+| Mining                         | Etablierter Fachbegriff                             | Femininum                  |
 | non-custodial                  | Immer im Original belassen, ist etabliert           |                            |
 | Offchain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
 | On-Chain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
