@@ -147,7 +147,7 @@ da sie für das technische Verständnis wichtig sind.
   zwischengespeichert wird. Aus diesem Grund hat der Autor beschlossen, die Leistung
   zu priorisieren, indem er einen bereits berechneten `block_hash` als separaten Parameter übergibt.
   Ebenso könnte `pindex` aus dem Blockindex abgerufen werden,
-  aber dies würde jedoch eine zusätzliche Map-Abfrage erfordern, der nicht unbedingt notwendig ist.
+ dies würde jedoch eine zusätzliche Map-Abfrage erfordern, der nicht unbedingt notwendig ist.
   <br>_Hinweis: Der Autor hat später den
   Ansatz [geändert][32317 updated approach], indem er die `block_hash`-Leistungsoptimierung entfernt hat._"
   a2link="https://bitcoincore.reviews/32317#l-97"
