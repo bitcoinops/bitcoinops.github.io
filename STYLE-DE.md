@@ -88,7 +88,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | On-Chain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
 | OP_CHECKTEMPLATEVERIFY (CTV)   | Protokoll-/Standardbegriff                          |                            |
 | Oracle                         | Lightning/DLC-Technik                               |                            |
-| output / input (bei UTXO)      | Nur im UTXO-Kontext nicht übersetzen                |                            |
+| output / input (bei UTXO)      | Nur im UTXO-Kontext nicht übersetzen                | Maskulinum                 |
 | Pay-per-Last-N-Shares          | Technische Begriffe/Auszahlungssysteme              |                            |
 | Pool                           | Etablierter Fachbegriff                             |                            |
 | Pool-Miner                     | Etablierter Fachbegriff                             | Maskulinum                 |
