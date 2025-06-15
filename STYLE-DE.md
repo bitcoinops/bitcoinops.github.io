@@ -72,7 +72,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Delving Bitcoin                | Plattform-/Listenname                               |                            |
 | DLC                            | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
 | DLC-Dev                        | Plattform-/Listenname                               |                            |
-| E-Cash-Share                   | Korrigiert von "E-Cash-Anteil"                      | Maskulinum                |
+| E-Cash-Share                   | Korrigiert von "E-Cash-Anteil"                      | Maskulinum                 |
 | Eclair                         | Produktname                                         |                            |
 | FPPS                           | Technischer Begriff/Auszahlungssystem               |                            |
 | Full Node / Full Nodes         | Immer im Original belassen                          |                            |
@@ -97,12 +97,12 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | PSBT                           | Protokoll-/Standardbegriff                          |                            |
 | PPLNS                          | Technischer Begriff/Auszahlungssystem               |                            |
 | Release                        | Softwarebegriff                                     | Neutrum                    |
-| Releases                       | Softwarebegriff                                     |                            |
 | Reviewer                       | Softwarebegriff                                     | Maskulinum                 |
 | Rust Bitcoin                   | Produktname                                         |                            |
 | SCID                           | Protokoll-/Standardbegriff                          |                            |
 | Simple Taproot Channels        | Lightning/DLC-Technik                               |                            |
 | Splice                         | Protokoll-/Standardbegriff                          |                            |
+| Splicing                       | Protokoll-/Standardbegriff                          | Neutrum                    | 
 | TIDES                          | Name des Systems                                    |                            |
 | UTXO                           | Immer im Original belassen                          |                            |
 | Wallet                         | Produkt-/Technikname                                |                            |
