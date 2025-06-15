@@ -98,7 +98,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | PPLNS                          | Technischer Begriff/Auszahlungssystem               |                            |
 | Release                        | Softwarebegriff                                     |                            |
 | Releases                       | Softwarebegriff                                     |                            |
-| Reviewer                       | Softwarebegriff                                     |                            |
+| Reviewer                       | Softwarebegriff                                     | Maskulinum                 |
 | Rust Bitcoin                   | Produktname                                         |                            |
 | SCID                           | Protokoll-/Standardbegriff                          |                            |
 | Simple Taproot Channels        | Lightning/DLC-Technik                               |                            |
