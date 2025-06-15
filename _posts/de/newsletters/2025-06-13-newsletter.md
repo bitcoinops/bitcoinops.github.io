@@ -160,7 +160,7 @@ da sie für das technische Verständnis wichtig sind.
   Zwischenspeicher im Speicher, der vor `CCoinsViewDB` sitzt, welche das
   vollständige UTXO-Set auf der Festplatte speichert. Wenn ein angeforderter
   Coin nicht im Cache ist, muss sie von der Festplatte abgerufen werden.
-  Dieser PR ändert nicht dasCaching Verhalten selbst. Durch das Entfernen von
+  Dieser PR ändert nicht das Caching Verhalten selbst. Durch das Entfernen von
   `CCoinsViewCache` aus den Funktionssignaturen wird die UTXO-Abhängigkeit explizit,
   was den Aufrufer verpflichtet, die Coins vor dem Aufruf der Validierungsfunktion abzurufen."
   a3link="https://bitcoincore.reviews/32317#l-116"
