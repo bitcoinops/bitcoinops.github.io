@@ -93,7 +93,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Pool                           | Etablierter Fachbegriff                             |                            |
 | Pool-Miner                     | Etablierter Fachbegriff                             |                            |
 | PR                             | Git/GitHub-Terminologie                             |                            |
-| Proxy                          | Technischer Begriff                                 |                            |
+| Proxy                          | Technischer Begriff                                 | Maskulinum                 |
 | PSBT                           | Protokoll-/Standardbegriff                          |                            |
 | PPLNS                          | Technischer Begriff/Auszahlungssystem               |                            |
 | Release                        | Softwarebegriff                                     | Neutrum                    |
