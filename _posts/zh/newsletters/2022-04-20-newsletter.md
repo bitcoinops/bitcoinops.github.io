@@ -31,7 +31,9 @@ lang: zh
 *流行的比特币基础设施项目的新版本与候选版本。请考虑升级到新版本或帮助测试候选版本。*
 
 - [LND 0.14.3-beta][LND 0.14.3-beta] 是该热门 LN 节点软件的一个包含多项错误修复的版本。
+
 - [Bitcoin Core 23.0 RC5][Bitcoin Core 23.0 RC5] 是此主要全节点软件的下一个主要版本的候选版本。[草拟版发布说明][bcc23 rn]列出了多项改进，鼓励高级用户和系统管理员在最终发布前进行[测试][test guide]。
+
 - [Core Lightning 0.11.0rc3][Core Lightning 0.11.0rc3] 是该热门 LN 节点软件的下一个主要版本的候选版本。
 
 ## 值得注意的代码与文档变更
@@ -39,8 +41,11 @@ lang: zh
 *本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的变更。*
 
 - [LND #5810][LND #5810] 实现了对支付元数据的发送支持。如果发票包含支付元数据，发送方将把该数据编码为一个 TLV 记录发送给接收方。这是朝着解锁[无状态发票][topic stateless invoices]迈出的又一步，无状态发票允许接收方在支付尝试到达时重新生成发票，从而无需信任地存储展示给潜在发送方的发票。
+
 - [LND #6212][LND #6212] 阻止 HTLC 在以下情况下通过 HTLC 拦截器发送到外部进程：如果接受该 HTLC 可能需要通道立即或在短时间内链上关闭。当 HTLC 的过期高度接近最近看到的区块时，会发生这种情况。
+
 - [LND #6024][LND #6024] 添加了一个 `time_pref` 路径寻找参数，可用于在通过被认为更有可能转发支付（更快）的通道和收取更少手续费的通道之间进行权衡。
+
 - [LND #6385][LND #6385] 移除了在构造新支付时使用最初 LN 协议洋葱包格式的选项，现要求用户创建 TLV 风格的洋葱包。TLV 洋葱包在 2019 年加入协议（参见 [Newsletter #55][news55 tlv]），并在所有 LN 软件中已成为默认格式超过两年。其它 LN 软件也在进行类似变更以移除旧洋葱包格式支持，例如 [Newsletter #158][news158 cl4646] 报道的 Core Lightning 更新。
 
 
