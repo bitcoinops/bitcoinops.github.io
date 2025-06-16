@@ -53,9 +53,13 @@ lang: zh
 *面向主流比特币基础设施项目的新版本与候选版本。请考虑升级至新版本，或协助测试候选版本。*
 
 - [LDK 0.0.106][LDK 0.0.106] 是这个 LN 节点库的最新发布。该版本增加了对 [BOLTs #910][] 中提出的通道标识 `alias` 字段的支持，LDK 在某些场合利用它来提升隐私，并包含若干其他特性与错误修复。
+
 - [BTCPay Server 1.4.9][BTCPay Server 1.4.9] 是这款流行支付处理软件的最新发布。
+
 - [Bitcoin Core 23.0 RC4][Bitcoin Core 23.0 RC4] 是这一主流全节点软件的候选版本。其[草案发布说明][bcc23 rn]列出了多项改进，鼓励高级用户和系统管理员在最终发布前进行[测试][test guide]。
+
 - [LND 0.14.3-beta.rc1][LND 0.14.3-beta.rc1] 是这款流行 LN 节点软件的候选版本，包含若干错误修复。
+
 - [Core Lightning 0.11.0rc1][Core Lightning 0.11.0rc1] 是这款流行 LN 节点软件的下一主版本候选发布。
 
 ## 值得注意的代码与文档修改
@@ -63,9 +67,13 @@ lang: zh
 *本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的变更。*
 
 - [Bitcoin Core #24152][] 通过引入[包费率][package feerate]并以其替代单笔交易费率，允许在“子交易带未确认父交易”的包中使用 CPFP（Child-Pays-For-Parent）手续费提升。如 [Newsletter #186][news186 package] 所述，这是提升 CPFP 和 RBF（Replace-By-Fee）手续费提升灵活性与可靠性的一系列修改的一部分。该补丁还[首先验证单笔交易][validates individual transactions first]，以避免出现“父为子付费”或“兄弟交易互付费”等与激励不兼容的策略。
+
 - [Bitcoin Core #24098][] 更新了 `/rest/headers/` 与 `/rest/blockfilterheaders/` RPC，使其可使用查询参数（例如 `?count=<count>`）来替代端点参数（例如 `/<count>/`）。文档也已更新，鼓励优先使用查询参数。
+
 - [Bitcoin Core #24147][] 为 [miniscript][topic miniscript] 增加了后端支持。后续的 PR [#24148][bitcoin core #24148] 与 [#24149][bitcoin core #24149] 若被合并，将分别为[输出脚本描述符][topic descriptors]和钱包签名逻辑加入 miniscript 支持。
+
 - [Core Lightning #5165][] 将 C-Lightning 项目更名为 [Core Lightning][core lightning repo]，简称 CLN。
+
 - [Core Lightning #5086][] 增加了在付款中附加 `option_payment_metadata` 发票数据的能力，为[无状态发票][topic stateless invoices]提供了付款方支持；接收方支持尚未在本 PR 中加入 CLN。
 
 
