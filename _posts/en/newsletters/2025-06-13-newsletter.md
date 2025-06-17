@@ -38,7 +38,7 @@ infrastructure projects.
 
   We did not carefully review Poinsot's post, but his approach appeared
   sound to us and we would recommend it to anyone interested in
-  validating the math or gaining a better understanding of it.
+  validating the math or gaining a better understanding of it. {% assign timestamp="0:52" %}
 
 - **Relay censorship resistance through top mempool set reconciliation:**
   Peter Todd [posted][todd feerec] to the Bitcoin-Dev mailing list about
@@ -62,7 +62,7 @@ infrastructure projects.
   implementation after cluster mempool support is merged into Bitcoin
   Core.  He credited the idea to Gregory Maxwell and others; Optech
   first mentioned the underlying idea in [Newsletter #9][news9
-  reconcile].
+  reconcile]. {% assign timestamp="59:26" %}
 
 - **Updating BIP390 to allow duplicate participant keys in `musig()` expressions:**
   Ava Chow [posted][chow dupsig] to the Bitcoin-Dev mailing list to ask
@@ -72,7 +72,7 @@ infrastructure projects.
   simplify implementation and is explicitly allowed by the [BIP327][]
   specification of [MuSig2][topic musig].  As of this writing, no one has
   objected, and Chow has opened a [pull request][bips #1867] to change
-  the BIP390 specification.
+  the BIP390 specification. {% assign timestamp="55:50" %}
 
 - **Descriptor encryption library:** Josh Doman [posted][doman descrypt]
   to Delving Bitcoin to announce a library he's built that encrypts the
@@ -92,7 +92,7 @@ infrastructure projects.
   public key contained within the descriptor allows decryption of the
   descriptor.  Doman argues that his scheme provides better privacy for
   cases where the encrypted descriptor is being backed up to a public or
-  semi-public source, such as a blockchain.
+  semi-public source, such as a blockchain. {% assign timestamp="31:35" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -118,7 +118,7 @@ the UTXO set directly.
 
 In subsequent commits, the dependency of `ConnectBlock()` on the UTXO set
 is removed entirely by carving out the remaining logic that requires UTXO
-set interaction into a separate `SpendBlock()` method.
+set interaction into a separate `SpendBlock()` method. {% assign timestamp="43:05" %}
 
 {% include functions/details-list.md
   q0="Why is carving out the new `SpendBlock()` function from
@@ -177,11 +177,11 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [Core Lightning 25.05rc1][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="58:25" %}
 
 - [LND 0.19.1-beta][] is a release of a maintenance version of this
   popular LN node implementation.  It [contains][lnd rn] multiple bug
-  fixes.
+  fixes. {% assign timestamp="58:38" %}
 
 ## Notable code and documentation changes
 
@@ -202,7 +202,7 @@ repo], and [BINANAs][binana repo]._
   Additionally, this PR also lifts the one-per-transaction policy
   restriction for OP_RETURN outputs, and the size limit is now allocated
   across all such outputs in a transaction. See [Newsletter
-  #352][news352 opreturn] for additional context on this change.
+  #352][news352 opreturn] for additional context on this change. {% assign timestamp="19:54" %}
 
 - [LDK #3793][] adds a new `start_batch` message that signals peers to
   treat the next `n` (`batch_size`) messages as a single logical unit.
@@ -211,7 +211,7 @@ repo], and [BINANAs][binana repo]._
   and a `batch_size` field to each message in the batch.  This is an
   attempt to allow additional LN protocol messages to be batched rather
   than only `commitment_signed` messages, which is the only batching
-  defined in the LN specification.
+  defined in the LN specification. {% assign timestamp="1:14:21" %}
 
 - [LDK #3792][] introduces initial support for [v3 commitment
   transactions][topic v3 commitments] (see [Newsletter #325][news325
@@ -222,18 +222,18 @@ repo], and [BINANAs][binana repo]._
   stops automatically accepting v3 channels to first reserve a UTXO for
   later fee-bumping.  The PR also lowers the per-channel [HTLC][topic
   htlc] limit from 483 to 114 because TRUC transactions must remain
-  under 10 kvB.
+  under 10 kvB. {% assign timestamp="1:14:59" %}
 
 - [LND #9127][] adds a `--blinded_path_incoming_channel_list` option to
   the `lncli addinvoice` command, allowing a recipient to embed one or
   more (for multiple hops) preferred channel IDs for the payer to
-  attempt to forward through on a [blinded path][topic rv routing].
+  attempt to forward through on a [blinded path][topic rv routing]. {% assign timestamp="1:18:38" %}
 
 - [LND #9858][] begins signaling the production feature bit 61 for the
   [RBF][topic rbf] cooperative close flow (see [Newsletter #347][news347
   rbf]) to properly enable interoperability with Eclair. It retains the
   staging bit 161 to maintain interoperability with nodes testing the
-  feature.
+  feature. {% assign timestamp="1:20:04" %}
 
 - [BOLTs #1243][] updates the [BOLT11][] specification to indicate that
   a reader (sender) must not pay an invoice if a mandatory field, such
@@ -241,7 +241,7 @@ repo], and [BINANAs][binana repo]._
   incorrect length. Previously, nodes could ignore this issue. This PR
   also adds a note to the Examples section explaining that [Low R
   signatures][topic low-r grinding], even if they save one byte of
-  space, are not enforced in the specification.
+  space, are not enforced in the specification. {% assign timestamp="1:21:49" %}
 
 {% include snippets/recap-ad.md when="2025-06-17 16:30" %}
 {% include references.md %}
