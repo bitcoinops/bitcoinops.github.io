@@ -79,7 +79,24 @@ Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Cove v1.0.0 released:**
+  Recent Cove [releases][cove github] include coin control support and
+  additional [BIP329][] wallet label features.
+
+- **Liana v11.0 released:**
+  Recent [releases][liana github] of Liana include features for multiple
+  wallets, additional coin control features, and more hardware signing device
+  support, among other features.
+
+- **Stratum v2 STARK proof demo:**
+  StarkWare [demonstrated][starkware tweet] a [modified Stratum v2 mining
+  client][starkware sv2] using a STARK proof to prove that a block's fees
+  belongs to a valid block template without revealing the transactions in the
+  block.
+
+- **Breez SDK adds BOLT12 and BIP353:**
+  Breez SDK Nodeless [0.9.0][breez github] adds support for receiving using
+  [BOLT12][] and [BIP353].
 
 ## Releases and release candidates
 
@@ -134,3 +151,8 @@ repo], and [BINANAs][binana repo]._
 [rust libsecp256k1 #798]: https://github.com/rust-bitcoin/rust-secp256k1/pull/798
 [news54 foaf rebalance]: /en/newsletters/2019/07/10/#brainstorming-just-in-time-routing-and-free-channel-rebalancing
 [yanofsky priv]: https://github.com/bitcoin-core/meta/issues/19#issuecomment-2961177626
+[cove github]: https://github.com/bitcoinppl/cove/releases
+[liana github]: https://github.com/wizardsardine/liana/releases
+[breez github]: https://github.com/breez/breez-sdk-liquid/releases/tag/0.9.0
+[starkware tweet]: https://x.com/dimahledba/status/1935354385795592491
+[starkware sv2]: https://github.com/keep-starknet-strange/stratum
