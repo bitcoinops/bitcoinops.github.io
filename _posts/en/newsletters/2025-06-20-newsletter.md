@@ -124,23 +124,48 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Eclair #3110][] Increase channel spent delay to 72 blocks
+- [Eclair #3110][] raises the delay for marking a channel as closed after its
+  funding output is spent from 12 (see Newsletter [#337][news337 delay]) to 72
+  blocks as specified in [BOLTs #1270][], to allow for the propagation of a
+  [splice][topic splicing] update. It was increased because some implementations
+  default to 8 confirmations before sending `splice_locked` and allow node
+  operators to raise that threshold, so 12 blocks proved too short. The delay is
+  now configurable for testing purposes and to allow node operators to wait
+  longer.
 
-- [Eclair #3101][] Parse offers and pay offers with currency
+- [Eclair #3101][] introduces the `parseoffer` RPC, which decodes [BOLT12
+  offer][topic offers] fields into a human-readable format, allowing users to
+  view the amount before passing it to the `payoffer` RPC. The latter is
+  extended to accept an amount specified in a fiat currency.
 
-- [LDK #3817][] Revert attribution of failures
+- [LDK #3817][] rolls back support for [attributable failures][topic attributable failures] (see Newsletter
+  [#349][news349 attributable]) by placing it under a test-only flag. This
+  disables the peer penalization logic and removes the feature TLV from failure
+  [onion messages][topic onion messages]. Nodes that hadn’t upgraded yet were
+  wrongly penalized, showing that broader network adoption is necessary for it
+  to work properly.
 
-- [LDK #3623][] adi2011/peer-storage/encrypt-decrypt
+- [LDK #3623][] extends [peer storage][topic peer storage] (see Newsletter
+  [#342][news342 peer]) to provide automatic, encrypted peer backups. Each
+  block, `ChainMonitor` packages the data from a versioned, timestamped, and serialized
+  `ChannelMonitor` structure into an `OurPeerStorage` blob. Then, it encrypts the
+  data and raises a `SendPeerStorage` event to relay the blob as a
+  `peer_storage` message to every channel peer. Additionally, `ChannelManager`
+  is updated to handle `peer_storage_retrieval` requests by triggering a new
+  blob send.
 
-- [BTCPay Server #6755][] feat(wallet): enhance Coin Selection with advanced filters and improved UX
+- [BTCPay Server #6755][] enhances the coin control
+  user interface with new minimum and maximum amount filters, before and after
+  creation date filters, a help section for the filters, a "select all" UTXO
+  checkbox, and large page size options (100, 200 or 500 UTXOs).
 
-- [Rust libsecp256k1 #798][] completes the [MuSig2][topic musig]
-  implementation in the library, giving downstream projects access to a
-  robust [scriptless multisignature][topic multisignature] protocol.
+- [Rust libsecp256k1 #798][] completes the [MuSig2][topic musig] implementation
+  in the library, giving downstream projects access to a robust [scriptless
+  multisignature][topic multisignature] protocol.
 
 {% include snippets/recap-ad.md when="2025-06-24 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="3110,3101,3817,3623,6755" %}
+{% include linkers/issues.md v=2 issues="3110,3101,3817,3623,6755,1270" %}
 [Core Lightning 25.05]: https://github.com/ElementsProject/lightning/releases/tag/v25.05
 [bishop priv]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CABaSBax-meEsC2013zKYJnC3phFFB_W3cHQLroUJcPDZKsjB8w@mail.gmail.com/
 [poinsot priv]: https://mailing-list.bitcoindevs.xyz/bitcoindev/4iW61M7NCP-gPHoQZKi8ZrSa2U6oSjziG5JbZt3HKC_Ook_Nwm1PchKguOXZ235xaDlhg35nY8Zn7g1siy3IADHvSHyCcgTHrJorMKcDzZg=@protonmail.com/
@@ -156,3 +181,6 @@ repo], and [BINANAs][binana repo]._
 [breez github]: https://github.com/breez/breez-sdk-liquid/releases/tag/0.9.0
 [starkware tweet]: https://x.com/dimahledba/status/1935354385795592491
 [starkware sv2]: https://github.com/keep-starknet-strange/stratum
+[news337 delay]: /en/newsletters/2025/01/17/#eclair-2936
+[news349 attributable]: /en/newsletters/2025/04/11/#ldk-2256
+[news342 peer]:/en/newsletters/2025/02/21/#ldk-3575
