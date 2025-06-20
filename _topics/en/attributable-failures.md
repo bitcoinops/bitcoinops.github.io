@@ -38,6 +38,9 @@ optech_mentions:
   - title: Discussion about whether attributable failures reduce LN privacy
     url: /en/newsletters/2025/05/30/#do-attributable-failures-reduce-ln-privacy
 
+  - title: "LDK #3817 puts attributable failures under a test-only flag until broader adoption is achieved"
+    url: /en/newsletters/2025/06/20/#ldk-3817
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
