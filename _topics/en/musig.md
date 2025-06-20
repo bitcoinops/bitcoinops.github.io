@@ -160,6 +160,9 @@ optech_mentions:
   - title: "Lightning Loop begins using MuSig2"
     url: /en/newsletters/2025/02/21/#lightning-loop-moves-to-musig2
 
+  - title: "Rust libsecp256k1 #798 completes its MuSig2 implementation"
+    url: /en/newsletters/2025/06/20/#rust-libsecp256k1-798
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures

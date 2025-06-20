@@ -67,6 +67,9 @@ optech_mentions:
   - title: Discussion about transaction weight limit in response to large BitVM transactions
     url: /en/newsletters/2025/06/06/#transaction-weight-limit-with-exception-to-prevent-confiscation
 
+  - title: "Improvments to BitVM-style contracts allowing disprove transactions to be just 200 bytes"
+    url: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"
