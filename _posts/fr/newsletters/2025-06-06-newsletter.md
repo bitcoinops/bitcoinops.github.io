@@ -177,4 +177,4 @@ repo], et [BINANAs][binana repo]._
 [multiprocess project]: https://github.com/ryanofsky/bitcoin/blob/pr/ipc/doc/design/multiprocess.md
 [news320 ipc]: /fr/newsletters/2024/09/13/#bitcoin-core-30509
 [news264 payjoin]: /fr/newsletters/2023/08/16/#payjoin-sans-serveur
-[news353 pr review]: /fr/newsletters/2025/05/09/#club-de-revue-de-pr-bitcoin-core
+[news353 pr review]: /fr/newsletters/2025/05/09/#bitcoin-core-pr-review-club
