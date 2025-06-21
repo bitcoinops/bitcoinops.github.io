@@ -155,8 +155,8 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [Core Lightning 25.05]: https://github.com/ElementsProject/lightning/releases/tag/v25.05
 [bishop priv]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CABaSBax-meEsC2013zKYJnC3phFFB_W3cHQLroUJcPDZKsjB8w@mail.gmail.com/
 [poinsot priv]: https://mailing-list.bitcoindevs.xyz/bitcoindev/4iW61M7NCP-gPHoQZKi8ZrSa2U6oSjziG5JbZt3HKC_Ook_Nwm1PchKguOXZ235xaDlhg35nY8Zn7g1siy3IADHvSHyCcgTHrJorMKcDzZg=@protonmail.com/
-[kung priv]: https://mailing-list.bitcoindevs.xyz/bitcoindev/58813483-7351-487e-8f7f-82fb18a4c808n@googlegroups.com/[linus
-bitvm3]: https://delvingbitcoin.org/t/garbled-circuits-and-bitvm3/1773
+[kung priv]: https://mailing-list.bitcoindevs.xyz/bitcoindev/58813483-7351-487e-8f7f-82fb18a4c808n@googlegroups.com/
+[linus bitvm3]: https://delvingbitcoin.org/t/garbled-circuits-and-bitvm3/1773
 [rubin garbled]: https://rubin.io/bitcoin/2025/04/04/delbrag/
 [pickhardt rebalance]: https://delvingbitcoin.org/t/research-update-a-geometric-approach-for-optimal-channel-rebalancing/1768
 [rust libsecp256k1 #798]: https://github.com/rust-bitcoin/rust-secp256k1/pull/798
