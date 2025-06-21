@@ -225,8 +225,8 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [news352 opreturn]: /fr/newsletters/2025/05/02/#augmentation-ou-suppression-de-la-limite-de-taille-op-return-de-bitcoin-core
 [news325 v3]: /fr/newsletters/2024/10/18/#transactions-d-engagement-de-version-3
 [news347 rbf]: /fr/newsletters/2025/03/28/#lnd-8453
-[club de révision 32317]: https://bitcoincore.reviews/32317
+[review club 32317]: https://bitcoincore.reviews/32317
 [gh thecharlatan]: https://github.com/TheCharlatan
 [somsen swiftsync]: https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd
-[approche mise à jour 32317]: https://github.com/bitcoin/bitcoin/pull/32317#issuecomment-2883841466
+[32317 updated approach]: https://github.com/bitcoin/bitcoin/pull/32317#issuecomment-2883841466
 [news349 swiftsync]: /fr/newsletters/2025/04/11/#acceleration-swiftsync-pour-le-telechargement-initial-des-blocs
