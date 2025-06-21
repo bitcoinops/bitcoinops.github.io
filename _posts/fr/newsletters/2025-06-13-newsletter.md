@@ -142,7 +142,7 @@ UTXO dans une méthode séparée `SpendBlock()`.
   comportement de mise en cache en soi. En retirant `CCoinsViewCache` des signatures de fonction, cela
   rend la dépendance UTXO explicite, nécessitant que l'appelant récupère les pièces avant d'appeler la
   fonction de validation."
-  a3link="https://bitcoincore.reviews/32317#l-116"%}
+  a3link="https://bitcoincore.reviews/32317#l-116"%}"
 %}
 
 ## Mises à jour et versions candidates
