@@ -53,7 +53,7 @@ populärer Bitcoin-Infrastruktursoftware.
   [BitVM][topic acc]-artige Verträge benötigt wird. Basierend auf einer
   [Idee][rubin garbled] von Jeremy Rubin, die auf neuen kryptografischen
   Grundbausteinen aufbaut, reduziert der neue Ansatz „die On-Chain-Kosten eines
-  Disputs um mehr als das 1.000-fache im Vergleich zum vorherigen Design“,
+  Streitfalls um mehr als das 1.000-fache im Vergleich zum vorherigen Design“,
   wobei Widerlegungstransaktionen „nur 200 Bytes“ groß sind.
 
   Allerdings weist Linus' Paper auf den Kompromiss dieses Ansatzes hin: Er
