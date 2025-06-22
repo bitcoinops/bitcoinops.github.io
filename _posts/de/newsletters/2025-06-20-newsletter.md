@@ -157,7 +157,7 @@ Inquisition][bitcoin inquisition repo] und [BINANAs][binana repo].*
   bereitzustellen. Für jeden Block verpackt `ChainMonitor` die Daten aus einer
   versionierten, mit Zeitstempel versehenen und serialisierten
   `ChannelMonitor`-Struktur in ein `OurPeerStorage`-Blob. Dann verschlüsselt
-  es die Daten und löst ein `SendPeerStorage`-Ereignis aus, um das Blob als
+  sie die Daten und löst ein `SendPeerStorage`-Ereignis aus, um das Blob als
   `peer_storage`-Nachricht an jeden Channel-Peer weiterzuleiten. Zusätzlich
   wird `ChannelManager` aktualisiert, um `peer_storage_retrieval`-Anfragen zu
   bearbeiten, indem ein neuer Blob-Versand ausgelöst wird.
