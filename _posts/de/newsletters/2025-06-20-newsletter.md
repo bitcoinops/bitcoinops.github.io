@@ -164,7 +164,7 @@ Inquisition][bitcoin inquisition repo] und [BINANAs][binana repo].*
 
 - [BTCPay Server #6755][] verbessert die Coin-Control-Benutzeroberfläche mit
   neuen Filtern für Mindest- und Höchstbeträge, Filtern für vor und nach dem
-  vor und nach, einem Hilfebereich für die Filter, einem „Alle
+  Erstellungsdatum, einem Hilfebereich für die Filter, einem „Alle
   auswählen“-Kontrollkästchen für UTXOs und Optionen für große Seitengrößen
   (100, 200 oder 500 UTXOs).
 
