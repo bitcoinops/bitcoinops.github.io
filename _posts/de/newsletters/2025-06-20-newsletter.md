@@ -154,7 +154,7 @@ Inquisition][bitcoin inquisition repo] und [BINANAs][binana repo].*
 
 - [LDK #3623][] erweitert [Peer Storage][topic peer storage] (siehe Newsletter
   [#342][news342 peer]), um automatische, verschlüsselte Peer-Backups
-  bereitzustellen. Jeder Block verpackt `ChainMonitor` die Daten aus einer
+  bereitzustellen. Für jeden Block verpackt `ChainMonitor` die Daten aus einer
   versionierten, mit Zeitstempel versehenen und serialisierten
   `ChannelMonitor`-Struktur in ein `OurPeerStorage`-Blob. Dann verschlüsselt
   es die Daten und löst ein `SendPeerStorage`-Ereignis aus, um das Blob als
