@@ -52,7 +52,7 @@ populärer Bitcoin-Infrastruktursoftware.
   Reduzierung des On-Chain-Speicherplatzes anzukündigen, der für
   [BitVM][topic acc]-artige Verträge benötigt wird. Basierend auf einer
   [Idee][rubin garbled] von Jeremy Rubin, die auf neuen kryptografischen
-  Primitiven aufbaut, reduziert der neue Ansatz „die On-Chain-Kosten eines
+  Grundbausteinen aufbaut, reduziert der neue Ansatz „die On-Chain-Kosten eines
   Disputs um mehr als das 1.000-fache im Vergleich zum vorherigen Design“,
   wobei Widerlegungstransaktionen „nur 200 Bytes“ groß sind.
 
