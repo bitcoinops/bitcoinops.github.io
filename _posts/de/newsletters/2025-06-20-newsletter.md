@@ -42,7 +42,7 @@ populärer Bitcoin-Infrastruktursoftware.
 
   Poinsot, Sebastian „The Charlatan“ Kung und Russell Yanofsky – die einzigen
   sehr aktiven Bitcoin-Core-Mitwirkenden, die zum Zeitpunkt des Schreibens auf
-  den Thread geantwortet haben – [gaben an][kung priv], entweder
+  den Thread geantwortet haben – [gaben entweder an][kung priv],
   [dass][yanofsky priv] sie keine größere Änderung für notwendig halten oder
   dass alle Änderungen schrittweise im Laufe der Zeit vorgenommen werden
   sollten.
