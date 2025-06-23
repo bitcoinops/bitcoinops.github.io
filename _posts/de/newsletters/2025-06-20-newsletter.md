@@ -30,7 +30,7 @@ populärer Bitcoin-Infrastruktursoftware.
 
   Bishops Beitrag schlägt eine Methode zur Online-Privatisierung vor, aber
   Antoine Poinsot [stellte in Frage][poinsot priv], ob diese Methode das Ziel
-  erreichen würde. Poinsot schlug auch vor, dass viele private Bürodiskussionen
+  erreichen würde. Poinsot legte auch nahe, dass viele private Bürodiskussionen
   nicht aus Angst vor öffentlicher Kritik stattfinden könnten, sondern wegen
   der „natürlichen Vorteile von persönlichen Diskussionen“.
 
