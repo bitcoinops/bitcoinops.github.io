@@ -43,7 +43,7 @@ Bitcoin infrastructure software.
   active Bitcoin Core contributors to reply to the thread as of the time
   of writing---[indicated][kung priv] either [that][yanofsky priv]  they don't think a major
   change is necessary or that any changes should be made incrementally
-  over time.
+  over time. {% assign timestamp="1:11" %}
 
 - **Improvements to BitVM-style contracts:** Robin Linus [posted][linus
   bitvm3] to Delving Bitcoin to announce a significant reduction in the
@@ -59,7 +59,7 @@ Bitcoin infrastructure software.
   reasonable security parameters requiring a 5 TB offchain setup, 56 kB
   onchain transaction to assert the result, and minimal onchain
   transaction (~200 B) in the case that a party needs to prove the
-  assertion was invalid.
+  assertion was invalid. {% assign timestamp="21:17" %}
 
 - **Channel rebalancing research:** Rene Pickhardt [posted][pickhardt
   rebalance] to Delving Bitcoin thoughts about rebalancing channels
@@ -72,7 +72,7 @@ Bitcoin infrastructure software.
   Pickhardt notes that there are several challenges to a global approach and
   asks interested parties to answer a few questions, such as whether
   this approach is worth pursuing and how to address certain
-  implementation details.
+  implementation details. {% assign timestamp="41:57" %}
 
 ## Changes to services and client software
 
@@ -81,22 +81,22 @@ wallets and services.*
 
 - **Cove v1.0.0 released:**
   Recent Cove [releases][cove github] include coin control support and
-  additional [BIP329][] wallet label features.
+  additional [BIP329][] wallet label features. {% assign timestamp="1:03:58" %}
 
 - **Liana v11.0 released:**
   Recent [releases][liana github] of Liana include features for multiple
   wallets, additional coin control features, and more hardware signing device
-  support, among other features.
+  support, among other features. {% assign timestamp="1:04:59" %}
 
 - **Stratum v2 STARK proof demo:**
   StarkWare [demonstrated][starkware tweet] a [modified Stratum v2 mining
   client][starkware sv2] using a STARK proof to prove that a block's fees
   belongs to a valid block template without revealing the transactions in the
-  block.
+  block. {% assign timestamp="1:06:48" %}
 
 - **Breez SDK adds BOLT12 and BIP353:**
   Breez SDK Nodeless [0.9.0][breez github] adds support for receiving using
-  [BOLT12][] and [BIP353].
+  [BOLT12][] and [BIP353]. {% assign timestamp="1:08:41" %}
 
 ## Releases and release candidates
 
@@ -111,7 +111,7 @@ release candidates._
   with Eclair, and enables [peer storage][topic peer storage] by
   default.  Note: its [release documentation][core lightning 25.05]
   contains a warning for users of the `--experimental-splicing`
-  configuration option.
+  configuration option. {% assign timestamp="1:09:51" %}
 
 ## Notable code and documentation changes
 
@@ -131,19 +131,19 @@ repo], and [BINANAs][binana repo]._
   default to 8 confirmations before sending `splice_locked` and allow node
   operators to raise that threshold, so 12 blocks proved too short. The delay is
   now configurable for testing purposes and to allow node operators to wait
-  longer.
+  longer. {% assign timestamp="1:11:32" %}
 
 - [Eclair #3101][] introduces the `parseoffer` RPC, which decodes [BOLT12
   offer][topic offers] fields into a human-readable format, allowing users to
   view the amount before passing it to the `payoffer` RPC. The latter is
-  extended to accept an amount specified in a fiat currency.
+  extended to accept an amount specified in a fiat currency. {% assign timestamp="1:12:41" %}
 
 - [LDK #3817][] rolls back support for [attributable failures][topic attributable failures] (see Newsletter
   [#349][news349 attributable]) by placing it under a test-only flag. This
   disables the peer penalization logic and removes the feature TLV from failure
   [onion messages][topic onion messages]. Nodes that hadn’t upgraded yet were
   wrongly penalized, showing that broader network adoption is necessary for it
-  to work properly.
+  to work properly. {% assign timestamp="1:13:35" %}
 
 - [LDK #3623][] extends [peer storage][topic peer storage] (see Newsletter
   [#342][news342 peer]) to provide automatic, encrypted peer backups. Each
@@ -152,16 +152,16 @@ repo], and [BINANAs][binana repo]._
   data and raises a `SendPeerStorage` event to relay the blob as a
   `peer_storage` message to every channel peer. Additionally, `ChannelManager`
   is updated to handle `peer_storage_retrieval` requests by triggering a new
-  blob send.
+  blob send.  {% assign timestamp="1:14:04" %}
 
 - [BTCPay Server #6755][] enhances the coin control
   user interface with new minimum and maximum amount filters, before and after
   creation date filters, a help section for the filters, a "select all" UTXO
-  checkbox, and large page size options (100, 200 or 500 UTXOs).
+  checkbox, and large page size options (100, 200 or 500 UTXOs). {% assign timestamp="1:15:11" %}
 
 - [Rust libsecp256k1 #798][] completes the [MuSig2][topic musig] implementation
   in the library, giving downstream projects access to a robust [scriptless
-  multisignature][topic multisignature] protocol.
+  multisignature][topic multisignature] protocol. {% assign timestamp="1:15:54" %}
 
 {% include snippets/recap-ad.md when="2025-06-24 16:30" %}
 {% include references.md %}
