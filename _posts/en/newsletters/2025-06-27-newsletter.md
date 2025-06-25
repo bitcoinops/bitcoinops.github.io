@@ -53,7 +53,28 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Is there any way to block Bitcoin Knots nodes as my peers?]({{bse}}127456)
+  Vojtěch Strnad provides an approach to blocking peers based on user-agent strings
+  using two Bitcoin Core RPCs but discourages such an approach and points to a
+  related [Bitcoin Core GitHub issue][Bitcoin Core #30036] with similar discouragement.
+
+- [What does OP_CAT do with integers?]({{bse}}127436)
+  Pieter Wuille explains that Bitcoin Script stack elements do not contain data
+  type information and different opcodes interpret the stack element's bytes in
+  different ways.
+
+- [Async Block Relaying With Compact Block Relay (BIP152)]({{bse}}127420)
+  User bca-0353f40e outlines Bitcoin Core's handling of [compact blocks][topic
+  compact block relay] and estimates the impact of missing transactions on block
+  propagation.
+
+- [Why is attacker revenue in selfish mining disproportional to its hash-power?]({{bse}}53030)
+  Antoine Poinsot follows up on this and [another]({{bse}}125682) older [selfish
+  mining][topic selfish mining] question, pointing out, "The difficulty
+  adjustment does not take stale blocks into account, which means that
+  decreasing competing miners' effective hashrate increases a miner's profits
+  (on a long enough time scale) as much as increasing his own" (see [Newsletter
+  #358][news358 selfish mining]).
 
 ## Releases and release candidates
 
@@ -93,7 +114,8 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-07-01 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="31981,3109,9950,3868,3873,1678,1803,1871,1867,1866" %}
+{% include linkers/issues.md v=2 issues="31981,3109,9950,3868,3873,1678,1803,1871,1867,1866,30036" %}
 [bitcoin core 28.2]: https://bitcoincore.org/bin/bitcoin-core-28.2/
 [brozzoni addr]: https://delvingbitcoin.org/t/fingerprinting-nodes-via-addr-requests/1786/
 [chow hard]: https://mailing-list.bitcoindevs.xyz/bitcoindev/848d3d4b-94a5-4e7c-b178-62cf5015b65f@achow101.com/T/#u
+[news358 selfish mining]: /en/newsletters/2025/06/13/#calculating-the-selfish-mining-danger-threshold
