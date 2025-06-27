@@ -41,6 +41,12 @@ optech_mentions:
   - title: "LDK #3817 puts attributable failures under a test-only flag until broader adoption is achieved"
     url: /en/newsletters/2025/06/20/#ldk-3817
 
+  - title: "Eclair #3109 extends its attributable failures support to trampoline payments"
+    url: /en/newsletters/2025/06/27/#eclair-3109
+
+  - title: "LDK #3868 reduces the precision of HTLC hold time for attributable failures from 1ms to 100ms units"
+    url: /en/newsletters/2025/06/27/#ldk-3868
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
