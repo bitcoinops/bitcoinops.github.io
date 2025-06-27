@@ -97,25 +97,63 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31981][] Add checkBlock() to Mining interface
+- [Bitcoin Core #31981][] adds a `checkBlock` method to the inter-process
+  communication (IPC) `Mining` interface (see Newsletter [#310][news310 ipc])
+  that performs the same validity checks as the `getblocktemplate` RPC in
+  `proposal` mode. This enables mining pools using [Stratum v2][topic pooled
+  mining] to validate block templates provided by miners via the faster IPC
+  interface, rather than serialising up to 4 MB of JSON through RPC. The
+  proof-of-work and merkle root checks can be disabled in the options.
 
-- [Eclair #3109][]  Prepare attribution data for trampoline payments
+- [Eclair #3109][] extends its [attributable failures][topic attributable failures] support (see Newsletter
+  [#356][news356 failures]) to [trampoline payments][topic trampoline payments].
+  A trampoline node now decrypts and stores the part of the attribution payload
+  intended for it and prepares the remaining blob for the next trampoline hop.
+  This PR does not implement the relay of the attribution data for trampoline
+  nodes, which is expected in a follow-up PR.
 
-- [LND #9950][] starius/describegraph-authproofs2
+- [LND #9950][] adds a new `include_auth_proof` flag to the `DescribeGraph`,
+  `GetNodeInfo` and `GetChanInfo` RPCs and to their corresponding `lncli`
+  commands. Including this flag returns the [channel announcement][topic channel
+  announcements] signatures, allowing validation of channel details
+  by third-party software.
 
-- [LDK #3868][] joostjager/coarse-hold-times
+- [LDK #3868][] reduces the precision of the [HTLC][topic htlc] hold time for
+  [attributable failure][topic attributable failures] (see Newsletter [#349][news349 attributable]) payloads
+  from 1-millisecond to 100-millisecond units, to mitigate timing-fingerprint
+  leaks. This aligns LDK with the latest updates to the [BOLTs #1044][] draft.
 
-- [LDK #3873][] jkczyz/2025-06-splice-locked-fixes
+- [LDK #3873][] raises the delay for forgetting a Short Channel Identifier
+  (SCID) after its funding output is spent from 12 to 144 blocks to allow for
+  the propagation of a [splice][topic splicing] update. This is double the
+  72-block delay introduced in [BOLTs #1270][] that was implemented by Eclair
+  (see Newsletter [#359][news359 eclair]). This PR also implements additional
+  changes to the `splice_locked` message exchange process.
 
-- [Libsecp256k1 #1678][] cmake: add a helper for linking into static libs
+- [Libsecp256k1 #1678][] adds a `secp256k1_objs` CMake interface library that
+  exposes all the library’s object files to allow parent projects, such as
+  Bitcoin Core’s planned [libbitcoinkernel][libbitcoinkernel project], to link
+  those objects directly into their own static libraries. This solves the
+  problem of CMake lacking a native mechanism to link static libraries into
+  another and spares downstream users from providing their own `libsecp256k1`
+  binary.
 
-- [BIPs #1803][], [#1871][bips #1871], [#1867][bips #1867], and
-  [#1866][bips #1866] quapka/hardened-indicator achow101/desc-clarifications achow101/390-clarifications rkrux/musig-multipath
+- [BIPs #1803][] clarifies [BIP380][]’s [descriptor][topic descriptors] grammar
+  by allowing all common hardened-path markers, while [#1871][bips #1871],
+  [#1867][bips #1867], and [#1866][bips #1866] refine [BIP390][]’s
+  [MuSig2][topic musig] descriptors by tightening key path rules, permitting
+  repeated participant keys, and explicitly restricting multipath child
+  derivations.
 
 {% include snippets/recap-ad.md when="2025-07-01 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="31981,3109,9950,3868,3873,1678,1803,1871,1867,1866,30036" %}
+{% include linkers/issues.md v=2 issues="31981,3109,9950,3868,3873,1678,1803,1871,1867,1866,30036,1044,1270" %}
 [bitcoin core 28.2]: https://bitcoincore.org/bin/bitcoin-core-28.2/
 [brozzoni addr]: https://delvingbitcoin.org/t/fingerprinting-nodes-via-addr-requests/1786/
 [chow hard]: https://mailing-list.bitcoindevs.xyz/bitcoindev/848d3d4b-94a5-4e7c-b178-62cf5015b65f@achow101.com/T/#u
 [news358 selfish mining]: /en/newsletters/2025/06/13/#calculating-the-selfish-mining-danger-threshold
+[news310 ipc]: /en/newsletters/2024/07/05/#bitcoin-core-30200
+[news356 failures]: /en/newsletters/2025/05/30/#eclair-3065
+[news349 attributable]: /en/newsletters/2025/04/11/#ldk-2256
+[news359 eclair]: /en/newsletters/2025/06/20/#eclair-3110
+[libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/27587
