@@ -152,7 +152,7 @@ Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][l
 [bitcoin core 28.2]: https://bitcoincore.org/bin/bitcoin-core-28.2/
 [brozzoni addr]: https://delvingbitcoin.org/t/fingerprinting-nodes-via-addr-requests/1786/
 [chow hard]: https://mailing-list.bitcoindevs.xyz/bitcoindev/848d3d4b-94a5-4e7c-b178-62cf5015b65f@achow101.com/T/#u
-[news358 selfish mining]: /de/newsletters/2025/06/13/#calculating-the-selfish-mining-danger-threshold
+[news358 selfish mining]: /de/newsletters/2025/06/13/#berechnung-des-schwellenwerts-fur-selfish-mining
 [news310 ipc]: /en/newsletters/2024/07/05/#bitcoin-core-30200
 [news356 failures]: /de/newsletters/2025/05/30/#eclair-3065
 [news349 attributable]: /de/newsletters/2025/04/11/#ldk-2256
