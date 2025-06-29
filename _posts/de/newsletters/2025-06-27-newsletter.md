@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: de
 ---
-Der Newsletter dieser Woche fasst Forschungen zum Fingerprinting von Full Nodes mittels
+Der Newsletter dieser Woche fasst Forschungen zur Identifizierung von Full Nodes mittels
 P2P-Protokoll-Nachrichten zusammen und bittet um Feedback zur möglichen Entfernung der
 Unterstützung für `H` in BIP32-Pfaden in der BIP380-Spezifikation von Deskriptoren.
 Ebenfalls enthalten sind unsere regulären Abschnitte mit Zusammenfassungen der wichtigsten
@@ -17,15 +17,15 @@ Bitcoin-Infrastruktursoftware.
 
 ## Nachrichten
 
-- **Fingerprinting von Knoten mittels `addr`-Nachrichten:**
+- **Identifizierung von Knoten mittels `addr`-Nachrichten:**
   Daniela Brozzoni [postete][brozzoni addr] auf Delving Bitcoin über Forschungen, die sie
   zusammen mit Entwickler Naiyoma durchführte, um denselben Knoten in mehreren Netzwerken
   anhand der von ihm gesendeten `addr`-Nachrichten zu identifizieren. Knoten senden
   P2P-Protokoll-`addr`-(Adress-)Nachrichten an ihre Peers, um andere potenzielle Knoten
   zu bewerben und es Peers zu ermöglichen, sich über ein dezentrales Gossip-System zu
   finden. Brozzoni und Naiyoma konnten jedoch einzelne Knoten anhand von Details aus
-  ihren spezifischen Adressnachrichten fingerprinting betreiben, was es ihnen ermöglichte,
-  denselben Knoten zu identifizieren, der in mehreren Netzwerken läuft (wie IPv4 und
+  ihren spezifischen Adressnachrichten eindeutig identifizieren, was es ihnen ermöglichte,
+  denselben Knoten zu erkennen, der in mehreren Netzwerken läuft (wie IPv4 und
   [Tor][topic anonymity networks]).
 
   Die Forscher schlagen zwei mögliche Gegenmaßnahmen vor: das Entfernen von Zeitstempeln
@@ -45,12 +45,12 @@ Bitcoin-Infrastruktursoftware.
 ## Ausgewählte Fragen & Antworten von Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] ist einer der ersten Orte, an denen die
-Optech-Mitwirkenden nach Antworten auf ihre Fragen suchen – oder wenn wir ein paar freie
-Momente haben, um neugierige oder verwirrte Nutzer zu unterstützen. In diesem monatlichen
+Optech-Mitwirkenden nach Antworten auf ihre Fragen suchen – oder wenn wir etwas Zeit
+haben, um neugierige oder verwirrte Nutzer zu unterstützen. In diesem monatlichen
 Abschnitt heben wir einige der bestbewerteten Fragen und Antworten hervor, die seit
 unserem letzten Update gepostet wurden.*
 
-{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3A1m..%20is%3Aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
 - [Gibt es eine Möglichkeit, Bitcoin Knots-Knoten als meine Peers zu blockieren?]({{bse}}127456)
