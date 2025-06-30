@@ -124,7 +124,7 @@ Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][l
   um Timing-Fingerprint-Lecks zu mindern. Dies bringt LDK mit den neuesten Updates zum
   [BOLTs #1044][]-Entwurf in Einklang.
 
-- [LDK #3873][] erhöht die Verzögerung für das Vergessen eines Short Channel Identifier
+- [LDK #3873][] erhöht die Verzögerung für das Vergessen eines Short Channel Identifiers
   (SCID), nachdem sein Finanzierungs-Output ausgegeben wurde, von 12 auf 144 Blöcke, um
   die Verbreitung eines [Splicing][topic splicing]-Updates zu ermöglichen. Dies ist das
   Doppelte der 72-Block-Verzögerung, die in [BOLTs #1270][] eingeführt und von Eclair
