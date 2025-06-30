@@ -74,7 +74,7 @@ unserem letzten Update gepostet wurden.*
   Mining][topic selfish mining]-Frage ein und weist darauf hin: „Die Schwierigkeitsanpassung
   berücksichtigt verwaiste Blöcke nicht, was bedeutet, dass die Verringerung der
   effektiven Hashrate konkurrierender Miner die Gewinne eines Miners (über einen
-  ausreichend langen Zeitraum) genauso stark erhöht wie die Erhöhung seiner eigenen"
+  ausreichend langen Zeitraum) genauso stark erhöht wie die Erhöhung seiner eigenen“
   (siehe [Newsletter #358][news358 selfish mining]).
 
 ## Releases und Release-Kandidaten
