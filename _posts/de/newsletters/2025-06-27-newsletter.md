@@ -45,7 +45,7 @@ Bitcoin-Infrastruktursoftware.
 ## Ausgewählte Fragen & Antworten von Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] ist einer der ersten Orte, an denen die
-Optech-Mitwirkenden nach Antworten auf ihre Fragen suchen – oder wenn wir etwas Zeit
+Optech-Mitwirkenden nach Antworten auf ihre Fragen suchen – oder, wenn wir etwas Zeit
 haben, um neugierige oder verwirrte Nutzer zu unterstützen. In diesem monatlichen
 Abschnitt heben wir einige der bestbewerteten Fragen und Antworten hervor, die seit
 unserem letzten Update gepostet wurden.*
