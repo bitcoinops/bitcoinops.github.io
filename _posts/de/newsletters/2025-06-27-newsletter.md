@@ -70,7 +70,7 @@ unserem letzten Update gepostet wurden.*
   Blockpropagation.
 
 - [Warum sind Angreifer-Einnahmen beim Selfish Mining disproportional zu ihrer Hash-Power?]({{bse}}53030)
-  Antoine Poinsot folgt auf diese und [eine andere]({{bse}}125682) ältere [Selfish
+  Antoine Poinsot geht weiter auf diese und [eine andere]({{bse}}125682) ältere [Selfish
   Mining][topic selfish mining]-Frage und weist darauf hin: „Die Schwierigkeitsanpassung
   berücksichtigt verwaiste Blöcke nicht, was bedeutet, dass die Verringerung der
   effektiven Hashrate konkurrierender Miner die Gewinne eines Miners (über einen
