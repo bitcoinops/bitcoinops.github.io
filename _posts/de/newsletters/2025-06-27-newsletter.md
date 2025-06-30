@@ -19,7 +19,7 @@ Bitcoin-Infrastruktursoftware.
 
 - **Identifizierung von Knoten mittels `addr`-Nachrichten:**
   Daniela Brozzoni [postete][brozzoni addr] auf Delving Bitcoin über Forschungen, die sie
-  zusammen mit Entwickler Naiyoma durchführte, um denselben Knoten in mehreren Netzwerken
+  zusammen mit der Entwicklerin Naiyoma durchführte, um denselben Knoten in mehreren Netzwerken
   anhand der von ihm gesendeten `addr`-Nachrichten zu identifizieren. Knoten senden
   P2P-Protokoll-`addr`-(Adress-)Nachrichten an ihre Peers, um andere potenzielle Knoten
   zu bewerben und es Peers zu ermöglichen, sich über ein dezentrales Gossip-System zu
