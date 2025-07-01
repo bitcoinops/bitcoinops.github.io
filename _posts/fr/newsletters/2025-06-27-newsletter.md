@@ -60,7 +60,7 @@ certaines des questions et réponses les mieux votées publiées depuis notre de
   différentes manières.
 
 - [Relais de blocs asynchrone avec Compact Block Relay (BIP152)]({{bse}}127420)
-  L'utilisateur bca-0353f40e décrit le traitement des [blocs compacts][topic compact blocks] par
+  L'utilisateur bca-0353f40e décrit le traitement des [blocs compacts][topic compact block relay] par
   Bitcoin Core et estime l'impact des transactions manquantes sur la propagation des blocs.
 
 - [Pourquoi les revenus d'un attaquant dans le minage égoïste sont-ils disproportionnés par rapport à sa puissance de hachage ?]({{bse}}53030)
