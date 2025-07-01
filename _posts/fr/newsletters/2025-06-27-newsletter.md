@@ -63,8 +63,7 @@ certaines des questions et réponses les mieux votées publiées depuis notre de
   L'utilisateur bca-0353f40e décrit le traitement des [blocs compacts][topic compact blocks] par
   Bitcoin Core et estime l'impact des transactions manquantes sur la propagation des blocs.
 
-- [Pourquoi les revenus d'un attaquant dans le minage égoïste sont-ils disproportionnés par rapport
-  à sa puissance de hachage ?]({{bse}}53030)
+- [Pourquoi les revenus d'un attaquant dans le minage égoïste sont-ils disproportionnés par rapport à sa puissance de hachage ?]({{bse}}53030)
   Antoine Poinsot poursuit sur ce sujet et [une autre]({{bse}}125682) question plus ancienne sur le
   [minage égoïste][topic selfish mining], en soulignant, "L'ajustement de la difficulté ne prend pas
   en compte les blocs obsolètes, ce qui signifie que diminuer le taux de hachage effectif des mineurs
