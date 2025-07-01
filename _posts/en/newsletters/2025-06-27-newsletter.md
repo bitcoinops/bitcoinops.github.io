@@ -30,7 +30,7 @@ popular Bitcoin infrastructure software.
 
   The researchers suggest two possible mitigations: removing timestamps
   from address messages or, if the timestamps are kept, randomizing them
-  slightly to make them less specific to particular nodes.
+  slightly to make them less specific to particular nodes. {% assign timestamp="1:00" %}
 
 - **Does any software use `H` in descriptors?** Ava Chow [posted][chow hard] to
   the Bitcoin-Dev mailing list to ask whether any software generates
@@ -40,7 +40,7 @@ popular Bitcoin infrastructure software.
   allow lowercase-h and `'` to be used to indicate hardening.  Chow
   notes that, although BIP32 allows uppercase-H, the BIP380
   specification previously included a test that forbids using uppercase-H
-  and that Bitcoin Core currently does not accept uppercase-H.
+  and that Bitcoin Core currently does not accept uppercase-H. {% assign timestamp="29:36" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -56,17 +56,17 @@ answers posted since our last update.*
 - [Is there any way to block Bitcoin Knots nodes as my peers?]({{bse}}127456)
   Vojtěch Strnad provides an approach to blocking peers based on user-agent strings
   using two Bitcoin Core RPCs but discourages such an approach and points to a
-  related [Bitcoin Core GitHub issue][Bitcoin Core #30036] with similar discouragement.
+  related [Bitcoin Core GitHub issue][Bitcoin Core #30036] with similar discouragement. {% assign timestamp="33:42" %}
 
 - [What does OP_CAT do with integers?]({{bse}}127436)
   Pieter Wuille explains that Bitcoin Script stack elements do not contain data
   type information and different opcodes interpret the stack element's bytes in
-  different ways.
+  different ways. {% assign timestamp="42:00" %}
 
 - [Async Block Relaying With Compact Block Relay (BIP152)]({{bse}}127420)
   User bca-0353f40e outlines Bitcoin Core's handling of [compact blocks][topic
   compact block relay] and estimates the impact of missing transactions on block
-  propagation.
+  propagation. {% assign timestamp="43:03" %}
 
 - [Why is attacker revenue in selfish mining disproportional to its hash-power?]({{bse}}53030)
   Antoine Poinsot follows up on this and [another]({{bse}}125682) older [selfish
@@ -74,7 +74,7 @@ answers posted since our last update.*
   adjustment does not take stale blocks into account, which means that
   decreasing competing miners' effective hashrate increases a miner's profits
   (on a long enough time scale) as much as increasing his own" (see [Newsletter
-  #358][news358 selfish mining]).
+  #358][news358 selfish mining]). {% assign timestamp="52:47" %}
 
 ## Releases and release candidates
 
@@ -84,7 +84,7 @@ release candidates._
 
 - [Bitcoin Core 28.2][] is a maintenance release for the previous
   release series of the predominant full node implementation.  It
-  contains multiple bug fixes.
+  contains multiple bug fixes. {% assign timestamp="57:51" %}
 
 ## Notable code and documentation changes
 
@@ -103,32 +103,32 @@ repo], and [BINANAs][binana repo]._
   `proposal` mode. This enables mining pools using [Stratum v2][topic pooled
   mining] to validate block templates provided by miners via the faster IPC
   interface, rather than serialising up to 4 MB of JSON through RPC. The
-  proof-of-work and merkle root checks can be disabled in the options.
+  proof-of-work and merkle root checks can be disabled in the options. {% assign timestamp="59:21" %}
 
 - [Eclair #3109][] extends its [attributable failures][topic attributable failures] support (see Newsletter
   [#356][news356 failures]) to [trampoline payments][topic trampoline payments].
   A trampoline node now decrypts and stores the part of the attribution payload
   intended for it and prepares the remaining blob for the next trampoline hop.
   This PR does not implement the relay of the attribution data for trampoline
-  nodes, which is expected in a follow-up PR.
+  nodes, which is expected in a follow-up PR. {% assign timestamp="1:00:48" %}
 
 - [LND #9950][] adds a new `include_auth_proof` flag to the `DescribeGraph`,
   `GetNodeInfo` and `GetChanInfo` RPCs and to their corresponding `lncli`
   commands. Including this flag returns the [channel announcement][topic channel
   announcements] signatures, allowing validation of channel details
-  by third-party software.
+  by third-party software. {% assign timestamp="1:01:31" %}
 
 - [LDK #3868][] reduces the precision of the [HTLC][topic htlc] hold time for
   [attributable failure][topic attributable failures] (see Newsletter [#349][news349 attributable]) payloads
   from 1-millisecond to 100-millisecond units, to mitigate timing-fingerprint
-  leaks. This aligns LDK with the latest updates to the [BOLTs #1044][] draft.
+  leaks. This aligns LDK with the latest updates to the [BOLTs #1044][] draft. {% assign timestamp="1:01:56" %}
 
 - [LDK #3873][] raises the delay for forgetting a Short Channel Identifier
   (SCID) after its funding output is spent from 12 to 144 blocks to allow for
   the propagation of a [splice][topic splicing] update. This is double the
   72-block delay introduced in [BOLTs #1270][] that was implemented by Eclair
   (see Newsletter [#359][news359 eclair]). This PR also implements additional
-  changes to the `splice_locked` message exchange process.
+  changes to the `splice_locked` message exchange process. {% assign timestamp="1:03:10" %}
 
 - [Libsecp256k1 #1678][] adds a `secp256k1_objs` CMake interface library that
   exposes all the library’s object files to allow parent projects, such as
@@ -136,14 +136,14 @@ repo], and [BINANAs][binana repo]._
   those objects directly into their own static libraries. This solves the
   problem of CMake lacking a native mechanism to link static libraries into
   another and spares downstream users from providing their own `libsecp256k1`
-  binary.
+  binary. {% assign timestamp="1:04:11" %}
 
 - [BIPs #1803][] clarifies [BIP380][]’s [descriptor][topic descriptors] grammar
   by allowing all common hardened-path markers, while [#1871][bips #1871],
   [#1867][bips #1867], and [#1866][bips #1866] refine [BIP390][]’s
   [MuSig2][topic musig] descriptors by tightening key path rules, permitting
   repeated participant keys, and explicitly restricting multipath child
-  derivations.
+  derivations. {% assign timestamp="1:06:21" %}
 
 {% include snippets/recap-ad.md when="2025-07-01 16:30" %}
 {% include references.md %}
