@@ -385,17 +385,36 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Coer #32540][] rest: fetch spent transaction outputs by blockhash
+- [Bitcoin Core #32540][] introduces the `/rest/spenttxouts/BLOCKHASH` REST
+  endpoint, which returns a list of spent transaction outputs (prevouts) for a
+  specified block, primarily in a compact binary (.bin) format but also in .json
+  and .hex variants. Although it was previously possible to do this with the
+  `/rest/block/BLOCKHASH.json` endpoint, the new endpoint improves the
+  performance of external indexers by eliminating JSON serialization overhead.
 
-- [Bitcoin Core #32638][] blocks: force hash validations on disk read
+- [Bitcoin Core #32638][] adds validation to ensure that any block read from
+  disk matches the expected block hash, catching bit rot and index mix-ups that
+  could have gone unnoticed previously. Thanks to the header-hash cache
+  introduced in [Bitcoin Core #32487][], this extra check is virtually
+  overhead-free.
 
-- [Bitcoin Core #32819][] cap max values for 32-bit
+- [Bitcoin Core #32819][] and [#32530][Bitcoin Core #32530] set the maximum
+  values for the `-maxmempool` and `-dbcache` startup parameters to 500 MB and 1
+  GB respectively, on 32-bit systems. Since this architecture has a total RAM
+  limit of 4 GB, values higher than the new limits could cause out of memory
+  (OOM) incidents.
 
-- [LDK #3618][] Async recipient-side of static invoice server
+- [LDK #3618][] implements the client-side logic for [async payments][topic
+  async payments], allowing an offline recipient node to prearrange [BOLT12
+  offers][topic offers] and static invoices with an always-online helper LSP
+  node. The PR introduces an async receive offer cache inside `ChannelManager`
+  that builds, stores, and persists offers and invoices. It also defines the new
+  onion messages and hooks needed to communicate with the LSP and threads the
+  state machine through the `OffersMessageFlow`.
 
 {% include snippets/recap-ad.md when="2025-07-08 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="32540,32638,32819,3618,1479" %}
+{% include linkers/issues.md v=2 issues="32540,32638,32819,3618,1479,32487,32530" %}
 [news255 presig vault state]: /en/newsletters/2023/06/14/#discussion-about-the-taproot-annex
 [news348 ctvstep]: /en/newsletters/2025/04/04/#ctv-csfs-benefits
 [news268 ptlc]: /en/newsletters/2023/09/13/#ln-messaging-changes-for-ptlcs
