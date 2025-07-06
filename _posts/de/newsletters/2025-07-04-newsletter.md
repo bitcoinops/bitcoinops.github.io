@@ -122,11 +122,11 @@ Konsensänderungen in Bitcoin._
       autorisierter Auszahlungen. Beispiel: Vault-Nutzer Bob möchte 1 BTC an Alice
       zahlen. Mit presig- und CTV-Vaults nutzt Bob folgendes Verfahren:
 
-        - Er zieht 1 BTC (ggf. plus Gebühren) aus seinem Vault auf eine Zwischenadresse ab.
+      - Er zieht 1 BTC (ggf. plus Gebühren) aus seinem Vault auf eine Zwischenadresse ab.
 
-        - Er wartet die vom Vault definierte Zeit ab.
+      - Er wartet die vom Vault definierte Zeit ab.
 
-        - Er transferiert 1 BTC an Alice.
+      - Er transferiert 1 BTC an Alice.
 
       Wenn Mallory Bobs Schlüssel für die Zwischenadresse gestohlen hat, kann sie die
       1 BTC nach Abschluss der Auszahlung, aber vor Bestätigung der Transaktion an Alice
