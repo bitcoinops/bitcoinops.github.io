@@ -262,7 +262,7 @@ règles de consensus de Bitcoin._
   protocole Winternitz d'être vérifiées par la logique de consensus. L'implémentation de Conduition
   nécessite presque 8 000 octets pour la clé, la signature et le script (dont la plupart est soumis à
   la réduction de poids du témoin, réduisant le poids onchain à environ 2 000 vbytes). Cela représente
-  environ 8 000 vbytes de moins qu'un autre schéma de signature [Lamport][] basé sur `OP_CAT` et
+  environ 8 000 vbytes de moins qu'un autre schéma de [signature Lamport][lamport signature] basé sur `OP_CAT` et
   [précédemment proposé][rubin lamport] par Jeremy Rubin.
 
 - **Fonction de commit/reveal pour la récupération post-quantique :** Tadge Dryja a [posté][dryja
