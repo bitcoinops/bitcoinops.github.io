@@ -237,7 +237,7 @@ règles de consensus de Bitcoin._
       l'intégration et même l'activation, mais je n'ai signé aucune de ces premières ébauches. Ce n'est
       que lorsque le langage a été atténué pour parler de priorités et de planification (et pour être une
       "demande respectueuse" plutôt qu'une sorte d'exigence) que j'ai signé."
-    
+
     - [Steven Roose][roose ctvcom] : "[La lettre] demande simplement aux contributeurs principaux de
       mettre cette proposition à l'ordre du jour avec une certaine urgence. Pas de menaces, pas de mots
       durs. Étant donné que seulement quelques contributeurs principaux avaient jusqu'à présent participé
