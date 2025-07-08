@@ -254,7 +254,7 @@ Konsensänderungen in Bitcoin._
 
   Das dreiteilige Commitment wird in einer Transaktion mit einem quantensicheren Algorithmus, z.B. als
   `OP_RETURN`-Output, veröffentlicht. Ein Angreifer könnte versuchen, ein eigenes Commitment mit demselben
-  Address Identifier, aber einer anderen Commitment-txid zu senden, sodas die Mittel an seine eigene Wallet
+  Address Identifier, aber einer anderen Commitment-txid zu senden, das die Mittel an seine eigene Wallet
   leitet. Da er aber den Public Key nicht kennt, kann er keinen gültigen Sequence Dependent Proof erzeugen.
   Das ist für Full Nodes zunächst nicht offensichtlich, aber sie können das Angreifer-Commitment ablehnen,
   sobald der UTXO-Besitzer den Public Key offenlegt.
