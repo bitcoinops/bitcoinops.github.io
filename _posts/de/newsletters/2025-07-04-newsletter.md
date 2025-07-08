@@ -55,7 +55,7 @@ Konsensänderungen in Bitcoin._
   deutlich einfacher wären.
 
   Anthony Towns [merkte zusätzlich an][towns ptlc], dass es auch an Werkzeugen und Standardisierung fehlt,
-  um ein PTLC-Reveal in Kombination mit einer [MuSig][topic musig] 2-von-2-Signatur (was onchain effizient wäre)
+  um eine PTLC-Offenlegung in Kombination mit einer [MuSig][topic musig] 2-von-2-Signatur (was onchain effizient wäre)
   oder sogar mit allgemeinen Transaktionssignaturen (z.B. `x CHECKSIGVERIFY y CHECKSIG`) durchzuführen.
   Dafür wäre Unterstützung für [Adaptor-Signaturen][topic adaptor signatures] in MuSig2 nötig, die aber weder Teil
   der Spezifikation sind noch in secp256k1 implementiert wurden (sie wurden [entfernt][libsecp256k1 #1479]).
