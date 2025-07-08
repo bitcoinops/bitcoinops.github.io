@@ -415,15 +415,15 @@ repo], and [BINANAs][binana repo]._
 {% include snippets/recap-ad.md when="2025-07-08 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="32540,32638,32819,3618,1479,32487,32530" %}
-[news255 presig vault state]: /en/newsletters/2023/06/14/#discussion-about-the-taproot-annex
-[news348 ctvstep]: /en/newsletters/2025/04/04/#ctv-csfs-benefits
-[news268 ptlc]: /en/newsletters/2023/09/13/#ln-messaging-changes-for-ptlcs
+[news255 presig vault state]: /fr/newsletters/2023/06/14/#discussion-sur-les-annexes-a-taproot
+[news348 ctvstep]: /fr/newsletters/2025/04/04/#avantages-ctv-csfs
+[news268 ptlc]: /fr/newsletters/2023/09/13/#changements-de-messagerie-ln-pour-les-ptlc
 [news191 simple-ctv-vault]: /en/newsletters/2022/03/16/#continued-ctv-discussion
-[news354 bitvm]: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
+[news354 bitvm]: /fr/newsletters/2025/05/16/#description-des-avantages-pour-bitvm-de-op-ctv-et-op-csfs
 [rubin lamport]: https://gnusha.org/pi/bitcoindev/CAD5xwhgzR8e5r1e4H-5EH2mSsE1V39dd06+TgYniFnXFSBqLxw@mail.gmail.com/
 [osuntokun onion]: https://delvingbitcoin.org/t/reimagining-onion-messages-as-an-overlay-layer/1799/
-[news283 oniondirect]: /en/newsletters/2024/01/03/#ldk-2723
-[news304 onionreply]: /en/newsletters/2024/05/24/#core-lightning-7304
+[news283 oniondirect]: /fr/newsletters/2024/01/03/#ldk-2723
+[news304 onionreply]: /fr/newsletters/2024/05/24/#core-lightning-7304
 [sanders ptlc]: https://delvingbitcoin.org/t/ctv-csfs-can-we-reach-consensus-on-a-first-step-towards-covenants/1509/7
 [provoost ptlc]: https://delvingbitcoin.org/t/ctv-csfs-can-we-reach-consensus-on-a-first-step-towards-covenants/1509/80
 [sanders ptlc2]: https://delvingbitcoin.org/t/ctv-csfs-can-we-reach-consensus-on-a-first-step-towards-covenants/1509/81
@@ -455,6 +455,6 @@ repo], and [BINANAs][binana repo]._
 [conduition impl]: https://gist.github.com/conduition/c6fd78e90c21f669fad7e3b5fe113182
 [lamport signature]: https://en.wikipedia.org/wiki/Lamport_signature
 [dryja fawkes]: https://mailing-list.bitcoindevs.xyz/bitcoindev/cc2f8908-f6fa-45aa-93d7-6f926f9ba627n@googlegroups.com/
-[news348 fawkes]: /en/newsletters/2025/04/04/#securely-proving-utxo-ownership-by-revealing-a-sha256-preimage
+[news348 fawkes]: /fr/newsletters/2025/04/04/#prouver-de-maniere-securisee-la-propriete-d-une-utxo-en-revelant-une-preimage-sha256
 [roose txsighash]: https://delvingbitcoin.org/t/jit-fees-with-txhash-comparing-options-for-sponsorring-and-stacking/1760
-[news295 sponsor]: /en/newsletters/2024/03/27/#transaction-fee-sponsorship-improvements
+[news295 sponsor]: /fr/newsletters/2024/03/27/#ameliorations-du-parrainage-des-frais-de-transaction
