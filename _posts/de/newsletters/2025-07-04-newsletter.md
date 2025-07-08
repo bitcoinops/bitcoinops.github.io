@@ -144,7 +144,7 @@ Konsensänderungen in Bitcoin._
       Software so zu gestalten, dass der Schlüssel direkt nach dem Signieren gelöscht
       wird, ohne ihn dem Nutzer preiszugeben. Aktuell ist kein Hardware-Signiergerät
       bekannt, das dies direkt unterstützt, eines unterstützt es manuell. Allerdings
-      unterstützt auch kein Hardwaregerät CTV, selbst nicht zu Testzwecken. Fortgeschrittene
+      unterstützt auch kein Hardwaregerät CTV, selbst zu Testzwecken nicht. Fortgeschrittene
       Vaults hätten ebenfalls diesen Vorteil, müssten aber in Software und Hardware
       integriert werden.
 
