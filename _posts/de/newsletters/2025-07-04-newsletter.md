@@ -48,7 +48,7 @@ Konsensänderungen in Bitcoin._
   (CTV), [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS) oder beide für verschiedene
   Protokolle fort. Besonders interessant: Gregory Sanders [schrieb][sanders ptlc], dass CTV+CSFS
   „das Update des [LN] auf [PTLCs][topic ptlc] beschleunigen würde, selbst wenn [LN-Symmetry][topic eltoo]
-  nie übernommen wird. Re-bindbare Signaturen vereinfachen das Stapeln von Protokollen erheblich.“
+  nie übernommen wird. Re-bindable Signaturen vereinfachen das Stapeln von Protokollen erheblich.“
   Sjors Provoost [fragte][provoost ptlc] nach Details, Sanders [antwortete][sanders ptlc2] mit
   einem [Link][sanders gist] zu früheren Forschungen (siehe [Newsletter #268][news268 ptlc]) und
   ergänzte, dass PTLCs mit heutigen Protokollen zwar möglich, aber mit flexibel neu zuzuweisenden Signaturen
