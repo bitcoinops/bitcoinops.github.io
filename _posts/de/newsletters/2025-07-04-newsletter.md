@@ -211,7 +211,7 @@ Konsensänderungen in Bitcoin._
       Vorschlag mit einer gewissen Dringlichkeit auf ihre Agenda zu setzen. Keine Drohungen,
       keine harten Worte. Da bisher nur wenige Core-Mitwirkende an der Diskussion teilgenommen
       hatten, schien es ein sinnvoller nächster Schritt, sie um eine Positionierung zu bitten.
-      Ich lehne einen Ansatz mit unabhängigen Aktivierungsclients entschieden ab und halte die
+      Ich lehne einen Ansatz mit unabhängigen Aktivierungsclients entschieden ab und denke, die
       Haltung dieser E-Mail für deckungsgleich mit der Präferenz, dass Core bei Protokoll-
       Upgrades eingebunden ist.“
 
