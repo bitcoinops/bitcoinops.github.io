@@ -128,7 +128,7 @@ Konsensänderungen in Bitcoin._
 
       - Er transferiert 1 BTC an Alice.
 
-      Wenn Mallory Bobs Schlüssel für die Zwischenadresse gestohlen hat, kann sie die
+      Wenn Mallory Bobs Schlüssel für die Zwischenadresse gestohlen hat, kann sie den
       1 BTC nach Abschluss der Auszahlung, aber vor Bestätigung der Transaktion an Alice
       stehlen. Selbst wenn Mallory auch den Auszahlungsschlüssel kompromittiert, kann sie
       kein Kapital mehr aus dem Vault stehlen, da Bob jede ausstehende Auszahlung
