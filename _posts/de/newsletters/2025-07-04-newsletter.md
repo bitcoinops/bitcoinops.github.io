@@ -51,7 +51,7 @@ Konsensänderungen in Bitcoin._
   nie übernommen wird. Re-bindable Signaturen vereinfachen das Stapeln von Protokollen erheblich.“
   Sjors Provoost [fragte][provoost ptlc] nach Details, Sanders [antwortete][sanders ptlc2] mit
   einem [Link][sanders gist] zu früheren Forschungen (siehe [Newsletter #268][news268 ptlc]) und
-  ergänzte, dass PTLCs mit heutigen Protokollen zwar möglich, aber mit flexibel neu zuzuweisenden Signaturen
+  ergänzte, dass PTLCs mit heutigen Protokollen zwar möglich, aber mit rebindable (flexibel neu zuzuweisenden Signaturen)
   deutlich einfacher wären.
 
   Anthony Towns [merkte zusätzlich an][towns ptlc], dass es auch an Werkzeugen und Standardisierung fehlt,
