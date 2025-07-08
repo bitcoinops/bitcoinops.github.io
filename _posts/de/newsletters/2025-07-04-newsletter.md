@@ -277,7 +277,7 @@ Konsensänderungen in Bitcoin._
   könnte, was eine effiziente Form von [Transaction Sponsorship][topic fee sponsorship] ermöglicht
   (siehe [Newsletter #295][news295 sponsor]). Er analysiert die Onchain-Kosten dieses Mechanismus im
   Vergleich zu bestehendem [CPFP][topic cpfp] und einem früheren Sponsorship-Vorschlag und kommt zu dem Schluss:
-  „Mit [TXSIGHASH] Stacking kann die Kosten in virtuellen Bytes jeder gestapelten Transaktion sogar
+  „Mit [TXSIGHASH] Stacking können die Kosten in virtuellen Bytes jeder gestapelten Transaktion sogar
   niedriger sein als ihre ursprünglichen Kosten ohne Sponsor. [...] Außerdem sind alle Inputs einfache
   Key-Spends, was bedeutet, dass sie mit [CISA][topic cisa] aggregiert werden könnten.“
 
