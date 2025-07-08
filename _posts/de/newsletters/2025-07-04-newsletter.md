@@ -212,7 +212,7 @@ Konsensänderungen in Bitcoin._
       keine harten Worte. Da bisher nur wenige Core-Mitwirkende an der Diskussion teilgenommen
       hatten, schien es ein sinnvoller nächster Schritt, sie um eine Positionierung zu bitten.
       Ich lehne einen Ansatz mit unabhängigen Aktivierungsclients entschieden ab und denke, die
-      Haltung dieser E-Mail für deckungsgleich mit der Präferenz, dass Core bei Protokoll-
+      Haltung dieser E-Mail entspricht der Präferenz, dass Core bei Protokoll-
       Upgrades eingebunden ist.“
 
     - [Harsha Goli][goli ctvcom]: „Die meisten haben unterschrieben, weil sie wirklich nicht
