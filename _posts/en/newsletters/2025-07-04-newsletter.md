@@ -47,7 +47,7 @@ to popular Bitcoin infrastructure software.
   Although at least one respondent was supportive of Osuntokun's
   proposal, several respondents so far mentioned concern about the
   denial of service risk.  Discussion was ongoing at the time of
-  writing.
+  writing. {% assign timestamp="2:06" %}
 
 ## Changing consensus
 
@@ -88,7 +88,7 @@ Bitcoin's consensus rules._
   adaptor signatures to prevent your counterparty from choosing a
   different R value for the signature.  These issues are independent of
   the update complexity and peer protocol updates Gregory Sanders
-  describes above."
+  describes above." {% assign timestamp="5:45" %}
 
 - **Vault output script descriptor:** Sjors Provoost [posted][provoost ctvdesc] to
   Delving Bitcoin to discuss how the recovery information for a wallet
@@ -109,7 +109,7 @@ Bitcoin's consensus rules._
   assumes all funds paid to the typical descriptor are moved into a vault using the
   same settings every time.  This would allow the CTV vault descriptor
   to be succinct and complete without any contortions to the descriptor
-  language.
+  language. {% assign timestamp="15:21" %}
 
 - **Continued discussion about CTV+CSFS advantages for BitVM:** developers
   continued the previous discussion (see [Newsletter #354][news354
@@ -122,7 +122,7 @@ Bitcoin's consensus rules._
   the proposed [OP_TXHASH][] opcode rather than CTV.  Chris Stewart
   [implemented][stewart ctvimp] some of the discussed ideas using Bitcoin Core's test
   software, validating those parts of the discussion and providing
-  concrete examples for reviewers.
+  concrete examples for reviewers. {% assign timestamp="22:57" %}
 
 - **Open letter about CTV and CSFS:** James O'Beirne [posted][obeirne letter] an open
   letter to the Bitcoin-Dev mailing signed by 66 individuals (as of this writing),
@@ -131,6 +131,8 @@ Bitcoin's consensus rules._
   integration of [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) and
   [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS) within the next six months." The
   thread contains over 60 replies.  Some technical highlights include:
+
+  {% assign timestamp="27:59" %}
 
   - *Concerns and alternatives to legacy support:* [BIP119][] specifies
     CTV for both witness script v1 ([tapscript][topic tapscript]) and legacy script.
@@ -302,7 +304,7 @@ Bitcoin's consensus rules._
   is subject to the witness discount, reducing onchain weight to about
   2,000 vbytes).  This is about 8,000 vbytes smaller than another
   `OP_CAT`-based quantum-resistant [Lamport signature][] scheme
-  [previously proposed][rubin lamport] by Jeremy Rubin.
+  [previously proposed][rubin lamport] by Jeremy Rubin. {% assign timestamp="1:12:27" %}
 
 - **Commit/reveal function for post-quantum recovery:** Tadge Dryja
   [posted][dryja fawkes] to the Bitcoin-Dev mailing list a method for allowing
@@ -354,7 +356,7 @@ Bitcoin's consensus rules._
   deployed as a soft fork, how the commitment byte could be
   reduced by half, and what users and software today can do to prepare
   for using this scheme---as well as limitations in this scheme for
-  users of both scripted and [scriptless multisignatures][topic multisignature].
+  users of both scripted and [scriptless multisignatures][topic multisignature]. {% assign timestamp="1:22:46" %}
 
 - **OP_TXHASH variant with support for transaction sponsorship:** Steven
   Roose [posted][roose txsighash] to Delving Bitcoin about a variation on `OP_TXHASH`
@@ -372,7 +374,7 @@ Bitcoin's consensus rules._
   inputs are “simple” key-spends, meaning that they could be aggregated
   if [CISA][topic cisa] were to be deployed."
 
-  As of this writing, the post had not received any public replies.
+  As of this writing, the post had not received any public replies. {% assign timestamp="1:53:31" %}
 
 ## Notable code and documentation changes
 
@@ -390,19 +392,19 @@ repo], and [BINANAs][binana repo]._
   specified block, primarily in a compact binary (.bin) format but also in .json
   and .hex variants. Although it was previously possible to do this with the
   `/rest/block/BLOCKHASH.json` endpoint, the new endpoint improves the
-  performance of external indexers by eliminating JSON serialization overhead.
+  performance of external indexers by eliminating JSON serialization overhead. {% assign timestamp="2:13:29" %}
 
 - [Bitcoin Core #32638][] adds validation to ensure that any block read from
   disk matches the expected block hash, catching bit rot and index mix-ups that
   could have gone unnoticed previously. Thanks to the header-hash cache
   introduced in [Bitcoin Core #32487][], this extra check is virtually
-  overhead-free.
+  overhead-free. {% assign timestamp="2:14:47" %}
 
 - [Bitcoin Core #32819][] and [#32530][Bitcoin Core #32530] set the maximum
   values for the `-maxmempool` and `-dbcache` startup parameters to 500 MB and 1
   GB respectively, on 32-bit systems. Since this architecture has a total RAM
   limit of 4 GB, values higher than the new limits could cause out of memory
-  (OOM) incidents.
+  (OOM) incidents. {% assign timestamp="2:15:25" %}
 
 - [LDK #3618][] implements the client-side logic for [async payments][topic
   async payments], allowing an offline recipient node to prearrange [BOLT12
@@ -410,7 +412,7 @@ repo], and [BINANAs][binana repo]._
   node. The PR introduces an async receive offer cache inside `ChannelManager`
   that builds, stores, and persists offers and invoices. It also defines the new
   onion messages and hooks needed to communicate with the LSP and threads the
-  state machine through the `OffersMessageFlow`.
+  state machine through the `OffersMessageFlow`. {% assign timestamp="2:17:41" %}
 
 {% include snippets/recap-ad.md when="2025-07-08 16:30" %}
 {% include references.md %}
