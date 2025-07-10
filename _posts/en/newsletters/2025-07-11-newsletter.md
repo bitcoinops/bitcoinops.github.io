@@ -59,13 +59,29 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Core Lightning #8377][]
-  - BOLT11: Make payment secret field ('s') mandatory
-  - bolt11: don't accept wrong-length p, h, s or n fields.
+- [Core Lightning #8377][] tightens [BOLT11][] invoice parsing
+  requirements by mandating that senders not pay an invoice if a
+  [payment secret][topic payment secrets] is missing or if a mandatory
+  field such as p (payment hash), h (description hash), or s (secret),
+  has an incorrect length. These changes are made to align with the
+  recent specification updates (see Newsletters [#350][news350 bolts]
+  and [#358][news358 bolts]).
 
-- [BDK #1957][] feat(electrum): optimize merkle proof validation with batching
+- [BDK #1957][] introduces RPC batching for transaction history, merkle
+  proofs, and block header requests to optimize full scan and sync
+  performance with an Electrum backend. This PR also adds anchor caching
+  to skip Simple Payment Verification (SPV) (see Newsletter
+  [#312][news312 spv]) revalidation during a sync. Using sample data,
+  the author observed performance improvements of 8.14 seconds to 2.59
+  seconds with RPC call batching on a full scan and of 1.37 seconds to
+  0.85 seconds with caching during a sync.
 
-- [BIPs #1888][] 380: Disallow H as a hardened indicator
+- [BIPs #1888][] removes `H` as a hardened-path marker from [BIP380][],
+  leaving just the canonical `h` and the alternative `'`. The recent
+  Newsletter [#360][news360 bip380] had noted that grammar was clarified
+  to allow all three markers, but since few (if any) descriptor
+  implementations actually support it (neither Bitcoin Core nor
+  rust-miniscript do), the specification is tightened to disallow it.
 
 {% include snippets/recap-ad.md when="2025-07-15 16:30" %}
 {% include references.md %}
@@ -74,3 +90,7 @@ repo], and [BINANAs][binana repo]._
 [news358 descencrypt]: /en/newsletters/2025/06/13/#descriptor-encryption-library
 [dorman descom]: https://delvingbitcoin.org/t/a-rust-library-to-encode-descriptors-with-a-30-40-size-reduction/1804
 [descriptor-codec]: https://github.com/joshdoman/descriptor-codec
+[news350 bolts]: /en/newsletters/2025/04/18/#bolts-1242
+[news358 bolts]: /en/newsletters/2025/06/13/#bolts-1243
+[news312 spv]: /en/newsletters/2024/07/19/#bdk-1489
+[news360 bip380]: /en/newsletters/2025/06/27/#bips-1803
