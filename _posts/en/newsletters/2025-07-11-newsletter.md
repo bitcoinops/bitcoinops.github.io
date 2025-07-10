@@ -31,12 +31,57 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Improve TxOrphanage denial of service bounds][review club 31829] is a
+PR by [glozow][gh glozow] that changes `TxOrphanage` eviction logic to
+guarantee each peer the resources for at least 1 maximum-size package
+worth of orphan resolution. These new guarantees significantly improve
+[1-parent-1-child opportunistic package relay][1p1c relay],
+especially (but not only) under adversarial conditions.
+
+The PR modifies existing global orphanage limits, and introduces new
+per-peer ones. Together, they protect against both excessive memory
+usage and computational exhaustion. The PR also replaces the
+random eviction approach with an algorithmic one, calculating a per-peer
+DoS Score.
+
+_Note: the PR has undergone [a few significant changes][review club
+31829 changes] since the Review Club, most importantly using a latency
+score limit instead of an announcement limit._
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/32317#l-37FIXME"
+  q0="Why is the current TxOrphanage global maximum size limit of 100
+  transactions with random eviction problematic?"
+  a0="It allows a malicious peer to flood a node with orphan
+  transactions, eventually causing all legitimate transactions from
+  other peers to be evicted. This can be used to prevent opportunistic
+  1-parent-1-child transaction relay from succeeding, since the child wouldn't
+  be able to stay in the orphanage for long."
+  a0link="https://bitcoincore.reviews/31829#l-12"
+  q1="How does the new eviction algorithm work at a high level?"
+  a1="Eviction is no longer random. The algorithm identifies the
+  “worst-behaving” peer based on a “DoS score” and evicts the oldest
+  transaction announcement from that peer. This protects well-behaved
+  peers from having their transactions' children evicted by a
+  misbehaving peer."
+  a1link="https://bitcoincore.reviews/31829#l-19"
+  q2="Why is it desirable to allow peers to exceed their individual
+  limits while the global limits are not reached?"
+  a2="Peers may be using more resources simply because they are a
+  helpful peer, who's broadcasting useful transactions such as CPFPs."
+  a2link="https://bitcoincore.reviews/31829#l-25"
+  q3="The new algorithm evicts announcements instead of transactions.
+  What is the difference and why does it matter?"
+  a3="An announcement is a pair of a transaction and the peer who sent
+  it. By evicting announcements, a malicious peer cannot evict a
+  transaction that was also sent by an honest peer."
+  a3link="https://bitcoincore.reviews/31829#l-34"
+  q4="What is a peer’s “DoS Score” and how is it calculated?"
+  a4="A peer's DoS score is the maximum of its “memory score” (memory
+  used / memory reserved) and “CPU score” (announcements made /
+  announcement limit). Using a single combined score simplifies eviction
+  logic into a single loop that targets the peer most aggressively
+  exceeding either of its limits."
+  a4link="https://bitcoincore.reviews/31829#l-133"
 %}
 
 ## Releases and release candidates
@@ -94,3 +139,7 @@ repo], and [BINANAs][binana repo]._
 [news358 bolts]: /en/newsletters/2025/06/13/#bolts-1243
 [news312 spv]: /en/newsletters/2024/07/19/#bdk-1489
 [news360 bip380]: /en/newsletters/2025/06/27/#bips-1803
+[review club 31829]: https://bitcoincore.reviews/31829
+[gh glozow]: https://github.com/glozow
+[review club 31829 changes]: https://github.com/bitcoin/bitcoin/pull/31829#issuecomment-3046495307
+[1p1c relay]: /en/bitcoin-core-28-wallet-integration-guide/#one-parent-one-child-1p1c-relay
