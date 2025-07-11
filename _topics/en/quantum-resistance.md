@@ -76,6 +76,12 @@ optech_mentions:
   - title: Report about quantum computing and Bitcoin
     url: /en/newsletters/2025/06/06/#quantum-computing-report
 
+  - title: "Prototype implementation of Winternitz signatures for Bitcoin using `OP_CAT`"
+    url: /en/newsletters/2025/07/04/#op-cat-enables-winternitz-signatures
+
+  - title: "Commit/reveal function for post-quantum recovery of insecure bitcoins"
+    url: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

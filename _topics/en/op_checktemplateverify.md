@@ -163,6 +163,15 @@ optech_mentions:
   - title: "Description of benefits to BitVM from `OP_CTV` and `OP_CSFS`"
     url: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
 
+  - title: "Claim that `OP_CTV` and `OP_CSFS` would provide advantages for using PTLCs"
+    url: /en/newsletters/2025/07/04/#ctv-csfs-advantages-for-ptlcs
+
+  - title: "Continued discussion about CTV+CSFS advantages for BitVM"
+    url: /en/newsletters/2025/07/04/#continued-discussion-about-ctv-csfs-advantages-for-bitvm
+
+  - title: "Discussion of open letter about CTV and CSFS"
+    url: /en/newsletters/2025/07/04/#open-letter-about-ctv-and-csfs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
