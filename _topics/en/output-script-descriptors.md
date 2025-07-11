@@ -200,6 +200,12 @@ optech_mentions:
   - title: "New library for encrypting descriptors and miniscript to the included public keys"
     url: /en/newsletters/2025/06/13/#descriptor-encryption-library
 
+  - title: "New library for compressing descriptors and miniscript"
+    url: /en/newsletters/2025/07/11/#compressed-descriptors
+
+  - title: "Brainstorming how to use output script descriptors for CTV-style vaults"
+    url: /en/newsletters/2025/07/04/#vault-output-script-descriptor
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

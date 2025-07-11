@@ -78,6 +78,9 @@ optech_mentions:
   - title: "Creating contract-level relative timelocks and Chia-style singletons with `OP_CAT`"
     url: /en/newsletters/2025/01/10/#contract-level-relative-timelocks
 
+  - title: "Prototype implementation of Winternitz signatures for Bitcoin using `OP_CAT`"
+    url: /en/newsletters/2025/07/04/#op-cat-enables-winternitz-signatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKSIGFROMSTACK
