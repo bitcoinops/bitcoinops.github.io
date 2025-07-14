@@ -41,7 +41,7 @@ eines Latenz-Score-Limits anstelle eines Announcement-Limits besteht._
   a0="Es ermöglicht einem bösartigen Peer, einen Knoten mit Orphan-Transaktionen zu überlasten und schließlich alle legitimen Transaktionen anderer Peers zu verdrängen. Dies kann genutzt werden, um die opportunistische 1-parent-1-child-Transaktions-Weiterleitung am Erfolg zu hindern, da die Kind-Transaktion nicht lange im temporären Speicher (Orphanage) bleiben könnte."
   a0link="https://bitcoincore.reviews/31829#l-12"
   q1="Wie funktioniert der Eviction-Algorithmus auf hoher Ebene?"
-  a1="Eviction ist nicht mehr zufällig. Der Algorithmus identifiziert den \"schlechtesten\" Peer basierend auf einem \"DoS-Score\" und verdrängt die älteste Transaktionsankündigung von diesem Peer. Dies schützt wohlverhaltene Peers davor, dass ihre Transaktions-Kinder von einem fehlverhaltenden Peer verdrängt werden."
+  a1="Eviction ist nicht mehr zufällig. Der Algorithmus identifiziert den \"schlechtesten\" Peer basierend auf einem \"DoS-Score\" und verdrängt die älteste Transaktionsankündigung von diesem Peer. Dies schützt wohlverhaltende Peers davor, dass ihre Transaktions-Kinder von einem fehlverhaltenden Peer verdrängt werden."
   a1link="https://bitcoincore.reviews/31829#l-19"
   q2="Warum ist es wünschenswert, Peers zu erlauben, ihre individuellen Limits zu überschreiten, während die globalen Limits nicht erreicht sind?"
   a2="Peers verwenden möglicherweise mehr Ressourcen, einfach weil sie ein hilfreicher Peer sind, der nützliche Transaktionen wie CPFPs weiterleitet."
