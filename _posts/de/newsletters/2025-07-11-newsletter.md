@@ -34,7 +34,7 @@ Speichernutzung als auch vor rechnerischer Erschöpfung. Der PR ersetzt auch den
 berechnet einen Per-Peer-DoS-Score.
 
 _Hinweis: Der PR hat [einige bedeutende Änderungen][review club 31829 changes] seit dem Review Club durchlaufen, wobei die wichtigste in der Verwendung
-eines Latenz-Score-Limits anstelle eines Announcement-Limits._
+eines Latenz-Score-Limits anstelle eines Announcement-Limits besteht._
 
 {% include functions/details-list.md
   q0="Warum ist das aktuelle globale TxOrphanage-Maximum von 100 Transaktionen mit zufälliger Eviction problematisch?"
