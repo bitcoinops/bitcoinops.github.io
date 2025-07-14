@@ -33,7 +33,7 @@ Der PR modifiziert bestehende globale Orphanage-Limits und führt neue Per-Peer-
 Speichernutzung als auch vor rechnerischer Erschöpfung. Der PR ersetzt auch den zufälligen Eviction-Ansatz durch einen algorithmischen und
 berechnet einen Per-Peer-DoS-Score.
 
-_Hinweis: Der PR hat [einige bedeutende Änderungen][review club 31829 changes] seit dem Review Club durchlaufen, am wichtigsten die Verwendung
+_Hinweis: Der PR hat [einige bedeutende Änderungen][review club 31829 changes] seit dem Review Club durchlaufen, wobei die wichtigste in der Verwendung
 eines Latenz-Score-Limits anstelle eines Announcement-Limits._
 
 {% include functions/details-list.md
