@@ -22,7 +22,7 @@ notable changes to popular Bitcoin infrastructure software.
   especially useful when descriptors are backed up using QR codes.  His
   post goes into the details of the encoding and mentions that he plans
   to incorporate the compression into his encrypted descriptors backup
-  library (see [Newsletter #358][news358 descencrypt]).
+  library (see [Newsletter #358][news358 descencrypt]). {% assign timestamp="0:34" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -84,6 +84,8 @@ score limit instead of an announcement limit._
   a4link="https://bitcoincore.reviews/31829#l-133"
 %}
 
+{% assign timestamp="9:14" %}
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -91,7 +93,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [LND v0.19.2-beta.rc2][] is a release candidate for a maintenance
-  version of this popular LN node.
+  version of this popular LN node. {% assign timestamp="46:22" %}
 
 ## Notable code and documentation changes
 
@@ -110,7 +112,7 @@ repo], and [BINANAs][binana repo]._
   field such as p (payment hash), h (description hash), or s (secret),
   has an incorrect length. These changes are made to align with the
   recent specification updates (see Newsletters [#350][news350 bolts]
-  and [#358][news358 bolts]).
+  and [#358][news358 bolts]). {% assign timestamp="47:17" %}
 
 - [BDK #1957][] introduces RPC batching for transaction history, merkle
   proofs, and block header requests to optimize full scan and sync
@@ -119,14 +121,14 @@ repo], and [BINANAs][binana repo]._
   [#312][news312 spv]) revalidation during a sync. Using sample data,
   the author observed performance improvements of 8.14 seconds to 2.59
   seconds with RPC call batching on a full scan and of 1.37 seconds to
-  0.85 seconds with caching during a sync.
+  0.85 seconds with caching during a sync. {% assign timestamp="50:41" %}
 
 - [BIPs #1888][] removes `H` as a hardened-path marker from [BIP380][],
   leaving just the canonical `h` and the alternative `'`. The recent
   Newsletter [#360][news360 bip380] had noted that grammar was clarified
   to allow all three markers, but since few (if any) descriptor
   implementations actually support it (neither Bitcoin Core nor
-  rust-miniscript do), the specification is tightened to disallow it.
+  rust-miniscript do), the specification is tightened to disallow it. {% assign timestamp="51:18" %}
 
 {% include snippets/recap-ad.md when="2025-07-15 16:30" %}
 {% include references.md %}
