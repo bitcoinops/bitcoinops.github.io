@@ -21,7 +21,27 @@ _No significant news this week was found in any of our [sources][]._
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Floresta v0.8.0 released:**
+  The [Floresta v0.8.0][floresta v0.8.0] release of this [Utreexo][topic utreexo] node adds support for [version 2 P2P
+  transport (BIP324)][topic v2 p2p transport], [testnet4][topic testnet],
+  enhanced metrics and monitoring, among other features and bugfixes.
+
+- **RGB v0.12 announced:**
+  The RGB v0.12 [blog post][rgb blog] announces the release of RBG's consensus
+  layer for RGB's [client-side validated][topic client-side validation] smart
+  contracts on Bitcoin testnet and mainnet.
+
+- **FROST signing device available:**
+  [Frostsnap][frostsnap website] signing devices support k-of-n [threshold signing][topic
+  threshold signature] using the FROST protocol, with only a single signature on chain.
+
+- **Gemini adds taproot support:**
+  Gemini Exchange and Gemini Custody add support for sending (withdrawing) to
+  [taproot][topic taproot] addresses.
+
+- **Electrum 4.6.0 released:**
+  [Electrum 4.6.0][electrum 4.6.0] adds support for [submarine swaps][topic
+  submarine swaps] using nostr for discoverability.
 
 ## Releases and release candidates
 
@@ -65,3 +85,7 @@ repo], and [BINANAs][binana repo]._
 {% include linkers/issues.md v=2 issues="32604,32618,31553,7725,2716,3628,3890,10001" %}
 [LND v0.19.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.2-beta
 [sources]: /en/internal/sources/
+[floresta v0.8.0]: https://github.com/vinteumorg/Floresta/releases/tag/v0.8.0
+[rgb blog]: https://rgb.tech/blog/release-v0-12-consensus/
+[frostsnap website]: https://frostsnap.com/
+[electrum 4.6.0]: https://github.com/spesmilo/electrum/releases/tag/4.6.0
