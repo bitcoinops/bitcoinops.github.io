@@ -26,8 +26,8 @@ und Antworten hervor. Klicken Sie auf eine Frage unten, um eine Zusammenfassung 
 
 [Improve TxOrphanage denial of service bounds][review club 31829] ist ein PR von [glozow][gh glozow], der die `TxOrphanage`-Eviction-Logik
 ändert, um jedem Peer die Ressourcen für mindestens 1 Paket maximaler Größe für die Orphan-Auflösung zu garantieren. Diese neuen Garantien
-verbessern die [1-parent-1-child opportunistische Paket-Weiterleitung][1p1c relay] erheblich, insbesondere (aber nicht nur) wenn
-böswillige Angreifer versuchen, das System zu manipulieren.
+verbessern die [1-parent-1-child opportunistische Paket-Weiterleitung][1p1c relay] erheblich, insbesondere (aber nicht nur) unter widrigen Bedingungen, wenn
+Angreifer versuchen, das System zu stören.
 
 Der PR modifiziert bestehende globale Orphanage-Limits und führt neue Per-Peer-Limits ein. Zusammen schützen sie sowohl vor übermäßiger
 Speichernutzung als auch vor rechnerischer Erschöpfung. Der PR ersetzt auch den zufälligen Eviction-Ansatz durch einen algorithmischen und
