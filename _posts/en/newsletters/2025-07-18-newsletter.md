@@ -64,21 +64,71 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #32604][] log: Mitigate disk filling attacks by rate limiting LogPrintf, LogInfo, LogWarning, LogError
+- [Bitcoin Core #32604][] rate-limits unconditional logging to disk such as for
+  `LogPrintf`, `LogInfo`, `LogWarning` and `LogError` to mitigate disk-filling
+  attacks by giving each source location a 1 MB per hour quota. All log lines
+  are prefixed with an asterisk (*) when any source location is suppressed.
+  Console output, logs with an explicit category argument, and `UpdateTip`
+  Initial Block Download (IBD) messages are exempt from rate limits. When the
+  quota resets, Core prints the number of bytes that were dropped.
 
-- [Bitcoin Core #32618][] wallet: Remove ISMINE_WATCHONLY and watchonly from RPCs
+- [Bitcoin Core #32618][] removes the `include_watchonly` option and its
+  variants, as well as the `iswatchonly` field from all wallet RPCs because
+  [descriptor][topic descriptors] wallets don’t support mixing watch-only and
+  spendable descriptors. Previously, users could import a watch-only address or
+  script into a legacy spending wallet. However, legacy wallets have now been
+  removed.
 
-- [Bitcoin Core #31553][] cluster mempool: add TxGraph reorg functionality
+- [Bitcoin Core #31553][] adds block reorg handling to the [cluster
+  mempool][topic cluster mempool] project by introducing the `TxGraph::Trim()`
+  function. When a reorg reintroduces previously confirmed transactions to the
+  mempool and the resulting combined cluster exceeds cluster count or weight
+  policy limits, `Trim()` builds a feerate-ordered, dependency‑respecting,
+  rudimentary linearization. If adding a transaction would breach a limit, that
+  transaction and all its descendants are dropped.
 
-- [Core Lightning #7725][] logs: A basic javascript log viewer
+- [Core Lightning #7725][] adds a lightweight JavaScript log viewer that loads
+  CLN log files in a browser and allows users to filter messages by daemon,
+  type, channel, or regex. This tool adds minimal repository maintenance
+  overhead while improving the debugging experience for developers and node
+  runners.
 
-- [Eclair #2716][] Endorse htlc and local reputation
+- [Eclair #2716][] implements a local peer-reputation system for [HTLC
+  endorsement][topic htlc endorsement] that tracks the routing fees earned by
+  each incoming peer versus the fees that should have been earned based on the
+  liquidity and [HTLC][topic htlc] slots used. Successful payments result in a
+  perfect score, failed payments lower it, and HTLCs that remain pending past
+  the configured threshold are heavily penalized. When forwarding, the node
+  includes its current peer score in the `update_add_htlc` endorsement TLV (see
+  Newsletter [#315][news315 htlc]). Operators can adjust the reputation decay
+  (`half-life`), the stuck payment threshold (`max-relay-duration`), the penalty
+  weight for stuck HTLCs (`pending-multiplier`), or simply disable the
+  reputation system entirely in the configuration. This PR primarily collects
+  data to improve [channel jamming attack][topic channel jamming attacks]
+  research and does not yet implement penalties.
 
-- [LDK #3628][] Static invoice server
+- [LDK #3628][] implements the server-side logic for [async payments][topic
+  async payments], allowing an LSP node to provide [BOLT12][topic offers] static
+  invoices on behalf of an often-offline recipient. The LSP node can accept
+  `ServeStaticInvoice` messages from the recipient, store the provided static
+  invoices, and respond to payer invoice requests by searching for and returning
+  the cached invoice via [blinded paths][topic rv routing].
 
-- [LDK #3890][] Use `cost / path amt limit` as the pathfinding score, not `cost`
+- [LDK #3890][] changes the way it scores routes in its pathfinding algorithm by
+  considering total cost divided by channel amount limit (cost per sat of usable
+  capacity) instead of considering only the raw total cost. This biases the
+  selection toward higher-capacity routes and reduces excessive [MPP][topic
+  multipath payments]  sharding, resulting in a higher payment success rate.
+  Although the change overly penalizes small channels, this tradeoff is
+  preferable to previous excessive sharding.
 
-- [LND #10001][] Enable quiescence in production and add timeout config
+- [LND #10001][] enables the quiescence protocol in production (see Newsletter
+  [#332][news332 quiescence]) and adds a new configuration value
+  `--htlcswitch.quiescencetimeout`, which specifies the maximum duration for
+  which a channel can be quiescent. The value ensures that dependent protocols,
+  such as [dynamic commitments][topic channel commitment upgrades], finish
+  within the timeout period. The default value is 60 seconds, and the minimum
+  value is 30 seconds.
 
 {% include snippets/recap-ad.md when="2025-07-22 16:30" %}
 {% include references.md %}
@@ -89,3 +139,5 @@ repo], and [BINANAs][binana repo]._
 [rgb blog]: https://rgb.tech/blog/release-v0-12-consensus/
 [frostsnap website]: https://frostsnap.com/
 [electrum 4.6.0]: https://github.com/spesmilo/electrum/releases/tag/4.6.0
+[news315 htlc]: /en/newsletters/2024/08/09/#eclair-2884
+[news332 quiescence]: /en/newsletters/2024/12/06/#lnd-8270
