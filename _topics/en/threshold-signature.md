@@ -64,6 +64,9 @@ optech_mentions:
   - title: "FROSTR library for k-of-n signing and key management on nostr"
     url: /en/newsletters/2025/03/21/#frostr-protocol-announced
 
+  - title: "Frostsnap signing devices support k-of-n threshold signing"
+    url: /en/newsletters/2025/07/18/#frost-signing-device-available
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignature
