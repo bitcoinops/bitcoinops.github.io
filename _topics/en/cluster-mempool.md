@@ -97,6 +97,9 @@ optech_mentions:
   - title: "Relay censorship resistance using cluster mempool and efficient set reconciliation"
     url: /en/newsletters/2025/06/13/#relay-censorship-resistance-through-top-mempool-set-reconciliation
 
+  - title: "Bitcoin Core #31553 adds block reorg handling to the cluster mempool project"
+    url: /en/newsletters/2025/07/18/#bitcoin-core-31553
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay

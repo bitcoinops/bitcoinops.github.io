@@ -63,6 +63,9 @@ optech_mentions:
   - title: "LDK #3618 implements the client-side logic for async payments"
     url: /en/newsletters/2025/07/04/#ldk-3618
 
+  - title: "LDK #3628 implements the server-side logic for async payments"
+    url: /en/newsletters/2025/07/18/#ldk-3628
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Trampoline payments
