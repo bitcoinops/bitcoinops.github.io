@@ -131,4 +131,4 @@ repo]._
 [review club 31829]: https://bitcoincore.reviews/31829
 [gh glozow]: https://github.com/glozow
 [review club 31829 changes]: https://github.com/bitcoin/bitcoin/pull/31829#issuecomment-3046495307
-[1p1c relay]: /en/bitcoin-core-28-wallet-integration-guide/#one-parent-one-child-1p1c-relay
+[1p1c relay]: /fr/bitcoin-core-28-wallet-integration-guide/#relais-un-parent-un-enfant-1p1c
