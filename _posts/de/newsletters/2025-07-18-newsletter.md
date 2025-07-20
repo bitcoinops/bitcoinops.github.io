@@ -76,7 +76,7 @@ _Wichtige kürzliche Änderungen in [Bitcoin Core][bitcoin core repo], [Core Lig
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="32604,32618,31553,7725,2716,3628,3890,10001" %}
 [LND v0.19.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.2-beta
-[sources]: /en/internal/sources/
+[Quellen]: /en/internal/sources/
 [floresta v0.8.0]: https://github.com/vinteumorg/Floresta/releases/tag/v0.8.0
 [rgb blog]: https://rgb.tech/blog/release-v0-12-consensus/
 [frostsnap website]: https://frostsnap.com/
