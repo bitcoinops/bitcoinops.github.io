@@ -27,7 +27,7 @@ wallets and services.*
   enhanced metrics and monitoring, among other features and bugfixes.
 
 - **RGB v0.12 announced:**
-  The RGB v0.12 [blog post][rgb blog] announces the release of RBG's consensus
+  The RGB v0.12 [blog post][rgb blog] announces the release of RGB's consensus
   layer for RGB's [client-side validated][topic client-side validation] smart
   contracts on Bitcoin testnet and mainnet.
 
