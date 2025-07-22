@@ -24,24 +24,24 @@ wallets and services.*
 - **Floresta v0.8.0 released:**
   The [Floresta v0.8.0][floresta v0.8.0] release of this [Utreexo][topic utreexo] node adds support for [version 2 P2P
   transport (BIP324)][topic v2 p2p transport], [testnet4][topic testnet],
-  enhanced metrics and monitoring, among other features and bugfixes.
+  enhanced metrics and monitoring, among other features and bugfixes. {% assign timestamp="0:45" %}
 
 - **RGB v0.12 announced:**
   The RGB v0.12 [blog post][rgb blog] announces the release of RBG's consensus
   layer for RGB's [client-side validated][topic client-side validation] smart
-  contracts on Bitcoin testnet and mainnet.
+  contracts on Bitcoin testnet and mainnet. {% assign timestamp="20:38" %}
 
 - **FROST signing device available:**
   [Frostsnap][frostsnap website] signing devices support k-of-n [threshold signing][topic
-  threshold signature] using the FROST protocol, with only a single signature on chain.
+  threshold signature] using the FROST protocol, with only a single signature on chain. {% assign timestamp="25:34" %}
 
 - **Gemini adds taproot support:**
   Gemini Exchange and Gemini Custody add support for sending (withdrawing) to
-  [taproot][topic taproot] addresses.
+  [taproot][topic taproot] addresses. {% assign timestamp="29:44" %}
 
 - **Electrum 4.6.0 released:**
   [Electrum 4.6.0][electrum 4.6.0] adds support for [submarine swaps][topic
-  submarine swaps] using nostr for discoverability.
+  submarine swaps] using nostr for discoverability. {% assign timestamp="38:14" %}
 
 ## Releases and release candidates
 
@@ -51,7 +51,7 @@ release candidates._
 
 - [LND v0.19.2-beta][] is the release of a maintenance
   version of this popular LN node.  It "contains important bug fixes and
-  performance improvements."
+  performance improvements." {% assign timestamp="38:51" %}
 
 ## Notable code and documentation changes
 
@@ -70,14 +70,14 @@ repo], and [BINANAs][binana repo]._
   are prefixed with an asterisk (*) when any source location is suppressed.
   Console output, logs with an explicit category argument, and `UpdateTip`
   Initial Block Download (IBD) messages are exempt from rate limits. When the
-  quota resets, Core prints the number of bytes that were dropped.
+  quota resets, Core prints the number of bytes that were dropped. {% assign timestamp="39:38" %}
 
 - [Bitcoin Core #32618][] removes the `include_watchonly` option and its
   variants, as well as the `iswatchonly` field from all wallet RPCs because
   [descriptor][topic descriptors] wallets don’t support mixing watch-only and
   spendable descriptors. Previously, users could import a watch-only address or
   script into a legacy spending wallet. However, legacy wallets have now been
-  removed.
+  removed. {% assign timestamp="40:55" %}
 
 - [Bitcoin Core #31553][] adds block reorg handling to the [cluster
   mempool][topic cluster mempool] project by introducing the `TxGraph::Trim()`
@@ -85,13 +85,13 @@ repo], and [BINANAs][binana repo]._
   mempool and the resulting combined cluster exceeds cluster count or weight
   policy limits, `Trim()` builds a feerate-ordered, dependency‑respecting,
   rudimentary linearization. If adding a transaction would breach a limit, that
-  transaction and all its descendants are dropped.
+  transaction and all its descendants are dropped. {% assign timestamp="43:03" %}
 
 - [Core Lightning #7725][] adds a lightweight JavaScript log viewer that loads
   CLN log files in a browser and allows users to filter messages by daemon,
   type, channel, or regex. This tool adds minimal repository maintenance
   overhead while improving the debugging experience for developers and node
-  runners.
+  runners. {% assign timestamp="46:53" %}
 
 - [Eclair #2716][] implements a local peer-reputation system for [HTLC
   endorsement][topic htlc endorsement] that tracks the routing fees earned by
@@ -105,14 +105,14 @@ repo], and [BINANAs][binana repo]._
   weight for stuck HTLCs (`pending-multiplier`), or simply disable the
   reputation system entirely in the configuration. This PR primarily collects
   data to improve [channel jamming attack][topic channel jamming attacks]
-  research and does not yet implement penalties.
+  research and does not yet implement penalties. {% assign timestamp="47:23" %}
 
 - [LDK #3628][] implements the server-side logic for [async payments][topic
   async payments], allowing an LSP node to provide [BOLT12][topic offers] static
   invoices on behalf of an often-offline recipient. The LSP node can accept
   `ServeStaticInvoice` messages from the recipient, store the provided static
   invoices, and respond to payer invoice requests by searching for and returning
-  the cached invoice via [blinded paths][topic rv routing].
+  the cached invoice via [blinded paths][topic rv routing]. {% assign timestamp="52:19" %}
 
 - [LDK #3890][] changes the way it scores routes in its pathfinding algorithm by
   considering total cost divided by channel amount limit (cost per sat of usable
@@ -120,7 +120,7 @@ repo], and [BINANAs][binana repo]._
   selection toward higher-capacity routes and reduces excessive [MPP][topic
   multipath payments]  sharding, resulting in a higher payment success rate.
   Although the change overly penalizes small channels, this tradeoff is
-  preferable to previous excessive sharding.
+  preferable to previous excessive sharding. {% assign timestamp="53:22" %}
 
 - [LND #10001][] enables the quiescence protocol in production (see Newsletter
   [#332][news332 quiescence]) and adds a new configuration value
@@ -128,7 +128,7 @@ repo], and [BINANAs][binana repo]._
   which a channel can be quiescent. The value ensures that dependent protocols,
   such as [dynamic commitments][topic channel commitment upgrades], finish
   within the timeout period. The default value is 60 seconds, and the minimum
-  value is 30 seconds.
+  value is 30 seconds. {% assign timestamp="54:30" %}
 
 {% include snippets/recap-ad.md when="2025-07-22 16:30" %}
 {% include references.md %}
