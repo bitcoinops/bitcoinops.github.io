@@ -98,7 +98,18 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How does Bitcoin Core handle reorgs larger than 10 blocks?]({{bse}}127512)
+  TheCharlatan links to Bitcoin Core code that handles chain reorganizations by
+  only re-adding a maximum of 10 blocks worth of transactions to the mempool.
+
+- [Advantages of a signing device over an encrypted drive?]({{bse}}127596)
+  RedGrittyBrick points out that data on an encrypted drive can be extracted
+  while the drive is unencrypted whereas hardware signing devices are designed to
+  prevent this data extraction attack.
+
+- [Spending a taproot output through the keypath and scriptpath?]({{bse}}127601)
+  Antoine Poinsot details how the use of merkle trees, key tweaks, and leaf
+  scripts achieve taproot's keypath and scriptpath spending capabilities.
 
 ## Releases and release candidates
 
