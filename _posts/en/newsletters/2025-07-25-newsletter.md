@@ -109,7 +109,7 @@ answers posted since our last update.*
 
 - [Spending a taproot output through the keypath and scriptpath?]({{bse}}127601)
   Antoine Poinsot details how the use of merkle trees, key tweaks, and leaf
-  scripts achieve taproot's keypath and scriptpath spending capabilities.
+  scripts achieves taproot's keypath and scriptpath spending capabilities.
 
 ## Releases and release candidates
 
@@ -132,17 +132,49 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #32521][] policy: make pathological transactions packed with legacy sigops non-standard
+- [Bitcoin Core #32521][] makes legacy transactions with more than 2500
+  signature operations (sigops) non-standard in preparation for a potential
+  [consensus cleanup soft fork][topic consensus cleanup] upgrade that would
+  enforce the limit at the consensus level. If the softfork took place without
+  this change, miners who don’t upgrade could become targets of trivial DoS
+  attacks. See Newsletter [#340][news340 sigops] for additional details on the
+  legacy input sigops limit.
 
-- [Bitcoin Core #31829][] p2p: improve TxOrphanage denial of service bounds
+- [Bitcoin Core #31829][] adds resource limits to the orphan transaction
+  handler, `TxOrphanage` (See Newsletter [#304][news304 orphan]), to preserve
+  opportunistic one-parent-one-child (1p1c) [package relay][topic package relay]
+  in the face of DoS spam attacks. Four limits are enforced: a global cap
+  of 3,000 orphan announcements (to minimize CPU and latency cost), a proportional per‑peer
+  orphan announcements cap, a per‑peer weight reservation of 24 × 400 kWU, and a
+  variable global memory cap. When any limit is exceeded, the node evicts the
+  oldest orphan announcement from the peer that has used the most CPU or memory
+  relative to its allowance (highest Peer DoS Score). The PR also deletes the
+  `‑maxorphantxs` option (default 100), whose policy of evicting random
+  announcements allowed attackers to replace the entire orphan set and render
+  [1p1c relay][1p1c relay] useless.  See also [Newsletter #362][news362
+  orphan].
 
-- [LDK #3801][] joostjager/fulfill-hold-times
+- [LDK #3801][] extends [attributable failures][topic attributable failures] to
+  the payment success path by recording how long a node holds an [HTLC][topic
+  htlc] and propagating those hold‑time values upstream in the attribution
+  payload. Previously, LDK only tracked hold times for failed payments (see
+  Newsletter [#349][news349 attributable]).
 
-- [LDK #3842][] Add Shared Input support in interactive TX construction
+- [LDK #3842][] extends its [interactive transaction construction][topic dual
+  funding] state machine (See Newsletter [#295][news295 dual]) to handle the
+  signing coordination for shared inputs in [splicing][topic splicing]
+  transactions. The `prevtx` field of the `TxAddInput` message is made optional
+  to reduce memory usage and simplify validation.
 
-- [BIPs #1890][] Specify lexicographical order for fragment params
+- [BIPs #1890][] changes the separator parameter from `+` to `-` in [BIP77][]
+  because some HTML 2.0 URI libraries treat `+` as if it is a blank space. In
+  addition, fragment parameters must now be ordered lexicographically, rather
+  than in reverse, to simplify the async [payjoin][topic payjoin] protocol.
 
-- [BOLTs #1232][] Add `channel_type` context to Bolt9
+- [BOLTs #1232][] makes the `channel_type` field (see Newsletter [#165][news165
+  type]) mandatory when opening a channel because every implementation enforces
+  it. This PR also updates [BOLT9][] by adding a new context type `T` for
+  features that can be included in the `channel_type` field.
 
 {% include snippets/recap-ad.md when="2025-07-29 16:30" %}
 {% include references.md %}
@@ -152,3 +184,10 @@ repo], and [BINANAs][binana repo]._
 [mpc]: https://en.wikipedia.org/wiki/Secure_multi-party_computation
 [posner qc]: https://delvingbitcoin.org/t/post-quantum-hd-wallets-silent-payments-key-aggregation-and-threshold-signatures/1854
 [Libsecp256k1 v0.7.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.7.0
+[news340 sigops]: /en/newsletters/2025/02/07/#introduce-legacy-input-sigops-limit
+[news304 orphan]: /en/newsletters/2024/05/24/#bitcoin-core-30000
+[1p1c relay]: /en/bitcoin-core-28-wallet-integration-guide/#one-parent-one-child-1p1c-relay
+[news349 attributable]: /en/newsletters/2025/04/11/#ldk-2256
+[news295 dual]: /en/newsletters/2024/03/27/#ldk-2419
+[news165 type]: /en/newsletters/2021/09/08/#bolts-880
+[news362 orphan]: /en/newsletters/2025/07/11/#bitcoin-core-pr-review-club
