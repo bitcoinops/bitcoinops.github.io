@@ -71,6 +71,9 @@ optech_mentions:
   - title: "BIPs #1760 merges BIP53, which specifies a consensus change to forbid 64 byte transactions"
     url: /en/newsletters/2025/05/30/#bips-1760
 
+  - title: "Bitcoin Core #32521 makes legacy transactions with more than 2500 sigops non-standard"
+    url: /en/newsletters/2025/07/25/#bitcoin-core-32521
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation

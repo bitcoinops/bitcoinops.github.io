@@ -137,6 +137,9 @@ optech_mentions:
   - title: "Eclair #2963 implements one-parent-one-child (1p1c) package relay"
     url: /en/newsletters/2025/04/04/#eclair-2963
 
+  - title: "Bitcoin Core #31829 limits orphan transaction relay to preserve 1p1c package relay from DoS attacks"
+    url: /en/newsletters/2025/07/25/#bitcoin-core-31829
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

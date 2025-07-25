@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Commit/reveal function for post-quantum recovery of insecure bitcoins"
     url: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
 
+  - title: "Research indicates many Bitcoin primitives are compatible with quantum-resistant signatures"
+    url: /en/newsletters/2025/07/25/#research-indicates-common-bitcoin-primitives-are-compatible-with-quantum-resistant-signature-algorithms
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

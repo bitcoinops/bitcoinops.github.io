@@ -167,6 +167,9 @@ optech_mentions:
   - title: "Ruben Somsen responsibly disclosed a theoretical BIP30 consensus failure vulnerability"
     url: /en/newsletters/2025/05/09/#bip30-consensus-failure-vulnerability
 
+  - title: "Matt Morehouse responsibly disclosed a DoS vulnerability affecting LND"
+    url: /en/newsletters/2025/07/25/#lnd-gossip-filter-dos-vulnerability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

@@ -47,6 +47,9 @@ optech_mentions:
   - title: "LDK #3868 reduces the precision of HTLC hold time for attributable failures from 1ms to 100ms units"
     url: /en/newsletters/2025/06/27/#ldk-3868
 
+  - title: "LDK #3801 extends attributable failures to the payment success path"
+    url: /en/newsletters/2025/07/25/#ldk-3801
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
