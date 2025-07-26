@@ -68,8 +68,7 @@ résumés des modifications notables apportées aux logiciels d'infrastructure B
   renvoie l'argent au même modèle de script. Le post de Tan décrit comment cela peut être facilement
   accompli.
 
-- **La recherche indique que les primitives Bitcoin communes sont compatibles avec les algorithmes
-  de signature résistants aux quantiques :**
+- **La recherche indique que les primitives Bitcoin communes sont compatibles avec les algorithmes de signature résistants aux quantiques :**
   Jesse Posner a [posté][posner qc] sur Delving Bitcoin plusieurs liens vers des articles de recherche
   qui indiquent que les algorithmes de signature [résistants aux quantiques][topic quantum resistance]
   fournissent des primitives comparables à celles actuellement utilisées dans Bitcoin pour les
