@@ -55,7 +55,7 @@ _每月一节，摘要关于改变比特币共识规则的提案和讨论。_
 
     - *<!--static-state-->**静态状态：* 基于 CTV 的保险库相对于预签名保险库的一个声称的优势是，可能可以从静态备份中计算出恢复钱包所需的所有信息，例如[输出脚本描述符][topic descriptors]。然而，已经有关于预签名保险库的工作，也允许通过在链上交易中存储预签名状态的非确定性部分来实现静态备份（参见[周报 #255][news255 presig vault state]）。Optech 认为更高级的保险库也可以从静态状态恢复，但我们在截稿时尚未验证这一点。
 
-  - *<!responses-from-bitcoin-core-contributors-->**来自 Bitcoin Core 贡献者的回复：* 截至撰写本文时，Optech 识别的四位目前活跃的 Bitcoin Core 贡献者在邮件列表中回复了这封信。他们说：
+  - *<!--responses-from-bitcoin-core-contributors-->**来自 Bitcoin Core 贡献者的回复：* 截至撰写本文时，Optech 识别的四位目前活跃的 Bitcoin Core 贡献者在邮件列表中回复了这封信。他们说：
 
     - [Gregory Sanders][sanders ctvcom]：“这封信向技术社区征求反馈意见，而这是我的反馈意见。未部署的 BIP 多年来没有收到任何更新，通常不是提案健康的标志，当然也不是拒绝来自密切关注的人的技术建议的论据。我拒绝这种框架，它是将对该提案的更改门槛提高到仅存明显的破坏，并且我显然拒绝对 BIP119 的时间限制。我仍然认为 CTV（再次在能力意义上）+ CSFS 值得考虑，但这种方式肯定会让它失败。”
 
