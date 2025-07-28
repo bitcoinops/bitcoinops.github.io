@@ -172,7 +172,7 @@ repo]._
 [Libsecp256k1 v0.7.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.7.0
 [news340 sigops]: /fr/newsletters/2025/02/07/#introduire-une-limite-de-sigops-pour-les-entrees-legacy
 [news304 orphan]: /fr/newsletters/2024/05/24/#bitcoin-core-30000
-[1p1c relay]: /en/bitcoin-core-28-wallet-integration-guide/#one-parent-one-child-1p1c-relay
+[1p1c relay]: /fr/bitcoin-core-28-wallet-integration-guide/#relais-un-parent-un-enfant-1p1c
 [news349 attributable]: /fr/newsletters/2025/04/11/#ldk-2256
 [news295 dual]: /fr/newsletters/2024/03/27/#ldk-2419
 [news165 type]: /en/newsletters/2021/09/08/#bolts-880
