@@ -33,13 +33,13 @@ _每月一节，摘要关于改变比特币共识规则的提案和讨论。_
 
 - **<!--open-letter-about-ctv-and-csfs-->****关于 CTV 和 CSFS 的公开信：** James O'Beirne [发布][obeirne letter]了一封公开信给 Bitcoin-Dev 邮件列表，由 66 人（截至撰写本文时）签署，其中许多人是比特币相关项目的贡献者。信中“要求 Bitcoin Core 贡献者在接下来的六个月内优先审核和整合 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) 和 [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS)。” 该讨论包含超过 60 条回复。一些技术亮点包括：
 
-  - *<!--concerns-and-alternatives-to-legacy-support-->**对遗留支持的担忧和替代方案：* [BIP119][] 指定了 CTV 用于见证脚本 v1（[tapscript][topic tapscript]）和遗留脚本。Gregory Sanders [写道][sanders legacy]，“遗留脚本支持[...]显著增加了审核面，没有已知的能力增益，也没有已知的协议节省。” O'Beirne [回复][obeirne legacy]，遗留脚本支持在某些情况下可以节省大约 8 vbytes，但 Sanders [链接][sanders p2ctv]到他之前的 pay-to-CTV (P2CTV) 提议和概念验证实现，使这种节省在见证脚本中可用。
+  - *<!--concerns-and-alternatives-to-legacy-support-->对遗留支持的担忧和替代方案：* [BIP119][] 指定了 CTV 用于见证脚本 v1（[tapscript][topic tapscript]）和遗留脚本。Gregory Sanders [写道][sanders legacy]，“遗留脚本支持[...]显著增加了审核面，没有已知的能力增益，也没有已知的协议节省。” O'Beirne [回复][obeirne legacy]，遗留脚本支持在某些情况下可以节省大约 8 vbytes，但 Sanders [链接][sanders p2ctv]到他之前的 pay-to-CTV (P2CTV) 提议和概念验证实现，使这种节省在见证脚本中可用。
 
-  - *<!--limits-of-ctv-only-vault-support-->**仅 CTV 保险库支持的限制：* 签署者 Jameson Lopp [指出][lopp ctvvaults]，他“最感兴趣的是[保险库][topic vaults]，”开始了一场关于 CTV 保险库将提供的属性集、它们与今天使用预签名交易可部署的保险库的比较，以及它们是否在安全性上提供了有意义的改进（尤其是与需要额外共识更改的更高级保险库相比）的讨论。该讨论的关键要点包括：
+  - *<!--limits-of-ctv-only-vault-support-->仅 CTV 保险库支持的限制：* 签署者 Jameson Lopp [指出][lopp ctvvaults]，他“最感兴趣的是[保险库][topic vaults]，”开始了一场关于 CTV 保险库将提供的属性集、它们与今天使用预签名交易可部署的保险库的比较，以及它们是否在安全性上提供了有意义的改进（尤其是与需要额外共识更改的更高级保险库相比）的讨论。该讨论的关键要点包括：
 
-    - *<!--address-reuse-danger-->**地址重用的危险：* 预签名和 CTV 保险库都必须防止用户重用保险库地址，否则资金可能会丢失。可以通过两步保险库程序来实现这一点，要求两次链上交易将资金存入保险库。需要额外共识更改的更高级保险库不会有这个问题，允许即使是重用地址的存款（尽管这当然会[降低隐私][topic output linking]）。
+    - *<!--address-reuse-danger-->地址重用的危险：* 预签名和 CTV 保险库都必须防止用户重用保险库地址，否则资金可能会丢失。可以通过两步保险库程序来实现这一点，要求两次链上交易将资金存入保险库。需要额外共识更改的更高级保险库不会有这个问题，允许即使是重用地址的存款（尽管这当然会[降低隐私][topic output linking]）。
 
-    - *<!--theft-of-staged-funds-->**分阶段资金的盗窃：* 预签名和 CTV 保险库都允许授权取款的盗窃。例如，保险库用户 Bob 想要支付 1 BTC 给 Alice。使用预签名和 CTV 保险库，Bob 使用以下程序：
+    - *<!--theft-of-staged-funds-->分阶段资金的盗窃：* 预签名和 CTV 保险库都允许授权取款的盗窃。例如，保险库用户 Bob 想要支付 1 BTC 给 Alice。使用预签名和 CTV 保险库，Bob 使用以下程序：
 
       - 从他的保险库中提取 1 BTC（加上可能的费用）到一个临时等待地址。
 
@@ -51,11 +51,11 @@ _每月一节，摘要关于改变比特币共识规则的提案和讨论。_
 
       更高级的保险库不需要该等待步骤：Bob 的取款只能去 Alice 或安全地址。这防止了 Mallory 能够在取款和支出步骤之间窃取资金。
 
-    - *<!--key-deletion-->**密钥删除：* CTV 基础保险库相对于预签名保险库的一个优势是，它们不需要删除私钥以确保预签名交易集是唯一可用的支出选项。然而，Gregory Maxwell [指出][maxwell autodelete]，设计软件以在签署交易后立即删除密钥而不向用户暴露私钥是简单的。目前没有已知的硬件签名设备直接支持这一点，尽管至少有一个设备通过手动用户干预支持这一点——但同样，（据我们所知）即使是测试目前也没有硬件支持 CTV。更高级的保险库将共享 CTV 的无密钥优势，但也需要集成到软件和硬件中。
+    - *<!--key-deletion-->密钥删除：* CTV 基础保险库相对于预签名保险库的一个优势是，它们不需要删除私钥以确保预签名交易集是唯一可用的支出选项。然而，Gregory Maxwell [指出][maxwell autodelete]，设计软件以在签署交易后立即删除密钥而不向用户暴露私钥是简单的。目前没有已知的硬件签名设备直接支持这一点，尽管至少有一个设备通过手动用户干预支持这一点——但同样，（据我们所知）即使是测试目前也没有硬件支持 CTV。更高级的保险库将共享 CTV 的无密钥优势，但也需要集成到软件和硬件中。
 
-    - *<!--static-state-->**静态状态：* 基于 CTV 的保险库相对于预签名保险库的一个声称的优势是，可能可以从静态备份中计算出恢复钱包所需的所有信息，例如[输出脚本描述符][topic descriptors]。然而，已经有关于预签名保险库的工作，也允许通过在链上交易中存储预签名状态的非确定性部分来实现静态备份（参见[周报 #255][news255 presig vault state]）。Optech 认为更高级的保险库也可以从静态状态恢复，但我们在截稿时尚未验证这一点。
+    - *<!--static-state-->静态状态：* 基于 CTV 的保险库相对于预签名保险库的一个声称的优势是，可能可以从静态备份中计算出恢复钱包所需的所有信息，例如[输出脚本描述符][topic descriptors]。然而，已经有关于预签名保险库的工作，也允许通过在链上交易中存储预签名状态的非确定性部分来实现静态备份（参见[周报 #255][news255 presig vault state]）。Optech 认为更高级的保险库也可以从静态状态恢复，但我们在截稿时尚未验证这一点。
 
-  - *<!--responses-from-bitcoin-core-contributors-->**来自 Bitcoin Core 贡献者的回复：* 截至撰写本文时，Optech 识别的四位目前活跃的 Bitcoin Core 贡献者在邮件列表中回复了这封信。他们说：
+  - *<!--responses-from-bitcoin-core-contributors-->来自 Bitcoin Core 贡献者的回复：* 截至撰写本文时，Optech 识别的四位目前活跃的 Bitcoin Core 贡献者在邮件列表中回复了这封信。他们说：
 
     - [Gregory Sanders][sanders ctvcom]：“这封信向技术社区征求反馈意见，而这是我的反馈意见。未部署的 BIP 多年来没有收到任何更新，通常不是提案健康的标志，当然也不是拒绝来自密切关注的人的技术建议的论据。我拒绝这种框架，它是将对该提案的更改门槛提高到仅存明显的破坏，并且我显然拒绝对 BIP119 的时间限制。我仍然认为 CTV（再次在能力意义上）+ CSFS 值得考虑，但这种方式肯定会让它失败。”
 
@@ -65,7 +65,7 @@ _每月一节，摘要关于改变比特币共识规则的提案和讨论。_
 
     - [Sjors Provoost][provoost ctvcom]：“让我也谈谈我自己的动机。保险库似乎是提案启用的唯一功能，我个人认为重要到值得为之工作。[...] 直到最近，我似乎认为保险库的势头在于 OP_VAULT，而这反过来又需要 OP_CTV。但单一目的的操作码并不理想，所以这个项目似乎没有进展。[...] 相反，我不反对 CTV + CSFS；我没有看到它们有害的论据。由于几乎没有 MeVil 潜力，我也可以想象其他开发者小心地开发和推出这些更改。我只会关注这个过程。我_会_反对的是像共同签署人 Paul Sztorc 提议的基于 Python 的替代实现和激活客户端。”
 
-  - *<!--signatory-statements-->**签署者声明：* 信的签署者在后续声明中也澄清了他们的意图：
+  - *<!--signatory-statements-->签署者声明：* 信的签署者在后续声明中也澄清了他们的意图：
 
     - [James O'Beirne][obeirne ctvcom]：“每个签署者都明确希望看到 CTV+CSFS 的将被审核、整合和激活计划。”
 
