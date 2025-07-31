@@ -188,19 +188,42 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #29954][] RPC: Return `permitbaremultisig` and `maxdatacarriersize` in `getmempoolinfo`
+- [Bitcoin Core #29954][] extends the `getmempoolinfo` RPC by adding two relay
+  policy fields to its response object: `permitbaremultisig` (whether the node
+  relays bare multisig outputs) and `maxdatacarriersize` (the maximum aggregate
+  bytes allowed in OP_RETURN outputs for a transaction in the mempool). Other
+  policy flags, such as [`fullrbf`][topic rbf] and `minrelaytxfee`, were already
+  exposed, so these additions allow for a complete relay policy snapshot.
 
-- [Bitcoin Core #33004][] Enable `-natpmp` by default
+- [Bitcoin Core #33004][] enables the `-natpmp` option by default, allowing
+  automatic port forwarding via the [Port Control Protocol (PCP)][pcp] with a
+  fallback to the [NAT Port Mapping Protocol (NAT-PMP)][natpmp] (see Newsletter
+  [#323][news323 natpmp]). A listening node behind a router that supports either
+  PCP or NAT-PMP becomes reachable without manual configuration.
 
-- [LDK #3246][] Enable Creation of Offers and Refunds Without Blinded Path
+- [LDK #3246][] enables the creation of [BOLT12 offers][topic offers] and
+  refunds without a [blinded path][topic rv routing] by using the offer’s
+  `signing_pubkey` as the destination. The `create_offer_builder` and
+  `create_refund_builder` functions now delegate blinded path creation to
+  `MessageRouter::create_blinded_paths`, where a caller can generate a compact
+  path by passing `DefaultMessageRouter`, a full-length pubkey path with
+  `NodeIdMessageRouter`, or no path at all with `NullMessageRouter`.
 
-- [LDK #3892][] offer: make the merkle tree signature public
+- [LDK #3892][] exposes the merkle tree signature of [BOLT12][topic offers]
+  invoices publicly, enabling developers to build CLI tools or other software to
+  verify the signature or recreate invoices. This PR also adds an `OfferId`
+  field to BOLT12 invoices to track the originating offer.
 
-- [LDK #3662][] LSPS5 implementation
+- [LDK #3662][] implements [BLIPs #55][], also known as LSPS05, which defines
+  how clients can register for webhooks via an endpoint to receive push
+  notifications from an LSP. The API exposes additional endpoints that enable
+  clients to list all webhook registrations or remove a specific one. This can
+  be useful for clients to get notified when receiving an [async payment][topic
+  async payments].
 
 {% include snippets/recap-ad.md when="2025-08-05 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="29954,33004,3246,3892,3662" %}
+{% include linkers/issues.md v=2 issues="29954,33004,3246,3892,3662,55" %}
 [bitcoin core 29.1rc1]: https://bitcoincore.org/bin/bitcoin-core-29.1/
 [augur #3]: https://github.com/block/bitcoin-augur/issues/3
 [news315 cb]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
@@ -222,3 +245,6 @@ repo], and [BINANAs][binana repo]._
 [news348 destroy]: /en/newsletters/2025/04/04/#should-vulnerable-bitcoins-be-destroyed
 [black th]: https://mailing-list.bitcoindevs.xyz/bitcoindev/aG9FEHF1lZlK6d0E@console/
 [news361 bitvm]: /en/newsletters/2025/07/04/#continued-discussion-about-ctv-csfs-advantages-for-bitvm
+[news323 natpmp]: /en/newsletters/2024/10/04/#bitcoin-core-30043
+[pcp]: https://datatracker.ietf.org/doc/html/rfc6887
+[natpmp]: https://datatracker.ietf.org/doc/html/rfc6886
