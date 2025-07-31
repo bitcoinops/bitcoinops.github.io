@@ -24,7 +24,7 @@ popular Bitcoin infrastructure software.
   disclosed][topic responsible disclosures].  An attacker could
   repeatedly request historic gossip messages from an LND node until it
   ran out of memory and was terminated.  The vulnerability was fixed in
-  LND 0.18.3, released September 2024.
+  LND 0.18.3, released September 2024. {% assign timestamp="0:53" %}
 
 - **Chain code withholding for multisig scripts:** Jurvis Tan
   [posted][tan ccw] to Delving Bitcoin about research he performed with
@@ -76,7 +76,7 @@ popular Bitcoin infrastructure software.
 
   Some providers may require that the change output for a spending
   transaction sends the money back to the same script template.  Tan's
-  post describes how this can easily be accomplished.
+  post describes how this can easily be accomplished. {% assign timestamp="15:16" %}
 
 - **Research indicates common Bitcoin primitives are compatible with quantum-resistant signature algorithms:**
   Jesse Posner [posted][posner qc] to Delving Bitcoin several links to
@@ -85,7 +85,7 @@ popular Bitcoin infrastructure software.
   those currently used in Bitcoin for [BIP32 HD wallets][topic bip32],
   [silent payment addresses][topic silent payments], [scriptless
   multisignatures][topic multisignature], and [scriptless threshold
-  signatures][topic threshold signature].
+  signatures][topic threshold signature]. {% assign timestamp="38:46" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -100,16 +100,16 @@ answers posted since our last update.*
 
 - [How does Bitcoin Core handle reorgs larger than 10 blocks?]({{bse}}127512)
   TheCharlatan links to Bitcoin Core code that handles chain reorganizations by
-  only re-adding a maximum of 10 blocks worth of transactions to the mempool.
+  only re-adding a maximum of 10 blocks worth of transactions to the mempool. {% assign timestamp="57:36" %}
 
 - [Advantages of a signing device over an encrypted drive?]({{bse}}127596)
   RedGrittyBrick points out that data on an encrypted drive can be extracted
   while the drive is unencrypted whereas hardware signing devices are designed to
-  prevent this data extraction attack.
+  prevent this data extraction attack. {% assign timestamp="1:01:29" %}
 
 - [Spending a taproot output through the keypath and scriptpath?]({{bse}}127601)
   Antoine Poinsot details how the use of merkle trees, key tweaks, and leaf
-  scripts achieves taproot's keypath and scriptpath spending capabilities.
+  scripts achieves taproot's keypath and scriptpath spending capabilities. {% assign timestamp="1:03:21" %}
 
 ## Releases and release candidates
 
@@ -119,7 +119,7 @@ release candidates._
 
 - [Libsecp256k1 v0.7.0][] is a release of this library containing
   cryptographic primitives compatible with Bitcoin.  It contains a few
-  small changes that break API/ABI compatibility with previous releases.
+  small changes that break API/ABI compatibility with previous releases. {% assign timestamp="1:04:36" %}
 
 ## Notable code and documentation changes
 
@@ -138,7 +138,7 @@ repo], and [BINANAs][binana repo]._
   enforce the limit at the consensus level. If the softfork took place without
   this change, miners who don’t upgrade could become targets of trivial DoS
   attacks. See Newsletter [#340][news340 sigops] for additional details on the
-  legacy input sigops limit.
+  legacy input sigops limit. {% assign timestamp="1:05:16" %}
 
 - [Bitcoin Core #31829][] adds resource limits to the orphan transaction
   handler, `TxOrphanage` (See Newsletter [#304][news304 orphan]), to preserve
@@ -152,29 +152,29 @@ repo], and [BINANAs][binana repo]._
   `‑maxorphantxs` option (default 100), whose policy of evicting random
   announcements allowed attackers to replace the entire orphan set and render
   [1p1c relay][1p1c relay] useless.  See also [Newsletter #362][news362
-  orphan].
+  orphan]. {% assign timestamp="1:15:00" %}
 
 - [LDK #3801][] extends [attributable failures][topic attributable failures] to
   the payment success path by recording how long a node holds an [HTLC][topic
   htlc] and propagating those hold‑time values upstream in the attribution
   payload. Previously, LDK only tracked hold times for failed payments (see
-  Newsletter [#349][news349 attributable]).
+  Newsletter [#349][news349 attributable]). {% assign timestamp="1:19:51" %}
 
 - [LDK #3842][] extends its [interactive transaction construction][topic dual
   funding] state machine (See Newsletter [#295][news295 dual]) to handle the
   signing coordination for shared inputs in [splicing][topic splicing]
   transactions. The `prevtx` field of the `TxAddInput` message is made optional
-  to reduce memory usage and simplify validation.
+  to reduce memory usage and simplify validation. {% assign timestamp="1:21:11" %}
 
 - [BIPs #1890][] changes the separator parameter from `+` to `-` in [BIP77][]
   because some HTML 2.0 URI libraries treat `+` as if it is a blank space. In
   addition, fragment parameters must now be ordered lexicographically, rather
-  than in reverse, to simplify the async [payjoin][topic payjoin] protocol.
+  than in reverse, to simplify the async [payjoin][topic payjoin] protocol. {% assign timestamp="1:21:57" %}
 
 - [BOLTs #1232][] makes the `channel_type` field (see Newsletter [#165][news165
   type]) mandatory when opening a channel because every implementation enforces
   it. This PR also updates [BOLT9][] by adding a new context type `T` for
-  features that can be included in the `channel_type` field.
+  features that can be included in the `channel_type` field. {% assign timestamp="1:23:53" %}
 
 {% include snippets/recap-ad.md when="2025-07-29 16:30" %}
 {% include references.md %}
