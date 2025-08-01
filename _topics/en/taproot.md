@@ -248,6 +248,9 @@ optech_mentions:
   - title: "Core Lightning #7800 sets P2TR as the default script for anchor output spends and unilateral closes"
     url: /en/newsletters/2024/11/22/#core-lightning-7800
 
+  - title: "Paper analyzes the security of taproot commitments against quantum computers"
+    url: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
+
 ## Optional
 see_also:
   - title: MAST
