@@ -172,6 +172,9 @@ optech_mentions:
   - title: "Discussion of open letter about CTV and CSFS"
     url: /en/newsletters/2025/07/04/#open-letter-about-ctv-and-csfs
 
+  - title: "`OP_TEMPLATEHASH` proposal as an alternative to CTV"
+    url: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

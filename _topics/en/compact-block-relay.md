@@ -69,6 +69,9 @@ optech_mentions:
   - title: "Bitcoin Core #32582 adds logging to measure performance of compact block reconstruction"
     url: /en/newsletters/2025/06/06/#bitcoin-core-32582
 
+  - title: "Results from testing compact block relay prefilling"
+    url: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

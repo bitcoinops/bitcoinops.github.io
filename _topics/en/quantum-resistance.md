@@ -85,6 +85,12 @@ optech_mentions:
   - title: "Research indicates many Bitcoin primitives are compatible with quantum-resistant signatures"
     url: /en/newsletters/2025/07/25/#research-indicates-common-bitcoin-primitives-are-compatible-with-quantum-resistant-signature-algorithms
 
+  - title: "Discussion about forcing migration from quantum-vulnerable outputs"
+    url: /en/newsletters/2025/08/01/#migration-from-quantum-vulnerable-outputs
+
+  - title: "Paper analyzes the security of taproot commitments against quantum computers"
+    url: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
