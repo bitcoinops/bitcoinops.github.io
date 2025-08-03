@@ -1,5 +1,17 @@
 # Optech Style Guide für deutsche Übersetzungen
 
+## Referenzierung von Newslettern
+
+Beim Verweis auf einen einzelnen Newsletter wird die Form „[Newsletter #nnn]“ verwendet, z. B.:
+
+> (siehe auch [Newsletter #315][news315 cb])
+
+Bei Verweisen auf mehrere Newsletter werden die Nummern mit Kommas getrennt, z. B.:
+
+> (siehe Newsletter [#315], [#339], [#361])
+
+Diese Konvention gilt sowohl im Fließtext als auch in Aufzählungen. Die Referenzlinks werden wie im englischen Original am Ende der Datei gepflegt.
+
 ## Grundsätzliches
 
 Die deutsche Übersetzung von Optech-Inhalten sollte möglichst den Regeln des englischen [Hauptleitfaden](STYLE.md) folgen.
@@ -52,7 +64,6 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | lightning network       | Lightning Netzwerk       |                      |                                          |
 | node                    | Knoten                   | Node                 | Full Node wird nicht übersetzt           |
 | relay                   | Weiterleitung            |                      |                                          |
-| silent payment          | Stille Zahlung           |                      |                                          |
 | work                    | Arbeitsnachweis          | Arbeit               | Im Kontext von PoW                       |
 
 ---
@@ -100,6 +111,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | Reviewer                       | Softwarebegriff                                     | Maskulinum                 |
 | Rust Bitcoin                   | Produktname                                         |                            |
 | SCID                           | Protokoll-/Standardbegriff                          |                            |
+| Silent payment                 | Standardbegriff                                     |                            |
 | Simple Taproot Channels        | Lightning/DLC-Technik                               |                            |
 | Splice                         | Protokoll-/Standardbegriff                          |                            |
 | Splicing                       | Protokoll-/Standardbegriff                          | Neutrum                    |
