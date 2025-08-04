@@ -23,6 +23,9 @@ primary_sources:
   - title: "Shielded CSV: Private and Efficient Client-Side Validation"
     link: https://github.com/ShieldedCSV/ShieldedCSV/releases/latest/download/shieldedcsv.pdf
 
+  - title: "RGB I.0: Scalable Consensus for Client-Side Validated Smart Contracts"
+    link: https://yellowpaper.rgb.tech/
+
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
 optech_mentions:
@@ -46,6 +49,9 @@ optech_mentions:
 
   - title: "LND #8960 adds custom channel functionality for taproot assets"
     url: /en/newsletters/2024/10/11/#lnd-8960
+
+  - title: "RGB v0.12 announced"
+    url: /en/newsletters/2025/07/18/#rgb-v0-12-announced
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
