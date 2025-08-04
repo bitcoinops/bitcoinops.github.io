@@ -184,7 +184,7 @@ _Bedeutende aktuelle Änderungen in [Bitcoin Core][bitcoin core repo], [Core Lig
 
 - [LDK #3246][] ermöglicht die Erstellung von [BOLT12-Angeboten][topic offers] und Rückerstattungen
   ohne [Blinded Path][topic rv routing], indem der `signing_pubkey` des Angebots als Ziel verwendet wird.
-  Die Funktionen `create_offer_builder` und `create_refund_builder` delegieren die Erstellung des Blinded Path
+  Die Funktionen `create_offer_builder` und `create_refund_builder` delegieren die Erstellung des Blinded Paths
   nun an `MessageRouter::create_blinded_paths`. Ein Aufrufer kann so einen kompakten Pfad mit
   `DefaultMessageRouter`, einen vollständigen Pubkey-Pfad mit `NodeIdMessageRouter` oder gar keinen Pfad mit
   `NullMessageRouter` erzeugen.
