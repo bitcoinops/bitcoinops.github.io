@@ -107,7 +107,7 @@ Bitcoin-Konsensregeln._
     Softforks, die `OP_NOPx`-Opcodes neu belegen, müssen als `VERIFY`-Opcodes
     implementiert werden, die eine Transaktion bei Fehlschlag ungültig machen.
     Redefinitionen von `OP_SUCCESSx` können einfach `1` (Erfolg) oder `0` (Fehlschlag)
-    auf den Stack legen. Dadurch können sie direkt verwendet werden, wo bei
+    auf den Stack legen. Dadurch können sie auch dort direkt verwendet werden, wo bei
     `OP_NOPx`-Redefinitionen zusätzliche Bedingungen wie `OP_IF` nötig wären.
 
   - „Es verhindert unerwartete Eingaben mit ... `scriptSig`“ (siehe
