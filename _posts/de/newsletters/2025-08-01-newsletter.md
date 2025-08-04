@@ -45,7 +45,7 @@ sowie einer Übersicht wichtiger Änderungen an beliebter Bitcoin-Infrastruktur-
   und festgestellt, dass Augur eine niedrige Fehlerrate (über 85 % der
   Transaktionen werden im gewünschten Zeitfenster bestätigt) und eine geringe
   durchschnittliche Überschätzung (Transaktionen zahlen im Schnitt nur etwa 16 % zu
-  viel Gebühr).
+  viel Gebühr) aufweist.
 
   Abubakar Sadiq Ismail [antwortete][ismail estimation] im Delving-Thread und
   eröffnete zudem ein informatives [Issue][augur #3] im Augur-Repository, um einige
