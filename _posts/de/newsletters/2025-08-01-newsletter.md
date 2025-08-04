@@ -34,7 +34,7 @@ sowie einer Übersicht wichtiger Änderungen an beliebter Bitcoin-Infrastruktur-
     zusätzlichen Roundtrip, was den Vorteil in diesen Fällen aufhob und die Leistung
     leicht verschlechterte. Viele Prefills hätten jedoch so konstruiert werden können,
     dass das Problem vermieden wird, wodurch die Rekonstruktionsrate auf etwa 93 %
-    stieg und weitere Verbesserungen möglich bleiben.
+    steigt und weitere Verbesserungen möglich bleiben.
 
 - **Mempool-basierte Gebührenabschätzungs-Bibliothek:** Lauren Shareshian
   [kündigte][shareshian estimation] auf Delving Bitcoin eine von Block entwickelte
