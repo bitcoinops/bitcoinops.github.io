@@ -42,7 +42,7 @@ sowie einer Übersicht wichtiger Änderungen an beliebter Bitcoin-Infrastruktur-
   anderen Tools nutzt sie ausschließlich den Zufluss von Transaktionen in den
   Mempool eines Knotens als Grundlage für ihre Schätzungen. Im Beitrag wird die
   Bibliothek „Augur“ mit mehreren anderen Gebührenabschätzungsdiensten verglichen
-  und festgestellt, dass Augur eine niedrige Fehlerrate aufweist (über 85 % der
+  und festgestellt, dass Augur eine niedrige Fehlerrate (über 85 % der
   Transaktionen werden im gewünschten Zeitfenster bestätigt) und eine geringe
   durchschnittliche Überschätzung (Transaktionen zahlen im Schnitt nur etwa 16 % zu
   viel Gebühr).
