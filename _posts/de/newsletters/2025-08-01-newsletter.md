@@ -28,7 +28,7 @@ sowie einer Übersicht wichtiger Änderungen an beliebter Bitcoin-Infrastruktur-
 
   - Unabhängig vom Netzwerktransport erhöhte eine einfache Regel zur Auswahl der
     zu prefillenden Transaktionen die Erfolgsrate der Blockrekonstruktion von etwa
-    62 % auf etwa 98 %.
+    62 % auf etwa 98 %.
 
   - Unter Berücksichtigung des Netzwerktransports führten einige Prefills zu einem
     zusätzlichen Roundtrip, was den Vorteil in diesen Fällen aufhob und die Leistung
