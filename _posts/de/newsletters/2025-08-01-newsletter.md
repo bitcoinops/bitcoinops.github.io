@@ -179,7 +179,7 @@ _Bedeutende aktuelle Änderungen in [Bitcoin Core][bitcoin core repo], [Core Lig
 - [Bitcoin Core #33004][] aktiviert die Option `-natpmp` standardmäßig, wodurch automatische
   Portweiterleitung über das [Port Control Protocol (PCP)][pcp] mit Fallback auf das
   [NAT Port Mapping Protocol (NAT-PMP)][natpmp] ermöglicht wird (siehe
-  [Newsletter #323][news323 natpmp]). Ein lauschender Knoten hinter einem Router, der PCP oder NAT-PMP
+  [Newsletter #323][news323 natpmp]). Ein empfangender Knoten hinter einem Router, der PCP oder NAT-PMP
   unterstützt, wird dadurch ohne manuelle Konfiguration erreichbar.
 
 - [LDK #3246][] ermöglicht die Erstellung von [BOLT12-Angeboten][topic offers] und Rückerstattungen
