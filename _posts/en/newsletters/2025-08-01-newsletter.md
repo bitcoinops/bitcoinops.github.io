@@ -63,9 +63,9 @@ Bitcoin's consensus rules._
   proposal for phasing out spending from [quantum-vulnerable
   outputs][topic quantum resistance].
 
-  - Three years after consensus activation of the
-    [BIP360][] quantum-resistant signature scheme (or an alternative scheme),
-    a soft fork would reject transactions with outputs paying
+  - Three years after consensus activation of the [BIP360][]
+    quantum-resistant signature scheme (or an alternative scheme), a
+    soft fork would reject transactions with outputs paying
     quantum-vulnerable addresses.  Only spends to quantum-resistant
     outputs would be allowed.
 
@@ -103,8 +103,7 @@ Bitcoin's consensus rules._
     [taproot][topic taproot], simplifying implementation for any
     software that already supports taproot.
 
-  - It commits to the taproot
-    [annex][topic annex], which `OP_CTV` does
+  - It commits to the taproot [annex][topic annex], which `OP_CTV` does
     not.  One way this can be used is to ensure some data is published
     as part of a transaction, such as data used in a contract protocol
     to allow a counterparty to recover from publication of an old state.

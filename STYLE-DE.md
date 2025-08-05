@@ -8,7 +8,7 @@ Beim Verweis auf einen einzelnen Newsletter wird die Form „[Newsletter #nnn]�
 
 Bei Verweisen auf mehrere Newsletter werden die Nummern mit Kommas getrennt, z. B.:
 
-> (siehe Newsletter [#315], [#339], [#361])
+> (siehe Newsletter [#315], [#339] und [#361])
 
 Diese Konvention gilt sowohl im Fließtext als auch in Aufzählungen. Die Referenzlinks werden wie im englischen Original am Ende der Datei gepflegt.
 
@@ -62,6 +62,7 @@ Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://ww
 | fee                     | Gebühr                   |                      |                                          |
 | funds                   | Kapital                  |                      |                                          |
 | lightning network       | Lightning Netzwerk       |                      |                                          |
+| listening node          | empfangender Knoten      | lauschender Knoten   | "lauschend" hat Konnotation des Abhörens |
 | node                    | Knoten                   | Node                 | Full Node wird nicht übersetzt           |
 | relay                   | Weiterleitung            |                      |                                          |
 | work                    | Arbeitsnachweis          | Arbeit               | Im Kontext von PoW                       |
