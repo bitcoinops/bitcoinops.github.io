@@ -33,7 +33,7 @@ sowie einer Übersicht wichtiger Änderungen an beliebter Bitcoin-Infrastruktur-
   - Unter Berücksichtigung des Netzwerktransports führten einige Prefills zu einem
     zusätzlichen Roundtrip, was den Vorteil in diesen Fällen aufhob und die Leistung
     leicht verschlechterte. Viele Prefills hätten jedoch so konstruiert werden können,
-    dass das Problem vermieden wird, wodurch die Rekonstruktionsrate auf etwa 93 %
+    dass das Problem vermieden wird, wodurch die Rekonstruktionsrate auf etwa 93 %
     steigt und weitere Verbesserungen möglich bleiben.
 
 - **Mempool-basierte Gebührenabschätzungs-Bibliothek:** Lauren Shareshian
