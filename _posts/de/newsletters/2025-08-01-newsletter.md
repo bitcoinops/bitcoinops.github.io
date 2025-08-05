@@ -18,7 +18,7 @@ sowie einer Übersicht wichtiger Änderungen an beliebter Bitcoin-Infrastruktur-
 
 - **Test zu Compact-Block-Prefilling:** David Gumberg [antwortete][gumberg prefilling]
   in einem Delving-Bitcoin-Thread zur Effizienz der Compact-Block-Rekonstruktion
-  (siehe auch [Newsletter #315][news315 cb] und [#339][news339 cb]) mit einer
+  (siehe auch Newsletter [#315][news315 cb] und [#339][news339 cb]) mit einer
   Zusammenfassung seiner Testergebnisse zum [Compact-Block-Relay][topic compact block relay]
   und dem sogenannten Prefilling. Dabei sendet ein Knoten proaktiv einige oder alle
   Transaktionen eines neuen Blocks an seine Peers, wenn er annimmt, dass diese die
