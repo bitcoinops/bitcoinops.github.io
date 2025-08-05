@@ -153,7 +153,7 @@ Bitcoin-Konsensregeln._
   Bitcoin quantenresistent gemacht werden, indem Keypath-Spends deaktiviert und
   quantenresistente Signatur-OpCodes zu [Tapscript][topic tapscript] hinzugefügt werden.
   Ein aktuelles Update zu [BIP360][] pay-to-quantum-resistant-hash, das Ethan Heilman
-  [veröffentlichte][heilman bip360], schlägt genau diese Änderung vor.
+  [veröffentlichte][heilman bip360], schlägt einen neuen Ausgabentyp vor, der P2TR ähnelt aber die Möglichkeit des Keypath-Spend entfernt.
 
 ## Releases und Release-Kandidaten
 
