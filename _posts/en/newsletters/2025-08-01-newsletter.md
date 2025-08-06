@@ -38,6 +38,8 @@ infrastructure software.
     likely reconstruction rate to about 93% and still supporting further
     improvements.
 
+  {% assign timestamp="1:13:00" %}
+
 - **Mempool-based fee estimation library:** Lauren Shareshian
   [posted][shareshian estimation] to Delving Bitcoin to announce a
   library for [fee estimation][topic fee estimation] developed by Block.
@@ -51,7 +53,7 @@ infrastructure software.
 
   Abubakar Sadiq Ismail [replied][ismail estimation] to the Delving
   thread and also started an informative [issue][augur #3] on the Augur
-  repository for examining some of the assumptions used by the library.
+  repository for examining some of the assumptions used by the library. {% assign timestamp="1:33:53" %}
 
 ## Changing consensus
 
@@ -83,7 +85,7 @@ Bitcoin's consensus rules._
   spending quantum-vulnerable bitcoins before it was certain
   a quantum computer fast enough to steal them existed (see [Newsletter
   #348][news348 destroy]).  Reasonable arguments were made on both sides
-  and we expect that debate to continue.
+  and we expect that debate to continue. {% assign timestamp="49:17" %}
 
 - **Taproot-native `OP_TEMPLATEHASH` proposal:** Greg Sanders
   [posted][sanders th] to Bitcoin-Dev mailing list a proposal to add three opcodes to
@@ -125,7 +127,7 @@ Bitcoin's consensus rules._
   his earlier LNHANCE bundle proposal (see [Newsletter #285][news285
   ik]) and found it comparable in most ways, although he noted that it
   is less efficient in onchain space for _congestion control_ (a form of
-  delayed [payment batching][topic payment batching]).
+  delayed [payment batching][topic payment batching]). {% assign timestamp="1:13" %}
 
 - **Proposal to allow longer relative timelocks:** developer Pyth
   [posted][pyth timelock] to Delving Bitcoin to suggest allowing
@@ -144,7 +146,7 @@ Bitcoin's consensus rules._
   transactions and [BIP65 CLTV][bip65]), and Pyth added that their
   desired use case is for a wallet recovery path where the long timelock
   would only be used if the primary path became unavailable and the
-  alternative would be permanent loss of the funds anyway.
+  alternative would be permanent loss of the funds anyway. {% assign timestamp="12:57" %}
 
 - **Security against quantum computers with taproot as a commitment scheme:**
   Tim Ruffing [posted][ruffing qtr] a link to a [paper][ruffing paper]
@@ -167,7 +169,7 @@ Bitcoin's consensus rules._
   signature-checking opcodes to [tapscript][topic tapscript].  A recent
   update to [BIP360][] pay-to-quantum-resistant-hash that Ethan Heilman
   [posted][heilman bip360] to the Bitcoin-Dev mailing
-  list makes exactly this change.
+  list makes exactly this change. {% assign timestamp="23:48" %}
 
 ## Releases and release candidates
 
@@ -176,7 +178,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [Bitcoin Core 29.1rc1][] is a release candidate for a maintenance
-  version of the predominant full node software.
+  version of the predominant full node software. {% assign timestamp="1:46:55" %}
 
 ## Notable code and documentation changes
 
@@ -194,13 +196,13 @@ repo], and [BINANAs][binana repo]._
   relays bare multisig outputs) and `maxdatacarriersize` (the maximum aggregate
   bytes allowed in OP_RETURN outputs for a transaction in the mempool). Other
   policy flags, such as [`fullrbf`][topic rbf] and `minrelaytxfee`, were already
-  exposed, so these additions allow for a complete relay policy snapshot.
+  exposed, so these additions allow for a complete relay policy snapshot. {% assign timestamp="1:48:12" %}
 
 - [Bitcoin Core #33004][] enables the `-natpmp` option by default, allowing
   automatic port forwarding via the [Port Control Protocol (PCP)][pcp] with a
   fallback to the [NAT Port Mapping Protocol (NAT-PMP)][natpmp] (see Newsletter
   [#323][news323 natpmp]). A listening node behind a router that supports either
-  PCP or NAT-PMP becomes reachable without manual configuration.
+  PCP or NAT-PMP becomes reachable without manual configuration. {% assign timestamp="1:49:13" %}
 
 - [LDK #3246][] enables the creation of [BOLT12 offers][topic offers] and
   refunds without a [blinded path][topic rv routing] by using the offer’s
@@ -208,19 +210,19 @@ repo], and [BINANAs][binana repo]._
   `create_refund_builder` functions now delegate blinded path creation to
   `MessageRouter::create_blinded_paths`, where a caller can generate a compact
   path by passing `DefaultMessageRouter`, a full-length pubkey path with
-  `NodeIdMessageRouter`, or no path at all with `NullMessageRouter`.
+  `NodeIdMessageRouter`, or no path at all with `NullMessageRouter`. {% assign timestamp="1:52:37" %}
 
 - [LDK #3892][] exposes the merkle tree signature of [BOLT12][topic offers]
   invoices publicly, enabling developers to build CLI tools or other software to
   verify the signature or recreate invoices. This PR also adds an `OfferId`
-  field to BOLT12 invoices to track the originating offer.
+  field to BOLT12 invoices to track the originating offer. {% assign timestamp="1:53:35" %}
 
 - [LDK #3662][] implements [BLIPs #55][], also known as LSPS05, which defines
   how clients can register for webhooks via an endpoint to receive push
   notifications from an LSP. The API exposes additional endpoints that enable
   clients to list all webhook registrations or remove a specific one. This can
   be useful for clients to get notified when receiving an [async payment][topic
-  async payments].
+  async payments]. {% assign timestamp="1:54:31" %}
 
 {% include snippets/recap-ad.md when="2025-08-05 16:30" %}
 {% include references.md %}
