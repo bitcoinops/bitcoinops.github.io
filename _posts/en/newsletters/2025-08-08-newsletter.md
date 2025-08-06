@@ -64,12 +64,89 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Add exportwatchonlywallet RPC to export a watchonly version of a
+wallet][review club 32489] is a PR by [achow101][gh achow101] that
+reduces the amount of manual work required to create a watch-only
+wallet. Before this change, users had to do that by typing or
+scripting `importdescriptors` RPC calls, copying address labels, etc.
+
+Besides public [descriptors][topic descriptors], the
+export also contains:
+- caches containing derived xpubs when necessary, e.g., in case of
+  hardened derivation paths
+- address book entries, wallet flags and user labels
+- all historical wallet transactions so rescans are unnecessary
+
+The exported wallet database can then be imported with the
+`restorewallet` RPC.
+
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/31829#l-12FIXME"
+  q0="Why can’t the existing `IsRange()`/`IsSingleType()` information tell
+  us whether a descriptor can be expanded on the watch-only side?
+  Explain the logic behind `CanSelfExpand()` for a) a hardened
+  `wpkh(xpub/0h/*)` path and b) a `pkh(pubkey)` descriptor."
+  a0="`IsRange()` and `IsSingleType()` were insufficient because they
+  don't check for hardened derivation, which requires private keys
+  unavailable in a watch-only wallet. `CanSelfExpand()` was added to
+  recursively search for hardened paths; if it finds one, it returns
+  `false`, signaling that a pre-populated cache must be exported for the
+  watch-only wallet to derive addresses. A `pkh(pubkey)` descriptor is
+  not ranged and has no derivation, so it can always self-expand."
+  a0link="https://bitcoincore.reviews/32489#l-27"
+
+  q1="`ExportWatchOnlyWallet` only copies the descriptor cache if
+  `!desc->CanSelfExpand()`. What exactly is stored in that cache? How
+  could an incomplete cache affect address derivation on the watch-only
+  wallet?"
+  a1="The cache stores `CExtPubKey` objects for descriptors with
+  hardened derivation paths, which are pre-derived on the spending
+  wallet. If this cache is incomplete, the watch-only wallet cannot
+  derive the missing addresses because it lacks the necessary private
+  keys. This would cause it to fail to see transactions sent to those
+  addresses, leading to an incorrect balance."
+  a1link="https://bitcoincore.reviews/32489#l-52"
+
+  q2="The exporter sets `create_flags = GetWalletFlags() |
+  WALLET_FLAG_DISABLE_PRIVATE_KEYS`. Why is it important to preserve the
+  original flags (e.g. `AVOID_REUSE`) instead of clearing everything and
+  starting fresh?"
+  a2="Preserving flags ensures behavioral consistency between the
+  spending and watch-only wallets. For example, the `AVOID_REUSE` flag
+  affects which coins are considered available for spending. Not
+  preserving it would cause the watch-only wallet to report a different
+  available balance than the main wallet, leading to user confusion."
+  a2link="https://bitcoincore.reviews/32489#l-68"
+
+  q3="Why does the exporter read the locator from the source wallet and
+  write it verbatim into the new wallet instead of letting the new
+  wallet start from block 0?"
+  a3="The block locator is copied to tell the new watch-only wallet
+  where to resume scanning the blockchain for new transactions,
+  preventing the need for a complete rescan."
+  a3link="https://bitcoincore.reviews/32489#l-93"
+
+  q4="Consider a multisig descriptor `wsh(multi(2,xpub1,xpub2))`. If one
+  cosigner exports a watch-only wallet and shares it with a third party,
+  what new information does that third party learn compared to just
+  giving them the descriptor strings?"
+  a4="The watch-only wallet data includes additional metadata such as
+  address book, wallet flags and coin-control labels. For wallets with
+  hardened derivation, the third party can only get information about
+  historical and future transactions through the watch-only wallet
+  export."
+  a4link="https://bitcoincore.reviews/32489#l-100"
+
+  q5="In `wallet_exported_watchonly.py`, why does the test call
+  `wallet.keypoolrefill(100)` before checking spendability across the
+  online/offline pair?"
+  a5="The `keypoolrefill(100)` call forces the offline (spending) wallet
+  to pre-derive 100 keys for its hardened descriptors, populating its
+  cache. This cache is then included in the export, allowing the online
+  watch-only wallet to generate those 100 addresses. It also ensures the
+  offline wallet will recognize these addresses when it receives a PSBT
+  to sign."
+  a5link="https://bitcoincore.reviews/32489#l-122"
 %}
 
 ## Optech recommends
@@ -168,3 +245,5 @@ our mistake.
 [ubip3]: https://github.com/utreexo/biptreexo/blob/7ae65222ba82423c1a3f2edd6396c0e32679aa37/utreexo-p2p-bip.md
 [btcpay server 2.2.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.2.0
 [lnd v0.19.3-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.3-beta.rc1
+[review club 32489]: https://bitcoincore.reviews/32489
+[gh achow101]: https://github.com/achow101
