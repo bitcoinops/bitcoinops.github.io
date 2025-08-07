@@ -187,25 +187,67 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #32941][] p2p: TxOrphanage revamp cleanups
+- [Bitcoin Core #32941][] completes the overhaul of `TxOrphanage` (see
+  [Newsletter #364][news364 orphan]) by enabling automatic trimming of the
+  orphanage whenever its limits are exceeded.
+  It adds a warning for `maxorphantx` users to inform them that it is obsolete.
+  This PR solidifies opportunistic
+  one-parent-one-child (1p1c) [package relay][topic package relay].
 
-- [Bitcoin Core #31385][] package validation: relax the package-not-child-with-unconfirmed-parents rule
+- [Bitcoin Core #31385][] relaxes the
+  `package-not-child-with-unconfirmed-parents` rule of the `submitpackage` RPC
+  to improve 1p1c [package relay][topic package relay] usage. Packages
+  no longer need to include the parents that are already in the node's mempool.
 
-- [Bitcoin Core #31244][] descriptors: MuSig2
+- [Bitcoin Core #31244][] implements the parsing of [MuSig2][topic musig]
+  [descriptors][topic descriptors] as defined in [BIP390][], which is required
+  for receiving and spending inputs from [taproot][topic taproot] addresses with
+  MuSig2 aggregate keys.
 
-- [Bitcoin Core #30635][] rpc: add optional blockhash to waitfornewblock, unhide wait methods in help
+- [Bitcoin Core #30635][] begins displaying the `waitfornewblock`,
+  `waitforblock`, and `waitforblockheight` RPCs in the help command
+  response, indicating that they're meant for regular users.  This PR
+  also adds an optional `current_tip` argument to the `waitfornewblock`
+  RPC, to mitigate against race conditions by specifying the block hash
+  of the current chain tip.
 
-- [Bitcoin Core #28944][] wallet, rpc: add anti-fee-sniping to `send` and `sendall`
+- [Bitcoin Core #28944][] adds anti-[fee sniping][topic fee sniping] protection
+  to transactions sent with the `send` and `sendall` RPC commands by adding a
+  random tip-relative [locktime][topic timelocks] if one is not already
+  specified.
 
-- [Eclair #3133][] Add outgoing reputation
+- [Eclair #3133][] extends its [HTLC endorsement][topic htlc endorsement] local
+  peer-reputation system (see [Newsletter #363][news363 reputation]) to score the
+  reputation of outgoing peers, just like for incoming peers. Eclair now would
+  consider a good reputation in both directions when forwarding an HTLC, but
+  doesn’t implement penalties yet. Scoring outgoing peers is necessary to
+  prevent sink attacks (see [Newsletter #322][news322 sink]), a specific type of
+  [channel jamming attack][topic channel jamming attacks].
 
-- [LND #10097][] Roasbeef/gossip-block-fix
+- [LND #10097][] introduces an asynchronous, per-peer queue for backlog
+  [gossip][topic channel announcements] requests (`GossipTimestampRange`) to
+  eliminate the risk of deadlocks when a peer sends too many requests at once.
+  If a peer sends a request before the previous one finishes, the additional
+  message is quietly dropped. A new `gossip.filter-concurrency` setting (default
+  5) is added to limit the number of concurrent workers across all peers. The PR
+  also adds documentation explaining how all gossip rate limit configuration
+  settings work.
 
-- [LND #9625][] Add deletecanceledinvoice RPC call
+- [LND #9625][] adds a `deletecanceledinvoice` RPC command (and its `lncli`
+  equivalent) that allows users to remove canceled [BOLT11][] invoices (see
+  [Newsletter #33][news33 canceled]) by providing their payment hash.
 
-- [Rust Bitcoin #4730][] p2p: Add formal `Alert` type
+- [Rust Bitcoin #4730][] adds an `Alert` type wrapper for the [final alert][]
+  message that notifies peers running a vulnerable version of Bitcoin Core
+  (before 0.12.1) that their alert system is insecure. Satoshi introduced the
+  alert system to notify users of significant network events, but it was
+  [retired][] in version 0.12.1, except for the final alert message.
 
-- [BLIPs #55][] Webhook Registration (LSPS5) (#55)
+- [BLIPs #55][] adds [BLIP55][] to specify how mobile clients can register for
+  webhooks via an endpoint to receive push notifications from an LSP. This
+  protocol is useful for clients to get notified when receiving an [async
+  payment][topic async payments], and was recently implemented in LDK (See
+  [Newsletter #365][news365 webhook]).
 
 ## Correction
 
@@ -247,3 +289,10 @@ our mistake.
 [lnd v0.19.3-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.3-beta.rc1
 [review club 32489]: https://bitcoincore.reviews/32489
 [gh achow101]: https://github.com/achow101
+[news363 reputation]: /en/newsletters/2025/07/18/#eclair-2716
+[news322 sink]: /en/newsletters/2024/09/27/#hybrid-jamming-mitigation-testing-and-changes
+[news33 canceled]: /en/newsletters/2019/02/12/#lnd-2457
+[final alert]: https://bitcoin.org/en/release/v0.14.0#final-alert
+[retired]: https://bitcoin.org/en/alert/2016-11-01-alert-retirement#updates
+[news365 webhook]: /en/newsletters/2025/08/01/#ldk-3662
+[news364 orphan]: /en/newsletters/2025/07/25/#bitcoin-core-31829
