@@ -1,3 +1,4 @@
+---
 title: 'Bitcoin Optech Newsletter #363'
 permalink: /zh/newsletters/2025/07/18/
 name: 2025-07-18-newsletter-zh
