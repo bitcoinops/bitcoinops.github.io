@@ -55,6 +55,9 @@ optech_mentions:
   - title: Discussion of alternatives to Utreexo for proving UTXO existence without a UTXO set
     url: /en/newsletters/2025/06/06/#removing-outputs-from-the-utxo-set-based-on-value-and-time
 
+  - title: "Draft BIPs published with specifications for Utreexo accumulator, validation, and P2P protocol"
+    url: /en/newsletters/2025/08/08/#draft-bips-proposed-for-utreexo
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs
