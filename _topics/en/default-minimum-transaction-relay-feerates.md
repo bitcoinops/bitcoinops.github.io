@@ -44,6 +44,9 @@ optech_mentions:
   - title: Renewed discussion about lowering the default minimum transaction relay feerate
     url: /en/newsletters/2025/02/07/#discussion-about-lowering-the-minimum-transaction-relay-feerate
 
+  - title: Continued discussion about lowering the default minimum transaction relay feerate
+    url: /en/newsletters/2025/08/08/#continued-discussion-about-lowering-the-minimum-relay-feerate
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
