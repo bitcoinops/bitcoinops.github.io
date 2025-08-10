@@ -24,7 +24,7 @@ Newsletter der letzten Woche und eine Empfehlung für unsere Leser hinzu.
   Tadge Dryja und Davidson Souza über das [Utreexo][topic utreexo]-Validierungsmodell
   verfasst hat. Der [erste BIP][ubip1] spezifiziert die Struktur des Utreexo-Akkumulators,
   der es einem Knoten ermöglicht, ein einfach aktualisierbares Commitment zum
-  vollständigen UTXO-Set in nur „wenigen Kilobytes" zu speichern. Der [zweite BIP][ubip2]
+  vollständigen UTXO-Set in nur "wenigen Kilobytes" zu speichern. Der [zweite BIP][ubip2]
   spezifiziert, wie ein Full Node neue Blöcke und Transaktionen mit dem Akkumulator
   validieren kann, anstatt mit einem traditionellen Set von ausgegebenen
   Transaktions-Outputs (STXOs, verwendet in frühem Bitcoin Core und aktuellem libbitcoin)
@@ -43,8 +43,7 @@ Newsletter der letzten Woche und eine Empfehlung für unsere Leser hinzu.
   die Idee und darüber, wie sie andere Software beeinflussen könnte. Für Bedenken
   spezifisch zu Bitcoin Core verwies sie auf einen [Pull Request][bitcoin core #33106].
 
-- **Peer-Block-Template-Sharing zur Milderung von Problemen mit unterschiedlichen
-  Mempool-Richtlinien:** Anthony Towns [veröffentlichte][towns tempshare] auf
+- **Peer-Block-Template-Sharing zur Milderung von Mempool-Richtlinien-Problemen:** Anthony Towns [veröffentlichte][towns tempshare] auf
   Delving Bitcoin den Vorschlag, dass Full-Node-Peers sich gelegentlich ihre
   aktuellen Templates für den nächsten Block unter Verwendung der
   [Compact-Block-Relay][topic compact block relay]-Kodierung zusenden. Der
@@ -154,8 +153,8 @@ Bitte erwägen Sie, auf neue Versionen zu aktualisieren oder bei der Testung von
 Release-Kandidaten zu helfen._
 
 - [LND v0.19.3-beta.rc1][] ist ein Release-Kandidat für eine Wartungsversion dieser
-  beliebten LN-Knoten-Implementierung, die „wichtige Bugfixes" enthält. Besonders
-  erwähnenswert ist „eine optionale Migration [...], die Festplatten- und Speicheranforderungen
+  beliebten LN-Knoten-Implementierung, die "wichtige Bugfixes" enthält. Besonders
+  erwähnenswert ist "eine optionale Migration [...], die Festplatten- und Speicheranforderungen
   für Knoten erheblich senkt".
 
 - [BTCPay Server 2.2.0][] ist ein Release dieser beliebten selbst gehosteten
