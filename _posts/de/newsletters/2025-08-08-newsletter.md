@@ -198,7 +198,7 @@ repo] und [BINANAs][binana repo]._
   `waitforblock` und `waitforblockheight` RPCs in der Hilfe-Kommando-Antwort
   anzuzeigen, was signalisiert, dass sie für normale Benutzer gedacht sind. Dieser PR
   fügt auch ein optionales `current_tip`-Argument zum `waitfornewblock`-RPC hinzu,
-  um Race Conditions zu mildern, indem der Block-Hash der aktuellen Chain-Spitze
+  um Race Conditions entgegenzuwirken, indem der Block-Hash der aktuellen Chain-Spitze
   spezifiziert wird.
 
 - [Bitcoin Core #28944][] fügt Anti-[Fee Sniping][topic fee sniping]-Schutz
