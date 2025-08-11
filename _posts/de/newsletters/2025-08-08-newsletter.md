@@ -65,7 +65,7 @@ zu sehen.*
 [Add exportwatchonlywallet RPC to export a watchonly version of a
 wallet][review club 32489] ist ein PR von [achow101][gh achow101], der die Menge
 der manuellen Arbeit reduziert, die zum Erstellen einer Watch-Only-Wallet erforderlich
-ist. Vor dieser Änderung mussten Benutzer das durch Eingabe oder Skripting von
+ist. Vor dieser Änderung mussten Benutzer dies durch Eingabe oder Skripting von
 `importdescriptors`-RPC-Aufrufen, Kopieren von Adresslabels usw. erledigen.
 
 Neben öffentlichen [Deskriptoren][topic descriptors] enthält der Export auch:
