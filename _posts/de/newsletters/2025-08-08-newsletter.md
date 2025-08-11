@@ -121,7 +121,7 @@ Die exportierte Wallet-Datenbank kann dann mit dem `restorewallet`-RPC importier
   q4="Betrachten Sie einen Multisig-Deskriptor `wsh(multi(2,xpub1,xpub2))`. Wenn ein
   Mitunterzeichner eine Watch-Only-Wallet exportiert und sie mit einem Dritten teilt,
   welche neuen Informationen lernt dieser Dritte im Vergleich dazu, ihm nur
-  den Deskriptor-Strings zu geben?"
+  die Deskriptor-Strings zu geben?"
   a4="Die Watch-Only-Wallet-Daten enthalten zusätzliche Metadaten wie
   Adressbuch, Wallet-Flags und Coin-Control-Labels. Für Wallets mit
   gehärteter Ableitung kann der Dritte nur Informationen über
