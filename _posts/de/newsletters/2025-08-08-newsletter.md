@@ -203,7 +203,7 @@ repo] und [BINANAs][binana repo]._
 
 - [Bitcoin Core #28944][] fügt Anti-[Fee Sniping][topic fee sniping]-Schutz
   zu Transaktionen hinzu, die mit den `send`- und `sendall`-RPC-Kommandos gesendet werden,
-  indem eine zufällige spitzenrelative [Locktime][topic timelocks] hinzugefügt wird,
+  indem eine zufällige spitzen-bezogene [Locktime][topic timelocks] hinzugefügt wird,
   falls noch keine spezifiziert ist.
 
 - [Eclair #3133][] erweitert sein [HTLC-Endorsement][topic htlc endorsement] lokales
