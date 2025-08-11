@@ -195,7 +195,7 @@ repo] und [BINANAs][binana repo]._
   MuSig2-Aggregatschlüsseln.
 
 - [Bitcoin Core #30635][] beginnt damit, die `waitfornewblock`,
-  `waitforblock` und `waitforblockheight` RPCs in der Hilfe-Kommando-Antwort
+  `waitforblock` und `waitforblockheight` RPCs in der Antwort auf den Hilfe-Befehl
   anzuzeigen, was signalisiert, dass sie für normale Benutzer gedacht sind. Dieser PR
   fügt auch ein optionales `current_tip`-Argument zum `waitfornewblock`-RPC hinzu,
   um Race Conditions entgegenzuwirken, indem der Block-Hash der aktuellen Chain-Spitze
