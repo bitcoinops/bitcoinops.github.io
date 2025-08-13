@@ -129,7 +129,6 @@ règles de consensus de Bitcoin._
   quantiques. Il examine si les engagements taproot aux tapleaves continueraient de posséder les
   propriétés de _liaison_ et de _masquage_ qu'ils ont contre les ordinateurs classiques. Il conclut
   que :
-
     > Un attaquant quantique doit effectuer au moins 2^81 évaluations de
     > SHA256 pour créer une sortie Taproot et être capable de l'ouvrir à une
     > racine Merkle inattendue avec une probabilité de 1/2. Si l'attaquant
