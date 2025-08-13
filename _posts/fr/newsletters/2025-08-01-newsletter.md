@@ -72,7 +72,7 @@ règles de consensus de Bitcoin._
   précédentes sur la nécessité d'empêcher les gens de dépenser des bitcoins vulnérables aux quantique
   avant qu'il soit certain qu'un ordinateur quantique assez rapide pour les voler existait (voir le
   [Bulletin #348][news348 destroy]). Des arguments raisonnables ont été avancés des deux côtés et
-  nous nous attendons à ce que ce débat continue.
+  nous devons nous attendre à ce que ce débat continue.
 
 - **Proposition de `OP_TEMPLATEHASH` natif à Taproot :** Greg Sanders a [posté][sanders th] sur la
   liste de diffusion Bitcoin-Dev une proposition pour ajouter trois opcodes à [tapscript][topic
