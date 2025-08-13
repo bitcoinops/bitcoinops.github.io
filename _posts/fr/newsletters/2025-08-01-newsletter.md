@@ -66,7 +66,7 @@ règles de consensus de Bitcoin._
 
   - Optionnellement, à un moment non défini ultérieurement, un changement de consensus pourrait
     permettre les dépenses depuis des sorties vulnérables aux quantique en utilisant un schéma de preuve
-    résistant aux quantique (voir le [Bulletin #361][news361 pqcr] pour un exemple).
+    résistant aux quantique (voir le [Bulletin 361][news361 pqcr] pour un exemple).
 
   La plupart des discussions dans le fil de discussion ont largement répété les discussions
   précédentes sur la nécessité d'empêcher les gens de dépenser des bitcoins vulnérables aux quantique
@@ -100,7 +100,7 @@ règles de consensus de Bitcoin._
     dans des cas où les redéfinitions de `OP_NOPx` devraient être enveloppées par des conditionnels tels
     que les instructions `OP_IF`.
 
-  - "Cela empêche de surprendre les entrées avec ... `scriptSig`" (voir le [Bulletin #361][news361 bitvm] ).
+  - "Cela empêche de surprendre les entrées avec ... `scriptSig`" (voir le Bulletin [#361][news361 bitvm] ).
 
   Brandon Black a [répondu][black th] avec une comparaison de la proposition à sa précédente
   proposition de bundle LNHANCE (voir le [Bulletin 285][news285 ik]) et l'a trouvée comparable à bien
