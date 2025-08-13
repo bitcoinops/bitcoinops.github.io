@@ -165,8 +165,7 @@ repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][l
 [Interface de Portefeuille Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Propositions d'Amélioration de Bitcoin (BIPs)][bips
 repo], [Lightning BOLTs][bolts repo],_
-[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisitionrepo], et [BINANAs][binana
-repo].
+[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo].
 
 - [Bitcoin Core #32941][] complète la révision de `TxOrphanage` (voir le [Bulletin #364][news364
   orphan]) en activant la réduction automatique de l'orphelinat lorsque ses limites sont dépassées. Il
