@@ -17,7 +17,7 @@ et décrivant les changements notables dans les projets d'infrastructure Bitcoin
 
 - **Test du préremplissage de bloc compact :** David Gumberg a [répondu][gumberg prefilling] à un
   fil de discussion Delving Bitcoin sur l'efficacité de la reconstruction de bloc compact
-  (précédemment couverte dans les Bulletins [#315][news315 cb] et [#339][news339 cb]) avec un résumé
+  (précédemment couverte dans les Bulletins [315][news315 cb] et [339][news339 cb]) avec un résumé
   des résultats qu'il a obtenus en testant le [relais de bloc compact][topic compact block relay]
   _préremplir_---une node relayant de manière préventive certaines ou toutes les transactions
   d'un nouveau bloc à ses pairs lorsqu'elle pense que les pairs peuvent ne pas déjà avoir ces
@@ -66,22 +66,22 @@ règles de consensus de Bitcoin._
 
   - Optionnellement, à un moment non défini ultérieurement, un changement de consensus pourrait
     permettre les dépenses depuis des sorties vulnérables aux quantique en utilisant un schéma de preuve
-    résistant aux quantique (voir le [Bulletin #361][news361 pqcr] pour un exemple).
+    résistant aux quantique (voir le [Bulletin 361][news361 pqcr] pour un exemple).
 
   La plupart des discussions dans le fil de discussion ont largement répété les discussions
   précédentes sur la nécessité d'empêcher les gens de dépenser des bitcoins vulnérables aux quantique
   avant qu'il soit certain qu'un ordinateur quantique assez rapide pour les voler existait (voir le
-  [Bulletin #348][news348 destroy]). Des arguments raisonnables ont été avancés des deux côtés et
+  [Bulletin 348][news348 destroy]). Des arguments raisonnables ont été avancés des deux côtés et
   nous devons nous attendre à ce que ce débat continue.
 
 - **Proposition de `OP_TEMPLATEHASH` natif à Taproot :** Greg Sanders a [posté][sanders th] sur la
   liste de diffusion Bitcoin-Dev une proposition pour ajouter trois opcodes à [tapscript][topic
   tapscript]. Deux des opcodes sont les [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] et
-  `OP_INTERNALKEY` précédemment proposés (voir le [Bulletin #285][news285 ik]). Le dernier opcode est
+  `OP_INTERNALKEY` précédemment proposés (voir le [Bulletin 285][news285 ik]). Le dernier opcode est
   `OP_TEMPLATEHASH`, une variation native à taproot de [OP_CHECKTEMPLATEVERIFY][topic
   op_checktemplateverify] (`OP_CTV`) avec les différences suivantes soulignées par les auteurs :
 
-  - Pas de changements pour les scripts legacy (pré-segwit). Voir le [Bulletin #361][news361 ctvlegacy]
+  - Pas de changements pour les scripts legacy (pré-segwit). Voir le [Bulletin 361][news361 ctvlegacy]
     pour une précédente discussion sur cette alternative.
 
   - Les données qui sont hashées (et l'ordre dans lequel elles sont hashées) sont très similaires aux
@@ -100,10 +100,10 @@ règles de consensus de Bitcoin._
     dans des cas où les redéfinitions de `OP_NOPx` devraient être enveloppées par des conditionnels tels
     que les instructions `OP_IF`.
 
-  - "Cela empêche de surprendre les entrées avec ... `scriptSig`" (voir le [Bulletin #361][news361 bitvm]).
+  - "Cela empêche de surprendre les entrées avec ... `scriptSig`" (voir le [Bulletin 361][news361 bitvm]).
 
   Brandon Black a [répondu][black th] avec une comparaison de la proposition à sa précédente
-  proposition de bundle LNHANCE (voir le [Bulletin #285][news285 ik]) et l'a trouvée comparable à bien
+  proposition de bundle LNHANCE (voir le [Bulletin 285][news285 ik]) et l'a trouvée comparable à bien
   des égards, bien qu'il ait noté qu'elle est moins efficace en espace onchain pour le _contrôle de
   congestion_ (une forme de paiement différé de [regroupement des paiements][topic payment batching]).
 
@@ -160,31 +160,31 @@ lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 Improvement Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][blips
 repo], [Bitcoin Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo]._
 
-- [Bitcoin Core #29954][] étend le RPC `getmempoolinfo` en ajoutant deux champs de politique de
+- [Bitcoin Core 29954][] étend le RPC `getmempoolinfo` en ajoutant deux champs de politique de
   relais à son objet de réponse : `permitbaremultisig` (si le nœud relaie les sorties multisig nues)
   et `maxdatacarriersize` (le nombre maximal d'octets agrégés autorisés dans les sorties OP_RETURN
   pour une transaction dans le mempool). D'autres drapeaux de politique, tels que [`fullrbf`][topic
   rbf] et `minrelaytxfee`, étaient déjà exposés, donc ces ajouts permettent d'avoir un aperçu complet
   de la politique de relais.
 
-- [Bitcoin Core #33004][] active par défaut l'option `-natpmp`, permettant le transfert automatique
+- [Bitcoin Core 33004][] active par défaut l'option `-natpmp`, permettant le transfert automatique
   de port via le [Port Control Protocol (PCP)][pcp] avec un recours au [NAT Port Mapping Protocol
-  (NAT-PMP)][natpmp] (voir le Bulletin [#323][news323 natpmp]). Un nœud en écoute derrière un routeur
+  (NAT-PMP)][natpmp] (voir le Bulletin [323][news323 natpmp]). Un nœud en écoute derrière un routeur
   qui supporte soit PCP soit NAT-PMP devient accessible sans configuration manuelle.
 
-- [LDK #3246][] permet la création d'offres [BOLT12][topic offers] et de remboursements sans un
+- [LDK 3246][] permet la création d'offres [BOLT12][topic offers] et de remboursements sans un
   [chemin aveuglé][topic rv routing] en utilisant le `signing_pubkey` de l'offre comme destination.
   Les fonctions `create_offer_builder` et `create_refund_builder` délèguent désormais la création de
   chemin aveuglé à `MessageRouter::create_blinded_paths`, où un appelant peut générer un chemin
   compact en passant `DefaultMessageRouter`, un chemin de pubkey de longueur complète avec
   `NodeIdMessageRouter`, ou aucun chemin du tout avec `NullMessageRouter`.
 
-- [LDK #3892][] expose publiquement la signature de l'arbre de Merkle des factures [BOLT12][topic
+- [LDK 3892][] expose publiquement la signature de l'arbre de Merkle des factures [BOLT12][topic
   offers], permettant aux développeurs de construire des outils CLI ou d'autres logiciels pour
   vérifier la signature ou recréer des factures. Cette PR ajoute également un champ `OfferId` aux
   factures BOLT12 pour suivre l'offre d'origine.
 
-- [LDK #3662][] implémente [BLIPs #55][], également connu sous le nom de LSPS05, qui définit comment
+- [LDK 3662][] implémente [BLIPs 55][], également connu sous le nom de LSPS05, qui définit comment
   les clients peuvent s'inscrire à des webhooks via un point de terminaison pour recevoir des
   notifications push d'un LSP. L'API expose des points de terminaison supplémentaires qui permettent
   aux clients de lister toutes les inscriptions de webhook ou de supprimer une inscription spécifique.
