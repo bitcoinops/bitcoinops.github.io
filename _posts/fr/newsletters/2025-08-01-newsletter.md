@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-La newsletter de cette semaine résume les résultats d'un test de préremplissage de bloc compact et
+Le bulletin de cette semaine résume les résultats d'un test de préremplissage de bloc compact et
 fournit un lien vers une bibliothèque d'estimation des frais basée sur le mempool.
 Sont également incluses nos sections régulières résumant les récentes discussions sur
 la modification des règles de consensus de Bitcoin, annonçant des mises à jour et des versions candidates,
