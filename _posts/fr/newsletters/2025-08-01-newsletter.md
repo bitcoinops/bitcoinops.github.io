@@ -196,15 +196,15 @@ repo], [Bitcoin Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo
 {% include linkers/issues.md v=2 issues="29954,33004,3246,3892,3662,55" %}
 [bitcoin core 29.1rc1]: https://bitcoincore.org/bin/bitcoin-core-29.1/
 [augur #3]: https://github.com/block/bitcoin-augur/issues/3
-[news315 cb]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
-[news339 cb]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
+[news315 cb]: /fr/newsletters/2024/08/09/#statistiques-sur-la-reconstruction-de-blocs-compacts
+[news339 cb]: /fr/newsletters/2025/01/31/#statistiques-mises-a-jour-sur-la-reconstruction-de-blocs-compacts
 [gumberg prefilling]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/34
 [shareshian estimation]: https://delvingbitcoin.org/t/augur-block-s-open-source-bitcoin-fee-estimation-library/1848/
 [ismail estimation]: https://delvingbitcoin.org/t/augur-block-s-open-source-bitcoin-fee-estimation-library/1848/2
-[news361 pqcr]: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
+[news361 pqcr]: /fr/newsletters/2025/07/04/fonction-de-commit-reveal-pour-la-recuperation-post-quantique
 [sanders th]: https://mailing-list.bitcoindevs.xyz/bitcoindev/26b96fb1-d916-474a-bd23-920becc3412cn@googlegroups.com/
-[news285 ik]: /en/newsletters/2024/01/17/#new-lnhance-combination-soft-fork-proposed
-[news361 ctvlegacy]: /en/newsletters/2025/07/04/#concerns-and-alternatives-to-legacy-support
+[news285 ik]: /fr/newsletters/2024/01/17/#nouvelle-proposition-de-soft-fork-combinant-lnhance
+[news361 ctvlegacy]: /fr/newsletters/2025/07/04/#preoccupations-et-alternatives-au-support-legacy
 [pyth timelock]: https://delvingbitcoin.org/t/exploring-extended-relative-timelocks/1818/
 [jahr timelock]: https://delvingbitcoin.org/t/exploring-extended-relative-timelocks/1818/2
 [roose timelock]: https://delvingbitcoin.org/t/exploring-extended-relative-timelocks/1818/3
@@ -212,9 +212,9 @@ repo], [Bitcoin Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo
 [ruffing paper]: https://eprint.iacr.org/2025/1307
 [heilman bip360]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CAEM=y+W=rtU2PLmHve6pUVkMQQmqT67KOg=9hp5oMspuHrgMow@mail.gmail.com/
 [lopp qmig]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CADL_X_fpv-aXBxX+eJ_EVTirkAJGyPRUNqOCYdz5um8zu6ma5Q@mail.gmail.com/
-[news348 destroy]: /en/newsletters/2025/04/04/#should-vulnerable-bitcoins-be-destroyed
+[news348 destroy]: /fr/newsletters/2025/04/04/#faut-il-detruire-les-bitcoins-vulnerables
 [black th]: https://mailing-list.bitcoindevs.xyz/bitcoindev/aG9FEHF1lZlK6d0E@console/
-[news361 bitvm]: /en/newsletters/2025/07/04/#continued-discussion-about-ctv-csfs-advantages-for-bitvm
-[news323 natpmp]: /en/newsletters/2024/10/04/#bitcoin-core-30043
+[news361 bitvm]: /fr/newsletters/2025/07/04/#discussion-continue-sur-les-avantages-de-ctv-csfs-pour-bitvm
+[news323 natpmp]: /fr/newsletters/2024/10/04/#bitcoin-core-30043
 [pcp]: https://datatracker.ietf.org/doc/html/rfc6887
 [natpmp]: https://datatracker.ietf.org/doc/html/rfc6886
