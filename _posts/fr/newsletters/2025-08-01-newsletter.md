@@ -201,7 +201,7 @@ repo], [Bitcoin Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo
 [gumberg prefilling]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/34
 [shareshian estimation]: https://delvingbitcoin.org/t/augur-block-s-open-source-bitcoin-fee-estimation-library/1848/
 [ismail estimation]: https://delvingbitcoin.org/t/augur-block-s-open-source-bitcoin-fee-estimation-library/1848/2
-[news361 pqcr]: /fr/newsletters/2025/07/04/fonction-de-commit-reveal-pour-la-recuperation-post-quantique
+[news361 pqcr]: /fr/newsletters/2025/07/04/#fonction-de-commit-reveal-pour-la-recuperation-post-quantique
 [sanders th]: https://mailing-list.bitcoindevs.xyz/bitcoindev/26b96fb1-d916-474a-bd23-920becc3412cn@googlegroups.com/
 [news285 ik]: /fr/newsletters/2024/01/17/#nouvelle-proposition-de-soft-fork-combinant-lnhance
 [news361 ctvlegacy]: /fr/newsletters/2025/07/04/#preoccupations-et-alternatives-au-support-legacy
