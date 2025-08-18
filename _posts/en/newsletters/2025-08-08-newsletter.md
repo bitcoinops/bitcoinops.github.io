@@ -34,7 +34,7 @@ recommendation to readers.
   allow transferring the additional data need for Utreexo validation.
 
   The authors are seeking conceptual review and will be updating the
-  draft BIPs based on further developments.
+  draft BIPs based on further developments. {% assign timestamp="1:03" %}
 
 - **Continued discussion about lowering the minimum relay feerate:**
   Gloria Zhao [posted][zhao minfee] to Delving Bitcoin about lowering
@@ -42,7 +42,7 @@ recommendation to readers.
   relay feerates] by 90% to 0.1 sat/vbyte.  She encouraged conceptual
   discussion about the idea and how it might affect other software.  For
   concerns specific to Bitcoin Core, she linked to a [pull
-  request][bitcoin core #33106].
+  request][bitcoin core #33106]. {% assign timestamp="23:43" %}
 
 - **Peer block template sharing to mitigate problems with divergent mempool policies:**
   Anthony Towns [posted][towns tempshare] to Delving Bitcoin to suggest
@@ -55,7 +55,7 @@ recommendation to readers.
   their differences.  It provides an alternative to a previous proposal
   that suggested using _weak blocks_ (see [Newsletter #299][news299 weak
   blocks]).  Towns published a [proof-of-concept implementation][towns
-  tempshare poc].
+  tempshare poc]. {% assign timestamp="52:27" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -64,8 +64,8 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-[Add exportwatchonlywallet RPC to export a watchonly version of a
-wallet][review club 32489] is a PR by [achow101][gh achow101] that
+[Add exportwatchonlywallet RPC to export a watchonly version of a wallet][review club 32489]
+is a PR by [achow101][gh achow101] that
 reduces the amount of manual work required to create a watch-only
 wallet. Before this change, users had to do that by typing or
 scripting `importdescriptors` RPC calls, copying address labels, etc.
@@ -79,7 +79,6 @@ export also contains:
 
 The exported wallet database can then be imported with the
 `restorewallet` RPC.
-
 
 {% include functions/details-list.md
   q0="Why can’t the existing `IsRange()`/`IsSingleType()` information tell
@@ -149,12 +148,14 @@ The exported wallet database can then be imported with the
   a5link="https://bitcoincore.reviews/32489#l-122"
 %}
 
+{% assign timestamp="1:11:41" %}
+
 ## Optech recommends
 
 [Bitcoin++ Insider][] has begun publishing reader-funded news about
 technical Bitcoin topics.  Two of their free weekly newsletters, _Last
 Week in Bitcoin_ and _This Week in Bitcoin Core_, may be especially
-interesting to regular readers of the Optech newsletter.
+interesting to regular readers of the Optech newsletter. {% assign timestamp="1:15:50" %}
 
 ## Releases and release candidates
 
@@ -165,16 +166,16 @@ release candidates._
 - [LND v0.19.3-beta.rc1][] is a release candidate for a maintenance version for this popular LN
   node implementation containing "important bug fixes".  Most notably,
   "an optional migration [...] lowers disk and memory requirements for
-  nodes significantly."
+  nodes significantly." {% assign timestamp="1:17:04" %}
 
 - [BTCPay Server 2.2.0][] is a release of this popular self-hosted payment
   solution.  It adds support for wallet policies and [miniscript][topic
   miniscript], provides additional support for transaction fee
   management and monitoring, and includes several other new improvements
-  and bug fixes.
+  and bug fixes. {% assign timestamp="1:17:44" %}
 
 - [Bitcoin Core 29.1rc1][] is a release candidate for a maintenance
-  version of the predominant full node software.
+  version of the predominant full node software. {% assign timestamp="1:18:13" %}
 
 ## Notable code and documentation changes
 
@@ -192,29 +193,29 @@ repo], and [BINANAs][binana repo]._
   orphanage whenever its limits are exceeded.
   It adds a warning for `maxorphantx` users to inform them that it is obsolete.
   This PR solidifies opportunistic
-  one-parent-one-child (1p1c) [package relay][topic package relay].
+  one-parent-one-child (1p1c) [package relay][topic package relay]. {% assign timestamp="1:21:11" %}
 
 - [Bitcoin Core #31385][] relaxes the
   `package-not-child-with-unconfirmed-parents` rule of the `submitpackage` RPC
   to improve 1p1c [package relay][topic package relay] usage. Packages
-  no longer need to include the parents that are already in the node's mempool.
+  no longer need to include the parents that are already in the node's mempool. {% assign timestamp="1:24:06" %}
 
 - [Bitcoin Core #31244][] implements the parsing of [MuSig2][topic musig]
   [descriptors][topic descriptors] as defined in [BIP390][], which is required
   for receiving and spending inputs from [taproot][topic taproot] addresses with
-  MuSig2 aggregate keys.
+  MuSig2 aggregate keys. {% assign timestamp="1:26:38" %}
 
 - [Bitcoin Core #30635][] begins displaying the `waitfornewblock`,
   `waitforblock`, and `waitforblockheight` RPCs in the help command
   response, indicating that they're meant for regular users.  This PR
   also adds an optional `current_tip` argument to the `waitfornewblock`
   RPC, to mitigate against race conditions by specifying the block hash
-  of the current chain tip.
+  of the current chain tip. {% assign timestamp="1:29:54" %}
 
 - [Bitcoin Core #28944][] adds anti-[fee sniping][topic fee sniping] protection
   to transactions sent with the `send` and `sendall` RPC commands by adding a
   random tip-relative [locktime][topic timelocks] if one is not already
-  specified.
+  specified. {% assign timestamp="1:32:29" %}
 
 - [Eclair #3133][] extends its [HTLC endorsement][topic htlc endorsement] local
   peer-reputation system (see [Newsletter #363][news363 reputation]) to score the
@@ -222,7 +223,7 @@ repo], and [BINANAs][binana repo]._
   consider a good reputation in both directions when forwarding an HTLC, but
   doesn’t implement penalties yet. Scoring outgoing peers is necessary to
   prevent sink attacks (see [Newsletter #322][news322 sink]), a specific type of
-  [channel jamming attack][topic channel jamming attacks].
+  [channel jamming attack][topic channel jamming attacks]. {% assign timestamp="1:35:08" %}
 
 - [LND #10097][] introduces an asynchronous, per-peer queue for backlog
   [gossip][topic channel announcements] requests (`GossipTimestampRange`) to
@@ -231,23 +232,23 @@ repo], and [BINANAs][binana repo]._
   message is quietly dropped. A new `gossip.filter-concurrency` setting (default
   5) is added to limit the number of concurrent workers across all peers. The PR
   also adds documentation explaining how all gossip rate limit configuration
-  settings work.
+  settings work. {% assign timestamp="1:36:23" %}
 
 - [LND #9625][] adds a `deletecanceledinvoice` RPC command (and its `lncli`
   equivalent) that allows users to remove canceled [BOLT11][] invoices (see
-  [Newsletter #33][news33 canceled]) by providing their payment hash.
+  [Newsletter #33][news33 canceled]) by providing their payment hash. {% assign timestamp="1:38:12" %}
 
 - [Rust Bitcoin #4730][] adds an `Alert` type wrapper for the [final alert][]
   message that notifies peers running a vulnerable version of Bitcoin Core
   (before 0.12.1) that their alert system is insecure. Satoshi introduced the
   alert system to notify users of significant network events, but it was
-  [retired][] in version 0.12.1, except for the final alert message.
+  [retired][] in version 0.12.1, except for the final alert message. {% assign timestamp="1:38:43" %}
 
 - [BLIPs #55][] adds [BLIP55][] to specify how mobile clients can register for
   webhooks via an endpoint to receive push notifications from an LSP. This
   protocol is useful for clients to get notified when receiving an [async
   payment][topic async payments], and was recently implemented in LDK (See
-  [Newsletter #365][news365 webhook]).
+  [Newsletter #365][news365 webhook]). {% assign timestamp="1:40:57" %}
 
 ## Correction
 
@@ -268,7 +269,7 @@ taproot proposed in BIP360, the security of this variant (when viewed as
 a commitment) follows immediately from the security of the merkle tree.
 
 We apologize for the error and thank Tim Ruffing for notifying us about
-our mistake.
+our mistake. {% assign timestamp="1:42:03" %}
 
 {% include snippets/recap-ad.md when="2025-08-12 16:30" %}
 {% include references.md %}
