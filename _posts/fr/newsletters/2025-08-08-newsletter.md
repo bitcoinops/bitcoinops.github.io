@@ -245,7 +245,7 @@ Nous nous excusons pour l'erreur et remercions Tim Ruffing de nous avoir inform√
 {% include linkers/issues.md v=2 issues="33106,32941,31385,31244,30635,28944,3133,10097,9625,4730,55" %}
 [bitcoin core 29.1rc1]: https://bitcoincore.org/bin/bitcoin-core-29.1/
 [bitcoin++ insider]: https://insider.btcpp.dev/
-[news365 p2qrh]: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
+[news365 p2qrh]: /fr/newsletters/2025/08/01/#securite-contre-les-ordinateurs-quantiques-avec-taproot-comme-schema-d-engagement
 [zhao minfee]: https://delvingbitcoin.org/t/changing-the-minimum-relay-feerate/1886/
 [towns tempshare]: https://delvingbitcoin.org/t/sharing-block-templates/1906
 [towns tempshare poc]: https://github.com/ajtowns/bitcoin/commit/ee12518a4a5e8932175ee57c8f1ad116f675d089
@@ -264,5 +264,5 @@ Nous nous excusons pour l'erreur et remercions Tim Ruffing de nous avoir inform√
 [news33 canceled]: /en/newsletters/2019/02/12/#lnd-2457
 [alerte finale]: https://bitcoin.org/en/release/v0.14.0#final-alert
 [retir√©]: https://bitcoin.org/en/alert/2016-11-01-alert-retirement#updates
-[news365 webhook]: /en/newsletters/2025/08/01/#ldk-3662
+[news365 webhook]: /fr/newsletters/2025/08/01/#ldk-3662
 [news364 orphan]: /fr/newsletters/2025/07/25/#bitcoin-core-31829
