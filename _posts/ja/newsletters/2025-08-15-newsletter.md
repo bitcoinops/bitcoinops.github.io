@@ -37,7 +37,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 [Bitcoin Inquisition][bitcoin inquisition repo]および[BINANAs][binana repo]の注目すべき変更点。_
 
 - [Bitcoin Core #33050][]は、コンセンサスが無効なトランザクションに対する
-  ピアの排除機能（ニュースレター[#309][news309 peer]参照）を削除しました。
+  ピアの排除機能（[ニュースレター #309][news309 peer]参照）を削除しました。
   これは、DoSの保護が効果的でなかったためです。攻撃者は、ポリシー上無効なトランザクションをスパムすることで、
   ペナルティなしでこの保護を回避できました。このアップデートにより、
   コンセンサスの失敗と標準（ポリシー）の失敗を区別する必要がなくなったため、
