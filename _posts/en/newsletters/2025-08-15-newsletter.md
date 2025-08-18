@@ -40,8 +40,8 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #33050][] removes peer discouragement (see Newsletter
-  [#309][news309 peer]) for consensus-invalid transactions because its DoS
+-- [Bitcoin Core #33050][] removes peer discouragement (see [Newsletter #309][news309 peer]) for consensus-invalid transactions because its DoS
+ protection was ineffective. An attacker could circumvent the protection by
   protection was ineffective. An attacker could circumvent the protection by
   spamming policy-invalid transactions without penalty. This update eliminates
   the need for double script validation because it is no longer necessary to
