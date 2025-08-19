@@ -43,7 +43,7 @@ _Bedeutende aktuelle Änderungen in [Bitcoin Core][bitcoin core repo],
 - [Bitcoin Core #33050][] entfernt das Peer-Discouragement (siehe [Newsletter
   #309][news309 peer]) für konsensus-invalide Transaktionen, da der
   zugehörige DoS-Schutz unwirksam war. Ein Angreifer konnte den Schutz durch
-  Spam mit policy-invaliden Transaktionen umgehen. Das Update macht doppelte
+  Spam mit policy-invaliden Transaktionen umgehen. Dadurch, dass nicht mehr zwischen dem Scheitern an Konsensregeln und Mempool-Richtlinien unterschieden wird, macht das Update doppelte
   Script-Validierung überflüssig und spart CPU-Ressourcen.
 
 - [Bitcoin Core #32473][] führt einen pro-Input-Cache zur Vorausberechnung von
