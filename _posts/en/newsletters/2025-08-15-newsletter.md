@@ -24,10 +24,10 @@ release candidates._
 - [LND v0.19.3-beta.rc1][] is a release candidate for a maintenance
   version for this popular LN node implementation containing "important
   bug fixes".  Most notably, "an optional migration [...] lowers disk
-  and memory requirements for nodes significantly."
+  and memory requirements for nodes significantly." {% assign timestamp="0:19" %}
 
 - [Bitcoin Core 29.1rc1][] is a release candidate for a maintenance
-  version of the predominant full node software.
+  version of the predominant full node software. {% assign timestamp="0:46" %}
 
 ## Notable code and documentation changes
 
@@ -45,7 +45,7 @@ repo], and [BINANAs][binana repo]._
   protection was ineffective. An attacker could circumvent the protection by
   spamming policy-invalid transactions without penalty. This update eliminates
   the need for double script validation because it is no longer necessary to
-  distinguish between consensus and standardness failures, saving CPU costs.
+  distinguish between consensus and standardness failures, saving CPU costs. {% assign timestamp="2:38" %}
 
 - [Bitcoin Core #32473][] introduces a per-input cache for sighash
   pre-computation to the script interpreter for legacy (e.g. baremultisig),
@@ -56,19 +56,19 @@ repo], and [BINANAs][binana repo]._
   same input with the same sighash mode that commits to the same portion of the
   script can reuse most of the work. It is enabled in both policy (mempool) and
   consensus (block) validation. [Taproot][topic taproot] inputs already have
-  that behavior by default, so this update doesn't need to be applied to them.
+  that behavior by default, so this update doesn't need to be applied to them. {% assign timestamp="11:04" %}
 
 - [Bitcoin Core #33077][] creates a monolithic static library
   [`libbitcoinkernel.a`][libbitcoinkernel project] that bundles all the object
   files of its private dependencies into a single archive, allowing downstream
   projects to link to just this one file. See [Newsletter #360][news360 kernel]
-  for related `libsecp256k1` groundwork.
+  for related `libsecp256k1` groundwork. {% assign timestamp="17:57" %}
 
 - [Core Lightning #8389][] makes the `channel_type` field mandatory when opening
   a channel, aligning with a recent specification update (see [Newsletter
   #364][news364 spec]). The RPC commands `fundchannel` and `fundchannel_start`
   now report a channel type with the [zero-conf channel][topic zero-conf
-  channels] option when a zero `minimum_depth` implies it.
+  channels] option when a zero `minimum_depth` implies it. {% assign timestamp="22:03" %}
 
 {% include snippets/recap-ad.md when="2025-08-19 16:30" %}
 {% include references.md %}
