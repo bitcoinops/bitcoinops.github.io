@@ -41,7 +41,7 @@ _Bedeutende aktuelle Änderungen in [Bitcoin Core][bitcoin core repo],
 [BINANAs][binana repo]._
 
 - [Bitcoin Core #33050][] entfernt das Peer-Discouragement (siehe [Newsletter
-  #309][news309 peer]) für konsensus-invalidierende Transaktionen, da der
+  #309][news309 peer]) für konsensus-invalide Transaktionen, da der
   zugehörige DoS-Schutz unwirksam war. Ein Angreifer konnte den Schutz durch
   Spam mit policy-invaliden Transaktionen umgehen. Das Update macht doppelte
   Script-Validierung überflüssig und spart CPU-Ressourcen.
