@@ -111,23 +111,66 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #32896][] wallet, rpc: add v3 transaction creation and wallet support
+- [Bitcoin Core #32896][] introduces support for creating and spending
+  unconfirmed Topologically Restricted Until Confirmation ([TRUC][topic v3
+  transaction relay]) transactions by adding a `version` parameter to the
+  following RPCs: `createrawtransaction`, `createpsbt`, `send`, `sendall`, and
+  `walletcreatefundedpsbt`. The wallet enforces the TRUC transaction
+  restrictions for weight limit, sibling conflict, and incompatibility between
+  unconfirmed TRUC and non-TRUC transactions.
 
-- [Bitcoin Core #33106][] policy: lower the default blockmintxfee, incrementalrelayfee, minrelaytxfee
+- [Bitcoin Core #33106][] lowers the default `blockmintxfee` to 1 sat/kvB (the
+  minimum possible), and the default [`minrelaytxfee`][topic default minimum
+  transaction relay feerates] and `incrementalrelayfee` to 100 sat/kvB (0.1
+  sat/vB). While these values can be configured, users are advised to adjust the
+  `minrelaytxfee` and `incrementalrelayfee` values together.  Other minimum
+  feerates remain unchanged, but the default wallet minimum feerates are
+  expected to be lowered in a future version. The motivations for this change
+  range from considerable growth in the number of blocks mined with sub 1 sat/vB
+  transactions and the number of pools mining these transactions to an increase
+  in the Bitcoin exchange rate.
 
-- [Core Lightning #8467][] xpay: add option to pay bip353.
+- [Core Lightning #8467][] extends `xpay` (see [Newsletter #330][news330 xpay])
+  by adding support for paying [BIP353][] Human Readable Names (HRN) (e.g.
+  satoshi@bitcoin.com) and enabling it to pay  [BOLT12 offers][topic offers]
+  directly, removing the need to run the `fetchinvoice` command first. Under the
+  hood, `xpay` fetches the payment instructions using the `fetchbip353` RPC
+  command from the `cln-bip353` plugin introduced in [Core Lightning #8362][].
 
-- [Core Lightning #8354][] xpay: add `pay_part_start` and `pay_part_end` notifications.
+- [Core Lightning #8354][] starts publishing `pay_part_start` and `pay_part_end`
+  event notifications for the status of specific payment parts sent with
+  [MPP][topic multipath payments]. The `pay_part_end` notification indicates the
+  duration of the payment and whether it was successful or failed. If the
+  payment fails, an error message is provided and, if the error onion isn’t
+  corrupted, additional information on the failure is given, such as the source
+  of the error and the failure code.
 
-- [Eclair #3103][] Simple taproot channels
+- [Eclair #3103][] introduces support for [simple taproot channels][topic simple
+  taproot channels], leveraging [MuSig2][topic musig] scriptless
+  [multisignature][topic multisignature] signing to reduce transaction weight
+  consumption by 15% and improve transaction privacy. Funding transactions and
+  cooperative closures are indistinguishable from other [P2TR][topic taproot]
+  transactions. This PR also includes support for [dual funding][topic dual
+  funding] and [splicing][topic splicing] in simple taproot channels, and
+  enables [channel commitment upgrades][topic channel commitment upgrades] to
+  the new taproot format during a splice transaction.
 
-- [Eclair #3134][] Use actual CLTV delta for reputation
+- [Eclair #3134][] replaces the penalty weight multiplier for stuck
+  [HTLCs][topic htlc] with the [CLTV expiry delta][topic cltv expiry delta] when
+  scoring [HTLC endorsement][topic htlc endorsement] peer reputation (see
+  [Newsletter #363][news363 reputation]), to better reflect how long a stuck
+  HTLC will tie up liquidity. To mitigate the outsized penalty of stuck HTLCs
+  with a maximum CLTV expiry delta, this PR adjusts the reputation decay
+  parameter (`half-life`) from 15 to 30 days and the stuck payment threshold
+  (`max-relay-duration`) from 12 seconds to 5 minutes.
 
-- [LDK #3897][] adi2011/peer-storage/serialise-deserialise
+- [LDK #3897][] extends its [peer storage][topic peer storage] implementation by
+  detecting lost channel state during backup retrieval, by deserializing the
+  peer’s copy and comparing it to the local state.
 
 {% include snippets/recap-ad.md when="2025-08-26 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="32896,33106,8467,8354,3103,3134,3897" %}
+{% include linkers/issues.md v=2 issues="32896,33106,8467,8354,3103,3134,3897,8362" %}
 [bitcoin core 29.1rc1]: https://bitcoincore.org/bin/bitcoin-core-29.1/
 [lnd v0.19.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.3-beta
 [core lightning v25.09rc2]: https://github.com/ElementsProject/lightning/releases/tag/v25.09rc2
@@ -140,3 +183,5 @@ repo], and [BINANAs][binana repo]._
 [wuille templgr]: https://delvingbitcoin.org/t/sharing-block-templates/1906/9
 [doman tee]: https://delvingbitcoin.org/t/confidential-script-emulate-soft-forks-using-stateless-tees/1918/
 [tee]: https://en.wikipedia.org/wiki/Trusted_execution_environment
+[news330 xpay]: /en/newsletters/2024/11/22/#core-lightning-7799
+[news363 reputation]: /en/newsletters/2025/07/18/#eclair-2716
