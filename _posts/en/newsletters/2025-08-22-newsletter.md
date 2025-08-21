@@ -81,7 +81,48 @@ changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **ZEUS v0.11.3 released:**
+  The [v0.11.3][zeus v0.11.3] release includes improvements to peer
+  management, [BOLT12][topic offers], and [submarine swap][topic submarine swaps]
+  features.
+
+- **Rust Utreexo resources:**
+  Abdelhamid Bakhta [posted][abdel tweet] Rust-based resources for
+  [Utreexo][topic utreexo], including interactive [educational
+  materials][rustreexo webapp] and [WASM bindings][rustreexo wasm].
+
+- **Peer-observer tooling and call to action:**
+  0xB10C [posted][b10c blog] about the motivation, architecture, code,
+  supporting libraries, and findings of his [peer-observer][peer-observer
+  github] project. He seeks to build "A loose, decentralized group of people who
+  share the interest of monitoring the Bitcoin Network. A collective to enable
+  sharing of ideas, discussion, data, tools, insights, and more."
+
+- **Bitcoin Core Kernel-based node announced:**
+  Bitcoin backbone was [announced][bitcoin backbone] as a demonstration of using
+  the [Bitcoin Core Kernel][kernel blog] library as the foundation of a Bitcoin node.
+
+- **SimplicityHL released:**
+  [SimplicityHL][simplcityhl github] is a Rust-like programming language that
+  compiles to the lower-level [Simplicity][simplicity] language [recently
+  activated][simplicity post] on Liquid. For further reading, see the [related
+  Delving thread][simplicityhl delving].
+
+- **LSP plugin for BTCPay Server:**
+  The [LSP plugin][lsp btcpay github] implements client-side features of
+  [BLIP51][], the specification for inbound channels, into BTCPay Server.
+
+- **Proto mining hardware and software announced:**
+  Proto [announced][proto blog] new Bitcoin mining hardware and open source
+  mining software, built with previous [community feedback][news260 mdk].
+
+- **Oracle resolution demo using CSFS:**
+  Abdelhamid Bakhta [posted][abdel tweet2] a demonstration of an oracle using
+  [CSFS][topic op_checksigfromstack], nostr, and MutinyNet to sign an
+  attestation of an event's outcome.
+
+- **Relai adds taproot support:**
+  Relai added support for sending to [taproot][topic taproot] addresses.
 
 ## Releases and release candidates
 
@@ -185,3 +226,19 @@ repo], and [BINANAs][binana repo]._
 [tee]: https://en.wikipedia.org/wiki/Trusted_execution_environment
 [news330 xpay]: /en/newsletters/2024/11/22/#core-lightning-7799
 [news363 reputation]: /en/newsletters/2025/07/18/#eclair-2716
+[zeus v0.11.3]: https://github.com/ZeusLN/zeus/releases/tag/v0.11.3
+[abdel tweet]: https://x.com/dimahledba/status/1951213485104181669
+[rustreexo webapp]: https://rustreexo-playground.starkwarebitcoin.dev/
+[rustreexo wasm]: https://github.com/AbdelStark/rustreexo-wasm
+[b10c blog]: https://b10c.me/projects/024-peer-observer/
+[peer-observer github]: https://github.com/0xB10C/peer-observer
+[bitcoin backbone]: https://mailing-list.bitcoindevs.xyz/bitcoindev/9812cde0-7bbb-41a6-8e3b-8a5d446c1b3cn@googlegroups.com
+[kernel blog]: https://thecharlatan.ch/Kernel/
+[simplcityhl github]: https://github.com/BlockstreamResearch/SimplicityHL
+[simplicity]: https://blockstream.com/simplicity.pdf
+[simplicityhl delving]: https://delvingbitcoin.org/t/writing-simplicity-programs-with-simplicityhl/1900
+[simplicity post]: https://blog.blockstream.com/simplicity-launches-on-liquid-mainnet/
+[lsp btcpay github]: https://github.com/MegalithicBTC/BTCPayserver-LSPS1
+[proto blog]: https://proto.xyz/blog/posts/proto-rig-and-proto-fleet-a-paradigm-shift
+[news260 mdk]: /en/newsletters/2023/07/19/#mining-development-kit-call-for-feedback
+[abdel tweet2]: https://x.com/dimahledba/status/1946223544234659877
