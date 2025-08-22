@@ -130,7 +130,7 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-- [LND v0.19.3-beta][] is a release candidate for a maintenance
+- [LND v0.19.3-beta][] is a release for a maintenance
   version for this popular LN node implementation containing "important
   bug fixes".  Most notably, "an optional migration [...] lowers disk
   and memory requirements for nodes significantly."
