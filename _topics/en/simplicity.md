@@ -51,6 +51,9 @@ optech_mentions:
   - title: "Flexible coin earmarks probably compatible with Simplicity"
     url: /en/newsletters/2024/11/29/#flexible-coin-earmarks
 
+  - title: "SimplicityHL released to allow compiling Rust-like programs to Simplicity script"
+    url: /en/newsletters/2025/08/22/#simplicityhl-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Simplicity: A New Language for Blockchains"

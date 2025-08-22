@@ -47,6 +47,9 @@ optech_mentions:
   - title: Continued discussion about lowering the default minimum transaction relay feerate
     url: /en/newsletters/2025/08/08/#continued-discussion-about-lowering-the-minimum-relay-feerate
 
+  - title: "Bitcoin Core #33106 lowers the default minimum relay fee from 1 sat/vbyte to 0.1 sat/vbyte"
+    url: /en/newsletters/2025/08/22/#bitcoin-core-33106
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
