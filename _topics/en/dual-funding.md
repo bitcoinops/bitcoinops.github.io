@@ -138,6 +138,9 @@ optech_mentions:
   - title: "LDK #3137 adds support for accepting peer-initiated dual-funded channels"
     url: /en/newsletters/2024/11/29/#core-lightning-7719
 
+  - title: "Eclair #3103 adds support for dual funding and splicing in simple taproot channels"
+    url: /en/newsletters/2025/08/22/#eclair-3103
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Liquidity advertisements

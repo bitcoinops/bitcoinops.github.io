@@ -97,6 +97,9 @@ optech_mentions:
   - title: "BIP379 added with a specification for Miniscript"
     url: /en/newsletters/2024/07/05/#bips-1610
 
+  - title: "New library for encrypting descriptors and miniscript to the included public keys"
+    url: /en/newsletters/2025/06/13/#descriptor-encryption-library
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"
