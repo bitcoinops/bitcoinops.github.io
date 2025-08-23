@@ -195,15 +195,15 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [core lightning v25.09rc2]: https://github.com/ElementsProject/lightning/releases/tag/v25.09rc2
 [towns bipshare]: https://mailing-list.bitcoindevs.xyz/bitcoindev/aJvZwR_bPeT4LaH6@erisian.com.au/
 [towns bipdraft]: https://github.com/ajtowns/bips/blob/202508-sendtemplate/bip-ajtowns-sendtemplate.md
-[news366 templshare]: /en/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
+[news366 templshare]: /fr/newsletters/2025/08/08/#partage-de-modele-de-bloc-entre-pairs-pour-attenuer-les-problemes-lies-aux-politiques-de-mempool-divergentes
 [delshare]: https://delvingbitcoin.org/t/sharing-block-templates/1906/13
 [towns templdiff]: https://delvingbitcoin.org/t/sharing-block-templates/1906/7
 [jahr templerlay]: https://delvingbitcoin.org/t/sharing-block-templates/1906/6
 [wuille templgr]: https://delvingbitcoin.org/t/sharing-block-templates/1906/9
 [doman tee]: https://delvingbitcoin.org/t/confidential-script-emulate-soft-forks-using-stateless-tees/1918/
 [tee]: https://en.wikipedia.org/wiki/Trusted_execution_environment
-[news330 xpay]: /en/newsletters/2024/11/22/#core-lightning-7799
-[news363 reputation]: /en/newsletters/2025/07/18/#eclair-2716
+[news330 xpay]: /fr/newsletters/2024/11/22/#core-lightning-7799
+[news363 reputation]: /fr/newsletters/2025/07/18/#eclair-2716
 [zeus v0.11.3]: https://github.com/ZeusLN/zeus/releases/tag/v0.11.3
 [abdel tweet]: https://x.com/dimahledba/status/1951213485104181669
 [rustreexo webapp]: https://rustreexo-playground.starkwarebitcoin.dev/
@@ -218,5 +218,5 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [simplicity post]: https://blog.blockstream.com/simplicity-launches-on-liquid-mainnet/
 [lsp btcpay github]: https://github.com/MegalithicBTC/BTCPayserver-LSPS1
 [proto blog]: https://proto.xyz/blog/posts/proto-rig-and-proto-fleet-a-paradigm-shift
-[news260 mdk]: /en/newsletters/2023/07/19/#mining-development-kit-call-for-feedback
+[news260 mdk]: /fr/newsletters/2023/07/19/#appel-a-commentaires-sur-le-mining-development-kit-mdk
 [abdel tweet2]: https://x.com/dimahledba/status/1946223544234659877
