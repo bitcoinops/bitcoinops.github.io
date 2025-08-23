@@ -74,7 +74,7 @@ repo], et [BINANAs][binana repo]._
 {% include linkers/issues.md v=2 issues="33050,32473,33077,8389" %}
 [bitcoin core 29.1rc1]: https://bitcoincore.org/bin/bitcoin-core-29.1/
 [lnd v0.19.3-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.3-beta.rc1
-[news309 peer]: /en/newsletters/2024/06/28/#bitcoin-core-29575
-[news360 kernel]: /en/newsletters/2025/06/27/#libsecp256k1-1678
+[news309 peer]: /fr/newsletters/2024/06/28/#bitcoin-core-29575
+[news360 kernel]: /fr/newsletters/2025/06/27/#libsecp256k1-1678
 [libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/27587
-[news364 spec]: /en/newsletters/2025/07/25/#bolts-1232
+[news364 spec]: /fr/newsletters/2025/07/25/#bolts-1232
