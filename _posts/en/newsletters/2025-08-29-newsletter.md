@@ -102,17 +102,39 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31802][] Add bitcoin-{node,gui} to release binaries for IPC
+- [Bitcoin Core #31802][] enables inter-process communication (IPC) by default
+  (`ENABLE_IPC`), adding the `bitcoin-node` and `bitcoin-gui` multiprocess
+  binaries to the release builds on all systems except Windows. This allows an
+  external [Stratum v2][topic pooled mining] mining service that creates,
+  manages and submits block templates to experiment with the multiprocess layout
+  without custom builds. For additional context on the multiprocess project and
+  the `bitcoin-node` binary, see Newsletters [#99][news99 ipc], [#147][news147
+  ipc], [#320][news320 ipc], [#324][news324 ipc].
 
-- [LDK #3979][] Add splice-out support
+- [LDK #3979][] adds splice-out support, enabling an LDK node to both initiate a
+  splice-out transaction, and accept requests from a counterparty. This
+  completes LDK’s [splicing][topic splicing] implementation, as [LDK #3736][]
+  already added splice-in support. This PR adds a `SpliceContribution` enum that
+  covers both in and out scenarios and ensures that the output values of a
+  splice-out transaction don’t exceed the user’s channel balance after
+  accounting for fees and reserve requirements.
 
-- [LND #10102][] Catch bad gossip peer and fix `UpdatesInHorizon`
+- [LND #10102][] adds a `gossip.ban-threshold` option (100 is the default, 0
+  disables it) that allows users to configure the score threshold at which a
+  peer is banned for sending invalid [gossip][topic channel announcements]
+  messages. The peer banning system was previously introduced and covered in
+  [Newsletter #319][news319 ban]. This PR also resolves an issue where
+  unnecessary node and [channel announcement][topic channel announcements]
+  messages were sent in response to a backlog gossip query request.
 
-- [Rust Bitcoin #4907][] Introduce script tagging
+- [Rust Bitcoin #4907][] introduces script tagging by adding a new generic tag
+  parameter `T` to `Script` and `ScriptBuf`, and defines the type aliases
+  `ScriptPubKey`, `ScriptSig`, `RedeemScript`, `WitnessScript`, and `TapScript`
+  which are backed by a sealed `Tag` trait for compile-time role safety.
 
 {% include snippets/recap-ad.md when="2025-09-02 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="31802,3979,10102,4907,6650" %}
+{% include linkers/issues.md v=2 issues="31802,3979,10102,4907,6650,3736" %}
 [bitcoin core 29.1rc2]: https://bitcoincore.org/bin/bitcoin-core-29.1/
 [core lightning v25.09rc4]: https://github.com/ElementsProject/lightning/releases/tag/v25.09rc4
 [garcia fuzz]: https://delvingbitcoin.org/t/the-state-of-bitcoinfuzz/1946
@@ -123,3 +145,8 @@ repo], and [BINANAs][binana repo]._
 [garbled circuits]: https://en.wikipedia.org/wiki/Garbled_circuit
 [news359 delbrag]: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
 [news339 blocksxor]: /en/newsletters/2025/01/31/#how-does-the-blocksxor-switch-that-obfuscates-the-blocks-dat-files-work
+[news99 ipc]: /en/newsletters/2020/05/27/#bitcoin-core-18677
+[news147 ipc]: /en/newsletters/2021/05/05/#bitcoin-core-19160
+[news320 ipc]: /en/newsletters/2024/09/13/#bitcoin-core-30509
+[news324 ipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
+[news319 ban]: /en/newsletters/2024/09/06/#lnd-9009
