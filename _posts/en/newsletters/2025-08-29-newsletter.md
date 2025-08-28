@@ -52,7 +52,32 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Is it possible to recover a private key from an aggregate public key under strong assumptions?]({{bse}}127723)
+  Pieter Wuille explains current and hypothetical security assumptions around
+  [MuSig2][topic musig] scriptless [multisignatures][topic multisignature].
+
+- [Are all taproot addresses vulnerable to quantum computing?]({{bse}}127660)
+  Hugo Nguyen and Murch point out that even [taproot][topic taproot] outputs
+  constructed to be spent only using script paths are [quantum][topic quantum
+  resistance] vulnerable. Murch goes on to note "Interestingly, the party that
+  generated the output script would be able to show that the internal key was a
+  NUMS point and thus prove that a Quantum Decryption has occurred."
+
+- [Why cant we set the chainstate obfuscation key?]({{bse}}127814)
+  Ava Chow highlights that the key that obfuscates on-disk contents of the
+  `blocksdir` (see [Newsletter #339][news339 blocksxor]) is not the
+  same key that obfuscates the `chainstate` contents (see [Bitcoin Core
+  #6650][]).
+
+- [Is it possible to revoke a spending branch after a block height?]({{bse}}127683)
+  Antoine Poinsot points to a [previous answer]({{bse}}122224) confirming that
+  expiring spending conditions, or "inverse timelocks", are not possible and
+  perhaps not even desirable.
+
+- [Configure Bitcoin Core to use onion nodes in addition to IPv4 and IPv6 nodes?]({{bse}}127727)
+  Pieter Wuille clarifies that setting the `onion` configuration option only
+  applies to outbound peer connections. He goes on to outline how to configure
+  [Tor][topic anonymity networks] and `bitcoind` for inbound connections.
 
 ## Releases and release candidates
 
@@ -87,7 +112,7 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2025-09-02 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="31802,3979,10102,4907" %}
+{% include linkers/issues.md v=2 issues="31802,3979,10102,4907,6650" %}
 [bitcoin core 29.1rc2]: https://bitcoincore.org/bin/bitcoin-core-29.1/
 [core lightning v25.09rc4]: https://github.com/ElementsProject/lightning/releases/tag/v25.09rc4
 [garcia fuzz]: https://delvingbitcoin.org/t/the-state-of-bitcoinfuzz/1946
@@ -97,3 +122,4 @@ repo], and [BINANAs][binana repo]._
 [eagen paper]: https://eprint.iacr.org/2025/1485
 [garbled circuits]: https://en.wikipedia.org/wiki/Garbled_circuit
 [news359 delbrag]: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
+[news339 blocksxor]: /en/newsletters/2025/01/31/#how-does-the-blocksxor-switch-that-obfuscates-the-blocks-dat-files-work
