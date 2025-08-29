@@ -183,7 +183,7 @@ règles de consensus de Bitcoin._
       parties non déterministes de l'état signé à l'avance dans les transactions onchain elles-mêmes (voir
       le [Bulletin #255][news255 presig vault state]). Optech croit que les coffres plus avancés pourraient
       également être récupérés à partir d'un état statique, mais nous n'avions pas vérifié cela avant la
-      publication.<!-- FIXME:harding try to verify & delete -->
+      publication.
 
   - *Réponses des contributeurs de Bitcoin Core :* à l'heure où nous écrivons ces lignes, quatre
     individus qu'Optech reconnaît comme contributeurs actifs de Bitcoin Core ont répondu à la lettre sur
@@ -281,7 +281,7 @@ règles de consensus de Bitcoin._
   2. Un hash de la clé publique et du txid de la transaction que le dépensier souhaite éventuellement
       diffuser, `h(pubkey, txid)`. Cela s'appelle la _preuve dépendante de la séquence_.
 
-    3. Le txid de la transaction éventuelle. Cela s'appelle le _txid d'engagement_.
+  3. Le txid de la transaction éventuelle. Cela s'appelle le _txid d'engagement_.
 
   Aucune de ces informations ne révèle la clé publique sous-jacente, qui dans
   ce schéma est supposé être connu uniquement de la personne contrôlant le UTXO.
