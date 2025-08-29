@@ -109,7 +109,7 @@ repo], and [BINANAs][binana repo]._
   manages and submits block templates to experiment with the multiprocess layout
   without custom builds. For additional context on the multiprocess project and
   the `bitcoin-node` binary, see Newsletters [#99][news99 ipc], [#147][news147
-  ipc], [#320][news320 ipc], [#324][news324 ipc].
+  ipc], [#320][news320 ipc], [#323][news323 ipc].
 
 - [LDK #3979][] adds splice-out support, enabling an LDK node to both initiate a
   splice-out transaction, and accept requests from a counterparty. This
@@ -148,5 +148,5 @@ repo], and [BINANAs][binana repo]._
 [news99 ipc]: /en/newsletters/2020/05/27/#bitcoin-core-18677
 [news147 ipc]: /en/newsletters/2021/05/05/#bitcoin-core-19160
 [news320 ipc]: /en/newsletters/2024/09/13/#bitcoin-core-30509
-[news324 ipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
+[news323 ipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
 [news319 ban]: /en/newsletters/2024/09/06/#lnd-9009
