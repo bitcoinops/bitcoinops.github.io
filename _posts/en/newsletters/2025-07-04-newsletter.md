@@ -207,7 +207,7 @@ Bitcoin's consensus rules._
       in the onchain transactions themselves (see [Newsletter
       #255][news255 presig vault state]).  Optech believes more advanced
       vaults could also be recovered from static state, but we had not
-      verified this by press time.<!-- FIXME:harding try to verify & delete -->
+      verified this by press time.
 
   - *Responses from Bitcoin Core contributors:* as of this writing, four
     individuals Optech recognizes as currently active Bitcoin Core
