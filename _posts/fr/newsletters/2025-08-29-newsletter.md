@@ -44,6 +44,9 @@ cherchent des réponses à leurs questions---ou quand nous avons quelques moment
 les utilisateurs curieux ou confus. Dans cette rubrique mensuelle, nous mettons en lumière certaines
 des questions et réponses les mieux votées postées depuis notre dernière mise à jour.*
 
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
+{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
+
 - [Est-il possible de récupérer une clé privée à partir d'une clé publique agrégée sous de fortes hypothèses ?]({{bse}}127723)
   Pieter Wuille explique les hypothèses de sécurité actuelles et hypothétiques autour
   de [MuSig2][topic musig] des [multisignatures][topic multisignature] sans script.
