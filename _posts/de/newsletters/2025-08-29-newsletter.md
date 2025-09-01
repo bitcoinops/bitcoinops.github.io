@@ -20,7 +20,7 @@ an wichtiger Bitcoin-Infrastruktur-Software.
 - **Update zum differenziellen Fuzzing von Bitcoin- und LN-Implementierungen:**
   Bruno Garcia [berichtete][garcia fuzz] in Delving Bitcoin über aktuelle
   Fortschritte und Ergebnisse von [bitcoinfuzz][], einer Bibliothek und
-  zugehörigen Daten für [Fuzz-Tests][] von Bitcoin-basierter Software und
+  zugehörigen Daten für [fuzz testing][] von Bitcoin-basierter Software und
   Bibliotheken. Zu den Erfolgen zählt die Entdeckung von "über 35 Bugs in
   Projekten wie btcd, rust-bitcoin, rust-miniscript, Embit, Bitcoin Core,
   Core Lightning und LND". Gefundene Unterschiede zwischen LN-Implementierungen
