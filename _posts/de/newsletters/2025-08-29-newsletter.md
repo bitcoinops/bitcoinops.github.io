@@ -115,7 +115,7 @@ und [BINANAs][binana repo]._
  - [LND #10102][] fügt eine Option `gossip.ban-threshold` hinzu (Standardwert 100, 0 deaktiviert),
    mit der Nutzer den Schwellenwert konfigurieren können, ab dem ein Peer für das Senden ungültiger
    [Gossip][topic channel announcements]-Nachrichten gebannt wird. Das Peer-Banning-System wurde
-   zuvor eingeführt und in [Newsletter #319][news319 ban] behandelt. Das PR behebt außerdem ein
+   zuvor eingeführt und in [Newsletter #319][news319 ban] behandelt. Der PR behebt außerdem ein
    Problem, bei dem unnötige Node- und [Kanal Announcement][topic channel announcements]-Nachrichten
    als Antwort auf eine Backlog-Gossip-Abfrage gesendet wurden.
 
