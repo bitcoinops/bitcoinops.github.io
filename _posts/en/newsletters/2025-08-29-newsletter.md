@@ -27,7 +27,7 @@ software.
   implementations has not only revealed bugs but has also driven
   clarifications to the LN specification.  Developers of Bitcoin
   projects are encouraged to investigate making their software a
-  supported target for bitcoinfuzz.
+  supported target for bitcoinfuzz. {% assign timestamp="24:56" %}
 
 - **Garbled locks for accountable computing contracts:** Liam Eagen
   [posted][eagen glock] to the Bitcoin-Dev mailing list about a
@@ -39,7 +39,7 @@ software.
   opinion) practical garbled lock whose fraud proof is a single
   signature, which represent over a 550x reduction of onchain data
   compared to BitVM2."  As of this writing, his post has not received
-  any public replies.
+  any public replies. {% assign timestamp="0:58" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -54,30 +54,30 @@ answers posted since our last update.*
 
 - [Is it possible to recover a private key from an aggregate public key under strong assumptions?]({{bse}}127723)
   Pieter Wuille explains current and hypothetical security assumptions around
-  [MuSig2][topic musig] scriptless [multisignatures][topic multisignature].
+  [MuSig2][topic musig] scriptless [multisignatures][topic multisignature]. {% assign timestamp="39:45" %}
 
 - [Are all taproot addresses vulnerable to quantum computing?]({{bse}}127660)
   Hugo Nguyen and Murch point out that even [taproot][topic taproot] outputs
   constructed to be spent only using script paths are [quantum][topic quantum
   resistance] vulnerable. Murch goes on to note "Interestingly, the party that
   generated the output script would be able to show that the internal key was a
-  NUMS point and thus prove that a Quantum Decryption has occurred."
+  NUMS point and thus prove that a Quantum Decryption has occurred." {% assign timestamp="41:24" %}
 
 - [Why cant we set the chainstate obfuscation key?]({{bse}}127814)
   Ava Chow highlights that the key that obfuscates on-disk contents of the
   `blocksdir` (see [Newsletter #339][news339 blocksxor]) is not the
   same key that obfuscates the `chainstate` contents (see [Bitcoin Core
-  #6650][]).
+  #6650][]). {% assign timestamp="45:20" %}
 
 - [Is it possible to revoke a spending branch after a block height?]({{bse}}127683)
   Antoine Poinsot points to a [previous answer]({{bse}}122224) confirming that
   expiring spending conditions, or "inverse timelocks", are not possible and
-  perhaps not even desirable.
+  perhaps not even desirable. {% assign timestamp="52:09" %}
 
 - [Configure Bitcoin Core to use onion nodes in addition to IPv4 and IPv6 nodes?]({{bse}}127727)
   Pieter Wuille clarifies that setting the `onion` configuration option only
   applies to outbound peer connections. He goes on to outline how to configure
-  [Tor][topic anonymity networks] and `bitcoind` for inbound connections.
+  [Tor][topic anonymity networks] and `bitcoind` for inbound connections. {% assign timestamp="53:45" %}
 
 ## Releases and release candidates
 
@@ -86,10 +86,10 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [Bitcoin Core 29.1rc2][] is a release candidate for a maintenance
-  version of the predominant full node software.
+  version of the predominant full node software. {% assign timestamp="54:22" %}
 
 - [Core Lightning v25.09rc4][] is a release candidate for a new major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="56:45" %}
 
 ## Notable code and documentation changes
 
@@ -109,7 +109,7 @@ repo], and [BINANAs][binana repo]._
   manages and submits block templates to experiment with the multiprocess layout
   without custom builds. For additional context on the multiprocess project and
   the `bitcoin-node` binary, see Newsletters [#99][news99 ipc], [#147][news147
-  ipc], [#320][news320 ipc], [#323][news323 ipc].
+  ipc], [#320][news320 ipc], [#323][news323 ipc]. {% assign timestamp="57:37" %}
 
 - [LDK #3979][] adds splice-out support, enabling an LDK node to both initiate a
   splice-out transaction, and accept requests from a counterparty. This
@@ -117,7 +117,7 @@ repo], and [BINANAs][binana repo]._
   already added splice-in support. This PR adds a `SpliceContribution` enum that
   covers both in and out scenarios and ensures that the output values of a
   splice-out transaction don’t exceed the user’s channel balance after
-  accounting for fees and reserve requirements.
+  accounting for fees and reserve requirements. {% assign timestamp="1:04:46" %}
 
 - [LND #10102][] adds a `gossip.ban-threshold` option (100 is the default, 0
   disables it) that allows users to configure the score threshold at which a
@@ -125,12 +125,12 @@ repo], and [BINANAs][binana repo]._
   messages. The peer banning system was previously introduced and covered in
   [Newsletter #319][news319 ban]. This PR also resolves an issue where
   unnecessary node and [channel announcement][topic channel announcements]
-  messages were sent in response to a backlog gossip query request.
+  messages were sent in response to a backlog gossip query request. {% assign timestamp="1:06:19" %}
 
 - [Rust Bitcoin #4907][] introduces script tagging by adding a new generic tag
   parameter `T` to `Script` and `ScriptBuf`, and defines the type aliases
   `ScriptPubKey`, `ScriptSig`, `RedeemScript`, `WitnessScript`, and `TapScript`
-  which are backed by a sealed `Tag` trait for compile-time role safety.
+  which are backed by a sealed `Tag` trait for compile-time role safety. {% assign timestamp="1:07:04" %}
 
 {% include snippets/recap-ad.md when="2025-09-02 16:30" %}
 {% include references.md %}
