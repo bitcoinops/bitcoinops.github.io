@@ -108,7 +108,7 @@ und [BINANAs][binana repo]._
  - [LDK #3979][] fügt Unterstützung für Splice-Out hinzu und ermöglicht einem LDK-Knoten,
    sowohl eine Splice-Out-Transaktion zu initiieren als auch Anfragen von Gegenparteien zu akzeptieren.
    Damit ist die [Splicing][topic splicing]-Implementierung in LDK abgeschlossen, da [LDK #3736][]
-   bereits Splice-In-Unterstützung hinzugefügt hat. Das PR führt ein `SpliceContribution`-Enum ein,
+   bereits Splice-In-Unterstützung hinzugefügt hat. Der PR führt ein `SpliceContribution`-Enum ein,
    das sowohl In- als auch Out-Szenarien abdeckt und sicherstellt, dass die Output-Werte einer
    Splice-Out-Transaktion nach Abzug von Gebühren und Reserven den Kanal-Saldo nicht überschreiten.
 
