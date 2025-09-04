@@ -85,19 +85,40 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [LDK #3726][] Improve privacy for Blinded Message Paths using Dummy Hops
+- [LDK #3726][] adds support for dummy hops on [blinded paths][topic rv
+  routing], enabling receivers to add arbitrary hops that serve no routing
+  purpose but act as decoys. A randomized number of dummy hops is added each
+  time, but is capped at 10 as defined by `MAX_DUMMY_HOPS_COUNT`. Adding
+  additional hops makes it significantly harder to determine the distance to or
+  the identity of the receiver node.
 
-- [LDK #4019][] Integrate Splicing with Quiescence
+- [LDK #4019][] integrates [splicing][topic splicing] with the [quiescence
+  protocol][topic channel commitment upgrades] by requiring a quiescent channel
+  state before initializing a splicing transaction, as mandated by the
+  specification.
 
-- [LND #9455][] discovery+lnwire: add support for DNS host name in NodeAnnouncement msg
+- [LND #9455][] adds support for associating a valid DNS domain name with a
+  Lightning node's IP address and public key in its announcement message, as
+  allowed by the specification and supported by other implementations such as
+  Eclair and Core Lightning (see Newsletters [#212][news212 dns], [#214][news214
+  dns], and [#178][news178 dns]).
 
-- [LND #10103][] Rate limit outgoing gossip bandwidth by peer
+- [LND #10103][] introduces a new `gossip.peer-msg-rate-bytes` option (default
+  51200), which limits the outgoing bandwidth used by each peer for outbound
+  [gossip messages][topic channel announcements]. This value limits the average
+  bandwidth speed in bytes per second, and if a peer exceeds it, LND will start
+  queuing and delaying messages sent to that peer.  This new option prevents a
+  single peer from consuming all the global bandwidth defined by
+  `gossip.msg-rate-bytes` introduced in [LND #10096][]. See Newsletters
+  [#366][news366 gossip] and [#369][news369 gossip] for related LND work on
+  gossip requests resource management.
 
-- [HWI #795][] Fix CI <!-- don't need to mention the CI changes, but please do mention the new hardware supported by this merge -harding -->
+- [HWI #795][] adds support for the BitBox02 Nova by updating the `bitbox02`
+  library to version 7.0.0. It also makes several CI updates.
 
 {% include snippets/recap-ad.md when="2025-09-09 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="3726,4019,9455,10103,795" %}
+{% include linkers/issues.md v=2 issues="3726,4019,9455,10103,795,10096" %}
 [bitcoin core 29.1rc2]: https://bitcoincore.org/bin/bitcoin-core-29.1/
 [core lightning v25.09]: https://github.com/ElementsProject/lightning/releases/tag/v25.09
 [sim1]: https://delvingbitcoin.org/t/delving-simplicity-part-three-fundamental-ways-of-combining-computations/1902
@@ -110,3 +131,8 @@ repo], and [BINANAs][binana repo]._
 [rubin ta1]: https://mailing-list.bitcoindevs.xyz/bitcoindev/bc9ff794-b11e-47bc-8840-55b2bae22cf0n@googlegroups.com/
 [rubin ta2]: https://mailing-list.bitcoindevs.xyz/bitcoindev/c51c489c-9417-4a60-b642-f819ccb07b15n@googlegroups.com/
 [rubin bip]: https://github.com/bitcoin/bips/pull/1944
+[news212 dns]: /en/newsletters/2022/08/10/#bolts-911
+[news214 dns]: /en/newsletters/2022/08/24/#eclair-2234
+[news178 dns]: /en/newsletters/2021/12/08/#c-lightning-4829
+[news366 gossip]: /en/newsletters/2025/08/08/#lnd-10097
+[news369 gossip]: /en/newsletters/2025/08/29/#lnd-10102
