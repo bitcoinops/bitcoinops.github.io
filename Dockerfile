@@ -2,6 +2,8 @@
 FROM ruby:2.6.4
 
 # Install program to configure locales
+RUN sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list
+RUN sed -i 's|security.debian.org|archive.debian.org|g' /etc/apt/sources.list
 RUN apt-get update && \
     apt-get install -y locales
 RUN dpkg-reconfigure locales && \
