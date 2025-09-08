@@ -52,7 +52,7 @@ changes to popular Bitcoin infrastructure software.
   minisketch] (allowing much larger templates to be shared efficiently),
   and using Golomb-Rice [encoding][wuille templgr] on the templates
   similar to [compact block filters][topic compact block filters] (an
-  estimated 25% efficiency).
+  estimated 25% efficiency). {% assign timestamp="0:30" %}
 
 - **Trusted delegation of script evaluation:** Josh Doman [posted][doman
   tee] to Delving Bitcoin about a library he's written that uses a
@@ -74,7 +74,7 @@ changes to popular Bitcoin infrastructure software.
   TEE.
 
   The library is designed for use with the Amazon Web Services (AWS)
-  Nitro enclave.
+  Nitro enclave. {% assign timestamp="28:07" %}
 
 ## Changes to services and client software
 
@@ -84,45 +84,45 @@ wallets and services.*
 - **ZEUS v0.11.3 released:**
   The [v0.11.3][zeus v0.11.3] release includes improvements to peer
   management, [BOLT12][topic offers], and [submarine swap][topic submarine swaps]
-  features.
+  features. {% assign timestamp="33:07" %}
 
 - **Rust Utreexo resources:**
   Abdelhamid Bakhta [posted][abdel tweet] Rust-based resources for
   [Utreexo][topic utreexo], including interactive [educational
-  materials][rustreexo webapp] and [WASM bindings][rustreexo wasm].
+  materials][rustreexo webapp] and [WASM bindings][rustreexo wasm]. {% assign timestamp="33:25" %}
 
 - **Peer-observer tooling and call to action:**
   0xB10C [posted][b10c blog] about the motivation, architecture, code,
   supporting libraries, and findings of his [peer-observer][peer-observer
   github] project. He seeks to build "A loose, decentralized group of people who
   share the interest of monitoring the Bitcoin Network. A collective to enable
-  sharing of ideas, discussion, data, tools, insights, and more."
+  sharing of ideas, discussion, data, tools, insights, and more." {% assign timestamp="34:11" %}
 
 - **Bitcoin Core Kernel-based node announced:**
   Bitcoin backbone was [announced][bitcoin backbone] as a demonstration of using
-  the [Bitcoin Core Kernel][kernel blog] library as the foundation of a Bitcoin node.
+  the [Bitcoin Core Kernel][kernel blog] library as the foundation of a Bitcoin node. {% assign timestamp="37:22" %}
 
 - **SimplicityHL released:**
   [SimplicityHL][simplcityhl github] is a Rust-like programming language that
   compiles to the lower-level [Simplicity][simplicity] language [recently
   activated][simplicity post] on Liquid. For further reading, see the [related
-  Delving thread][simplicityhl delving].
+  Delving thread][simplicityhl delving]. {% assign timestamp="38:23" %}
 
 - **LSP plugin for BTCPay Server:**
   The [LSP plugin][lsp btcpay github] implements client-side features of
-  [BLIP51][], the specification for inbound channels, into BTCPay Server.
+  [BLIP51][], the specification for inbound channels, into BTCPay Server. {% assign timestamp="39:17" %}
 
 - **Proto mining hardware and software announced:**
   Proto [announced][proto blog] new Bitcoin mining hardware and open source
-  mining software, built with previous [community feedback][news260 mdk].
+  mining software, built with previous [community feedback][news260 mdk]. {% assign timestamp="39:42" %}
 
 - **Oracle resolution demo using CSFS:**
   Abdelhamid Bakhta [posted][abdel tweet2] a demonstration of an oracle using
   [CSFS][topic op_checksigfromstack], nostr, and MutinyNet to sign an
-  attestation of an event's outcome.
+  attestation of an event's outcome. {% assign timestamp="40:46" %}
 
 - **Relai adds taproot support:**
-  Relai added support for sending to [taproot][topic taproot] addresses.
+  Relai added support for sending to [taproot][topic taproot] addresses. {% assign timestamp="41:11" %}
 
 ## Releases and release candidates
 
@@ -133,13 +133,13 @@ release candidates._
 - [LND v0.19.3-beta][] is a release for a maintenance
   version for this popular LN node implementation containing "important
   bug fixes".  Most notably, "an optional migration [...] lowers disk
-  and memory requirements for nodes significantly."
+  and memory requirements for nodes significantly." {% assign timestamp="43:09" %}
 
 - [Bitcoin Core 29.1rc1][] is a release candidate for a maintenance
-  version of the predominant full node software.
+  version of the predominant full node software. {% assign timestamp="43:29" %}
 
 - [Core Lightning v25.09rc2][] is a release candidate for a new major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="43:55" %}
 
 ## Notable code and documentation changes
 
@@ -158,7 +158,7 @@ repo], and [BINANAs][binana repo]._
   following RPCs: `createrawtransaction`, `createpsbt`, `send`, `sendall`, and
   `walletcreatefundedpsbt`. The wallet enforces the TRUC transaction
   restrictions for weight limit, sibling conflict, and incompatibility between
-  unconfirmed TRUC and non-TRUC transactions.
+  unconfirmed TRUC and non-TRUC transactions. {% assign timestamp="44:33" %}
 
 - [Bitcoin Core #33106][] lowers the default `blockmintxfee` to 1 sat/kvB (the
   minimum possible), and the default [`minrelaytxfee`][topic default minimum
@@ -169,14 +169,14 @@ repo], and [BINANAs][binana repo]._
   expected to be lowered in a future version. The motivations for this change
   range from considerable growth in the number of blocks mined with sub 1 sat/vB
   transactions and the number of pools mining these transactions to an increase
-  in the Bitcoin exchange rate.
+  in the Bitcoin exchange rate. {% assign timestamp="46:57" %}
 
 - [Core Lightning #8467][] extends `xpay` (see [Newsletter #330][news330 xpay])
   by adding support for paying [BIP353][] Human Readable Names (HRN) (e.g.
   satoshi@bitcoin.com) and enabling it to pay  [BOLT12 offers][topic offers]
   directly, removing the need to run the `fetchinvoice` command first. Under the
   hood, `xpay` fetches the payment instructions using the `fetchbip353` RPC
-  command from the `cln-bip353` plugin introduced in [Core Lightning #8362][].
+  command from the `cln-bip353` plugin introduced in [Core Lightning #8362][]. {% assign timestamp="1:02:49" %}
 
 - [Core Lightning #8354][] starts publishing `pay_part_start` and `pay_part_end`
   event notifications for the status of specific payment parts sent with
@@ -184,7 +184,7 @@ repo], and [BINANAs][binana repo]._
   duration of the payment and whether it was successful or failed. If the
   payment fails, an error message is provided and, if the error onion isn’t
   corrupted, additional information on the failure is given, such as the source
-  of the error and the failure code.
+  of the error and the failure code. {% assign timestamp="1:03:26" %}
 
 - [Eclair #3103][] introduces support for [simple taproot channels][topic simple
   taproot channels], leveraging [MuSig2][topic musig] scriptless
@@ -194,7 +194,7 @@ repo], and [BINANAs][binana repo]._
   transactions. This PR also includes support for [dual funding][topic dual
   funding] and [splicing][topic splicing] in simple taproot channels, and
   enables [channel commitment upgrades][topic channel commitment upgrades] to
-  the new taproot format during a splice transaction.
+  the new taproot format during a splice transaction. {% assign timestamp="1:04:07" %}
 
 - [Eclair #3134][] replaces the penalty weight multiplier for stuck
   [HTLCs][topic htlc] with the [CLTV expiry delta][topic cltv expiry delta] when
@@ -203,11 +203,11 @@ repo], and [BINANAs][binana repo]._
   HTLC will tie up liquidity. To mitigate the outsized penalty of stuck HTLCs
   with a maximum CLTV expiry delta, this PR adjusts the reputation decay
   parameter (`half-life`) from 15 to 30 days and the stuck payment threshold
-  (`max-relay-duration`) from 12 seconds to 5 minutes.
+  (`max-relay-duration`) from 12 seconds to 5 minutes. {% assign timestamp="1:04:43" %}
 
 - [LDK #3897][] extends its [peer storage][topic peer storage] implementation by
   detecting lost channel state during backup retrieval, by deserializing the
-  peer’s copy and comparing it to the local state.
+  peer’s copy and comparing it to the local state. {% assign timestamp="1:05:56" %}
 
 {% include snippets/recap-ad.md when="2025-08-26 16:30" %}
 {% include references.md %}
