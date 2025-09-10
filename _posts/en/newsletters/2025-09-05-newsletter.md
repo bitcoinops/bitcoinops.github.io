@@ -33,7 +33,7 @@ Bitcoin's consensus rules._
   combinators."
 
   The most recent post indicates further entries in the series are
-  expected.
+  expected. {% assign timestamp="37:56" %}
 
 - **Draft BIP for adding elliptic curve operations to tapscript:**
   Olaoluwa Osuntokun [posted][osuntokun ec] to the Bitcoin-Dev mailing
@@ -47,7 +47,7 @@ Bitcoin's consensus rules._
   Jeremy Rubin [replied][rubin ec1] to suggest additional opcodes to
   enable additional features, as well as [other opcodes][rubin ec2] that
   would make it more convenient to use some features provided by the
-  base proposal.
+  base proposal. {% assign timestamp="1:52" %}
 
 - **Draft BIP for OP_TWEAKADD:** Jeremy Rubin [posted][rubin ta1] to the
   Bitcoin-Dev mailing list a link a [draft BIP][rubin bip] to add
@@ -56,7 +56,7 @@ Bitcoin's consensus rules._
   addition of the opcode, which include a script to reveal a
   [taproot][topic taproot] tweak, proof of order of signing a
   transaction (e.g., Alice must have signed before Bob), and [signing
-  delegation][topic signer delegation].
+  delegation][topic signer delegation]. {% assign timestamp="19:23" %}
 
 ## Releases and release candidates
 
@@ -69,10 +69,10 @@ release candidates._
   the `xpay` command for paying [BIP353][] addresses and simple
   [offers][topic offers], offers improved bookkeeper support, provides
   better plugin dependency management, and includes other new features
-  and bug fixes.
+  and bug fixes. {% assign timestamp="59:40" %}
 
 - [Bitcoin Core 29.1rc2][] is a release candidate for a maintenance
-  version of the predominant full node software.
+  version of the predominant full node software. {% assign timestamp="1:00:24" %}
 
 ## Notable code and documentation changes
 
@@ -90,18 +90,18 @@ repo], and [BINANAs][binana repo]._
   purpose but act as decoys. A randomized number of dummy hops is added each
   time, but is capped at 10 as defined by `MAX_DUMMY_HOPS_COUNT`. Adding
   additional hops makes it significantly harder to determine the distance to or
-  the identity of the receiver node.
+  the identity of the receiver node. {% assign timestamp="1:00:55" %}
 
 - [LDK #4019][] integrates [splicing][topic splicing] with the [quiescence
   protocol][topic channel commitment upgrades] by requiring a quiescent channel
   state before initializing a splicing transaction, as mandated by the
-  specification.
+  specification. {% assign timestamp="1:02:24" %}
 
 - [LND #9455][] adds support for associating a valid DNS domain name with a
   Lightning node's IP address and public key in its announcement message, as
   allowed by the specification and supported by other implementations such as
   Eclair and Core Lightning (see Newsletters [#212][news212 dns], [#214][news214
-  dns], and [#178][news178 dns]).
+  dns], and [#178][news178 dns]). {% assign timestamp="1:03:09" %}
 
 - [LND #10103][] introduces a new `gossip.peer-msg-rate-bytes` option (default
   51200), which limits the outgoing bandwidth used by each peer for outbound
@@ -111,10 +111,10 @@ repo], and [BINANAs][binana repo]._
   single peer from consuming all the global bandwidth defined by
   `gossip.msg-rate-bytes` introduced in [LND #10096][]. See Newsletters
   [#366][news366 gossip] and [#369][news369 gossip] for related LND work on
-  gossip requests resource management.
+  gossip requests resource management. {% assign timestamp="1:04:00" %}
 
 - [HWI #795][] adds support for the BitBox02 Nova by updating the `bitbox02`
-  library to version 7.0.0. It also makes several CI updates.
+  library to version 7.0.0. It also makes several CI updates. {% assign timestamp="1:05:20" %}
 
 {% include snippets/recap-ad.md when="2025-09-09 16:30" %}
 {% include references.md %}
