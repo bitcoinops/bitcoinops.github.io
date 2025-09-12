@@ -55,23 +55,53 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #30469][] index: Fix coinstats overflow
+- [Bitcoin Core #30469][] updates the types of the
+  `m_total_prevout_spent_amount`, `m_total_new_outputs_ex_coinbase_amount` and
+  `m_total_coinbase_amount` values from `CAmount` (64 bit) to `arith_uint256`
+  (256 bit) to prevent a value overflow bug that has already been observed on
+  the default [signet][topic signet]. The new version of the coinstats index is
+  stored in `/indexes/coinstatsindex/` and an upgraded node will need to sync
+  from scratch to rebuild the index. The old version is kept for downgrade
+  protection, but may be removed in a future update.
 
-- [Eclair #3163][] Add high-S signature Bolt 11 test vector
+- [Eclair #3163][] adds a test vector to ensure that a payee’s public key can be
+  recovered from a [BOLT11][] invoice with a high-S signature, in addition to
+  already allowing low-S signatures. This aligns with the behaviour of
+  libsecp256k1 and the proposed [BOLTs #1284][].
 
-- [Eclair #2308][] Use balance estimates from past payments in path-finding
+- [Eclair #2308][] introduces a new `use-past-relay-data` option that when set
+  to true (default false), uses a probabilistic approach based on past
+  payment attempt history to improve pathfinding. This replaces a prior method
+  that assumed uniformity in channel balances.
 
-- [Eclair #3021][] Allow non-initiator RBF for dual funding
+- [Eclair #3021][] allows the non-initiator of a [dual-funded channel][topic
+  dual funding] to [RBF][topic rbf] the funding transaction, which is already
+  allowed in [splicing][topic splicing] transactions. However, an exception
+  applies to [liquidity advertisement][topic liquidity advertisements] purchase
+  transactions. This has been proposed in [BOLTs #1236][].
 
-- [Eclair #3142][] Allow overriding `max-closing-feerate` with `forceclose` API
+- [Eclair #3142][] adds a new `maxClosingFeerateSatByte` parameter to the
+  `forceclose` API endpoint that overrides the global feerate configuration
+  for non-urgent force close transactions on a per-channel basis. The global
+  setting `max-closing-feerate` was introduced in [Eclair #3097][].
 
-- [LDK #4053][] tankyleo/2025-09-p2a-anchor
+- [LDK #4053][] introduces zero-fee commitment channels by replacing the two
+  anchor outputs with one shared [Pay-to-Anchor (P2A)][topic ephemeral anchors]
+  output, capped at a value of 240 sats. Additionally, it switches [HTLC][topic
+  htlc] signatures in zero-fee commitment channels to
+  `SIGHASH_SINGLE|ANYONECANPAY` and bumps HTLC transactions to [version 3][topic
+  v3 transaction relay].
 
-- [LDK #3886][] Update `channel_reestablish` for splicing
+- [LDK #3886][] extends `channel_reestablish` for [splicing][topic splicing] with
+  two `funding_locked_txid` TLVs (what a node last sent and received) so that
+  peers can reconcile the active funding transaction upon reconnecting.
+  Additionally, it streamlines the reconnection process by resending
+  `commitment_signed` before `tx_signatures`, handling implicit `splice_locked`,
+  adopting `next_funding`, and requesting announcement signatures as needed.
 
 {% include snippets/recap-ad.md when="2025-09-16 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30469,3163,2308,3021,3142,4053,3886" %}
+{% include linkers/issues.md v=2 issues="30469,3163,2308,3021,3142,4053,3886,1284,1236,3097" %}
 [bitcoin core 29.1]: https://bitcoincore.org/bin/bitcoin-core-29.1/
 [bitcoin core 30.0rc1]: https://bitcoincore.org/bin/bitcoin-core-30.0/
 [nick workbook]: https://delvingbitcoin.org/t/provable-cryptography-for-bitcoin-an-introduction-workbook/1974
