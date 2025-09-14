@@ -45,7 +45,7 @@ der Konsensregeln von Bitcoin zusammenfasst._
 
   Jeremy Rubin [antwortete][rubin ec1] mit Vorschlägen für zusätzliche
   Opcodes, um weitere Funktionen zu ermöglichen, sowie [andere Opcodes][rubin ec2],
-  die Nutzung einiger Funktionen des Basisvorschlags bequemer machen würden.
+  die die Nutzung einiger Funktionen des Basisvorschlags bequemer machen würden.
 
 - **BIP-Entwurf für OP_TWEAKADD:** Jeremy Rubin [veröffentlichte][rubin ta1]
   in der Bitcoin-Dev-Mailingliste einen Link zu einem [BIP-Entwurf][rubin bip]
