@@ -83,7 +83,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], und [BINANAs][binana repo]._
 
-- [LDK #3726][] fügt Unterstützung für Dummy-Hops auf [verdeckten Pfade][topic rv routing]
+- [LDK #3726][] fügt Unterstützung für Dummy-Hops auf [verdeckten Pfaden][topic rv routing]
   hinzu, sodass Empfänger beliebige Hops hinzufügen können, die keinem
   Routing-Zweck dienen, sondern als Täuschung fungieren. Eine zufällige
   Anzahl von Dummy-Hops wird jedes Mal hinzugefügt, ist aber auf 10 begrenzt,
