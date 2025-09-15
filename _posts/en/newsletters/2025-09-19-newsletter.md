@@ -18,7 +18,14 @@ FIXME:harding
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Zero-knowledge proof of reserve tool:**
+  [Zkpoor][zkpoor github] generates [proof of reserves][topic proof of reserves]
+  using STARK proofs without revealing the owner's addresses or UTXOs.
+
+- **Alternative submarine swap protocol proof of concept:**
+  The [Papa Swap][papa swap github] protocol proof of concept achieves
+  [submarine swap][topic submarine swaps] functionality by requiring one
+  transaction instead of two.
 
 ## Releases and release candidates
 
@@ -48,3 +55,5 @@ FIXME:Gustavojfe
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
 [bitcoin core 30.0rc1]: https://bitcoincore.org/bin/bitcoin-core-30.0/
+[zkpoor github]: https://github.com/AbdelStark/zkpoor
+[papa swap github]: https://github.com/supertestnet/papa-swap
