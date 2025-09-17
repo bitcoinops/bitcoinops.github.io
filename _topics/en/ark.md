@@ -73,7 +73,7 @@ excerpt: >
 ---
 Ark transaction trees are constructed periodically through an interactive process known as "rounds". Each round involves multiple users and a counterparty (an Ark operator), who together construct and sign the transaction tree, then broadcast the root transaction onchain. Users securely store their branch and leaf transactions offchain. This package of offchain transactions is known as a VTXO (virtual UTXO), which serves as the core unit of value on Ark.
 
-To unilaterally withdraw bitcoin from Ark, a user broadcasts their branch and leaf transactions in sequence, ultimately releasing their portion of the shared UTXO to an onchain output under their sole control. However, under normal operations, users will typically prefer cooperative exits, where they spend their VTXO to receive either an onchain or Lightning payment from the Ark operator. 
+To unilaterally withdraw bitcoin from Ark, a user broadcasts their branch and leaf transactions in sequence, ultimately releasing their portion of the shared UTXO to an onchain output under their sole control. However, under normal operations, users will typically prefer cooperative exits, where they spend their VTXO to receive either an onchain or Lightning payment from the Ark operator.
 
 VTXOs "expire" according to an absolute timelock. After this timelock expires, both the Ark operator and users can unilaterally spend the bitcoin. To maintain trustlessness, users must ensure their VTXOs are spent into a new transaction tree before expiry. This expiry mechanism allows the Ark operator to efficiently recover liquidity that has been allocated to previous rounds and external spending operations.
 
