@@ -7,11 +7,54 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-FIXME:harding
+This week's newsletter summarizes a proposal to enhance LN redundant
+overpayments and links to a discussion about potential partitioning
+attacks against full nodes.  Also included are our regular sections
+describing recent changes to services and client software, announcing
+new releases and release candidates, and summarizing notable changes to
+popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:harding
+- **LSP-funded redundant overpayments:** developer ZmnSCPxj
+  [posted][zmnscpxj lspstuck] to Delving Bitcoin a proposal to allow
+  LSPs to provide the additional funding (liquidity) required for
+  [redundant overpayments][topic redundant overpayments].  In the
+  original proposals for redundant overpayments, Alice pays Zed by
+  sending multiple payments through multiple routes in a way that only
+  allows Zed to claim one of the payments; the rest of the payments are
+  refunded to Alice.  The upside of this approach is that the first
+  payment attempts to reach Zed can succeed while other attempts are
+  still traveling through the network, increasing the speed of payments
+  on LN.
+
+  Downsides of this approach are that Alice must have extra capital
+  (liquidity) to make the redundant payments, Alice must remain online
+  until the redundant overpayment completes, and any payment that becomes
+  stuck prevents Alice from being able to spend that money until the
+  payment attempt times out (up to two weeks with commonly used
+  settings).
+
+  ZmnSCPxj's proposal allows Alice to pay only the actual payment amount
+  (plus fees) and her Lightning service providers (LSPs) supply the
+  liquidity for sending the redundant payments, providing the speed
+  advantage of redundant overpayments without requiring her to have
+  extra liquidity either briefly or until timeout.  The LSPs are also
+  able to finalize the payment while Alice is offline, so the payment
+  can be completed even if Alice has poor connectivity.
+
+  Downsides of the new proposal are that Alice loses some privacy to her
+  LSPs and that the proposal requires several changes to the LN protocol
+  in addition to support for redundant overpayments.
+
+- **Partitioning and eclipse attacks using BGP interception:** developer
+  cedarctic [posted][cedarctic bgp] to Delving Bitcoin about using flaws
+  in the Border Gateway Protocol (BGP) to prevent full nodes from being
+  able to connect to peers, which can be used to partition the network
+  or execute [eclipse attacks][topic eclipse attacks].  Several
+  mitigations were described by cedarctic, with other developers in the
+  discussion describing other mitigations and ways to monitor for use of
+  the attack.
 
 ## Changes to services and client software
 
@@ -121,3 +164,5 @@ repo], and [BINANAs][binana repo]._
 [news339 filters]: /en/newsletters/2025/01/31/#bdk-1614
 [news346 evicted]: /en/newsletters/2025/03/21/#bdk-1839
 [BDK Chain 0.23.2]: https://github.com/bitcoindevkit/bdk/releases/tag/chain-0.23.2
+[zmnscpxj lspstuck]: https://delvingbitcoin.org/t/multichannel-and-multiptlc-towards-a-global-high-availability-cp-database-for-bitcoin-payments/1983/
+[cedarctic bgp]: https://delvingbitcoin.org/t/eclipsing-bitcoin-nodes-with-bgp-interception-attacks/1965/
