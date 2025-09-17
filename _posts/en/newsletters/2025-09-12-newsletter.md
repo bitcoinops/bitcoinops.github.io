@@ -20,7 +20,7 @@ software.
   day event to "teach developers the basics of provable cryptography,
   [...] consisting of cryptographic definitions, propositions, proofs
   and exercises."  The workbook is available as a [PDF][workbook pdf]
-  with freely licensesd [source][workbook source]. {% assign timestamp="0:48" %}
+  with freely licensed [source][workbook source]. {% assign timestamp="0:48" %}
 
 ## Releases and release candidates
 
@@ -62,7 +62,7 @@ repo], and [BINANAs][binana repo]._
   the default [signet][topic signet]. The new version of the coinstats index is
   stored in `/indexes/coinstatsindex/` and an upgraded node will need to sync
   from scratch to rebuild the index. The old version is kept for downgrade
-  protection, but may be removed in a future update. {% assign timestamp="33:18" %}
+  protection, but may be removed in a future update. {% assign timestamp="31:45" %}
 
 - [Eclair #3163][] adds a test vector to ensure that a payee’s public key can be
   recovered from a [BOLT11][] invoice with a high-S signature, in addition to
