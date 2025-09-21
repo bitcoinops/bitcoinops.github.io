@@ -63,7 +63,7 @@ _Wichtige aktuelle Änderungen in [Bitcoin Core][bitcoin core repo], [Core Light
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #33268][] ändert, wie Transaktionen als Teil einer Benutzer-Wallet erkannt werden, indem die Anforderung entfernt wird, dass der Gesamtbetrag der Inputs einer Transaktion null Sats übersteigt. Solange eine Transaktion mindestens einen Output einer Wallet ausgibt, wird sie als Teil dieser Wallet erkannt. Dies ermöglicht es Transaktionen mit null-wertigen Inputs, wie das Ausgeben eines [P2A ephemeral Anchor][topic ephemeral anchors], in der Transaktionsliste eines Benutzers zu erscheinen.
+- [Bitcoin Core #33268][] ändert, wie Transaktionen als Teil einer Benutzer-Wallet erkannt werden, indem die Anforderung entfernt wird, dass der Gesamtbetrag der Inputs einer Transaktion null Sats übersteigt. Solange eine Transaktion mindestens einen Output einer Wallet ausgibt, wird sie als Teil dieser Wallet erkannt. Dies ermöglicht es, Transaktionen mit null-wertigen Inputs, wie das Ausgeben eines [P2A ephemeral Anchor][topic ephemeral anchors], in der Transaktionsliste eines Benutzers zu erscheinen.
 
 - [Eclair #3157][] aktualisiert die Art, wie es Remote-Commitment-Transaktionen bei Wiederverbindung signiert und sendet. Anstatt das zuvor signierte
   Commitment erneut zu senden, signiert es mit den neuesten Nonces aus `channel_reestablish` neu. Peers, die keine deterministischen Nonces in
