@@ -1,6 +1,5 @@
 ---
-title: 'Bulletin Hebdomadaire 
-Bitcoin Optech #372'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #372'
 permalink: /fr/newsletters/2025/09/19/
 name: 2025-09-19-newsletter-fr
 slug: 2025-09-19-newsletter-fr
