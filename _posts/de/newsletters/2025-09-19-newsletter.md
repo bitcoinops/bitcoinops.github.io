@@ -31,7 +31,7 @@ beschreiben, neue Releases und Release-Kandidaten ankündigen und bemerkenswerte
   Nachteile des neuen Vorschlags sind, dass Alice etwas Privatsphäre gegenüber ihren LSPs verliert und dass der Vorschlag mehrere Änderungen am
   LN-Protokoll zusätzlich zur Unterstützung redundanter Überzahlungen erfordert.
 
-- **Partitionierungs- und Eclipse-Angriffe mit BGP-Abfangen:** Entwickler cedarctic [veröffentlichte][cedarctic bgp] auf Delving Bitcoin über die Nutzung
+- **Partitionierungs- und Eclipse-Angriffe durch BGP-Abfangen:** Entwickler cedarctic [schrieb][cedarctic bgp] auf Delving Bitcoin über die Nutzung
   von Schwächen im Border Gateway Protocol (BGP), um Full Nodes daran zu hindern, sich mit Peers zu verbinden, was zur Partitionierung des Netzwerks oder
   zur Ausführung von [Eclipse-Angriffen][topic eclipse attacks] verwendet werden kann. Mehrere Gegenmaßnahmen wurden von cedarctic beschrieben, wobei
   andere Entwickler in der Diskussion weitere Gegenmaßnahmen und Wege zur Überwachung der Angriffserkennung beschrieben.
