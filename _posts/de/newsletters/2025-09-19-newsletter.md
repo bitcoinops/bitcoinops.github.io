@@ -92,7 +92,7 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement Proposals (BI
 
 - [BDK #2000][] fügt Block-Reorg-Behandlung zu einer refaktorierten `FilterIter`-Struktur hinzu (siehe [Newsletter #339][news339 filters]). Anstatt
   ihren Ablauf über mehrere Methoden zu verteilen, verknüpft dieser PR alles mit der `next()`-Funktion und vermeidet so Timing-Risiken. Ein Checkpoint
-  wird bei jeder Blockhöhe ausgegeben, um sicherzustellen, dass der Block nicht veraltet ist und dass BDK auf der gültigen Chain ist. `FilterIter`
+  wird bei jeder Blockhöhe ausgegeben, um sicherzustellen, dass der Block nicht veraltet ist und das BDK auf der gültigen Chain ist. `FilterIter`
   scannt alle Blöcke und holt diejenigen, die Transaktionen enthalten, die für eine Liste von Script-Pubkeys relevant sind, unter Verwendung von
   [Compact Block Filters][topic compact block filters] wie in [BIP158][] spezifiziert.
 
