@@ -15,7 +15,34 @@ describing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:harding
+- **Eclair vulnerability:** Matt Morehouse [posted][morehouse eclair] to
+  Delving Bitcoin to announce the [responsible disclosure][topic
+  responsible disclosures] of a vulnerability affecting older versions
+  of Eclair.  All Eclair users are recommended to upgrade to version
+  0.12 or greater.  The vulnerability allowed an attacker to broadcast
+  an old commitment transaction to steal all current funds from a
+  channel.  In addition to fixing the vulnerability, Eclair developers
+  added a comprehensive testing suite designed to catch similar problems.
+
+- **Research into feerate settings:** Daniela Brozzoni [posted][brozzoni
+  feefilter] to Delving Bitcoin the results of a scan of almost 30,000
+  full nodes that were accepting incoming connections.  Each node was
+  queried for its [BIP133][] fee filter, which indicates the lowest
+  feerate at which it will currently accept relayed unconfirmed
+  transactions.  When node mempools aren't full, this is
+  the node's [default minimum transaction relay feerate][topic default
+  minimum transaction relay feerates].  Her results indicate most nodes
+  used the default of 1 sat/vbyte (s/v), which has long been the default
+  in Bitcoin Core.  About 4% of nodes used 0.1 s/v, the default for the
+  upcoming 30.0 version of Bitcoin Core, and about 8% of nodes didn't
+  respond to the query---indicating that they might be spy nodes.
+
+  A small percentage of the nodes used a feefilter value of 9,170,997
+  (10,000 s/v), which developer 0xB10C [noted][0xb10c feefilter] is the
+  value Bitcoin Core sets, through rounding, when the node is more than
+  100 blocks behind the tip of the chain and is focused on receiving
+  block data rather than transactions that might be confirmed in later
+  blocks.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -54,3 +81,6 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2025-09-30 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
+[morehouse eclair]: https://delvingbitcoin.org/t/disclosure-eclair-preimage-extraction-exploit/2010
+[brozzoni feefilter]: https://delvingbitcoin.org/t/measuring-minrelaytxfee-across-the-bitcoin-network/1989
+[0xb10c feefilter]: https://delvingbitcoin.org/t/measuring-minrelaytxfee-across-the-bitcoin-network/1989/3
