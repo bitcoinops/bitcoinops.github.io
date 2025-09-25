@@ -55,7 +55,60 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Implications of OP_RETURN changes in upcoming Bitcoin Core version 30.0?]({{bse}}127895)
+  Pieter Wuille describes his perspectives on the effectiveness and drawbacks of
+  using [mempool and relay policy][policy series] to affect the contents of mined blocks.
+
+- [If OP_RETURN relay limits are ineffective, why remove the safeguard instead of keeping it as a default discouragement?]({{bse}}127904)
+  Antoine Poinsot explains the malincentive created by the current OP_RETURN
+  default limit value in Bitcoin Core and the rationale for removing it.
+
+- [What are the worst-case stress scenarios from uncapped OP_RETURNs in Bitcoin Core v30?]({{bse}}127914)
+  Vojtěch Strnad and Pieter Wuille respond to a list of extreme scenarios that
+  might occur with the OP_RETURN limit policy default setting changing.
+
+- [If OP_RETURN needed more room, why was the 80-byte cap removed instead of being raised to 160?]({{bse}}127915)
+  Ava Chow and Antoine Poinsot outline considerations against a 160-byte default
+  OP_RETURN value including an aversion to continually setting the cap, existing
+  large miners already bypassing the cap, and risks of not anticipating future
+  on-chain activity.
+
+- [If arbitrary data is inevitable, does removing OP_RETURN limits shift demand toward more harmful storage methods (like UTXO-inflating addresses)?]({{bse}}127916)
+  Ava Chow points out that dropping the OP_RETURN limit provides incentives
+  to use a less harmful alternative for output data storage in certain situations.
+
+- [If OP_RETURN uncapping doesn’t increase the UTXO set, how does it still contribute to blockchain bloat and centralization pressure?]({{bse}}127912)
+  Ava Chow explains how increased use of OP_RETURN outputs affects the resource
+  utilization of Bitcoin nodes.
+
+- [How does uncapping OP_RETURN impact long-term fee-market quality and security budget?]({{bse}}127906)
+  Ava Chow answers a series of questions about hypothetical OP_RETURN usage and
+  its impact on future Bitcoin mining revenues.
+
+- [Assurance blockchain will not suffer from illegal content with 100KB OP_RETURN?]({{bse}}127958)
+  User jb55 provides several examples of potential encoding schemes for data
+  concluding "So no, in general you can't really stop these kinds of things in a
+  censorship resistant, decentralized network."
+
+- [What analysis shows OP_RETURN uncapping won’t harm block propagation or orphan risk?]({{bse}}127905)
+  Ava Chow points out that while there is no dataset specifically isolating
+  large OP_RETURNs, previous analyses of [compact blocks][topic compact block
+  relay] and stale blocks indicate there is no reason to expect them to behave
+  differently.
+
+- [Where does Bitcoin Core keep the XOR obfuscation keys for both block data files and level DB indexes?]({{bse}}127927)
+  Vojtěch Strnad notes the chainstate key is stored in LevelDB under the
+  "\000obfuscate_key" key and the block and undo data key is stored in the blocks/xor.dat file.
+
+- [How robust is 1p1c transaction relay in bitcoin core 28.0?]({{bse}}127873)
+  Glozow clarifies that the non-robustness referred to in the original
+  opportunistic [one parent one child (1P1C) relay][28.0 1p1c] pull request means "not
+  guaranteed to work, particularly in the presence of adversaries or when volume
+  is really high so we miss things."
+
+- [How can I allow getblocktemplate to include sub 1 sat/vbyte transactions?]({{bse}}127881)
+  User inersha discovers the settings required to not only relay sub 1 sat/vbyte
+  transactions but also have them included in a candidate block template.
 
 ## Releases and release candidates
 
@@ -152,3 +205,5 @@ repo], and [BINANAs][binana repo]._
 [news371 pubkey]: /en/newsletters/2025/09/12/#eclair-3163
 [news371 p2a]: /en/newsletters/2025/09/12/#ldk-4053
 [news346 sweeper]: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
+[policy series]: /en/blog/waiting-for-confirmation/
+[28.0 1p1c]: /en/bitcoin-core-28-wallet-integration-guide/#one-parent-one-child-1p1c-relay
