@@ -29,7 +29,7 @@ Kandidaten sowie bemerkenswerte Änderungen an verbreiteter Bitcoin-Infrastruktu
 - **Untersuchung zu Feerate-Einstellungen:** Daniela Brozzoni [veröffentlichte][brozzoni feefilter]
   auf Delving Bitcoin die Ergebnisse eines Scans von fast 30.000 Full Nodes,
   die eingehende Verbindungen akzeptierten. Jeder Knoten wurde nach dem
-  [BIP133][] Fee-Filter befragt, der die niedrigste Feerate angibt, bei der
+  [BIP133][] Fee-Filter befragt, der die niedrigste Feerate angibt, bei welcher
   der Knoten aktuell unbestätigte, weitergeleitete Transaktionen akzeptiert.
   Solange die Mempools nicht voll sind, entspricht dies dem [standardmäßigen
   minimalen Relay-Feerate][topic default minimum transaction relay feerates]
@@ -118,7 +118,7 @@ _Neue Releases und Release-Kandidaten für verbreitete Bitcoin-Infrastrukturproj
 Bitte erwägen Sie ein Upgrade auf neue Releases oder helfen Sie beim Testen von Release-Candidates._
 
 - [Bitcoin Core 30.0rc1][] ist ein Release Candidate für die nächste
-  Hauptversion der vollständigen Verifikations-Node-Software. Siehe bitte den
+  Hauptversion der vollständigen Verifikations-Knoten-Software. Siehe bitte den
   [Testing-Guide für Version 30][bcc30 testing].
 
 ## Wichtige Code- und Dokumentationsänderungen
