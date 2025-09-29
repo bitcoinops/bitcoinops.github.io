@@ -77,7 +77,7 @@ To unilaterally withdraw bitcoin from Ark, a user broadcasts their branch and le
 
 VTXOs "expire" according to an absolute timelock. After this timelock expires, both the Ark operator and users can unilaterally spend the bitcoin. To maintain trustlessness, users must ensure their VTXOs are spent into a new transaction tree before expiry. This expiry mechanism allows the Ark operator to efficiently recover liquidity that has been allocated to previous rounds and external spending operations.
 
-Payments between Ark users are handled as offchain, pre-signed extensions of the transaction tree. Each payment transaction requires co-signatures from both the sender and the Ark operator, meaning receivers must trust that the sender will not collude with the operator to double-spend. 
+Payments between Ark users are handled as offchain, pre-signed extensions of the transaction tree. Each payment transaction requires co-signatures from both the sender and the Ark operator, meaning receivers must trust that the sender will not collude with the operator to double-spend.
 
 Users can chain these payments by spending a received VTXO before it's included in a new round. In payment chains, any sender in the chain could collude with the operator to double-spend the entire chain.
 
