@@ -1,5 +1,5 @@
 ---
-title: The Ark protocol
+title: Ark protocol
 
 ## Optional.  Shorter name to use for reference style links e.g., "foo"
 ## will allow using the link [topic foo][].  Not case sensitive
