@@ -169,7 +169,7 @@ BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo] und
   Zero-Fee-Commitment-Kanälen.
 
 - [LDK #4046][] ermöglicht es einem häufig offline befindlichen Sender, [async payments][topic
-  async payments] an einen häufig-offline Empfänger zu senden. Der Sender setzt
+  async payments] an einen häufig offline befindlichen Empfänger zu senden. Der Sender setzt
   ein Flag in der `update_add_htlc` Nachricht, damit das [HTLC][topic htlc]
   beim LSP gehalten wird, bis der Empfänger wieder online ist und eine
   `release_held_htlc` [Onion-Nachricht][topic onion messages] sendet, um die
