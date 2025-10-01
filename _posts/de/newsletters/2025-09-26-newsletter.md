@@ -109,7 +109,7 @@ der am besten bewerteten Fragen und Antworten seit unserem letzten Update hervor
 
 - [Wie kann ich getblocktemplate erlauben, Transaktionen unter 1 sat/vbyte einzuschließen?]({{bse}}127881)
   Nutzer inersha beschreibt die nötigen Einstellungen, um nicht nur sub-1-sat/vbyte
-  Transaktionen zu relaisieren, sondern diese auch in einem Kandidatenblock-Template
+  Transaktionen weiterzuleiten, sondern diese auch in einem Kandidatenblock-Template
   aufzunehmen.
 
 ## Releases und Release-Kandidaten
