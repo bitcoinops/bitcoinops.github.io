@@ -22,7 +22,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   0.12 or greater.  The vulnerability allowed an attacker to broadcast
   an old commitment transaction to steal all current funds from a
   channel.  In addition to fixing the vulnerability, Eclair developers
-  added a comprehensive testing suite designed to catch similar problems.
+  added a comprehensive testing suite designed to catch similar problems. {% assign timestamp="18:50" %}
 
 - **Research into feerate settings:** Daniela Brozzoni [posted][brozzoni
   feefilter] to Delving Bitcoin the results of a scan of almost 30,000
@@ -42,7 +42,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   value Bitcoin Core sets, through rounding, when the node is more than
   100 blocks behind the tip of the chain and is focused on receiving
   block data rather than transactions that might be confirmed in later
-  blocks.
+  blocks. {% assign timestamp="0:35" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -57,58 +57,58 @@ answers posted since our last update.*
 
 - [Implications of OP_RETURN changes in upcoming Bitcoin Core version 30.0?]({{bse}}127895)
   Pieter Wuille describes his perspectives on the effectiveness and drawbacks of
-  using [mempool and relay policy][policy series] to affect the contents of mined blocks.
+  using [mempool and relay policy][policy series] to affect the contents of mined blocks. {% assign timestamp="28:27" %}
 
 - [If OP_RETURN relay limits are ineffective, why remove the safeguard instead of keeping it as a default discouragement?]({{bse}}127904)
   Antoine Poinsot explains the malincentive created by the current OP_RETURN
-  default limit value in Bitcoin Core and the rationale for removing it.
+  default limit value in Bitcoin Core and the rationale for removing it. {% assign timestamp="42:12" %}
 
 - [What are the worst-case stress scenarios from uncapped OP_RETURNs in Bitcoin Core v30?]({{bse}}127914)
   Vojtěch Strnad and Pieter Wuille respond to a list of extreme scenarios that
-  might occur with the OP_RETURN limit policy default setting changing.
+  might occur with the OP_RETURN limit policy default setting changing. {% assign timestamp="43:25" %}
 
 - [If OP_RETURN needed more room, why was the 80-byte cap removed instead of being raised to 160?]({{bse}}127915)
   Ava Chow and Antoine Poinsot outline considerations against a 160-byte default
   OP_RETURN value including an aversion to continually setting the cap, existing
   large miners already bypassing the cap, and risks of not anticipating future
-  on-chain activity.
+  on-chain activity. {% assign timestamp="50:39" %}
 
 - [If arbitrary data is inevitable, does removing OP_RETURN limits shift demand toward more harmful storage methods (like UTXO-inflating addresses)?]({{bse}}127916)
   Ava Chow points out that dropping the OP_RETURN limit provides incentives
-  to use a less harmful alternative for output data storage in certain situations.
+  to use a less harmful alternative for output data storage in certain situations. {% assign timestamp="59:48" %}
 
 - [If OP_RETURN uncapping doesn’t increase the UTXO set, how does it still contribute to blockchain bloat and centralization pressure?]({{bse}}127912)
   Ava Chow explains how increased use of OP_RETURN outputs affects the resource
-  utilization of Bitcoin nodes.
+  utilization of Bitcoin nodes. {% assign timestamp="1:00:17" %}
 
 - [How does uncapping OP_RETURN impact long-term fee-market quality and security budget?]({{bse}}127906)
   Ava Chow answers a series of questions about hypothetical OP_RETURN usage and
-  its impact on future Bitcoin mining revenues.
+  its impact on future Bitcoin mining revenues. {% assign timestamp="1:02:11" %}
 
 - [Assurance blockchain will not suffer from illegal content with 100KB OP_RETURN?]({{bse}}127958)
   User jb55 provides several examples of potential encoding schemes for data
   concluding "So no, in general you can't really stop these kinds of things in a
-  censorship resistant, decentralized network."
+  censorship resistant, decentralized network." {% assign timestamp="1:04:34" %}
 
 - [What analysis shows OP_RETURN uncapping won’t harm block propagation or orphan risk?]({{bse}}127905)
   Ava Chow points out that while there is no dataset specifically isolating
   large OP_RETURNs, previous analyses of [compact blocks][topic compact block
   relay] and stale blocks indicate there is no reason to expect them to behave
-  differently.
+  differently. {% assign timestamp="1:05:25" %}
 
 - [Where does Bitcoin Core keep the XOR obfuscation keys for both block data files and level DB indexes?]({{bse}}127927)
   Vojtěch Strnad notes the chainstate key is stored in LevelDB under the
-  "\000obfuscate_key" key and the block and undo data key is stored in the blocks/xor.dat file.
+  "\000obfuscate_key" key and the block and undo data key is stored in the blocks/xor.dat file. {% assign timestamp="1:06:10" %}
 
 - [How robust is 1p1c transaction relay in bitcoin core 28.0?]({{bse}}127873)
   Glozow clarifies that the non-robustness referred to in the original
   opportunistic [one parent one child (1P1C) relay][28.0 1p1c] pull request means "not
   guaranteed to work, particularly in the presence of adversaries or when volume
-  is really high so we miss things."
+  is really high so we miss things." {% assign timestamp="1:06:34" %}
 
 - [How can I allow getblocktemplate to include sub 1 sat/vbyte transactions?]({{bse}}127881)
   User inersha discovers the settings required to not only relay sub 1 sat/vbyte
-  transactions but also have them included in a candidate block template.
+  transactions but also have them included in a candidate block template. {% assign timestamp="1:10:37" %}
 
 ## Releases and release candidates
 
@@ -116,9 +116,9 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
--  [Bitcoin Core 30.0rc1][] is a release candidate for the next major version of
-   this full verification node software. Please see the [version 30 release
-   candidate testing guide][bcc30 testing].
+- [Bitcoin Core 30.0rc1][] is a release candidate for the next major version of
+  this full verification node software. Please see the [version 30 release
+  candidate testing guide][bcc30 testing]. {% assign timestamp="1:13:00" %}
 
 ## Notable code and documentation changes
 
@@ -136,47 +136,47 @@ repo], and [BINANAs][binana repo]._
   out-of-memory errors or heavy swapping. For systems with less than 2GB of RAM,
   the `dbcache` warning threshold is 450MB; otherwise, the threshold is 75% of
   the total RAM. The `dbcache` 16GB limit was removed in September 2024 (see
-  Newsletter [#321][news321 dbcache]).
+  Newsletter [#321][news321 dbcache]). {% assign timestamp="1:15:26" %}
 
 - [Bitcoin Core #28592][] increases the per-peer transaction relay rate from 7
   to 14 for inbound peers due to an increased presence of smaller transactions on
   the network. The rate for outbound peers is 2.5 times higher, increasing to 35
   transactions per second. The transaction relay rate limits the number of
-  transactions a node sends to its peers.
+  transactions a node sends to its peers. {% assign timestamp="1:18:36" %}
 
 - [Eclair #3171][] removes `PaymentWeightRatios`, a pathfinding method that
   assumed uniformity in channel balances, and replaces it with a newly
   introduced probabilistic approach based on past payment attempt history (see
-  Newsletter [#371][news371 path]).
+  Newsletter [#371][news371 path]). {% assign timestamp="1:22:33" %}
 
 - [Eclair #3175][] starts rejecting unpayable [BOLT12][] [offers][topic offers]
   where the fields `offer_chains`, `offer_paths`, `invoice_paths`, and
-  `invoice_blindedpay` are present but empty.
+  `invoice_blindedpay` are present but empty. {% assign timestamp="1:26:41" %}
 
 - [LDK #4064][] updates its signature verification logic to ensure that if the
   `n` field (payee’s pubkey) is present, the signature is verified against it.
   Otherwise, the payee’s pubkey is extracted from the [BOLT11][] invoice with
   either a high-S or low-S signature. This PR aligns signature checks with the
   proposed [BOLTs #1284][] and with other implementations such as Eclair (See
-  Newsletter [#371][news371 pubkey]).
+  Newsletter [#371][news371 pubkey]). {% assign timestamp="1:29:36" %}
 
 - [LDK #4067][] adds support for spending [P2A ephemeral anchor][topic
   ephemeral anchors] outputs from [zero-fee commitment][topic v3 commitments] transactions, ensuring
   that channel peers can claim their funds back on-chain. See Newsletter
-  [#371][news371 p2a] for LDK’s implementation of zero-fee commitment channels.
+  [#371][news371 p2a] for LDK’s implementation of zero-fee commitment channels. {% assign timestamp="1:31:04" %}
 
 - [LDK #4046][] enables an often-offline sender to send [async payments][topic
   async payments] to an often-offline recipient. The sender sets a flag in the
   `update_add_htlc` message to indicate that the [HTLC][topic htlc] should be
   held by the LSP until the recipient comes back online and sends a
   `release_held_htlc` [onion message][topic onion messages] to claim the
-  payment.
+  payment. {% assign timestamp="1:32:43" %}
 
 - [LDK #4083][] deprecates the `pay_for_offer_from_human_readable_name` endpoint
   to remove duplicate [BIP353][] HRN payment APIs. Wallets are encouraged to use
   the `bitcoin-payment-instructions` crate to parse and resolve payment
   instructions before calling `pay_for_offer_from_hrn` to pay an [offer][topic
-  offers] from a [BIP353][] HRN (e.g. satoshi@nakamoto.com).
+  offers] from a [BIP353][] HRN (e.g. satoshi@nakamoto.com). {% assign timestamp="1:35:27" %}
 
 - [LND #10189][] updates its `sweeper` system (see Newsletter [#346][news346
   sweeper]) to properly recognize the `ErrMinRelayFeeNotMet` error code and
@@ -185,12 +185,12 @@ repo], and [BINANAs][binana repo]._
   wouldn't be retried. This PR also improves weight estimation by accounting for
   a possible extra change output, which is relevant in [taproot][topic taproot]
   overlay channels used to enhance LND’s [Taproot Assets][topic client-side
-  validation].
+  validation]. {% assign timestamp="1:38:23" %}
 
 - [BIPs #1963][] updates the status of the BIPs that specify [compact block
   filters][topic compact block filters], [BIP157][] and [BIP158][], from `Draft`
   to `Final` as they’ve been deployed in Bitcoin Core and other software since
-  2020.
+  2020. {% assign timestamp="1:41:17" %}
 
 {% include snippets/recap-ad.md when="2025-09-30 16:30" %}
 {% include references.md %}
