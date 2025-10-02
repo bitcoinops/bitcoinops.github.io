@@ -1,9 +1,9 @@
 ---
-title: Ark
+title: Ark protocol
 
 ## Optional.  Shorter name to use for reference style links e.g., "foo"
 ## will allow using the link [topic foo][].  Not case sensitive
-# shortname: foo
+shortname: ark
 
 ## Optional.  An entry will be added to the topics index for each alias
 #title-aliases:
@@ -17,8 +17,18 @@ topic-categories:
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: "Basis Of Ark Technology (BOATs)"
-      link: https://github.com/ark-network/boats
+
+  - title: "Arkade implementation"
+    link: https://github.com/arkade-os
+
+  - title: "Arkade technical documentation"
+    link: https://docs.arkadeos.com
+
+  - title: "Second implementation"
+    link: https://codeberg.org/ark-bitcoin
+
+  - title: "Second technical documentation"
+    link: https://docs.second.tech/
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -58,30 +68,48 @@ see_also:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Ark** is a trustless joinpool-style protocol where a large number
-  of users share a UTXO by accepting a counterparty as a co-signer on
-  all transactions within a certain time period.  This spreads the cost
-  of onchain fees from using that UTXO across many users, minimizing
-  their individual costs.
+  In the **Ark protocol**, a large number of users trustlessly share onchain UTXOs
+  using trees of pre-signed, offchain transactions. By sharing UTXOs and transacting
+  offchain, Ark users can spread the cost of onchain fees across multiple participants,
+  minimizing individual transaction costs while maintaining self-custody of their bitcoin.
 
 ---
-The users can either unilaterally withdraw their bitcoins onchain
-after the expiry of the time period or instantly and trustlessly
-transfer them offchain to the counterparty before the end of the time
-period.  Normally, a user will simply roll their bitcoins into another
-contract with the counterparty, which can be highly fee efficient when
-done with many other users at the same time.  Alternatively, the
-counterparty may help the user make a payment onchain, through LN, or
-through any other protocol supported by the counterparty.  Presumably,
-the counterparty would pass along to the user any fees the
-counterparty had to pay for using the payment protocol, e.g.
-forwarding fees if LN was used.
+Ark transaction trees are constructed periodically through an interactive
+process known as "rounds". Each round involves multiple users and a counterparty
+(an Ark operator), who together construct and sign the transaction tree, then
+broadcast the root transaction onchain. Users securely store their branch and
+leaf transactions offchain. This package of offchain transactions is known as a
+VTXO (virtual UTXO), which serves as the core unit of value on Ark.
 
-Ark can be implemented on Bitcoin with no consensus changes required,
-but it will support a larger number of users---making it much more fee
-efficient---if a [covenant][topic covenants] feature like
-[OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] is added to
-Bitcoin.
+To unilaterally withdraw bitcoin from Ark, a user broadcasts their branch and
+leaf transactions in sequence, ultimately releasing their portion of the shared
+UTXO to an onchain output under their sole control. However, under normal
+operations, users will typically prefer cooperative exits, where they spend
+their VTXO to receive an onchain UTXO from the Ark operator.
+
+VTXOs "expire" according to an absolute timelock. After this timelock expires,
+both the Ark operator and users can unilaterally spend the bitcoin. To maintain
+trustlessness, users must ensure their VTXOs are spent into a new transaction
+tree before expiry. This expiry mechanism allows the Ark operator to efficiently
+recover liquidity that has been allocated to previous rounds and external
+spending operations.
+
+Payments between Ark users are handled as offchain, pre-signed extensions of the
+transaction tree. Each payment transaction requires co-signatures from both the
+sender and the Ark operator, meaning receivers must trust that the sender will
+not collude with the operator to double-spend.
+
+Users can chain these payments by spending a received VTXO before it's included
+in a new round. In payment chains, any sender in the chain could collude with
+the operator to double-spend the entire chain.
+
+Upon receiving a VTXO, users can either roll it into a new round to regain
+trustlessness, or spend it to another user before the expiry deadline.
+
+Ark can be implemented on Bitcoin without requiring consensus changes, but would
+support significantly more users—and achieve greater fee efficiency—if covenant
+features like [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] were added
+to Bitcoin.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
