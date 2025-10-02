@@ -7,11 +7,14 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-FIXME:schmidty
+This week's newsletter includes our regular sections summarizing
+discussion about changing Bitcoin's consensus rules, announcing new
+release and release candidates, and describing notable changes to
+popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:harding
+_No significant news this week was found in any of our [sources][optech sources]._
 
 ## Changing consensus
 
@@ -80,7 +83,21 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Bitcoin Core 30.0rc2][] is a release candidate for the next major version of
+  this full verification node software. Please see the [version 30 release
+  candidate testing guide][bcc30 testing].
+
+- [bdk-wallet 2.2.0][] is a minor release of this library used for building
+  wallet applications that introduces a new feature that returns events upon
+  applying an update, new test facilities for test persistence, and
+  documentation improvements.
+
+- [LND v0.20.0-beta.rc1][] is a release candidate for a new version of this
+  popular LN node implementation that introduces multiple bug fixes, persistence
+  of node announcement settings across restarts, a new `noopAdd` [HTLC][topic
+  htlc] type, support for [P2TR][topic taproot] fallback addresses on [BOLT11][]
+  invoices, and an experimental `XFindBaseLocalChanAlias` endpoint, among many
+  other changes.
 
 ## Notable code and documentation changes
 
@@ -93,11 +110,68 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33229][] implements automatic multiprocess selection for
+  inter-process communication (IPC) (see [Newsletter #369][news369 ipc]),
+  allowing users to skip specifying the `-m` startup option when IPC arguments
+  are passed or IPC configurations are set. This change simplifies the
+  integration of Bitcoin Core with an external [Stratum v2][topic pooled mining]
+  mining service that creates, manages and submits block templates.
+
+- [Bitcoin Core #33446][] fixes a bug introduced when the `target` field was
+  added to the responses of the `getblock` and `getblockheader` commands (see
+  [Newsletter #339][news339 target]). Instead of always incorrectly returning
+  the chain tip’s target, it now returns the requested block’s target.
+
+- [LDK #3838][] adds support for the `client_trusts_lsp` model for [JIT
+  channels][topic jit channels], as specified in [BLIP52][] (LSPS2) (see
+  [Newsletter #335][news335 blip]), on top of already supporting the
+  `lsp_trusts_client` model. With the new model, the LSP will not broadcast the
+  on-chain funding transaction until the receiver reveals the preimage required
+  to claim the [HTLC][topic htlc].
+
+- [LDK #4098][] updates the implementation of the `next_funding` TLV in the
+  `channel_reestablish` flow for [splicing][topic splicing] transactions, to
+  align with the proposed specification change in [BOLTs #1289][]. This PR
+  follows the recent work on `channel_reestablish` covered in [Newsletter
+  #371][news371 splicing].
+
+- [LDK #4106][] fixes a race condition in which an [HTLC][topic htlc] held by an
+  LSP on behalf of an [async payment][topic async payments] recipient would fail
+  to be released because the LSP could not locate it. This occurred when the LSP
+  received the `release_held_htlc` [onion message][topic onion messages] (see
+  Newsletters [#372][news372 async] and [#373][news373 async]) before the HTLC
+  was moved from the pre-decode map to the `pending_intercepted_htlcs` map. LDK
+  now checks both maps, rather than just the latter one, to ensure the HTLC is
+  found and released properly.
+
+- [LDK #4096][] changes the per-peer outbound [gossip][topic channel
+  announcements] queue from a 24-message limit to a 128 KB size limit. If the
+  total number of bytes currently queued for a given peer exceeds this limit,
+  new gossip forwards to that peer are skipped until the queue drains. This new
+  limit significantly reduces missed forwards, and is particularly relevant
+  because when messages vary in size.
+
+- [LND #10133][] adds the experimental `XFindBaseLocalChanAlias` RPC endpoint,
+  which returns a base SCID for a specified SCID alias (see [Newsletter
+  #203][news203 alias]). This PR also extends the alias manager to persist the
+  reverse mapping when aliases are created, enabling the new endpoint.
+
+- [BDK #2029][] introduces the `CanonicalView` struct, which performs a one-time
+  canonicalization of a wallet’s `TxGraph` at a given chaintip. This snapshot
+  powers all subsequent queries, eliminating the need for re-canonicalization
+  with every call. Methods that required canonicalization now have
+  `CanonicalView` equivalents, and `TxGraph` methods that took a fallible
+  `ChainOracle` are removed. See Newsletters [#335][news335 txgraph] and
+  [#346][news346 txgraph] for previous canonicalization work on BDK.
+
+- [BIPs #1911][] marks [BIP21][] as replaced by [BIP321][] and updates
+  [BIP321][]’s status from `Draft` to `Proposed`. [BIP321][] proposes a modern
+  URI scheme for describing bitcoin payment instructions, see [Newsletter
+  #352][news352 bip321] for more details.
 
 {% include snippets/recap-ad.md when="2025-10-07 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="33229,33446,3838,4098,4106,4096,10133,2029,1911,1289" %}
 [rr0]: https://gnusha.org/pi/bitcoindev/877bxknwk6.fsf@rustcorp.com.au/
 [rr1]: https://gnusha.org/pi/bitcoindev/874isonniq.fsf@rustcorp.com.au/
 [rr2]: https://gnusha.org/pi/bitcoindev/871pnsnnhh.fsf@rustcorp.com.au/
@@ -107,3 +181,17 @@ FIXME:Gustavojfe
 [rr blog]: https://rusty.ozlabs.org/2024/01/19/the-great-opcode-restoration.html
 [bb1]: https://gnusha.org/pi/bitcoindev/aNsORZGVc-1_-z1W@console/
 [misc changes]: https://github.com/bitcoin/bitcoin/commit/6ac7f9f144757f5f1a049c059351b978f83d1476
+[bitcoin core 30.0rc2]: https://bitcoincore.org/bin/bitcoin-core-30.0/
+[bcc30 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/30.0-Release-Candidate-Testing-Guide/
+[bdk-wallet 2.2.0]: https://github.com/bitcoindevkit/bdk_wallet/releases/tag/wallet-2.2.0
+[LND v0.20.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.0-beta.rc1
+[news369 ipc]: /en/newsletters/2025/08/29/#bitcoin-core-31802
+[news339 target]: /en/newsletters/2025/01/31/#bitcoin-core-31583
+[news335 blip]: /en/newsletters/2025/01/03/#blips-54
+[news371 splicing]: /en/newsletters/2025/09/12/#ldk-3886
+[news372 async]: /en/newsletters/2025/09/19/#ldk-4045
+[news373 async]: /en/newsletters/2025/09/26/#ldk-4046
+[news203 alias]: /en/newsletters/2022/06/08/#bolts-910
+[news335 txgraph]: /en/newsletters/2025/01/03/#bdk-1670
+[news346 txgraph]: /en/newsletters/2025/03/21/#bdk-1839
+[news352 bip321]: /en/newsletters/2025/05/02/#bips-1555
