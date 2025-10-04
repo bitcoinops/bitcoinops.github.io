@@ -188,4 +188,4 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [news371 p2a]: /fr/newsletters/2025/09/12/#ldk-4053
 [news346 sweeper]: /fr/newsletters/2025/03/21/#discussion-sur-le-systeme-de-reajustement-dynamique-du-taux-de-frais-de-lnd
 [policy series]: /fr/blog/waiting-for-confirmation/
-[28.0 1p1c]: /fr/2024-10-10-wallet-integration-guide_fr/#relais-un-parent-un-enfant-(1P1C)
+[28.0 1p1c]: //fr/bitcoin-core-28-wallet-integration-guide/#relais-un-parent-un-enfant-1p1c
