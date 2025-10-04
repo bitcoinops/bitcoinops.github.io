@@ -178,7 +178,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [news371 splicing]: /fr/newsletters/2025/09/12/#ldk-3886
 [news372 async]: /fr/newsletters/2025/09/19/#ldk-4045
 [news373 async]: /fr/newsletters/2025/09/26/#ldk-4046
-[news203 alias]: /fr/newsletters/2022/06/08/#bolts-910
+[news203 alias]: /en/newsletters/2022/06/08/#bolts-910
 [news335 txgraph]: /fr/newsletters/2025/01/03/#bdk-1670
 [news346 txgraph]: /fr/newsletters/2025/03/21/#bdk-1839
 [news352 bip321]: /fr/newsletters/2025/05/02/#bips-1555
