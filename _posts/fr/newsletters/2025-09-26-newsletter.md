@@ -182,10 +182,10 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [0xb10c feefilter]: https://delvingbitcoin.org/t/measuring-minrelaytxfee-across-the-bitcoin-network/1989/3
 [bitcoin core 30.0rc1]: https://bitcoincore.org/bin/bitcoin-core-30.0/
 [bcc30 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/30.0-Release-Candidate-Testing-Guide/
-[news321 dbcache]: /en/newsletters/2024/09/20/#bitcoin-core-28358
-[news371 path]: /en/newsletters/2025/09/12/#eclair-2308
-[news371 pubkey]: /en/newsletters/2025/09/12/#eclair-3163
-[news371 p2a]: /en/newsletters/2025/09/12/#ldk-4053
-[news346 sweeper]: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
-[policy series]: /en/blog/waiting-for-confirmation/
-[28.0 1p1c]: /en/bitcoin-core-28-wallet-integration-guide/#one-parent-one-child-1p1c-relay
+[news321 dbcache]: /fr/newsletters/2024/09/20/#bitcoin-core-28358
+[news371 path]: /fr/newsletters/2025/09/12/#eclair-2308
+[news371 pubkey]: /fr/newsletters/2025/09/12/#eclair-3163
+[news371 p2a]: /fr/newsletters/2025/09/12/#ldk-4053
+[news346 sweeper]: /fr/newsletters/2025/03/21/#discussion-sur-le-systeme-de-reajustement-dynamique-du-taux-de-frais-de-lnd
+[policy series]: /fr/blog/waiting-for-confirmation/
+[28.0 1p1c]: /fr/2024-10-10-wallet-integration-guide_fr/#relais-un-parent-un-enfant-(1P1C)
