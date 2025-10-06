@@ -19,6 +19,21 @@ describing notable changes to popular Bitcoin infrastructure projects.
 
 FIXME:harding
 
+- **Optimal Threshold Signatures**: Sindura Saraswathi [posted][sindura post]
+  research, co-authored by her and Korok Ray, to Delving Bitcoin about determining the optimal threshold for a
+  [multisignature][topic multisignature] scheme. In this research, the parameters of usability and
+  security are explored, along with their relationship and how it affects the
+  threshold that the user should select. By defining p(τ) and q(τ) and then
+  combining them into a closed-form solution, they chart the gap between
+  security and usability.
+
+  Saraswathi also explores the use of degrading [threshold signatures][topic
+  threshold signature] where early stages use higher thresholds, which gradually
+  decline in later stages. This means that over time, the attacker gains more
+  access to take the funds. She also says that using [taproot][topic taproot],
+  there may be new possibilities to be unlocked with these through taptrees and
+  more complex contracts, including [timelocks][topic timelocks] and multiple signatures.
+
 ## Bitcoin Core PR Review Club
 
 *In this monthly section, we summarize a recent [Bitcoin Core PR Review
@@ -58,3 +73,4 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2025-10-14 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
+[sindura post]: https://delvingbitcoin.org/t/optimal-threshold-signatures-in-bitcoin/2023
