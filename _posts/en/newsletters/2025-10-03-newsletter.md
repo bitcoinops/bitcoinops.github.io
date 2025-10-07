@@ -75,7 +75,7 @@ Bitcoin's consensus rules._
   instead of the whole script succeeding if an `OP_SUCCESS` is present, only the
   segment succeeds (bounded by script start, `OP_SEGMENT`, ..., and script end).
   This enables the possibility of scripts with a required prefix, including
-  `OP_SEGMENT`, and an untrusted suffix.
+  `OP_SEGMENT`, and an untrusted suffix. {% assign timestamp="0:40" %}
 
 ## Releases and release candidates
 
@@ -85,19 +85,19 @@ release candidates._
 
 - [Bitcoin Core 30.0rc2][] is a release candidate for the next major version of
   this full verification node software. Please see the [version 30 release
-  candidate testing guide][bcc30 testing].
+  candidate testing guide][bcc30 testing]. {% assign timestamp="19:19" %}
 
 - [bdk-wallet 2.2.0][] is a minor release of this library used for building
   wallet applications that introduces a new feature that returns events upon
   applying an update, new test facilities for test persistence, and
-  documentation improvements.
+  documentation improvements. {% assign timestamp="23:39" %}
 
 - [LND v0.20.0-beta.rc1][] is a release candidate for a new version of this
   popular LN node implementation that introduces multiple bug fixes, persistence
   of node announcement settings across restarts, a new `noopAdd` [HTLC][topic
   htlc] type, support for [P2TR][topic taproot] fallback addresses on [BOLT11][]
   invoices, and an experimental `XFindBaseLocalChanAlias` endpoint, among many
-  other changes.
+  other changes. {% assign timestamp="24:15" %}
 
 ## Notable code and documentation changes
 
@@ -115,25 +115,25 @@ repo], and [BINANAs][binana repo]._
   allowing users to skip specifying the `-m` startup option when IPC arguments
   are passed or IPC configurations are set. This change simplifies the
   integration of Bitcoin Core with an external [Stratum v2][topic pooled mining]
-  mining service that creates, manages and submits block templates.
+  mining service that creates, manages and submits block templates. {% assign timestamp="25:03" %}
 
 - [Bitcoin Core #33446][] fixes a bug introduced when the `target` field was
   added to the responses of the `getblock` and `getblockheader` commands (see
   [Newsletter #339][news339 target]). Instead of always incorrectly returning
-  the chain tip’s target, it now returns the requested block’s target.
+  the chain tip’s target, it now returns the requested block’s target. {% assign timestamp="26:55" %}
 
 - [LDK #3838][] adds support for the `client_trusts_lsp` model for [JIT
   channels][topic jit channels], as specified in [BLIP52][] (LSPS2) (see
   [Newsletter #335][news335 blip]), on top of already supporting the
   `lsp_trusts_client` model. With the new model, the LSP will not broadcast the
   on-chain funding transaction until the receiver reveals the preimage required
-  to claim the [HTLC][topic htlc].
+  to claim the [HTLC][topic htlc]. {% assign timestamp="28:11" %}
 
 - [LDK #4098][] updates the implementation of the `next_funding` TLV in the
   `channel_reestablish` flow for [splicing][topic splicing] transactions, to
   align with the proposed specification change in [BOLTs #1289][]. This PR
   follows the recent work on `channel_reestablish` covered in [Newsletter
-  #371][news371 splicing].
+  #371][news371 splicing]. {% assign timestamp="30:40" %}
 
 - [LDK #4106][] fixes a race condition in which an [HTLC][topic htlc] held by an
   LSP on behalf of an [async payment][topic async payments] recipient would fail
@@ -142,19 +142,19 @@ repo], and [BINANAs][binana repo]._
   Newsletters [#372][news372 async] and [#373][news373 async]) before the HTLC
   was moved from the pre-decode map to the `pending_intercepted_htlcs` map. LDK
   now checks both maps, rather than just the latter one, to ensure the HTLC is
-  found and released properly.
+  found and released properly. {% assign timestamp="33:40" %}
 
 - [LDK #4096][] changes the per-peer outbound [gossip][topic channel
   announcements] queue from a 24-message limit to a 128 KB size limit. If the
   total number of bytes currently queued for a given peer exceeds this limit,
   new gossip forwards to that peer are skipped until the queue drains. This new
   limit significantly reduces missed forwards, and is particularly relevant
-  because when messages vary in size.
+  because when messages vary in size. {% assign timestamp="35:43" %}
 
 - [LND #10133][] adds the experimental `XFindBaseLocalChanAlias` RPC endpoint,
   which returns a base SCID for a specified SCID alias (see [Newsletter
   #203][news203 alias]). This PR also extends the alias manager to persist the
-  reverse mapping when aliases are created, enabling the new endpoint.
+  reverse mapping when aliases are created, enabling the new endpoint. {% assign timestamp="37:24" %}
 
 - [BDK #2029][] introduces the `CanonicalView` struct, which performs a one-time
   canonicalization of a wallet’s `TxGraph` at a given chaintip. This snapshot
@@ -162,12 +162,12 @@ repo], and [BINANAs][binana repo]._
   with every call. Methods that required canonicalization now have
   `CanonicalView` equivalents, and `TxGraph` methods that took a fallible
   `ChainOracle` are removed. See Newsletters [#335][news335 txgraph] and
-  [#346][news346 txgraph] for previous canonicalization work on BDK.
+  [#346][news346 txgraph] for previous canonicalization work on BDK. {% assign timestamp="39:08" %}
 
 - [BIPs #1911][] marks [BIP21][] as replaced by [BIP321][] and updates
   [BIP321][]’s status from `Draft` to `Proposed`. [BIP321][] proposes a modern
   URI scheme for describing bitcoin payment instructions, see [Newsletter
-  #352][news352 bip321] for more details.
+  #352][news352 bip321] for more details. {% assign timestamp="42:15" %}
 
 {% include snippets/recap-ad.md when="2025-10-07 16:30" %}
 {% include references.md %}
