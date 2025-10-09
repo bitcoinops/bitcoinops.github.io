@@ -41,12 +41,59 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Compact block harness][review club 33300] is a PR by [Crypt-iQ][gh
+crypt-iq] that increases the [fuzz test][fuzz readme] coverage by adding
+a test harness for the [compact block relay][topic compact block relay]
+logic. Fuzzing is a testing technique that provides quasi-random inputs
+to code to discover bugs and unexpected behavior.
+
+The PR also introduces a new test-only `-fuzzcopydatadir` startup option
+to increase runtime performance of the test harness.
+
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/31829#l-12FIXME"
+  q0="The fuzz test sends `SENDCMPCT` messages with `high_bandwidth`
+  randomly set. How many high bandwidth peers are allowed and does the
+  fuzz harness test this limit? More generally, why would a peer choose
+  to be high or low bandwidth?"
+  a0="For a high-bandwidth peer, a compact block is forwarded without
+  announcement and before validation is completed. This greatly
+  increases block propagation speed. To reduce the bandwidth overhead, a
+  node only selects up to 3 peers to send compact blocks in
+  high-bandwidth mode. This mode is not specifically tested by the
+  `cmpctblock` fuzz target."
+  a0link="https://bitcoincore.reviews/33300#l-66"
+  q1="Look at `create_block` in the harness. How many transactions do
+  the generated blocks contain, and where do they come from?
+  What compact block scenarios might be missed with only a few
+  transactions in a block?"
+  a1="The generated blocks contain 1-3 transactions: a coinbase
+  transaction (always present), optionally a transaction from the
+  mempool, and optionally a non-mempool transaction. Since blocks are
+  limited to few transactions, some scenarios may be missed, such as
+  testing short ID collision handling which becomes more likely with
+  many transactions. Review club participants suggested increasing
+  transaction counts to improve coverage."
+  a1link="https://bitcoincore.reviews/33300#l-132"
+  q2="Commit [ed813c4][review-club ed813c4] sorts `m_dirty_blockindex` by
+  block hash instead of pointer address. What non-determinism does this
+  fix?  The author [notes][q1 note] this slows production code for no
+  production benefit. Why can't [`EnableFuzzDeterminism()`][code
+  enablefuzzdeterminism] be used here? How do you think this
+  non-determinism should be best handled (if not the way the PR
+  currently does)?"
+  a2="The `m_dirty_blockindex` set is sorted by pointer memory
+  addresses, which differ between runs, causing non-deterministic
+  behavior. The fix provides a deterministic sort order by using the
+  block hash instead. A runtime solution like `EnableFuzzDeterminism()`
+  cannot be used because the comparator for a `std::set` is a
+  compile-time property of its type and cannot be switched at runtime.
+  Because this non-determinism affects the execution path, it misleads
+  the fuzzer's code coverage analysis on every insertion into the set.
+  The PR author suggests [the afl-fuzz whitepaper][afl fuzz] as
+  recommended further reading on how coverage feedback with fuzzing
+  works."
+  a2link="https://bitcoincore.reviews/33300#l-147"
 %}
 
 ## Releases and release candidates
@@ -123,3 +170,10 @@ repo], and [BINANAs][binana repo]._
 [news332 internal]: /en/newsletters/2024/12/06/#bips-1534
 [news352 data]: /en/newsletters/2025/05/02/#increasing-or-removing-bitcoin-core-s-op-return-size-limit
 [news358 data]: /en/newsletters/2025/06/13/#bitcoin-core-32406
+[review club 33300]: https://bitcoincore.reviews/33300
+[gh crypt-iq]: https://github.com/crypt-iq
+[fuzz readme]: https://github.com/bitcoin/bitcoin/blob/master/doc/fuzzing.md
+[review-club ed813c4]: https://github.com/bitcoin-core-review-club/bitcoin/commit/ed813c48f826d083becf93c741b483774c850c86
+[q1 note]: https://github.com/bitcoin/bitcoin/pull/33300#issuecomment-3308381089
+[code enablefuzzdeterminism]: https://github.com/bitcoin/bitcoin/blob/acc7f2a433b131597124ba0fbbe9952c4d36a872/src/util/check.h#L34
+[afl fuzz]: https://lcamtuf.coredump.cx/afl/technical_details.txt
