@@ -17,8 +17,6 @@ describing notable changes to popular Bitcoin infrastructure projects.
 
 ## News
 
-FIXME:harding
-
 - **Optimal Threshold Signatures**: Sindura Saraswathi [posted][sindura post]
   research, co-authored by her and Korok Ray, to Delving Bitcoin about determining the optimal threshold for a
   [multisignature][topic multisignature] scheme. In this research, the parameters of usability and
@@ -33,6 +31,68 @@ FIXME:harding
   access to take the funds. She also says that using [taproot][topic taproot],
   there may be new possibilities to be unlocked with these through taptrees and
   more complex contracts, including [timelocks][topic timelocks] and multiple signatures.
+
+- **Flattening certain nested threshold signatures:** ZmnSCPxj
+  [posted][zmnscpxj flat] to Delving Bitcoin to describe how to avoid
+  using nested [schnorr signatures][topic schnorr signatures] in some
+  cases that have not been proven safe.  For example, Alice may want to
+  enter a contract with a group consisting of Bob, Carol, and Dan.  Any
+  transactions must be approved by Alice and at least two of Bob, Carol,
+  and Dan.  In theory, this could be done with a [multisignature][topic
+  multisignature] (e.g. [MuSig][topic musig]) where Alice provides one
+  partial signature and a [threshold signature][topic threshold
+  signature] (e.g.  FROST) is used to generate the partial signature
+  from Bob, Carol, and Dan.  However, ZmnSCPxj writes that "currently,
+  we have no proof that FROST-in-MuSig is safe".  Instead, ZmnSCPxj
+  notes that this example can be satisfied using threshold signatures
+  alone: Alice is given multiple shares--enough that she can prevent a
+  quorum, but not enough that she can sign unilaterally; the other
+  signers are each given one share.
+
+  Described uses of this include multi-operator statechains, users of LN
+  who want to use multiple signing devices, and ZmnSCPxj's LSP-enhanced
+  [redundant overpayments][topic redundant overpayments] proposal (see
+  [Newsletter #372][news372 lspover]).
+
+- **Theoretical limitations on embedding data in the UTXO set:** Adam
+  "Waxwing" Gibson started a [discussion][gibson embed] on the mailing
+  list about the extent to which data could be embedded in the UTXO set
+  under a restrictive set of rules for Bitcoin transactions.  The main
+  new rule, which Gibson describes as "appalling", would be to require
+  that every [P2TR][topic taproot] output be accompanied by a signature
+  proving that the output could be spent.  Gibson attempts to prove that
+  there are only three ways that rule could be circumvented to allow
+  arbitrary data to masquerade as a public key:
+
+  1. Bitcoin's version of [schnorr signatures][topic schnorr signatures]
+     is broken, e.g. based on a faulty assumption.  This is clearly
+     currently not the case.
+
+  2. A small amount of arbitrary data could be embedded by grinding the
+     public key (that is, generating many different private keys,
+     deriving the corresponding public key for each, and discarding all private
+     keys whose public keys don't contain the desired arbitrary data
+     encoded in a way that can be extracted.
+     To include _n_ bits of arbitrary data in the UTXO set in this
+     way, requires about 2<sup>n</sup> brute force operations, which is
+     impractical for more than a few dozen bits (a few bytes) per
+     output).
+
+  3. Using a private key that can easily be calculated by third parties,
+     a form of "leaking your private key".
+
+  In the third case, leaking your private key could allow the output to
+  be spent by a third party, removing the output from the UTXO set.
+  However, several replies to the thread noted ways it might be possible
+  to circumvent that in a sophisticated system like Bitcoin.  A
+  [reply][towns embed] from Anthony Towns added, "once you make the
+  system programmable in interesting ways, I think you
+  get data embeddability pretty much immediately, and then it's just a
+  matter of trading off the optimal encoding rate versus how easily
+  identifiable your transactions can be.  Forcing data to be hidden at a
+  cost of making it less efficient just leaves less resources available
+  to other users of the system, though, which doesn't seem like a win in
+  any way to me."
 
 ## Bitcoin Core PR Review Club
 
@@ -177,3 +237,7 @@ repo], and [BINANAs][binana repo]._
 [q1 note]: https://github.com/bitcoin/bitcoin/pull/33300#issuecomment-3308381089
 [code enablefuzzdeterminism]: https://github.com/bitcoin/bitcoin/blob/acc7f2a433b131597124ba0fbbe9952c4d36a872/src/util/check.h#L34
 [afl fuzz]: https://lcamtuf.coredump.cx/afl/technical_details.txt
+[zmnscpxj flat]: https://delvingbitcoin.org/t/flattening-nested-2-of-2-of-a-1-of-1-and-a-k-of-n/2018
+[news372 lspover]: /en/newsletters/2025/09/19/#lsp-funded-redundant-overpayments
+[gibson embed]: https://gnusha.org/pi/bitcoindev/0f6c92cc-e922-4d9f-9fdf-69384dcc4086n@googlegroups.com/
+[towns embed]: https://gnusha.org/pi/bitcoindev/aOXyvGaKfe7bqTXv@erisian.com.au/
