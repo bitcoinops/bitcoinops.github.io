@@ -9,7 +9,7 @@ layout: podcast-episode
 lang: en
 ---
 Mark “Murch” Erhardt and Mike Schmidt are joined by Jonas Nick and Bastien
-Teinturier to discuss [Newsletter #370]({{page.reference}}).
+Teinturier to discuss [Newsletter #371]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
