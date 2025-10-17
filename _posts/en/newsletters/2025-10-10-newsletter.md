@@ -30,7 +30,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
   decline in later stages. This means that over time, the attacker gains more
   access to take the funds. She also says that using [taproot][topic taproot],
   there may be new possibilities to be unlocked with these through taptrees and
-  more complex contracts, including [timelocks][topic timelocks] and multiple signatures.
+  more complex contracts, including [timelocks][topic timelocks] and multiple signatures. {% assign timestamp="1:56" %}
 
 - **Flattening certain nested threshold signatures:** ZmnSCPxj
   [posted][zmnscpxj flat] to Delving Bitcoin to describe how to avoid
@@ -52,7 +52,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
   Described uses of this include multi-operator statechains, users of LN
   who want to use multiple signing devices, and ZmnSCPxj's LSP-enhanced
   [redundant overpayments][topic redundant overpayments] proposal (see
-  [Newsletter #372][news372 lspover]).
+  [Newsletter #372][news372 lspover]). {% assign timestamp="14:33" %}
 
 - **Theoretical limitations on embedding data in the UTXO set:** Adam
   "Waxwing" Gibson started a [discussion][gibson embed] on the mailing
@@ -92,7 +92,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
   identifiable your transactions can be.  Forcing data to be hidden at a
   cost of making it less efficient just leaves less resources available
   to other users of the system, though, which doesn't seem like a win in
-  any way to me."
+  any way to me." {% assign timestamp="38:14" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -110,6 +110,7 @@ to code to discover bugs and unexpected behavior.
 The PR also introduces a new test-only `-fuzzcopydatadir` startup option
 to increase runtime performance of the test harness.
 
+{% assign timestamp="27:12" %}
 
 {% include functions/details-list.md
   q0="The fuzz test sends `SENDCMPCT` messages with `high_bandwidth`
@@ -169,7 +170,7 @@ release candidates._
   Core 29.1, the larger `datacarrier` limits expected in Bitcoin Core 30.0,
   support for `OP_INTERNALKEY` (see Newsletter [#285][news285 internal] and
   [#332][news332 internal]), and new internal infrastructure for supporting new
-  soft forks.
+  soft forks. {% assign timestamp="45:01" %}
 
 ## Notable code and documentation changes
 
@@ -186,40 +187,40 @@ repo], and [BINANAs][binana repo]._
   configuration options because many users want to continue using these options,
   the depreciation plan was unclear, and there are minimal downsides to removing
   the deprecation. See Newsletters [#352][news352 data] and [#358][news358 data]
-  for additional context on this topic.
+  for additional context on this topic. {% assign timestamp="47:16" %}
 
 - [Bitcoin Core #33504][] skips the enforcement of [TRUC][topic v3 transaction
   relay] checks during a block reorganization when confirmed transactions
   re-enter the mempool, even if they violate TRUC topological constraints.
-  Previously, enforcing these checks would erroneously evict many transactions.
+  Previously, enforcing these checks would erroneously evict many transactions. {% assign timestamp="51:52" %}
 
 - [Core Lightning #8563][] defers the deletion of old [HTLCs][topic htlc] until
   a node is restarted, rather than deleting them when a channel is closed and
   forgotten. This improves performance by avoiding an unnecessary pause that
   halts all other CLN processes. This PR also updates the `listhtlcs` RPC to
-  exclude HTLCs from closed channels.
+  exclude HTLCs from closed channels. {% assign timestamp="53:55" %}
 
 - [Core Lightning #8523][] removes the previously deprecated and disabled
   `blinding` field from the `decode` RPC and on the `onion_message_recv` hook,
   as it has been replaced by `first_path_key`. The `experimental-quiesce` and
   `experimental-offers` options are also removed, because these features are the
-  default.
+  default. {% assign timestamp="56:55" %}
 
 - [Core Lightning #8398][] adds a `cancelrecurringinvoice` RPC command to the
   experimental recurring [BOLT12][] [offers][topic offers], allowing a payer to
   signal a receiver to stop expecting further invoice requests from that series.
   Several other updates are made to align with the latest specification changes
-  in [BOLTs #1240][].
+  in [BOLTs #1240][]. {% assign timestamp="58:22" %}
 
 - [LDK #4120][] clears the interactive-funding state when a [splice][topic
   splicing] negotiation fails before the signing phase, if a peer disconnects or
   sends `tx_abort`, allowing the splice to be retried cleanly. If a `tx_abort`
   is received after the peers have begun exchanging `tx_signatures`, LDK treats
-  it as a protocol error and closes the channel.
+  it as a protocol error and closes the channel. {% assign timestamp="59:47" %}
 
 - [LND #10254][] deprecates support for [Tor][topic anonymity networks] v2 onion
   services, which will be removed in the next 0.21.0 release. The configuration
-  option `tor.v2` is now hidden; users should use Tor v3 instead.
+  option `tor.v2` is now hidden; users should use Tor v3 instead. {% assign timestamp="1:01:35" %}
 
 {% include snippets/recap-ad.md when="2025-10-14 16:30" %}
 {% include references.md %}
