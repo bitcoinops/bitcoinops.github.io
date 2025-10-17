@@ -15,9 +15,33 @@ infrastructure software.
 
 ## News
 
-- **Continued discussion of block template sharing:** since https://delvingbitcoin.org/t/sharing-block-templates/1906/13
 
-- **User-defined relay policies:** maybe or maybe not (https://github.com/bitcoinops/bitcoinops.github.io/pull/2518#issuecomment-3388045817). https://groups.google.com/g/bitcoindev/c/o3JZhiOa2PQ
+- **B-SSL a Secure Bitcoin Signing Layer:** Francesco Madonna [posted][francesco
+  post] to Delving Bitcoin about a concept which is a covenant-less
+  [vault][topic vaults] model using [taproot][topic taproot],
+  [`OP_CHECKSEQUENCEVERIFY`][op_csv], and [`OP_CHECKLOCKTIMEVERIFY`][op_cltv].
+  In the post, he mentions that it uses existing Bitcoin primitives, which is
+  important because most vault proposals require a soft fork.
+
+  In the design, there are three different spend paths:
+
+  1. A fast path for normal operation where an optional Convenience Service (CS)
+  can enforce the chosen delay.
+
+  2. A one-year fallback with custodian B.
+
+  3. A three-year custodian path in case of disappearance or inheritance events.
+
+  There are 6 different keys A, A₁, B, B₁, C and CS where B₁, and C are
+  custodially held and are only used at the same time in the recovery path.
+
+  This setup creates an environment where the user can lock up their funds and
+  be fairly sure that the custodians they have entrusted their funds to won’t
+  steal. While this does not restrict where the funds can move to like a
+  [covenant][topic covenants] would, this setup does provide a more resilient
+  scheme for self-custody with custodians. In the post, Francesco calls for
+  readers to review and discuss the [white paper][bssl whitepaper] before anyone
+  tries to implement this idea.
 
 ## Releases and release candidates
 
@@ -42,4 +66,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2025-10-21 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[francesco post]: https://delvingbitcoin.org/t/concept-review-b-ssl-bitcoin-secure-signing-layer-covenant-free-vault-model-using-taproot-csv-and-cltv/2047
+[op_cltv]: https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki
+[op_csv]: https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki
+[bssl whitepaper]: https://github.com/ilghan/bssl-whitepaper/blob/main/B-SSL_WP_Oct_11_2025.pdf
