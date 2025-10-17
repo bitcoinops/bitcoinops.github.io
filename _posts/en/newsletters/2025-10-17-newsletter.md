@@ -15,6 +15,15 @@ infrastructure software.
 
 ## News
 
+- **Continued discussion of block template sharing:** Discussion
+  [continued][towns tempshare] around the proposal for full node peers to
+  occasionally send each other their current template for the next block using
+  [compact block relay][topic compact block relay] encoding (see Newsletters
+  [#366][news366 block template sharing] and [#368][news368 bts]). Feedback was
+  raised around privacy and node fingerprinting concerns and the author decided
+  to move the current draft to the [Bitcoin Inquisition Numbers and Names
+  Authority][binana repo] (BINANA) repository, to address these considerations
+  and to refine the document. The draft was given the code [BIN-2025-0002][bin].
 
 - **B-SSL a Secure Bitcoin Signing Layer:** Francesco Madonna [posted][francesco
   post] to Delving Bitcoin about a concept which is a covenant-less
@@ -70,3 +79,8 @@ FIXME:Gustavojfe
 [op_cltv]: https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki
 [op_csv]: https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki
 [bssl whitepaper]: https://github.com/ilghan/bssl-whitepaper/blob/main/B-SSL_WP_Oct_11_2025.pdf
+[towns tempshare]: https://delvingbitcoin.org/t/sharing-block-templates/1906/13
+[news366 block template sharing]: /en/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
+[binana repo]: https://github.com/bitcoin-inquisition/binana
+[bin]: https://github.com/bitcoin-inquisition/binana/blob/master/2025/BIN-2025-0002.md
+[news368 bts]: /en/newsletters/2025/08/22/#draft-bip-for-block-template-sharing
