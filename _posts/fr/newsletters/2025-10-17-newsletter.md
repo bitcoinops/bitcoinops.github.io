@@ -59,14 +59,14 @@ Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à
   version][notes30] décrivent plusieurs améliorations significatives, y compris un nouveau plafond de
   2500 sigops legacy dans les transactions standard, plusieurs sorties de porteur de données
   (OP_RETURN) désormais standard, une `datacarriersize` par défaut augmentée à 100 000, un
-  [taux de frais minimum de relais][sujet taux de frais minimum de transaction de relais par défaut] par défaut
+  [taux de frais minimum de relais][topic default minimum transaction relay feerates] par défaut
   et un taux de frais de relais incrémental de 0.1sat/vb, un taux de frais minimum de bloc par défaut
   de 0.001sat/vb, des protections améliorées contre les attaques DoS par orphelinage de transactions,
   un nouvel outil CLI `bitcoin`, une interface de communication inter-processus (IPC) expérimentale
-  pour les intégrations de [Stratum v2][sujet minage en pool], une nouvelle implémentation de
+  pour les intégrations de [Stratum v2][topic pooled mining], une nouvelle implémentation de
   `coinstatsindex`, l'option `natpmp` désormais activée par défaut, le support pour les portefeuilles
-  hérités étant retiré au profit des portefeuilles [descriptor][sujet descripteurs], et le support
-  pour dépenser et créer des transactions [TRUC][sujet relais de transaction v3], parmi de nombreuses
+  hérités étant retiré au profit des portefeuilles [descriptor][topic descriptors], et le support
+  pour dépenser et créer des transactions [TRUC][topic v3 transaction relay], parmi de nombreuses
   autres mises à jour.
 
 - [Bitcoin Core 29.2][] est une version mineure contenant plusieurs corrections de bugs pour P2P,
@@ -88,12 +88,12 @@ inquisition repo], et [BINANAs][binana repo]._
 
 - [Eclair #3184][] améliore le flux de fermeture coopérative en renvoyant un message `shutdown` lors
   de la reconnexion quand un avait déjà été envoyé avant la déconnexion, comme spécifié dans
-  [BOLT2][]. Pour les [canaux simple taproot][sujet canaux simple taproot], Eclair génère un nouveau
+  [BOLT2][]. Pour les [canaux simple taproot][topic simple taproot channels], Eclair génère un nouveau
   nonce de fermeture pour le renvoi et le stocke, permettant au nœud de produire une `closing_sig`
   valide plus tard.
 
 - [Core Lightning #8597][] empêche un crash qui se produisait lorsqu'un pair direct renvoyait une
-  réponse `failmsg` après que CLN a envoyé un [message onion][sujet messages onion] malformé via
+  réponse `failmsg` après que CLN a envoyé un [message onion][topic onion messages] malformé via
   `sendonion` ou `injectpaymentonion`. Désormais, CLN traite cela comme un échec de premier saut
   simple et retourne une erreur propre au lieu de planter. Auparavant, cela était traité comme un
   `failonion` crypté venant de plus loin en aval.
@@ -103,7 +103,7 @@ inquisition repo], et [BINANAs][binana repo]._
   forcée en utilisant uniquement la phrase de sauvegarde. Auparavant, la `remote_key` dépendait de
   l'aléatoire spécifique à chaque canal, nécessitant l'état du canal pour récupérer les fonds. Ce
   nouveau schéma est facultatif pour les nouveaux canaux, mais s'applique automatiquement lors du
-  [splicing][sujet splicing] des existants.
+  [splicing][topicsplicing] des existants.
 
 - [LDK #4077][] ajoute les événements `SplicePending` et `SpliceFailed`, le premier étant émis une
   fois qu'une transaction de financement [splice][topic splicing] est négociée, diffusée et
