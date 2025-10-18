@@ -23,9 +23,9 @@ FIXME:bitschmidty
   that reputation is tracked for outgoing channels, and resources are limited on incoming channels.
 
   Using their simulator they have run both the [resource][resource attacks] and [sink][sink attacks] attacks.
-  They found that with the new updates protection against resource attacks remain intact and with sink attacks 
-  attacking nodes will be quickly cut off when they misbehave. It is noted that if an attacker builds a 
-  reputation and then targets a chain of nodes, only the last node is compensated. But there is a 
+  They found that with the new updates protection against resource attacks remain intact and with sink attacks
+  attacking nodes will be quickly cut off when they misbehave. It is noted that if an attacker builds a
+  reputation and then targets a chain of nodes, only the last node is compensated. But there is a
   significant cost to an attacker to target multiple nodes.
 
   They think that the [channel jamming][topic channel jamming attacks] mitigation has reached a point
