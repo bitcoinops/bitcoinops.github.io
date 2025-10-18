@@ -17,6 +17,21 @@ FIXME:bitschmidty
 
 - **Delving thread on optimized worst block:** https://delvingbitcoin.org/t/worst-block-validation-time-inquiry/711/83
 
+- **Channel Jamming Mitigation Simulation Results and Updates:** Carla Kirk-Cohen [posted][carla post]
+  to Delving Bitcoin about their simulation results and updates with the reputation algorithm
+  for their [channel jamming mitigation proposal][channel jamming bolt]. Some of the notable changes are
+  that reputation is tracked for outgoing channels, and resources are limited on incoming channels.
+
+  Using their simulator they have run both the [resource][resource attacks] and [sink][sink attacks] attacks.
+  They found that with the new updates protection against resource attacks remain intact and with sink attacks 
+  attacking nodes will be quickly cut off when they misbehave. It is noted that if an attacker builds a 
+  reputation and then targets a chain of nodes, only the last node is compensated. But there is a 
+  significant cost to an attacker to target multiple nodes.
+
+  They think that the [channel jamming][topic channel jamming attacks] mitigation has reached a point
+  where it is good enough and encourages readers to try their simulator to test out attacks.
+  
+
 ## Changes to services and client software
 
 *In this monthly feature, we highlight interesting updates to Bitcoin
@@ -48,3 +63,7 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2025-10-28 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
+[carla post]: https://delvingbitcoin.org/t/outgoing-reputation-simulation-results-and-updates/2069
+[channel jamming bolt]: https://github.com/lightning/bolts/pull/1280
+[resource attacks]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-resource-attacks-3
+[sink attacks]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-manipulation-sink-attack-9
