@@ -103,7 +103,7 @@ inquisition repo], et [BINANAs][binana repo]._
   forcée en utilisant uniquement la phrase de sauvegarde. Auparavant, la `remote_key` dépendait de
   l'aléatoire spécifique à chaque canal, nécessitant l'état du canal pour récupérer les fonds. Ce
   nouveau schéma est facultatif pour les nouveaux canaux, mais s'applique automatiquement lors du
-  [splicing][topicsplicing] des existants.
+  [splicing][topic splicing] des existants.
 
 - [LDK #4077][] ajoute les événements `SplicePending` et `SpliceFailed`, le premier étant émis une
   fois qu'une transaction de financement [splice][topic splicing] est négociée, diffusée et
