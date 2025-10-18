@@ -31,14 +31,14 @@ résumés des modifications notables apportées aux logiciels d'infrastructure B
   existantes, ce qui est important car la plupart des propositions de coffre-fort nécessitent un soft
   fork.
 
-    Dans la conception, il y a trois chemins de dépense différents :
+  Dans la conception, il y a trois chemins de dépense différents :
 
-    1. Un chemin rapide pour le fonctionnement normal où un Service de Commodité (CS) optionnel peut
-    faire respecter le délai choisi.
+  1. Un chemin rapide pour le fonctionnement normal où un Service de Commodité (CS) optionnel peut
+  faire respecter le délai choisi.
 
-    2. Un retour d'un an avec le gardien B.
+  2. Un retour d'un an avec le gardien B.
 
-    3. Un chemin de gardien de trois ans en cas de disparition ou d'événements d'héritage.
+  3. Un chemin de gardien de trois ans en cas de disparition ou d'événements d'héritage.
 
   Il y a 6 clés différentes A, A₁, B, B₁, C et CS où B₁, et C sont détenues en garde et sont utilisées
   uniquement en même temps dans le chemin de récupération.
