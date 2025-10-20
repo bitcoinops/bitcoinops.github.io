@@ -45,7 +45,16 @@ popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **BULL wallet launches:**
+  The open source [BULL mobile wallet][bull blog] is built on BDK and supports [descriptors][topic
+  descriptors], [labeling][topic wallet labels], and coin selection, Lightning,
+  [payjoin][topic payjoin], Liquid, hardware wallets, and watch-only wallets, among
+  other features.
+
+- **Sparrow 2.3.0 released:**
+  [Sparrow 2.3.0][sparrow github] adds support for sending to [silent
+  payment][topic silent payments] addresses and [BIP353][] human-readable
+  Bitcoin payment instructions, among other features and bug fixes.
 
 ## Releases and release candidates
 
@@ -74,3 +83,5 @@ FIXME:Gustavojfe
 [channel jamming bolt]: https://github.com/lightning/bolts/pull/1280
 [resource attacks]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-resource-attacks-3
 [sink attacks]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-manipulation-sink-attack-9
+[bull blog]: https://www.bullbitcoin.com/blog/bull-by-bull-bitcoin
+[sparrow github]: https://github.com/sparrowwallet/sparrow/releases/tag/2.3.0
