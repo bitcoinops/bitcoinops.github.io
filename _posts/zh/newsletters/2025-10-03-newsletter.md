@@ -84,7 +84,7 @@ lang: zh
 [news371 splicing]: /zh/newsletters/2025/09/12/#ldk-3886
 [news372 async]: /zh/newsletters/2025/09/19/#ldk-4045
 [news373 async]: /zh/newsletters/2025/09/26/#ldk-4046
-[news203 alias]: /en/newsletters/2022/06/08/#bolts-910
+[news203 alias]: /zh/newsletters/2022/06/08/#bolts-910
 [news335 txgraph]: /zh/newsletters/2025/01/03/#bdk-1670
 [news346 txgraph]: /zh/newsletters/2025/03/21/#bdk-1839
 [news352 bip321]: /zh/newsletters/2025/05/02/#bips-1555
