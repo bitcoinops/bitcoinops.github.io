@@ -95,7 +95,13 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Core Lightning 25.09.1][] is a maintenance release for the current major
+  version of this popular LN node that includes several bug fixes.
+
+- [Bitcoin Core 28.3][] is a maintenance release for the previous release series
+  of the predominant full node implementation. It contains multiple bug fixes,
+  and also includes the new defaults for `blockmintxfee`, `incrementalrelayfee`,
+  and `minrelaytxfee`.
 
 ## Notable code and documentation changes
 
@@ -108,10 +114,56 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33157][] optimizes the memory usage in [cluster
+  mempool][topic cluster mempool] by introducing a `SingletonClusterImpl` type
+  for single-transaction clusters and by compacting several `TxGraph` internals.
+  This PR also adds a `GetMainMemoryUsage()` function to estimate `TxGraph`’s
+  memory usage.
+
+- [Bitcoin Core #29675][] introduces support for receiving and spending
+  [taproot][topic taproot] outputs controlled by [MuSig2][topic musig] aggregate
+  keys on wallets with imported `musig(0)` [descriptors][topic descriptors]. See
+  [Newsletter #366][news366 musig2] for the earlier enabling work.
+
+- [Bitcoin Core #33517][] and [Bitcoin Core #33518][] reduce the CPU consumption
+  of multiprocess logging by adding log levels and categories, which avoids
+  serializing discarded inter-process communication (IPC) log messages. The
+  author found that before this PR, logging accounted for 50% of his [Stratum
+  v2][topic pooled mining] client application's CPU time and 10% of the Bitcoin
+  node's processes. It has now dropped to near zero percent. See Newsletters
+  [#323][news323 ipc] and [#369][news369 ipc] for additional context.
+
+- [Eclair #2792][] adds a new [MPP][topic multipath payments] splitting
+  strategy, `max-expected-amount`, which allocates parts across routes by
+  factoring in each route’s capacity and success probability. A new
+  `mpp.splitting-strategy` configuration option is added with three options:
+  `max-expected-amount`, `full-capacity`, which considers only a route’s
+  capacity, and `randomize` (default), which randomizes the splitting. The
+  latter two are already accessible through the boolean config
+  `randomize-route-selection`. This PR adds enforcement of [HTLC][topic htlc]
+  maximum limits on remote channels.
+
+- [LDK #4122][] enables queuing a [splice][topic splicing] request while the
+  peer is offline, starting negotiation upon reconnection. For [zero-conf][topic
+  zero-conf channels] splices, LDK now sends a `splice_locked` message to the
+  peer immediately after `tx_signatures` are exchanged. LDK will also now queue
+  a splice during a concurrent splice and attempt it as soon as the other one
+  locks.
+
+- [LND #9868][] defines an `OnionMessage` type and adds two new RPC endpoints:
+  `SendOnionMessage`, which sends an onion message to a specific peer, and
+  `SubscribeOnionMessages`, which subscribes to a stream of incoming onion
+  messages. These are the first steps required to support [BOLT12 offers][topic
+  offers].
+
+- [LND #10273][] fixes an issue where LND would crash when the legacy sweeper,
+  `utxonursery`, attempted to sweep an [HTLC][topic htlc] with a
+  [locktime][topic timelocks] (height hint) of 0. Now, LND successfully sweeps
+  those HTLCs by deriving the height hint from the channel’s close height.
 
 {% include snippets/recap-ad.md when="2025-10-28 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="33157,29675,33517,33518,2792,4122,9868,10273" %}
 [carla post]: https://delvingbitcoin.org/t/outgoing-reputation-simulation-results-and-updates/2069
 [channel jamming bolt]: https://github.com/lightning/bolts/pull/1280
 [resource attacks]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-resource-attacks-3
@@ -120,4 +172,9 @@ FIXME:Gustavojfe
 [sparrow github]: https://github.com/sparrowwallet/sparrow/releases/tag/2.3.0
 [ismail post]: https://delvingbitcoin.org/t/determining-blocktemplate-fee-increase-using-fee-rate-diagram/2052
 [carla earlier delving post]: /en/newsletters/2024/09/27/#hybrid-jamming-mitigation-testing-and-changes
+[Core Lightning 25.09.1]: https://github.com/ElementsProject/lightning/releases/tag/v25.09.1
+[Bitcoin Core 28.3]: https://bitcoincore.org/en/2025/10/17/release-28.3/
+[news366 musig2]: /en/newsletters/2025/08/08/#bitcoin-core-31244
+[news323 ipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
+[news369 ipc]: /en/newsletters/2025/08/29/#bitcoin-core-31802
 [news312 lin]: /en/newsletters/2024/07/19/#introduction-to-cluster-linearization
