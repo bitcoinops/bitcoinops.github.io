@@ -23,7 +23,7 @@ infrastructure software.
   raised around privacy and node fingerprinting concerns and the author decided
   to move the current draft to the [Bitcoin Inquisition Numbers and Names
   Authority][binana repo] (BINANA) repository, to address these considerations
-  and to refine the document. The draft was given the code [BIN-2025-0002][bin].
+  and to refine the document. The draft was given the code [BIN-2025-0002][bin]. {% assign timestamp="17:30" %}
 
 - **B-SSL a Secure Bitcoin Signing Layer:** Francesco Madonna [posted][francesco
   post] to Delving Bitcoin about a concept which is a covenant-less
@@ -50,7 +50,7 @@ infrastructure software.
   [covenant][topic covenants] would, this setup does provide a more resilient
   scheme for self-custody with custodians. In the post, Francesco calls for
   readers to review and discuss the [white paper][bssl whitepaper] before anyone
-  tries to implement this idea.
+  tries to implement this idea. {% assign timestamp="2:54" %}
 
 ## Releases and release candidates
 
@@ -71,15 +71,15 @@ release candidates._
   `coinstatsindex`, the `natpmp` option now being enabled by default, support
   for legacy wallets being removed in favor of [descriptor][topic descriptors] wallets, and support for
   spending and creating [TRUC][topic v3 transaction relay] transactions, among
-  many other updates.
+  many other updates. {% assign timestamp="22:32" %}
 
 - [Bitcoin Core 29.2][] is a minor release containing several bug fixes for P2P,
   mempool, RPC, CI, docs and other issues. Please see the [release
-  notes][notes29.2] for more details.
+  notes][notes29.2] for more details. {% assign timestamp="28:44" %}
 
 - [LDK 0.1.6][] is a release of this popular library for building LN-enabled
   applications that includes security vulnerability patches related to DoS and
-  funds theft, performance improvements, and several bug fixes.
+  funds theft, performance improvements, and several bug fixes. {% assign timestamp="29:37" %}
 
 ## Notable code and documentation changes
 
@@ -96,21 +96,21 @@ repo], and [BINANAs][binana repo]._
   `shutdown` message upon reconnection when one had already been sent before
   disconnection, as specified in [BOLT2][]. For [simple taproot channels][topic
   simple taproot channels], Eclair generates a new closing nonce for the resend
-  and stores it, allowing the node to produce a valid `closing_sig` later.
+  and stores it, allowing the node to produce a valid `closing_sig` later. {% assign timestamp="30:59" %}
 
 - [Core Lightning #8597][] prevents a crash that occurred when a direct peer
   returned a `failmsg` response after CLN sent a malformed [onion message][topic
   onion messages] via `sendonion` or `injectpaymentonion`. Now, CLN treats this
   as a plain first-hop failure and returns a clean error instead of crashing.
   Previously, it treated this as an encrypted `failonion` that came from further
-  downstream.
+  downstream. {% assign timestamp="32:25" %}
 
 - [LDK #4117][] introduces an opt-in, deterministic derivation of the
   `remote_key` that uses the `static_remote_key`. This allows users to recover
   funds in the event of a force close using only the backup seed phrase.
   Previously, the `remote_key` depended on per-channel randomness, requiring
   channel state to recover funds. This new scheme is opt-in for new channels,
-  but applies automatically when [splicing][topic splicing] existing ones.
+  but applies automatically when [splicing][topic splicing] existing ones. {% assign timestamp="34:05" %}
 
 - [LDK #4077][] adds `SplicePending` and `SpliceFailed` events, with the former
   being emitted once a [splice][topic splicing] funding transaction is
@@ -118,14 +118,14 @@ repo], and [BINANAs][binana repo]._
   [RBF][topic rbf]). The latter event is emitted when a splice aborts before
   locking due to an `interactive-tx` failure, a `tx_abort` message, a channel
   shutdown, or a disconnection/reload while in a [quiescent][topic channel
-  commitment upgrades] state.
+  commitment upgrades] state. {% assign timestamp="35:03" %}
 
 - [LDK #4154][] updates the handling of preimage on-chain monitoring to ensure
   that claim transactions are only created for [HTLCs][topic htlc] whose payment
   hash matches the retrieved preimage. Previously, LDK attempted to claim any
   claimable HTLC (expired ones and those with a known preimage), which risked
   creating invalid claim transactions and potential fund loss if the
-  counterparty timed out another HTLC first.
+  counterparty timed out another HTLC first. {% assign timestamp="36:47" %}
 
 {% include snippets/recap-ad.md when="2025-10-21 16:30" %}
 {% include references.md %}
