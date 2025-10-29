@@ -48,7 +48,7 @@ popular Bitcoin infrastructure software.
      unnecessary computation.
 
   The current proposal is still in the discussion phase, with no prototype
-  available.
+  available. {% assign timestamp="1:06" %}
 
 - **Channel jamming mitigation simulation results and updates:** Carla
   Kirk-Cohen, in collaboration with Clara Shikhelman and elnosh, [posted][carla
@@ -71,7 +71,7 @@ popular Bitcoin infrastructure software.
 
   The write-up concludes that [channel jamming attack][topic channel jamming
   attacks] mitigation has reached a point where it is good enough and encourages
-  readers to try their simulator to test out attacks.
+  readers to try their simulator to test out attacks. {% assign timestamp="9:28" %}
 
 ## Changes to services and client software
 
@@ -82,12 +82,12 @@ wallets and services.*
   The open source [BULL mobile wallet][bull blog] is built on BDK and supports [descriptors][topic
   descriptors], [labeling][topic wallet labels], and coin selection, Lightning,
   [payjoin][topic payjoin], Liquid, hardware wallets, and watch-only wallets, among
-  other features.
+  other features. {% assign timestamp="37:22" %}
 
 - **Sparrow 2.3.0 released:**
   [Sparrow 2.3.0][sparrow github] adds support for sending to [silent
   payment][topic silent payments] addresses and [BIP353][] human-readable
-  Bitcoin payment instructions, among other features and bug fixes.
+  Bitcoin payment instructions, among other features and bug fixes. {% assign timestamp="39:40" %}
 
 ## Releases and release candidates
 
@@ -96,12 +96,12 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [Core Lightning 25.09.1][] is a maintenance release for the current major
-  version of this popular LN node that includes several bug fixes.
+  version of this popular LN node that includes several bug fixes. {% assign timestamp="40:47" %}
 
 - [Bitcoin Core 28.3][] is a maintenance release for the previous release series
   of the predominant full node implementation. It contains multiple bug fixes,
   and also includes the new defaults for `blockmintxfee`, `incrementalrelayfee`,
-  and `minrelaytxfee`.
+  and `minrelaytxfee`. {% assign timestamp="41:18" %}
 
 ## Notable code and documentation changes
 
@@ -118,12 +118,12 @@ repo], and [BINANAs][binana repo]._
   mempool][topic cluster mempool] by introducing a `SingletonClusterImpl` type
   for single-transaction clusters and by compacting several `TxGraph` internals.
   This PR also adds a `GetMainMemoryUsage()` function to estimate `TxGraph`’s
-  memory usage.
+  memory usage. {% assign timestamp="43:00" %}
 
 - [Bitcoin Core #29675][] introduces support for receiving and spending
   [taproot][topic taproot] outputs controlled by [MuSig2][topic musig] aggregate
   keys on wallets with imported `musig(0)` [descriptors][topic descriptors]. See
-  [Newsletter #366][news366 musig2] for the earlier enabling work.
+  [Newsletter #366][news366 musig2] for the earlier enabling work. {% assign timestamp="45:56" %}
 
 - [Bitcoin Core #33517][] and [Bitcoin Core #33518][] reduce the CPU consumption
   of multiprocess logging by adding log levels and categories, which avoids
@@ -131,7 +131,7 @@ repo], and [BINANAs][binana repo]._
   author found that before this PR, logging accounted for 50% of his [Stratum
   v2][topic pooled mining] client application's CPU time and 10% of the Bitcoin
   node's processes. It has now dropped to near zero percent. See Newsletters
-  [#323][news323 ipc] and [#369][news369 ipc] for additional context.
+  [#323][news323 ipc] and [#369][news369 ipc] for additional context. {% assign timestamp="46:59" %}
 
 - [Eclair #2792][] adds a new [MPP][topic multipath payments] splitting
   strategy, `max-expected-amount`, which allocates parts across routes by
@@ -141,25 +141,25 @@ repo], and [BINANAs][binana repo]._
   capacity, and `randomize` (default), which randomizes the splitting. The
   latter two are already accessible through the boolean config
   `randomize-route-selection`. This PR adds enforcement of [HTLC][topic htlc]
-  maximum limits on remote channels.
+  maximum limits on remote channels. {% assign timestamp="49:01" %}
 
 - [LDK #4122][] enables queuing a [splice][topic splicing] request while the
   peer is offline, starting negotiation upon reconnection. For [zero-conf][topic
   zero-conf channels] splices, LDK now sends a `splice_locked` message to the
   peer immediately after `tx_signatures` are exchanged. LDK will also now queue
   a splice during a concurrent splice and attempt it as soon as the other one
-  locks.
+  locks. {% assign timestamp="51:01" %}
 
 - [LND #9868][] defines an `OnionMessage` type and adds two new RPC endpoints:
   `SendOnionMessage`, which sends an onion message to a specific peer, and
   `SubscribeOnionMessages`, which subscribes to a stream of incoming onion
   messages. These are the first steps required to support [BOLT12 offers][topic
-  offers].
+  offers]. {% assign timestamp="52:37" %}
 
 - [LND #10273][] fixes an issue where LND would crash when the legacy sweeper,
   `utxonursery`, attempted to sweep an [HTLC][topic htlc] with a
   [locktime][topic timelocks] (height hint) of 0. Now, LND successfully sweeps
-  those HTLCs by deriving the height hint from the channel’s close height.
+  those HTLCs by deriving the height hint from the channel’s close height. {% assign timestamp="53:48" %}
 
 {% include snippets/recap-ad.md when="2025-10-28 16:30" %}
 {% include references.md %}
