@@ -7,7 +7,11 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-FIXME:bitschmidty
+This week's newsletter announces four vulnerabilities affecting older versions of
+the Bitcoin Core full node. Also included are our regular sections summarizing
+popular questions and answers from the Bitcoin Stack Exchange, announcing new
+releases and release candidates, and describing notable changes to popular
+Bitcoin infrastructure software.
 
 ## News
 
@@ -58,7 +62,28 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why was -datacarriersize redefined in 2022, and why was the 2023 proposal to expand it not merged?]({{bse}}128027)
+  Pieter Wuille provides a historical overview of the scope of Bitcoin Core's
+  `-datacarriersize` option in relation to `OP_RETURN` outputs.
+
+- [What is the smallest valid transaction that can be included in a block?]({{bse}}129137)
+  Vojtěch Strnad enumerates the minimum fields and sizes that would comprise the
+  smallest possible valid Bitcoin transaction.
+
+- [Why does Bitcoin Core continue to give witness data a discount even when it is used for inscriptions?]({{bse}}128028)
+  Pieter Wuille explains the rationale for segwit's witness discount and
+  emphasizes that the Bitcoin Core software implements Bitcoin's current
+  consensus rules.
+
+- [The ever-growing Bitcoin blockchain size?]({{bse}}128048)
+  Murch notes the current UTXO set size, storage requirements for pruned and
+  full nodes, and points out the current rate of growth of the Bitcoin blockchain.
+
+- [I read that OP_TEMPLATEHASH is a variant of OP_CTV. How do they differ?]({{bse}}128097)
+  Rearden contrasts the capabilities, efficiency, compatibility, and which
+  fields are hashed, between [OP_CHECKTEMPLATEVERIFY][topic
+  op_checktemplateverify] and the recently proposed `OP_TEMPLATEHASH` proposal
+  (see [Newsletter #365][news365 op_templatehash]).
 
 ## Releases and release candidates
 
@@ -137,3 +162,4 @@ repo], and [BINANAs][binana repo]._
 [Eclair 0.13.1]: https://github.com/ACINQ/eclair/releases/tag/v0.13.1
 [news31 chain]: /en/newsletters/2019/01/29/#lnd-2314
 [news344 bip3]: /en/newsletters/2025/03/07/#bips-1712
+[news365 op_templatehash]: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
