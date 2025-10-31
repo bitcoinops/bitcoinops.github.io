@@ -149,7 +149,6 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 	0. Maintenant, LND balaye avec succès ces HTLC en dérivant l'indice de hauteur de la hauteur de
 	fermeture du canal.
 
-{{% include snippets/recap-ad.md when="2025-10-28 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="33157,29675,33517,33518,2792,4122,9868,10273" %}
 [carla post]: https://delvingbitcoin.org/t/outgoing-reputation-simulation-results-and-updates/2069
