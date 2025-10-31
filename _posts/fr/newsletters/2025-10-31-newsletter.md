@@ -147,6 +147,6 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [LND 0.20.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.0-beta.rc2
 [LND notes]: https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.20.0.md
 [Eclair 0.13.1]: https://github.com/ACINQ/eclair/releases/tag/v0.13.1
-[news31 chain]: /fr/newsletters/2019/01/29/#lnd-2314
+[news31 chain]: /en/newsletters/2019/01/29/#lnd-2314
 [news344 bip3]: /fr/newsletters/2025/03/07/#bips-1712
 [news365 op_templatehash]: /fr/newsletters/2025/08/01/#proposition-de-op-templatehash-natif-a-taproot
