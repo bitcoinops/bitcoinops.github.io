@@ -16,8 +16,8 @@ et décrivant les changements notables dans les projets d'infrastructure Bitcoin
 
 ## Nouvelles
 
-- **Détection des augmentations du taux de frais des modèles de blocs en utilisant le cluster
-	mempool :** Abubakar Sadiq Ismail a récemment [publié][ismail post] sur Delving Bitcoin à propos de
+- **Détection des augmentations du taux de frais des modèles de blocs en utilisant le cluster mempool :**
+	Abubakar Sadiq Ismail a récemment [publié][ismail post] sur Delving Bitcoin à propos de
 	la possibilité de suivre l'augmentation potentielle des frais à partir de chaque mise à jour du
 	mempool pour fournir un nouveau modèle de bloc aux mineurs uniquement lorsque l'amélioration du taux
 	de frais le justifie. Cette approche réduirait le nombre de constructions de modèles de blocs
