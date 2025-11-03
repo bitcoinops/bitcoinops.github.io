@@ -15,7 +15,30 @@ popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1:** Sebastian Falbesoner [posted to Delving][sebastion delving]
+  about comparing the performance of ECDSA signature validation between OpenSSL
+  and libsecp256k1 over the last decade. He mentions that it will be the 10th
+  anniversary of Bitcoin Core switching from OpenSSL to libsecp256k1, and wanted
+  to imagine a hypothetical situation in which Bitcoin Core never switched.
+
+  From the start, when the switch happened, libsecp256k1 was 2.5 - 5.5 times
+  faster than OpenSSL. Nonetheless, OpenSSL could have improved over the years,
+  so it was worth testing to see how it compared over the decade.
+
+  The methodology consisted of three steps (parse compressed public key, parse
+  DER-encoded signature, verify ECDSA signature) that could be tested using
+  functions in both libraries. A benchmark was made with a list of pseudo-random
+  key pairs. He ran the benchmark on three separate machines and provided a bar
+  plot. The chart showed that over the years, libsecp256k1 had improved
+  significantly. Meaning a ~28% improvement from bc-0.19 to bc-0.20 and another
+  ~30% improvement from bc-0.20 to bc-22.0 while OpenSSL had remained the same.
+
+  Sebastian concludes that outside the Bitcoin ecosystem, the secp256k1 curve is
+  not that relevant and doesn't count as a first-class citizen, that would
+  justify the hours of work to improve it. He also encourages readers to attempt
+  to reproduce his results and to report any issues with his methodology or
+  differences found in their own results. The [source code][libsecp benchmark
+  code] is available on GitHub.
 
 ## Changing consensus
 
@@ -47,4 +70,5 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2025-11-11 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[sebastion delving]: https://delvingbitcoin.org/t/comparing-the-performance-of-ecdsa-signature-validation-in-openssl-vs-libsecp256k1-over-the-last-decade/2087
+[libsecp benchmark code]: https://github.com/theStack/secp256k1-plugbench
