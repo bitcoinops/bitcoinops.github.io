@@ -22,7 +22,7 @@ Bitcoin infrastructure software.
   policy][disc pol] (see [Newsletter #306][news306 disclosures]), a
   low-severity vulnerability is disclosed two weeks after the release of a major
   version containing the fix. The four disclosed vulnerabilities are the
-  following:
+  following: {% assign timestamp="1:00" %}
 
   - [Disk filling from spoofed self connections][CVE-2025-54604]: This bug would
     allow an attacker to fill up the disk space of a victim node by faking
@@ -64,26 +64,26 @@ answers posted since our last update.*
 
 - [Why was -datacarriersize redefined in 2022, and why was the 2023 proposal to expand it not merged?]({{bse}}128027)
   Pieter Wuille provides a historical overview of the scope of Bitcoin Core's
-  `-datacarriersize` option in relation to `OP_RETURN` outputs.
+  `-datacarriersize` option in relation to `OP_RETURN` outputs. {% assign timestamp="17:53" %}
 
 - [What is the smallest valid transaction that can be included in a block?]({{bse}}129137)
   Vojtěch Strnad enumerates the minimum fields and sizes that would comprise the
-  smallest possible valid Bitcoin transaction.
+  smallest possible valid Bitcoin transaction. {% assign timestamp="22:59" %}
 
 - [Why does Bitcoin Core continue to give witness data a discount even when it is used for inscriptions?]({{bse}}128028)
   Pieter Wuille explains the rationale for segwit's witness discount and
   emphasizes that the Bitcoin Core software implements Bitcoin's current
-  consensus rules.
+  consensus rules. {% assign timestamp="25:38" %}
 
 - [The ever-growing Bitcoin blockchain size?]({{bse}}128048)
   Murch notes the current UTXO set size, storage requirements for pruned and
-  full nodes, and points out the current rate of growth of the Bitcoin blockchain.
+  full nodes, and points out the current rate of growth of the Bitcoin blockchain. {% assign timestamp="39:17" %}
 
 - [I read that OP_TEMPLATEHASH is a variant of OP_CTV. How do they differ?]({{bse}}128097)
   Rearden contrasts the capabilities, efficiency, compatibility, and which
   fields are hashed, between [OP_CHECKTEMPLATEVERIFY][topic
   op_checktemplateverify] and the recently proposed `OP_TEMPLATEHASH` proposal
-  (see [Newsletter #365][news365 op_templatehash]).
+  (see [Newsletter #365][news365 op_templatehash]). {% assign timestamp="44:59" %}
 
 ## Releases and release candidates
 
@@ -94,12 +94,12 @@ release candidates._
 - [LND 0.20.0-beta.rc1][] is a release candidate for this popular LN node.  One
   improvement that would benefit from testing is the fix for premature wallet
   rescanning, described in the notable code changes section below. See the
-  [release notes][LND notes] for more details.
+  [release notes][LND notes] for more details. {% assign timestamp="49:59" %}
 
 - [Eclair 0.13.1][] is a minor release of this LN node implementation.  This
   release contains database changes to prepare for the removal of pre-[anchor
   output][topic anchor outputs] channels. You will need to run the v0.13.0
-  release first to migrate your channel data to the latest internal encoding.
+  release first to migrate your channel data to the latest internal encoding. {% assign timestamp="50:43" %}
 
 ## Notable code and documentation changes
 
@@ -117,34 +117,34 @@ repo], and [BINANAs][binana repo]._
   belonging to the previously known best chain, and 1 for all other loaded
   blocks. This resolves an issue where Bitcoin Core couldn’t perform a tiebreak
   between two competing chains because the `nSequenceId` value didn't persist
-  across restarts.
+  across restarts. {% assign timestamp="51:21" %}
 
 - [Core Lightning #8400][] introduces a new [BIP39][] mnemonic backup format for
   the `hsm_secret` with optional passphrase for all new nodes by default, while
   keeping support for legacy 32-byte `hsm_secrets` on existing nodes. `Hsmtool`
   is also updated to support both mnemonic-based and legacy secrets. A new
-  standard [taproot][topic taproot] derivation format is introduced for wallets.
+  standard [taproot][topic taproot] derivation format is introduced for wallets. {% assign timestamp="54:15" %}
 
 - [Eclair #3173][] removes support for legacy channels that don’t use [anchor
   outputs][topic anchor outputs] or [taproot][topic taproot], also known as
   `static_remotekey` or `default` channels. Users should close any remaining
-  legacy channels before upgrading to version 0.13 or 0.13.1.
+  legacy channels before upgrading to version 0.13 or 0.13.1. {% assign timestamp="54:53" %}
 
 - [LND #10280][] now waits for the headers to sync before starting the chain
   notifier (see [Newsletter #31][news31 chain]) to rescan the chain for wallet
   transactions. This resolves an issue in which LND would trigger a premature
   rescan while the headers were still syncing when a new wallet was created.
-  This primarily affected [Neutrino backends][topic compact block filters].
+  This primarily affected [Neutrino backends][topic compact block filters]. {% assign timestamp="56:56" %}
 
 - [BIPs #2006][] updates [BIP3][]’s specification (see [Newsletter #344][news344
   bip3]) by adding guidance on originality and quality, particularly advising
   authors against generating content with AI/LLMs, and encouraging the proactive
-  disclosure of AI/LLM usage.
+  disclosure of AI/LLM usage. {% assign timestamp="57:27" %}
 
 - [BIPs #1975][] updates [BIP155][] which specifies [addr v2][topic addr v2], a
   new version of the `addr` message in the Bitcoin P2P network protocol, by
   adding a note that [Tor v2][topic anonymity networks] is no longer
-  operational.
+  operational. {% assign timestamp="1:00:58" %}
 
 {% include snippets/recap-ad.md when="2025-11-04 16:30" %}
 {% include references.md %}
