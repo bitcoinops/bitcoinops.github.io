@@ -45,7 +45,19 @@ popular Bitcoin infrastructure software.
 _A monthly section summarizing proposals and discussion about changing
 Bitcoin's consensus rules._
 
-FIXME:bitschmidty
+- **BIP54 implementation and test vectors**: Antoine Poinsot [posted][ap bip54
+  post] to the Bitcoin-Dev mailing list an update on his [consensus
+  cleanup][topic consensus cleanup] work on [BIP54][] (see [Newsletter
+  #348][news348 bip54] for more details). He opened [Bitcoin Inquisition
+  #99][binq bip54 pr], implementing BIP54 consensus rules. This PR comes with
+  unit tests for each of the four mitigations, which can be used to generate
+  test vectors for the proposal. Moreover, it contains a fuzz harness for the
+  sigop accounting logic and functional tests that mimic the mitigations'
+  behaviour in realistic situations, including historical violations.
+  Additionally, a [custom miner][bip54 miner] was developed to generate a full
+  header chain needed by the test vectors for mitigations requiring mainnet
+  blocks, such as timestamp and coinbase restrictions. Finally, he opened [BIPs
+  #2015][] to add the generated test vectors to BIP54.
 
 ## Releases and release candidates
 
@@ -70,5 +82,10 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2025-11-11 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="2015,2017,31645,8636,8639,8635,3209,3206,3210,4140,4168,5116,6922" %}
 [sebastion delving]: https://delvingbitcoin.org/t/comparing-the-performance-of-ecdsa-signature-validation-in-openssl-vs-libsecp256k1-over-the-last-decade/2087
 [libsecp benchmark code]: https://github.com/theStack/secp256k1-plugbench
+[ap bip54 post]: https://groups.google.com/g/bitcoindev/c/1XEtmIS_XRc
+[news348 bip54]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
+[binq bip54 pr]: https://github.com/bitcoin-inquisition/bitcoin/pull/99
+[bip54 miner]: https://github.com/darosior/bitcoin/commits/bip54_miner/
