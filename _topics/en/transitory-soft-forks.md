@@ -38,6 +38,9 @@ optech_mentions:
   - title: Transitory soft fork suggested for transaction weight limit
     url: /en/newsletters/2025/06/06/#transaction-weight-limit-with-exception-to-prevent-confiscation
 
+  - title: Transitory soft fork suggested to limit certain transaction fields
+    url: /en/newsletters/2025/11/07/#temporary-soft-fork-to-reduce-data
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
