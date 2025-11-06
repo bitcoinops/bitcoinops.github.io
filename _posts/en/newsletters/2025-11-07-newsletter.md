@@ -117,7 +117,14 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Core Lightning 25.09.2][] is a maintenance release for the current major
+  version of this popular LN node that includes several bug fixes related to
+  `bookkeeper` and to `xpay`, some of which are summarized in the code and
+  documentation changes section below.
+
+- [LND 0.20.0-beta.rc3][] is a release candidate for this popular LN node. One
+  improvement that would benefit from testing is the fix for premature wallet
+  rescanning.
 
 ## Notable code and documentation changes
 
@@ -130,7 +137,85 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #31645][] increases the default `dbbatchsize` config from 16 MB
+  to 32 MB. This option determines the batch size used to flush the UTXO set
+  cached in memory (as set by `dbcache`) to disk after IBD or an
+  [assumeUTXO][topic assumeutxo] snapshot. This update primarily benefits HDDs
+  and lower-end systems. For example, the author reports a 30% improvement in
+  flushing time on a Raspberry Pi with a `dbcache` of 500. Users can override
+  the default setting if desired.
+
+- [Core Lightning #8636][] adds an `askrene-timeout` config (default 10s) that
+  causes `getroutes` to fail once the deadline is reached. When `maxparts` is
+  set to a low value, `askrene` (see [Newsletter #316][news316 askrene]) may
+  enter a retry loop on a route with insufficient capacity. This PR disables the
+  bottleneck route in that scenario to ensure forward progress.
+
+- [Core Lightning #8639][] updates `bcli` to use `-stdin` when interfacing with
+  `bitcoin-cli` to avoid operating system-dependent `argv` (command line
+  arguments) size limits. This update resolves an issue that blocked users from
+  building large transactions (e.g., [PSBTs][topic psbt] with 700 inputs). Other
+  improvements to the performance of large transactions were also made.
+
+- [Core Lightning #8635][] updates payment status management to only mark a
+  payment part as pending after the outgoing [HTLC][topic htlc] has been created
+  when using `xpay` (see [Newsletter #330][news330 xpay]) or
+  `injectpaymentonion`. Previously, the payment part was marked as pending
+  first, and if the HTLC creation then failed, the item could stay pending
+  forever in `listpays` or `listsendpays`.
+
+- [Eclair #3209][] adds a check to ensure routing feerate values can’t be
+  negative. Previously, setting this value would trigger a channel force
+  closure.
+
+- [Eclair #3206][] immediately fails a held incoming [HTLC][topic htlc] when a
+  [liquidity advertisement][topic liquidity advertisements] purchase is aborted
+  after signing begins but before signatures are exchanged. Previously, Eclair
+  wouldn't handle this edge case and would only fail the HTLC shortly before its
+  expiration, tying up the sender's funds unnecessarily. This change was
+  motivated by cases where non-malicious mobile wallets would disconnect and
+  abort.
+
+- [Eclair #3210][] updates its weight estimation to assume 73-byte DER-encoded
+  signatures (see [Newsletter #6][news6 der]), aligning with the [BOLT3][]
+  specification and with other implementations, such as LDK. This ensures that
+  peers that also assume this size will never reject an `interactive-tx` attempt
+  from Eclair due to fee underpayment. Eclair never generates these non-standard
+  signatures.
+
+- [LDK #4140][] fixes premature force-closes for outgoing [async payments][topic
+  async payments] when a node restarts. Previously, when an often-offline node
+  came back online and an outgoing [HTLC][topic htlc] was
+  `LATENCY_GRACE_PERIOD_BLOCKS` (3 blocks) past its [CLTV expiry][topic cltv
+  expiry delta], LDK would force-close immediately, before the node could
+  reconnect and allow the peer to fail the HTLC. In this scenario, since the
+  node isn’t racing to claim an incoming HTLC, LDK adds a 4,032-block grace
+  period after the HTLC’s CLTV expiry before force-closing.
+
+- [LDK #4168][] removes the flag on `read_event` that signals the pause of peer
+  message reading. This makes `send_data` the only source of truth for
+  pause/resume signals. This fixes a race condition where a node could receive a
+  late pause signal from `read_event` after `send_data` had already resumed
+  reading. The late pause would leave reads disabled indefinitely until the node
+  sent a message to that peer again.
+
+- [Rust Bitcoin #5116][] updates the responses of `compute_merkle_root` and
+  `compute_witness_root` to return `None` when the transaction list contains
+  adjacent duplicates. This prevents the mutated [merkle root
+  vulnerability][topic merkle tree vulnerabilities], CVE 2012-2459, where an
+  invalid block with a duplicated transaction can share the same merkle root
+  (and block hash) as a valid block, leading Rust Bitcoin to confuse and reject
+  both. This solution is inspired by a similar one in Bitcoin Core.
+
+- [BTCPay Server #6922][] introduces `Subscriptions`, through which merchants
+  can define recurring payment offerings and plans as well as onboard users via
+  a checkout process. The system tracks each subscriber's credit balance, which
+  is deducted during each billing period. A subscriber portal is included where
+  users can upgrade or downgrade plans, view their credits, history, and
+  receipts. Merchants can set up email alerts to notify users when a payment is
+  almost due. While this doesn't introduce automatic charges, a planned [Nostr
+  Wallet Connect (NWC)][news290 nwc] integration could make that possible for
+  certain wallets.
 
 {% include snippets/recap-ad.md when="2025-11-11 16:30" %}
 {% include references.md %}
@@ -147,3 +232,9 @@ FIXME:Gustavojfe
 [news348 bip54]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
 [binq bip54 pr]: https://github.com/bitcoin-inquisition/bitcoin/pull/99
 [bip54 miner]: https://github.com/darosior/bitcoin/commits/bip54_miner/
+[LND 0.20.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.0-beta.rc3
+[Core Lightning 25.09.2]: https://github.com/ElementsProject/lightning/releases/tag/v25.09.2
+[news316 askrene]: /en/newsletters/2024/08/16/#core-lightning-7517
+[news330 xpay]: /en/newsletters/2024/11/22/#core-lightning-7799
+[news6 der]: /en/newsletters/2018/07/31/#the-maximum-size-of-a-bitcoin-der-encoded-signature-is
+[news290 nwc]: /en/newsletters/2024/02/21/#multiparty-coordination-protocol-nwc-announced
