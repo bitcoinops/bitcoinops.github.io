@@ -145,8 +145,8 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 	supporter les [BOLT12 offers][topic offers].
 
 - [LND #10273][] corrige un problème où LND se plantait lorsque le sweeper hérité, `utxonursery`,
-	tentait de balayer un [HTLC][topic htlc] avec un [locktime][topic timelocks] (indice de hauteur) de
-	0. Maintenant, LND balaye avec succès ces HTLC en dérivant l'indice de hauteur de la hauteur de
+	tentait de balayer un [HTLC][topic htlc] avec un [locktime][topic timelocks] (indice de hauteur) de 0.
+  	Maintenant, LND balaye avec succès ces HTLC en dérivant l'indice de hauteur de la hauteur de
 	fermeture du canal.
 
 {% include references.md %}
