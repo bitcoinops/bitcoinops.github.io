@@ -39,20 +39,23 @@ _Bitcoinのコンセンサスルールの変更に関する提案と議論をま
 
 - **<!--multiple-discussions-about-restricting-data-->データ制限に関する複数の議論**:
   複数の会話で、コンセンサスにおけるさまざまな分野の制限を変更するためのアイディアが検討されました。
-  - **scriptPubkeyを520 byteに制限制限**:
+  
+  - *scriptPubkeyを520 byteに制限制限*:
     PortlandHODLは、コンセンサスでscriptPubkeyのサイズを520 byteに制限する提案をBitcoin-Devメーリングリストに[投稿しました][ph 520spk post]。
     BIP54のコンセンサスクリーンアップと同様に、これはレガシースクリプトのコーナーケースにおける最大ブロック検証コストを制限します。
     また、`OP_RETURN`を使って大きな連続データセグメントを作成することも不可能になります。
     このアイディアに対するフィードバックには、この変更により、最大ブロック検証コストを制限するBIP54と比較して、
     古い署名済みプロトコルの没収対象領域が拡大すること、そして特定の[ソフトフォークアップグレード][topic soft fork activation]パス（特に
     [量子耐性][topic quantum resistance]に関するもの）を閉ざされることへの反発が含まれていました。
-  - **<!--temporary-soft-fork-to-reduce-data-->データを削減するための一時的なソフトフォーク**: Dathon Ohmは、
+  
+  - *<!--temporary-soft-fork-to-reduce-data-->データを削減するための一時的なソフトフォーク*: Dathon Ohmは、
     Bitcoinトランザクションをデータのエンコードに使用する方法を一時的に制限する提案を[投稿し][do post]、
     BIPの[プルリクエスト][BIPs #2017]を作成しました。このソフトフォークは[一時的なもの][topic transitory soft forks]と説明されていますが、
     メーリングリストやプルリクエストの議論では、提案された変更による大規模な没収対象領域について批判的な意見が出ています。
     さらに、一時的なソフトフォークは可能ではあるものの、その期限切れをめぐる論争は、ハードフォークへと発展させる可能性を秘めています。
     これに対しPeter Toddは、提案されたBIPのテキストを、提案されたコンセンサスルールの下で有効なBitcoinトランザクションにエンコードすることで、
     このアプローチの限界を[示しました][pt post tx]。
+
 - **<!--post-quantum-signature-aggregation-->ポスト量子署名の集約**:
   Tadge Dryjaは、ロックスクリプトが同じトランザクション内で使用される特定のUTXOにコミットできるようにする
   `OP_CHECKINPUTVERIFY`（`OP_CIV`）をBitcoin-Devメーリングリストに[投稿しました][td post civ]。
@@ -63,6 +66,7 @@ _Bitcoinのコンセンサスルールの変更に関する提案と議論をま
   [BitVM][topic acc]のようなプロトコルにおける汎用的な兄弟インプットチェックにも使えます。
   `OP_CHECKCONTRACTVERIFY`などの他の提案も、兄弟`scriptPubKeys`にコミットすることで同様の署名共有スキームを実現できますが、
   異なる（おそらくより悪くなる）トレードオフがあります。
+
 - **Bitcoin ScriptにおけるネイティブSTARK証明検証**: Abdelhamid Bakhtaは、
   Bitcoin ScriptでSTARK証明の特定のバージョンの検証を可能にする新しい[Tapscript][topic tapscript] opcode
   `OP_STARK_VERIFY`の詳細な提案をDalving Bitcoinに[投稿しました][abdel delving]。
@@ -71,6 +75,7 @@ _Bitcoinのコンセンサスルールの変更に関する提案と議論をま
   証明は単にそれ自体が埋め込む計算の検証済みの証明に過ぎません。これらの証明は、
   他の署名方法を使って特定のBitcoinトランザクションにリンクできます。
   この投稿では、[Validity Rollup][news222 validity rollups]などのさまざまなユースケースについて議論しています。
+
 - **BIP54の実装とTest Vector**: Antoine Poinsotは、[BIP54][]の
   [コンセンサスクリーンアップ][topic consensus cleanup]（詳細は[ニュースレター #348][news348 bip54]参照）の作業の最新情報を
   Bitcoin-Devメーリングリストに[投稿しました][ap bip54 post]。
