@@ -213,14 +213,14 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [pt post tx]: https://gnusha.org/pi/bitcoindev/aP6gYSnte7J86g0p@petertodd.org/
 [td post civ]: https://gnusha.org/pi/bitcoindev/05195086-ee52-472c-962d-0df2e0b9dca2n@googlegroups.com/
 [abdel delving]: https://delvingbitcoin.org/t/proposal-op-stark-verify-native-stark-proof-verification-in-bitcoin-script/2056
-[news222 validity rollups]: /en/newsletters/2022/10/19/#validity-rollups-research
+[news222 validity rollups]: /fr/newsletters/2022/10/19/#recherche-sur-les-rollups-de-validite
 [ap bip54 post]: https://groups.google.com/g/bitcoindev/c/1XEtmIS_XRc
-[news348 bip54]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
+[news348 bip54]: /fr/newsletters/2025/04/04/#brouillon-de-bip-publie-pour-le-nettoyage-du-consensus
 [binq bip54 pr]: https://github.com/bitcoin-inquisition/bitcoin/pull/99
 [bip54 miner]: https://github.com/darosior/bitcoin/commits/bip54_miner/
 [LND 0.20.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.0-beta.rc3
 [Core Lightning 25.09.2]: https://github.com/ElementsProject/lightning/releases/tag/v25.09.2
-[news316 askrene]: /en/newsletters/2024/08/16/#core-lightning-7517
-[news330 xpay]: /en/newsletters/2024/11/22/#core-lightning-7799
+[news316 askrene]: /fr/newsletters/2024/08/16/#core-lightning-7517
+[news330 xpay]: /fr/newsletters/2024/11/22/#core-lightning-7799
 [news6 der]: /en/newsletters/2018/07/31/#the-maximum-size-of-a-bitcoin-der-encoded-signature-is
-[news290 nwc]: /en/newsletters/2024/02/21/#multiparty-coordination-protocol-nwc-announced
+[news290 nwc]: /fr/newsletters/2024/02/21/#annonce-du-protocole-de-coordination-multipartie-nwc
