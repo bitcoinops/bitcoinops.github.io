@@ -39,7 +39,7 @@ _Bitcoinのコンセンサスルールの変更に関する提案と議論をま
 
 - **<!--multiple-discussions-about-restricting-data-->データ制限に関する複数の議論**:
   複数の会話で、コンセンサスにおけるさまざまな分野の制限を変更するためのアイディアが検討されました。
-  
+
   - *scriptPubkeyを520 byteに制限制限*:
     PortlandHODLは、コンセンサスでscriptPubkeyのサイズを520 byteに制限する提案をBitcoin-Devメーリングリストに[投稿しました][ph 520spk post]。
     BIP54のコンセンサスクリーンアップと同様に、これはレガシースクリプトのコーナーケースにおける最大ブロック検証コストを制限します。
@@ -47,7 +47,7 @@ _Bitcoinのコンセンサスルールの変更に関する提案と議論をま
     このアイディアに対するフィードバックには、この変更により、最大ブロック検証コストを制限するBIP54と比較して、
     古い署名済みプロトコルの没収対象領域が拡大すること、そして特定の[ソフトフォークアップグレード][topic soft fork activation]パス（特に
     [量子耐性][topic quantum resistance]に関するもの）を閉ざされることへの反発が含まれていました。
-  
+
   - *<!--temporary-soft-fork-to-reduce-data-->データを削減するための一時的なソフトフォーク*: Dathon Ohmは、
     Bitcoinトランザクションをデータのエンコードに使用する方法を一時的に制限する提案を[投稿し][do post]、
     BIPの[プルリクエスト][BIPs #2017]を作成しました。このソフトフォークは[一時的なもの][topic transitory soft forks]と説明されていますが、
