@@ -25,7 +25,7 @@ primary_sources:
     link: https://docs.arkadeos.com
 
   - title: "Second implementation"
-    link: https://codeberg.org/ark-bitcoin
+    link: https://gitlab.com/ark-bitcoin
 
   - title: "Second technical documentation"
     link: https://docs.second.tech/
