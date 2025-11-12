@@ -36,7 +36,7 @@ lang: zh
 
   该帖子的大部分内容是重复此前关于何以在量子计算机足够快之前就必须阻止人们从量子敏感的输出中花费的讨论（详见 [周报 #348][news348 destroy]）。双方都提出了合理的论证，我们希望辩论能够继续。
 
-- **<!--taprootnative-optemplatehash-proposal-->****Taproot 原生的 `OP_TEMPLATEHASH` 提议**：Greg Sanders 在 Bitcoin-Dev 邮件组中[发布][sanders th]了一个向 [tapscript][topic tapscript] 添加三个操作码的提议。其中两个是此前已被提议的 [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] 和 `OP_INTERNALKEY`（详见 [周报 #285][news285 ik]）。最后一个是 `OP_TEMPLATEHASH`，是 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] 的 Taproot 原生变种；作者指出原版与变种有以下区别：
+- **<!--taproot-native-op-templatehash-proposal-->****Taproot 原生的 `OP_TEMPLATEHASH` 提议**：Greg Sanders 在 Bitcoin-Dev 邮件组中[发布][sanders th]了一个向 [tapscript][topic tapscript] 添加三个操作码的提议。其中两个是此前已被提议的 [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] 和 `OP_INTERNALKEY`（详见 [周报 #285][news285 ik]）。最后一个是 `OP_TEMPLATEHASH`，是 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] 的 Taproot 原生变种；作者指出原版与变种有以下区别：
 
   * 不改动传统（隔离见证前）脚本。此前关于这一抉择的讨论见[周报 #361][news361 ctvlegacy]。
 
