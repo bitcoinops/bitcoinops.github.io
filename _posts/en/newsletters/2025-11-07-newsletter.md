@@ -38,7 +38,7 @@ popular Bitcoin infrastructure software.
   justify the hours of work to improve it. He also encourages readers to attempt
   to reproduce his results and to report any issues with his methodology or
   differences found in their own results. The [source code][libsecp benchmark
-  code] is available on GitHub.
+  code] is available on GitHub. {% assign timestamp="1:47" %}
 
 ## Changing consensus
 
@@ -73,6 +73,8 @@ Bitcoin's consensus rules._
     BIP into a Bitcoin transaction that would be valid under the proposed
     consensus rules.
 
+{% assign timestamp="14:05" %}
+
 - **Post-quantum signature aggregation**: Tadge Dryja [posted][td post civ] to
   the Bitcoin-Dev mailing list a proposal for an `OP_CHECKINPUTVERIFY`
   (`OP_CIV`) opcode that enables a locking script to commit to a specific UTXO
@@ -84,7 +86,7 @@ Bitcoin's consensus rules._
   also be used for generic sibling input checks in protocols like [BitVM][topic
   acc]. Other proposals such as `OP_CHECKCONTRACTVERIFY` could be used to
   achieve a similar signature sharing scheme by committing to sibling
-  `scriptPubKeys` but with different (and possibly worse) trade-offs.
+  `scriptPubKeys` but with different (and possibly worse) trade-offs. {% assign timestamp="1:00:05" %}
 
 - **Native STARK proof verification in Bitcoin Script**: Abdelhamid Bakhta
   [posted][abdel delving] to Delving Bitcoin a detailed proposal for a new
@@ -95,7 +97,7 @@ Bitcoin's consensus rules._
   proofs are merely verified proofs of whatever computation they themselves
   embed. These proofs can be linked to specific Bitcoin transactions using other
   signing methods. The post discusses various use cases such as [validity
-  rollups][news222 validity rollups].
+  rollups][news222 validity rollups]. {% assign timestamp="1:18:47" %}
 
 - **BIP54 implementation and test vectors**: Antoine Poinsot [posted][ap bip54
   post] to the Bitcoin-Dev mailing list an update on his [consensus
@@ -109,7 +111,7 @@ Bitcoin's consensus rules._
   Additionally, a [custom miner][bip54 miner] was developed to generate a full
   header chain needed by the test vectors for mitigations requiring mainnet
   blocks, such as timestamp and coinbase restrictions. Finally, he opened [BIPs
-  #2015][] to add the generated test vectors to BIP54.
+  #2015][] to add the generated test vectors to BIP54. {% assign timestamp="35:47" %}
 
 ## Releases and release candidates
 
@@ -120,11 +122,11 @@ release candidates._
 - [Core Lightning 25.09.2][] is a maintenance release for the current major
   version of this popular LN node that includes several bug fixes related to
   `bookkeeper` and to `xpay`, some of which are summarized in the code and
-  documentation changes section below.
+  documentation changes section below. {% assign timestamp="1:30:54" %}
 
 - [LND 0.20.0-beta.rc3][] is a release candidate for this popular LN node. One
   improvement that would benefit from testing is the fix for premature wallet
-  rescanning.
+  rescanning. {% assign timestamp="1:31:44" %}
 
 ## Notable code and documentation changes
 
@@ -143,30 +145,30 @@ repo], and [BINANAs][binana repo]._
   [assumeUTXO][topic assumeutxo] snapshot. This update primarily benefits HDDs
   and lower-end systems. For example, the author reports a 30% improvement in
   flushing time on a Raspberry Pi with a `dbcache` of 500. Users can override
-  the default setting if desired.
+  the default setting if desired. {% assign timestamp="1:32:34" %}
 
 - [Core Lightning #8636][] adds an `askrene-timeout` config (default 10s) that
   causes `getroutes` to fail once the deadline is reached. When `maxparts` is
   set to a low value, `askrene` (see [Newsletter #316][news316 askrene]) may
   enter a retry loop on a route with insufficient capacity. This PR disables the
-  bottleneck route in that scenario to ensure forward progress.
+  bottleneck route in that scenario to ensure forward progress. {% assign timestamp="1:40:08" %}
 
 - [Core Lightning #8639][] updates `bcli` to use `-stdin` when interfacing with
   `bitcoin-cli` to avoid operating system-dependent `argv` (command line
   arguments) size limits. This update resolves an issue that blocked users from
   building large transactions (e.g., [PSBTs][topic psbt] with 700 inputs). Other
-  improvements to the performance of large transactions were also made.
+  improvements to the performance of large transactions were also made. {% assign timestamp="1:43:18" %}
 
 - [Core Lightning #8635][] updates payment status management to only mark a
   payment part as pending after the outgoing [HTLC][topic htlc] has been created
   when using `xpay` (see [Newsletter #330][news330 xpay]) or
   `injectpaymentonion`. Previously, the payment part was marked as pending
   first, and if the HTLC creation then failed, the item could stay pending
-  forever in `listpays` or `listsendpays`.
+  forever in `listpays` or `listsendpays`. {% assign timestamp="1:44:31" %}
 
 - [Eclair #3209][] adds a check to ensure routing feerate values can’t be
   negative. Previously, setting this value would trigger a channel force
-  closure.
+  closure. {% assign timestamp="1:46:25" %}
 
 - [Eclair #3206][] immediately fails a held incoming [HTLC][topic htlc] when a
   [liquidity advertisement][topic liquidity advertisements] purchase is aborted
@@ -174,14 +176,14 @@ repo], and [BINANAs][binana repo]._
   wouldn't handle this edge case and would only fail the HTLC shortly before its
   expiration, tying up the sender's funds unnecessarily. This change was
   motivated by cases where non-malicious mobile wallets would disconnect and
-  abort.
+  abort. {% assign timestamp="1:46:59" %}
 
 - [Eclair #3210][] updates its weight estimation to assume 73-byte DER-encoded
   signatures (see [Newsletter #6][news6 der]), aligning with the [BOLT3][]
   specification and with other implementations, such as LDK. This ensures that
   peers that also assume this size will never reject an `interactive-tx` attempt
   from Eclair due to fee underpayment. Eclair never generates these non-standard
-  signatures.
+  signatures. {% assign timestamp="1:49:31" %}
 
 - [LDK #4140][] fixes premature force-closes for outgoing [async payments][topic
   async payments] when a node restarts. Previously, when an often-offline node
@@ -190,14 +192,14 @@ repo], and [BINANAs][binana repo]._
   expiry delta], LDK would force-close immediately, before the node could
   reconnect and allow the peer to fail the HTLC. In this scenario, since the
   node isn’t racing to claim an incoming HTLC, LDK adds a 4,032-block grace
-  period after the HTLC’s CLTV expiry before force-closing.
+  period after the HTLC’s CLTV expiry before force-closing. {% assign timestamp="1:54:13" %}
 
 - [LDK #4168][] removes the flag on `read_event` that signals the pause of peer
   message reading. This makes `send_data` the only source of truth for
   pause/resume signals. This fixes a race condition where a node could receive a
   late pause signal from `read_event` after `send_data` had already resumed
   reading. The late pause would leave reads disabled indefinitely until the node
-  sent a message to that peer again.
+  sent a message to that peer again. {% assign timestamp="1:59:12" %}
 
 - [Rust Bitcoin #5116][] updates the responses of `compute_merkle_root` and
   `compute_witness_root` to return `None` when the transaction list contains
@@ -205,7 +207,7 @@ repo], and [BINANAs][binana repo]._
   vulnerability][topic merkle tree vulnerabilities], CVE 2012-2459, where an
   invalid block with a duplicated transaction can share the same merkle root
   (and block hash) as a valid block, leading Rust Bitcoin to confuse and reject
-  both. This solution is inspired by a similar one in Bitcoin Core.
+  both. This solution is inspired by a similar one in Bitcoin Core. {% assign timestamp="2:01:06" %}
 
 - [BTCPay Server #6922][] introduces `Subscriptions`, through which merchants
   can define recurring payment offerings and plans as well as onboard users via
@@ -215,7 +217,7 @@ repo], and [BINANAs][binana repo]._
   receipts. Merchants can set up email alerts to notify users when a payment is
   almost due. While this doesn't introduce automatic charges, a planned [Nostr
   Wallet Connect (NWC)][news290 nwc] integration could make that possible for
-  certain wallets.
+  certain wallets. {% assign timestamp="2:05:05" %}
 
 {% include snippets/recap-ad.md when="2025-11-11 16:30" %}
 {% include references.md %}
