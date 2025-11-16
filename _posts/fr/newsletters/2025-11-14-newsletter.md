@@ -1,6 +1,6 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Optech #380'
-permalink : /fr/newsletters/2025/11/14/
+permalink: /fr/newsletters/2025/11/14/
 name: 2025-11-14-newsletter-fr
 slug: 2025-11-14-newsletter-fr
 type: newsletter
