@@ -73,7 +73,7 @@ inquisition repo], et [BINANAs][binana repo]._
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="30595,33443,8656,8671,4204,2022" %}
 [LND 0.20.0-beta.rc4]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.0-beta.rc4
-[release notes]: https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.20.0.md
+[notes de version]: https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.20.0.md
 [news191 lib]: /en/newsletters/2022/03/16/#bitcoin-core-24304
 [news198 lib]: /en/newsletters/2022/05/04/#bitcoin-core-24322
 [news367 lib]: /fr/newsletters/2025/08/15/#bitcoin-core-33077
