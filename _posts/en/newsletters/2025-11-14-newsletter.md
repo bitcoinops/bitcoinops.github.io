@@ -44,7 +44,7 @@ repo], and [BINANAs][binana repo]._
   Core’s block validation and chainstate logic via a reusable C library.
   Currently, it is limited to operations on blocks and has feature parity with
   the now-defunct `libbitcoin-consensus` (see [Newsletter #288][news288 lib]).
-  Use cases `libbitcoinkernel` include alternative node implementations, an Electrum server index
+  Use cases for `libbitcoinkernel` include alternative node implementations, an Electrum server index
   builder, a [silent payment][topic silent payments] scanner, a block analysis
   tool, and a script validation accelerator, among others. {% assign timestamp="2:56" %}
 
