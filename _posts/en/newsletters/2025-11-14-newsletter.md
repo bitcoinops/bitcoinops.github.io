@@ -25,7 +25,7 @@ release candidates._
   popular LN node implementation that introduces multiple bug fixes, a new
   noopAdd [HTLC][topic htlc] type, support for [P2TR][topic taproot] fallback
   addresses on BOLT11 invoices, and many RPC and `lncli` additions and
-  improvements. See the [release notes][].
+  improvements. See the [release notes][]. {% assign timestamp="1:30" %}
 
 ## Notable code and documentation changes
 
@@ -46,34 +46,34 @@ repo], and [BINANAs][binana repo]._
   the now-defunct `libbitcoin-consensus` (see [Newsletter #288][news288 lib]).
   Use cases `libbitcoinkernel` include alternative node implementations, an Electrum server index
   builder, a [silent payment][topic silent payments] scanner, a block analysis
-  tool, and a script validation accelerator, among others.
+  tool, and a script validation accelerator, among others. {% assign timestamp="2:56" %}
 
 - [Bitcoin Core #33443][] reduces excessive logging when replaying blocks after
   a restart that interrupted a reindex. Now, it emits one message for the full
   range of blocks being processed, as well as additional progress logs every
-  10,000 blocks, rather than one log per block.
+  10,000 blocks, rather than one log per block. {% assign timestamp="28:03" %}
 
 - [Core Lightning #8656][] makes [P2TR][topic taproot] the default address when
   using the `newaddr` endpoint without specifying an address type, replacing
-  P2WPSH.
+  P2WPSH. {% assign timestamp="29:42" %}
 
 - [Core Lightning #8671][] adds an `invoice_msat` field to the `htlc_accepted`
   hook, enabling plugins to override the effective invoice amount during payment
   checks. Specifically, it uses the [HTLC][topic htlc]’s amount when it differs
   from the invoice amount. This is useful in cases when an LSP charges a fee to
-  forward an HTLC.
+  forward an HTLC. {% assign timestamp="30:22" %}
 
 - [LDK #4204][] enables peers to abort a [splice][topic splicing] without
   force-closing the channel, as long as it happens before signatures are
   exchanged. Previously, any `tx_abort` during splice negotiation would
   unnecessarily trigger a force close; now this only happens after signatures
-  have been exchanged.
+  have been exchanged. {% assign timestamp="33:09" %}
 
 - [BIPs #2022][] updates [BIP3][] (see [Newsletter #344][news344 bip3]) to
   clarify how BIP numbers are assigned. "A number may be considered assigned
   only after it has been publicly announced in the pull request by a BIP
   Editor." Announcements on social media or a provisional entry to the internal
-  editor notes should not constitute an assignment.
+  editor notes should not constitute an assignment. {% assign timestamp="34:45" %}
 
 {% include snippets/recap-ad.md when="2025-11-18 16:30" %}
 {% include references.md %}
