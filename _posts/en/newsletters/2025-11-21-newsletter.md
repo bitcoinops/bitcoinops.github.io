@@ -64,6 +64,45 @@ FIXME:bitschmidty
   link to his [simulation][block prop simulation] which corroborates the
   results of the model used to generate the graphs.
 
+- **Private key handover for collaborative closure**: ZmnSCPxj [posted][privkeyhand post] to Delving
+  Bitcoin about private key handover, an optimization that protocols can
+  implement when funds, previously owned by two parties, need to be refunded to
+  a single entity. This enhancement requires [taproot][topic taproot] and
+  [MuSig2][topic musig] support to work in the most efficient way.
+
+  An example of such a protocol would be an [HTLC][topic htlc], where one party
+  pays the other if the preimage is revealed, creating a refunding transaction
+  that needs to be signed by both parties. Private key handover would allow an
+  entity to simply handover an ephemeral private key to the other after the
+  preimage has been revealed, thus giving the receiver complete and unilateral
+  access to the funds.
+
+  The steps to achieve a private key handover are:
+
+  - When setting up an HTLC, Alice and Bob each exchange an ephemeral and a
+    permanent public key.
+
+  - The keypath spend branch of the HTLC taproot output is computed as the
+    MuSig2 of Alice and Bob's ephemeral public keys.
+
+  - At the end of the protocol operations, Bob provides the preimage to Alice,
+    who in turn hands him over the ephemeral private key.
+
+  - Bob can now derive the combined private key for the MuSig2 sum, gaining full
+    control over the funds.
+
+  This optimization brings some particular benefits. First of all, in case of a
+  sudden spike in onchain fees, Bob would be able to [RBF][topic rbf] the
+  transaction without the other party's collaboration. This feature is
+  particularly useful for protocol developers, since they would not need to
+  implement RBF in a simple proof of concept. Second, the receiver would be
+  able to batch the transaction claiming the funds with any other operation.
+
+  Private key handover is limited to protocols that require the remaining funds
+  to be transferred entirely to a single beneficiary. Thus, [splicing][topic
+  splicing] or cooperative closure of Lightning channels would not benefit from
+  this.
+
 ## Changes to services and client software
 
 *In this monthly feature, we highlight interesting updates to Bitcoin
@@ -96,3 +135,4 @@ FIXME:Gustavojfe
 {% include references.md %}
 [antoine delving]: https://delvingbitcoin.org/t/propagation-delay-and-mining-centralization-modeling-stale-rates/2110
 [block prop simulation]: https://github.com/darosior/miningsimulation
+[privkeyhand post]: https://delvingbitcoin.org/t/private-key-handover/2098
