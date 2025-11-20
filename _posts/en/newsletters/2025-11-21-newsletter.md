@@ -129,10 +129,98 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33745][] ensures that blocks submitted by an external
+  [StratumV2][topic pooled mining] client via the new mining inter-process
+  communication (IPC) `submitSolution()` interface (see [Newsletter
+  #325][news325 ipc]) have their witness commitment revalidated. Previously,
+  Bitcoin Core only checked for this during  the original template construction,
+  which allowed a block with an invalid or missing witness commitment to be
+  accepted as the best chain tip.
+
+- [Core Lightning #8537][] sets the `maxparts` limit (see [Newsletter
+  #379][news379 parts]) on `xpay` to six when first trying to pay a non-publicly
+  reachable node using [MPP][topic multipath payments]. This conforms to the
+  reception limit of six [HTLCs][topic htlc] on Phoenix-based nodes for
+  on-the-fly funding (see [Newsletter #323][news323 fly]), a type of [JIT
+  channel][topic jit channels]. If routing fails under that cap, `xpay` removes
+  the limit and retries.
+
+- [Core Lightning #8608][] introduces node-level biases to `askrene` (see
+  [Newsletter #316][news316 askrene]), alongside existing channel biases. A new
+  `askrene-bias-node` RPC command is added to favor or disfavor all outgoing or
+  incoming channels of a specified node. A `timestamp` field is added to biases
+  so that they expire after a certain period.
+
+- [Core Lightning #8646][] updates the reconnection logic for [spliced][topic
+  splicing] channels, aligning it with the proposed specification changes in
+  [BOLTs #1160][] and [BOLTs #1289][]. Specifically, it enhances the
+  `channel_reestablish` TLVs so that peers can reliably synchronize splice state
+  and communicate what needs to be retransmitted. This update is a breaking
+  change for spliced channels, so both sides must upgrade simultaneously to
+  avoid disruptions. See [Newsletter #374][news374 ldk] for a similar change in
+  LDK.
+
+- [Core Lightning #8569][] adds experimental support for [JIT channels][topic
+  jit channels], as specified by [BLIP52][] (LSPS2), in the `lsp-trusts-client` mode and
+  without [MPP][topic multipath payments] support. This feature is gated behind
+  the `experimental-lsps-client` and `experimental-lsps2-service` options and it
+  represents the first step toward providing full support for JIT channels.
+
+- [Core Lightning #8558][] adds a `listnetworkevents` RPC command, which
+  displays the history of peer connections, disconnections, failures, and ping
+  latencies. It also introduces an `autoclean-networkevents-age` config option
+  (default 30 days) to control how long network event logs are kept.
+
+- [LDK #4126][] introduces `ReceiveAuthKey`-based authentication verification on
+  [blinded payment paths][topic rv routing], replacing the older per-hop
+  HMAC/nonce scheme (see [Newsletter #335][news335 hmac]). This builds on [LDK
+  #3917][], which added `ReceiveAuthKey` for blinded message paths. Reducing the
+  per-hop data shrinks the payload and paves the way for dummy payment hops in a
+  future PR, similar to the dummy message hops (see [Newsletter #370][news370
+  dummy]).
+
+- [LDK #4208][] updates its weight estimation to consistently assume 72-byte
+  DER-encoded signatures, instead of using 72 in some places and 73 in others.
+  73-byte signatures are non-standard and LDK never produces them. See
+  [Newsletter #379][news379 sign] for a related change in Eclair.
+
+- [LND #9432][] adds a new global `upfront-shutdown-address` configuration
+  option, which specifies a default Bitcoin address for cooperative channel
+  closures, unless overridden when opening or accepting a specific channel. This
+  builds on the upfront shutdown feature specified in [BOLT2][]. See [Newsletter
+  #76][news76 upfront] for previous coverage on LND’s implementation.
+
+- [BOLTs #1284][] updates BOLT11 to clarify that when an `n` field is present in
+  an invoice, the signature must be in normalized lower-S form, and when it is
+  absent, public key recovery may accept either high-S and low-S signatures. See
+  Newsletters [#371][news371 eclair] and [#373][news373 ldk] for recent LDK and
+  Eclair changes that implement this behavior.
+
+- [BOLTs #1044][] specifies the optional [attributable failures][topic
+  attributable failures] feature, which adds attribution data to failure
+  messages so that hops commit to the messages they send. If a node corrupts a
+  failure message, the sender can identify and penalize the node later. For more
+  details on the mechanism and the LDK and Eclair implementations, see
+  Newsletters [#224][news224 fail], [#349][news349 fail] and [#356][news356
+  fail].
 
 {% include snippets/recap-ad.md when="2025-11-25 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="33745,8537,8608,8646,1160,1289,8569,8558,4126,3917,4208,9432,1284,1044" %}
 [antoine delving]: https://delvingbitcoin.org/t/propagation-delay-and-mining-centralization-modeling-stale-rates/2110
 [block prop simulation]: https://github.com/darosior/miningsimulation
 [privkeyhand post]: https://delvingbitcoin.org/t/private-key-handover/2098
+[news325 ipc]: /en/newsletters/2024/10/18/#bitcoin-core-30955
+[news379 parts]: /en/newsletters/2025/11/07/#core-lightning-8636
+[news323 fly]: /en/newsletters/2024/10/04/#eclair-2861
+[news316 askrene]: /en/newsletters/2024/08/16/#core-lightning-7517
+[news374 ldk]: /en/newsletters/2025/10/03/#ldk-4098
+[news335 hmac]: /en/newsletters/2025/01/03/#ldk-3435
+[news370 dummy]: /en/newsletters/2025/09/05/#ldk-3726
+[news379 sign]: /en/newsletters/2025/11/07/#eclair-3210
+[news76 upfront]: /en/newsletters/2019/12/11/#lnd-3655
+[news371 eclair]: /en/newsletters/2025/09/12/#eclair-3163
+[news373 ldk]: /en/newsletters/2025/09/26/#ldk-4064
+[news224 fail]: /en/newsletters/2022/11/02/#ln-routing-failure-attribution
+[news349 fail]: /en/newsletters/2025/04/11/#ldk-2256
+[news356 fail]: /en/newsletters/2025/05/30/#eclair-3065
