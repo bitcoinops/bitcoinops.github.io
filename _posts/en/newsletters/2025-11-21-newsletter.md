@@ -7,7 +7,11 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-FIXME:bitschmidty
+This week's newsletter looks at an analysis of how block propagation times may
+affect miner revenue and describes a new approach for resolving protocols where
+multiple parties share funds. Also included are our regular sections describing
+recent changes to services and client software and summarizing recent merges to
+popular Bitcoin infrastructure software.
 
 ## News
 
