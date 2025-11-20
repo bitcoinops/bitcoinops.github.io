@@ -112,15 +112,37 @@ popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Arkade launches:**
+  [Arkade][ark labs blog] is an [Ark protocol][topic ark] implementation which
+  also includes multiple programming language SDKs, a wallet, a BTCPayServer
+  plugin, and other features.
 
-## Releases and release candidates
+- **Mempool monitoring mobile application:**
+  The [Mempal][mempal gh] Android application provides various metrics and
+  alerts about the Bitcoin network, sourcing data from a self-hosted mempool server.
 
-_New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates._
+- **Web-based policy and miniscript IDE:**
+  [Miniscript Studio][miniscript studio site] provides an interface for
+  interacting with [miniscript][topic miniscript] and the policy language. A
+  [blog post][miniscript studio blog] describes the features and the
+  [source][miniscript studio gh] is available.
 
-FIXME:Gustavojfe
+- **Phoenix Wallet adds taproot channels:**
+  Phoenix Wallet [added][phoenix post] support for [taproot][topic taproot]
+  channels, a migration workflow for existing channels, and multi-wallet
+  features.
+
+- **Nunchuk 2.0 launches:**
+  [Nunchuk 2.0][nunchuk blog] supports wallet configurations using multisig,
+  [timelocks][topic timelocks], and miniscript. It also includes degrading
+  multisig features.
+
+- **LN gossip traffic analysis tool announced:**
+  [Gossip Observer][gossip observer gh] collects Lightning Network gossip
+  messages from multiple nodes and provides summary metrics. The results may
+  inform a [minisketch][topic minisketch]-like set reconciliation protocol for
+  Lightning. A [Delving Bitcoin topic][gossip observer delving] includes
+  discussion about the approach.
 
 ## Notable code and documentation changes
 
@@ -228,3 +250,12 @@ repo], and [BINANAs][binana repo]._
 [news224 fail]: /en/newsletters/2022/11/02/#ln-routing-failure-attribution
 [news349 fail]: /en/newsletters/2025/04/11/#ldk-2256
 [news356 fail]: /en/newsletters/2025/05/30/#eclair-3065
+[ark labs blog]: https://blog.arklabs.xyz/press-start-arkade-goes-live/
+[mempal gh]: https://github.com/aeonBTC/Mempal
+[miniscript studio gh]: https://github.com/adyshimony/miniscript-studio
+[miniscript studio blog]: https://adys.dev/blog/miniscript-studio-intro
+[miniscript studio site]: https://adys.dev/miniscript
+[phoenix post]: https://x.com/PhoenixWallet/status/1983524047712391445
+[nunchuk blog]: https://nunchuk.io/blog/autonomous-inheritance
+[gossip observer gh]: https://github.com/jharveyb/gossip_observer
+[gossip observer delving]: https://delvingbitcoin.org/t/gossip-observer-new-project-to-monitor-the-lightning-p2p-network/2105
