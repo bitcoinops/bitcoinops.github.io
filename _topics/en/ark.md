@@ -52,6 +52,9 @@ optech_mentions:
   - title: "Summary and criticism of CTV + CSFS benefits for Ark"
     url: /en/newsletters/2025/04/04/#ark
 
+  - title: "Ark Labs launches Arkade"
+    url: /en/newsletters/2025/11/21/#arkade-launches
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools

@@ -44,6 +44,9 @@ optech_mentions:
   - title: Discussion about using minisketch to improve efficiency of block template sharing
     url: /en/newsletters/2025/08/22/#draft-bip-for-block-template-sharing
 
+  - title: Gossip analysis to inform minisketch-like set reconciliation protocol for LN
+    url: /en/newsletters/2025/11/21/#ln-gossip-traffic-analysis-tool-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Erlay
