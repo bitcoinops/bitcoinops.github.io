@@ -18,11 +18,11 @@ popular Bitcoin infrastructure software.
 - **Modeling stale rates by propagation delay and mining centralization:**
   Antoine Poinsot [posted to Delving Bitcoin][antoine delving] about modeling
   stale block rates and how block propagation time affects a miner's revenue as
-  a function of its hashrate given propagation time is zero. He set up a
+  a function of its hashrate. He set up a
   base-case scenario in which all miners act realistically (with a default
   Bitcoin Core node): if they receive a new block, they would immediately start
   mining on top of it and publish it. This would lead to revenue proportional to
-  their share of the hashrate.
+  their share of the hashrate given propagation time is zero.
 
   In his model with uniform block propagation, he outlined two situations in which a
   block goes stale.
