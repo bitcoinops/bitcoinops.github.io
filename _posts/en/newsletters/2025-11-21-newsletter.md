@@ -66,7 +66,7 @@ popular Bitcoin infrastructure software.
 
   Below the charts, he provides the methodology for generating the charts and a
   link to his [simulation][block prop simulation] which corroborates the
-  results of the model used to generate the graphs.
+  results of the model used to generate the graphs. {% assign timestamp="1:03" %}
 
 - **Private key handover for collaborative closure**: ZmnSCPxj [posted][privkeyhand post] to Delving
   Bitcoin about private key handover, an optimization that protocols can
@@ -105,7 +105,7 @@ popular Bitcoin infrastructure software.
   Private key handover is limited to protocols that require the remaining funds
   to be transferred entirely to a single beneficiary. Thus, [splicing][topic
   splicing] or cooperative closure of Lightning channels would not benefit from
-  this.
+  this. {% assign timestamp="30:55" %}
 
 ## Changes to services and client software
 
@@ -115,34 +115,34 @@ wallets and services.*
 - **Arkade launches:**
   [Arkade][ark labs blog] is an [Ark protocol][topic ark] implementation which
   also includes multiple programming language SDKs, a wallet, a BTCPayServer
-  plugin, and other features.
+  plugin, and other features. {% assign timestamp="52:32" %}
 
 - **Mempool monitoring mobile application:**
   The [Mempal][mempal gh] Android application provides various metrics and
-  alerts about the Bitcoin network, sourcing data from a self-hosted mempool server.
+  alerts about the Bitcoin network, sourcing data from a self-hosted mempool server. {% assign timestamp="55:25" %}
 
 - **Web-based policy and miniscript IDE:**
   [Miniscript Studio][miniscript studio site] provides an interface for
   interacting with [miniscript][topic miniscript] and the policy language. A
   [blog post][miniscript studio blog] describes the features and the
-  [source][miniscript studio gh] is available.
+  [source][miniscript studio gh] is available. {% assign timestamp="56:25" %}
 
 - **Phoenix Wallet adds taproot channels:**
   Phoenix Wallet [added][phoenix post] support for [taproot][topic taproot]
   channels, a migration workflow for existing channels, and multi-wallet
-  features.
+  features. {% assign timestamp="57:45" %}
 
 - **Nunchuk 2.0 launches:**
   [Nunchuk 2.0][nunchuk blog] supports wallet configurations using multisig,
   [timelocks][topic timelocks], and miniscript. It also includes degrading
-  multisig features.
+  multisig features. {% assign timestamp="59:19" %}
 
 - **LN gossip traffic analysis tool announced:**
   [Gossip Observer][gossip observer gh] collects Lightning Network gossip
   messages from multiple nodes and provides summary metrics. The results may
   inform a [minisketch][topic minisketch]-like set reconciliation protocol for
   Lightning. A [Delving Bitcoin topic][gossip observer delving] includes
-  discussion about the approach.
+  discussion about the approach. {% assign timestamp="1:01:49" %}
 
 ## Notable code and documentation changes
 
@@ -161,7 +161,7 @@ repo], and [BINANAs][binana repo]._
   #325][news325 ipc]) have their witness commitment revalidated. Previously,
   Bitcoin Core only checked for this during  the original template construction,
   which allowed a block with an invalid or missing witness commitment to be
-  accepted as the best chain tip.
+  accepted as the best chain tip. {% assign timestamp="1:04:23" %}
 
 - [Core Lightning #8537][] sets the `maxparts` limit (see [Newsletter
   #379][news379 parts]) on `xpay` to six when first trying to pay a non-publicly
@@ -169,13 +169,13 @@ repo], and [BINANAs][binana repo]._
   reception limit of six [HTLCs][topic htlc] on Phoenix-based nodes for
   on-the-fly funding (see [Newsletter #323][news323 fly]), a type of [JIT
   channel][topic jit channels]. If routing fails under that cap, `xpay` removes
-  the limit and retries.
+  the limit and retries. {% assign timestamp="1:09:28" %}
 
 - [Core Lightning #8608][] introduces node-level biases to `askrene` (see
   [Newsletter #316][news316 askrene]), alongside existing channel biases. A new
   `askrene-bias-node` RPC command is added to favor or disfavor all outgoing or
   incoming channels of a specified node. A `timestamp` field is added to biases
-  so that they expire after a certain period.
+  so that they expire after a certain period. {% assign timestamp="1:11:26" %}
 
 - [Core Lightning #8646][] updates the reconnection logic for [spliced][topic
   splicing] channels, aligning it with the proposed specification changes in
@@ -184,18 +184,18 @@ repo], and [BINANAs][binana repo]._
   and communicate what needs to be retransmitted. This update is a breaking
   change for spliced channels, so both sides must upgrade simultaneously to
   avoid disruptions. See [Newsletter #374][news374 ldk] for a similar change in
-  LDK.
+  LDK. {% assign timestamp="1:13:34" %}
 
 - [Core Lightning #8569][] adds experimental support for [JIT channels][topic
   jit channels], as specified by [BLIP52][] (LSPS2), in the `lsp-trusts-client` mode and
   without [MPP][topic multipath payments] support. This feature is gated behind
   the `experimental-lsps-client` and `experimental-lsps2-service` options and it
-  represents the first step toward providing full support for JIT channels.
+  represents the first step toward providing full support for JIT channels. {% assign timestamp="1:17:44" %}
 
 - [Core Lightning #8558][] adds a `listnetworkevents` RPC command, which
   displays the history of peer connections, disconnections, failures, and ping
   latencies. It also introduces an `autoclean-networkevents-age` config option
-  (default 30 days) to control how long network event logs are kept.
+  (default 30 days) to control how long network event logs are kept. {% assign timestamp="1:22:46" %}
 
 - [LDK #4126][] introduces `ReceiveAuthKey`-based authentication verification on
   [blinded payment paths][topic rv routing], replacing the older per-hop
@@ -203,24 +203,24 @@ repo], and [BINANAs][binana repo]._
   #3917][], which added `ReceiveAuthKey` for blinded message paths. Reducing the
   per-hop data shrinks the payload and paves the way for dummy payment hops in a
   future PR, similar to the dummy message hops (see [Newsletter #370][news370
-  dummy]).
+  dummy]). {% assign timestamp="1:24:11" %}
 
 - [LDK #4208][] updates its weight estimation to consistently assume 72-byte
   DER-encoded signatures, instead of using 72 in some places and 73 in others.
   73-byte signatures are non-standard and LDK never produces them. See
-  [Newsletter #379][news379 sign] for a related change in Eclair.
+  [Newsletter #379][news379 sign] for a related change in Eclair. {% assign timestamp="1:26:37" %}
 
 - [LND #9432][] adds a new global `upfront-shutdown-address` configuration
   option, which specifies a default Bitcoin address for cooperative channel
   closures, unless overridden when opening or accepting a specific channel. This
   builds on the upfront shutdown feature specified in [BOLT2][]. See [Newsletter
-  #76][news76 upfront] for previous coverage on LND’s implementation.
+  #76][news76 upfront] for previous coverage on LND’s implementation. {% assign timestamp="1:27:58" %}
 
 - [BOLTs #1284][] updates BOLT11 to clarify that when an `n` field is present in
   an invoice, the signature must be in normalized lower-S form, and when it is
   absent, public key recovery may accept either high-S and low-S signatures. See
   Newsletters [#371][news371 eclair] and [#373][news373 ldk] for recent LDK and
-  Eclair changes that implement this behavior.
+  Eclair changes that implement this behavior. {% assign timestamp="1:31:38" %}
 
 - [BOLTs #1044][] specifies the optional [attributable failures][topic
   attributable failures] feature, which adds attribution data to failure
@@ -228,7 +228,7 @@ repo], and [BINANAs][binana repo]._
   failure message, the sender can identify and penalize the node later. For more
   details on the mechanism and the LDK and Eclair implementations, see
   Newsletters [#224][news224 fail], [#349][news349 fail] and [#356][news356
-  fail].
+  fail]. {% assign timestamp="1:33:33" %}
 
 {% include snippets/recap-ad.md when="2025-11-25 16:30" %}
 {% include references.md %}
