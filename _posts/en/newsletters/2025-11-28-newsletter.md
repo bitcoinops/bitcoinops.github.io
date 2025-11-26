@@ -16,7 +16,30 @@ describing notable changes to popular Bitcoin infrastructure projects.
 
 ## News
 
-FIXME:bitschmidty
+- **Stats on compact block reconstructions updates:** 0xB10C posted an
+  update to [Delving Bitcoin][0xb10c delving] about his statistics around
+  compact block reconstruction (see Newsletters [#315][news315
+  cb] and [#339][news339 cb]). 0xB10C provided three
+  updates around his compact block reconstruction analysis:
+
+  - He began tracking the average size of requested transactions in kB in
+    response to [previous feedback][news365 cb] by David Gumberg.
+
+  - He updated one of his nodes to include the lower `minrelayfee` settings from
+    [Bitcoin Core #33106][news368 minrelay]. After updating, he found block
+    reconstruction rates improved significantly for that node. He also saw an
+    improvement in the average size of requested transactions in kB.
+
+  - He then switched his other nodes to run with the lowered `minrelayfee` which
+    caused most of the nodes to have a higher reconstruction rate and to request
+    less data from peers. He also [mentions][0xb10c third update]
+    that, in hindsight, it would have been better not to have updated all the
+    nodes and to have kept some on v29 which would have made it easier to
+    compare between node versions and
+    settings.
+
+  Overall, lowering the `minrelayfee` has improved his nodes' block reconstruction rates
+  and lowered the amount of data requested from his peers.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -54,4 +77,10 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2025-12-02 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[0xb10c delving]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/35
+[news365 cb]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
+[news339 cb]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
+[news315 cb]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
+[david delving post]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/34
+[news368 minrelay]: /en/newsletters/2025/08/22/#bitcoin-core-33106
+[0xb10c third update]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/44
