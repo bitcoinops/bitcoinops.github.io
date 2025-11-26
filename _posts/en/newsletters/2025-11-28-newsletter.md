@@ -39,6 +39,13 @@ FIXME:bitschmidty
   minrelayfee has improved block reconstruction rates and lowered the amount
   of data requested from peers.
 
+- **Motion to activate BIP3**: Murch [posted][murch ml] to the Bitcoin-Dev
+  Mailing List a formal motion to activate [BIP3][]. The goal of this improvement proposal is to provide new guidelines for the preparation of new BIPS, thus replacing [BIP2][].
+
+  According to the author, the proposal, which has been in "Proposed" status for more than 7 months, has no unaddressed objections and a growing list of contributors left an ACK on [BIPs #1820][]. Thus, following the procedure expressed by BIP2 for activating Process BIPs, he conceded 4 weeks, untill 2025-12-02, to evaluate the proposal, ACK the PR or to state concerns and raise objections. After that date BIP3 will replace BIP2 as BIPs Process.
+
+  Some small objections have been raised in the thread, mainly related to the use of AI/LLM tools in the BIPs submission process, which are currently being addressed by the author. We invite our readers to familiarize with the proposal and provide feedback.
+
 FIXME:bitschmidty
 
 ## Selected Q&A from Bitcoin Stack Exchange
@@ -77,8 +84,9 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2025-12-02 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="1820" %}
 [0xb10c delving]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/35
 [compact block optech]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
 [david delving post]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/34
 [0xb10c thrid update]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/44
+[murch ml]: https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc
