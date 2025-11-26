@@ -41,6 +41,24 @@ describing notable changes to popular Bitcoin infrastructure projects.
   Overall, lowering the `minrelayfee` has improved his nodes' block reconstruction rates
   and lowered the amount of data requested from his peers.
 
+- **Motion to activate BIP3**: Murch [posted][murch ml] to the Bitcoin-Dev
+  mailing list a formal motion to activate [BIP3][] (see [Newsletter
+  #341][news341 bip3]). The goal of this improvement proposal is to provide new
+  guidelines for preparing new BIPs, thereby replacing the current [BIP2][]
+  process.
+
+  According to the author, the proposal, which has been in "Proposed" status for
+  more than 7 months, has no unaddressed objections and a growing list of
+  contributors left an ACK on [BIPs #1820][]. Thus, following the procedure
+  expressed by BIP2 for activating Process BIPs, he granted 4 weeks, until
+  2025-12-02, to evaluate the proposal, ACK the PR, or state concerns and
+  raise objections. After that date, BIP3 will replace BIP2 as the BIP process.
+
+  Some minor objections have been raised in the thread, mainly regarding the use
+  of AI/LLM tools in the BIPs submission process (see [Newsletter #378][news378
+  bips2006]), which the author is currently addressing. We invite Optech readers
+  to familiarize themselves with the proposal and provide feedback.
+
 ## Selected Q&A from Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
@@ -84,3 +102,6 @@ FIXME:Gustavojfe
 [david delving post]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/34
 [news368 minrelay]: /en/newsletters/2025/08/22/#bitcoin-core-33106
 [0xb10c third update]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/44
+[murch ml]: https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc
+[news341 bip3]: /en/newsletters/2025/02/14/#updated-proposal-for-updated-bip-process
+[news378 bips2006]: /en/newsletters/2025/10/31/#bips-2006
