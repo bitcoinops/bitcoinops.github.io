@@ -40,13 +40,21 @@ FIXME:bitschmidty
   of data requested from peers.
 
 - **Motion to activate BIP3**: Murch [posted][murch ml] to the Bitcoin-Dev
-  Mailing List a formal motion to activate [BIP3][]. The goal of this improvement proposal is to provide new guidelines for the preparation of new BIPS, thus replacing [BIP2][].
+  Mailing List a formal motion to activate [BIP3][]. The goal of this
+  improvement proposal is to provide new guidelines for the preparation of new
+  BIPS, thus replacing [BIP2][].
 
-  According to the author, the proposal, which has been in "Proposed" status for more than 7 months, has no unaddressed objections and a growing list of contributors left an ACK on [BIPs #1820][]. Thus, following the procedure expressed by BIP2 for activating Process BIPs, he conceded 4 weeks, untill 2025-12-02, to evaluate the proposal, ACK the PR or to state concerns and raise objections. After that date BIP3 will replace BIP2 as BIPs Process.
+  According to the author, the proposal, which has been in "Proposed" status for
+  more than 7 months, has no unaddressed objections and a growing list of
+  contributors left an ACK on [BIPs #1820][]. Thus, following the procedure
+  expressed by BIP2 for activating Process BIPs, he conceded 4 weeks, untill
+  2025-12-02, to evaluate the proposal, ACK the PR or to state concerns and
+  raise objections. After that date BIP3 will replace BIP2 as BIPs Process.
 
-  Some small objections have been raised in the thread, mainly related to the use of AI/LLM tools in the BIPs submission process, which are currently being addressed by the author. We invite our readers to familiarize with the proposal and provide feedback.
-
-FIXME:bitschmidty
+  Some small objections have been raised in the thread, mainly related to the
+  use of AI/LLM tools in the BIPs submission process, which are currently being
+  addressed by the author. We invite our readers to familiarize with the
+  proposal and provide feedback.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
