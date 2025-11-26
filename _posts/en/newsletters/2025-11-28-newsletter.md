@@ -7,9 +7,37 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
+
 FIXME:bitschmidty
 
 ## News
+
+**Stats on compact block reconstructions updates:** 0xB10C posted to
+  [Delving Bitcoin][0xb10c delving] about his stats on compact block
+  reconstruction. This is an update to a previous [optech
+  post][compact block optech], since then 0xB10C has provided three updates
+  on compact block reconstruction. He has also tracking the average size of
+  requested transactions in kB, because of the [previous
+  post][david delving post] by Gumberg. The new chart is similar looking as
+  the share of compact block reconstructions without request transactions
+  chart and can be found directly under them in each post.
+
+  0xB10C updated one of his nodes named bob to the master branch and found
+  that because there were no existing sub-1 sat/vbyte transactions there was
+  no improvment for the first few days, afterwards block reconstruction rates
+  improved significantly. We could also see an improvement in the average
+  size of reqeuested transactions in kB.
+
+  In the [third update][0xb10c thrid update] he had posted, 0xB10C mentions
+  that he swiched the nodes to run with a lowered minrelayfee. This caused
+  most the nodes to have better reconstruction rate and less data requested
+  from peers. He also mentions in hindsight it would have been better to not
+  have updated all the nodes and to have kept some on v29. This would have
+  made it easier to compare between node versions and settings.
+
+  Overall updating to the latest version of Bitcoin Core and dropping the
+  minrelayfee has improved block reconstruction rates and lowered the amount
+  of data requested from peers.
 
 FIXME:bitschmidty
 
