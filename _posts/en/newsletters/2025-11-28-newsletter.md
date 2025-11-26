@@ -70,7 +70,19 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Do pruned nodes store witness inscriptions?]({{bse}}129197)
+  Murch explains that pruned nodes retain all block data, including witness
+  data, until older blocks are eventually discarded. He goes on to outline
+  tradeoffs of using OP_RETURN over the inscription scheme.
+
+- [Increasing probability of block hash collisions when difficulty is too high]({{bse}}129265)
+  Vojtěch Strnad notes the extreme unlikelihood of a blockhash collision (unless SHA256 is
+  broken) and goes on to explain why the hash of a block header serves as block
+  identifiers.
+
+- [What is the purpose of the initial 0x04 byte in all extended public and private keys?]({{bse}}129178)
+  Pieter Wuille points out that these 0x04 prefixes are simply a coincidence
+  based on their respective target Base58 encodings.
 
 ## Releases and release candidates
 
