@@ -12,7 +12,7 @@ FIXME:bitschmidty
 
 ## News
 
-**Stats on compact block reconstructions updates:** 0xB10C posted to
+- **Stats on compact block reconstructions updates:** 0xB10C posted to
   [Delving Bitcoin][0xb10c delving] about his stats on compact block
   reconstruction. This is an update to a previous [optech
   post][compact block optech], since then 0xB10C has provided three updates
