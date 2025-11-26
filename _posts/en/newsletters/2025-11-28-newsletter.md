@@ -79,6 +79,6 @@ FIXME:Gustavojfe
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
 [0xb10c delving]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/35
-[compact block optech]: https://bitcoinops.org/en/newsletters/2025/08/01/#testing-compact-block-prefilling
+[compact block optech]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
 [david delving post]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/34
 [0xb10c thrid update]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/44
