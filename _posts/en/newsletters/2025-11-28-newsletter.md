@@ -90,7 +90,19 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [LND v0.20.0-beta][] is a major release of this popular LN node implementation
+  that introduces multiple bug fixes, a new noopAdd [HTLC][topic htlc] type,
+  support for [P2TR][topic taproot] fallback addresses on [BOLT11][] invoices,
+  and many RPC and `lncli` additions and improvements. See the [release
+  notes][lnd notes] for more details.
+
+- [Core Lightning v25.12rc1][] is a release candidate of a new version of this
+  major LN node implementation that adds [BIP39][] mnemonic seed phrases as the
+  new backup method, improvements to `xpay`, the `askrene-bias-node` RPC command
+  to favor or disfavor all channels of a peer, the `networkevents` subsystem to
+  access information about peers, and `experimental-lsps-client` and
+  `experimental-lsps2-service` options for experimental [JIT channels][topic jit
+  channels] support.
 
 ## Notable code and documentation changes
 
@@ -103,10 +115,76 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33872][] removes the previously deprecated `-maxorphantx`
+  startup option (see [Newsletter #364][news364 orphan]). Using it results in a
+  startup failure.
+
+- [Bitcoin Core #33629][] completes the [cluster mempool][topic cluster mempool]
+  implementation by partitioning the mempool into clusters that are limited to
+  101 kvB and 64 transactions each by default. Each cluster is linearized into
+  fee-ordered chunks (sub-cluster feerate-sorted groupings), so that
+  higher-feerate chunks are selected first for inclusion in a block template,
+  and the lowest-feerate chunks are evicted first when the mempool is full. This
+  PR removes the [CPFP carve out][topic cpfp carve out] rule and the
+  ancestor/descendant limits, and updates transaction relay to prioritize
+  higher-feerate chunks. Finally, it updates the [RBF][topic rbf] rules by
+  removing the restriction that replacements can’t introduce new unconfirmed
+  inputs, changes the feerate rule to require that the overall cluster
+  feerate diagram improves, and replaces the direct conflicts limit with a
+  directly conflicting clusters limit.
+
+- [Core Lightning #8677][] improves the performance of large nodes considerably
+  by limiting the number of RPC and plugin commands processed at once, reducing
+  unnecessary database transactions for read-only commands, and restructuring
+  database queries to handle millions of `chainmoves`/`channelmoves` events more
+  efficiently. The PR also introduces a `filters` option to `rpc_command` or
+  `custommsg` hooks, enabling plugins like `xpay`, `commando`, and `chanbackup`
+  to register for specific invocations only.
+
+- [Core Lightning #8546][] adds a `withhold` option (default false) to
+  `fundchannel_complete` that delays the broadcast of a channel funding
+  transaction until `sendpsbt` is called or the channel is closed. This allows
+  LSPs to postpone opening a channel until a user provides sufficient funds to
+  cover the network fees. This is necessary to enable the `client-trusts-lsp`
+  mode in [JIT channels][topic jit channels].
+
+- [Core Lightning #8682][] updates the way [blinded paths][topic rv routing] are
+  built by requiring peers to have the [`option_onion_messages`][topic onion
+  messages] feature enabled, in addition to the `option_route_blinding`, even if
+  the specification doesn’t require the former. This resolves an issue in which
+  an LND node without the feature enabled would fail to forward a [BOLT12][topic
+  offers] payment.
+
+- [LDK #4197][] caches the two most recently revoked commitment points in
+  `ChannelManager` to respond to a peer’s `channel_reestablish` message after a
+  reconnection. This avoids fetching the points from a potentially-remote signer
+  and pausing the state machine when the counterparty is at most one commitment
+  height prior. If a peer presents a different state, the signer validates the
+  commitment point, and LDK either crashes if the state is valid or force-closes
+  the channel if it's invalid. For previous LDK updates to
+  `channel_reestablish`, see Newsletters [#335][news335 ldk], [#371][news371
+  ldk], and [#374][news374 ldk].
+
+- [LDK #4234][] adds the funding redeem script to `ChannelDetails` and the
+  `ChannelPending` event, enabling LDK's on-chain wallet to reconstruct the
+  `TxOut` of a channel and accurately estimate the feerate when building a
+  [splice-in][topic splicing] transaction.
+
+- [LDK #4148][] adds support for [testnet4][topic testnet] by updating the
+  `rust-bitcoin` dependency to version 0.32.4 (See [Newsletter #324][news324
+  testnet]) and requiring that as the minimum supported version for the
+  `lightning` and `lightning-invoice` crates.
+
+- [BDK #2027][] adds a `list_ordered_canonical_txs` method to `TxGraph`, which
+  returns canonical transactions in topological order, where parent transactions
+  always appear before their children. The existing `list_canonical_txs` and
+  `try_list_canonical_txs` methods are deprecated in favor of the new ordered
+  variant. See Newsletters [#335][news335 txgraph], [#346][news346 txgraph] and
+  [#374][news374 txgraph] for previous canonicalization work on BDK.
 
 {% include snippets/recap-ad.md when="2025-12-02 17:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="1820,33872,33629,8677,8546,8682,4197,4234,4148,2027" %}
 [0xb10c delving]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/35
 [news365 cb]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
 [news339 cb]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
@@ -117,3 +195,14 @@ FIXME:Gustavojfe
 [murch ml]: https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc
 [news341 bip3]: /en/newsletters/2025/02/14/#updated-proposal-for-updated-bip-process
 [news378 bips2006]: /en/newsletters/2025/10/31/#bips-2006
+[LND v0.20.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.0-beta
+[lnd notes]: https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.20.0.md
+[Core Lightning v25.12rc1]: https://github.com/ElementsProject/lightning/releases/tag/v25.12rc1
+[news364 orphan]: /en/newsletters/2025/07/25/#bitcoin-core-31829
+[news335 ldk]: /en/newsletters/2025/01/03/#ldk-3365
+[news374 ldk]: /en/newsletters/2025/10/03/#ldk-4098
+[news371 ldk]: /en/newsletters/2025/09/12/#ldk-3886
+[news324 testnet]: /en/newsletters/2024/10/11/#rust-bitcoin-2945
+[news335 txgraph]: /en/newsletters/2025/01/03/#bdk-1670
+[news346 txgraph]: /en/newsletters/2025/03/21/#bdk-1839
+[news374 txgraph]: /en/newsletters/2025/10/03/#bdk-2029
