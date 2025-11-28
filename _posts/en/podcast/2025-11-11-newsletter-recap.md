@@ -1007,7 +1007,7 @@ have huge signatures, this can save space".
 **Antoine Poinsot**: Covenant wise, I think it enables the BitVM trick to get
 rid of the presigned committee with something else than CTV.  Because CTV
 commits to the scriptSig of the input spent at the same time as the UTXO where
-the transaction is committed to.  Our design for OP_TEMPLATEHASH hash does not
+the transaction is committed to.  Our design for OP_TEMPLATEHASH does not
 do this.  It prevents the BitVM trick.  But I think in conjunction with your
 proposal it might, just nothing.
 
