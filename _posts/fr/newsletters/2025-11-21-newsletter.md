@@ -10,6 +10,7 @@ lang: fr
 Le bulletin de cette semaine examine une analyse de la manière dont les temps de propagation des
 blocs peuvent affecter les revenus des mineurs et décrit une nouvelle approche pour résoudre les
 protocoles où plusieurs parties partagent des fonds. Sont également incluses nos sections régulières
+résumant les changements récents apportés aux clients et services et les résumés des modifications
 notables apportées aux logiciels d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
