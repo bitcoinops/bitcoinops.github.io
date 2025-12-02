@@ -15,7 +15,21 @@ software.
 
 ## News
 
-FIXME:bitschmidty
+- **Consensus bug in NBitcoin library:** Bruno Garcia [posted][bruno delving] to
+  Delving Bitcoin about a theoretical consensus failure in NBitcoin that could
+  occur when using `OP_NIP`. When the underlying array is at full capacity and
+  `_stack.Remove(-2)`is called, the Remove operation deletes the item at index
+  14 and then attempts to shift the subsequent elements down. During this shift,
+  the implementation may try to access `_array[16]`, which does not exist,
+  leading to an exception.
+
+  This bug was found through [differential fuzzing][diff fuzz], and since
+  the failure was caught in a try/catch block it may never have been found with
+  traditional fuzzing techniques. After finding the problem, Bruno Garcia
+  reported it to Nicolas Dorier on October 23rd, 2025. On the same day, Nicolas
+  Dorier confirmed the issue and opened a [patch][nbitcoin patch] to resolve it.
+  There is no known full node implementation using NBitcoin, so there is no risk
+  of a chain split, which is why the disclosure was made quickly.
 
 ## Changing consensus
 
@@ -47,4 +61,6 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2025-12-09 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[bruno delving]: https://delvingbitcoin.org/t/consensus-bug-on-nbitcoin-out-of-bound-issue-in-remove/2120
+[nbitcoin patch]: https://github.com/MetacoSA/NBitcoin/pull/1288
+[diff fuzz]: https://github.com/bitcoinfuzz/bitcoinfuzz
