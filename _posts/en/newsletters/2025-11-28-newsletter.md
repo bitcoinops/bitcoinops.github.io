@@ -39,7 +39,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
     settings.
 
   Overall, lowering the `minrelayfee` has improved his nodes' block reconstruction rates
-  and lowered the amount of data requested from his peers.
+  and lowered the amount of data requested from his peers. {% assign timestamp="0:34" %}
 
 - **Motion to activate BIP3**: Murch [posted][murch ml] to the Bitcoin-Dev
   mailing list a formal motion to activate [BIP3][] (see [Newsletter
@@ -57,7 +57,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
   Some minor objections have been raised in the thread, mainly regarding the use
   of AI/LLM tools in the BIPs submission process (see [Newsletter #378][news378
   bips2006]), which the author is currently addressing. We invite Optech readers
-  to familiarize themselves with the proposal and provide feedback.
+  to familiarize themselves with the proposal and provide feedback. {% assign timestamp="7:26" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -73,16 +73,16 @@ answers posted since our last update.*
 - [Do pruned nodes store witness inscriptions?]({{bse}}129197)
   Murch explains that pruned nodes retain all block data, including witness
   data, until older blocks are eventually discarded. He goes on to outline
-  tradeoffs of using OP_RETURN over the inscription scheme.
+  tradeoffs of using OP_RETURN over the inscription scheme. {% assign timestamp="24:27" %}
 
 - [Increasing probability of block hash collisions when difficulty is too high]({{bse}}129265)
   Vojtěch Strnad notes the extreme unlikelihood of a blockhash collision (unless SHA256 is
   broken) and goes on to explain why the hash of a block header serves as block
-  identifiers.
+  identifiers. {% assign timestamp="29:33" %}
 
 - [What is the purpose of the initial 0x04 byte in all extended public and private keys?]({{bse}}129178)
   Pieter Wuille points out that these 0x04 prefixes are simply a coincidence
-  based on their respective target Base58 encodings.
+  based on their respective target Base58 encodings. {% assign timestamp="33:25" %}
 
 ## Releases and release candidates
 
@@ -94,7 +94,7 @@ release candidates._
   that introduces multiple bug fixes, a new noopAdd [HTLC][topic htlc] type,
   support for [P2TR][topic taproot] fallback addresses on [BOLT11][] invoices,
   and many RPC and `lncli` additions and improvements. See the [release
-  notes][lnd notes] for more details.
+  notes][lnd notes] for more details. {% assign timestamp="34:57" %}
 
 - [Core Lightning v25.12rc1][] is a release candidate of a new version of this
   major LN node implementation that adds [BIP39][] mnemonic seed phrases as the
@@ -102,7 +102,7 @@ release candidates._
   to favor or disfavor all channels of a peer, the `networkevents` subsystem to
   access information about peers, and `experimental-lsps-client` and
   `experimental-lsps2-service` options for experimental [JIT channels][topic jit
-  channels] support.
+  channels] support. {% assign timestamp="35:57" %}
 
 ## Notable code and documentation changes
 
@@ -117,7 +117,7 @@ repo], and [BINANAs][binana repo]._
 
 - [Bitcoin Core #33872][] removes the previously deprecated `-maxorphantx`
   startup option (see [Newsletter #364][news364 orphan]). Using it results in a
-  startup failure.
+  startup failure. {% assign timestamp="37:55" %}
 
 - [Bitcoin Core #33629][] completes the [cluster mempool][topic cluster mempool]
   implementation by partitioning the mempool into clusters that are limited to
@@ -131,7 +131,7 @@ repo], and [BINANAs][binana repo]._
   removing the restriction that replacements can’t introduce new unconfirmed
   inputs, changes the feerate rule to require that the overall cluster
   feerate diagram improves, and replaces the direct conflicts limit with a
-  directly conflicting clusters limit.
+  directly conflicting clusters limit. {% assign timestamp="42:05" %}
 
 - [Core Lightning #8677][] improves the performance of large nodes considerably
   by limiting the number of RPC and plugin commands processed at once, reducing
@@ -139,21 +139,21 @@ repo], and [BINANAs][binana repo]._
   database queries to handle millions of `chainmoves`/`channelmoves` events more
   efficiently. The PR also introduces a `filters` option to `rpc_command` or
   `custommsg` hooks, enabling plugins like `xpay`, `commando`, and `chanbackup`
-  to register for specific invocations only.
+  to register for specific invocations only. {% assign timestamp="49:49" %}
 
 - [Core Lightning #8546][] adds a `withhold` option (default false) to
   `fundchannel_complete` that delays the broadcast of a channel funding
   transaction until `sendpsbt` is called or the channel is closed. This allows
   LSPs to postpone opening a channel until a user provides sufficient funds to
   cover the network fees. This is necessary to enable the `client-trusts-lsp`
-  mode in [JIT channels][topic jit channels].
+  mode in [JIT channels][topic jit channels]. {% assign timestamp="51:28" %}
 
 - [Core Lightning #8682][] updates the way [blinded paths][topic rv routing] are
   built by requiring peers to have the [`option_onion_messages`][topic onion
   messages] feature enabled, in addition to the `option_route_blinding`, even if
   the specification doesn’t require the former. This resolves an issue in which
   an LND node without the feature enabled would fail to forward a [BOLT12][topic
-  offers] payment.
+  offers] payment. {% assign timestamp="53:19" %}
 
 - [LDK #4197][] caches the two most recently revoked commitment points in
   `ChannelManager` to respond to a peer’s `channel_reestablish` message after a
@@ -163,24 +163,24 @@ repo], and [BINANAs][binana repo]._
   commitment point, and LDK either crashes if the state is valid or force-closes
   the channel if it's invalid. For previous LDK updates to
   `channel_reestablish`, see Newsletters [#335][news335 ldk], [#371][news371
-  ldk], and [#374][news374 ldk].
+  ldk], and [#374][news374 ldk]. {% assign timestamp="55:39" %}
 
 - [LDK #4234][] adds the funding redeem script to `ChannelDetails` and the
   `ChannelPending` event, enabling LDK's on-chain wallet to reconstruct the
   `TxOut` of a channel and accurately estimate the feerate when building a
-  [splice-in][topic splicing] transaction.
+  [splice-in][topic splicing] transaction. {% assign timestamp="1:00:56" %}
 
 - [LDK #4148][] adds support for [testnet4][topic testnet] by updating the
   `rust-bitcoin` dependency to version 0.32.4 (See [Newsletter #324][news324
   testnet]) and requiring that as the minimum supported version for the
-  `lightning` and `lightning-invoice` crates.
+  `lightning` and `lightning-invoice` crates. {% assign timestamp="1:02:17" %}
 
 - [BDK #2027][] adds a `list_ordered_canonical_txs` method to `TxGraph`, which
   returns canonical transactions in topological order, where parent transactions
   always appear before their children. The existing `list_canonical_txs` and
   `try_list_canonical_txs` methods are deprecated in favor of the new ordered
   variant. See Newsletters [#335][news335 txgraph], [#346][news346 txgraph] and
-  [#374][news374 txgraph] for previous canonicalization work on BDK.
+  [#374][news374 txgraph] for previous canonicalization work on BDK. {% assign timestamp="1:03:04" %}
 
 {% include snippets/recap-ad.md when="2025-12-02 17:30" %}
 {% include references.md %}
