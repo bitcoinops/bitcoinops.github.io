@@ -14,4 +14,5 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 before_install:
-  - sudo apt install optipng
+  - sudo apt-get update
+  - sudo apt-get install -y optipng
