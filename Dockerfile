@@ -1,5 +1,5 @@
 # Use an official Ruby runtime as a parent image
-FROM ruby:2.6.4
+FROM ruby:3.4.7
 
 # Install program to configure locales
 RUN apt-get update && \

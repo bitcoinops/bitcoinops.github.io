@@ -1,7 +1,7 @@
-dist: xenial
+dist: jammy
 language: ruby
 rvm:
-  - "2.6.4"
+  - "3.4"
 
 cache: bundler
 
