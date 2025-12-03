@@ -111,7 +111,7 @@ test-after-build: build
 	done | grep .
 
 	## Check for broken links
-	bundle exec htmlproofer --check-html --disable-external --url-ignore '/^\/bin/.*/' ./_site
+	bundle exec htmlproofer --disable-external --no-enforce-https --ignore-urls '/^\/bin/.*/' ./_site
 
 ## Tests to run last because they identify problems that may not be fixable during initial commit review.
 ## However, these should not be still failing when the site goes to production
