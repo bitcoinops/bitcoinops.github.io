@@ -154,7 +154,7 @@ repo].*
 [bech32 patch]: https://github.com/sipa/bech32/commit/2b0aac650ce560fb2b2a2bebeacaa5c87d7e5938
 [Bitcoin Core 0.17.0.1]: https://bitcoincore.org/en/releases/0.17.0.1/
 [bech32 overflow blog]: https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-7-1-5c34278425d8
-[bech32 refs]: //github.com/sipa/bech32/tree/master/ref/
+[bech32 refs]: https://github.com/sipa/bech32/tree/master/ref/
 [trezor-crypto]: https://github.com/trezor/trezor-crypto/
 [cashaddr patch]: https://github.com/trezor/trezor-crypto/commit/2bbbc3e15573294c6dd0273d2a8542ba42507eb0
 [ln bolt11 ss]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001489.html
