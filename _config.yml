@@ -33,6 +33,13 @@ author: "Bitcoin Optech"  ## Default author name for blog posts
 # Build settings
 markdown: kramdown
 theme: minima
+sass:
+  # quiet_deps silences warnings from dependencies loaded via sass_dir
+  quiet_deps: true
+  # Silence @import deprecation warnings - migration to @use/@forward requires
+  # significant refactoring of minima theme. Track: https://sass-lang.com/d/import
+  silence_deprecations:
+    - import
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
