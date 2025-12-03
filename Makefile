@@ -25,7 +25,9 @@ preview:
 	      _site/*/topics/categories/index.html \
 	      _site/*/topics/dates/index.html \
 	      _site/*/topics/index.html
-	bundle exec jekyll serve --host 0.0.0.0 $(JEKYLL_FLAGS)
+	## Build with dev config (for correct redirect URLs), then serve
+	bundle exec jekyll build --config _config.yml,_config_dev.yml $(JEKYLL_FLAGS) && \
+	bundle exec jekyll serve --host 0.0.0.0 --skip-initial-build $(JEKYLL_FLAGS)
 
 build:
 	@# Tiny sleep for when running concurrently to ensure output
