@@ -121,7 +121,7 @@ _在本节中，我们总结了一次最近的 Bitcoin Core PR 审查俱乐部�
 [uSEkaCIO email]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002316.html
 [jonasnick otves]: https://github.com/jonasnick/secp256k1/pull/14/
 [nkohen otves]: https://github.com/bitcoin-s/bitcoin-s/pull/1302
-[lnd psbt]: //github.com/lightningnetwork/lnd/blob/master/docs/psbt.md
+[lnd psbt]: https://github.com/lightningnetwork/lnd/blob/master/docs/psbt.md
 [review club 18238]: https://bitcoincore.reviews/18238.html
 [wtxid transaction relay]: https://bitcoincore.reviews/18044
 [watchtower tor]: https://github.com/lightningnetwork/lnd/blob/master/docs/watchtower.md#tor-hidden-services
