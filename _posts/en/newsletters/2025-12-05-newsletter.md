@@ -75,7 +75,18 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Core Lightning v25.12][] is a release of this major LN implementation that
+  adds [BIP39][] mnemonic seed phrases as the new default backup method,
+  improves pathfinding, adds experimental [JIT channels][topic jit channels]
+  support, and many other features and bug fixes. Due to breaking database
+  changes, this release includes a downgrade tool in case something goes wrong
+  (see below for more information).
+
+- [LDK 0.2][] is a major release of this library for building Lightning
+  applications that adds support for [splicing][topic splicing] (experimental),
+  serving and paying static invoices for [async payments][topic async payments],
+  [zero-fee-commitment][topic v3 commitments] channels using [ephemeral anchors][topic ephemeral
+  anchors] as well as many other features, bug fixes, and API improvements.
 
 ## Notable code and documentation changes
 
@@ -88,10 +99,54 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Core Lightning #8728][] fixes a bug that caused `hsmd` to crash when a user
+  entered the wrong passphrase; it now properly handles this user error case and
+  exits cleanly.
+
+- [Core Lightning #8702][] adds a `lightningd-downgrade` tool that downgrades
+  the database version from 25.12 to the previous 25.09 in case of an upgrade
+  error.
+
+- [Core Lightning #8735][] fixes a long-standing bug where some on-chain spends
+  could disappear from CLN’s view during a restart. Upon startup, CLN rolls back
+  the latest 15 blocks (by default), resets the spend height of UTXOs spent in
+  those blocks to `null`, and then rescans. Previously, CLN failed to rewatch
+  those UTXOs, which could cause CLN to keep relaying [channel
+  announcements][topic channel announcements] that had already been closed, or
+  to miss important on-chain spends. This PR ensures that these UTXOs are
+  rewatched during startup and adds a one-time backward scan to recover any
+  spends that were previously missed due to this bug.
+
+- [LDK #4226][] begins validating the amount and CLTV fields of received
+  [trampoline][topic trampoline payments] onions against the outer onion. It
+  also adds three new local failure reasons:
+  `TemporaryTrampolineFailure`,`TrampolineFeeOrExpiryInsufficient`, and
+  `UnknownNextTrampoline` as a first step towards supporting trampoline payment
+  forwarding.
+
+- [LND #10341][] fixes a bug where the same [Tor][topic anonymity networks]
+  onion address was duplicated in the node announcement and in the `getinfo`
+  output whenever the hidden service was restarted. The PR ensures the
+  `createNewHiddenService` function never duplicates an address.
+
+- [BTCPay Server #6986][] introduces `Monetization`, which allows server admins
+  to require a `Subscription` (see [Newsletter #379][news379 btcpay]) for user
+  login. This feature enables ambassadors, Bitcoin users who onboard new users
+  and merchants in local contexts, to monetize their work. There’s a default
+  seven-day free trial period and a free starter plan; however, subscriptions
+  are customizable. Existing users will not be automatically enrolled in a
+  subscription, though they can be migrated later.
+
+- [BIPs #2015][] adds test vectors to [BIP54][], the [consensus cleanup][topic
+  consensus cleanup] proposal, by introducing a set of vectors for each of the
+  four mitigations. The vectors are generated from the [BIP54][] implementation
+  in Bitcoin Inquisition and a custom Bitcoin Core mining unit test, and are
+  documented with instructions for their use in implementation and review.
+  See [Newsletter #379][news379 bip54] for additional context.
 
 {% include snippets/recap-ad.md when="2025-12-09 17:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="1699,8728,8702,8735,4226,10341,6986,2015" %}
 [ms ml lnhance]: https://groups.google.com/g/bitcoindev/c/AlMqLbmzxNA
 [gs ml thikcs]: https://groups.google.com/g/bitcoindev/c/5wLThgegha4/m/iUWIZPIaCAAJ
 [j ml varops]: https://groups.google.com/g/bitcoindev/c/epbDDH9MHNw/m/OUrIeSHmAAAJ
@@ -103,3 +158,7 @@ FIXME:Gustavojfe
 [bruno delving]: https://delvingbitcoin.org/t/consensus-bug-on-nbitcoin-out-of-bound-issue-in-remove/2120
 [nbitcoin patch]: https://github.com/MetacoSA/NBitcoin/pull/1288
 [diff fuzz]: https://github.com/bitcoinfuzz/bitcoinfuzz
+[LDK 0.2]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.2
+[news379 btcpay]: /en/newsletters/2025/11/07/#btcpay-server-6922
+[news379 bip54]: /en/newsletters/2025/11/07/#bip54-implementation-and-test-vectors
+[Core Lightning v25.12]: https://github.com/ElementsProject/lightning/releases/tag/v25.12
