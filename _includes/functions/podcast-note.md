@@ -1,4 +1,4 @@
-(<a title="Play this segment of the podcast" onClick="seek('{{include.timestamp}}')" class="seek">{{include.timestamp}}</a><noscript>{{include.timestamp}}</noscript>)
+(<a href="javascript:void(0)" title="Play this segment of the podcast" onClick="seek('{{include.timestamp}}')" class="seek">{{include.timestamp}}</a><noscript>{{include.timestamp}}</noscript>)
 {% if include.reference %}<a href="{{include.reference}}{{include.slug}}">
     <i class="fa fa-link" title="Link to related content"></i>
 </a>{% endif %}

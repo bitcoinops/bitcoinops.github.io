@@ -168,7 +168,7 @@ Bitcoin Coreのウォレットに[サイレントペイメント][topic silent p
       （またはすべての機能を失うことがない）ようにするために重要です。"
   a2link="https://bitcoincore.reviews/28122#l-170"
 
-  q3="新しいバージョンが意図的に互換性を破壊したい場合は？"
+  q3="<!--version-number-->新しいバージョンが意図的に互換性を破壊したい場合は？"
   a3="v31が互換性を破壊するようなアップグレードのために予約されています。"
   a3link="https://bitcoincore.reviews/28122#l-186"
 
