@@ -63,6 +63,6 @@ repo], and [BINANAs][binana repo]._
 
 FIXME:Gustavojfe
 
-{% include snippets/recap-ad.md when="2025-12-09 17:30" %}
+{% include snippets/recap-ad.md when="2025-12-16 17:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
