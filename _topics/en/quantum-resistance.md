@@ -91,6 +91,9 @@ optech_mentions:
   - title: "Paper analyzes the security of taproot commitments against quantum computers"
     url: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
 
+  - title: "SLH-DSA (SPHINCS) post-quantum signature optimizations"
+    url: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
