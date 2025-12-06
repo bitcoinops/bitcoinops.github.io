@@ -107,14 +107,14 @@ inquisition repo], et [BINANAs][binana repo]._
   ces UTXOs sont surveillés à nouveau lors du démarrage et ajoute un scan rétroactif unique pour récupérer
   toutes les dépenses qui ont été précédemment manquées en raison de ce bug.
 
-- [LDK #4226][] commence à valider le montant et les champs CLTV des paiements en oignon 
+- [LDK #4226][] commence à valider le montant et les champs CLTV des paiements en oignon
   [trampoline][topic trampoline payments] reçus contre un oignon externe. Il
   ajoute également trois nouvelles raisons d'échec locales :
   `TemporaryTrampolineFailure`,`TrampolineFeeOrExpiryInsufficient`, et
   `UnknownNextTrampoline` comme premier pas vers le support du transfert de paiement
   trampoline.
 
-- [LND #10341][] corrige un bug où la même adresse oignon [Tor][sujet réseaux d'anonymat]
+- [LND #10341][] corrige un bug où la même adresse oignon [Tor][topic anonymity networks]
   était dupliquée dans l'annonce du nœud et dans la sortie `getinfo`
   chaque fois que le service caché était redémarré. La PR assure que la
   fonction `createNewHiddenService` ne duplique jamais une adresse.
