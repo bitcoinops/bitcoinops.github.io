@@ -193,7 +193,17 @@ FIXME:Gustavojfe
 - **Theoretical limitations on embedding data in the UTXO set:** ...
 
 {:#channeljamming}
-- **Channel jamming mitigation simulation results and updates:** ...
+
+- **Channel jamming mitigation simulation results and updates:** Carla
+  Kirck-Cohen in collaboration with Clara Shikhelman and elnosh had updated the
+  [lightning jamming simulation results][channel jamming results], and updates
+  to their reputation algorithm. The updates included reputation tracking for
+  outgoing channels, and resources being limited on incoming channels. With
+  these new updates, they found that it still protects against
+  [resource][channel jamming resource] and [sink][channel jamming sink] attacks.
+  After this round of updates and simulations, they feel that [channel jamming
+  attack][channel jamming attack] mitigation has reached a point where it is
+  good enough.
 
 ## November
 
@@ -292,3 +302,7 @@ Friday publication schedule on January 2nd.*
 
 [Human Rights Foundation]: https://hrf.org
 [openssl vs libsecp256k1]: /en/newsletters/2025/11/07/#comparing-performance-of-ecdsa-signature-validation-in-openssl-vs-libsecp256k1
+[channel jamming results]: /en/newsletters/2025/10/24/#channel-jamming-mitigation-simulation-results-and-updates
+[channel jamming resource]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-resource-attacks-3
+[channel jamming sink]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-manipulation-sink-attack-9
+[channel jamming attack]: /en/topics/channel-jamming-attacks/
