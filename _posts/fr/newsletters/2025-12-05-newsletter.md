@@ -140,8 +140,8 @@ inquisition repo], et [BINANAs][binana repo]._
 [ms ml lnhance]: https://groups.google.com/g/bitcoindev/c/AlMqLbmzxNA
 [gs ml thikcs]: https://groups.google.com/g/bitcoindev/c/5wLThgegha4/m/iUWIZPIaCAAJ
 [j ml varops]: https://groups.google.com/g/bitcoindev/c/epbDDH9MHNw/m/OUrIeSHmAAAJ
-[news365 oth]: /en/newsletters/2025/08/01/#proposition-de-op-templatehash-natif-a-taproot
-[news374 gsr]: /en/newsletters/2025/10/03/#brouillons-de-bip-pour-la-restauration-de-script
+[news365 oth]: /fr/newsletters/2025/08/01/#proposition-de-op-templatehash-natif-a-taproot
+[news374 gsr]: /fr/newsletters/2025/10/03/#brouillons-de-bip-pour-la-restauration-de-script
 [bip varops]: https://github.com/rustyrussell/bips/blob/guilt/varops/bip-unknown-varops-budget.mediawiki
 [j gh bench]: https://github.com/jmoik/bitcoin/blob/gsr/src/bench/bench_varops.cpp
 [c ml sphincs]: https://groups.google.com/g/bitcoindev/c/LAll07BHwjw/m/2k7o2VKwAQAJ
@@ -150,5 +150,5 @@ inquisition repo], et [BINANAs][binana repo]._
 [diff fuzz]: https://github.com/bitcoinfuzz/bitcoinfuzz
 [LDK 0.2]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.2
 [news379 btcpay]: /fr/newsletters/2025/11/07/#btcpay-server-6922
-[news379 bip54]: /en/newsletters/2025/11/07/#implementation-de-bip54-et-vecteurs-de-test
+[news379 bip54]: /fr/newsletters/2025/11/07/#implementation-de-bip54-et-vecteurs-de-test
 [Core Lightning v25.12]: https://github.com/ElementsProject/lightning/releases/tag/v25.12
