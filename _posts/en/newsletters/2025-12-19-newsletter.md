@@ -116,7 +116,21 @@ excerpt: >
 ## February
 
 {:#erlay}
-- **Erlay update:** ...
+
+- **Erlay update:** Sergi Delgado made [several posts][erlay optech posts] this
+  year about his work and progress implementing [Erlay][erlay] in Bitcoin Core.
+  In the first post, he gave an overview of the Erlay proposal and how the
+  current transaction relay mechanism ("fanout") works. In these posts, he
+  discussed different results he found while developing Erlay, such as that
+  [filtering based on transaction knowledge][erlay knowledge] was not as
+  impactful as expected. He also experimented with selecting [how many peers
+  should receive a fanout][erlay fanout amount], finding that there was a 35%
+  bandwidth savings with 8 outbound peers and 45% with 12 outbound peers, but
+  also found a 240% increase in latency. In two other experiments, he
+  determined the [fanout rate based on how a transaction was
+  received][erlay transaction received] and [when to select candidate
+  peers][erlay candidate peers]. These experiments, which combined fanout and
+  reconciliation, helped him determine when to use each method.
 
 {:#lneas}
 
@@ -533,7 +547,14 @@ powerful.
   post], dealing with programs and addresses.
 
 {:#eclipseattacks}
-- **Partitioning and eclipse attacks using BGP interception:** ...
+
+- **Partitioning and eclipse attacks using BGP interception:** Cedarctic
+  [posted][Cedarctic post] to Delving Bitcoin about flaws in Border Gateway
+  Protocol (BGP) which could be used to prevent full nodes from being able to
+  connect to honest peers, potentially allowing network partitions or [eclipse
+  attacks][eclipse attack]. Several mitigations were described by cedarctic,
+  with other developers in the discussion describing other mitigations and ways
+  to monitor for the attack.
 
 <div markdown="1" class="callout" id="releases">
 
@@ -558,18 +579,54 @@ FIXME:Gustavojfe
   be considered.
 
 {:#channeljamming}
-- **Channel jamming mitigation simulation results and updates:** ...
+
+- **Channel jamming mitigation simulation results and updates:** Carla
+  Kirk-Cohen, in collaboration with Clara Shikhelman and elnosh, posted the
+  [Lightning jamming simulation results][channel jamming results] for their
+  updated reputation algorithm. The updates included reputation tracking for
+  outgoing channels and tracking incoming channel resource limitations. With
+  these new updates, they found that it still protects against
+  [resource][channel jamming resource] and [sink][channel jamming sink] attacks.
+  After this round of updates and simulations, they feel that [channel jamming
+  attack][channel jamming attack] mitigation has reached a point where it is
+  sufficient for implementation.
 
 ## November
 
 {:#secpperformance}
-- **Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1:** ...
 
-{:#restrictingdata}
-- **Multiple discussions about restricting data:** ...
+- **Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1:**
+  Ten years after Bitcoin Core switched from OpenSSL to libsecp256k1, Sebastian
+  Falbesoner [posted][openssl vs libsecp256k1] a benchmark analysis comparing
+  the performance of both cryptographic libraries for signature validation.
+  Libsecp256k1 was created in 2015 specifically for Bitcoin Core, and was
+  already between 2.5 and 5.5 times faster at the time. Falbesoner found the gap
+  has since widened to more than 8x, as libsecp256k1 continued to improve while
+  OpenSSL's secp256k1 performance remained static, which is unsurprising given
+  the curve's limited relevance outside Bitcoin.
+
+  In the discussion, libsecp256k1 creator Pieter Wuille notes that the
+  benchmarks have inherent biases: all versions were tested on modern hardware
+  and compilers, but historical optimizations targeted the hardware and
+  compilers that existed at the time.
 
 {:#stalerates}
-- **Modeling stale rates by propagation delay and mining centralization:** ...
+
+- **Modeling stale rates by propagation delay and mining centralization:**
+  Antoine Poinsot [posted][Antoine post] to Delving Bitcoin analyzing how block
+  propagation delays systematically advantage larger miners. He modeled two
+  scenarios in which block A goes stale. In the first, a competing block B is
+  found before A and propagates first. In the second, B is found shortly after
+  A, but the same miner also finds the next block. The first scenario is more
+  likely, suggesting miners benefit more from hearing others' blocks quickly
+  than from broadcasting their own.
+
+  Poinsot showed that stale rates increase with propagation delay and
+  disproportionately affect smaller miners. He found that with 10-second
+  propagation, a 5 EH/s operation earning $91M annually could gain about $100k
+  in additional revenue by connecting to the largest pool instead of the
+  smallest. Since mining operates on thin margins, small revenue differences can
+  translate to significant profit impacts.
 
 {:#bip3}
 - **BIP3 and the BIP process:** ...
@@ -740,6 +797,17 @@ Friday publication schedule on January 2nd.*
 
 [newsletters]: /en/newsletters/
 [Human Rights Foundation]: https://hrf.org
+[openssl vs libsecp256k1]: /en/newsletters/2025/11/07/#comparing-performance-of-ecdsa-signature-validation-in-openssl-vs-libsecp256k1
+[channel jamming results]: /en/newsletters/2025/10/24/#channel-jamming-mitigation-simulation-results-and-updates
+[channel jamming resource]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-resource-attacks-3
+[channel jamming sink]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-manipulation-sink-attack-9
+[channel jamming attack]: /en/topics/channel-jamming-attacks/
+[erlay optech posts]: /en/newsletters/2025/02/07/#erlay-update
+[erlay]: /en/topics/erlay/
+[erlay knowledge]: https://delvingbitcoin.org/t/erlay-filter-fanout-candidates-based-on-transaction-knowledge/1416
+[erlay fanout amount]: https://delvingbitcoin.org/t/erlay-find-acceptable-target-number-of-peers-to-fanout-to/1420
+[erlay transaction received]: https://delvingbitcoin.org/t/erlay-define-fanout-rate-based-on-the-transaction-reception-method/1422
+[erlay candidate peers]: https://delvingbitcoin.org/t/erlay-select-fanout-candidates-at-relay-time-instead-of-at-relay-scheduling-time/1418
 [news358 selfish miner]: /en/newsletters/2025/06/13/#calculating-the-selfish-mining-danger-threshold
 [selfish miner paper]: https://arxiv.org/pdf/1311.0243
 [news360 fingerprinting]: /en/newsletters/2025/06/27/#fingerprinting-nodes-using-addr-messages
@@ -808,6 +876,9 @@ Friday publication schedule on January 2nd.*
 [news335 chilldkg]: /en/newsletters/2025/01/03/#updated-chilldkg-draft
 [news offchain dlc]: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
 [news dlc channels]: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
+[Cedarctic post]: /en/newsletters/2025/09/19/#partitioning-and-eclipse-attacks-using-bgp-interception
+[eclipse attack]: /en/topics/eclipse-attacks/
+[Antoine post]: /en/newsletters/2025/11/21/#modeling-stale-rates-by-propagation-delay-and-mining-centralization
 [news315 compact blocks]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
 [news339 compact blocks]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
 [news365 compact blocks]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
