@@ -198,7 +198,21 @@ FIXME:Gustavojfe
 ## November
 
 {:#secpperformance}
-- **Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1:** ...
+
+- **Comparing performance of ECDSA signature validation in OpenSSL vs.
+  libsecp256k1:** Sebastian Falbesoner conducted an
+  [analysis][openssl vs libsecp256k1] on the performance of ECDSA signature
+  validation between OpenSSL and libsecp256k1. Since 2015, Bitcoin Core has used
+  libsecp256k1 over OpenSSL. He wanted to be certain that doing so was the right
+  choice and not a wasted effort. From the start, libsecp256k1 was 2.5-5.5 times
+  faster than OpenSSL, but this analysis was done to see if OpenSSL had made any
+  improvements over the decade and if so did libsecp256k1 keep up. What
+  Falbesoner found was that over the years libsecp256k1 had improved
+  significantly whereas OpenSSL had remained the same. He also concluded that
+  outside the Bitcoin ecosystem, the secp256k1 curve is not that relevant, so it
+  is not justified for OpenSSL to put too many resources into improving it
+  (evident by the results). Overall, switching to libsecp256k1 was a beneficial
+  decision for Bitcoin Core.
 
 {:#restrictingdata}
 - **Multiple discussions about restricting data:** ...
@@ -277,3 +291,4 @@ Friday publication schedule on January 2nd.*
 [yirs 2024]: /en/newsletters/2024/12/20/
 
 [Human Rights Foundation]: https://hrf.org
+[openssl vs libsecp256k1]: /en/newsletters/2025/11/07/#comparing-performance-of-ecdsa-signature-validation-in-openssl-vs-libsecp256k1
