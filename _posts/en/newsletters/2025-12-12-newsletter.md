@@ -95,15 +95,23 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Does a clearnet connection to my Lightning node require a TLS certificate?]({{bse}}129303)
+  Pieter Wuille points out that in LN, users specify a public key as part of
+  connecting to a peer so "There is no need for a trusted third party to attest
+  to the correctness of that public key, because it is the user's responsibility
+  to configure the public key correctly".
 
-## Releases and release candidates
+- [Why do different implementations produce different DER signatures for the same private key and hash?]({{bse}}129270)
+  User dave_thompson_085 explains that different implementations can produce
+  different valid ECDSA signatures because the algorithm is inherently
+  randomized unless RFC 6979 deterministic nonce generation is used.
 
-_New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates._
-
-FIXME:Gustavojfe
+- [Why is the miniscript `after` value limited at 0x80000000?]({{bse}}129253)
+  Murch answers that [miniscript][topic miniscript] limits `after(n)` time-based
+  CLTV [timelocks][topic timelocks] to a maximum of 2<sup>31</sup> - 1
+  (representing a time in the year 2038) because Bitcoin Script integers are
+  4-byte *signed* values, while block-height based locktimes can exceed the 2038
+  threshold.
 
 ## Notable code and documentation changes
 
