@@ -8,86 +8,105 @@ layout: newsletter
 lang: en
 
 excerpt: >
-  The eighth annual Bitcoin Optech Year-in-Review special summarizes
-  notable developments in Bitcoin during all of 2025.
-
+  The eighth annual Bitcoin Optech Year-in-Review special summarizes notable
+  developments in Bitcoin during all of 2025.
 ---
-{{page.excerpt}}  It's the sequel to our summaries from [2018][yirs
-2018], [2019][yirs 2019], [2020][yirs 2020], [2021][yirs 2021],
-[2022][yirs 2022], [2023][yirs 2023], and [2024][yirs 2024].
+
+{{page.excerpt}} It's the sequel to our summaries from [2018][yirs 2018],
+[2019][yirs 2019], [2020][yirs 2020], [2021][yirs 2021], [2022][yirs 2022],
+[2023][yirs 2023], and [2024][yirs 2024].
 
 ## Contents
 
-* January
-  * [Updated ChillDKG draft](#chilldkg)
-  * [Offchain DLCs](#offchaindlcs)
-  * [Stats on compact block reconstruction](#compactblockstats)
-* February
-  * [Erlay update](#erlay)
-  * [LN ephemeral anchor scripts](#lneas)
-  * [Probabilistic payments](#probpayments)
-* March
-  * [Bitcoin Forking Guide](#forkingguide)
-  * [Private block template marketplace to prevent centralizing MEV](#templatemarketplace)
-  * [LN upfront and hold fees using burnable outputs](#lnupfrontfees)
-* April
-  * [SwiftSync speedup for initial block download](#swiftsync)
-  * [DahLIAS interactive aggregate signatures](#dahlias)
-* May
-  * [Cluster mempool](#clustermempool)
-  * [Increasing or removing Bitcoin Core’s OP_RETURN size limit](#opreturn)
-* June
-  * [Calculating the selfish mining danger threshold](#selfishmining)
-  * [Fingerprinting nodes using addr messages](#fingerprinting)
-  * [Garbled locks](#garbledlocks)
-* July
-  * [Chain code delegation](#ccdelegation)
-* August
-  * [Utreexo draft BIPs](#utreexo)
-  * [Lowering the minimum relay feerate](#minfeerate)
-  * [Peer block template sharing](#templatesharing)
-  * [Differential fuzzing of Bitcoin and LN implementations](#fuzzing)
-* September
-  * [Details about the design of Simplicity](#simplicity)
-  * [Partitioning and eclipse attacks using BGP interception](#eclipseattacks)
-* October
-  * [Theoretical limitations on embedding data in the UTXO set](#arbdata)
-  * [Channel jamming mitigation simulation results and updates](#channeljamming)
-* November
-  * [Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1](#secpperformance)
-  * [Multiple discussions about restricting data](#restrictingdata)
-  * [Modeling stale rates by propagation delay and mining centralization](#stalerates)
-  * [BIP3 and the BIP process](#bip3)
-* December
-* Featured summaries
-  * [Vulnerabilities](#vulns)
-  * [Quantum](#quantum)
-  * [Soft fork proposals](#softforks)
-  * [Major releases of popular infrastructure projects](#releases)
-  * [Bitcoin Optech](#optech)
+- January
+  - [Updated ChillDKG draft](#chilldkg)
+  - [Offchain DLCs](#offchaindlcs)
+  - [Stats on compact block reconstruction](#compactblockstats)
+- February
+  - [Erlay update](#erlay)
+  - [LN ephemeral anchor scripts](#lneas)
+  - [Probabilistic payments](#probpayments)
+- March
+  - [Bitcoin Forking Guide](#forkingguide)
+  - [Private block template marketplace to prevent centralizing MEV](#templatemarketplace)
+  - [LN upfront and hold fees using burnable outputs](#lnupfrontfees)
+- April
+  - [SwiftSync speedup for initial block download](#swiftsync)
+  - [DahLIAS interactive aggregate signatures](#dahlias)
+- May
+  - [Cluster mempool](#clustermempool)
+  - [Increasing or removing Bitcoin Core’s OP_RETURN size limit](#opreturn)
+- June
+  - [Calculating the selfish mining danger threshold](#selfishmining)
+  - [Fingerprinting nodes using addr messages](#fingerprinting)
+  - [Garbled locks](#garbledlocks)
+- July
+  - [Chain code delegation](#ccdelegation)
+- August
+  - [Utreexo draft BIPs](#utreexo)
+  - [Lowering the minimum relay feerate](#minfeerate)
+  - [Peer block template sharing](#templatesharing)
+  - [Differential fuzzing of Bitcoin and LN implementations](#fuzzing)
+- September
+  - [Details about the design of Simplicity](#simplicity)
+  - [Partitioning and eclipse attacks using BGP interception](#eclipseattacks)
+- October
+  - [Theoretical limitations on embedding data in the UTXO set](#arbdata)
+  - [Channel jamming mitigation simulation results and updates](#channeljamming)
+- November
+  - [Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1](#secpperformance)
+  - [Multiple discussions about restricting data](#restrictingdata)
+  - [Modeling stale rates by propagation delay and mining centralization](#stalerates)
+  - [BIP3 and the BIP process](#bip3)
+- December
+- Featured summaries
+  - [Vulnerabilities](#vulns)
+  - [Quantum](#quantum)
+  - [Soft fork proposals](#softforks)
+  - [Major releases of popular infrastructure projects](#releases)
+  - [Bitcoin Optech](#optech)
 
 ---
 
 ## January
 
 {:#chilldkg}
+
 - **Updated ChillDKG draft:** ...
 
 {:#offchaindlcs}
+
 - **Offchain DLCs:** ...
 
 {:#compactblockstats}
+
 - **Stats on compact block reconstruction:** ...
 
 ## February
 
 {:#erlay}
-- **Erlay update:** ...
+
+- **Erlay update:** Sergi Delgado made [several posts][erlay optech posts] over
+  the last year about his work and progress implementing [Erlay][erlay] for
+  Bitcoin Core. In the first post, he gave an overview on the Erlay proposal and
+  how the current transaction relay works (called fanout). In these posts, he
+  discusses different results that he found while developing Erlay, such as
+  [filtering based on transaction knowledge][erlay knowledge] not mattering as
+  much as expected. He also experimented with selecting [how many peers should
+  receive a fanout][erlay fanout amount], and found that there was a 35%
+  bandwidth savings with 8 outbound peers and 45% with 12 outbound peers, but
+  also found a 240% increase in latency. In his two other experiments, he
+  determined the [fanout rate based on how a transaction was
+  received][erlay transaction received] and [when to select canidate
+  peers][erlay candidate peers]. These experiments, which combined fanout and
+  reconciliation, helped him determine when to use each method.
 
 {:#lneas}
+
 - **LN ephemeral anchor scripts:** ...
 
 {:#probpayments}
+
 - **Probabilistic payments:** ...
 
 <div markdown="1" class="callout" id="vulns">
@@ -306,3 +325,9 @@ Friday publication schedule on January 2nd.*
 [channel jamming resource]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-resource-attacks-3
 [channel jamming sink]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-manipulation-sink-attack-9
 [channel jamming attack]: /en/topics/channel-jamming-attacks/
+[erlay optech posts]: /en/newsletters/2025/02/07/#erlay-update
+[erlay]: /en/topics/erlay/
+[erlay knowledge]: https://delvingbitcoin.org/t/erlay-filter-fanout-candidates-based-on-transaction-knowledge/1416
+[erlay fanout amount]: https://delvingbitcoin.org/t/erlay-find-acceptable-target-number-of-peers-to-fanout-to/1420
+[erlay transaction received]: https://delvingbitcoin.org/t/erlay-define-fanout-rate-based-on-the-transaction-reception-method/1422
+[erlay candidate peers]: https://delvingbitcoin.org/t/erlay-select-fanout-candidates-at-relay-time-instead-of-at-relay-scheduling-time/1418
