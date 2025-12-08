@@ -48,7 +48,41 @@ examining recent changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Interactive transaction visualization tool:**
+  [RawBit][rawbit delving] is a [web-based][rawbit website], [open-source][rawbit github]
+  transaction visualization tool. It features interactive lessons on a variety
+  of transaction types with plans for additional lessons on taproot,
+  [PSBTs][topic psbt],
+  [HTLCs][topic htlc], [coinjoins][topic coinjoin], and covenant proposals.
+
+- **BlueWallet v7.2.2 released:**
+  BlueWallet's [v7.2.2 release][bluewallet v7.2.2] adds support for
+  [taproot][topic taproot] wallets, including sending, receiving, watch-only,
+  coin control, and hardware signing device features.
+
+- **Stratum v2 updates:**
+  Stratum v2 [v1.6.0][sv2 v1.6.0] rearchitects the Stratum v2 repositories,
+  adding an [sv2-apps repository and v.01 release][sv2-apps] supporting direct
+  communication with unmodified Bitcoin Core 30.0 nodes using IPC (see
+  [Newsletter #369][news369 ipc]). The releases also include web tools
+  for [miners][sv2 wizard miners] and [developers][sv2 wizard devs] for testing,
+  among other features.
+
+- **Auradine announces Stratum v2 support:**
+  Auradine [announced][auradine tweet] support for Stratum v2 features in their miners.
+
+- **LDK Node 0.7.0 released:**
+  [LDK Node 0.7.0][ldk node blog] adds experimental support for [splicing][topic
+  splicing] and support for serving and paying static invoices for [async payments][topic
+  async payments], among other features and bugfixes.
+
+- **BIP-329 Python Library 1.0.0 release:**
+  [BIP-329 Python Library][news273 329 lib] version [1.0.0][bip329 python 1.0.0]
+  supports [BIP329][]'s additional fields, including type validation and test coverage.
+
+- **Bitcoin Safe 1.6.0 released:**
+  The [1.6.0 release][bitcoin safe 1.6.0] adds support for [compact block
+  filters][topic compact block filters] and [reproducible builds][topic reproducible builds].
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -96,3 +130,17 @@ newsletter.  Regular publication will resume on Friday, January 2nd.
 [lnd vln3]: https://morehouse.github.io/lightning/lnd-replacement-stalling-attack/
 [lnd version]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.0-beta
 [morehouse failback bug]: /en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
+[rawbit delving]: https://delvingbitcoin.org/t/raw-it-the-visual-raw-transaction-builder-script-debugger/2119
+[rawbit github]: https://github.com/rawBit-io/rawbit
+[rawbit website]: https://rawbit.io/
+[bluewallet v7.2.2]: https://github.com/BlueWallet/BlueWallet/releases/tag/v7.2.2
+[sv2 v1.6.0]: https://github.com/stratum-mining/stratum/releases/tag/v1.6.0
+[sv2-apps]: https://github.com/stratum-mining/sv2-apps/releases/tag/v0.1.0
+[news369 ipc]: /en/newsletters/2025/08/29/#bitcoin-core-31802
+[sv2 wizard miners]: https://stratumprotocol.org/get-started
+[sv2 wizard devs]: https://stratumprotocol.org/developers
+[auradine tweet]: https://x.com/Auradine_Inc/status/1991159535864803665?s=20
+[ldk node blog]: https://newreleases.io/project/github/lightningdevkit/ldk-node/release/v0.7.0
+[news273 329 lib]: /en/newsletters/2023/10/18/#bip-329-python-library-released
+[bip329 python 1.0.0]: https://github.com/Labelbase/python-bip329/releases/tag/1.0.0
+[bitcoin safe 1.6.0]: https://github.com/andreasgriffin/bitcoin-safe/releases/tag/1.6.0
