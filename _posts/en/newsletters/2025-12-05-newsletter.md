@@ -29,7 +29,7 @@ software.
   reported it to Nicolas Dorier on October 23rd, 2025. On the same day, Nicolas
   Dorier confirmed the issue and opened a [patch][nbitcoin patch] to resolve it.
   There is no known full node implementation using NBitcoin, so there is no risk
-  of a chain split, which is why the disclosure was made quickly.
+  of a chain split, which is why the disclosure was made quickly. {% assign timestamp="1:04" %}
 
 ## Changing consensus
 
@@ -46,7 +46,7 @@ Bitcoin's consensus rules._
   versions. A similar tapscript-only opcode [package][gs ml thikcs] including
   `OP_TEMPLATEHASH` was [recently proposed][news365 oth] and has similar
   capabilities, but without general multi-commitments and, being newer, is
-  awaiting further feedback and review.
+  awaiting further feedback and review. {% assign timestamp="24:00" %}
 
 - **Benchmarking the varops budget**: Julian [posted][j ml varops] a call to
   action to benchmark Bitcoin script execution under the [varops budget][bip
@@ -55,7 +55,7 @@ Bitcoin's consensus rules._
   variety of hardware and operating systems to confirm or improve the chosen
   varops parameters. In response to Russell O'Connor, Julian also clarified that
   the varops budget would be used instead of (not in addition to) the sigops
-  budget in the new [tapscript][topic tapscript] version.
+  budget in the new [tapscript][topic tapscript] version. {% assign timestamp="5:09" %}
 
 - **SLH-DSA (SPHINCS) post-quantum signature optimizations**: Continuing the
   discussions around hardening Bitcoin against [quantum computing][topic
@@ -67,7 +67,7 @@ Bitcoin's consensus rules._
   order of magnitude faster than the previous state of the art and only two
   orders of magnitude slower than elliptic curve operations. More importantly,
   the optimized signature verification is approximately as fast as elliptic
-  curve signature verification.
+  curve signature verification. {% assign timestamp="45:29" %}
 
 ## Releases and release candidates
 
@@ -80,13 +80,13 @@ release candidates._
   improves pathfinding, adds experimental [JIT channels][topic jit channels]
   support, and many other features and bug fixes. Due to breaking database
   changes, this release includes a downgrade tool in case something goes wrong
-  (see below for more information).
+  (see below for more information). {% assign timestamp="1:02:24" %}
 
 - [LDK 0.2][] is a major release of this library for building Lightning
   applications that adds support for [splicing][topic splicing] (experimental),
   serving and paying static invoices for [async payments][topic async payments],
   [zero-fee-commitment][topic v3 commitments] channels using [ephemeral anchors][topic ephemeral
-  anchors] as well as many other features, bug fixes, and API improvements.
+  anchors] as well as many other features, bug fixes, and API improvements. {% assign timestamp="1:03:43" %}
 
 ## Notable code and documentation changes
 
@@ -101,11 +101,11 @@ repo], and [BINANAs][binana repo]._
 
 - [Core Lightning #8728][] fixes a bug that caused `hsmd` to crash when a user
   entered the wrong passphrase; it now properly handles this user error case and
-  exits cleanly.
+  exits cleanly. {% assign timestamp="1:05:14" %}
 
 - [Core Lightning #8702][] adds a `lightningd-downgrade` tool that downgrades
   the database version from 25.12 to the previous 25.09 in case of an upgrade
-  error.
+  error. {% assign timestamp="1:06:55" %}
 
 - [Core Lightning #8735][] fixes a long-standing bug where some on-chain spends
   could disappear from CLN’s view during a restart. Upon startup, CLN rolls back
@@ -115,19 +115,19 @@ repo], and [BINANAs][binana repo]._
   announcements][topic channel announcements] that had already been closed, or
   to miss important on-chain spends. This PR ensures that these UTXOs are
   rewatched during startup and adds a one-time backward scan to recover any
-  spends that were previously missed due to this bug.
+  spends that were previously missed due to this bug. {% assign timestamp="1:07:24" %}
 
 - [LDK #4226][] begins validating the amount and CLTV fields of received
   [trampoline][topic trampoline payments] onions against the outer onion. It
   also adds three new local failure reasons:
   `TemporaryTrampolineFailure`,`TrampolineFeeOrExpiryInsufficient`, and
   `UnknownNextTrampoline` as a first step towards supporting trampoline payment
-  forwarding.
+  forwarding. {% assign timestamp="1:11:41" %}
 
 - [LND #10341][] fixes a bug where the same [Tor][topic anonymity networks]
   onion address was duplicated in the node announcement and in the `getinfo`
   output whenever the hidden service was restarted. The PR ensures the
-  `createNewHiddenService` function never duplicates an address.
+  `createNewHiddenService` function never duplicates an address. {% assign timestamp="1:12:49" %}
 
 - [BTCPay Server #6986][] introduces `Monetization`, which allows server admins
   to require a `Subscription` (see [Newsletter #379][news379 btcpay]) for user
@@ -135,14 +135,14 @@ repo], and [BINANAs][binana repo]._
   and merchants in local contexts, to monetize their work. There’s a default
   seven-day free trial period and a free starter plan; however, subscriptions
   are customizable. Existing users will not be automatically enrolled in a
-  subscription, though they can be migrated later.
+  subscription, though they can be migrated later. {% assign timestamp="1:14:00" %}
 
 - [BIPs #2015][] adds test vectors to [BIP54][], the [consensus cleanup][topic
   consensus cleanup] proposal, by introducing a set of vectors for each of the
   four mitigations. The vectors are generated from the [BIP54][] implementation
   in Bitcoin Inquisition and a custom Bitcoin Core mining unit test, and are
   documented with instructions for their use in implementation and review.
-  See [Newsletter #379][news379 bip54] for additional context.
+  See [Newsletter #379][news379 bip54] for additional context. {% assign timestamp="1:16:18" %}
 
 {% include snippets/recap-ad.md when="2025-12-09 17:30" %}
 {% include references.md %}
