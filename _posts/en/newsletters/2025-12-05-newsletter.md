@@ -48,7 +48,7 @@ Bitcoin's consensus rules._
   capabilities, but without general multi-commitments and, being newer, is
   awaiting further feedback and review.
 
-- **Benchmarking The Varops Budget**: Julian [posted][j ml varops] a call to
+- **Benchmarking the varops budget**: Julian [posted][j ml varops] a call to
   action to benchmark Bitcoin script execution under the [varops budget][bip
   varops]. The Script Restoration (see [Newsletter #374][news374 gsr]) team asks
   that users run their [benchmark][j gh bench] and share the results from a wide
@@ -62,7 +62,7 @@ Bitcoin's consensus rules._
   quantum resistance], conduition [presented][c ml sphincs] his work on
   optimizing the SPHINCS signing algorithm. These optimizations require several
   megabytes of RAM and locally compiled shaders (highly optimized, cpu-specific
-  machine code — either durably cached or computed on startup). Where
+  machine code either durably cached or computed on startup). Where
   applicable, the optimized SPHINCS signing and key generation operations are an
   order of magnitude faster than the previous state of the art and only two
   orders of magnitude slower than elliptic curve operations. More importantly,
