@@ -43,6 +43,30 @@ examining recent changes to popular Bitcoin infrastructure software.
   Morehouse urges users to upgrade to [LND 0.19.0][lnd version] or higher to
   avoid denial of service and loss of funds.
 
+- **A virtualized secure enclave for hardware signing devices:** Salvatoshi
+  [posted][vanadium post] to Delving Bitcoin about [Vanadium][vanadium github],
+  a virtualized secure enclave for hardware signing devices. Vanadium is a
+  RISC-V virtual machine, designed to run arbitrary applications, called "V-Apps",
+  in an embedded secure element, outsourcing memory and storage needs to an
+  untrusted host. According to Salvatoshi, Vanadium's aim is to abstract
+  the complexities of embedded development, such as limited RAM and storage,
+  vendor-specific SDKs, slow development cycles, and debugging, to make
+  innovation in self-custody faster, more open, and standardized.
+
+  Salvatoshi notes that from a performance perspective, the virtual machine only
+  runs the application business logic, while the heavy operations (i.e.
+  cryptography) run natively via ECALLs.
+
+  While the threat model is the same as existing hardware wallets, Salvatoshi
+  points out that this approach allows memory access-pattern leakage, where the host
+  can observe which code and data pages are accessed and when. This is
+  particularly important for cryptography developers.
+
+  The project is still not deemed production-ready, and there are some known
+  limitations, such as performance and UX. However, Salvatoshi asked developers
+  to try it out and provide feedback to lay out the roadmap for
+  the project.
+
 ## Changes to services and client software
 
 *In this monthly feature, we highlight interesting updates to Bitcoin
@@ -138,6 +162,8 @@ newsletter.  Regular publication will resume on Friday, January 2nd.
 [lnd vln3]: https://morehouse.github.io/lightning/lnd-replacement-stalling-attack/
 [lnd version]: https://github.com/lightningnetwork/lnd/releases/tag/v0.19.0-beta
 [morehouse failback bug]: /en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
+[vanadium post]: https://delvingbitcoin.org/t/vanadium-a-virtualized-secure-enclave-for-hardware-signing-devices/2142
+[vanadium github]: https://github.com/LedgerHQ/vanadium
 [rawbit delving]: https://delvingbitcoin.org/t/raw-it-the-visual-raw-transaction-builder-script-debugger/2119
 [rawbit github]: https://github.com/rawBit-io/rawbit
 [rawbit website]: https://rawbit.io/
