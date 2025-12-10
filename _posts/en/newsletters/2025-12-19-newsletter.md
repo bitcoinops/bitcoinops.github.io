@@ -137,13 +137,50 @@ excerpt: >
 ## March
 
 {:#forkingguide}
-- **Bitcoin Forking Guide:** ...
+
+- **Bitcoin Forking Guide:** Anthony Towns posted to Delving Bitcoin [a
+  guide][news344 fork guide] on how to build community consensus for changes to
+  Bitcoin’s consensus rules. According to Towns, the process of establishing
+  consensus can be divided into four steps: [research and development][fork
+  guide red], [power user exploration][fork guide pue], [industry
+  evaluation][fork guide ie], and [investor review][fork guide ir]. However,
+  Towns warned readers that the guide aims to be only a high-level procedure,
+  and that it could work only in a cooperative environment.
 
 {:#templatemarketplace}
-- **Private block template marketplace to prevent centralizing MEV:** ...
+
+- **Private block template marketplace to prevent centralizing MEV:** Developers
+  Matt Corallo and 7d5x9 posted to Delving Bitcoin [a proposal][news344 template
+  mrkt] that could help prevent a future in which MEVil, a form of miner
+  extractable value (MEV) leading to mining centralization, proliferates on
+  Bitcoin. The proposal, referred to as [MEVpool][mevpool gh], would allow
+  parties to bid in public markets for selected space within miner block
+  templates (e.g., "I’ll pay X [BTC] to include transaction Y as long as it
+  comes before any other transaction which interacts with the smart contract
+  identified by Z").
+
+  While services of preferential transaction ordering within block
+  templates are expected to be provided only by large miners, leading to
+  centralization, a trust-reduced public market would allow any miner to work on
+  blinded block templates, whose complete transactions aren’t revealed to miners
+  until they’ve produced sufficient proof of work to publish the block. The
+  authors warned that this proposal would require multiple marketplaces to
+  compete to help preserve decentralization against the dominance of a single
+  trusted marketplace.
 
 {:#lnupfrontfees}
-- **LN upfront and hold fees using burnable outputs:** ...
+
+- **LN upfront and hold fees using burnable outputs:** John Law proposed [a
+  solution][news 347 ln fees] to [channel jamming attacks][topic channel jamming
+  attacks], a weakness in the Lightning Network protocol that allows an attacker
+  to costlessly prevent other nodes from using their funds. The proposal
+  summarizes a [paper][ln fees paper] he has written about the possibility for
+  Lightning nodes to charge two additional types of fees for forwarding
+  payments, an upfront fee and a hold fee. The ultimate spender would pay the
+  former to compensate forwarding nodes for temporarily using an [HTLC][topic
+  htlc] slot, while the latter would be paid by any node that delays the
+  settlement of an HTLC, with the fee amount scaling up with the length of the
+  delay.
 
 ## April
 
@@ -151,7 +188,16 @@ excerpt: >
 - **SwiftSync speedup for initial block download:** ...
 
 {:#dahlias}
-- **DahLIAS interactive aggregate signatures:** ...
+
+- **DahLIAS interactive aggregate signatures:** In April, Jonas Nick, Tim
+  Ruffing, and Yannick Seurin [announced][news351 dahlias] to the Bitcoin-Dev
+  mailing list their [DahLIAS paper][dahlias paper], the first interactive
+  64-byte aggregate signature scheme compatible with the cryptographic
+  primitives already used in Bitcoin. Aggregate signatures are the cryptographic
+  requirement for [cross-input signature aggregation][topic cisa] (CISA), a
+  feature proposed for Bitcoin that could reduce the size of transactions with
+  multiple inputs, thus reducing the cost of many different types of spending,
+  [coinjoins][topic coinjoin] and [payjoins][topic payjoin] included.
 
 <div markdown="1" class="callout" id="quantum">
 
@@ -172,13 +218,46 @@ excerpt: >
 ## June
 
 {:#selfishmining}
-- **Calculating the selfish mining danger threshold:** ...
+
+- **Calculating the selfish mining danger threshold:** Antoine Poinsot provided
+  an [in-depth explanation][news358 selfish miner] of the math behind the
+  [selfish mining attack][topic selfish mining], based on the 2013
+  [paper][selfish miner paper] that gave this exploit its name. Poinsot focused
+  on reproducing one of the paper's conclusions, proving that a dishonest miner
+  controlling 33% of the total network hashrate can become marginally more
+  profitable than the remaining miners by selectively delaying the announcement
+  of some of the new blocks it finds.
 
 {:#fingerprinting}
-- **Fingerprinting nodes using addr messages:** ...
+
+- **Fingerprinting nodes using addr messages:** Developers Daniela Brozzoni and
+  Naiyoma presented the [results][news360 fingerprinting] of their
+  fingerprinting research, which focused on identifying the same node on
+  multiple networks using `addr` messages, which are sent by the nodes, through
+  the P2P protocol, to advertise other potential peers. Brozzoni and Naiyoma
+  were able to fingerprint individual nodes using details from their specific
+  address messages, allowing them to identify the same node running on multiple
+  networks (such as IPv4 and [Tor][topic anonymity networks]). Researchers
+  suggested two possible mitigations: either removing timestamps from address
+  messages entirely or randomizing them slightly to make them less specific to
+  particular nodes.
 
 {:#garbledlocks}
-- **Garbled locks:** ...
+
+- **Garbled locks:** In June, Robin Linus presented [a proposal][news359 bitvm3]
+  for improving [BitVM][topic acc]-style contracts, based on an [idea][delbrag
+  rubin] by Jeremy Rubin. The new approach leverages [garbled circuits][garbled
+  circuits wiki], a cryptographic primitive that makes onchain SNARK
+  verification a thousand times more efficient than the BitVM2 implementation,
+  promising a significant reduction in the amount of onchain space required.
+  However, it comes at the cost of requiring a multi-terabyte offchain setup.
+
+  Later, in August, Liam Eagen [posted][news369 eagen] to the Bitcoin-Dev mailing
+  list about his research [paper][eagen paper] describing a new mechanism for
+  creating [accountable computing contracts][topic acc] based on garbled
+  circuits, called Glock (garbled locks). While the approach is similar, Eagen's
+  research is independent from Linus'. According to Eagen, Glock allows for a
+  550x reduction of onchain data compared to BitVM2.
 
 <div markdown="1" class="callout" id="softforks">
 
@@ -196,21 +275,87 @@ excerpt: >
 ## August
 
 {:#utreexo}
-- **Utreexo draft BIPs:** ...
+
+- **Utreexo draft BIPs:** Calvin Kim, Tadge Dryja, and Davidson Souza
+  co-authored [three draft BIPs][news366 utreexo] for an alternative to storing
+  the entire UTXO set, called [Utreexo][topic utreexo], which allows nodes to
+  obtain and verify information about UTXOs being spent in a transaction. The
+  proposal makes use of a forest of merkle trees to accumulate references to
+  every UTXO, allowing nodes to avoid storing the outputs.
+
+  Since August, the proposal has received some feedback, and the BIPs have been
+  assigned numbers:
+
+  * *[BIP181][bip181 utreexo]*: Describes the Utreexo accumulator and its
+    operations.
+
+  * *[BIP182][bip182 utreexo]*: Defines the rules for validating blocks and
+    transactions using the Utreexo accumulator.
+
+  * *[BIP183][bip183 utreexo]*: Defines the changes needed for nodes to exchange
+    an inclusion proof, confirming the UTXOs being spent.
 
 {:#minfeerate}
 - **Lowering the minimum relay feerate:** ...
 
 {:#templatesharing}
-- **Peer block template sharing:** ...
+
+- **Peer block template sharing:** Anthony Towns proposed a [way][news366 templ
+  share] to improve the effectiveness of compact block reconstruction in an
+  environment where peers have divergent mempool policies. The proposal would
+  allow full nodes to send block templates to their peers, which in turn would
+  cache those transactions that would otherwise be rejected by their mempool
+  policies. The provided template contains transaction identifiers encoded in
+  the same format used by [compact block relay][topic compact block relay].
+
+  Later, in August, Towns opened [BIPs #1937][] to formally [discuss the
+  proposal][news368 templ share] for block template sharing. During the
+  discussion, several developers raised concerns about privacy and potential
+  node fingerprinting. In October, Towns decided to [move the draft][news376
+  templ share] to the [Bitcoin Inquisition Numbers and Names Authority][binana
+  repo] (BINANA) repository to address these considerations and to refine the
+  document. The draft was given the code [BIN-2025-0002][bin].
 
 {:#fuzzing}
-- **Differential fuzzing of Bitcoin and LN implementations:** ...
+
+- **Differential fuzzing of Bitcoin and LN implementations:** Bruno Garcia gave
+  an update on the [progress and results][news369 fuzz] obtained by
+  [bitcoinfuzz][], a library to perform fuzz testing of Bitcoin and Lightning
+  implementations and libraries. Using the library, developers reported more
+  than 35 bugs in Bitcoin-related projects, such as btcd, rust-bitcoin,
+  rust-miniscript, LND, and more.
+
+  Garcia also highlighted the importance of differential fuzzing in the
+  ecosystem. Developers are able to discover bugs in projects that do not
+  implement fuzzing at all, catch discrepancies across Bitcoin implementations,
+  and find gaps in the Lightning specifications.
+
+  Finally, Garcia encouraged maintainers to integrate more projects into
+  bitcoinfuzz, expanding support for differential fuzzing, and provided possible
+  directions for the future development of the project.
 
 ## September
 
 {:#simplicity}
-- **Details about the design of Simplicity:** ...
+
+- **Details about the design of Simplicity:** After the release of
+  [Simplicity][topic simplicity] on the Liquid Network, Russell O'Connor made
+  three posts to Delving Bitcoin to discuss the [philosophy and the
+  design][simplicity 370] behind the language:
+
+  * *[Part I][simplicity I post]* examines the three major forms of composition
+    for transforming basic operations into complex ones.
+
+  * *[Part II][simplicity II post]* dives into Simplicity’s type system
+    combinators and basic expressions.
+
+  * *[Part III][simplicity III post]* explains how to build logical operations
+    starting from bits up to cryptographic operations using just computational
+    Simplicity combinators.
+
+  Since September, two more posts have been published to Delving Bitcoin, [Part
+  IV][simplicity IV post], discussing side effects, and [Part V][simplicity V
+  post], dealing with programs and addresses.
 
 {:#eclipseattacks}
 - **Partitioning and eclipse attacks using BGP interception:** ...
@@ -420,6 +565,31 @@ Friday publication schedule on January 2nd.*
 
 [newsletters]: /en/newsletters/
 [Human Rights Foundation]: https://hrf.org
+[news358 selfish miner]: /en/newsletters/2025/06/13/#calculating-the-selfish-mining-danger-threshold
+[selfish miner paper]: https://arxiv.org/pdf/1311.0243
+[news360 fingerprinting]: /en/newsletters/2025/06/27/#fingerprinting-nodes-using-addr-messages
+[news359 bitvm3]: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
+[delbrag rubin]: https://rubin.io/bitcoin/2025/04/04/delbrag/
+[garbled circuits wiki]: https://en.wikipedia.org/wiki/Garbled_circuit
+[news369 eagen]: /en/newsletters/2025/08/29/#garbled-locks-for-accountable-computing-contracts
+[eagen paper]: https://eprint.iacr.org/2025/1485
+[news351 dahlias]: /en/newsletters/2025/04/25/#interactive-aggregate-signatures-compatible-with-secp256k1
+[dahlias paper]: https://eprint.iacr.org/2025/692.pdf
+[news344 fork guide]: /en/newsletters/2025/03/07/#bitcoin-forking-guide
+[fork guide red]: https://ajtowns.github.io/bfg/research.html
+[fork guide pue]: https://ajtowns.github.io/bfg/power.html
+[fork guide ie]: https://ajtowns.github.io/bfg/industry.html
+[fork guide ir]: https://ajtowns.github.io/bfg/investor.html
+[news344 template mrkt]: /en/newsletters/2025/03/07/#private-block-template-marketplace-to-prevent-centralizing-mev
+[mevpool gh]: https://github.com/mevpool/mevpool/blob/0550f5d85e4023ff8ac7da5193973355b855bcc8/mevpool-marketplace.md
+[news 347 ln fees]: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
+[ln fees paper]: https://github.com/JohnLaw2/ln-spam-prevention
+[simplicity 370]: /en/newsletters/2025/09/05/#details-about-the-design-of-simplicity
+[simplicity I post]: https://delvingbitcoin.org/t/delving-simplicity-part-three-fundamental-ways-of-combining-computations/1902
+[simplicity II post]: https://delvingbitcoin.org/t/delving-simplicity-part-combinator-completeness-of-simplicity/1935
+[simplicity III post]: https://delvingbitcoin.org/t/delving-simplicity-part-building-data-types/1956
+[simplicity IV post]: https://delvingbitcoin.org/t/delving-simplicity-part-two-side-effects/2091
+[simplicity V post]: https://delvingbitcoin.org/t/delving-simplicity-part-programs-and-addresses/2113
 [news315 compact blocks]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
 [news339 compact blocks]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
 [news365 compact blocks]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
@@ -428,6 +598,17 @@ Friday publication schedule on January 2nd.*
 [28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
 [news340 lneas]: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
 [news341 lneas]: /en/newsletters/2025/02/14/#continued-discussion-about-ephemeral-anchor-scripts-for-ln
+[news366 utreexo]: /en/newsletters/2025/08/08/#draft-bips-proposed-for-utreexo
+[bip181 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0181.md
+[bip182 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0182.md
+[bip183 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0183.md
+[news366 templ share]: /en/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
+[news368 templ share]: /en/newsletters/2025/08/22/#draft-bip-for-block-template-sharing
+[news376 templ share]: /en/newsletters/2025/10/17/#continued-discussion-of-block-template-sharing
+[binana repo]: https://github.com/bitcoin-inquisition/binana
+[bin]: https://github.com/bitcoin-inquisition/binana/blob/master/2025/BIN-2025-0002.md
+[news369 fuzz]: /en/newsletters/2025/08/29/#update-on-differential-fuzzing-of-bitcoin-and-ln-implementations
+[bitcoinfuzz]: https://github.com/bitcoinfuzz/bitcoinfuzz
 [news375 arb data]: /en/newsletters/2025/10/10/#theoretical-limitations-on-embedding-data-in-the-utxo-set
 [news379 arb data]: /en/newsletters/2025/11/07/#multiple-discussions-about-restricting-data
 [news 338]: /en/newsletters/2025/01/24/#bitcoin-core-31397
