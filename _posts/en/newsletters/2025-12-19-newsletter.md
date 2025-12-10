@@ -159,7 +159,8 @@ excerpt: >
   [posted][selfish miner post] to Delving Bitcoin an expansion of the math from the 2013 [paper][selfish miner paper] that gave the [selfish mining attack][topic selfish mining] its name. Poinsot focused on reproducing one of the conclusions of the paper, proving that a dishonest miner controlling 33% of the total network hashrate, with no additional advantages, can become marginally more profitable on a long term basis than the miners controlling 67% of it.
 
 {:#fingerprinting}
-- **Fingerprinting nodes using addr messages:** ...
+- **Fingerprinting nodes using addr messages:** Daniela Brozzoni [posted][fingerprinting post]
+  to Delving Bitcoin about research she conducted, together with developer Naiyoma, into identifying the same node on multiple networks using the `addr` messages, which are sent by the nodes, through the P2P protocol, to advertise other potential peers. Brozzoni and Naiyoma were able to fingerprint individual nodes using details from their specific address messages, allowing them to identify the same node running on multiple networks (such as IPv4 and [Tor][topic anonymity networks]). Researchers suggested two possible mitigations, either removing timestamps from address messages or, if the timestamps are kept, randomizing them slightly to make them less specific to particular nodes. 
 
 {:#garbledlocks}
 - **Garbled locks:** ...
@@ -334,3 +335,4 @@ Friday publication schedule on January 2nd.*
 [erlay candidate peers]: https://delvingbitcoin.org/t/erlay-select-fanout-candidates-at-relay-time-instead-of-at-relay-scheduling-time/1418
 [selfish miner post]: https://delvingbitcoin.org/t/where-does-the-33-33-threshold-for-selfish-mining-come-from/1757
 [selfish miner paper]: https://arxiv.org/pdf/1311.0243
+[fingerprinting post]: https://delvingbitcoin.org/t/fingerprinting-nodes-via-addr-requests/1786
