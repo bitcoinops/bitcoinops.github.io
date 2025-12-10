@@ -155,7 +155,8 @@ excerpt: >
 ## June
 
 {:#selfishmining}
-- **Calculating the selfish mining danger threshold:** ...
+- **Calculating the selfish mining danger threshold:** Antoine Poinsot
+  [posted][selfish miner post] to Delving Bitcoin an expansion of the math from the 2013 [paper][selfish miner paper] that gave the [selfish mining attack][topic selfish mining] its name. Poinsot focused on reproducing one of the conclusions of the paper, proving that a dishonest miner controlling 33% of the total network hashrate, with no additional advantages, can become marginally more profitable on a long term basis than the miners controlling 67% of it.
 
 {:#fingerprinting}
 - **Fingerprinting nodes using addr messages:** ...
@@ -331,3 +332,5 @@ Friday publication schedule on January 2nd.*
 [erlay fanout amount]: https://delvingbitcoin.org/t/erlay-find-acceptable-target-number-of-peers-to-fanout-to/1420
 [erlay transaction received]: https://delvingbitcoin.org/t/erlay-define-fanout-rate-based-on-the-transaction-reception-method/1422
 [erlay candidate peers]: https://delvingbitcoin.org/t/erlay-select-fanout-candidates-at-relay-time-instead-of-at-relay-scheduling-time/1418
+[selfish miner post]: https://delvingbitcoin.org/t/where-does-the-33-33-threshold-for-selfish-mining-come-from/1757
+[selfish miner paper]: https://arxiv.org/pdf/1311.0243
