@@ -163,7 +163,10 @@ excerpt: >
   to Delving Bitcoin about research she conducted, together with developer Naiyoma, into identifying the same node on multiple networks using the `addr` messages, which are sent by the nodes, through the P2P protocol, to advertise other potential peers. Brozzoni and Naiyoma were able to fingerprint individual nodes using details from their specific address messages, allowing them to identify the same node running on multiple networks (such as IPv4 and [Tor][topic anonymity networks]). Researchers suggested two possible mitigations, either removing timestamps from address messages or, if the timestamps are kept, randomizing them slightly to make them less specific to particular nodes. 
 
 {:#garbledlocks}
-- **Garbled locks:** ...
+- **Garbled locks:** Robin Linus [posted][bitvm3 post] to Delving Bitcoin to announce a
+  significant reduction in the amount of onchain space required by [BitVM][topic acc]-style contracts. Based on an [idea][delbrag rubin] by Jeremy Rubin, the new approach leverages [Garbled Circuits][[garbled circuits wiki]], a new cryptographic primitive that makes onchain SNARK verification  a thousand times more efficient with respect to BitVM2 implementation, at the cost of requiring a multi-terabyte offchain setup.
+
+  On the same topic, Liam Eagen [posted][eagen ml] to the Bitcoin-Dev mailing list about a [paper][[eagen paper]] he has written about a new mechanism for creating [accountable computing contracts][topic acc] based on Garbled Circuits, called Glock (Garbled Locks). While the approach is similar, Eagen's research is indipendent from Linus'. According to Eagen, Glock allows for a 550x reduction of onchain data compared to BitVM2.
 
 <div markdown="1" class="callout" id="softforks">
 
@@ -336,3 +339,8 @@ Friday publication schedule on January 2nd.*
 [selfish miner post]: https://delvingbitcoin.org/t/where-does-the-33-33-threshold-for-selfish-mining-come-from/1757
 [selfish miner paper]: https://arxiv.org/pdf/1311.0243
 [fingerprinting post]: https://delvingbitcoin.org/t/fingerprinting-nodes-via-addr-requests/1786
+[bitvm3 post]: https://delvingbitcoin.org/t/garbled-circuits-and-bitvm3/1773
+[delbrag rubin]: https://rubin.io/bitcoin/2025/04/04/delbrag/
+[garbled circuits wiki]: https://en.wikipedia.org/wiki/Garbled_circuit
+[eagen ml]: https://mailing-list.bitcoindevs.xyz/bitcoindev/Aq_-LHZtVdSN5nODCryicX2u_X1yAQYurf9UDZXDILq6s4grUOYienc4HH2xFnAohA69I_BzgRCSKdW9OSVlSU9d1HYZLrK7MS_7wdNsLmo=@protonmail.com/
+[eagen paper]: https://eprint.iacr.org/2025/1485
