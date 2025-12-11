@@ -148,14 +148,75 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
+- [Bitcoin Core #33528][] prevents the wallet from spending outputs of
+  unconfirmed [TRUC][topic v3 transaction relay] transactions with an
+  unconfirmed ancestor, to comply with TRUC policy limits. Previously, the
+  wallet could create such transactions, but they were rejected when
+  broadcast.
+
+- [Bitcoin Core #33723][] removes `dnsseed.bitcoin.dashjr-list-of-p2p-nodes.us`
+  from the list of DNS seeds. Maintainers found that it was the only seed
+  omitting newer Bitcoin Core versions (29 and 30), violating the policy stating
+  "seed results must consist exclusively of fairly selected and functioning
+  Bitcoin nodes from the public network”.
+
+- [Bitcoin Core #33993][] updates the help text for the `stopatheight` option,
+  clarifying that the target height specified to stop syncing is only an
+  estimate and that blocks after that height may still be processed during
+  shutdown.
+
+- [Bitcoin Core #33553][] adds a warning message indicating potential database
+  corruption when headers are received for blocks that were previously marked as
+  invalid. This helps users realize they might be stuck in a header sync loop.
+  This PR also enables a fork detection warning message that was previously
+  disabled for IBD.
+
+- [Eclair #3220][] extends the existing `spendFromChannelAddress` helper to
+  [taproot channels][topic simple taproot channels], adding a
+  `spendfromtaprootchanneladdress` endpoint that allows users to cooperatively
+  spend UTXOs accidentally sent to [taproot][topic taproot] channel funding
+  addresses, with [MuSig2][topic musig] signatures.
+
+- [LDK #4231][] stops force-closing [zero-conf channels][topic zero-conf
+  channels] when a block reorganization unconfirms the channel funding
+  transaction. LDK has a mechanism to force-close locked channels that become
+  unconfirmed due to the risk of double-spending. However, the trust model is
+  different for zero-conf channels. The SCID change is also now properly handled
+  in this edge case.
+
+- [LND #10396][] tightens the router’s heuristic for detecting LSP-assisted
+  nodes: invoices with a public destination node or whose route hint destination
+  hops are all private are now treated as normal nodes, while those with a
+  private destination and at least one public destination hop are classified as
+  LSP-backed. Previously, the looser heuristic could misclassify nodes as
+  LSP-assisted, resulting in more probing failures. Now, when an LSP-assisted
+  node is detected, LND probes up to three candidate LSPs and uses the
+  worst-case route (highest fees and CLTV) to provide conservative fee
+  estimates.
+
+- [BTCPay Server #7022][] introduces an API for the `Subscriptions` feature (see
+  [Newsletter #379][news379 btcpay]), enabling merchants to create and manage
+  offerings, plans, subscribers, and checkouts. About a dozen endpoints have been
+  added for each specific operation.
+
+- [Rust Bitcoin #5379][] adds a method for constructing [Pay-to-Anchor
+  (P2A)][topic ephemeral anchors] addresses, to complement the existing method
+  for verifying P2A addresses.
+
+- [BIPs #2050][] updates [BIP390][], which specifies [MuSig2][topic musig]
+  descriptors, to allow `musig()` key expressions inside of a `rawtr()` in
+  addition to the already allowed `tr()`, aligning the description with existing
+  test vectors and Bitcoin Core’s descriptor implementation.
+
 ## Happy holidays!
 
 This is Bitcoin Optech's final regular newsletter of the year.  On
 Friday, December 19th, we'll publish our eighth annual year-in-review
 newsletter.  Regular publication will resume on Friday, January 2nd.
 
-{% include snippets/recap-ad.md when="2025-12-09 17:30" %}
+{% include snippets/recap-ad.md when="2025-12-16 17:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="33528,33723,33993,33553,3220,4231,10396,7022,5379,2050" %}
 [morehouse delving]: https://delvingbitcoin.org/t/disclosure-critical-vulnerabilities-fixed-in-lnd-0-19-0/2145
 [lnd vln1]: https://morehouse.github.io/lightning/lnd-infinite-inbox-dos/
 [lnd vln2]: https://morehouse.github.io/lightning/lnd-excessive-failback-exploit-2/
@@ -178,3 +239,4 @@ newsletter.  Regular publication will resume on Friday, January 2nd.
 [news273 329 lib]: /en/newsletters/2023/10/18/#bip-329-python-library-released
 [bip329 python 1.0.0]: https://github.com/Labelbase/python-bip329/releases/tag/1.0.0
 [bitcoin safe 1.6.0]: https://github.com/andreasgriffin/bitcoin-safe/releases/tag/1.6.0
+[news379 btcpay]: /en/newsletters/2025/11/07/#btcpay-server-6922
