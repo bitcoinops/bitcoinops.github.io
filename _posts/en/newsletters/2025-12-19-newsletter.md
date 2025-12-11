@@ -164,9 +164,9 @@ excerpt: >
 
 {:#garbledlocks}
 - **Garbled locks:** Robin Linus [posted][bitvm3 post] to Delving Bitcoin to announce a
-  significant reduction in the amount of onchain space required by [BitVM][topic acc]-style contracts. Based on an [idea][delbrag rubin] by Jeremy Rubin, the new approach leverages [Garbled Circuits][garbled circuits wiki], a new cryptographic primitive that makes onchain SNARK verification  a thousand times more efficient with respect to BitVM2 implementation, at the cost of requiring a multi-terabyte offchain setup.
+  significant reduction in the amount of onchain space required by [BitVM][topic acc]-style contracts. Based on an [idea][delbrag rubin] by Jeremy Rubin, the new approach leverages [Garbled Circuits][garbled circuits wiki], a cryptographic primitive that makes onchain SNARK verification a thousand times more efficient than the BitVM2 implementation, at the cost of requiring a multi-terabyte offchain setup.
 
-  On the same topic, Liam Eagen [posted][eagen ml] to the Bitcoin-Dev mailing list about a [paper][eagen paper] he has written about a new mechanism for creating [accountable computing contracts][topic acc] based on Garbled Circuits, called Glock (Garbled Locks). While the approach is similar, Eagen's research is indipendent from Linus'. According to Eagen, Glock allows for a 550x reduction of onchain data compared to BitVM2.
+  On the same topic, Liam Eagen [posted][eagen ml] to the Bitcoin-Dev mailing list about a [paper][eagen paper] he has written about a new mechanism for creating [accountable computing contracts][topic acc] based on Garbled Circuits, called Glock (Garbled Locks). While the approach is similar, Eagen's research is independent from Linus'. According to Eagen, Glock allows for a 550x reduction of onchain data compared to BitVM2.
 
 <div markdown="1" class="callout" id="softforks">
 
