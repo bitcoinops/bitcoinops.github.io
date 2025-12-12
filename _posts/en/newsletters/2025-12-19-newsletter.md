@@ -134,7 +134,8 @@ excerpt: >
 - **SwiftSync speedup for initial block download:** ...
 
 {:#dahlias}
-- **DahLIAS interactive aggregate signatures:** ...
+- **DahLIAS interactive aggregate signatures:** Jonas Nick, Tim Ruffing, Yannick Seurin
+  [posted][dahlias post] to the Bitcoin-Dev mailing list to announce a [paper][dahlias paper] they’ve written about DahLIAS, the first interactive 64-byte aggregate signature scheme compatible with the cryptographic primitives already used by Bitcoin, called secp256k1. Aggregate signatures are the cryptographic requirement for [cross-input signature aggregation][topic cisa] (CISA), a feature proposed for Bitcoin that could reduce the size of transactions with multiple inputs, thus reducing the cost of many different types of spending, [coinjoins][topic coinjoin] and [payjoins][topic payjoin] included.
 
 <div markdown="1" class="callout" id="quantum">
 
@@ -344,3 +345,5 @@ Friday publication schedule on January 2nd.*
 [garbled circuits wiki]: https://en.wikipedia.org/wiki/Garbled_circuit
 [eagen ml]: https://mailing-list.bitcoindevs.xyz/bitcoindev/Aq_-LHZtVdSN5nODCryicX2u_X1yAQYurf9UDZXDILq6s4grUOYienc4HH2xFnAohA69I_BzgRCSKdW9OSVlSU9d1HYZLrK7MS_7wdNsLmo=@protonmail.com/
 [eagen paper]: https://eprint.iacr.org/2025/1485
+[dahlias post]: https://mailing-list.bitcoindevs.xyz/bitcoindev/be3813bf-467d-4880-9383-2a0b0223e7e5@gmail.com/
+[dahlias paper]: https://eprint.iacr.org/2025/692.pdf
