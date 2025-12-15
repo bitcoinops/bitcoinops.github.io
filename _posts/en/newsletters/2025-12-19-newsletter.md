@@ -312,7 +312,21 @@ denial-of-service vulnerability.
 ## April
 
 {:#swiftsync}
-- **SwiftSync speedup for initial block download:** ...
+
+- **SwiftSync speedup for initial block download:** Sebastian Falbesoner
+  [posted][news349 swiftsync] to Delving Bitcoin a sample implementation and
+  results of a >5x speedup of _initial block download_ (IBD) through SwiftSync,
+  an idea initially [proposed][swiftsync ruben gh] by Ruben Somsen.
+
+  The speedup is achieved during IBD by only adding coins to the UTXO set when
+  they will still be in the UTXO set at the end of IBD. This knowledge of the
+  final UTXO set state is compactly encoded in a minimally trusted,
+  pre-generated hints file. In addition to minimizing overhead of chainstate
+  operations, SwiftSync enables further performance improvements by allowing
+  parallel block validation.
+
+  Work on a Rust implementation was [announced][swiftsync rust impl] in
+  September.
 
 {:#dahlias}
 
@@ -669,6 +683,52 @@ powerful.
   bitcoinfuzz, expanding support for differential fuzzing, and provided possible
   directions for the future development of the project.
 
+<div markdown="1" class="callout" id="stratumv2">
+
+## Summary 2025: Stratum v2
+
+[Stratum v2][topic pooled mining] is a mining protocol designed to replace the
+original Stratum protocol used between miners and mining pools. One of its key
+advantages is that it can allow individual pool members to choose which
+transactions to include in their blocks, improving Bitcoin's censorship
+resistance by distributing transaction selection across many independent miners.
+
+Throughout 2025, Bitcoin Core received several updates to better support Stratum
+v2 implementations. Some improvements earlier in the year were focused on the
+mining RPCs, [upgrading them][news339 sv2fields] with `nBits`, `target`, and
+`next` fields, useful for constructing and validating block templates.
+
+The most significant work focused on Bitcoin Core's experimental inter-process
+communication (IPC) interface, which allows an external Stratum v2 service to
+interact with Bitcoin Core's block validation without using the slower JSON-RPC
+interface. A new [`waitNext()`][news346 waitnext] method was introduced to the
+`BlockTemplate` interface that returns a new template only when the chain tip
+changes or when mempool fees increase significantly, reducing unnecessary
+template generation. [`checkBlock`][news360 checkblock] was then added, enabling
+pools to validate miner-provided templates via IPC. IPC was also
+[enabled][news369 ipc] by default, and the new `bitcoin-node` and other
+multiprocess binaries were added to release builds. A new `bitcoin` wrapper
+executable was [added][news357 wrapper] to easily discover and launch an
+increasing number of binaries, and a follow-up [implemented][news374 ipcauto]
+automatic multiprocess selection, removing the need for the `-m` startup flag.
+This year's IPC improvements were wrapped up by [reducing CPU
+consumption][news377 ipclog] for multiprocess logging and [ensuring][news381
+witness] that blocks submitted via IPC have their witness commitment
+revalidated.
+
+[Bitcoin Core 30.0][news376 30], released in October, was the first release to
+include the experimental IPC mining interface, first [introduced][news323
+miningipc] last year.
+
+In June, StarkWare [demonstrated][news359 starkware] a modified Stratum v2
+client using STARK proofs to prove that a block's fees belong to a valid
+template without revealing the block's transactions. Two new Stratum v2-based
+mining pools also launched: [Hashpool][news346 hashpool], which represents
+mining shares as [ecash][topic ecash] tokens, and [DMND][news346 dmnd], which
+expanded from solo mining to pooled mining.
+
+</div>
+
 ## September
 
 {:#simplicity}
@@ -850,6 +910,22 @@ powerful.
   of LLMs in crafting BIPs. As the year closes out, all review has been
   addressed, and BIP3 is [seeking rough consensus][bip3 feedback addressed] for
   activation again.
+
+{:#kernelapi}
+
+- **Bitcoin Kernel C API introduced:** [Bitcoin Core #30595][news380 kernel]
+  introduced a C header that serves as an API for [`bitcoinkernel`][Bitcoin Core
+  #27587], enabling external projects to interface with Bitcoin Core’s block
+  validation and chainstate logic via a reusable C library. Currently, it is
+  limited to operations on blocks and has feature parity with the now-defunct
+  `libbitcoin-consensus` (see [Newsletter #288][news288 lib]).
+
+  Use cases for `bitcoinkernel` include alternative node implementations, an
+  Electrum server index builder, a [silent payment][topic silent payments]
+  scanner, a block analysis tool, and a script validation accelerator, among
+  others. Several language bindings are in development, including for
+  [Rust][kernel rust], [Go][kernel go], [JDK][kernel jdk], [C#][kernel csharp],
+  and [Python][kernel python].
 
 <div markdown="1" class="callout" id="optech">
 
@@ -1074,6 +1150,15 @@ Friday publication schedule on January 2nd.*
 [mevpool gh]: https://github.com/mevpool/mevpool/blob/0550f5d85e4023ff8ac7da5193973355b855bcc8/mevpool-marketplace.md
 [news 347 ln fees]: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
 [ln fees paper]: https://github.com/JohnLaw2/ln-spam-prevention
+[news349 swiftsync]: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
+[swiftsync ruben gh]: https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd
+[swiftsync rust impl]: https://delvingbitcoin.org/t/swiftsync-speeding-up-ibd-with-pre-generated-hints-poc/1562/18
+[news288 lib]: /en/newsletters/2024/02/07/#bitcoin-core-29189
+[kernel rust]: https://github.com/sedited/rust-bitcoinkernel
+[kernel go]: https://github.com/stringintech/go-bitcoinkernel
+[kernel jdk]: https://github.com/yuvicc/bitcoinkernel-jdk
+[kernel csharp]: https://github.com/janb84/BitcoinKernel.NET
+[kernel python]: https://github.com/stickies-v/py-bitcoinkernel
 [gcc update]: /en/newsletters/2025/02/07/#updates-to-cleanup-soft-fork-proposal
 [gcc bip]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
 [news thikcs]: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
@@ -1103,6 +1188,17 @@ Friday publication schedule on January 2nd.*
 [simplicity III post]: https://delvingbitcoin.org/t/delving-simplicity-part-building-data-types/1956
 [simplicity IV post]: https://delvingbitcoin.org/t/delving-simplicity-part-two-side-effects/2091
 [simplicity V post]: https://delvingbitcoin.org/t/delving-simplicity-part-programs-and-addresses/2113
+[news339 sv2fields]: /en/newsletters/2025/01/31/#bitcoin-core-31583
+[news346 waitnext]: /en/newsletters/2025/03/21/#bitcoin-core-31283
+[news360 checkblock]: /en/newsletters/2025/06/27/#bitcoin-core-31981
+[news359 starkware]: /en/newsletters/2025/06/20/#stratum-v2-stark-proof-demo
+[news369 ipc]: /en/newsletters/2025/08/29/#bitcoin-core-31802
+[news374 ipcauto]: /en/newsletters/2025/10/03/#bitcoin-core-33229
+[news376 30]: /en/newsletters/2025/10/17/#bitcoin-core-30-0
+[news377 ipclog]: /en/newsletters/2025/10/24/#bitcoin-core-33517
+[news381 witness]: /en/newsletters/2025/11/21/#bitcoin-core-33745
+[news346 hashpool]: /en/newsletters/2025/03/21/#hashpool-v0-1-tagged
+[news323 miningipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
 [news340 richter ggt]: /en/newsletters/2025/02/07/#discovery-of-previous-research-for-finding-optimal-cluster-linearization
 [news341 pr-review-club txgraph]: /en/newsletters/2025/02/14/#bitcoin-core-pr-review-club
 [news352 wuille linearization techniques]: /en/newsletters/2025/05/02/#comparison-of-cluster-linearization-techniques
@@ -1143,6 +1239,9 @@ Friday publication schedule on January 2nd.*
 [28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
 [news340 lneas]: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
 [news341 lneas]: /en/newsletters/2025/02/14/#continued-discussion-about-ephemeral-anchor-scripts-for-ln
+[news380 kernel]: /en/newsletters/2025/11/14/#bitcoin-core-30595
+[news357 wrapper]: /en/newsletters/2025/06/06/#bitcoin-core-31375
+[news346 dmnd]: /en/newsletters/2025/03/21/#dmnd-launching-pooled-mining
 [news341 bip3 assigned]: /en/newsletters/2025/02/14/#updated-proposal-for-updated-bip-process
 [news382 motion to activate bip3]: /en/newsletters/2025/11/28/#motion-to-activate-bip3
 [bip3 feedback addressed]: https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc/m/8HTeL2_iAQAJ
