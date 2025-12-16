@@ -73,10 +73,21 @@ excerpt: >
 ## January
 
 {:#chilldkg}
-- **Updated ChillDKG draft:** ...
+
+- **Updated ChillDKG draft:** Tim Ruffing and Jonas Nick
+  [updated][news335 chilldkg] their work on a distributed key generation
+  protocol (DKG) for use with the FROST [threshold signature][topic
+  threshold signature] scheme. ChillDKG aims to provide similar
+  recoverability features to existing descriptor wallets.
 
 {:#offchaindlcs}
-- **Offchain DLCs:** ...
+
+- **Offchain DLCs:** Developer Conduition [posted about][news offchain dlc] a
+  new offchain DLC ([discreet log contract][topic dlc]) mechanism that enables
+  participants to collaborate on the creation and extension of a DLC factory,
+  which allows iterative DLCs that roll along until one party chooses to
+  resolve onchain. This contrasts with [prior work][news dlc channels] on
+  offchain DLCs which required interaction at each roll of the contract.
 
 {:#compactblockstats}
 
@@ -124,7 +135,18 @@ excerpt: >
   assumptions.
 
 {:#probpayments}
-- **Probabilistic payments:** ...
+
+- **Probabilistic payments:** Oleksandr Kurbatov sparked a
+  [discussion][delving random] on Delving Bitcoin of methods to produce random
+  outcomes from Bitcoin scripts. The [original][ok random] method uses
+  zero-knowledge proofs in a challenger/verifier arrangement and now has a
+  [published proof of concept][random poc]. Other methods were discussed,
+  [including one][waxwing random] leveraging the tree structure of
+  taproot, and a [method][rl random] that scripted the XOR of bits
+  represented by a sequence of different hashing functions to directly produce
+  an unpredictable bitstring. There was [discussion][dh random] of whether
+  such random transaction outcomes could be used to produce probabilistic
+  HTLCs as an alternative to [trimmed HTLCs][topic trimmed htlc] for small amounts in LN.
 
 <div markdown="1" class="callout" id="vulns">
 
@@ -263,14 +285,99 @@ excerpt: >
 
 ## Summary 2025: Soft fork proposals
 
-...
+This year saw a bevvy of discussions around soft fork proposals, ranging from
+the tightly scoped and minimally impactful, to the broadly scoped and
+powerful.
+
+- *Transaction templates:* Several soft fork packages were discussed around
+  transaction templates. With similar scope and capability are CTV+CSFS
+  ([BIP119][]+[BIP348][]) and the [taproot-native re-bindable signature
+  package][news thikcs] ([`OP_TEMPLATEHASH`][BIPs #1974]+[BIP348][]+[BIP349][]).
+  These represent the minimal capability enhancement for Bitcoin Script to
+  enable both re-bindable signatures (signatures that do not commit to spending
+  a specific UTXO), and pre-commitment to spending a UTXO to a specific next
+  transaction (sometimes called an equality [covenant][topic covenants]). If
+  activated, they would enable [LN-Symmetry][ctv csfs symmetry] and [simple CTV
+  vaults][ctv vaults], [reduce DLC signature requirements][ctv dlcs], [reduce
+  interactivity for Arks][ctv csfs arks], [simplify PTLCs][ctv csfs ptlcs], and
+  more. One difference between these proposals is that `OP_TEMPLATEHASH` cannot
+  be used in the [BitVM sibling hack][ctv csfs bitvm] where CTV can, because
+  `OP_TEMPLATEHASH` does not commit to `scriptSigs`.
+
+  By including [OP_CHECKSIGFROMSTACK][topic OP_CHECKSIGFROMSTACK], these
+  proposals also enable multi-commitments (committing to multiple related and
+  optionally ordered values in a locking or spend script) similar to merkle
+  trees through [Key Laddering][rubin key ladder]. The updated [LNHANCE][lnhance
+  update] proposal includes `OP_PAIRCOMMIT` ([BIPs #1699][]) to enable
+  multi-commitments without the additional script size and validation cost
+  required for Key Laddering. Multi-commitments are useful in LN-Symmetry,
+  complex delegations, and more.
+
+  Some developers [expressed frustration][ctv csfs letter] about the (from their
+  perspective) slow progress toward a soft fork, but the volume of discussion
+  around this category of proposal suggests that interest and enthusiasm remain
+  high.
+
+- *Consensus cleanup:* The [consensus cleanup][topic consensus cleanup] proposal
+  was [updated][gcc update] based on feedback and additional research, a [draft
+  bip][gcc bip] was published and merged as [BIP54][] and now [includes an
+  implementation and test vectors][gcc impl tests]. Earlier this year, there was
+  [discussion][transitory cleanups] of whether such cleanups should be made
+  temporary in case of unintentional confiscation, but the necessity of
+  reevaluating such a [temporary soft fork][topic transitory soft forks] every
+  time it expires makes such temporary soft forks less appealing.
+
+- *Opcode proposals:* In addition to the bundled opcode proposals discussed
+  above, there were several other individual Script opcodes proposed or refined
+  in 2025.
+
+  `OP_CHECKCONTRACTVERIFY` (CCV) [became][ccv bip] [BIP443][] with [refined][ccv
+  semantics] semantics, especially around the flow of funds. CCV enables
+  reactive security [vaults][topic vaults], and a wide array of other contracts
+  by constraining the `scriptPubKey` and amount of an input or output in certain
+  ways. The `OP_VAULT` proposal was [withdrawn][vault withdrawn] in favor of
+  CCV. For more on CCV's applications, see [Optech's topic entry][topic MATT].
+
+  A set of 64-bit arithmetic opcodes were [proposed][64bit bip]. Bitcoin's
+  current math operations are (surprisingly) not able to operate on the full
+  range of Bitcoin input and output amounts. Combined with other opcodes to
+  access and/or constrain input/output amounts, these expanded arithmetic
+  operations could enable new Bitcoin wallet functionality.
+
+  A proposed [variant][txhash sponsors] of [`OP_TXHASH`][txhash] would enable
+  [transaction sponsorship][topic fee sponsorship].
+
+  Developers proposed two options for giving Script elliptic curve cryptographic
+  operations other than `OP_CHECKSIG` and related operations. One
+  [proposes][tweakadd] `OP_TWEAKADD` to enable constructing taproot
+  `scriptPubKeys`. The other [proposes][ecmath] more granular elliptic curve
+  opcodes, such as `EC_POINT_ADD`, motivated by similar functionality, but with
+  broader potential applications, such as new signature verifications or
+  multisignature functionality. Combining either of these proposals with
+  `OP_TXHASH` and 64-bit arithmetic (or similar opcodes) would enable
+  functionality similar to CCV.
+
+- *Script Restoration:* A series of four BIPs were [posted][gsr bips] for the
+  Script Restoration project. The Script changes and opcodes proposed in these
+  four BIPs would enable all of the functionality proposed in the above opcode
+  proposals while allowing more script expressivity.
 
 </div>
 
 ## July
 
 {:#ccdelegation}
-- **Chain code delegation:** ...
+
+- **Chain code delegation:** Jurvis Tan [posted][jt delegation] about his work
+  with Jesse Posner on a method (now called [Chain Code Delegation][BIPs
+  #2004]/BIP89) for collaborative custody where the customer, rather than the
+  partially trusted collaborative custody provider, generates (and keeps
+  private) the [BIP32][] chain code to derive child keys from the provider's
+  signing key. This way, the provider cannot derive the customer's full key
+  tree. The method can be used either blinded (for complete privacy while still
+  leveraging the provider's key security) or non-blinded (allowing the provider
+  to enforce policy at the cost of revealing the specific transactions being
+  signed to the provider).
 
 ## August
 
@@ -584,12 +691,38 @@ Friday publication schedule on January 2nd.*
 [mevpool gh]: https://github.com/mevpool/mevpool/blob/0550f5d85e4023ff8ac7da5193973355b855bcc8/mevpool-marketplace.md
 [news 347 ln fees]: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
 [ln fees paper]: https://github.com/JohnLaw2/ln-spam-prevention
+[gcc update]: /en/newsletters/2025/02/07/#updates-to-cleanup-soft-fork-proposal
+[gcc bip]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
+[news thikcs]: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
+[ctv csfs symmetry]: /en/newsletters/2025/04/04/#ln-symmetry
+[ctv csfs arks]: /en/newsletters/2025/04/04/#ark
+[ctv vaults]: /en/newsletters/2025/04/04/#vaults
+[ctv dlcs]: /en/newsletters/2025/04/04/#dlcs
+[lnhance update]: /en/newsletters/2025/12/05/#lnhance-soft-fork
+[rubin key ladder]: https://rubin.io/bitcoin/2024/12/02/csfs-ctv-rekey-symmetry/
+[ctv csfs ptlcs]: /en/newsletters/2025/07/04/#ctv-csfs-advantages-for-ptlcs
+[ctv csfs bitvm]: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
+[ctv csfs letter]: /en/newsletters/2025/07/04/#open-letter-about-ctv-and-csfs
+[gcc impl tests]: /en/newsletters/2025/11/07/#bip54-implementation-and-test-vectors
+[ccv bip]: /en/newsletters/2025/05/30/#bips-1793
+[ccv semantics]: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
+[vault withdrawn]: /en/newsletters/2025/05/16/#bips-1848
+[64bit bip]: /en/newsletters/2025/05/16/#proposed-bip-for-64-bit-arithmetic-in-script
+[txhash sponsors]: /en/newsletters/2025/07/04/#op-txhash-variant-with-support-for-transaction-sponsorship
+[txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
+[tweakadd]: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
+[ecmath]: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
+[gsr bips]: /en/newsletters/2025/10/03/#draft-bips-for-script-restoration
+[transitory cleanups]: /en/newsletters/2025/01/03/#transitory-soft-forks-for-cleanup-soft-forks
 [simplicity 370]: /en/newsletters/2025/09/05/#details-about-the-design-of-simplicity
 [simplicity I post]: https://delvingbitcoin.org/t/delving-simplicity-part-three-fundamental-ways-of-combining-computations/1902
 [simplicity II post]: https://delvingbitcoin.org/t/delving-simplicity-part-combinator-completeness-of-simplicity/1935
 [simplicity III post]: https://delvingbitcoin.org/t/delving-simplicity-part-building-data-types/1956
 [simplicity IV post]: https://delvingbitcoin.org/t/delving-simplicity-part-two-side-effects/2091
 [simplicity V post]: https://delvingbitcoin.org/t/delving-simplicity-part-programs-and-addresses/2113
+[news335 chilldkg]: /en/newsletters/2025/01/03/#updated-chilldkg-draft
+[news offchain dlc]: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
+[news dlc channels]: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
 [news315 compact blocks]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
 [news339 compact blocks]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
 [news365 compact blocks]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
@@ -598,6 +731,13 @@ Friday publication schedule on January 2nd.*
 [28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
 [news340 lneas]: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
 [news341 lneas]: /en/newsletters/2025/02/14/#continued-discussion-about-ephemeral-anchor-scripts-for-ln
+[delving random]: https://delvingbitcoin.org/t/emulating-op-rand/1409
+[random poc]: https://github.com/distributed-lab/op_rand
+[waxwing random]: /en/newsletters/2025/02/14/#suggested
+[ok random]: /en/newsletters/2025/02/07/#emulating-op-rand
+[rl random]: /en/newsletters/2025/03/14/#probabilistic-payments-using-different-hash-functions-as-an-xor-function
+[dh random]: /en/newsletters/2025/02/14/#asked
+[jt delegation]: /en/newsletters/2025/07/25/#chain-code-withholding-for-multisig-scripts
 [news366 utreexo]: /en/newsletters/2025/08/08/#draft-bips-proposed-for-utreexo
 [bip181 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0181.md
 [bip182 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0182.md
