@@ -41,7 +41,7 @@ examining recent changes to popular Bitcoin infrastructure software.
     balance.
 
   Morehouse urges users to upgrade to [LND 0.19.0][lnd version] or higher to
-  avoid denial of service and loss of funds.
+  avoid denial of service and loss of funds. {% assign timestamp="0:59" %}
 
 - **A virtualized secure enclave for hardware signing devices:** Salvatoshi
   [posted][vanadium post] to Delving Bitcoin about [Vanadium][vanadium github],
@@ -65,7 +65,7 @@ examining recent changes to popular Bitcoin infrastructure software.
   The project is still not deemed production-ready, and there are some known
   limitations, such as performance and UX. However, Salvatoshi asked developers
   to try it out and provide feedback to lay out the roadmap for
-  the project.
+  the project. {% assign timestamp="21:11" %}
 
 ## Changes to services and client software
 
@@ -77,12 +77,12 @@ wallets and services.*
   transaction visualization tool. It features interactive lessons on a variety
   of transaction types with plans for additional lessons on taproot,
   [PSBTs][topic psbt],
-  [HTLCs][topic htlc], [coinjoins][topic coinjoin], and covenant proposals.
+  [HTLCs][topic htlc], [coinjoins][topic coinjoin], and covenant proposals. {% assign timestamp="37:16" %}
 
 - **BlueWallet v7.2.2 released:**
   BlueWallet's [v7.2.2 release][bluewallet v7.2.2] adds support for
   [taproot][topic taproot] wallets, including sending, receiving, watch-only,
-  coin control, and hardware signing device features.
+  coin control, and hardware signing device features. {% assign timestamp="38:20" %}
 
 - **Stratum v2 updates:**
   Stratum v2 [v1.6.0][sv2 v1.6.0] rearchitects the Stratum v2 repositories,
@@ -90,23 +90,23 @@ wallets and services.*
   communication with unmodified Bitcoin Core 30.0 nodes using IPC (see
   [Newsletter #369][news369 ipc]). The releases also include web tools
   for [miners][sv2 wizard miners] and [developers][sv2 wizard devs] for testing,
-  among other features.
+  among other features. {% assign timestamp="38:42" %}
 
 - **Auradine announces Stratum v2 support:**
-  Auradine [announced][auradine tweet] support for Stratum v2 features in their miners.
+  Auradine [announced][auradine tweet] support for Stratum v2 features in their miners. {% assign timestamp="40:18" %}
 
 - **LDK Node 0.7.0 released:**
   [LDK Node 0.7.0][ldk node blog] adds experimental support for [splicing][topic
   splicing] and support for serving and paying static invoices for [async payments][topic
-  async payments], among other features and bugfixes.
+  async payments], among other features and bugfixes. {% assign timestamp="41:58" %}
 
 - **BIP-329 Python Library 1.0.0 release:**
   [BIP-329 Python Library][news273 329 lib] version [1.0.0][bip329 python 1.0.0]
-  supports [BIP329][]'s additional fields, including type validation and test coverage.
+  supports [BIP329][]'s additional fields, including type validation and test coverage. {% assign timestamp="43:30" %}
 
 - **Bitcoin Safe 1.6.0 released:**
   The [1.6.0 release][bitcoin safe 1.6.0] adds support for [compact block
-  filters][topic compact block filters] and [reproducible builds][topic reproducible builds].
+  filters][topic compact block filters] and [reproducible builds][topic reproducible builds]. {% assign timestamp="44:34" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -123,19 +123,19 @@ answers posted since our last update.*
   Pieter Wuille points out that in LN, users specify a public key as part of
   connecting to a peer so "There is no need for a trusted third party to attest
   to the correctness of that public key, because it is the user's responsibility
-  to configure the public key correctly".
+  to configure the public key correctly". {% assign timestamp="45:12" %}
 
 - [Why do different implementations produce different DER signatures for the same private key and hash?]({{bse}}129270)
   User dave_thompson_085 explains that different implementations can produce
   different valid ECDSA signatures because the algorithm is inherently
-  randomized unless RFC 6979 deterministic nonce generation is used.
+  randomized unless RFC 6979 deterministic nonce generation is used. {% assign timestamp="45:58" %}
 
 - [Why is the miniscript `after` value limited at 0x80000000?]({{bse}}129253)
   Murch answers that [miniscript][topic miniscript] limits `after(n)` time-based
   CLTV [timelocks][topic timelocks] to a maximum of 2<sup>31</sup> - 1
   (representing a time in the year 2038) because Bitcoin Script integers are
   4-byte *signed* values, while block-height based locktimes can exceed the 2038
-  threshold.
+  threshold. {% assign timestamp="49:27" %}
 
 ## Notable code and documentation changes
 
@@ -152,37 +152,37 @@ repo], and [BINANAs][binana repo]._
   unconfirmed [TRUC][topic v3 transaction relay] transactions with an
   unconfirmed ancestor, to comply with TRUC policy limits. Previously, the
   wallet could create such transactions, but they were rejected when
-  broadcast.
+  broadcast. {% assign timestamp="53:12" %}
 
 - [Bitcoin Core #33723][] removes `dnsseed.bitcoin.dashjr-list-of-p2p-nodes.us`
   from the list of DNS seeds. Maintainers found that it was the only seed
   omitting newer Bitcoin Core versions (29 and 30), violating the policy stating
   "seed results must consist exclusively of fairly selected and functioning
-  Bitcoin nodes from the public network”.
+  Bitcoin nodes from the public network”. {% assign timestamp="54:17" %}
 
 - [Bitcoin Core #33993][] updates the help text for the `stopatheight` option,
   clarifying that the target height specified to stop syncing is only an
   estimate and that blocks after that height may still be processed during
-  shutdown.
+  shutdown. {% assign timestamp="56:35" %}
 
 - [Bitcoin Core #33553][] adds a warning message indicating potential database
   corruption when headers are received for blocks that were previously marked as
   invalid. This helps users realize they might be stuck in a header sync loop.
   This PR also enables a fork detection warning message that was previously
-  disabled for IBD.
+  disabled for IBD. {% assign timestamp="59:54" %}
 
 - [Eclair #3220][] extends the existing `spendFromChannelAddress` helper to
   [taproot channels][topic simple taproot channels], adding a
   `spendfromtaprootchanneladdress` endpoint that allows users to cooperatively
   spend UTXOs accidentally sent to [taproot][topic taproot] channel funding
-  addresses, with [MuSig2][topic musig] signatures.
+  addresses, with [MuSig2][topic musig] signatures. {% assign timestamp="1:01:52" %}
 
 - [LDK #4231][] stops force-closing [zero-conf channels][topic zero-conf
   channels] when a block reorganization unconfirms the channel funding
   transaction. LDK has a mechanism to force-close locked channels that become
   unconfirmed due to the risk of double-spending. However, the trust model is
   different for zero-conf channels. The SCID change is also now properly handled
-  in this edge case.
+  in this edge case. {% assign timestamp="1:02:48" %}
 
 - [LND #10396][] tightens the router’s heuristic for detecting LSP-assisted
   nodes: invoices with a public destination node or whose route hint destination
@@ -192,21 +192,21 @@ repo], and [BINANAs][binana repo]._
   LSP-assisted, resulting in more probing failures. Now, when an LSP-assisted
   node is detected, LND probes up to three candidate LSPs and uses the
   worst-case route (highest fees and CLTV) to provide conservative fee
-  estimates.
+  estimates. {% assign timestamp="1:05:40" %}
 
 - [BTCPay Server #7022][] introduces an API for the `Subscriptions` feature (see
   [Newsletter #379][news379 btcpay]), enabling merchants to create and manage
   offerings, plans, subscribers, and checkouts. About a dozen endpoints have been
-  added for each specific operation.
+  added for each specific operation. {% assign timestamp="1:08:26" %}
 
 - [Rust Bitcoin #5379][] adds a method for constructing [Pay-to-Anchor
   (P2A)][topic ephemeral anchors] addresses, to complement the existing method
-  for verifying P2A addresses.
+  for verifying P2A addresses. {% assign timestamp="1:09:32" %}
 
 - [BIPs #2050][] updates [BIP390][], which specifies [MuSig2][topic musig]
   descriptors, to allow `musig()` key expressions inside of a `rawtr()` in
   addition to the already allowed `tr()`, aligning the description with existing
-  test vectors and Bitcoin Core’s descriptor implementation.
+  test vectors and Bitcoin Core’s descriptor implementation. {% assign timestamp="1:10:06" %}
 
 ## Happy holidays!
 
