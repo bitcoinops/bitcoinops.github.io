@@ -405,10 +405,51 @@ Bitcoin’s needs.
 ## May
 
 {:#clustermempool}
-- **Cluster mempool:** ...
+
+- **Cluster mempool:** Early in the year, Stefan Richter prompted excitement by
+  [discovering][news340 richter ggt] that an efficient algorithm for the
+  _maximum-ratio closure problem_ from a 1989 research paper could be applied to
+  cluster linearization. Pieter Wuille was already investigating a linear
+  programming approach as a potential improvement over the initial candidate-set
+  search and incorporated exploration of the minimal-cut-based approach as a
+  third option into his research. A little later, Wuille [walked][news341
+  pr-review-club txgraph] the Bitcoin Core PR Review Club through the newly
+  introduced `TxGraph` class which distills transactions to only weight, fees,
+  and relationships for efficient interaction with the mempool graph. In May,
+  Wuille published benchmarks for and described the [tradeoffs][news352 wuille
+  linearization techniques] of the three cluster linearization approaches,
+  determining that both advanced approaches were far more efficient than the
+  simple candidate-set search, but that his linear programming-based
+  spanning-forest linearization algorithm would be more practical than the
+  min-cut-based approach. In the fall, Abubakar Sadiq Ismail [described][news377
+  ismail template improvement] how the cluster mempool could be leveraged to
+  track when the mempool content had significantly improved upon a prior block
+  template. Near the end of the year, the cluster mempool implementation was
+  [completed][news382 cluster mempool completed], staging it to be released with
+  Bitcoin Core 31.0. Work to replace the initial candidate-set search
+  linearization algorithm with the spanning-forest linearization algorithm is
+  ongoing.
 
 {:#opreturn}
-- **Increasing or removing Bitcoin Core’s OP_RETURN size limit:** ...
+
+- **Increasing or removing Bitcoin Core’s OP_RETURN policy limit:** In April,
+  protocol developers discovered that the OP_RETURN output policy limits caused
+  a malincentive to embed data in payment outputs under some circumstances. In
+  addition to the observation that the original motivations for the policy had
+  been outgrown by the network, this prompted a proposal to drop the OP_RETURN
+  mempool policy limits. This proposition kicked off a heated [debate][news352
+  OR debate] about the efficacy of mempool policy, the purpose of Bitcoin, and
+  the responsibility of Bitcoin developers to regulate or refrain from
+  regulating usage of Bitcoin. Bitcoin Core contributors argued that economic
+  incentives made it unlikely that OP_RETURN outputs would see drastically more
+  use and considered the change to be fixing the incentive bug. Critics
+  interpreted the removal of the limits as an endorsement of data embedding, but
+  also agreed that it is economically unattractive to be used that way.
+  Eventually, the Bitcoin Core 30.0 release shipped an [updated policy][Bitcoin
+  Core #32406], to allow multiple OP_RETURN outputs and remove the policy limit
+  on size for OP_RETURN output scripts. After the release, several soft fork
+  proposals have been put forth, proposing to [curb data embedding](#arbdata) at
+  the consensus level.
 
 ## June
 
@@ -576,7 +617,21 @@ powerful.
     an inclusion proof, confirming the UTXOs being spent.
 
 {:#minfeerate}
-- **Lowering the minimum relay feerate:** ...
+
+- **Lowering the minimum relay feerate:** After lowering the minimum transaction
+  relay feerate had been [discussed several times][news340 lowering feerates] in
+  the past years, late in June, some miners suddenly started including
+  transactions paying less than the default minimum relay feerate of 1 sat/vbyte
+  in their blocks. By the end of July, [85% of the hashrate][mononautical 85]
+  had adopted lower minimum feerates and low-feerate transactions were
+  organically (albeit unreliably) propagating on the network due to node
+  operators manually configuring lower limits. By mid August, [over 30% of
+  confirmed transactions][mononautical 32] paid feerates lower than 1 sat/vbyte.
+  Bitcoin protocol developers observed that the high rate of missing low-feerate
+  transactions was [causing decreased compact block reconstruction rates][0xb10c
+  delving] and [proposed][news366 lower feerate] adjusting the default minimum
+  relay feerate. The Bitcoin Core 29.1 release lowered the default minimum relay
+  feerate to 0.1 sat/vbyte in early September.
 
 {:#templatesharing}
 
@@ -781,7 +836,20 @@ powerful.
   translate to significant profit impacts.
 
 {:#bip3}
-- **BIP3 and the BIP process:** ...
+
+- **BIP3 and the BIP process:** In 2025, work on an updated BIP process proposal
+  advanced significantly. BIP3 was [assigned][news341 bip3 assigned] a number in
+  January, published in February, and advanced to Proposed in April. Further
+  review was followed by a few more updates, in which SPDX License Expressions
+  were introduced, some Preamble headers were updated, and several
+  clarifications were worked into the proposals. In November, Murch [motioned to
+  activate][news382 motion to activate bip3] the proposal, by requesting that
+  readers review the proposal within another four weeks and comment on whether
+  BIP3 should be activated. A flurry of subsequent review resulted in a few more
+  improvements and the reversion of controversial guidance disallowing the use
+  of LLMs in crafting BIPs. As the year closes out, all review has been
+  addressed, and BIP3 is [seeking rough consensus][bip3 feedback addressed] for
+  activation again.
 
 <div markdown="1" class="callout" id="optech">
 
@@ -1035,6 +1103,11 @@ Friday publication schedule on January 2nd.*
 [simplicity III post]: https://delvingbitcoin.org/t/delving-simplicity-part-building-data-types/1956
 [simplicity IV post]: https://delvingbitcoin.org/t/delving-simplicity-part-two-side-effects/2091
 [simplicity V post]: https://delvingbitcoin.org/t/delving-simplicity-part-programs-and-addresses/2113
+[news340 richter ggt]: /en/newsletters/2025/02/07/#discovery-of-previous-research-for-finding-optimal-cluster-linearization
+[news341 pr-review-club txgraph]: /en/newsletters/2025/02/14/#bitcoin-core-pr-review-club
+[news352 wuille linearization techniques]: /en/newsletters/2025/05/02/#comparison-of-cluster-linearization-techniques
+[news377 ismail template improvement]: /en/newsletters/2025/10/24/#detecting-block-template-feerate-increases-using-cluster-mempool
+[news382 cluster mempool completed]: /en/newsletters/2025/11/28/#bitcoin-core-33629
 [news bip360 update]: /en/newsletters/2025/03/07/#update-on-bip360-pay-to-quantum-resistant-hash-p2qrh
 [news qr sha]: /en/newsletters/2025/04/04/#securely-proving-utxo-ownership-by-revealing-a-sha256-preimage
 [news qr cr]: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
@@ -1058,6 +1131,10 @@ Friday publication schedule on January 2nd.*
 [Cedarctic post]: /en/newsletters/2025/09/19/#partitioning-and-eclipse-attacks-using-bgp-interception
 [eclipse attack]: /en/topics/eclipse-attacks/
 [Antoine post]: /en/newsletters/2025/11/21/#modeling-stale-rates-by-propagation-delay-and-mining-centralization
+[news340 lowering feerates]: /en/newsletters/2025/02/07/#discussion-about-lowering-the-minimum-transaction-relay-feerate
+[mononautical 85]: https://x.com/mononautical/status/1949452588992414140
+[mononautical 32]: https://x.com/mononautical/status/1958559008698085551
+[news366 lower feerate]: /en/newsletters/2025/08/08/#continued-discussion-about-lowering-the-minimum-relay-feerate
 [news315 compact blocks]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
 [news339 compact blocks]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
 [news365 compact blocks]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
@@ -1066,6 +1143,9 @@ Friday publication schedule on January 2nd.*
 [28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
 [news340 lneas]: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
 [news341 lneas]: /en/newsletters/2025/02/14/#continued-discussion-about-ephemeral-anchor-scripts-for-ln
+[news341 bip3 assigned]: /en/newsletters/2025/02/14/#updated-proposal-for-updated-bip-process
+[news382 motion to activate bip3]: /en/newsletters/2025/11/28/#motion-to-activate-bip3
+[bip3 feedback addressed]: https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc/m/8HTeL2_iAQAJ
 [delving random]: https://delvingbitcoin.org/t/emulating-op-rand/1409
 [random poc]: https://github.com/distributed-lab/op_rand
 [waxwing random]: /en/newsletters/2025/02/14/#suggested
@@ -1135,3 +1215,5 @@ Friday publication schedule on January 2nd.*
 [news375 arb data]: /en/newsletters/2025/10/10/#theoretical-limitations-on-embedding-data-in-the-utxo-set
 [news379 arb data]: /en/newsletters/2025/11/07/#multiple-discussions-about-restricting-data
 [news 338]: /en/newsletters/2025/01/24/#bitcoin-core-31397
+[news352 OR debate]: /en/newsletters/2025/05/02/#increasing-or-removing-bitcoin-core-s-op-return-size-limit
+[0xb10c delving]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/35
