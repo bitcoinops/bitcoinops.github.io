@@ -19,7 +19,6 @@ Stewart, Bram Cohen, and Robin Linus to discuss [Newsletter #354]({{page.referen
 
 ## Transcription
 
-
 **Mike Schmidt**: Welcome everyone to Bitcoin Optech Newsletter #354 Recap on
 Riverside.  Today, we're going to talk about a Bitcoin Core vulnerability that's
 been recently disclosed; we have a draft BIP for 64-bit arithmetic in Bitcoin;
@@ -963,7 +962,7 @@ without CTV.
 scripts invalid, or…?
 
 **Robin Linus**: Well, I think it would be quite contentious, because I think
-what you could argue for is that you disallow to spend to a bear script, but
+what you could argue for is that you disallow to spend to a bare script, but
 spending from is confiscating money, right, and then people will go mad.
 
 **Mark Erhardt**: Well, there is this theoretic problem that someone could have
