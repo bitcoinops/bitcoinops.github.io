@@ -164,9 +164,100 @@ excerpt: >
 
 <div markdown="1" class="callout" id="vulns">
 
-## Summary 2025: Vulnerabilities
+## Summary 2025: Vulnerability disclosures
 
-...
+In 2025, Optech summarized more than a dozen vulnerability disclosures.
+Vulnerability reports help both developers and users learn from past mistakes,
+and [responsible disclosures][topic responsible disclosures] ensure fixes are
+released before vulnerabilities can be exploited.
+
+_Note: Optech only publishes the names of vulnerability discoverers if we think
+they made a reasonable effort to minimize the risk of harm to users. We thank
+all the individuals mentioned in this section for their insight and clear
+concern for user safety._
+
+In early January, Yuval Kogman [publicly disclosed][news335 coinjoin] several
+longstanding deanonymization weaknesses in centralized [coinjoin][topic
+coinjoin] protocols used by current versions of Wasabi and Ginger, as well as in
+past versions of Samourai, Sparrow, and Trezor Suite. If exploited, a
+centralized coordinator could link a user’s inputs to their outputs, effectively
+removing the expected privacy benefits of the coinjoin. A similar vulnerability was
+also reported in late 2024 (see [Newsletter #333][news333 coinjoin]).
+
+At the end of January, Matt Morehouse [announced][news339 ldk] the responsible
+disclosure of a vulnerability in LDK’s claim processing during unilateral closes
+with many pending [HTLCs][topic htlc]. LDK aimed to reduce fees by batching
+multiple HTLC resolutions; however, if conflicts arose with confirmed
+transactions from a channel counterparty, LDK could fail to update all affected
+batches, leading to stuck funds and even theft risk. This issue was fixed in
+LDK 0.1.
+
+That same week, Antoine Riard [disclosed][news339 cycling] an additional
+vulnerability using the [replacement cycling][topic replacement cycling] attack.
+An attacker could exploit it by [pinning][topic transaction pinning] a victim’s
+unconfirmed transaction, receiving and not propagating the victim's fee-bumping
+replacements, and then selectively mining the victim’s highest-fee version. This
+scenario required rare conditions and would be difficult to sustain without
+being detected.
+
+In February, Morehouse [disclosed][news340 htlcbug] a second LDK vulnerability:
+if many HTLCs had the same amount and payment hash, LDK would fail to settle
+all HTLCs except one, leading honest counterparties to force-close the channels.
+While this didn’t enable direct theft, it resulted in extra fees and reduced
+routing revenue until the bug was fixed in LDK 0.1.1 (see Newsletter [#340][news340
+htlcfix]).
+
+In March, Morehouse [announced][news344 lnd] the responsible disclosure of a
+fixed LND vulnerability in versions before 0.18: an attacker with a
+channel to the victim could cause LND to both pay and refund the same HTLC if
+they could also somehow cause the victim’s node to restart. This would allow the
+attacker to steal nearly the entire channel value. The disclosure also
+highlighted gaps in the Lightning specification, which were later corrected (see
+[Newsletter #346][news346 bolts]).
+
+In May, Ruben Somsen [described][news353 bip30] a theoretical consensus-failure
+edge case related to BIP30’s historical handling of [duplicate][topic duplicate
+transactions] coinbase transactions. With checkpoints removed from Bitcoin Core
+(see [Newsletter #346][news346 checkpoints]), an extreme block reorg up to block
+91,842 could leave nodes with different UTXO sets, depending on whether or not
+they observed the duplicate coinbases. Several solutions were discussed, such as
+hardcoding additional special-case logic for these two exceptions; however, it
+wasn't deemed a realistic threat.
+
+Also in May, Antoine Poinsot [announced][news354 32bit] the responsible
+disclosure of a low-severity vulnerability affecting Bitcoin Core versions
+before 29.0 where excessive address advertisements could overflow a 32-bit
+identifier and crash the node. Earlier mitigations had already made exploitation
+impractically slow under the default peer limits (see Newsletters [#159][news159
+32bit] and [#314][news314 32bit]), and the issue was fully resolved by switching
+to 64-bit identifiers in Bitcoin Core 29.0.
+
+In July, Morehouse [announced][news364 lnd] the responsible disclosure of an LND
+denial-of-service issue in which an attacker could repeatedly request historic
+[gossip][topic channel announcements] messages until the node exhausted its
+memory and crashed. This bug was fixed in LND 0.18.3 (see [Newsletter
+#319][news319 lnd]). In September, Morehouse [disclosed][news373 eclair] a
+vulnerability in older versions of Eclair: an attacker could
+broadcast an old commitment transaction to steal all current funds from a
+channel, and Eclair would ignore it. Eclair’s fix was paired with a more
+comprehensive test suite intended to catch similar potential issues.
+
+In October, Poinsot [published][news378 four] four low-severity, responsibly
+disclosed Bitcoin Core vulnerabilities, covering two disk-filling bugs, a highly
+unlikely remote crash affecting 32-bit systems, and a CPU DoS issue in
+unconfirmed transaction processing. These were partially fixed in 29.1 and fully
+fixed in 30.0, see Newsletters [#361][news361 four], [#363][news363 four], and
+[#367][news367 four] for a few of the fixes.
+
+In December, Bruno Garcia [disclosed][news383 nbitcoin] a theoretical consensus
+failure in the NBitcoin library related to `OP_NIP` that could trigger an
+exception in a specific full-capacity stack edge case. It was found using
+differential fuzzing and quickly patched. No full node is known to use NBitcoin
+so there was no practical chain-split risk from the disclosure.
+
+In December, Morehouse also [disclosed][news384 lnd] three critical
+vulnerabilities in LND including two theft-of-funds vulnerabilities and one
+denial-of-service vulnerability.
 
 </div>
 
@@ -560,7 +651,68 @@ powerful.
 
 ## Summary 2025: Major releases of popular infrastructure projects
 
-FIXME:Gustavojfe
+- [BDK wallet-1.0.0][] marked the first major release of this library, where the
+  original `bdk` crate was renamed to `bdk_wallet` with a stable API and lower
+  layer modules were extracted into their own crates.
+
+- [LDK v0.1][] added support for both sides of the LSPS channel open negotiation
+  protocols, [BIP353][] Human Readable Names resolution, and reduced onchain fee
+  costs when resolving multiple [HTLCs][topic htlc] for a single channel
+  force-closure.
+
+- [Core Lightning 25.02][] added support for [peer storage][topic peer storage],
+  off by default.
+
+- [Eclair v0.12.0][] added support for creating and managing [BOLT12
+  offers][topic offers], a new channel closing protocol that supports
+  [RBF][topic rbf], and support for storing small amounts of data for peers
+  through [peer storage][topic peer storage].
+
+- [BTCPay Server 2.1.0][] added several improvements for [RBF][topic rbf] and
+  [CPFP][topic cpfp] fee bumping, a better flow for multisig when all signers
+  are using BTCPay Server, and made some breaking changes for users of some
+  altcoins.
+
+- [Bitcoin Core 29.0][] replaced the UPnP feature (responsible in part for
+  several past security vulnerabilities) with a NAT-PMP option, improved
+  fetching of parents of orphan transactions for [package relay][topic package
+  relay], improved [timewarp][topic time warp] avoidance for miners, and
+  migrated the build system from `automake` to `cmake`.
+
+- [LND 0.19.0-beta][] added new RBF-based fee bumping for cooperative closes.
+
+- [Core Lightning 25.05][] introduced experimental [splicing][topic splicing]
+  support compatible with Eclair, and enabled peer storage by default.
+
+- [BTCPay Server 2.2.0][] added support for wallet policies and
+  [miniscript][topic miniscript].
+
+- [Core Lightning v25.09][] added support to the `xpay` command for paying
+  [BIP353][] addresses and [offers][topic offers].
+
+- [Eclair v0.13.0][] introduced an initial implementation of [simple taproot
+  channels][topic simple taproot channels], improvements to [splicing][topic
+  splicing] based on recent specification updates, and better BOLT12 support.
+
+- [Bitcoin Inquisition 29.1][] added support for `OP_INTERNALKEY`, an opcode
+  part of multiple [covenant][topic covenants] proposals.
+
+- [Bitcoin Core 30.0][] made multiple data carrier (OP_RETURN) outputs standard,
+  increased the default `datacarriersize` to 100,000, set a default [minimum
+  relay feerate][topic default minimum transaction relay feerates] of 0.1
+  sat/vbyte, added an experimental IPC mining interface for [Stratum v2][topic
+  pooled mining] integrations, and removed support for creating or loading
+  legacy wallets. Legacy wallets can be migrated to the [descriptor][topic
+  descriptors] wallet format.
+
+- [Core Lightning v25.12][] added [BIP39][] mnemonic seed phrases as the new
+  default backup method and experimental [JIT channels][topic jit channels]
+  support.
+
+- [LDK 0.2][] added support for [splicing][topic splicing] (experimental),
+  serving and paying static invoices for [async payments][topic async payments],
+  and [zero-fee-commitment][topic v3 commitments] channels using [ephemeral
+  anchors][topic ephemeral anchors].
 
 </div>
 
@@ -744,7 +896,34 @@ We are eternally grateful and wish him all the best.
 
 ## December
 
-FIXME:bitschmidty
+{:#lnsplicing}
+
+- **Splicing:** In December, [LDK 0.2][] was released with experimental
+  [splicing][topic splicing] support, making the feature available across three
+  major Lightning implementations: LDK, Eclair, and Core Lightning. Splicing
+  allows nodes to add or remove funds from a channel without closing it.
+
+  This wrapped up a year of significant progress towards LN's splicing feature.
+  Eclair added [support for splicing on public channels][news340 eclairsplice]
+  in February and [splicing in simple taproot channels][news368 eclairtaproot]
+  in August. Meanwhile, Core Lightning [finalized][news355 clnsplice]
+  interoperability with Eclair in May and shipped it in [Core Lightning
+  25.05][news359 cln2505].
+
+  Throughout the year, all the pieces required for the LDK implementation were
+  added, including [splice-out support][news369 ldksplice] in August,
+  [integrating][news370 ldkquiesce] splicing with the quiescence protocol in
+  September, and shipping numerous additional refinements before the 0.2 release.
+
+  The implementation teams also coordinated on specification details, such as
+  increasing the delay before marking a channel as closed to allow for splice
+  propagation (raised from 12 to [72 blocks][news359 eclairdelay] per [BOLTs
+  #1270][]) and [reconnection logic][news381 clnreconnect] for synchronized
+  splice state per [BOLTs #1289][].
+
+  However, the main [splicing specification][bolts #1160] remains unmerged as of
+  the end of the year, with updates still expected and cross-compatibility
+  issues continuing to be resolved.
 
 *We thank all of the Bitcoin contributors named above, plus the many
 others whose work was just as important, for another incredible year of
@@ -894,6 +1073,54 @@ Friday publication schedule on January 2nd.*
 [rl random]: /en/newsletters/2025/03/14/#probabilistic-payments-using-different-hash-functions-as-an-xor-function
 [dh random]: /en/newsletters/2025/02/14/#asked
 [jt delegation]: /en/newsletters/2025/07/25/#chain-code-withholding-for-multisig-scripts
+[news335 coinjoin]: /en/newsletters/2025/01/03/#deanonymization-attacks-against-centralized-coinjoin
+[news333 coinjoin]: /en/newsletters/2024/12/13/#deanonymization-vulnerability-affecting-wasabi-and-related-software
+[news340 htlcbug]: /en/newsletters/2025/02/07/#channel-force-closure-vulnerability-in-ldk
+[news340 htlcfix]: /en/newsletters/2025/02/07/#ldk-3556
+[news339 ldk]: /en/newsletters/2025/01/31/#vulnerability-in-ldk-claim-processing
+[news339 cycling]: /en/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
+[news346 bolts]: /en/newsletters/2025/03/21/#bolts-1233
+[news344 lnd]: /en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
+[news346 checkpoints]: /en/newsletters/2025/03/21/#bitcoin-core-31649
+[news353 bip30]: /en/newsletters/2025/05/09/#bip30-consensus-failure-vulnerability
+[news354 32bit]: /en/newsletters/2025/05/16/#vulnerability-disclosure-affecting-old-versions-of-bitcoin-core
+[news364 lnd]: /en/newsletters/2025/07/25/#lnd-gossip-filter-dos-vulnerability
+[news319 lnd]: /en/newsletters/2024/09/06/#lnd-9009
+[news159 32bit]: /en/newsletters/2021/07/28/#bitcoin-core-22387
+[news314 32bit]: /en/newsletters/2024/08/02/#remote-crash-by-sending-excessive-addr-messages
+[news373 eclair]: /en/newsletters/2025/09/26/#eclair-vulnerability
+[news378 four]: /en/newsletters/2025/10/31/#disclosure-of-four-low-severity-vulnerabilities-in-bitcoin-core
+[news361 four]: /en/newsletters/2025/07/04/#bitcoin-core-32819
+[news363 four]: /en/newsletters/2025/07/18/#bitcoin-core-32604
+[news367 four]: /en/newsletters/2025/08/15/#bitcoin-core-33050
+[news383 nbitcoin]: /en/newsletters/2025/12/05/#consensus-bug-in-nbitcoin-library
+[news384 lnd]: /en/newsletters/2025/12/12/#critical-vulnerabilities-fixed-in-lnd-0-19-0
+[bdk wallet-1.0.0]: /en/newsletters/2025/01/03/#bdk-wallet-1-0-0
+[ldk v0.1]: /en/newsletters/2025/01/17/#ldk-v0-1
+[core lightning 25.02]: /en/newsletters/2025/03/07/#core-lightning-25-02
+[eclair v0.12.0]: /en/newsletters/2025/03/14/#eclair-v0-12-0
+[btcpay server 2.1.0]: /en/newsletters/2025/04/11/#btcpay-server-2-1-0
+[bitcoin core 29.0]: /en/newsletters/2025/04/18/#bitcoin-core-29-0
+[lnd 0.19.0-beta]: /en/newsletters/2025/05/23/#lnd-0-19-0-beta
+[core lightning 25.05]: /en/newsletters/2025/06/20/#core-lightning-25-05
+[btcpay server 2.2.0]: /en/newsletters/2025/08/08/#btcpay-server-2-2-0
+[core lightning v25.09]: /en/newsletters/2025/09/05/#core-lightning-v25-09
+[eclair v0.13.0]: /en/newsletters/2025/09/12/#eclair-v0-13-0
+[bitcoin inquisition 29.1]: /en/newsletters/2025/10/10/#bitcoin-inquisition-29-1
+[bitcoin core 30.0]: /en/newsletters/2025/10/17/#bitcoin-core-30-0
+[core lightning v25.12]: /en/newsletters/2025/12/05/#core-lightning-v25-12
+[ldk 0.2]: /en/newsletters/2025/12/05/#ldk-0-2
+[news340 eclairsplice]: /en/newsletters/2025/02/07/#eclair-2968
+[news368 eclairtaproot]: /en/newsletters/2025/08/22/#eclair-3103
+[news355 clnsplice]: /en/newsletters/2025/05/23/#core-lightning-8021
+[news359 cln2505]: /en/newsletters/2025/06/20/#core-lightning-25-05
+[news369 ldksplice]: /en/newsletters/2025/08/29/#ldk-3979
+[news370 ldkquiesce]: /en/newsletters/2025/09/05/#ldk-4019
+[news359 eclairdelay]: /en/newsletters/2025/06/20/#eclair-3110
+[news381 clnreconnect]: /en/newsletters/2025/11/21/#core-lightning-8646
+[bolts #1270]: https://github.com/lightning/bolts/pull/1270
+[bolts #1289]: https://github.com/lightning/bolts/pull/1289
+[bolts #1160]: https://github.com/lightning/bolts/pull/1160
 [news366 utreexo]: /en/newsletters/2025/08/08/#draft-bips-proposed-for-utreexo
 [bip181 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0181.md
 [bip182 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0182.md
