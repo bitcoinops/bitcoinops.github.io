@@ -513,7 +513,7 @@ Bitcoin’s needs.
 
 ## Summary 2025: Soft fork proposals
 
-This year saw a bevvy of discussions around soft fork proposals, ranging from
+This year saw a bevy of discussions around soft fork proposals, ranging from
 the tightly scoped and minimally impactful, to the broadly scoped and
 powerful.
 
