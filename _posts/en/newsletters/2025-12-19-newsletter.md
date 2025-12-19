@@ -225,7 +225,75 @@ excerpt: >
 
 ## Summary 2025: Quantum
 
-...
+With the increased attention on the potential for a future [quantum][topic
+quantum resistance] computer to weaken or break the Elliptic Curve Discrete
+Logarithm (ECDL) hardness assumption that Bitcoin relies on to prove the
+ownership of coins, several conversations and proposals were put forward
+throughout the year to discuss and mitigate the impact of such a development.
+
+Clara Shikhelman and Anthony Milton [published][news357 quantum report] a paper
+covering the impacts of quantum computing on Bitcoin and outlining potential
+mitigation strategies.
+
+[BIP360][] was [updated][news bip360 update] and received its BIP number. This
+proposal has drawn interest both as a first step toward quantum-hardening
+Bitcoin and an optimization for taproot use cases that do not require an
+internal key. [Research][news365 quantum taproot] later in the year confirmed
+the security of these taproot commitments against manipulation by quantum
+computers. Near the end of the year, the proposal was renamed to P2TSH (pay to
+tapscript hash) instead of the earlier name P2QRH (pay to quantum resistant
+hash), reflecting its reduced scope and increased generality.
+
+Jesse Posner [highlighted existing research][news364 quantum primatives] that
+indicates existing Bitcoin primitives like hierarchical deterministic (HD)
+wallets, [silent payments][topic silent payments], key aggregation, and
+[threshold signatures][topic threshold signature] could be compatible with some
+of the commonly referenced quantum-resistant signature algorithms.
+
+Augustin Cruz [proposed][news qr cruz] a BIP to destroy coins that are
+quantum-vulnerable with certainty. Subsequently, Jameson Lopp [started a
+discussion][news qr lopp1] of how quantum-vulnerable coins should be handled,
+which led to several ideas ranging from letting the quantum adversary have them
+to destroying them. Lopp later [proposed][news qr lopp2] a concrete [sequence of
+soft forks][BIPs #1895] that Bitcoin could implement, beginning long before a
+Cryptographically Relevant Quantum Computer (CRQC) is developed to gradually
+mitigate the threat of a quantum adversary suddenly gaining access to many
+coins, while allowing holders time to secure their coins.
+
+Two proposals ([1][news qr sha], [2][news qr cr]) were made to enable most
+existing coins to be secured in a way that could be recovered in the event that
+Bitcoin disables quantum-vulnerable spends at some later point. Briefly, the
+theorized sequence of events is 0) bitcoin holders ensure that their current
+wallets have some hashed secret required for some spend path
+1) a CRQC is shown to be imminent, 2) Bitcoin disables elliptic curve
+signatures, 3) Bitcoin enables a quantum secure signature scheme, 4) Bitcoin
+enables one of these proposals enabling prepared holders to claim their
+quantum-vulnerable coins. Depending on the exact implementation, any address
+type (including P2TR with a scriptpath) could take advantage of these methods.
+
+Developer Conduition demonstrated that [`OP_CAT`][BIP347] can be used to
+implement Winternitz signatures, which provide a quantum-resistant signature
+check at a cost of ~2000 vbytes per input. This is less costly than the
+previously [proposed][rubin lamport] `OP_CAT`-based [Lamport
+signatures][lamport].
+
+Matt Corallo started a [discussion][news qr corallo] around the general idea of
+adding a quantum-resistant signature-checking opcode to [tapscript][topic
+tapscript]. Later, Abdelhamid Bakhta [proposed][abdel stark] native STARK
+verification as one such opcode, and Conduition [wrote][conduition sphincs]
+about their work optimizing SLH-DSA (SPHINCS) quantum-resistant signatures as
+another option. Any quantum-resistant signature checking opcode including
+`OP_CAT` added to tapscript could be combined with [BIP360][] to fully
+quantum-harden Bitcoin outputs.
+
+Tadge Dryja [proposed][news qr agg] one way in which Bitcoin could implement
+general cross-input signature aggregation which would partially mitigate the
+large size of post-quantum signatures.
+
+At the end of the year, Mikhail Kudinov and Jonas Nick [published][nick paper
+tweet] a [paper][hash-based signature schemes] that provides an overview of
+hash-based signature schemes and discusses how those could be adapted to suit
+Bitcoin’s needs.
 
 </div>
 
@@ -720,6 +788,23 @@ Friday publication schedule on January 2nd.*
 [simplicity III post]: https://delvingbitcoin.org/t/delving-simplicity-part-building-data-types/1956
 [simplicity IV post]: https://delvingbitcoin.org/t/delving-simplicity-part-two-side-effects/2091
 [simplicity V post]: https://delvingbitcoin.org/t/delving-simplicity-part-programs-and-addresses/2113
+[news bip360 update]: /en/newsletters/2025/03/07/#update-on-bip360-pay-to-quantum-resistant-hash-p2qrh
+[news qr sha]: /en/newsletters/2025/04/04/#securely-proving-utxo-ownership-by-revealing-a-sha256-preimage
+[news qr cr]: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
+[news qr lopp1]: /en/newsletters/2025/04/04/#should-vulnerable-bitcoins-be-destroyed
+[news qr lopp2]: /en/newsletters/2025/08/01/#migration-from-quantum-vulnerable-outputs
+[news qr cruz]: /en/newsletters/2025/04/04/#draft-bip-for-destroying-quantum-insecure-bitcoins
+[news qr corallo]: /en/newsletters/2025/01/03/#quantum-computer-upgrade-path
+[rubin lamport]: https://gnusha.org/pi/bitcoindev/CAD5xwhgzR8e5r1e4H-5EH2mSsE1V39dd06+TgYniFnXFSBqLxw@mail.gmail.com/
+[lamport]: https://en.wikipedia.org/wiki/Lamport_signature
+[conduition sphincs]: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
+[abdel stark]: /en/newsletters/2025/11/07/#native-stark-proof-verification-in-bitcoin-script
+[news364 quantum primatives]: /en/newsletters/2025/07/25/#research-indicates-common-bitcoin-primitives-are-compatible-with-quantum-resistant-signature-algorithms
+[news365 quantum taproot]: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
+[news357 quantum report]: /en/newsletters/2025/06/06/#quantum-computing-report
+[news qr agg]: /en/newsletters/2025/11/07/#post-quantum-signature-aggregation
+[nick paper tweet]: https://x.com/n1ckler/status/1998407064213704724
+[hash-based signature schemes]: https://eprint.iacr.org/2025/2203.pdf
 [news335 chilldkg]: /en/newsletters/2025/01/03/#updated-chilldkg-draft
 [news offchain dlc]: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
 [news dlc channels]: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
