@@ -93,7 +93,7 @@ notables survenus dans Bitcoin au cours de l'année 2025.
 
 - **Reconstructions de blocs compacts :** Janvier a également vu le premier de plusieurs éléments en
   2025 qui ont revisité [les recherches précédentes][news315 compact blocks] sur l'efficacité avec
-  laquelle les nœuds Bitcoin reconstruisent des blocs en utilisant [le relais de blocs compacts][topic
+  laquelle  les nœuds Bitcoin reconstruisent des blocs en utilisant [le relais de blocs compacts][topic
   compact block relay] (BIP152), en mettant à jour les mesures précédentes et en explorant des
   raffinements potentiels. Les statistiques mises à jour [publiées en janvier][news339 compact blocks]
   ont montré que lorsque les mémoires tampons sont pleines, les nœuds doivent plus fréquemment
@@ -393,7 +393,7 @@ hachage et discute de la manière dont ceux-ci pourraient être adaptés aux bes
   linéaire comme amélioration potentielle par rapport à la recherche initiale de l'ensemble des
   candidats et a intégré l'exploration de l'approche basée sur la coupe minimale comme une troisième
   option dans sa recherche. Un peu plus tard, Wuille a guidé le Bitcoin Core PR Review Club à travers
-  la nouvelle classe `TxGraph` qui distille les transactions pour ne conserver que le poids, les frais
+  la nouvelle classe `TxGraph` qui distille  les transactions pour ne conserver que le poids, les frais
   et les relations pour une interaction efficace avec le graphe du mempool. En mai, Wuille a publié
   des benchmarks favorables et décrit les [compromis][news352 wuille linearization techniques] des trois
   approches de linéarisation des clusters, déterminant que les deux approches avancées étaient bien
@@ -1043,12 +1043,12 @@ Bitcoin. La bulletin Optech reprendra sa publication régulière le vendredi à 
 
 [bulletins]: /fr/newsletters/
 [Human Rights Foundation]: https://hrf.org
-[openssl vs libsecp256k1]: /en/newsletters/2025/11/07/#comparing-performance-of-ecdsa-signature-validation-in-openssl-vs-libsecp256k1
-[channel jamming results]: /en/newsletters/2025/10/24/#channel-jamming-mitigation-simulation-results-and-updates
+[openssl vs libsecp256k1]: /fr/newsletters/2025/11/07/#comparaison-de-la-performance-de-la-validation-de-signature-ecdsa-dans-openssl-vs-libsecp256k1
+[channel jamming results]: /fr/newsletters/2025/10/24/#resultats-de-simulation-de-la-mitigation-du-brouillage-de-canaux-et-mises-a-jour
 [channel jamming resource]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-resource-attacks-3
 [channel jamming sink]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-manipulation-sink-attack-9
 [channel jamming attack]: /en/topics/channel-jamming-attacks/
-[erlay optech posts]: /en/newsletters/2025/02/07/#erlay-update
+[erlay optech posts]: /fr/newsletters/2025/02/07/#mise-a-jour-sur-erlay
 [erlay]: /en/topics/erlay/
 [erlay knowledge]: https://delvingbitcoin.org/t/erlay-filter-fanout-candidates-based-on-transaction-knowledge/1416
 [erlay fanout amount]: https://delvingbitcoin.org/t/erlay-find-acceptable-target-number-of-peers-to-fanout-to/1420
