@@ -1178,7 +1178,7 @@ Friday publication schedule on January 2nd.*
 [64bit bip]: /en/newsletters/2025/05/16/#proposed-bip-for-64-bit-arithmetic-in-script
 [txhash sponsors]: /en/newsletters/2025/07/04/#op-txhash-variant-with-support-for-transaction-sponsorship
 [txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
-[tweakadd]: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
+[tweakadd]: /en/newsletters/2025/09/05/#draft-bip-for-op-tweakadd
 [ecmath]: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
 [gsr bips]: /en/newsletters/2025/10/03/#draft-bips-for-script-restoration
 [transitory cleanups]: /en/newsletters/2025/01/03/#transitory-soft-forks-for-cleanup-soft-forks
