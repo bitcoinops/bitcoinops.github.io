@@ -1070,188 +1070,188 @@ Bitcoin. La bulletin Optech reprendra sa publication régulière le vendredi à 
 [erlay fanout amount]: https://delvingbitcoin.org/t/erlay-find-acceptable-target-number-of-peers-to-fanout-to/1420
 [erlay transaction received]: https://delvingbitcoin.org/t/erlay-define-fanout-rate-based-on-the-transaction-reception-method/1422
 [erlay candidate peers]: https://delvingbitcoin.org/t/erlay-select-fanout-candidates-at-relay-time-instead-of-at-relay-scheduling-time/1418
-[news358 selfish miner]: /en/newsletters/2025/06/13/#calculating-the-selfish-mining-danger-threshold
+[news358 selfish miner]: /fr/newsletters/2025/06/13/#calcul-du-seuil-de-danger-du-minage-egoiste
 [selfish miner paper]: https://arxiv.org/pdf/1311.0243
-[news360 fingerprinting]: /en/newsletters/2025/06/27/#fingerprinting-nodes-using-addr-messages
-[news359 bitvm3]: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
+[news360 fingerprinting]: /fr/newsletters/2025/06/27/#identification-des-noeuds-utilisant-les-messages-addr
+[news359 bitvm3]: /fr/newsletters/2025/06/20/#ameliorations-des-contrats-de-style-bitvm
 [delbrag rubin]: https://rubin.io/bitcoin/2025/04/04/delbrag/
 [garbled circuits wiki]: https://en.wikipedia.org/wiki/Garbled_circuit
-[news369 eagen]: /en/newsletters/2025/08/29/#garbled-locks-for-accountable-computing-contracts
+[news369 eagen]: /fr/newsletters/2025/08/29/#verrous-chiffres-pour-les-contrats-de-calcul-responsables
 [eagen paper]: https://eprint.iacr.org/2025/1485
-[news351 dahlias]: /en/newsletters/2025/04/25/#interactive-aggregate-signatures-compatible-with-secp256k1
+[news351 dahlias]: /fr/newsletters/2025/04/25/#signatures-agregees-interactives-compatibles-avec-secp256k1
 [dahlias paper]: https://eprint.iacr.org/2025/692.pdf
-[news344 fork guide]: /en/newsletters/2025/03/07/#bitcoin-forking-guide
+[news344 fork guide]: /fr/newsletters/2025/03/07/#guide-de-forking-bitcoin
 [fork guide red]: https://ajtowns.github.io/bfg/research.html
 [fork guide pue]: https://ajtowns.github.io/bfg/power.html
 [fork guide ie]: https://ajtowns.github.io/bfg/industry.html
 [fork guide ir]: https://ajtowns.github.io/bfg/investor.html
-[news344 template mrkt]: /en/newsletters/2025/03/07/#private-block-template-marketplace-to-prevent-centralizing-mev
+[news344 template mrkt]: /fr/newsletters/2025/03/07/#marche-prive-de-modeles-de-blocs-pour-prevenir-la-centralisation-du-mev
 [mevpool gh]: https://github.com/mevpool/mevpool/blob/0550f5d85e4023ff8ac7da5193973355b855bcc8/mevpool-marketplace.md
-[news 347 ln fees]: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
+[news 347 ln fees]: /fr/newsletters/2025/03/28/#frais-initiaux-et-de-retention-du-ln-utilisant-des-sorties-brulables
 [ln fees paper]: https://github.com/JohnLaw2/ln-spam-prevention
-[news349 swiftsync]: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
+[news349 swiftsync]: /fr/newsletters/2025/04/11/#acceleration-swiftsync-pour-le-telechargement-initial-des-blocs
 [swiftsync ruben gh]: https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd
 [swiftsync rust impl]: https://delvingbitcoin.org/t/swiftsync-speeding-up-ibd-with-pre-generated-hints-poc/1562/18
-[news288 lib]: /en/newsletters/2024/02/07/#bitcoin-core-29189
+[news288 lib]: /fr/newsletters/2024/02/07/#bitcoin-core-29189
 [kernel rust]: https://github.com/sedited/rust-bitcoinkernel
 [kernel go]: https://github.com/stringintech/go-bitcoinkernel
 [kernel jdk]: https://github.com/yuvicc/bitcoinkernel-jdk
 [kernel csharp]: https://github.com/janb84/BitcoinKernel.NET
 [kernel python]: https://github.com/stickies-v/py-bitcoinkernel
-[gcc update]: /en/newsletters/2025/02/07/#updates-to-cleanup-soft-fork-proposal
-[gcc bip]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
-[news thikcs]: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
-[ctv csfs symmetry]: /en/newsletters/2025/04/04/#ln-symmetry
-[ctv csfs arks]: /en/newsletters/2025/04/04/#ark
-[ctv vaults]: /en/newsletters/2025/04/04/#vaults
-[ctv dlcs]: /en/newsletters/2025/04/04/#dlcs
-[lnhance update]: /en/newsletters/2025/12/05/#lnhance-soft-fork
+[gcc update]: /fr/newsletters/2025/02/07/#mises-a-jour-de-la-proposition-de-soft-fork-de-nettoyage-du-consensus
+[gcc bip]: /fr/newsletters/2025/04/04/#brouillon-de-bip-publie-pour-le-nettoyage-du-consensus
+[news thikcs]: /fr/newsletters/2025/08/01/#proposition-de-op-templatehash-natif-a-taproot
+[ctv csfs symmetry]: /fr/newsletters/2025/04/04/#ln-symmetry
+[ctv csfs arks]: /fr/newsletters/2025/04/04/#ark
+[ctv vaults]: /fr/newsletters/2025/04/04/#vaults
+[ctv dlcs]: /fr/newsletters/2025/04/04/#dlcs
+[lnhance update]: /fr/newsletters/2025/12/05/#soft-fork-lnhance"
 [rubin key ladder]: https://rubin.io/bitcoin/2024/12/02/csfs-ctv-rekey-symmetry/
-[ctv csfs ptlcs]: /en/newsletters/2025/07/04/#ctv-csfs-advantages-for-ptlcs
-[ctv csfs bitvm]: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
-[ctv csfs letter]: /en/newsletters/2025/07/04/#open-letter-about-ctv-and-csfs
-[gcc impl tests]: /en/newsletters/2025/11/07/#bip54-implementation-and-test-vectors
-[ccv bip]: /en/newsletters/2025/05/30/#bips-1793
-[ccv semantics]: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
-[vault withdrawn]: /en/newsletters/2025/05/16/#bips-1848
-[64bit bip]: /en/newsletters/2025/05/16/#proposed-bip-for-64-bit-arithmetic-in-script
-[txhash sponsors]: /en/newsletters/2025/07/04/#op-txhash-variant-with-support-for-transaction-sponsorship
+[ctv csfs ptlcs]: /fr/newsletters/2025/07/04/#avantages-de-ctv-csfs-pour-les-ptlc
+[ctv csfs bitvm]: /fr/newsletters/2025/05/16/#description-des-avantages-pour-bitvm-de-op-ctv-et-op-csfs
+[ctv csfs letter]: /fr/newsletters/2025/07/04/#lettre-ouverte-a-propos-de-ctv-et-csfs
+[gcc impl tests]: /fr/newsletters/2025/11/07/#implementation-de-bip54-et-vecteurs-de-test
+[ccv bip]: /fr/newsletters/2025/05/30/#bips-1793
+[ccv semantics]: /fr/newsletters/2025/04/04/#semantique-de-op-checkcontractverify
+[vault withdrawn]: /fr/newsletters/2025/05/16/#bips-1848
+[64bit bip]: /fr/newsletters/2025/05/16/#proposition-de-bip-pour-l-arithmetique-64-bits-dans-script
+[txhash sponsors]: /fr/newsletters/2025/07/04/#variante-op-txhash-avec-support-pour-le-parrainage-de-transaction
 [txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
-[tweakadd]: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
-[ecmath]: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
-[gsr bips]: /en/newsletters/2025/10/03/#draft-bips-for-script-restoration
-[transitory cleanups]: /en/newsletters/2025/01/03/#transitory-soft-forks-for-cleanup-soft-forks
-[simplicity 370]: /en/newsletters/2025/09/05/#details-about-the-design-of-simplicity
+[tweakadd]: /fr/newsletters/2025/09/05/#brouillon-de-bip-pour-ajouter-des-operations-sur-courbes-elliptiques-a-tapscript
+[ecmath]: /fr/newsletters/2025/09/05/#brouillon-de-bip-pour-ajouter-des-operations-sur-courbes-elliptiques-a-tapscript
+[gsr bips]: /fr/newsletters/2025/10/03/#brouillons-de-bip-pour-la-restauration-de-script
+[transitory cleanups]: /fr/newsletters/2025/01/03/#soft-forks-transitoires-pour-les-soft-forks-de-nettoyage
+[simplicity 370]: /fr/newsletters/2025/09/05/#details-sur-la-conception-de-simplicity
 [simplicity I post]: https://delvingbitcoin.org/t/delving-simplicity-part-three-fundamental-ways-of-combining-computations/1902
 [simplicity II post]: https://delvingbitcoin.org/t/delving-simplicity-part-combinator-completeness-of-simplicity/1935
 [simplicity III post]: https://delvingbitcoin.org/t/delving-simplicity-part-building-data-types/1956
 [simplicity IV post]: https://delvingbitcoin.org/t/delving-simplicity-part-two-side-effects/2091
 [simplicity V post]: https://delvingbitcoin.org/t/delving-simplicity-part-programs-and-addresses/2113
-[news339 sv2fields]: /en/newsletters/2025/01/31/#bitcoin-core-31583
-[news346 waitnext]: /en/newsletters/2025/03/21/#bitcoin-core-31283
-[news360 checkblock]: /en/newsletters/2025/06/27/#bitcoin-core-31981
-[news359 starkware]: /en/newsletters/2025/06/20/#stratum-v2-stark-proof-demo
-[news369 ipc]: /en/newsletters/2025/08/29/#bitcoin-core-31802
-[news374 ipcauto]: /en/newsletters/2025/10/03/#bitcoin-core-33229
-[news376 30]: /en/newsletters/2025/10/17/#bitcoin-core-30-0
-[news377 ipclog]: /en/newsletters/2025/10/24/#bitcoin-core-33517
-[news381 witness]: /en/newsletters/2025/11/21/#bitcoin-core-33745
-[news346 hashpool]: /en/newsletters/2025/03/21/#hashpool-v0-1-tagged
-[news323 miningipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
-[news340 richter ggt]: /en/newsletters/2025/02/07/#discovery-of-previous-research-for-finding-optimal-cluster-linearization
-[news341 pr-review-club txgraph]: /en/newsletters/2025/02/14/#bitcoin-core-pr-review-club
-[news352 wuille linearization techniques]: /en/newsletters/2025/05/02/#comparison-of-cluster-linearization-techniques
-[news377 ismail template improvement]: /en/newsletters/2025/10/24/#detecting-block-template-feerate-increases-using-cluster-mempool
-[news382 cluster mempool completed]: /en/newsletters/2025/11/28/#bitcoin-core-33629
-[news bip360 update]: /en/newsletters/2025/03/07/#update-on-bip360-pay-to-quantum-resistant-hash-p2qrh
-[news qr sha]: /en/newsletters/2025/04/04/#securely-proving-utxo-ownership-by-revealing-a-sha256-preimage
-[news qr cr]: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
-[news qr lopp1]: /en/newsletters/2025/04/04/#should-vulnerable-bitcoins-be-destroyed
-[news qr lopp2]: /en/newsletters/2025/08/01/#migration-from-quantum-vulnerable-outputs
-[news qr cruz]: /en/newsletters/2025/04/04/#draft-bip-for-destroying-quantum-insecure-bitcoins
-[news qr corallo]: /en/newsletters/2025/01/03/#quantum-computer-upgrade-path
+[news339 sv2fields]: /fr/newsletters/2025/01/31/#bitcoin-core-31583
+[news346 waitnext]: /fr/newsletters/2025/03/21/#bitcoin-core-31283
+[news360 checkblock]: /fr/newsletters/2025/06/27/#bitcoin-core-31981
+[news359 starkware]: /fr/newsletters/2025/06/20/#demonstration-de-preuve-stark-stratum-v2
+[news369 ipc]: /fr/newsletters/2025/08/29/#bitcoin-core-31802
+[news374 ipcauto]: /fr/newsletters/2025/10/03/#bitcoin-core-33229
+[news376 30]: /fr/newsletters/2025/10/17/#bitcoin-core-30-0
+[news377 ipclog]: /fr/newsletters/2025/10/24/#bitcoin-core-33517
+[news381 witness]: /fr/newsletters/2025/11/21/#bitcoin-core-33745
+[news346 hashpool]: /fr/newsletters/2025/03/21/#hashpool-v0-1-tague
+[news323 miningipc]: /fr/newsletters/2024/10/04/#bitcoin-core-30510
+[news340 richter ggt]: /fr/newsletters/2025/02/07/#decouverte-de-recherches-anterieures-pour-trouver-une-linearisation-optimale-des-clusters
+[news341 pr-review-club txgraph]: /fr/newsletters/2025/02/14/#bitcoin-core-pr-review-club
+[news352 wuille linearization techniques]: /fr/newsletters/2025/05/02/#comparaison-des-techniques-de-linearisation-de-clusters
+[news377 ismail template improvement]: /fr/newsletters/2025/10/24/#detection-des-augmentations-du-taux-de-frais-des-modeles-de-blocs-en-utilisant-le-cluster-mempool
+[news382 cluster mempool completed]: /fr/newsletters/2025/11/28/#bitcoin-core-33629
+[news bip360 update]: /fr/newsletters/2025/03/07/#mise-a-jour-sur-bip360-pay-to-quantum-resistant-hash-p2qrh
+[news qr sha]: /fr/newsletters/2025/04/04/#prouver-de-maniere-securisee-la-propriete-d-une-utxo-en-revelant-une-preimage-sha256
+[news qr cr]: /fr/newsletters/2025/07/04/#fonction-de-commit-reveal-pour-la-recuperation-post-quantique
+[news qr lopp1]: /fr/newsletters/2025/04/04/#faut-il-detruire-les-bitcoins-vulnerables
+[news qr lopp2]: /fr/newsletters/2025/08/01/#migration-a-partir-des-sorties-vulnerables-aux-quantiques
+[news qr cruz]: /fr/newsletters/2025/04/04/#brouillon-de-bip-pour-detruire-les-bitcoins-non-securises-face-aux-quantiques
+[news qr corallo]: /fr/newsletters/2025/01/03/#chemin-de-mise-a-niveau-pour-ordinateur-quantique
 [rubin lamport]: https://gnusha.org/pi/bitcoindev/CAD5xwhgzR8e5r1e4H-5EH2mSsE1V39dd06+TgYniFnXFSBqLxw@mail.gmail.com/
 [lamport]: https://en.wikipedia.org/wiki/Lamport_signature
-[conduition sphincs]: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
-[abdel stark]: /en/newsletters/2025/11/07/#native-stark-proof-verification-in-bitcoin-script
-[news364 quantum primatives]: /en/newsletters/2025/07/25/#research-indicates-common-bitcoin-primitives-are-compatible-with-quantum-resistant-signature-algorithms
-[news365 quantum taproot]: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
-[news357 quantum report]: /en/newsletters/2025/06/06/#quantum-computing-report
-[news qr agg]: /en/newsletters/2025/11/07/#post-quantum-signature-aggregation
+[conduition sphincs]: /fr/newsletters/2025/12/05/#optimisations-de-signature-post-quantique-slh-dsa-sphincss
+[abdel stark]: /fr/newsletters/2025/11/07/#verification-native-de-preuve-stark-dans-bitcoin-script
+[news364 quantum primatives]: /fr/newsletters/2025/07/25/#la-recherche-indique-que-les-primitives-bitcoin-communes-sont-compatibles-avec-les-algorithmes-de-signature-resistants-aux-quantiques
+[news365 quantum taproot]: /fr/newsletters/2025/08/01/#securite-contre-les-ordinateurs-quantiques-avec-taproot-comme-schema-d-engagement
+[news357 quantum report]: /fr/newsletters/2025/06/06/#rapport-sur-l-informatique-quantique
+[news qr agg]: /fr/newsletters/2025/11/07/#agregation-de-signatures-post-quantique
 [nick paper tweet]: https://x.com/n1ckler/status/1998407064213704724
 [hash-based signature schemes]: https://eprint.iacr.org/2025/2203.pdf
-[news335 chilldkg]: /en/newsletters/2025/01/03/#updated-chilldkg-draft
-[news offchain dlc]: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
-[news dlc channels]: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
-[Cedarctic post]: /en/newsletters/2025/09/19/#partitioning-and-eclipse-attacks-using-bgp-interception
+[news335 chilldkg]: /fr/newsletters/2025/01/03/#proposition-chilldkg-mis-a-jour
+[news offchain dlc]: /fr/newsletters/2025/01/24/#correction-a-propos-des-dlc-offchain
+[news dlc channels]: /fr/newsletters/2023/07/19/#le-portefeuille-10101-beta-teste-la-mise-en-commun-des-fonds-entre-les-ln-et-les-dlc
+[Cedarctic post]: /fr/newsletters/2025/09/19/#attaques-de-partitionnement-et-d-eclipse-utilisant-l-interception-bgp
 [eclipse attack]: /en/topics/eclipse-attacks/
-[Antoine post]: /en/newsletters/2025/11/21/#modeling-stale-rates-by-propagation-delay-and-mining-centralization
-[news340 lowering feerates]: /en/newsletters/2025/02/07/#discussion-about-lowering-the-minimum-transaction-relay-feerate
+[Antoine post]: /fr/newsletters/2025/11/21/#modelisation-des-taux-de-blocs-obsoletes-par-delai-de-propagation-et-centralisation-du-minage
+[news340 lowering feerates]: /fr/newsletters/2025/02/07/#discussion-sur-la-reduction-du-taux-minimum-de-frais-de-relais-de-transaction
 [mononautical 85]: https://x.com/mononautical/status/1949452588992414140
 [mononautical 32]: https://x.com/mononautical/status/1958559008698085551
-[news366 lower feerate]: /en/newsletters/2025/08/08/#continued-discussion-about-lowering-the-minimum-relay-feerate
-[news315 compact blocks]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
-[news339 compact blocks]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
-[news365 compact blocks]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
-[news382 compact blocks]: /en/newsletters/2025/11/28/#stats-on-compact-block-reconstructions-updates
-[news368 monitoring]: /en/newsletters/2025/08/22/#peer-observer-tooling-and-call-to-action
+[news366 lower feerate]: /fr/newsletters/2025/08/08/#discussion-continue-sur-la-baisse-du-taux-minimal-de-frais-de-diffusion
+[news315 compact blocks]: /fr/newsletters/2024/08/09/#statistiques-sur-la-reconstruction-de-blocs-compacts
+[news339 compact blocks]: /fr/newsletters/2025/01/31/#statistiques-mises-a-jour-sur-la-reconstruction-de-blocs-compacts
+[news365 compact blocks]: /fr/newsletters/2025/08/01/#test-du-preremplissage-de-bloc-compact
+[news382 compact blocks]: /fr/newsletters/2025/11/28/#statistiques-sur-les-mises-a-jour-de-reconstruction-de-blocs-compacts
+[news368 monitoring]: /fr/newsletters/2025/08/22/#outils-d-observation-des-pairs-et-appel-a-l-action
 [28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
-[news340 lneas]: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
-[news341 lneas]: /en/newsletters/2025/02/14/#continued-discussion-about-ephemeral-anchor-scripts-for-ln
-[news380 kernel]: /en/newsletters/2025/11/14/#bitcoin-core-30595
-[news357 wrapper]: /en/newsletters/2025/06/06/#bitcoin-core-31375
-[news346 dmnd]: /en/newsletters/2025/03/21/#dmnd-launching-pooled-mining
-[news341 bip3 assigned]: /en/newsletters/2025/02/14/#updated-proposal-for-updated-bip-process
-[news382 motion to activate bip3]: /en/newsletters/2025/11/28/#motion-to-activate-bip3
+[news340 lneas]: /fr/newsletters/2025/02/07/#compromis-dans-les-scripts-d-ancrage-ephemeres-de-ln
+[news341 lneas]: /fr/newsletters/2025/02/14/#discussion-continue-sur-les-scripts-d-ancrage-ephemeres-pour-ln
+[news380 kernel]: /fr/newsletters/2025/11/14/#bitcoin-core-30595
+[news357 wrapper]: /fr/newsletters/2025/06/06/#bitcoin-core-31375
+[news346 dmnd]: /fr/newsletters/2025/03/21/#dmnd-lance-le-minage-en-pool
+[news341 bip3 assigned]: /fr/newsletters/2025/02/14/#proposition-mise-a-jour-pour-le-processus-bip-mis-a-jour
+[news382 motion to activate bip3]: /fr/newsletters/2025/11/28/#motion-pour-activer-le-bip3
 [bip3 feedback addressed]: https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc/m/8HTeL2_iAQAJ
 [delving random]: https://delvingbitcoin.org/t/emulating-op-rand/1409
 [random poc]: https://github.com/distributed-lab/op_rand
-[waxwing random]: /en/newsletters/2025/02/14/#suggested
-[ok random]: /en/newsletters/2025/02/07/#emulating-op-rand
-[rl random]: /en/newsletters/2025/03/14/#probabilistic-payments-using-different-hash-functions-as-an-xor-function
-[dh random]: /en/newsletters/2025/02/14/#asked
-[jt delegation]: /en/newsletters/2025/07/25/#chain-code-withholding-for-multisig-scripts
-[news335 coinjoin]: /en/newsletters/2025/01/03/#deanonymization-attacks-against-centralized-coinjoin
-[news333 coinjoin]: /en/newsletters/2024/12/13/#deanonymization-vulnerability-affecting-wasabi-and-related-software
-[news340 htlcbug]: /en/newsletters/2025/02/07/#channel-force-closure-vulnerability-in-ldk
-[news340 htlcfix]: /en/newsletters/2025/02/07/#ldk-3556
-[news339 ldk]: /en/newsletters/2025/01/31/#vulnerability-in-ldk-claim-processing
-[news339 cycling]: /en/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
-[news346 bolts]: /en/newsletters/2025/03/21/#bolts-1233
-[news344 lnd]: /en/newsletters/2025/03/07/#disclosure-of-fixed-lnd-vulnerability-allowing-theft
-[news346 checkpoints]: /en/newsletters/2025/03/21/#bitcoin-core-31649
-[news353 bip30]: /en/newsletters/2025/05/09/#bip30-consensus-failure-vulnerability
-[news354 32bit]: /en/newsletters/2025/05/16/#vulnerability-disclosure-affecting-old-versions-of-bitcoin-core
-[news364 lnd]: /en/newsletters/2025/07/25/#lnd-gossip-filter-dos-vulnerability
-[news319 lnd]: /en/newsletters/2024/09/06/#lnd-9009
+[waxwing random]: /fr/newsletters/2025/02/14/#a-suggere
+[ok random]: /fr/newsletters/2025/02/07/#emuler-op-rand
+[rl random]: /fr/newsletters/2025/03/14/#paiements-probabilistes-utilisant-differentes-fonctions-de-hachage-comme-une-fonction-xor
+[dh random]: /fr/newsletters/2025/02/14/#a-demande
+[jt delegation]: /fr/newsletters/2025/07/25/#retention-du-code-de-chaine-pour-les-scripts-multisig
+[news335 coinjoin]: /fr/newsletters/2025/01/03/#attaques-de-desanonymisation-contre-le-coinjoin-centralise
+[news333 coinjoin]: /fr/newsletters/2024/12/13/#vulnerabilite-de-desanonymisation-affectant-wasabi-et-les-logiciels-associes
+[news340 htlcbug]: /fr/newsletters/2025/02/07/#vulnerabilite-de-fermeture-forcee-de-canal-dans-ldk
+[news340 htlcfix]: /fr/newsletters/2025/02/07/#ldk-3556
+[news339 ldk]: /fr/newsletters/2025/01/31/#vulnerabilite-dans-le-traitement-des-reclamations-ldk
+[news339 cycling]: /fr/newsletters/2025/01/31/#attaques-de-remplacement-cyclique-avec-exploitation-des-mineurs
+[news346 bolts]: /fr/newsletters/2025/03/21/#bolts-1233
+[news344 lnd]: /fr/newsletters/2025/03/07/#divulgation-d-une-vulnerabilite-corrigee-lnd-permettant-le-vol
+[news346 checkpoints]: /fr/newsletters/2025/03/21/#bitcoin-core-31649
+[news353 bip30]: /fr/newsletters/2025/05/09/#vulnerabilite-de-defaillance-de-consensus-bip30
+[news354 32bit]: /fr/newsletters/2025/05/16/#divulgation-de-vulnerabilite-affectant-les-anciennes-versions-de-bitcoin-core
+[news364 lnd]: /fr/newsletters/2025/07/25/#vulnerabilite-de-dos-du-filtre-de-gossip-de-lnd
+[news319 lnd]: /fr/newsletters/2024/09/06/#lnd-9009
 [news159 32bit]: /en/newsletters/2021/07/28/#bitcoin-core-22387
-[news314 32bit]: /en/newsletters/2024/08/02/#remote-crash-by-sending-excessive-addr-messages
-[news373 eclair]: /en/newsletters/2025/09/26/#eclair-vulnerability
-[news378 four]: /en/newsletters/2025/10/31/#disclosure-of-four-low-severity-vulnerabilities-in-bitcoin-core
-[news361 four]: /en/newsletters/2025/07/04/#bitcoin-core-32819
-[news363 four]: /en/newsletters/2025/07/18/#bitcoin-core-32604
-[news367 four]: /en/newsletters/2025/08/15/#bitcoin-core-33050
-[news383 nbitcoin]: /en/newsletters/2025/12/05/#consensus-bug-in-nbitcoin-library
-[news384 lnd]: /en/newsletters/2025/12/12/#critical-vulnerabilities-fixed-in-lnd-0-19-0
-[bdk wallet-1.0.0]: /en/newsletters/2025/01/03/#bdk-wallet-1-0-0
-[ldk v0.1]: /en/newsletters/2025/01/17/#ldk-v0-1
-[core lightning 25.02]: /en/newsletters/2025/03/07/#core-lightning-25-02
-[eclair v0.12.0]: /en/newsletters/2025/03/14/#eclair-v0-12-0
-[btcpay server 2.1.0]: /en/newsletters/2025/04/11/#btcpay-server-2-1-0
-[bitcoin core 29.0]: /en/newsletters/2025/04/18/#bitcoin-core-29-0
-[lnd 0.19.0-beta]: /en/newsletters/2025/05/23/#lnd-0-19-0-beta
-[core lightning 25.05]: /en/newsletters/2025/06/20/#core-lightning-25-05
-[btcpay server 2.2.0]: /en/newsletters/2025/08/08/#btcpay-server-2-2-0
-[core lightning v25.09]: /en/newsletters/2025/09/05/#core-lightning-v25-09
-[eclair v0.13.0]: /en/newsletters/2025/09/12/#eclair-v0-13-0
-[bitcoin inquisition 29.1]: /en/newsletters/2025/10/10/#bitcoin-inquisition-29-1
-[bitcoin core 30.0]: /en/newsletters/2025/10/17/#bitcoin-core-30-0
-[core lightning v25.12]: /en/newsletters/2025/12/05/#core-lightning-v25-12
-[ldk 0.2]: /en/newsletters/2025/12/05/#ldk-0-2
-[news340 eclairsplice]: /en/newsletters/2025/02/07/#eclair-2968
-[news368 eclairtaproot]: /en/newsletters/2025/08/22/#eclair-3103
-[news355 clnsplice]: /en/newsletters/2025/05/23/#core-lightning-8021
-[news359 cln2505]: /en/newsletters/2025/06/20/#core-lightning-25-05
-[news369 ldksplice]: /en/newsletters/2025/08/29/#ldk-3979
-[news370 ldkquiesce]: /en/newsletters/2025/09/05/#ldk-4019
-[news359 eclairdelay]: /en/newsletters/2025/06/20/#eclair-3110
-[news381 clnreconnect]: /en/newsletters/2025/11/21/#core-lightning-8646
+[news314 32bit]: /fr/newsletters/2024/08/02/#crash-a-distance-en-envoyant-des-messages-addr-excessifs
+[news373 eclair]: /fr/newsletters/2025/09/26/#vulnerabilite-eclair
+[news378 four]: /fr/newsletters/2025/10/31/#divulgation-de-quatre-vulnerabilites-de-faible-gravite-dans-bitcoin-core
+[news361 four]: /fr/newsletters/2025/07/04/#bitcoin-core-32819
+[news363 four]: /fr/newsletters/2025/07/18/#bitcoin-core-32604
+[news367 four]: /fr/newsletters/2025/08/15/#bitcoin-core-33050
+[news383 nbitcoin]: /fr/newsletters/2025/12/05/#bug-de-consensus-dans-la-bibliotheque-nbitcoin
+[news384 lnd]: /fr/newsletters/2025/12/12/#vulnerabilites-critiques-corrigees-dans-lnd-0-19-0
+[bdk wallet-1.0.0]: /fr/newsletters/2025/01/03/#bdk-wallet-1-0-0
+[ldk v0.1]: /fr/newsletters/2025/01/17/#ldk-v0-1
+[core lightning 25.02]: /fr/newsletters/2025/03/07/#core-lightning-25-02
+[eclair v0.12.0]: /fr/newsletters/2025/03/14/#eclair-v0-12-0
+[btcpay server 2.1.0]: /fr/newsletters/2025/04/11/#btcpay-server-2-1-0
+[bitcoin core 29.0]: /fr/newsletters/2025/04/18/#bitcoin-core-29-0
+[lnd 0.19.0-beta]: /efr/newsletters/2025/05/23/#lnd-0-19-0-beta
+[core lightning 25.05]: /fr/newsletters/2025/06/20/#core-lightning-25-05
+[btcpay server 2.2.0]: /fr/newsletters/2025/08/08/#btcpay-server-2-2-0
+[core lightning v25.09]: /fr/newsletters/2025/09/05/#core-lightning-v25-09
+[eclair v0.13.0]: /fr/newsletters/2025/09/12/#eclair-v0-13-0
+[bitcoin inquisition 29.1]: /fr/newsletters/2025/10/10/#bitcoin-inquisition-29-1
+[bitcoin core 30.0]: /fr/newsletters/2025/10/17/#bitcoin-core-30-0
+[core lightning v25.12]: /fr/newsletters/2025/12/05/#core-lightning-v25-12
+[ldk 0.2]: /fr/newsletters/2025/12/05/#ldk-0-2
+[news340 eclairsplice]: /fr/newsletters/2025/02/07/#eclair-2968
+[news368 eclairtaproot]: /fr/newsletters/2025/08/22/#eclair-3103
+[news355 clnsplice]: /fr/newsletters/2025/05/23/#core-lightning-8021
+[news359 cln2505]: /fr/newsletters/2025/06/20/#core-lightning-25-05
+[news369 ldksplice]: /fr/newsletters/2025/08/29/#ldk-3979
+[news370 ldkquiesce]: /fr/newsletters/2025/09/05/#ldk-4019
+[news359 eclairdelay]: /fr/newsletters/2025/06/20/#eclair-3110
+[news381 clnreconnect]: /fr/newsletters/2025/11/21/#core-lightning-8646
 [bolts #1270]: https://github.com/lightning/bolts/pull/1270
 [bolts #1289]: https://github.com/lightning/bolts/pull/1289
 [bolts #1160]: https://github.com/lightning/bolts/pull/1160
-[news366 utreexo]: /en/newsletters/2025/08/08/#draft-bips-proposed-for-utreexo
+[news366 utreexo]: /fr/newsletters/2025/08/08/#bips-en-version-draft-proposes-pour-utreexo
 [bip181 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0181.md
 [bip182 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0182.md
 [bip183 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0183.md
-[news366 templ share]: /en/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
-[news368 templ share]: /en/newsletters/2025/08/22/#draft-bip-for-block-template-sharing
-[news376 templ share]: /en/newsletters/2025/10/17/#continued-discussion-of-block-template-sharing
+[news366 templ share]: /fr/newsletters/2025/08/08/#partage-de-modele-de-bloc-entre-pairs-pour-attenuer-les-problemes-lies-aux-politiques-de-mempool-divergentes
+[news368 templ share]: /fr/newsletters/2025/08/22/#projet-de-bip-pour-le-partage-de-modeles-de-bloc
+[news376 templ share]: /fr/newsletters/2025/10/17/#discussion-continue-sur-le-partage-de-modele-de-bloc
 [binana repo]: https://github.com/bitcoin-inquisition/binana
 [bin]: https://github.com/bitcoin-inquisition/binana/blob/master/2025/BIN-2025-0002.md
-[news369 fuzz]: /en/newsletters/2025/08/29/#update-on-differential-fuzzing-of-bitcoin-and-ln-implementations
+[news369 fuzz]: /fr/newsletters/2025/08/29/#mise-a-jour-sur-le-fuzzing-differentiel-des-implementations-de-bitcoin-et-ln
 [bitcoinfuzz]: https://github.com/bitcoinfuzz/bitcoinfuzz
-[news375 arb data]: /en/newsletters/2025/10/10/#theoretical-limitations-on-embedding-data-in-the-utxo-set
-[news379 arb data]: /en/newsletters/2025/11/07/#multiple-discussions-about-restricting-data
-[news 338]: /en/newsletters/2025/01/24/#bitcoin-core-31397
-[news352 OR debate]: /en/newsletters/2025/05/02/#increasing-or-removing-bitcoin-core-s-op-return-size-limit
+[news375 arb data]: /fr/newsletters/2025/10/10/#limitations-theoriques-sur-l-incorporation-de-donnees-dans-l-ensemble-utxo
+[news379 arb data]: /fr/newsletters/2025/11/07/#plusieurs-discussions-sur-la-restriction-des-donnees
+[news 338]: /fr/newsletters/2025/01/24/#bitcoin-core-31397
+[news352 OR debate]: /fr/newsletters/2025/05/02/#augmentation-ou-suppression-de-la-limite-de-taille-op-return-de-bitcoin-core
 [0xb10c delving]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/35
