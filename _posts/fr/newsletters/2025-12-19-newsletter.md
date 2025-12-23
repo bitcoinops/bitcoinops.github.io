@@ -1152,7 +1152,7 @@ Bitcoin. La bulletin Optech reprendra sa publication régulière le vendredi à 
 [news qr corallo]: /fr/newsletters/2025/01/03/#chemin-de-mise-a-niveau-pour-ordinateur-quantique
 [rubin lamport]: https://gnusha.org/pi/bitcoindev/CAD5xwhgzR8e5r1e4H-5EH2mSsE1V39dd06+TgYniFnXFSBqLxw@mail.gmail.com/
 [lamport]: https://en.wikipedia.org/wiki/Lamport_signature
-[conduition sphincs]: /fr/newsletters/2025/12/05/#optimisations-de-signature-post-quantique-slh-dsa-sphincss
+[conduition sphincs]: /fr/newsletters/2025/12/05/#optimisations-de-signature-post-quantique-slh-dsa-sphincs
 [abdel stark]: /fr/newsletters/2025/11/07/#verification-native-de-preuve-stark-dans-bitcoin-script
 [news364 quantum primatives]: /fr/newsletters/2025/07/25/#la-recherche-indique-que-les-primitives-bitcoin-communes-sont-compatibles-avec-les-algorithmes-de-signature-resistants-aux-quantiques
 [news365 quantum taproot]: /fr/newsletters/2025/08/01/#securite-contre-les-ordinateurs-quantiques-avec-taproot-comme-schema-d-engagement
@@ -1219,7 +1219,7 @@ Bitcoin. La bulletin Optech reprendra sa publication régulière le vendredi à 
 [eclair v0.12.0]: /fr/newsletters/2025/03/14/#eclair-v0-12-0
 [btcpay server 2.1.0]: /fr/newsletters/2025/04/11/#btcpay-server-2-1-0
 [bitcoin core 29.0]: /fr/newsletters/2025/04/18/#bitcoin-core-29-0
-[lnd 0.19.0-beta]: /efr/newsletters/2025/05/23/#lnd-0-19-0-beta
+[lnd 0.19.0-beta]: /fr/newsletters/2025/05/23/#lnd-0-19-0-beta
 [core lightning 25.05]: /fr/newsletters/2025/06/20/#core-lightning-25-05
 [btcpay server 2.2.0]: /fr/newsletters/2025/08/08/#btcpay-server-2-2-0
 [core lightning v25.09]: /fr/newsletters/2025/09/05/#core-lightning-v25-09
