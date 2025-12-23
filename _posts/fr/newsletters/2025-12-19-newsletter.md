@@ -138,7 +138,7 @@ notables survenus dans Bitcoin au cours de l'année 2025.
 
   Les compromis incluaient comment différents scripts affectent le bumping de frais [CPFP][topic
   cpfp], le poids de la transaction, et la capacité à dépenser ou à jeter en toute sécurité les
-  sorites d'ancrage lorsqu'ils ne sont plus nécessaires. La [discussion continue][news341 lneas] a mis
+  sorties d'ancrage lorsqu'ils ne sont plus nécessaires. La [discussion continue][news341 lneas] a mis
   en évidence les interactions avec la politique de mempool et les hypothèses de sécurité de Lightning.
 
 - **Paiements probabilistes :** Oleksandr Kurbatov a lancé une
@@ -387,7 +387,7 @@ hachage et discute de la manière dont ceux-ci pourraient être adaptés aux bes
 {:#clustermempool}
 
 - **Cluster mempool :** Au début de l'année, Stefan Richter a suscité l'enthousiasme en
-  [découvrant][news340 richter ggt] qu'un algorithme efficace pour le
+  [découvrant][news340 richter ggt] qu'un algorithme efficace pour
   le problème de _maximum-ratio closure_ issu d'un article de recherche de 1989 pourrait être appliqué
   à la linéarisation des clusters. Pieter Wuille enquêtait déjà sur une approche de programmation
   linéaire comme amélioration potentielle par rapport à la recherche initiale de l'ensemble des
