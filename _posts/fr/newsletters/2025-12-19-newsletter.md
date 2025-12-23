@@ -129,6 +129,8 @@ notables survenus dans Bitcoin au cours de l'année 2025.
   pair erlay][erlay candidate peers]. Ces expériences, combinant le fanout et la réconciliation,
   l'ont aidé à déterminer quand utiliser chaque méthode.
 
+{:#lneas}
+
 - **Scripts d'ancrage éphémères LN :** Après plusieurs mises à jour des politiques de mempool dans
   Bitcoin Core 28.0, la discussion a commencé en février autour des choix de conception pour les
   [ancrages éphémères][topic ephemeral anchors] dans les transactions d'engagement LN. Les
@@ -140,6 +142,8 @@ notables survenus dans Bitcoin au cours de l'année 2025.
   cpfp], le poids de la transaction, et la capacité à dépenser ou à jeter en toute sécurité les
   sorties d'ancrage lorsqu'ils ne sont plus nécessaires. La [discussion continue][news341 lneas] a mis
   en évidence les interactions avec la politique de mempool et les hypothèses de sécurité de Lightning.
+
+{:#probpayments}
 
 - **Paiements probabilistes :** Oleksandr Kurbatov a lancé une
   [discussion][delving random] sur Delving Bitcoin sur les méthodes de production de résultats
@@ -247,6 +251,8 @@ incluant deux vulnérabilités de vol de fonds et une vulnérabilité de déni d
 
 ## Mars
 
+{:#forkingguide}
+
 - **Guide de Forking Bitcoin :** Anthony Towns a posté sur Delving Bitcoin [un guide][news344 fork
   guide] sur comment construire un consensus communautaire pour les changements dans les règles de
   consensus de Bitcoin. Selon Towns, le processus d'établissement du consensus peut être divisé en
@@ -255,6 +261,8 @@ incluant deux vulnérabilités de vol de fonds et une vulnérabilité de déni d
   investisseurs][fork guide ir]. Cependant, Towns a averti les lecteurs que le guide vise à être
   seulement une procédure de haut niveau, et qu'il pourrait fonctionner uniquement dans un
   environnement coopératif.
+
+{:#templatemarketplace}
 
 - **Marché privé de templates de blocs pour prévenir la centralisation du MEV :** Les développeurs
   Matt Corallo et 7d5x9 ont posté sur Delving Bitcoin [une proposition][news344 template mrkt] qui
@@ -272,6 +280,8 @@ incluant deux vulnérabilités de vol de fonds et une vulnérabilité de déni d
   produit suffisamment de preuve de travail pour publier le bloc. Les auteurs ont averti que cette
   proposition nécessiterait plusieurs marchés concurrent afin de préserver la décentralisation
   contre la dominance d'un seul marché de confiance.
+
+{:#lnupfrontfees}
 
 - **Frais initiaux et de maintien sur LN utilisant des sorties brûlables :** John Law a proposé [une
   solution][news 347 ln fees] aux [attaques de blocage de canal][topic channel jamming attacks], une
@@ -674,6 +684,8 @@ lancées : [Hashpool][news346 hashpool], qui représente les parts de minage sou
 
 ## Septembre
 
+{:#simplicity}
+
 - **Détails sur la conception de Simplicity :** Après la sortie de [Simplicity][topic simplicity]
   sur le Liquid Network, Russell O'Connor a fait trois publications sur Delving Bitcoin pour discuter
   de la [philosophie et de la conception][simplicity 370] derrière le langage :
@@ -691,6 +703,8 @@ lancées : [Hashpool][news346 hashpool], qui représente les parts de minage sou
   Depuis septembre, deux autres publications ont été publiées sur Delving Bitcoin, [Partie
   IV][simplicity IV post], discutant des effets de bord, et [Partie V][simplicity V post], traitant
   des programmes et des adresses.
+
+{:#eclipseattacks}
 
 - **Partitionnement et attaques par éclipse utilisant l'interception BGP :** Cedarctic a
   [publié][Cedarctic post] sur Delving Bitcoin à propos des failles dans le Protocole de Passerelle
@@ -967,6 +981,8 @@ l'élucidation et la compréhension de Bitcoin qu'il a apportées à la communau
 </div>
 
 ## Décembre
+
+{:#lnsplicing}
 
 - **Splicing :** En décembre, [LDK 0.2][] a été publié avec un support expérimental du
   [splicing][topic splicing], rendant la fonctionnalité disponible sur trois principales
