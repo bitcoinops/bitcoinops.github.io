@@ -1105,7 +1105,7 @@ Bitcoin. La bulletin Optech reprendra sa publication régulière le vendredi à 
 [ctv csfs arks]: /fr/newsletters/2025/04/04/#ark
 [ctv vaults]: /fr/newsletters/2025/04/04/#vaults
 [ctv dlcs]: /fr/newsletters/2025/04/04/#dlcs
-[lnhance update]: /fr/newsletters/2025/12/05/#soft-fork-lnhance"
+[lnhance update]: /fr/newsletters/2025/12/05/#soft-fork-lnhance
 [rubin key ladder]: https://rubin.io/bitcoin/2024/12/02/csfs-ctv-rekey-symmetry/
 [ctv csfs ptlcs]: /fr/newsletters/2025/07/04/#avantages-de-ctv-csfs-pour-les-ptlc
 [ctv csfs bitvm]: /fr/newsletters/2025/05/16/#description-des-avantages-pour-bitvm-de-op-ctv-et-op-csfs
