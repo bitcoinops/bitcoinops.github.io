@@ -78,7 +78,7 @@ excerpt: >
   [updated][news335 chilldkg] their work on a distributed key generation
   protocol (DKG) for use with the FROST [threshold signature][topic
   threshold signature] scheme. ChillDKG aims to provide similar
-  recoverability features to existing descriptor wallets.
+  recoverability features to existing descriptor wallets. {% assign timestamp="43:08" %}
 
 {:#offchaindlcs}
 
@@ -87,7 +87,7 @@ excerpt: >
   participants to collaborate on the creation and extension of a DLC factory,
   which allows iterative DLCs that roll along until one party chooses to
   resolve onchain. This contrasts with [prior work][news dlc channels] on
-  offchain DLCs which required interaction at each roll of the contract.
+  offchain DLCs which required interaction at each roll of the contract. {% assign timestamp="45:53" %}
 
 {:#compactblockstats}
 
@@ -111,7 +111,7 @@ excerpt: >
   to the [monitoring nodes' minimum relay feerates](#minfeerate),
   showing nodes with lower `minrelayfee` have a higher reconstruction
   rate. The author also [posted][news368 monitoring] about the
-  architecture behind his monitoring project.
+  architecture behind his monitoring project. {% assign timestamp="2:29:27" %}
 
 ## February
 
@@ -130,7 +130,7 @@ excerpt: >
   determined the [fanout rate based on how a transaction was
   received][erlay transaction received] and [when to select candidate
   peers][erlay candidate peers]. These experiments, which combined fanout and
-  reconciliation, helped him determine when to use each method.
+  reconciliation, helped him determine when to use each method. {% assign timestamp="1:53:55" %}
 
 {:#lneas}
 
@@ -146,7 +146,7 @@ excerpt: >
   bumping, transaction weight, and the ability to safely spend or discard anchor
   outputs when they are no longer needed. [Continued discussion][news341 lneas]
   highlighted interactions with mempool policy and Lightning’s security
-  assumptions.
+  assumptions. {% assign timestamp="0:50" %}
 
 {:#probpayments}
 
@@ -160,7 +160,7 @@ excerpt: >
   represented by a sequence of different hashing functions to directly produce
   an unpredictable bitstring. There was [discussion][dh random] of whether
   such random transaction outcomes could be used to produce probabilistic
-  HTLCs as an alternative to [trimmed HTLCs][topic trimmed htlc] for small amounts in LN.
+  HTLCs as an alternative to [trimmed HTLCs][topic trimmed htlc] for small amounts in LN. {% assign timestamp="54:45" %}
 
 <div markdown="1" class="callout" id="vulns">
 
@@ -272,7 +272,7 @@ denial-of-service vulnerability.
   guide red], [power user exploration][fork guide pue], [industry
   evaluation][fork guide ie], and [investor review][fork guide ir]. However,
   Towns warned readers that the guide aims to be only a high-level procedure,
-  and that it could work only in a cooperative environment.
+  and that it could work only in a cooperative environment.  {% assign timestamp="3:29:35" %}
 
 {:#templatemarketplace}
 
@@ -293,7 +293,7 @@ denial-of-service vulnerability.
   until they’ve produced sufficient proof of work to publish the block. The
   authors warned that this proposal would require multiple marketplaces to
   compete to help preserve decentralization against the dominance of a single
-  trusted marketplace.
+  trusted marketplace. {% assign timestamp="3:05:28" %}
 
 {:#lnupfrontfees}
 
@@ -307,7 +307,7 @@ denial-of-service vulnerability.
   former to compensate forwarding nodes for temporarily using an [HTLC][topic
   htlc] slot, while the latter would be paid by any node that delays the
   settlement of an HTLC, with the fee amount scaling up with the length of the
-  delay.
+  delay. {% assign timestamp="13:12" %}
 
 ## April
 
@@ -326,7 +326,7 @@ denial-of-service vulnerability.
   parallel block validation.
 
   Work on a Rust implementation was [announced][swiftsync rust impl] in
-  September.
+  September. {% assign timestamp="2:09:35" %}
 
 {:#dahlias}
 
@@ -338,7 +338,7 @@ denial-of-service vulnerability.
   requirement for [cross-input signature aggregation][topic cisa] (CISA), a
   feature proposed for Bitcoin that could reduce the size of transactions with
   multiple inputs, thus reducing the cost of many different types of spending,
-  [coinjoins][topic coinjoin] and [payjoins][topic payjoin] included.
+  [coinjoins][topic coinjoin] and [payjoins][topic payjoin] included. {% assign timestamp="3:26:02" %}
 
 <div markdown="1" class="callout" id="quantum">
 
@@ -414,6 +414,8 @@ tweet] a [paper][hash-based signature schemes] that provides an overview of
 hash-based signature schemes and discusses how those could be adapted to suit
 Bitcoin’s needs.
 
+{% assign timestamp="58:07" %}
+
 </div>
 
 ## May
@@ -444,6 +446,8 @@ Bitcoin’s needs.
   linearization algorithm with the spanning-forest linearization algorithm is
   ongoing.
 
+{% assign timestamp="1:22:11" %}
+
 {:#opreturn}
 
 - **Increasing or removing Bitcoin Core’s OP_RETURN policy limit:** In April,
@@ -463,7 +467,7 @@ Bitcoin’s needs.
   Core #32406], to allow multiple OP_RETURN outputs and remove the policy limit
   on size for OP_RETURN output scripts. After the release, several soft fork
   proposals have been put forth, proposing to [curb data embedding](#arbdata) at
-  the consensus level.
+  the consensus level. {% assign timestamp="2:45:43" %}
 
 ## June
 
@@ -476,7 +480,7 @@ Bitcoin’s needs.
   on reproducing one of the paper's conclusions, proving that a dishonest miner
   controlling 33% of the total network hashrate can become marginally more
   profitable than the remaining miners by selectively delaying the announcement
-  of some of the new blocks it finds.
+  of some of the new blocks it finds. {% assign timestamp="2:20:39" %}
 
 {:#fingerprinting}
 
@@ -490,7 +494,7 @@ Bitcoin’s needs.
   networks (such as IPv4 and [Tor][topic anonymity networks]). Researchers
   suggested two possible mitigations: either removing timestamps from address
   messages entirely or randomizing them slightly to make them less specific to
-  particular nodes.
+  particular nodes. {% assign timestamp="3:11:38" %}
 
 {:#garbledlocks}
 
@@ -507,7 +511,7 @@ Bitcoin’s needs.
   creating [accountable computing contracts][topic acc] based on garbled
   circuits, called Glock (garbled locks). While the approach is similar, Eagen's
   research is independent from Linus'. According to Eagen, Glock allows for a
-  550x reduction of onchain data compared to BitVM2.
+  550x reduction of onchain data compared to BitVM2. {% assign timestamp="3:19:01" %}
 
 <div markdown="1" class="callout" id="softforks">
 
@@ -590,6 +594,8 @@ powerful.
   four BIPs would enable all of the functionality proposed in the above opcode
   proposals while allowing more script expressivity.
 
+{% assign timestamp="28:07" %}
+
 </div>
 
 ## July
@@ -605,7 +611,7 @@ powerful.
   tree. The method can be used either blinded (for complete privacy while still
   leveraging the provider's key security) or non-blinded (allowing the provider
   to enforce policy at the cost of revealing the specific transactions being
-  signed to the provider).
+  signed to the provider). {% assign timestamp="49:07" %}
 
 ## August
 
@@ -630,6 +636,8 @@ powerful.
   * *[BIP183][bip183 utreexo]*: Defines the changes needed for nodes to exchange
     an inclusion proof, confirming the UTXOs being spent.
 
+  {% assign timestamp="2:15:57" %}
+
 {:#minfeerate}
 
 - **Lowering the minimum relay feerate:** After lowering the minimum transaction
@@ -645,7 +653,7 @@ powerful.
   transactions was [causing decreased compact block reconstruction rates][0xb10c
   delving] and [proposed][news366 lower feerate] adjusting the default minimum
   relay feerate. The Bitcoin Core 29.1 release lowered the default minimum relay
-  feerate to 0.1 sat/vbyte in early September.
+  feerate to 0.1 sat/vbyte in early September. {% assign timestamp="2:39:52" %}
 
 {:#templatesharing}
 
@@ -663,7 +671,7 @@ powerful.
   node fingerprinting. In October, Towns decided to [move the draft][news376
   templ share] to the [Bitcoin Inquisition Numbers and Names Authority][binana
   repo] (BINANA) repository to address these considerations and to refine the
-  document. The draft was given the code [BIN-2025-0002][bin].
+  document. The draft was given the code [BIN-2025-0002][bin]. {% assign timestamp="2:56:01" %}
 
 {:#fuzzing}
 
@@ -681,7 +689,7 @@ powerful.
 
   Finally, Garcia encouraged maintainers to integrate more projects into
   bitcoinfuzz, expanding support for differential fuzzing, and provided possible
-  directions for the future development of the project.
+  directions for the future development of the project. {% assign timestamp="3:16:08" %}
 
 <div markdown="1" class="callout" id="stratumv2">
 
@@ -727,6 +735,8 @@ mining pools also launched: [Hashpool][news346 hashpool], which represents
 mining shares as [ecash][topic ecash] tokens, and [DMND][news346 dmnd], which
 expanded from solo mining to pooled mining.
 
+{% assign timestamp="2:04:49" %}
+
 </div>
 
 ## September
@@ -750,7 +760,7 @@ expanded from solo mining to pooled mining.
 
   Since September, two more posts have been published to Delving Bitcoin, [Part
   IV][simplicity IV post], discussing side effects, and [Part V][simplicity V
-  post], dealing with programs and addresses.
+  post], dealing with programs and addresses. {% assign timestamp="3:23:01" %}
 
 {:#eclipseattacks}
 
@@ -760,7 +770,7 @@ expanded from solo mining to pooled mining.
   connect to honest peers, potentially allowing network partitions or [eclipse
   attacks][eclipse attack]. Several mitigations were described by cedarctic,
   with other developers in the discussion describing other mitigations and ways
-  to monitor for the attack.
+  to monitor for the attack. {% assign timestamp="3:13:47" %}
 
 <div markdown="1" class="callout" id="releases">
 
@@ -843,7 +853,7 @@ expanded from solo mining to pooled mining.
 
   Subsequent [discussions][news379 arb data] through the rest of the year
   focused on whether consensus restrictions on data-carrying transactions should
-  be considered.
+  be considered. {% assign timestamp="3:01:15" %}
 
 {:#channeljamming}
 
@@ -856,7 +866,7 @@ expanded from solo mining to pooled mining.
   [resource][channel jamming resource] and [sink][channel jamming sink] attacks.
   After this round of updates and simulations, they feel that [channel jamming
   attack][channel jamming attack] mitigation has reached a point where it is
-  sufficient for implementation.
+  sufficient for implementation. {% assign timestamp="11:05" %}
 
 ## November
 
@@ -875,7 +885,7 @@ expanded from solo mining to pooled mining.
   In the discussion, libsecp256k1 creator Pieter Wuille notes that the
   benchmarks have inherent biases: all versions were tested on modern hardware
   and compilers, but historical optimizations targeted the hardware and
-  compilers that existed at the time.
+  compilers that existed at the time. {% assign timestamp="2:01:47" %}
 
 {:#stalerates}
 
@@ -893,7 +903,7 @@ expanded from solo mining to pooled mining.
   propagation, a 5 EH/s operation earning $91M annually could gain about $100k
   in additional revenue by connecting to the largest pool instead of the
   smallest. Since mining operates on thin margins, small revenue differences can
-  translate to significant profit impacts.
+  translate to significant profit impacts. {% assign timestamp="2:22:32" %}
 
 {:#bip3}
 
@@ -909,7 +919,7 @@ expanded from solo mining to pooled mining.
   improvements and the reversion of controversial guidance disallowing the use
   of LLMs in crafting BIPs. As the year closes out, all review has been
   addressed, and BIP3 is [seeking rough consensus][bip3 feedback addressed] for
-  activation again.
+  activation again. {% assign timestamp="3:31:37" %}
 
 {:#kernelapi}
 
@@ -925,7 +935,7 @@ expanded from solo mining to pooled mining.
   scanner, a block analysis tool, and a script validation accelerator, among
   others. Several language bindings are in development, including for
   [Rust][kernel rust], [Go][kernel go], [JDK][kernel jdk], [C#][kernel csharp],
-  and [Python][kernel python].
+  and [Python][kernel python]. {% assign timestamp="3:35:35" %}
 
 <div markdown="1" class="callout" id="optech">
 
@@ -1067,7 +1077,7 @@ We are eternally grateful and wish him all the best.
 
   However, the main [splicing specification][bolts #1160] remains unmerged as of
   the end of the year, with updates still expected and cross-compatibility
-  issues continuing to be resolved.
+  issues continuing to be resolved. {% assign timestamp="7:33" %}
 
 *We thank all of the Bitcoin contributors named above, plus the many
 others whose work was just as important, for another incredible year of
