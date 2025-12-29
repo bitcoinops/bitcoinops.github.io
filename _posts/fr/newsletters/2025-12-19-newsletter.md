@@ -7,9 +7,8 @@ type: newsletter
 layout: newsletter
 lang: fr
 
-extrait: >
-Le huitième numéro spécial annuel Bilan de l'année de Bitcoin Optech résume les développements
-notables survenus dans Bitcoin au cours de l'année 2025.
+excerpt: >
+  Le huitième numéro spécial annuel Bilan de l'année de Bitcoin Optech résume les développements notables survenus dans Bitcoin au cours de l'année 2025.
 ---
 
 {{page.excerpt}} C'est la suite de nos résumés de [2018][yirs 2018],
