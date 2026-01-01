@@ -37,6 +37,24 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
   Halseth also provided a [prototype implementation][halseth prototype]
   available for regtest and signet.
 
+- **Peer feature negotiation**: Anthony Towns [posted][peer neg ml] to the
+  Bitcoin-Dev mailing list about a proposal for a new [BIP][towns bip] to define
+  a P2P message that would allow peers to announce and negotiate support for new
+  features. The idea is similar to a [previous one][feature negotiation ml] from
+  2020 and would benefit various proposed P2P use cases, including Towns' work
+  on [template sharing][news366 template].
+
+  Historically, changes to the P2P protocol have relied on version bumping to
+  signal support for new features, ensuring peers negotiate only with compatible nodes.
+  However, this approach creates unnecessary coordination across
+  implementations, especially for features that don't need universal adoption.
+
+  This BIP proposes generalizing [BIP339][]'s mechanism by introducing a single, reusable
+  P2P message for announcing and negotiating future P2P upgrades during the
+  [pre-verack][verack] phase. This would reduce coordination burdens, enable
+  permissionless extensibility, prevent network partitioning, and maximize
+  compatibility with diverse clients.
+
 ## Changing consensus
 
 _A monthly section summarizing proposals and discussion about changing Bitcoin's
@@ -156,3 +174,8 @@ FIXME:Gustavojfe
 [halseth post]: https://delvingbitcoin.org/t/building-a-vault-using-blinded-co-signers/2141
 [halseth prototype]: https://github.com/halseth/blind-vault
 [blinded musig]: https://github.com/halseth/ephemeral-signing-service/blob/main/doc/general.md
+[peer neg ml]: https://groups.google.com/g/bitcoindev/c/DFXtbUdCNZE
+[news366 template]: /en/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
+[feature negotiation ml]: https://gnusha.org/pi/bitcoindev/CAFp6fsE=HPFUMFhyuZkroBO_QJ-dUWNJqCPg9=fMJ3Jqnu1hnw@mail.gmail.com/
+[towns bip]: https://github.com/ajtowns/bips/blob/202512-p2p-feature/bip-peer-feature-negotiation.md
+[verack]:https://developer.bitcoin.org/reference/p2p_networking.html#verack
