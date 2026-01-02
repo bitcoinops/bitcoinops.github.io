@@ -139,25 +139,86 @@ consensus rules._
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates._
+projects. Please consider upgrading to new releases or helping to test release
+candidates._
 
-FIXME:Gustavojfe
+- [BTCPay Server 2.3.0][] is a release of this popular self-hosted payment
+  solution that adds the Subscriptions feature (see [Newsletter #379][news379
+  btcpay]) to the user interface and the API, improves payment requests, and
+  includes several other features and bug fixes.
 
 ## Notable code and documentation changes
 
 _Notable recent changes in [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
-[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
-Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
-Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
-[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
-repo], and [BINANAs][binana repo]._
+[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet Interface
+(HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
+Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement Proposals
+(BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning
+BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo], and
+[BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33657][] introduces a new REST endpoint
+  `/rest/blockpart/<BLOCKHASH>.bin?offset=X&size=Y` that returns a byte-range of
+  a block. This allows external indexes such as Electrs to fetch only specific
+  transactions, instead of downloading the entire block.
+
+- [Bitcoin Core #32414][] adds periodic flushes of the UTXO cache to disk during
+  reindexing, in addition to the existing coverage during IBD. Previously, the
+  flush only occurred when the tip was reached, so a crash during reindexing
+  could result in substantial progress being lost with a large `dbcache` set.
+
+- [Bitcoin Core #32545][] replaces the previously introduced cluster
+  linearization algorithm (see [Newsletter #314][news314 cluster]) with a
+  spanning-forest linearization algorithm designed to handle difficult clusters
+  more efficiently. Testing on historical mempool data indicates that the new
+  algorithm can linearize all observed clusters of up to 64 transactions in tens
+  of microseconds. This is part of the [cluster mempool][topic cluster mempool]
+  project.
+
+- [Bitcoin Core #33892][] relaxes relay policy, allowing opportunistic 1-parent-1-child (1p1c)
+  [package relay][topic package relay] where the parent pays below the minimum
+  relay fee even if the parent is non-[TRUC][topic v3 transaction relay], as
+  long as the package feerate exceeds the node's current minimum relay fee and
+  the child has no other ancestors with a fee below the minimum. This was
+  previously restricted to TRUC transactions only to simplify reasoning about
+  mempool trimming, but this is no longer a concern with [cluster mempool][topic
+  cluster mempool].
+
+- [Core Lightning #8784][] adds a `payer_note` field to the `xpay` RPC command
+  (see [Newsletter #330][news330 xpay]) to enable a payer to provide a payment
+  description when requesting an invoice. The `fetchinvoice` command already has
+  a similar `payer_note` field, so this PR adds it to `xpay` and wires the value
+  through to the underlying flow.
+
+- [LND #9489][] and [#10049][lnd #10049] introduce an experimental `switchrpc`
+  gRPC subsystem with `BuildOnion`, `SendOnion`, and `TrackOnion` RPCs, allowing
+  an external controller to handle pathfinding and payment lifecycle management
+  while using LND for [HTLC][topic htlc] delivery. The server's compilation is
+  hidden behind the non-default `switchrpc` build tag. [LND #10049][]
+  specifically adds the storage foundation for external attempt tracking, laying
+  the groundwork for a future idempotent version. Currently, it is only safe to
+  allow one entity at a time to dispatch attempts via the switch, to avoid loss
+  of funds.
+
+- [BIPs #2051][] makes several changes to the [BIP3][] specification: it reverts
+  the recently added guidance against using LLMs (see [Newsletter #378][news378
+  bips2006]), broadens the reference implementation formats, adds a changelog,
+  and makes several other improvements and clarifications.
+
+- [BOLTs #1299][] updates the [BOLT3][] specification to remove an ambiguous
+  note about using the per-commitment point `localpubkey` in the output that
+  pays the counterparty `to_remote`. With the `option_static_remotekey`, this is
+  no longer valid because the `to_remote` output is expected to use the
+  recipient's static `payment_basepoint` to enable fund recovery without the
+  per-commitment point.
+
+- [BOLTs #1305][] updates the [BOLT11][] specification to clarify that the `n`
+  field (33-byte public key of the payee node) is not mandatory. This corrects
+  an earlier phrase that said it was mandatory.
 
 {% include snippets/recap-ad.md when="2026-01-06 17:30" %}
+{% include references.md %} {% include linkers/issues.md v=2 issues="33657,32414,32545,33892,8784,9489,10049,2051,1299,1305" %}
 [news315 frost]: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
 [mk ml hash]: https://groups.google.com/g/bitcoindev/c/gOfL5ag_bDU/m/0YuwSQ29CgAJ
 [fd0 ml ctv]: https://groups.google.com/d/msgid/bitcoindev/CALiT-Zr9JnLcohdUQRufM42OwROcOh76fA1xjtqUkY5%3Dotqfwg%40mail.gmail.com
@@ -179,3 +240,9 @@ FIXME:Gustavojfe
 [feature negotiation ml]: https://gnusha.org/pi/bitcoindev/CAFp6fsE=HPFUMFhyuZkroBO_QJ-dUWNJqCPg9=fMJ3Jqnu1hnw@mail.gmail.com/
 [towns bip]: https://github.com/ajtowns/bips/blob/202512-p2p-feature/bip-peer-feature-negotiation.md
 [verack]:https://developer.bitcoin.org/reference/p2p_networking.html#verack
+[BTCPay Server 2.3.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.3.0
+[news379 btcpay]: /en/newsletters/2025/11/07/#btcpay-server-6922
+[news314 cluster]: /en/newsletters/2024/08/02/#bitcoin-core-30126
+[news330 xpay]: /en/newsletters/2024/11/22/#core-lightning-7799
+[lnd #10049]: https://github.com/lightningnetwork/lnd/pull/10049
+[news378 bips2006]: /en/newsletters/2025/10/31/#bips-2006
