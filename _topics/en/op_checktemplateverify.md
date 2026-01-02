@@ -175,6 +175,9 @@ optech_mentions:
   - title: "`OP_TEMPLATEHASH` proposal as an alternative to CTV"
     url: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
 
+  - title: "Understanding and mitigating a CTV footgun"
+    url: /en/newsletters/2026/01/02/#understanding-and-mitigating-a-ctv-footgun
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

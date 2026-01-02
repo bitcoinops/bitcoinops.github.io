@@ -94,6 +94,9 @@ optech_mentions:
   - title: "SLH-DSA (SPHINCS) post-quantum signature optimizations"
     url: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
 
+  - title: "Technical report of hash-based post-quantum signature schemes"
+    url: /en/newsletters/2026/01/02/#hash-based-signatures-for-bitcoin-s-post-quantum-future
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

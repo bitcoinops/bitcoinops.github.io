@@ -74,6 +74,12 @@ optech_mentions:
   - title: "Bitcoin Core #32521 makes legacy transactions with more than 2500 sigops non-standard"
     url: /en/newsletters/2025/07/25/#bitcoin-core-32521
 
+  - title: "BIP54 implementation and test vectors"
+    url: /en/newsletters/2025/11/07/#bip54-implementation-and-test-vectors
+
+  - title: "Discussion of BIP54's timewarp fix and its impact on the 2106 block timestamp overflow issue"
+    url: /en/newsletters/2026/01/02/#relax-bip54-timestamp-restriction-for-2106-soft-fork
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation
