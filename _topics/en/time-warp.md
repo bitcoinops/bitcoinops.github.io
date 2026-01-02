@@ -60,6 +60,9 @@ optech_mentions:
   - title: "Consensus cleanup proposal updates time warp grace period to 2 hours"
     url: /en/newsletters/2025/02/07/#increase-timewarp-grace-period-to-2-hours
 
+  - title: "Discussion of BIP54's timewarp fix and its impact on the 2106 block timestamp overflow issue"
+    url: /en/newsletters/2026/01/02/#relax-bip54-timestamp-restriction-for-2106-soft-fork
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal

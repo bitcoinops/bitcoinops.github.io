@@ -100,6 +100,9 @@ optech_mentions:
   - title: "Bitcoin Core #31553 adds block reorg handling to the cluster mempool project"
     url: /en/newsletters/2025/07/18/#bitcoin-core-31553
 
+  - title: "Bitcoin Core #32545 updates cluster mempool to use a spanning-forest linearization algorithm"
+    url: /en/newsletters/2026/01/02/#bitcoin-core-32545
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay

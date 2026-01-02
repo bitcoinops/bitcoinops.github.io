@@ -140,6 +140,9 @@ optech_mentions:
   - title: "Bitcoin Core #31829 limits orphan transaction relay to preserve 1p1c package relay from DoS attacks"
     url: /en/newsletters/2025/07/25/#bitcoin-core-31829
 
+  - title: "Bitcoin Core #33892 allows 1p1c parents with a feerate lower than the `-minrelaytxfee`"
+    url: /en/newsletters/2026/01/02/#bitcoin-core-33892
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping
