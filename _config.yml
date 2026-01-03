@@ -53,6 +53,7 @@ exclude:
    - Makefile
    - README.md
    - CONTRIBUTING.md
+   - .jj
 
 include: [".well-known"]
 
