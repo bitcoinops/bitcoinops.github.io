@@ -16,7 +16,7 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-- **Building a vault using blinded co-signers:** Jonathan T. Halseth
+- **Building a vault using blinded co-signers:** Johan T. Halseth
   [posted][halseth post] to Delving Bitcoin a prototype of a
   [vault][topic vaults]-like scheme using blinded co-signers. Unlike traditional
   setups using co-signers, this scheme uses a [blinded version][blinded musig]
@@ -35,7 +35,7 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
   unauthorized unvault.
 
   Halseth also provided a [prototype implementation][halseth prototype]
-  available for regtest and signet.
+  available for regtest and signet. {% assign timestamp="1:04:09" %}
 
 - **Peer feature negotiation**: Anthony Towns [posted][peer neg ml] to the
   Bitcoin-Dev mailing list about a proposal for a new [BIP][towns bip] to define
@@ -53,7 +53,7 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
   P2P message for announcing and negotiating future P2P upgrades during the
   [pre-verack][verack] phase. This would reduce coordination burdens, enable
   permissionless extensibility, prevent network partitioning, and maximize
-  compatibility with diverse clients.
+  compatibility with diverse clients. {% assign timestamp="1:40" %}
 
 ## Changing consensus
 
@@ -68,9 +68,9 @@ consensus rules._
   surprisingly soon. This is not yet a concrete proposal in BIP form and
   would require many additional details to be worked out as they relate to
   timelocks and other parts of the Bitcoin ecosystem. The [BitBlend][bb 2024]
-  proposal from January 2024 is one possible concrete solution.
+  proposal from January 2024 is one possible concrete solution. {% assign timestamp="1:07:47" %}
 
-- **Relax [BIP54][] timestamp restriction for 2106 soft fork**: Josh Doman
+- **Relax BIP54 timestamp restriction for 2106 soft fork**: Josh Doman
   posted to the Bitcoin-Dev [mailing list][jd ml bip54 ts] and [Delving Bitcoin][jd delving bip54
   ts] asking whether it's might be worthwhile to modify the [consensus
   cleanup][topic consensus cleanup] proposal to be more
@@ -81,7 +81,7 @@ consensus rules._
   worthwhile when there are sound engineering reasons to pursue one. Greg
   Maxwell [wrote][gm delving bip54] that the risk of unfixing the [timewarp][topic time warp]
   attacks that [BIP54][] aims to resolve may be reason enough not to attempt
-  to soften its restrictions in this way.
+  to soften its restrictions in this way. {% assign timestamp="1:11:36" %}
 
 - **Understanding and mitigating a CTV footgun**: Chris Stewart
   [posted][cs delving ctv] to Delving Bitcoin a discussion of a
@@ -99,13 +99,13 @@ consensus rules._
   the entire class of transaction template [covenants][topic covenants]. Brandon Black suggested
   that the use of CTV on a receiving address is indeed a risky application
   design, and that another opcode such as [`OP_CHECKCONTRACTVERIFY`][topic matt]
-  ([BIP443][]) in combination with CTV may enable safer applications.
+  ([BIP443][]) in combination with CTV may enable safer applications. {% assign timestamp="1:16:30" %}
 
 - **CTV activation meeting**: Developer 1440000bytes [hosted][fd0 ml ctv] a
   CTV ([BIP119][]) activation [meeting][ctv notes1]. The meeting attendees
   agreed that a CTV activation client should use conservative parameters (i.e.
   long signaling and activation periods) and [BIP9][]. At the time of writing,
-  other developers have not weighed in on the mailing list.
+  other developers have not weighed in on the mailing list. {% assign timestamp="1:21:00" %}
 
 - **`OP_CHECKCONSOLIDATION` to enable cheaper consolidations**: billymcbip
   [proposed][bmb delving cc] an opcode specifically optimized for
@@ -117,7 +117,7 @@ consensus rules._
   functionality using `OP_CHECKCONTRACTVERIFY` ([BIP443][]). This proposal is
   similar to Tadge Dryja's [earlier work][news379 civ] on
   `OP_CHECKINPUTVERIFY`, but significantly more byte-efficient and less
-  generalized.
+  generalized. {% assign timestamp="1:23:11" %}
 
 - **Hash-based signatures for Bitcoin's post-quantum future**: Mikhail Kudinov
   and Jonas Nick [posted][mk ml hash] to the Bitcoin-Dev mailing list about their work on evaluating
@@ -134,7 +134,7 @@ consensus rules._
   signature verifications will be limited by the existing weight limit and
   multipliers, reducing payment throughput. Per-signature may be the better
   comparison if the new signatures would have a new limit of their own to
-  enable closer-to-current-payment throughput in post-quantum Bitcoin.
+  enable closer-to-current-payment throughput in post-quantum Bitcoin. {% assign timestamp="20:47" %}
 
 ## Releases and release candidates
 
@@ -145,7 +145,7 @@ candidates._
 - [BTCPay Server 2.3.0][] is a release of this popular self-hosted payment
   solution that adds the Subscriptions feature (see [Newsletter #379][news379
   btcpay]) to the user interface and the API, improves payment requests, and
-  includes several other features and bug fixes.
+  includes several other features and bug fixes. {% assign timestamp="1:28:29" %}
 
 ## Notable code and documentation changes
 
@@ -161,12 +161,12 @@ BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo], and
 - [Bitcoin Core #33657][] introduces a new REST endpoint
   `/rest/blockpart/<BLOCKHASH>.bin?offset=X&size=Y` that returns a byte-range of
   a block. This allows external indexes such as Electrs to fetch only specific
-  transactions, instead of downloading the entire block.
+  transactions, instead of downloading the entire block. {% assign timestamp="1:30:25" %}
 
 - [Bitcoin Core #32414][] adds periodic flushes of the UTXO cache to disk during
   reindexing, in addition to the existing coverage during IBD. Previously, the
   flush only occurred when the tip was reached, so a crash during reindexing
-  could result in substantial progress being lost with a large `dbcache` set.
+  could result in substantial progress being lost with a large `dbcache` set. {% assign timestamp="1:33:23" %}
 
 - [Bitcoin Core #32545][] replaces the previously introduced cluster
   linearization algorithm (see [Newsletter #314][news314 cluster]) with a
@@ -174,7 +174,7 @@ BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo], and
   more efficiently. Testing on historical mempool data indicates that the new
   algorithm can linearize all observed clusters of up to 64 transactions in tens
   of microseconds. This is part of the [cluster mempool][topic cluster mempool]
-  project.
+  project. {% assign timestamp="1:39:18" %}
 
 - [Bitcoin Core #33892][] relaxes relay policy, allowing opportunistic 1-parent-1-child (1p1c)
   [package relay][topic package relay] where the parent pays below the minimum
@@ -183,13 +183,13 @@ BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo], and
   the child has no other ancestors with a fee below the minimum. This was
   previously restricted to TRUC transactions only to simplify reasoning about
   mempool trimming, but this is no longer a concern with [cluster mempool][topic
-  cluster mempool].
+  cluster mempool]. {% assign timestamp="1:42:13" %}
 
 - [Core Lightning #8784][] adds a `payer_note` field to the `xpay` RPC command
   (see [Newsletter #330][news330 xpay]) to enable a payer to provide a payment
   description when requesting an invoice. The `fetchinvoice` command already has
   a similar `payer_note` field, so this PR adds it to `xpay` and wires the value
-  through to the underlying flow.
+  through to the underlying flow. {% assign timestamp="1:44:35" %}
 
 - [LND #9489][] and [#10049][lnd #10049] introduce an experimental `switchrpc`
   gRPC subsystem with `BuildOnion`, `SendOnion`, and `TrackOnion` RPCs, allowing
@@ -199,23 +199,23 @@ BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo], and
   specifically adds the storage foundation for external attempt tracking, laying
   the groundwork for a future idempotent version. Currently, it is only safe to
   allow one entity at a time to dispatch attempts via the switch, to avoid loss
-  of funds.
+  of funds. {% assign timestamp="1:45:54" %}
 
 - [BIPs #2051][] makes several changes to the [BIP3][] specification: it reverts
   the recently added guidance against using LLMs (see [Newsletter #378][news378
   bips2006]), broadens the reference implementation formats, adds a changelog,
-  and makes several other improvements and clarifications.
+  and makes several other improvements and clarifications. {% assign timestamp="1:50:09" %}
 
 - [BOLTs #1299][] updates the [BOLT3][] specification to remove an ambiguous
   note about using the per-commitment point `localpubkey` in the output that
   pays the counterparty `to_remote`. With the `option_static_remotekey`, this is
   no longer valid because the `to_remote` output is expected to use the
   recipient's static `payment_basepoint` to enable fund recovery without the
-  per-commitment point.
+  per-commitment point. {% assign timestamp="1:56:39" %}
 
 - [BOLTs #1305][] updates the [BOLT11][] specification to clarify that the `n`
   field (33-byte public key of the payee node) is not mandatory. This corrects
-  an earlier phrase that said it was mandatory.
+  an earlier phrase that said it was mandatory. {% assign timestamp="1:59:46" %}
 
 {% include snippets/recap-ad.md when="2026-01-06 17:30" %}
 {% include references.md %} {% include linkers/issues.md v=2 issues="33657,32414,32545,33892,8784,9489,10049,2051,1299,1305" %}
