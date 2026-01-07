@@ -15,6 +15,16 @@ changes to popular Bitcoin infrastructure software.
 
 ## News
 
+- **Bitcoin Core wallet migration bug**: Bitcoin Core posted a [notice][bitcoin
+  core notice] of a bug in the legacy wallet migration feature in versions 30.0
+  and 30.1. Users of a Bitcoin Core legacy wallet who use an unnamed wallet,
+  had not previously migrated their wallet to a descriptor wallet, and who
+  attempt a migration in these versions, could, if the migration fails, have
+  their wallet directory deleted, potentially resulting in a loss of funds.
+  Wallet users should not attempt wallet migrations using the GUI or RPC until
+  v30.2 is released (see [Bitcoin Core 30.2rc1](#bitcoin-core-30-2rc1) below). Users of features other
+  than legacy wallet migration can continue to use these Bitcoin Core versions
+  as normal.
 
 - **Using Ark as a channel factory**:
   René Pickhardt [wrote][rp delving ark cf] on Delving Bitcoin about his
@@ -81,3 +91,4 @@ FIXME:Gustavojfe
 [delving ark hark]: https://delvingbitcoin.org/t/ark-as-a-channel-factory-compressed-liquidity-management-for-improved-payment-feasibility/2179/2
 [delving ark poc]: https://delvingbitcoin.org/t/ark-as-a-channel-factory-compressed-liquidity-management-for-improved-payment-feasibility/2179/4
 [sr delving hark]: https://delvingbitcoin.org/t/evolving-the-ark-protocol-using-ctv-and-csfs/1602
+[bitcoin core notice]: https://bitcoincore.org/en/2026/01/05/wallet-migration-bug/
