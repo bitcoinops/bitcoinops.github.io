@@ -59,6 +59,33 @@ changes to popular Bitcoin infrastructure software.
   Vincenzo Palazzo [replied][delving ark poc] with his proof-of-concept code implementing an Ark
   channel factory.
 
+- **Draft BIP for silent payment descriptors**: Craig Raw [posted][sp ml]
+  to the Bitcoin-Dev mailing list a proposal for a draft [BIP][BIPs #2047],
+  which defines a new top-level descriptor script expression `sp()` for
+  [silent payments][topic silent payments].
+  According to Raw, the descriptor provides a standardized way to represent silent
+  payment outputs within the output descriptor framework, enabling wallet
+  interoperability and recovery using existing descriptor-based infrastructure.
+
+  The `sp()` expression takes as an argument one of the two new key expressions, both defined
+  in the same proposal:
+
+  - `spscan1q..`: A
+    [bech32m][topic bech32] encoding of the scan private key and the
+    spend public key, with the `q` character representing silent payment version
+    `0`.
+
+  - `spspend1q..`: A bech32m encoding of the scan private key and
+    the spend private key, with the `q` character representing silent payment version
+    `0`.
+
+  Optionally, the `sp()` expression can take as input arguments a `BIRTHDAY`,
+  defined as a positive integer representing the block height at which scanning
+  should begin (must be > 842579, the block height at which [BIP352][] was merged),
+  and zero or more `LABEL`s as integers used with the wallet.
+
+  The output scripts produced by `sp()` are [BIP341][] taproot outputs as specified in BIP352.
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -158,3 +185,4 @@ repo], and [BINANAs][binana repo]._
 [news45 wallettool]: /en/newsletters/2019/05/07/#new-wallet-tool
 [news130 createfrom]: /en/newsletters/2021/01/06/#bitcoin-core-19137
 [news386 sfl]: /en/newsletters/2026/01/02/#bitcoin-core-32545
+[sp ml]:https://groups.google.com/g/bitcoindev/c/bP6ktUyCOJI
