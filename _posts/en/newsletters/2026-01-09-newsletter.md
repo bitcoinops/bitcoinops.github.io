@@ -65,7 +65,10 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Bitcoin Core 30.2rc1][] is a release candidate of a minor version that fixes
+  (see [Bitcoin Core #34156](#bitcoin-core-34156)) a bug where the entire
+  `wallets` directory could be deleted accidentally when migrating an unnamed
+  legacy wallet (see [above](#bitcoin-core-wallet-migration-bug)).
 
 ## Notable code and documentation changes
 
@@ -78,10 +81,69 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #34156][] and [Bitcoin Core #34215][] fix a bug in versions 30.0
+  and 30.1 where the entire `wallets` directory could be deleted accidentally.
+  When migrating a legacy unnamed wallet fails, the cleanup logic is intended to
+  remove only the newly created [descriptor][topic descriptors] wallet
+  directory. However, since an unnamed wallet resides directly in the top-level
+  wallets directory, the entire directory was deleted. The second PR addresses a
+  similar issue with the `createfromdump` command of `wallettool` (see
+  Newsletters [#45][news45 wallettool] and [#130][news130 createfrom]) when a
+  wallet name is an empty string and the dump file contains a checksum error.
+  Both fixes ensure that only the newly created wallet files are removed.
+
+- [Bitcoin Core #34085][] eliminates the separate `FixLinearization()` function
+  by integrating its functionality into `Linearize()`; `TxGraph` now postpones
+  fixing clusters until their first re-linearization. The number of calls to
+  `PostLinearize` is reduced because the spanning-forest linearization (SFL)
+  algorithm (see [Newsletter #386][news386 sfl]) effectively performs similar
+  work when loading an existing linearization. This is part of the [cluster
+  mempool][topic cluster mempool] project.
+
+- [Bitcoin Core #34197][] removes the `startingheight` field from the
+  `getpeerinfo` RPC response, effectively deprecating it. Using the
+  configuration option `deprecatedrpc=startingheight` retains the field in the
+  response. The `startingheight` states a peer’s self-reported chaintip height when the connection was initiated. This deprecation is based on the idea that the starting height
+  reported in a peer's `VERSION` message is unreliable. It will be fully removed
+  in the next major version.
+
+- [Bitcoin Core #33135][] adds a warning when `importdescriptors` is called with
+  a [miniscript][topic miniscript] [descriptor][topic descriptors] containing an
+  `older()` value (which specifies a [timelock][topic timelocks]) that has no
+  consensus meaning in [BIP68][] (relative timelocks) and [BIP112][] (OP_CSV).
+  While some protocols, such as Lightning, intentionally use non-standard values
+  to encode extra data, this practice is risky because the value may appear
+  strongly timelocked when it is actually not delayed.
+
+- [LDK #4213][] sets [blinded path][topic rv routing] defaults: when building a
+  blinded path that is not for an [offers][topic offers] context, it aims to
+  maximize privacy by using a non-compact blinded path and pads it to four hops
+  (including the recipient). When the blinded path is for an offer, the byte
+  size is minimized by reducing the padding and attempting to build a compact
+  blinded path.
+
+- [Eclair #3217][] adds an accountability signal for [HTLCs][topic htlc],
+  replacing the experimental [HTLC endorsement][topic htlc endorsement] signal.
+  This aligns with the latest specification updates in [BOLTs #1280][] for
+  [channel jamming][topic channel jamming attacks] mitigations.  The new
+  proposal treats the signal as an accountability flag for scarce resources,
+  indicating that protected HTLC capacity was used, and that downstream peers
+  can be held responsible for a timely resolution.
+
+- [LND #10367][] renames the experimental `endorsement` signal from [BLIP4][] to
+  `accountable` to align with the latest proposal in [BLIPs #67][], which is
+  based on the proposed [BOLTs #1280][].
+
+- [Rust Bitcoin #5450][] adds validation to the transaction decoder to reject
+  non-coinbase transactions that contain a `null` prevout, as dictated by a
+  consensus rule.
+
+- [Rust Bitcoin #5434][] adds validation to the transaction decoder, rejecting
+  coinbase transactions with a `scriptSig` length outside the  2–100 byte range.
 
 {% include snippets/recap-ad.md when="2026-01-13 17:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="2047,34156,34215,34085,34197,33135,4213,3217,1280,10367,67,5450,5434" %}
 [rp delving ark cf]: https://delvingbitcoin.org/t/ark-as-a-channel-factory-compressed-liquidity-management-for-improved-payment-feasibility/2179
 [news333 rp routing]: /en/newsletters/2024/12/13/#insights-into-channel-depletion
 [news359 rp balance]: /en/newsletters/2025/06/20/#channel-rebalancing-research
@@ -92,3 +154,7 @@ FIXME:Gustavojfe
 [delving ark poc]: https://delvingbitcoin.org/t/ark-as-a-channel-factory-compressed-liquidity-management-for-improved-payment-feasibility/2179/4
 [sr delving hark]: https://delvingbitcoin.org/t/evolving-the-ark-protocol-using-ctv-and-csfs/1602
 [bitcoin core notice]: https://bitcoincore.org/en/2026/01/05/wallet-migration-bug/
+[Bitcoin Core 30.2rc1]: https://bitcoincore.org/bin/bitcoin-core-30.2/test.rc1/
+[news45 wallettool]: /en/newsletters/2019/05/07/#new-wallet-tool
+[news130 createfrom]: /en/newsletters/2021/01/06/#bitcoin-core-19137
+[news386 sfl]: /en/newsletters/2026/01/02/#bitcoin-core-32545
