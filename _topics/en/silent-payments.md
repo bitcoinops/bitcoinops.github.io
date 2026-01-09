@@ -80,6 +80,9 @@ optech_mentions:
   - title: "BIPs #1687 merges BIP375 to specify sending silent payments using PSBTs"
     url: /en/newsletters/2025/01/17/#bips-1687
 
+  - title: "Draft BIP for silent payment descriptors"
+    url: /en/newsletters/2026/01/09/#draft-bip-for-silent-payment-descriptors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

@@ -55,6 +55,9 @@ optech_mentions:
   - title: "Ark Labs launches Arkade"
     url: /en/newsletters/2025/11/21/#arkade-launches
 
+  - title: "Using Ark as a channel factory"
+    url: /en/newsletters/2026/01/09/#using-ark-as-a-channel-factory
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools
