@@ -59,8 +59,8 @@ et décrivant les changements notables dans les projets d'infrastructure Bitcoin
 _Une nouvelle section mensuelle résumant les propositions et discussions sur la modification des
 règles de consensus de Bitcoin._
 
-- **Débordement de timestamp de l'année 2106 migration uint64** : Asher Haim a [posté][ah ml]
-  uint64 ts] à la liste de diffusion Bitcoin-Dev demandant aux développeurs de Bitcoin d'agir
+- **Débordement de timestamp de l'année 2106 migration uint64** : Asher Haim a [posté][ah ml uint64 ts]
+  à la liste de diffusion Bitcoin-Dev demandant aux développeurs de Bitcoin d'agir
   rapidement pour préparer une migration de uint32 à uint64 pour les horodatages des blocs. Haim
   explique les raisons d'une action rapide en relation avec les contrats financiers à long terme qui
   pourraient commencer à faire référence à Bitcoin après 2106 assez rapidement. Ceci n'est pas encore
