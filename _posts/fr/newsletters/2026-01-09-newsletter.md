@@ -91,7 +91,7 @@ Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à
 - [Bitcoin Core 30.2rc1][] est un candidat à la sortie d'une version mineure qui corrige (voir
   [Bitcoin Core #34156](#bitcoin-core-34156)) un bug où le répertoire `wallets` entier pouvait être
   supprimé accidentellement lors de la migration d'un portefeuille hérité anonyme (voir
-  [ci-dessus](#bitcoin-core-wallet-migration-bug)).
+  [ci-dessus](#bug-de-migration-de-portefeuille-bitcoin-core)).
 
 ## Changements notables dans le code et la documentation
 
