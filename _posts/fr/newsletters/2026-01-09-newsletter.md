@@ -174,7 +174,7 @@ inquisition repo], et [BINANAs][binana repo]._
 [sr delving hark]: https://delvingbitcoin.org/t/evolving-the-ark-protocol-using-ctv-and-csfs/1602
 [bitcoin core notice]: https://bitcoincore.org/en/2026/01/05/wallet-migration-bug/
 [Bitcoin Core 30.2rc1]: https://bitcoincore.org/bin/bitcoin-core-30.2/test.rc1/
-[news45 wallettool]: /fr/newsletters/2019/05/07/#new-wallet-tool
-[news130 createfrom]: /fr/newsletters/2021/01/06/#bitcoin-core-19137
+[news45 wallettool]: /en/newsletters/2019/05/07/#new-wallet-tool
+[news130 createfrom]: /en/newsletters/2021/01/06/#bitcoin-core-19137
 [news386 sfl]: /fr/newsletters/2026/01/02/#bitcoin-core-32545
 [sp ml]:https://groups.google.com/g/bitcoindev/c/bP6ktUyCOJI
