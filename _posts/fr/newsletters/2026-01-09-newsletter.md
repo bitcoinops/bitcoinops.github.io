@@ -168,7 +168,7 @@ inquisition repo], et [BINANAs][binana repo]._
 [news359 rp balance]: /fr/newsletters/2025/06/20/#recherche-sur-le-reequilibrage-des-canaux
 [optech superscalar]: /en/podcast/2024/10/31/
 [news169 jl tt]: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
-[news270 jl cov]: /en/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
+[news270 jl cov]: /fr/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
 [delving ark hark]: https://delvingbitcoin.org/t/ark-as-a-channel-factory-compressed-liquidity-management-for-improved-payment-feasibility/2179/2
 [delving ark poc]: https://delvingbitcoin.org/t/ark-as-a-channel-factory-compressed-liquidity-management-for-improved-payment-feasibility/2179/4
 [sr delving hark]: https://delvingbitcoin.org/t/evolving-the-ark-protocol-using-ctv-and-csfs/1602
