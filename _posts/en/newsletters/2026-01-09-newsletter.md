@@ -24,7 +24,7 @@ changes to popular Bitcoin infrastructure software.
   Wallet users should not attempt wallet migrations using the GUI or RPC until
   v30.2 is released (see [Bitcoin Core 30.2rc1](#bitcoin-core-30-2rc1) below). Users of features other
   than legacy wallet migration can continue to use these Bitcoin Core versions
-  as normal.
+  as normal. {% assign timestamp="0:55" %}
 
 - **Using Ark as a channel factory**:
   René Pickhardt [wrote][rp delving ark cf] on Delving Bitcoin about his
@@ -57,7 +57,7 @@ changes to popular Bitcoin infrastructure software.
   opcode.
 
   Vincenzo Palazzo [replied][delving ark poc] with his proof-of-concept code implementing an Ark
-  channel factory.
+  channel factory. {% assign timestamp="7:47" %}
 
 - **Draft BIP for silent payment descriptors**: Craig Raw [posted][sp ml]
   to the Bitcoin-Dev mailing list a proposal for a draft [BIP][BIPs #2047],
@@ -84,7 +84,7 @@ changes to popular Bitcoin infrastructure software.
   should begin (must be > 842579, the block height at which [BIP352][] was merged),
   and zero or more `LABEL`s as integers used with the wallet.
 
-  The output scripts produced by `sp()` are [BIP341][] taproot outputs as specified in BIP352.
+  The output scripts produced by `sp()` are [BIP341][] taproot outputs as specified in BIP352. {% assign timestamp="29:02" %}
 
 ## Releases and release candidates
 
@@ -95,7 +95,7 @@ release candidates._
 - [Bitcoin Core 30.2rc1][] is a release candidate of a minor version that fixes
   (see [Bitcoin Core #34156](#bitcoin-core-34156)) a bug where the entire
   `wallets` directory could be deleted accidentally when migrating an unnamed
-  legacy wallet (see [above](#bitcoin-core-wallet-migration-bug)).
+  legacy wallet (see [above](#bitcoin-core-wallet-migration-bug)). {% assign timestamp="58:34" %}
 
 ## Notable code and documentation changes
 
@@ -117,7 +117,7 @@ repo], and [BINANAs][binana repo]._
   similar issue with the `createfromdump` command of `wallettool` (see
   Newsletters [#45][news45 wallettool] and [#130][news130 createfrom]) when a
   wallet name is an empty string and the dump file contains a checksum error.
-  Both fixes ensure that only the newly created wallet files are removed.
+  Both fixes ensure that only the newly created wallet files are removed. {% assign timestamp="59:32" %}
 
 - [Bitcoin Core #34085][] eliminates the separate `FixLinearization()` function
   by integrating its functionality into `Linearize()`; `TxGraph` now postpones
@@ -125,14 +125,14 @@ repo], and [BINANAs][binana repo]._
   `PostLinearize` is reduced because the spanning-forest linearization (SFL)
   algorithm (see [Newsletter #386][news386 sfl]) effectively performs similar
   work when loading an existing linearization. This is part of the [cluster
-  mempool][topic cluster mempool] project.
+  mempool][topic cluster mempool] project. {% assign timestamp="1:03:54" %}
 
 - [Bitcoin Core #34197][] removes the `startingheight` field from the
   `getpeerinfo` RPC response, effectively deprecating it. Using the
   configuration option `deprecatedrpc=startingheight` retains the field in the
   response. The `startingheight` states a peer’s self-reported chaintip height when the connection was initiated. This deprecation is based on the idea that the starting height
   reported in a peer's `VERSION` message is unreliable. It will be fully removed
-  in the next major version.
+  in the next major version. {% assign timestamp="1:07:43" %}
 
 - [Bitcoin Core #33135][] adds a warning when `importdescriptors` is called with
   a [miniscript][topic miniscript] [descriptor][topic descriptors] containing an
@@ -140,14 +140,14 @@ repo], and [BINANAs][binana repo]._
   consensus meaning in [BIP68][] (relative timelocks) and [BIP112][] (OP_CSV).
   While some protocols, such as Lightning, intentionally use non-standard values
   to encode extra data, this practice is risky because the value may appear
-  strongly timelocked when it is actually not delayed.
+  strongly timelocked when it is actually not delayed. {% assign timestamp="1:09:10" %}
 
 - [LDK #4213][] sets [blinded path][topic rv routing] defaults: when building a
   blinded path that is not for an [offers][topic offers] context, it aims to
   maximize privacy by using a non-compact blinded path and pads it to four hops
   (including the recipient). When the blinded path is for an offer, the byte
   size is minimized by reducing the padding and attempting to build a compact
-  blinded path.
+  blinded path. {% assign timestamp="1:11:02" %}
 
 - [Eclair #3217][] adds an accountability signal for [HTLCs][topic htlc],
   replacing the experimental [HTLC endorsement][topic htlc endorsement] signal.
@@ -155,18 +155,18 @@ repo], and [BINANAs][binana repo]._
   [channel jamming][topic channel jamming attacks] mitigations.  The new
   proposal treats the signal as an accountability flag for scarce resources,
   indicating that protected HTLC capacity was used, and that downstream peers
-  can be held responsible for a timely resolution.
+  can be held responsible for a timely resolution. {% assign timestamp="1:15:39" %}
 
 - [LND #10367][] renames the experimental `endorsement` signal from [BLIP4][] to
   `accountable` to align with the latest proposal in [BLIPs #67][], which is
-  based on the proposed [BOLTs #1280][].
+  based on the proposed [BOLTs #1280][]. {% assign timestamp="1:18:49" %}
 
 - [Rust Bitcoin #5450][] adds validation to the transaction decoder to reject
   non-coinbase transactions that contain a `null` prevout, as dictated by a
-  consensus rule.
+  consensus rule. {% assign timestamp="1:22:51" %}
 
 - [Rust Bitcoin #5434][] adds validation to the transaction decoder, rejecting
-  coinbase transactions with a `scriptSig` length outside the  2–100 byte range.
+  coinbase transactions with a `scriptSig` length outside the  2–100 byte range. {% assign timestamp="1:23:40" %}
 
 {% include snippets/recap-ad.md when="2026-01-13 17:30" %}
 {% include references.md %}
