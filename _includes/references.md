@@ -204,6 +204,7 @@ for details --> {% endcomment %}
 [BIP389]: https://github.com/bitcoin/bips/blob/master/bip-0389.mediawiki
 [BIP390]: https://github.com/bitcoin/bips/blob/master/bip-0390.mediawiki
 [BIP431]: https://github.com/bitcoin/bips/blob/master/bip-0431.mediawiki
+[BIP433]: https://github.com/bitcoin/bips/blob/master/bip-0433.mediawiki
 [BIP443]: https://github.com/bitcoin/bips/blob/master/bip-0443.mediawiki
 
 {% for i in (1..10) %}
