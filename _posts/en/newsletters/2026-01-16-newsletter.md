@@ -50,6 +50,23 @@ describing notable changes to popular Bitcoin infrastructure projects.
   To conclude, Garcia asked Bitcoin Core contributors to notify him on their PRs in case they
   wanted a mutation test run and to report feedback on the provided mutants.
 
+- **BIP process updated**: After more than [two months][bip3 motion to activate]
+  of [discussion][bip3 follow-up to motion] on the mailing list and another
+  round of [amendments][bips #2051] to the proposal, it became clear this week
+  that BIP3 had achieved rough consensus. With BIP3’s deployment on Wednesday, it
+  replaced BIP2 as the guideline for the BIP process. While large parts of the
+  BIP process remain unchanged, BIP3 introduces several simplifications
+  and improvements.
+
+  Among other changes, the comment system is dropped, the count of BIP
+  statuses is reduced from nine (Draft, Proposed, Active, Final, Rejected,
+  Deferred, Withdrawn, Replaced, and Obsolete) to four (Draft, Complete,
+  Deployed, and Closed), the preamble headers are updated, the
+  Standards Track type is replaced with the Specification type, and
+  some judgment calls previously required from BIP Editors are reassigned to
+  BIP authors or the readers.
+
+  An [overview of all changes][bip2to3] can be found in BIP3.
 
 ## Releases and release candidates
 
@@ -150,3 +167,6 @@ repo], and [BINANAs][binana repo]._
 [news73 hsmtool]: /en/newsletters/2019/11/20/#c-lightning-3186
 [news383 bip39]: /en/newsletters/2025/12/05/#core-lightning-v25-12
 [news387 accountable]: /en/newsletters/2026/01/09/#eclair-3217
+[bip2to3]: https://github.com/bitcoin/bips/blob/master/bip-0003.md#changes-from-bip2
+[bip3 motion to activate]: https://gnusha.org/pi/bitcoindev/205b3532-ccc1-4b2f-964f-264fc6e0e70b@murch.one/
+[bip3 follow-up to motion]: https://gnusha.org/pi/bitcoindev/1d76a085-deff-4df2-8a82-f8bd984fac27@murch.one/
