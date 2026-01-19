@@ -158,7 +158,7 @@ inquisition repo], et [BINANAs][binana repo]._
 - [Rust Bitcoin #5450][] ajoute une validation au décodeur de transaction pour rejeter les
   transactions non-coinbase qui contiennent un `null` prevout, comme dicté par une règle de consensus.
 
-- Rust Bitcoin #5434 ajoute une validation au décodeur de transactions, rejetant les transactions
+- [Rust Bitcoin #5434][] ajoute une validation au décodeur de transactions, rejetant les transactions
   coinbase avec une longueur de `scriptSig` en dehors de la plage de 2 à 100 octets.
 
 {% include snippets/recap-ad.md when="2026-01-13 17:30" %}
