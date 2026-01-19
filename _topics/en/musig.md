@@ -166,6 +166,9 @@ optech_mentions:
   - title: "Bitcoin Core #31244 implements the parsing of MuSig2 descriptors as defined in BIP390"
     url: /en/newsletters/2025/08/08/#bitcoin-core-31244
 
+  - title: "Using a blinded version of MuSig2 to build a vault with blinded co-signers"
+    url: /en/newsletters/2026/01/02/#building-a-vault-using-blinded-co-signers
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures
