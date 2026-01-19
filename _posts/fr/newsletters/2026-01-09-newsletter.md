@@ -69,15 +69,16 @@ dans les logiciels d'infrastructure Bitcoin populaires.
   L'expression `sp()` prend comme argument l'une des deux nouvelles expressions de clé, toutes deux
   définies dans la même proposition :
 
-  - `spscan1q..` : Un encodage [bech32m][topic bech32] de la clé privée de scan et de la clé publique
+  - `spscan1q..` : Un encodage
+    [bech32m][topic bech32] de la clé privée de scan et de la clé publique
     de dépense, avec le caractère `q` représentant la version de paiement silencieux `0`.
 
   - `spspend1q..` : Un encodage bech32m de la clé privée de scan et de la clé privée de dépense, avec
     le caractère `q` représentant la version de paiement silencieux `0`.
 
   Facultativement, l'expression `sp()` peut prendre comme arguments d'entrée un `BIRTHDAY`, défini
-  comme un entier positif représentant la hauteur de bloc à laquelle le scan doit commencer (doit être
-  > 842579, la hauteur de bloc à laquelle [BIP352][] a été fusionné), et zéro ou plusieurs `LABEL`s
+  comme un entier positif représentant la hauteur de bloc à laquelle le scan doit commencer (doit être >842579,
+  la hauteur de bloc à laquelle [BIP352][] a été fusionné), et zéro ou plusieurs `LABEL`s
   sous forme d'entiers utilisés avec le portefeuille.
 
   Les scripts de sortie produits par `sp()` sont des sorties taproot [BIP341][] telles que spécifiées
