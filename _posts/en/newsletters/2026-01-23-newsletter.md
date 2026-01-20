@@ -14,7 +14,37 @@ notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **A mathematical theory of payment channel networks**: René Pickhardt [posted][channels post] to Delving Bitcoin
+  about the publication of his new [paper][channels paper] called "A Mathematical Theory of
+  Payment Channel Network". In the paper, Pickhardt groups several observations, gathered
+  during years of research, under a single geometric framework. In particular, the paper aims to
+  analyze common phenomena, such as channel depletion (see [Newsletter #333][news333 depletion]) and capital inefficiencies of two-party
+  channels, assessing how they are interconnected and why they are true.
+
+  The main paper contributions are the following:
+
+  - A model for feasible wealth distributions of users on the lightning network
+    given a channel graph
+
+  - A formula for estimating the upper bound of payment bandwidth for payments
+
+  - A method to estimate the likelihood that a payment is feasible (see
+    [Newsletter #309][news309 feasibility])
+
+  - An analysis on different
+    [mitigation strategies][mitigation post] for channel depletion
+
+  - The conclusion that two-party channels put strong constraints to the ability of liquidity to
+    flow between peers of the network
+
+  According to Pickhardt, the insights coming from his research were the motivation behind his
+  recent post about using Ark as a channel factory (see [Newsletter #387][new387 ark]).
+  Pickhardt also provided his [collection][pickhardt gh] of code, notebooks, and papers that
+  were used as groundwork for his research.
+
+  Finally, Pickhardt opened the discussion on his work to questions and feedback from the LN
+  developer community on how the protocol design could be influenced by his research and on
+  the best use for multi-party channels.
 
 ## Changes to services and client software
 
@@ -47,3 +77,11 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2026-01-27 17:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
+
+[channels post]: https://delvingbitcoin.org/t/a-mathematical-theory-of-payment-channel-networks/2204
+[channels paper]: https://arxiv.org/pdf/2601.04835
+[news309 feasibility]: /en/newsletters/2024/06/28/#estimating-the-likelihood-that-an-ln-payment-is-feasible
+[mitigation post]: https://delvingbitcoin.org/t/mitigating-channel-depletion-in-the-lightning-network-a-survey-of-potential-solutions/1640/1
+[news333 depletion]: /en/newsletters/2024/12/13/#insights-into-channel-depletion
+[new387 ark]: /en/newsletters/2026/01/09/#using-ark-as-a-channel-factory
+[pickhardt gh]: https://github.com/renepickhardt/Lightning-Network-Limitations
