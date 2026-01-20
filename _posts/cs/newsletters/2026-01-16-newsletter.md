@@ -34,7 +34,9 @@ změn v populárních bitcoinových páteřních projektech.
     principech:
 
     - Vyhýbat se nevhodným mutantům, např. takovým, které nemá smysl opravovat.
+
     - Sbírat odezvu od vývojářů s cílem upřesnit generování mutantů.
+
     - Reportovat pouze omezené množství nezabitých mutantů (sedm dle výzkumu
         Googlu).
 
