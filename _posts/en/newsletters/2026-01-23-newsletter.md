@@ -51,7 +51,17 @@ notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Electrum server for testing silent payments:**
+  [Frigate Electrum Server][frigate gh] implements the [remote scanner][bip352
+  remote scanner] service from [BIP352][] to provide [silent payment][topic
+  silent payments] scanning for client applications. Frigate also
+  uses modern GPU computation to decrease scanning time which is useful for
+  providing multi-user instances that handle many simultaneous scanning requests.
+
+- **BDK WASM library:**
+  The [bdk-wasm][bdk-wasm gh] library, originally developed and [used][metamask
+  blog] by the MetaMask organization, provides access to BDK features in
+  environments that support WebAssembly (WASM).
 
 ## Releases and release candidates
 
@@ -85,3 +95,7 @@ FIXME:Gustavojfe
 [news333 depletion]: /en/newsletters/2024/12/13/#insights-into-channel-depletion
 [new387 ark]: /en/newsletters/2026/01/09/#using-ark-as-a-channel-factory
 [pickhardt gh]: https://github.com/renepickhardt/Lightning-Network-Limitations
+[frigate gh]: https://github.com/sparrowwallet/frigate
+[bip352 remote scanner]: https://github.com/silent-payments/BIP0352-index-server-specification/blob/main/README.md#remote-scanner-ephemeral
+[bdk-wasm gh]: https://github.com/bitcoindevkit/bdk-wasm
+[metamask blog]: https://metamask.io/news/bitcoin-on-metamask-btc-wallet
