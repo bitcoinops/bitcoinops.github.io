@@ -69,7 +69,16 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Core Lightning 25.12.1][] is a maintenance release that fixes a critical bug
+  where nodes created with v25.12 could not spend funds sent to non-[P2TR][topic
+  taproot] addresses (see below). It also fixes recovery and `hsmtool`
+  compatibility issues with the new mnemonic-based `hsm_secret` format
+  introduced in v25.12 (see [Newsletter #388][news388 cln]).
+
+- [LND 0.20.1-beta.rc1][] is a release candidate for a minor version that adds a
+  panic recovery for gossip message processing, improves reorg protection,
+  implements LSP detection heuristics, and fixes multiple bugs and race
+  conditions. See the [release notes][] for more details.
 
 ## Notable code and documentation changes
 
@@ -82,11 +91,79 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #32471][] fixes a bug where calling the `listdescriptors` RPC
+  with the `private=true` parameter (see Newsletters [#134][news134 descriptor]
+  and [#162][news162 descriptor]) would fail if any [descriptor][topic
+  descriptors] had a missing private key. This issue affected wallets containing
+  both non-watch-only and watch-only descriptors, as well as multisig
+  descriptors without all the private keys. This PR ensures that the RPC
+  correctly returns the available private keys, enabling users to back them up
+  properly. Calling `listdescriptors private=true` on a strictly watch-only
+  wallet still fails.
+
+- [Bitcoin Core #34146][] improves address propagation by sending a node's
+  first self-announcement in its own P2P message. Previously, the self-announcement
+  was bundled with multiple other addresses in response to a peer’s `getaddr`
+  request, which could cause it to be dropped or to displace other addresses.
+
+- [Core Lightning #8831][] fixes a critical bug where nodes created with v25.12
+  could not spend funds sent to non-[P2TR][topic taproot] addresses. Although
+  all address types were derived based on [BIP86][] for those nodes, the signing
+  code only used [BIP86][] for P2TR addresses. This PR ensures signing uses
+  [BIP86][] derivation for all address types.
+
+- [LDK #4261][] adds support for mixed-mode [splicing][topic splicing], allowing
+  for simultaneous splice-in and splice-out in the same transaction. The funding
+  input pays the appropriate fees, as in the splice-in case. The net contributed
+  value may be negative if more value is spliced out than spliced in.
+
+- [LDK #4152][] adds support for dummy hops on [blinded][topic rv routing]
+  payments paths, paralleling the feature for blinded message paths added in
+  [Newsletter #370][news370 dummy]. Adding additional hops makes it
+  significantly harder to determine the distance to or the identity of the
+  receiver node. See [Newsletter #381][news381 dummy]  for previous work
+  enabling this.
+
+- [LND #10488][] fixes a bug where channels opened with the `fundMax` option
+  (see [Newsletter #246][news246 fundmax]) were limited in size by the
+  user-configured `maxChanSize` setting (see [Newsletter #116][news116
+  maxchan]), which is intended to only limit incoming channel requests. This PR
+  ensures that the `fundMax` option uses the protocol-level maximum channel size
+  instead, depending on whether the user and peer support [large channels][topic
+  large channels].
+
+- [LND #10331][] improves how channel closes handle blockchain reorgs by using
+  scaled confirmation requirements based on channel size, where the minimum is 1
+  and the maximum is 6 confirmations. The chain watcher is revamped with the
+  introduction of a state machine to better detect blockchain reorgs and track
+  competing channel close transactions in such scenarios. The PR also adds
+  monitoring for negative confirmations (when a confirmed transaction is later
+  reorged out), though how to handle them remains unsolved. This PR addresses
+  LND's [oldest open issue][lnd issue] from 2016.
+
+- [Rust Bitcoin #5402][] adds validation during decoding to reject transactions
+  with duplicate inputs, related to [CVE-2018-17144][topic cve-2018-17144].
+  Transactions containing multiple inputs spending the same outpoint are invalid
+  by consensus.
+
+- [BIPs #1820][] updates [BIP3][] to status `Deployed`, replacing [BIP2][] as the
+  guideline for the Bitcoin Improvement Proposal (BIP) process. See [Newsletter
+  #388][news388 bip3] for more details.
+
+- [BOLTs #1306][] clarifies in the [BOLT12][] specification that [offers][topic
+  offers] with an empty `offer_chains` field must be rejected. An offer with
+  this field present but containing zero chain hashes makes invoice requests
+  impossible since the payer cannot satisfy the requirement to set
+  `invreq_chain` to one of the `offer_chains`.
+
+- [BLIPs #59][] updates [BLIP51][], also known as LSPS1, to add support for
+  [BOLT12 offers][topic offers] as an option for paying Lightning Service
+  Providers (LSPs), alongside the existing [BOLT11][] and on-chain options. This
+  was previously implemented in LDK (see [Newsletter #347][news347 lsp]).
 
 {% include snippets/recap-ad.md when="2026-01-27 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="32471,34146,8831,4261,4152,10488,10331,5402,1820,1306,59" %}
 
 [channels post]: https://delvingbitcoin.org/t/a-mathematical-theory-of-payment-channel-networks/2204
 [channels paper]: https://arxiv.org/pdf/2601.04835
@@ -99,3 +176,16 @@ FIXME:Gustavojfe
 [bip352 remote scanner]: https://github.com/silent-payments/BIP0352-index-server-specification/blob/main/README.md#remote-scanner-ephemeral
 [bdk-wasm gh]: https://github.com/bitcoindevkit/bdk-wasm
 [metamask blog]: https://metamask.io/news/bitcoin-on-metamask-btc-wallet
+[Core Lightning 25.12.1]: https://github.com/ElementsProject/lightning/releases/tag/v25.12.1
+[LND 0.20.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.1-beta.rc1
+[news388 cln]: /en/newsletters/2026/01/16/#core-lightning-8830
+[release notes]: https://github.com/lightningnetwork/lnd/blob/v0.20.x-branch/docs/release-notes/release-notes-0.20.1.md
+[news134 descriptor]: /en/newsletters/2021/02/03/#bitcoin-core-20226
+[news162 descriptor]: /en/newsletters/2021/08/18/#bitcoin-core-21500
+[news370 dummy]: /en/newsletters/2025/09/05/#ldk-3726
+[news381 dummy]: /en/newsletters/2025/11/21/#ldk-4126
+[news246 fundmax]: /en/newsletters/2023/04/26/#lnd-6903
+[news116 maxchan]: /en/newsletters/2020/09/23/#lnd-4567
+[lnd issue]: https://github.com/lightningnetwork/lnd/issues/53
+[news388 bip3]: /en/newsletters/2026/01/16/#bip-process-updated
+[news347 lsp]: /en/newsletters/2025/03/28/#ldk-3649
