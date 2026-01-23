@@ -166,7 +166,7 @@ repo] a [repozitáři BINANA][binana repo]._
 [channels paper]: https://arxiv.org/pdf/2601.04835
 [news309 feasibility]: /cs/newsletters/2024/06/28/#odhad-pravdepodobnosti-uspesneho-provedeni-ln-platby
 [mitigation post]: https://delvingbitcoin.org/t/mitigating-channel-depletion-in-the-lightning-network-a-survey-of-potential-solutions/1640/1
-[news333 depletion]: /cs/newsletters/2024/06/28/#odhad-pravdepodobnosti-uspesneho-provedeni-ln-platby
+[news333 depletion]: /cs/newsletters/2024/12/13/#zjisteni-o-vycerpani-kanalu
 [new387 ark]: /cs/newsletters/2026/01/09/#ark-jako-tovarna-kanalu
 [pickhardt gh]: https://github.com/renepickhardt/Lightning-Network-Limitations
 [frigate gh]: https://github.com/sparrowwallet/frigate
