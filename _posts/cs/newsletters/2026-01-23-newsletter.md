@@ -164,7 +164,7 @@ repo] a [repozitáři BINANA][binana repo]._
 
 [channels post]: https://delvingbitcoin.org/t/a-mathematical-theory-of-payment-channel-networks/2204
 [channels paper]: https://arxiv.org/pdf/2601.04835
-[news309 feasibility]: /en/newsletters/2024/06/28/#estimating-the-likelihood-that-an-ln-payment-is-feasible
+[news309 feasibility]: /cs/newsletters/2024/06/28/#odhad-pravdepodobnosti-uspesneho-provedeni-ln-platby
 [mitigation post]: https://delvingbitcoin.org/t/mitigating-channel-depletion-in-the-lightning-network-a-survey-of-potential-solutions/1640/1
 [news333 depletion]: /cs/newsletters/2024/06/28/#odhad-pravdepodobnosti-uspesneho-provedeni-ln-platby
 [new387 ark]: /cs/newsletters/2026/01/09/#ark-jako-tovarna-kanalu
