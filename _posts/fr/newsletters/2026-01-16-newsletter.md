@@ -15,7 +15,7 @@ aux logiciels d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
 
-- **Un aperçu du test de mutation incrémentiel dans Bitcoin Core** : Bruno Garcia a 
+- **Un aperçu du test de mutation incrémentiel dans Bitcoin Core** : Bruno Garcia a
 	[publié][mutant post] sur Delving Bitcoin à propos de son travail actuel sur l'amélioration du
 	[test de mutation][news320 mutant] dans Bitcoin Core. Le test de mutation est une technique qui permet aux
 	développeurs d'évaluer l'efficacité de leurs tests en ajoutant intentionnellement des bugs
