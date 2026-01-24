@@ -79,6 +79,7 @@ Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à
 	introduit le support des transactions de portefeuille froid via l'API `Greenfield` (voir
 	ci-dessous), supprime les sources de taux de change basées sur CoinGecko, et inclut plusieurs
 	corrections de bugs.
+
 ## Changements notables dans le code et la documentation
 
 _Changements notables récents dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning
@@ -106,7 +107,7 @@ inquisition repo], et [BINANAs][binana repo]._
 	support supplémentaire pour la récupération de nœuds créés après les changements introduits dans
 	la v25.12 (voir le [Bulletin #383][news383 bip39]). La nouvelle commande produit la phrase de semence
 	mnémonique [BIP39][] pour un fichier `hsm_secret` donné pour les nouveaux nœuds, et conserve la
-	fonctionnalité de sortie de la chaine 
+	fonctionnalité de sortie de la chaine
 	`Codex32` pour les nœuds hérités. Le plugin `recover` est mis à jour pour accepter les
 	mnémoniques.
 
