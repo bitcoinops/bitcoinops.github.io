@@ -182,5 +182,5 @@ Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][bli
 [news246 fundmax]: /fr/newsletters/2023/04/26/#lnd-6903
 [news116 maxchan]: /en/newsletters/2020/09/23/#lnd-4567
 [lnd issue]: https://github.com/lightningnetwork/lnd/issues/53
-[news388 bip3]: /fr/newsletters/2026/01/16/#bip-process-updated
+[news388 bip3]: /fr/newsletters/2026/01/16/#processus-bip-mis-a-jour
 [news347 lsp]: /fr/newsletters/2025/03/28/#ldk-3649
