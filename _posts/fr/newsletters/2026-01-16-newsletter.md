@@ -147,16 +147,16 @@ inquisition repo], et [BINANAs][binana repo]._
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="33819,29415,8830,3233,3237,4232,67,1280,10296,7068,1982,2051" %}
 [mutant post]: https://delvingbitcoin.org/t/incremental-mutation-testing-in-the-bitcoin-core/2197
-[news320 mutant]:/en/newsletters/2024/09/13/#mutation-testing-for-bitcoin-core
+[news320 mutant]:/fr/newsletters/2024/09/13/#test-de-mutation-pour-bitcoin-core
 [mutant google]: https://research.google/pubs/state-of-mutation-testing-at-google/
 [Bitcoin Core 30.2]: https://bitcoincore.org/bin/bitcoin-core-30.2/
 [notes de version]: https://bitcoincore.org/en/releases/30.2/
 [BTCPay Server 2.3.3]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.3.3
-[news387 wallet]: /en/newsletters/2026/01/09/#bitcoin-core-34156
-[news310 mining]: /en/newsletters/2024/07/05/#bitcoin-core-30200
+[news387 wallet]: /fr/newsletters/2026/01/09/#bitcoin-core-34156
+[news310 mining]: /fr/newsletters/2024/07/05/#bitcoin-core-30200
 [news73 hsmtool]: /en/newsletters/2019/11/20/#c-lightning-3186
-[news383 bip39]: /en/newsletters/2025/12/05/#core-lightning-v25-12
-[news387 accountable]: /en/newsletters/2026/01/09/#eclair-3217
+[news383 bip39]: /fr/newsletters/2025/12/05/#core-lightning-v25-12
+[news387 accountable]: /fr/newsletters/2026/01/09/#eclair-3217
 [bip2to3]: https://github.com/bitcoin/bips/blob/master/bip-0003.md#changes-from-bip2
 [bip3 motion to activate]: https://gnusha.org/pi/bitcoindev/205b3532-ccc1-4b2f-964f-264fc6e0e70b@murch.one/
 [bip3 follow-up to motion]: https://gnusha.org/pi/bitcoindev/1d76a085-deff-4df2-8a82-f8bd984fac27@murch.one/
