@@ -173,7 +173,7 @@ Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][bli
 [metamask blog]: https://metamask.io/news/bitcoin-on-metamask-btc-wallet
 [Core Lightning 25.12.1]: https://github.com/ElementsProject/lightning/releases/tag/v25.12.1
 [LND 0.20.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.1-beta.rc1
-[news388 cln]: /en/newsletters/2026/01/16/#core-lightning-8830
+[news388 cln]: /fr/newsletters/2026/01/16/#core-lightning-8830
 [notes de version]: https://github.com/lightningnetwork/lnd/blob/v0.20.x-branch/docs/release-notes/release-notes-0.20.1.md
 [news134 descriptor]: /en/newsletters/2021/02/03/#bitcoin-core-20226
 [news162 descriptor]: /en/newsletters/2021/08/18/#bitcoin-core-21500
@@ -182,5 +182,5 @@ Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][bli
 [news246 fundmax]: /fr/newsletters/2023/04/26/#lnd-6903
 [news116 maxchan]: /en/newsletters/2020/09/23/#lnd-4567
 [lnd issue]: https://github.com/lightningnetwork/lnd/issues/53
-[news388 bip3]: /en/newsletters/2026/01/16/#bip-process-updated
+[news388 bip3]: /fr/newsletters/2026/01/16/#bip-process-updated
 [news347 lsp]: /fr/newsletters/2025/03/28/#ldk-3649
