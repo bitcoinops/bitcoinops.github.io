@@ -34,8 +34,8 @@ et décrivant les changements notables dans les projets d'infrastructure Bitcoin
   - Une méthode pour estimer la probabilité qu'un paiement soit réalisable (voir le [Bulletin
     #309][news309 feasibility])
 
-  - Une analyse sur différentes [stratégies d'atténuation][mitigation post] pour l'épuisement des
-    canaux
+  - Une analyse sur différentes
+  [stratégies d'atténuation][mitigation post] pour l'épuisement des canaux
 
   - La conclusion que les canaux à deux parties imposent de fortes contraintes à la capacité de la
     liquidité à circuler entre les pairs du réseau
