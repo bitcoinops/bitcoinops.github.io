@@ -162,9 +162,9 @@ Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][bli
 
 [channels post]: https://delvingbitcoin.org/t/a-mathematical-theory-of-payment-channel-networks/2204
 [channels paper]: https://arxiv.org/pdf/2601.04835
-[news309 feasibility]: /en/newsletters/2024/06/28/#estimating-the-likelihood-that-an-ln-payment-is-feasible
+[news309 feasibility]: /fr/newsletters/2024/06/28/#estimation-de-la-probabilite-qu-un-paiement-ln-soit-realisable
 [mitigation post]: https://delvingbitcoin.org/t/mitigating-channel-depletion-in-the-lightning-network-a-survey-of-potential-solutions/1640/1
-[news333 depletion]: /en/newsletters/2024/12/13/#insights-into-channel-depletion
+[news333 depletion]: /fr/newsletters/2024/12/13/#apercus-sur-l-epuisement-des-canaux
 [new387 ark]: /fr/newsletters/2026/01/09/#utiliser-ark-comme-une-fabrique-de-canaux
 [pickhardt gh]: https://github.com/renepickhardt/Lightning-Network-Limitations
 [frigate gh]: https://github.com/sparrowwallet/frigate
