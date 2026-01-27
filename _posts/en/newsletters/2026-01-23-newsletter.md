@@ -16,14 +16,14 @@ notable changes to popular Bitcoin infrastructure software.
 
 - **A mathematical theory of payment channel networks**: René Pickhardt [posted][channels post] to Delving Bitcoin
   about the publication of his new [paper][channels paper] called "A Mathematical Theory of
-  Payment Channel Network". In the paper, Pickhardt groups several observations, gathered
+  Payment Channel Networks". In the paper, Pickhardt groups several observations, gathered
   during years of research, under a single geometric framework. In particular, the paper aims to
   analyze common phenomena, such as channel depletion (see [Newsletter #333][news333 depletion]) and capital inefficiencies of two-party
   channels, assessing how they are interconnected and why they are true.
 
   The main paper contributions are the following:
 
-  - A model for feasible wealth distributions of users on the lightning network
+  - A model for feasible wealth distributions of users on the Lightning Network
     given a channel graph
 
   - A formula for estimating the upper bound of payment bandwidth for payments
@@ -93,12 +93,11 @@ repo], and [BINANAs][binana repo]._
 
 - [Bitcoin Core #32471][] fixes a bug where calling the `listdescriptors` RPC
   with the `private=true` parameter (see Newsletters [#134][news134 descriptor]
-  and [#162][news162 descriptor]) would fail if any [descriptor][topic
-  descriptors] had a missing private key. This issue affected wallets containing
-  both non-watch-only and watch-only descriptors, as well as multisig
-  descriptors without all the private keys. This PR ensures that the RPC
-  correctly returns the available private keys, enabling users to back them up
-  properly. Calling `listdescriptors private=true` on a strictly watch-only
+  and [#162][news162 descriptor]) would fail if the wallet contained any [descriptor][topic
+  descriptors] for which it had some but not
+  all the private keys. This PR updates the RPC
+  to return the descriptor with the available subset of private keys, enabling users to back them up.
+  Calling `listdescriptors private=true` on a watch-only
   wallet still fails.
 
 - [Bitcoin Core #34146][] improves address propagation by sending a node's
