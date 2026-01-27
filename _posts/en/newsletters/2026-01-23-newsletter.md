@@ -93,12 +93,11 @@ repo], and [BINANAs][binana repo]._
 
 - [Bitcoin Core #32471][] fixes a bug where calling the `listdescriptors` RPC
   with the `private=true` parameter (see Newsletters [#134][news134 descriptor]
-  and [#162][news162 descriptor]) would fail if any [descriptor][topic
-  descriptors] had a missing private key. This issue affected wallets containing
-  both non-watch-only and watch-only descriptors, as well as multisig
-  descriptors without all the private keys. This PR ensures that the RPC
-  correctly returns the available private keys, enabling users to back them up
-  properly. Calling `listdescriptors private=true` on a strictly watch-only
+  and [#162][news162 descriptor]) would fail if the wallet contained any [descriptor][topic
+  descriptors] for which it had some but not
+  all the private keys. This PR updates the RPC
+  to return the descriptor with the available subset of private keys, enabling users to back them up.
+  Calling `listdescriptors private=true` on a watch-only
   wallet still fails.
 
 - [Bitcoin Core #34146][] improves address propagation by sending a node's
