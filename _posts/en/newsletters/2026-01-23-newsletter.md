@@ -44,7 +44,7 @@ notable changes to popular Bitcoin infrastructure software.
 
   Finally, Pickhardt opened the discussion on his work to questions and feedback from the LN
   developer community on how the protocol design could be influenced by his research and on
-  the best use for multi-party channels.
+  the best use for multi-party channels. {% assign timestamp="0:31" %}
 
 ## Changes to services and client software
 
@@ -56,12 +56,12 @@ wallets and services.*
   remote scanner] service from [BIP352][] to provide [silent payment][topic
   silent payments] scanning for client applications. Frigate also
   uses modern GPU computation to decrease scanning time which is useful for
-  providing multi-user instances that handle many simultaneous scanning requests.
+  providing multi-user instances that handle many simultaneous scanning requests. {% assign timestamp="30:04" %}
 
 - **BDK WASM library:**
   The [bdk-wasm][bdk-wasm gh] library, originally developed and [used][metamask
   blog] by the MetaMask organization, provides access to BDK features in
-  environments that support WebAssembly (WASM).
+  environments that support WebAssembly (WASM). {% assign timestamp="33:28" %}
 
 ## Releases and release candidates
 
@@ -73,12 +73,12 @@ release candidates._
   where nodes created with v25.12 could not spend funds sent to non-[P2TR][topic
   taproot] addresses (see below). It also fixes recovery and `hsmtool`
   compatibility issues with the new mnemonic-based `hsm_secret` format
-  introduced in v25.12 (see [Newsletter #388][news388 cln]).
+  introduced in v25.12 (see [Newsletter #388][news388 cln]). {% assign timestamp="35:14" %}
 
 - [LND 0.20.1-beta.rc1][] is a release candidate for a minor version that adds a
   panic recovery for gossip message processing, improves reorg protection,
   implements LSP detection heuristics, and fixes multiple bugs and race
-  conditions. See the [release notes][] for more details.
+  conditions. See the [release notes][] for more details. {% assign timestamp="39:14" %}
 
 ## Notable code and documentation changes
 
@@ -98,30 +98,30 @@ repo], and [BINANAs][binana repo]._
   all the private keys. This PR updates the RPC
   to return the descriptor with the available subset of private keys, enabling users to back them up.
   Calling `listdescriptors private=true` on a watch-only
-  wallet still fails.
+  wallet still fails. {% assign timestamp="40:57" %}
 
 - [Bitcoin Core #34146][] improves address propagation by sending a node's
   first self-announcement in its own P2P message. Previously, the self-announcement
   was bundled with multiple other addresses in response to a peer’s `getaddr`
-  request, which could cause it to be dropped or to displace other addresses.
+  request, which could cause it to be dropped or to displace other addresses. {% assign timestamp="42:02" %}
 
 - [Core Lightning #8831][] fixes a critical bug where nodes created with v25.12
   could not spend funds sent to non-[P2TR][topic taproot] addresses. Although
   all address types were derived based on [BIP86][] for those nodes, the signing
   code only used [BIP86][] for P2TR addresses. This PR ensures signing uses
-  [BIP86][] derivation for all address types.
+  [BIP86][] derivation for all address types. {% assign timestamp="45:00" %}
 
 - [LDK #4261][] adds support for mixed-mode [splicing][topic splicing], allowing
   for simultaneous splice-in and splice-out in the same transaction. The funding
   input pays the appropriate fees, as in the splice-in case. The net contributed
-  value may be negative if more value is spliced out than spliced in.
+  value may be negative if more value is spliced out than spliced in. {% assign timestamp="45:35" %}
 
 - [LDK #4152][] adds support for dummy hops on [blinded][topic rv routing]
   payments paths, paralleling the feature for blinded message paths added in
   [Newsletter #370][news370 dummy]. Adding additional hops makes it
   significantly harder to determine the distance to or the identity of the
   receiver node. See [Newsletter #381][news381 dummy]  for previous work
-  enabling this.
+  enabling this. {% assign timestamp="46:24" %}
 
 - [LND #10488][] fixes a bug where channels opened with the `fundMax` option
   (see [Newsletter #246][news246 fundmax]) were limited in size by the
@@ -129,7 +129,7 @@ repo], and [BINANAs][binana repo]._
   maxchan]), which is intended to only limit incoming channel requests. This PR
   ensures that the `fundMax` option uses the protocol-level maximum channel size
   instead, depending on whether the user and peer support [large channels][topic
-  large channels].
+  large channels]. {% assign timestamp="47:42" %}
 
 - [LND #10331][] improves how channel closes handle blockchain reorgs by using
   scaled confirmation requirements based on channel size, where the minimum is 1
@@ -138,27 +138,27 @@ repo], and [BINANAs][binana repo]._
   competing channel close transactions in such scenarios. The PR also adds
   monitoring for negative confirmations (when a confirmed transaction is later
   reorged out), though how to handle them remains unsolved. This PR addresses
-  LND's [oldest open issue][lnd issue] from 2016.
+  LND's [oldest open issue][lnd issue] from 2016. {% assign timestamp="48:43" %}
 
 - [Rust Bitcoin #5402][] adds validation during decoding to reject transactions
   with duplicate inputs, related to [CVE-2018-17144][topic cve-2018-17144].
   Transactions containing multiple inputs spending the same outpoint are invalid
-  by consensus.
+  by consensus. {% assign timestamp="49:06" %}
 
 - [BIPs #1820][] updates [BIP3][] to status `Deployed`, replacing [BIP2][] as the
   guideline for the Bitcoin Improvement Proposal (BIP) process. See [Newsletter
-  #388][news388 bip3] for more details.
+  #388][news388 bip3] for more details. {% assign timestamp="50:39" %}
 
 - [BOLTs #1306][] clarifies in the [BOLT12][] specification that [offers][topic
   offers] with an empty `offer_chains` field must be rejected. An offer with
   this field present but containing zero chain hashes makes invoice requests
   impossible since the payer cannot satisfy the requirement to set
-  `invreq_chain` to one of the `offer_chains`.
+  `invreq_chain` to one of the `offer_chains`. {% assign timestamp="51:41" %}
 
 - [BLIPs #59][] updates [BLIP51][], also known as LSPS1, to add support for
   [BOLT12 offers][topic offers] as an option for paying Lightning Service
   Providers (LSPs), alongside the existing [BOLT11][] and on-chain options. This
-  was previously implemented in LDK (see [Newsletter #347][news347 lsp]).
+  was previously implemented in LDK (see [Newsletter #347][news347 lsp]). {% assign timestamp="53:05" %}
 
 {% include snippets/recap-ad.md when="2026-01-27 17:30" %}
 {% include references.md %}
