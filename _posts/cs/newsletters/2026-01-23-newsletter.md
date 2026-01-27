@@ -15,7 +15,7 @@ nových vydání a souhrnem významných změn v populárním bitcoinovém páte
 
 - **Matematická teorie sítí platebních kanálů**: René Pickhardt zaslal do fóra Delving
   Bitcoin [příspěvek][channels post] o zveřejnění svého nového [článku][channels paper] nazvaného
-  „Matematická teorie sítě platebních kanálů“ (A Mathematical Theory of Payment Channel Network).
+  „Matematická teorie sítí platebních kanálů“ (A Mathematical Theory of Payment Channel Networks).
   V článku Pickhardt sdružuje několik pozorování, která posbíral během let zkoumání, do jediného
   geometrického rámce. Konkrétně si jeho studie klade za cíl analyzovat běžné jevy, jako jsou
   vyčerpání kanálu (viz [zpravodaj č. 333][news333 depletion]) či neefektivní využití kapitálu
@@ -91,10 +91,9 @@ repo] a [repozitáři BINANA][binana repo]._
 - [Bitcoin Core #32471][] opravuje chybu způsobující, že volání RPC příkazu
   `listdescriptors` s parametrem `private=true` (viz zpravodaje [č. 134][news134
   descriptor] a [č. 162][news162 descriptor], oba _angl._) selhalo, pokud
-  některý z [deskriptorů][topic descriptors] neměl soukromý klíč. Chyba postihovala
-  peněženky obsahující watch-only i ne-watch-only deskriptory, stejně jako
-  multisig deskriptory bez všech soukromých klíčů. Toto PR zajišťuje,
-  že RPC správně vrací dostupné soukromé klíče a umožňuje tak uživatelům
+  peněženka obsahovala nějaký [deskriptor][topic descriptors], pro který
+  neměla všechny soukromé klíče. Toto PR vrací ve výsledku RPC volání
+  deskriptor s množinou dostupných soukromých klíčů a umožňuje tak uživatelům
   pořídit řádné zálohy. Volání `listdescriptors private=true` na čistě watch-only
   peněženkách i nadále selhává.
 
