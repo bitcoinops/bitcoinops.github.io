@@ -16,14 +16,14 @@ notable changes to popular Bitcoin infrastructure software.
 
 - **A mathematical theory of payment channel networks**: René Pickhardt [posted][channels post] to Delving Bitcoin
   about the publication of his new [paper][channels paper] called "A Mathematical Theory of
-  Payment Channel Network". In the paper, Pickhardt groups several observations, gathered
+  Payment Channel Networks". In the paper, Pickhardt groups several observations, gathered
   during years of research, under a single geometric framework. In particular, the paper aims to
   analyze common phenomena, such as channel depletion (see [Newsletter #333][news333 depletion]) and capital inefficiencies of two-party
   channels, assessing how they are interconnected and why they are true.
 
   The main paper contributions are the following:
 
-  - A model for feasible wealth distributions of users on the lightning network
+  - A model for feasible wealth distributions of users on the Lightning Network
     given a channel graph
 
   - A formula for estimating the upper bound of payment bandwidth for payments
