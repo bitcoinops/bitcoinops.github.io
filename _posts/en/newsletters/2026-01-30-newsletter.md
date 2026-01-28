@@ -19,7 +19,7 @@ FIXME:bitschmidty
   encodes the wires of a garbled circuit as EC (elliptic curve) points. The
   MAC is designed to be homomorphic, enabling many operations within the
   garbled circuit to be represented directly as operations on EC points. The
-  resulting points will can then be used in circuit verification with native
+  resulting points can then be used in circuit verification with native
   bitcoin signatures. The current paper is the first of several pieces needed
   to apply this technique to [BitVM][topic acc]-like constructs on Bitcoin.
 
