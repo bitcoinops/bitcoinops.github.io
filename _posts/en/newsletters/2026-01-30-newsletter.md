@@ -23,6 +23,25 @@ FIXME:bitschmidty
   bitcoin signatures. The current paper is the first of several pieces needed
   to apply this technique to [BitVM][topic acc]-like constructs on Bitcoin.
 
+- **An update on LN-Simmetry**: Gregory Sanders [posted][simmetry update]
+  to Delving Bitcoin an update about his previous work on [LN-simmetry][topic eltoo]
+  (see[Newsletter #284][news284 ln sim]).
+
+  Sanders rebased his previous proof-of-concept forks of the
+  [BOLTs specifications][bolts fork] and [CLN][cln fork] to the latest updates.
+  The updated implementation now works on [Bitcoin Inquisition][bitcoin inquisition repo]
+  v29.x on signet with [TRUC][topic v3 transaction relay],
+  [ephemeral dust, P2A][topic ephemeral anchors], and 1p1c package relay, supports
+  co-operative channel closure, fixes a crash that prevented the node to restart correctly,
+  and expands test coverage. Sanders asked other developers to test out his new
+  proof-of-concept on signet on Bitcoin Inquisition.
+
+  Sanders also leveraged Claude's capabilities to migrate his work from APO to
+  OP_TEMPLATEHASH+OP_CSFS+IK (see [Newsletter #365][news365 op proposal]), modifying the
+  [BOLT draft][bolt th] and creating another [CLN fork][cln th].
+  However, Sanders added that since OP_TEMPLATEHASH is not yet live on Bitcoin Inquisition,
+  the fork can only be tested in regtest.
+
 FIXME:bitschmidty
 
 ## Selected Q&A from Bitcoin Stack Exchange
@@ -66,3 +85,10 @@ FIXME:Gustavojfe
 [news369 le garbled]: /en/newsletters/2025/08/29/#garbled-locks-for-accountable-computing-contracts
 [delving rl garbled]: https://delvingbitcoin.org/t/argo-a-garbled-circuits-scheme-for-1000x-more-efficient-off-chain-computation/2210
 [iacr le ytl garbled]: https://eprint.iacr.org/2026/049.pdf
+[simmetry update]: https://delvingbitcoin.org/t/ln-symmetry-project-recap/359/17
+[news284 ln sim]: /en/newsletters/2024/01/10/#ln-symmetry-research-implementation
+[bolts fork]: https://github.com/instagibbs/bolts/tree/eltoo_trucd
+[cln fork]: https://github.com/instagibbs/lightning/tree/2026-01-eltoo_rebased
+[news365 op proposal]: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
+[bolt th]: https://github.com/instagibbs/bolts/tree/2026-01-eltoo_th
+[cln th]: https://github.com/instagibbs/lightning/commits/2026-01-eltoo_templatehash
