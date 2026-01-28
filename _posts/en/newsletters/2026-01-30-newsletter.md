@@ -16,7 +16,20 @@ infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Argo: a garbled-circuits scheme with more efficient off-chain computation**:
+  Robin Linus [posted][delving rl garbled] to Delving Bitcoin about a new
+  [paper][iacr le ytl garbled] by Liam Eagen and Ying Tong Lai describing a
+  technique that will enable 1000 times more efficient [garbled locks][news359 rl
+  garbled]. The new technique uses a MAC (message authentication code) that
+  encodes the wires of a garbled circuit as EC (elliptic curve) points. The
+  MAC is designed to be homomorphic, enabling many operations within the garbled
+  circuit to be represented directly as operations on EC points. The key
+  improvement is that Argo works over _arithmetic_ circuits, in contrast to
+  binary circuits. With an binary circuit, millions of binary gates are needed to
+  represent a curve point multiplication, whereas with this arithmetic
+  circuit, you only need a single arithmetic gate. The current
+  paper is the first of several pieces needed to apply this technique to
+  [BitVM][topic acc]-like constructs on Bitcoin.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -54,4 +67,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-02-03 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[news359 rl garbled]: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
+[news369 le garbled]: /en/newsletters/2025/08/29/#garbled-locks-for-accountable-computing-contracts
+[delving rl garbled]: https://delvingbitcoin.org/t/argo-a-garbled-circuits-scheme-for-1000x-more-efficient-off-chain-computation/2210
+[iacr le ytl garbled]: https://eprint.iacr.org/2026/049.pdf
