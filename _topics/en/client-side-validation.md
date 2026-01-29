@@ -53,6 +53,9 @@ optech_mentions:
   - title: "RGB v0.12 announced"
     url: /en/newsletters/2025/07/18/#rgb-v0-12-announced
 
+  - title: "Client-side validation and coinjoins"
+    url: /en/newsletters/2026/01/30/#can-one-do-a-coinjoin-in-shielded-csv
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Pay to Contract (P2C)"

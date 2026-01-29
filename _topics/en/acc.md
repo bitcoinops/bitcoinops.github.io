@@ -76,6 +76,9 @@ optech_mentions:
   - title: "Garbled locks for efficient accountable computing contracts"
     url: /en/newsletters/2025/08/29/#garbled-locks-for-accountable-computing-contracts
 
+  - title: "Argo: a garbled-circuits scheme with more efficient off-chain computation"
+    url: /en/newsletters/2026/01/30/#argo-a-garbled-circuits-scheme-with-more-efficient-off-chain-computation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"
