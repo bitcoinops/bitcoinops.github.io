@@ -61,7 +61,30 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What is stored in dbcache and with what priority?]({{bse}}130376)
+  Murch describes the purpose of the `dbcache` data structure as an in-memory
+  cache for the a subset of entire UTXO set and goes on to detail its behavior.
+
+- [Can one do a coinjoin in Shielded CSV?]({{bse}}130364)
+  Jonas Nick points out that the Shielded CSV protocol doesn't support
+  [coinjoins][topic coinjoin] currently, but that [client-side validation][topic
+  client-side validation] protocols do not inherently preclude such functionality.
+
+- [In Bitcoin Core, how to use Tor for broadcasting new transactions only?]({{bse}}99442)
+  Vasil Dimov follows up to this older question pointing out that with the new
+  `privatebroadcast` option (see [Newsletter #388][news388 private broadcast]),
+  Bitcoin Core can broadcast transactions through short-lived [privacy
+  network][topic anonymity networks] connections.
+
+- [Brassard-Høyer-Tapp (BHT) algorithm and Bitcoin (BIP360)]({{bse}}130431) User
+  bca-0353f40e explains that the capability for a collision attack on
+  [multisignature][topic multisignature] addresses using the Brassard-Høyer-Tapp
+  (BHT) [quantum][topic quantum resistance] algorithm to diminish SHA256
+  security would not affect addresses created before the capability.
+
+- [Why does BitHash alternate sha256 and ripmed160?]({{bse}}130373)
+  Sjors Provoost outlines the rationale around [BitVM3][topic acc]'s BitHash
+  function, a hash function tailored for Bitcoin's Script language.
 
 ## Releases and release candidates
 
@@ -95,3 +118,4 @@ FIXME:Gustavojfe
 [bolts fork]: https://github.com/instagibbs/bolts/tree/eltoo_trucd
 [cln fork]: https://github.com/instagibbs/lightning/tree/2026-01-eltoo_rebased
 [news365 op proposal]: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
+[news388 private broadcast]: /en/newsletters/2026/01/16/#bitcoin-core-29415
