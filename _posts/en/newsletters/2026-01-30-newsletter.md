@@ -92,7 +92,11 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Libsecp256k1 0.7.1][] is a maintenance release of this library for
+  Bitcoin-related cryptographic operations which includes a security improvement
+  that increases the number of cases where the library attempts to clear secrets
+  from the stack. It also introduces a new unit test framework and some build
+  system changes.
 
 ## Notable code and documentation changes
 
@@ -105,10 +109,76 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33822][] adds block header support to the `libbitcoinkernel`
+  API interface (see [Newsletter #380][news380 kernel]). A new
+  `btck_BlockHeader` type and its associated methods enable creating, copying,
+  and destroying headers, as well as fetching header fields such as hash,
+  previous hash, timestamp, difficulty target, version and nonce. A new
+  `btck_chainstate_manager_process_block_header()`  method validates and
+  processes block headers without requiring the full block, and
+  `btck_chainstate_manager_get_best_entry()` returns the block tree entry with
+  the most cumulative proof-of-work.
+
+- [Bitcoin Core #34269][] disallows creating or restoring unnamed wallets
+  when using the `createwallet` and `restorewallet` RPCs, as well as the wallet
+  tool's `create` and `createfromdump` commands (see Newsletters [#45][news45
+  wallettool] and [#130][news130 wallettool]). While the GUI already enforced
+  this restriction, the RPCs and underlying functions did not. Wallet migration
+  can still restore unnamed wallets. See [Newsletter #387][news387 unnamed] for
+  a bug related to unnamed wallets.
+
+- [Core Lightning #8850][] removes several deprecated features:
+  `option_anchors_zero_fee_htlc_tx`, renamed to `option_anchors` to reflect
+  changes on [anchor outputs][topic anchor outputs], the `decodepay` RPC
+  (replaced by `decode`), the `tx` and `txid` fields in the `close` command
+  response (replaced by `txs` and `txids`), and `estimatefeesv1`, the original
+  response format used by the `bcli` plugin to return [fee estimates][topic fee
+  estimation].
+
+- [LDK #4349][] adds validation for [bech32][topic bech32] padding when parsing
+  [BOLT12 offers][topic offers], as specified in [BIP173][]. Previously, LDK
+  would accept offers with invalid padding, whereas other implementations, such
+  as Lightning-KMP and Eclair, would correctly reject them. A new
+  `InvalidPadding` error variant is added to the `Bolt12ParseError` enum.
+
+- [Rust Bitcoin #5470][] adds validation to the decoder to reject transactions
+  with zero outputs, as valid Bitcoin transactions must have at least one
+  output.
+
+- [Rust Bitcoin #5443][] adds validation on the decoder to reject transactions
+  where the sum of the output values exceeds `MAX_MONEY` (21 million bitcoin).
+  This check is related to [CVE-2010-5139][topic cves], a historical
+  vulnerability where an attacker could create transactions with extremely large
+  output values.
+
+- [BDK #2037][] adds the `median_time_past()` method to calculate
+  median-time-past (MTP) for `CheckPoint` structures. MTP, defined in
+  [BIP113][], is the median timestamp of the previous 11 blocks and is used to
+  validate [timelocks][topic timelocks]. See [Newsletter #372][news372 mtp] for
+  previous work enabling this.
+
+- [BIPs #2076][] adds [BIP434][] which defines a P2P feature message that would
+  allow peers to announce and negotiate support for new features. The idea
+  generalizes [BIP339][]'s mechanism (see [Newsletter #87][news87 negotiation])
+  but instead of requiring a new message type for each feature, [BIP434][]
+  provides a single, reusable message for announcing and negotiating multiple
+  P2P upgrades. This benefits various proposed P2P use cases, including
+  [template sharing][news366 template]. See [Newsletter #386][news386 feature]
+  for the mailing list discussion.
+
+- [BIPs #1500][] adds [BIP346][] which defines the `OP_TXHASH` opcode for
+  [tapscript][topic tapscript] that pushes onto the stack a hash digest of
+  specified parts of the spending transaction. This can be used to create
+  [covenants][topic covenants] and reduce interactivity in multi-party
+  protocols. The opcode generalizes [OP_CHECKTEMPLATEVERIFY][topic
+  op_checktemplateverify] and, when combined with [OP_CHECKSIGFROMSTACK][topic
+  op_checksigfromstack], can emulate [SIGHASH_ANYPREVOUT][topic
+  sighash_anyprevout]. See Newsletters [#185][news185 txhash] and [#272][news272
+  txhash] for previous discussion.
 
 {% include snippets/recap-ad.md when="2026-02-03 17:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="33822,34269,8850,4349,5470,5443,2037,2076,1500" %}
 [news359 rl garbled]: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
 [news369 le garbled]: /en/newsletters/2025/08/29/#garbled-locks-for-accountable-computing-contracts
 [delving rl garbled]: https://delvingbitcoin.org/t/argo-a-garbled-circuits-scheme-for-1000x-more-efficient-off-chain-computation/2210
@@ -119,3 +189,16 @@ FIXME:Gustavojfe
 [cln fork]: https://github.com/instagibbs/lightning/tree/2026-01-eltoo_rebased
 [news365 op proposal]: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
 [news388 private broadcast]: /en/newsletters/2026/01/16/#bitcoin-core-29415
+[bolt th]: https://github.com/instagibbs/bolts/tree/2026-01-eltoo_th
+[cln th]: https://github.com/instagibbs/lightning/commits/2026-01-eltoo_templatehash
+[Libsecp256k1 0.7.1]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.7.1
+[news380 kernel]: /en/newsletters/2025/11/14/#bitcoin-core-30595
+[news45 wallettool]: /en/newsletters/2019/05/07/#new-wallet-tool
+[news130 wallettool]: /en/newsletters/2021/01/06/#bitcoin-core-19137
+[news387 unnamed]: /en/newsletters/2026/01/09/#bitcoin-core-wallet-migration-bug
+[news372 mtp]: /en/newsletters/2025/09/19/#bdk-1582
+[news87 negotiation]: /en/newsletters/2020/03/04/#improving-feature-negotiation-between-full-nodes-at-startup
+[news386 feature]: /en/newsletters/2026/01/02/#peer-feature-negotiation
+[news366 template]: /en/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
+[news185 txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
+[news272 txhash]: /en/newsletters/2023/10/11/#specification-for-op-txhash-proposed
