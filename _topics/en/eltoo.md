@@ -93,6 +93,9 @@ optech_mentions:
   - title: "Summary and criticism of CTV + CSFS benefits for LN-Symmetry"
     url: /en/newsletters/2025/04/04/#ln-symmetry
 
+  - title: "LN-Symmetry update"
+    url: /en/newsletters/2026/01/30/#ln-symmetry-update
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT

@@ -97,6 +97,9 @@ optech_mentions:
   - title: "Technical report of hash-based post-quantum signature schemes"
     url: /en/newsletters/2026/01/02/#hash-based-signatures-for-bitcoin-s-post-quantum-future
 
+  - title: "Brassard-Høyer-Tapp (BHT) algorithm and Bitcoin"
+    url: /en/newsletters/2026/01/30/#brassard-hoyer-tapp-bht-algorithm-and-bitcoin-bip360
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
