@@ -169,7 +169,7 @@ repo] a [repozitáři BINANA][binana repo]._
 {% include snippets/recap-ad.md when="2026-02-03 17:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="33822,34269,8850,4349,5470,5443,2037,2076,1500" %}
-[news359 rl garbled]: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
+[news359 rl garbled]: /cs/newsletters/2025/06/20/#vylepseni-kontraktu-ve-stylu-bitvm
 [news369 le garbled]: /en/newsletters/2025/08/29/#garbled-locks-for-accountable-computing-contracts
 [delving rl garbled]: https://delvingbitcoin.org/t/argo-a-garbled-circuits-scheme-for-1000x-more-efficient-off-chain-computation/2210
 [iacr le ytl garbled]: https://eprint.iacr.org/2026/049.pdf
