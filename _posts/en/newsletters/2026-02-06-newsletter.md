@@ -16,7 +16,32 @@ to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **A constant-time parallelized UTXO database**: Toby Sharp
+  [posted][hornet del] to Delving Bitcoin about his latest project, a custom, highly
+  parallel UTXO database, with constant-time queries, called Hornet UTXO(1).
+  This is a new additional component of [Hornet Node][hornet website], an
+  experimental Bitcoin client focused on providing a minimal executable
+  specification of Bitcoin's consensus rules.
+  This new database aims to improve Initial Block Download (IBD) through a lock-free,
+  highly concurrent architecture.
+
+  The code is written in modern C++23, without external dependencies. To optimize for
+  speed, sorted arrays and [LSM trees][lsmt wiki] were preferred over
+  [hash maps][hash map wiki].
+  Operations, such as append, query, and fetch, are executed concurrently, and
+  blocks are processed out of order as they arrive, with data dependencies resolved
+  automatically. The code is not yet publicly available.
+
+  Sharp provided a benchmark to assess the capabilities of his software.
+  For re-validating the whole mainnet chain, Bitcoin Core v30 took 167 minutes
+  (with no script or signature validation), while Hornet UTXO(1) took 15 minutes
+  to complete validation. Tests were performed on a 32-core computer,
+  with 128GB RAM and 1TB storage.
+
+  In the discussion that followed, other developers suggested Sharp to compare
+  performance against [libbitcoin][libbitcoin gh], which is known for providing a
+  very efficient IBD.
+
 
 ## Changing consensus
 
@@ -48,4 +73,8 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-02-10 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[hornet del]: https://delvingbitcoin.org/t/hornet-utxo-1-a-custom-constant-time-highly-parallel-utxo-database/2201
+[hornet website]: https://hornetnode.org/overview.html
+[lsmt wiki]: https://en.wikipedia.org/wiki/Log-structured_merge-tree
+[hash map wiki]: https://en.wikipedia.org/wiki/Hash_table
+[libbitcoin gh]: https://github.com/libbitcoin
