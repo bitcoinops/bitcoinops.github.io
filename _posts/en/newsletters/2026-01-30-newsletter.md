@@ -29,7 +29,7 @@ infrastructure software.
   represent a curve point multiplication, whereas with this arithmetic
   circuit, you only need a single arithmetic gate. The current
   paper is the first of several pieces needed to apply this technique to
-  [BitVM][topic acc]-like constructs on Bitcoin.
+  [BitVM][topic acc]-like constructs on Bitcoin. {% assign timestamp="0:48" %}
 
 - **LN-Symmetry update**: Gregory Sanders [posted][symmetry update]
   an update to Delving Bitcoin about his previous work on [LN-Symmetry][topic eltoo]
@@ -48,7 +48,7 @@ infrastructure software.
   OP_TEMPLATEHASH+OP_CSFS+IK (see [Newsletter #365][news365 op proposal]), modified a
   [BOLT draft][bolt th] and created a [CLN-based implementation][cln th].
   However, Sanders added that since OP_TEMPLATEHASH is not yet live on Bitcoin Inquisition,
-  this update can only be tested in regtest.
+  this update can only be tested in regtest. {% assign timestamp="26:05" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -63,28 +63,28 @@ answers posted since our last update.*
 
 - [What is stored in dbcache and with what priority?]({{bse}}130376)
   Murch describes the purpose of the `dbcache` data structure as an in-memory
-  cache for the a subset of entire UTXO set and goes on to detail its behavior.
+  cache for the a subset of entire UTXO set and goes on to detail its behavior. {% assign timestamp="34:21" %}
 
 - [Can one do a coinjoin in Shielded CSV?]({{bse}}130364)
   Jonas Nick points out that the Shielded CSV protocol doesn't support
   [coinjoins][topic coinjoin] currently, but that [client-side validation][topic
-  client-side validation] protocols do not inherently preclude such functionality.
+  client-side validation] protocols do not inherently preclude such functionality. {% assign timestamp="24:02" %}
 
 - [In Bitcoin Core, how to use Tor for broadcasting new transactions only?]({{bse}}99442)
   Vasil Dimov follows up to this older question pointing out that with the new
   `privatebroadcast` option (see [Newsletter #388][news388 private broadcast]),
   Bitcoin Core can broadcast transactions through short-lived [privacy
-  network][topic anonymity networks] connections.
+  network][topic anonymity networks] connections. {% assign timestamp="36:47" %}
 
 - [Brassard-Høyer-Tapp (BHT) algorithm and Bitcoin (BIP360)]({{bse}}130431) User
   bca-0353f40e explains that the capability for a collision attack on
   [multisignature][topic multisignature] addresses using the Brassard-Høyer-Tapp
   (BHT) [quantum][topic quantum resistance] algorithm to diminish SHA256
-  security would not affect addresses created before the capability.
+  security would not affect addresses created before the capability. {% assign timestamp="38:31" %}
 
 - [Why does BitHash alternate sha256 and ripmed160?]({{bse}}130373)
   Sjors Provoost outlines the rationale around [BitVM3][topic acc]'s BitHash
-  function, a hash function tailored for Bitcoin's Script language.
+  function, a hash function tailored for Bitcoin's Script language. {% assign timestamp="39:24" %}
 
 ## Releases and release candidates
 
@@ -96,7 +96,7 @@ release candidates._
   Bitcoin-related cryptographic operations which includes a security improvement
   that increases the number of cases where the library attempts to clear secrets
   from the stack. It also introduces a new unit test framework and some build
-  system changes.
+  system changes. {% assign timestamp="41:09" %}
 
 ## Notable code and documentation changes
 
@@ -117,7 +117,7 @@ repo], and [BINANAs][binana repo]._
   `btck_chainstate_manager_process_block_header()`  method validates and
   processes block headers without requiring the full block, and
   `btck_chainstate_manager_get_best_entry()` returns the block tree entry with
-  the most cumulative proof-of-work.
+  the most cumulative proof-of-work. {% assign timestamp="42:59" %}
 
 - [Bitcoin Core #34269][] disallows creating or restoring unnamed wallets
   when using the `createwallet` and `restorewallet` RPCs, as well as the wallet
@@ -125,7 +125,7 @@ repo], and [BINANAs][binana repo]._
   wallettool] and [#130][news130 wallettool]). While the GUI already enforced
   this restriction, the RPCs and underlying functions did not. Wallet migration
   can still restore unnamed wallets. See [Newsletter #387][news387 unnamed] for
-  a bug related to unnamed wallets.
+  a bug related to unnamed wallets. {% assign timestamp="44:50" %}
 
 - [Core Lightning #8850][] removes several deprecated features:
   `option_anchors_zero_fee_htlc_tx`, renamed to `option_anchors` to reflect
@@ -133,29 +133,29 @@ repo], and [BINANAs][binana repo]._
   (replaced by `decode`), the `tx` and `txid` fields in the `close` command
   response (replaced by `txs` and `txids`), and `estimatefeesv1`, the original
   response format used by the `bcli` plugin to return [fee estimates][topic fee
-  estimation].
+  estimation]. {% assign timestamp="47:38" %}
 
 - [LDK #4349][] adds validation for [bech32][topic bech32] padding when parsing
   [BOLT12 offers][topic offers], as specified in [BIP173][]. Previously, LDK
   would accept offers with invalid padding, whereas other implementations, such
   as Lightning-KMP and Eclair, would correctly reject them. A new
-  `InvalidPadding` error variant is added to the `Bolt12ParseError` enum.
+  `InvalidPadding` error variant is added to the `Bolt12ParseError` enum. {% assign timestamp="49:16" %}
 
 - [Rust Bitcoin #5470][] adds validation to the decoder to reject transactions
   with zero outputs, as valid Bitcoin transactions must have at least one
-  output.
+  output. {% assign timestamp="50:54" %}
 
 - [Rust Bitcoin #5443][] adds validation on the decoder to reject transactions
   where the sum of the output values exceeds `MAX_MONEY` (21 million bitcoin).
   This check is related to [CVE-2010-5139][topic cves], a historical
   vulnerability where an attacker could create transactions with extremely large
-  output values.
+  output values. {% assign timestamp="51:26" %}
 
 - [BDK #2037][] adds the `median_time_past()` method to calculate
   median-time-past (MTP) for `CheckPoint` structures. MTP, defined in
   [BIP113][], is the median timestamp of the previous 11 blocks and is used to
   validate [timelocks][topic timelocks]. See [Newsletter #372][news372 mtp] for
-  previous work enabling this.
+  previous work enabling this. {% assign timestamp="52:51" %}
 
 - [BIPs #2076][] adds [BIP434][] which defines a P2P feature message that would
   allow peers to announce and negotiate support for new features. The idea
@@ -164,7 +164,7 @@ repo], and [BINANAs][binana repo]._
   provides a single, reusable message for announcing and negotiating multiple
   P2P upgrades. This benefits various proposed P2P use cases, including
   [template sharing][news366 template]. See [Newsletter #386][news386 feature]
-  for the mailing list discussion.
+  for the mailing list discussion. {% assign timestamp="55:49" %}
 
 - [BIPs #1500][] adds [BIP346][] which defines the `OP_TXHASH` opcode for
   [tapscript][topic tapscript] that pushes onto the stack a hash digest of
@@ -174,7 +174,7 @@ repo], and [BINANAs][binana repo]._
   op_checktemplateverify] and, when combined with [OP_CHECKSIGFROMSTACK][topic
   op_checksigfromstack], can emulate [SIGHASH_ANYPREVOUT][topic
   sighash_anyprevout]. See Newsletters [#185][news185 txhash] and [#272][news272
-  txhash] for previous discussion.
+  txhash] for previous discussion. {% assign timestamp="59:39" %}
 
 {% include snippets/recap-ad.md when="2026-02-03 17:30" %}
 {% include references.md %}
