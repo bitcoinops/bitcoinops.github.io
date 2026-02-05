@@ -167,7 +167,13 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [LDK 0.1.9][] and [0.2.1][ldk 0.2.1] are maintenance releases of this
+  popular library for building LN-enabled applications. Both fix a bug
+  where `ElectrumSyncClient` would fail to sync when unconfirmed
+  transactions were present. Version 0.2.1 additionally fixes an issue
+  where `splice_channel` didn't fail immediately when the peer doesn't
+  support [splicing][topic splicing], makes the `AttributionData` struct
+  public, and includes several other bug fixes.
 
 ## Notable code and documentation changes
 
@@ -180,10 +186,67 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33604][] corrects the behavior of [assumeUTXO][topic
+  assumeutxo] nodes. During background validation, the node avoids
+  downloading blocks from peers that don't have the snapshot block in
+  their best chain because the node lacks the necessary undo data to
+  handle a potential reorg. However, this restriction persisted
+  unnecessarily even after background validation had finished, despite
+  the fact that the node could handle reorgs. Nodes now only apply this
+  restriction while background validation is ongoing.
+
+- [Bitcoin Core #34358][] fixes a wallet bug that occurred when removing
+  transactions via the `removeprunedfunds` RPC. Previously, removing a
+  transaction marked all of its inputs as spendable again, even if the
+  wallet contained a conflicting transaction that also spent the same
+  UTXOs.
+
+- [Core Lightning #8824][] adds an `auto.include_fees` layer to the
+  pathfinding `askrene` plugin (see [Newsletter #316][news316 askrene])
+  that deducts routing fees from the payment amount, effectively making
+  the receiver pay for the fees.
+
+- [Eclair #3244][] adds two events: `PaymentNotRelayed`, emitted when a
+  payment couldn't be relayed to the next node likely due to
+  insufficient liquidity, and `OutgoingHtlcNotAdded`, emitted when an
+  [HTLC][topic htlc] couldn't be added to a specific channel. These
+  events help node operators build heuristics for liquidity allocation,
+  though the PR notes that a single event shouldn't trigger allocation.
+
+- [LDK #4263][] adds a `custom_tlvs` optional parameter to the
+  `pay_for_bolt11_invoice` API, enabling callers to embed arbitrary
+  metadata in the payment onion. Although the low-level endpoint
+  `send_payment` already allowed for custom Type-Length-Values
+  ([TLVs][]) in [BOLT11][] payments, it wasn't properly surfaced on
+  higher-level endpoints.
+
+- [LDK #4300][] adds support for generic [HTLC][topic htlc]
+  interception, building on the HTLC holding mechanism added for [async
+  payments][topic async payments] and expanding the prior capability,
+  which only intercepted HTLCs destined for fake SCIDs (see [Newsletter
+  #230][news230 intercept]). The new implementation uses a configurable
+  bitfield to intercept HTLCs destined for: intercept SCIDs (as before),
+  offline private channels (useful for LSPs to wake sleeping clients),
+  online private channels, public channels, and unknown SCIDs. This lays
+  the groundwork for supporting LSPS5 (see [Newsletter #365][news365
+  lsps5] for the client-side implementation) and other LSP use cases.
+
+- [LND #10473][] makes the `SendOnion` RPC (see [Newsletter
+  #386][news386 sendonion]) fully idempotent, enabling clients to safely
+  retry requests after network failures without risking duplicate
+  payments. If a request with the same `attempt_id` has already been
+  processed, the RPC will return a `DUPLICATE_HTLC` error.
+
+- [Rust Bitcoin #5493][] adds the ability to use hardware-optimized
+  SHA256 operations on compatible ARM architectures. Benchmarks show
+  that hashing is approximately five times faster for large blocks. This
+  complements the existing SHA256 acceleration on x86 architectures (see
+  [Newsletter #265][news265 x86sha]).
 
 {% include snippets/recap-ad.md when="2026-02-10 17:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="33604,34358,8824,3244,4263,4300,10473,5493" %}
+
 [news386 jn hash]: /en/newsletters/2026/01/02/#hash-based-signatures-for-bitcoin-s-post-quantum-future
 [delving jn shrings]: https://delvingbitcoin.org/t/shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups/2158
 [ml ap gcc]: https://groups.google.com/g/bitcoindev/c/6TTlDwP2OQg
@@ -198,3 +261,11 @@ FIXME:Gustavojfe
 [libbitcoin gh]: https://github.com/libbitcoin
 [dust attacks del]: https://delvingbitcoin.org/t/disposing-of-dust-attack-utxos/2215
 [ddust tool]: https://github.com/bubb1es71/ddust
+[LDK 0.1.9]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.9
+[ldk 0.2.1]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.2.1
+[news316 askrene]: /en/newsletters/2024/08/16/#core-lightning-7517
+[TLVs]: https://github.com/lightning/bolts/blob/master/01-messaging.md#type-length-value-format
+[news230 intercept]: /en/newsletters/2022/12/14/#ldk-1835
+[news365 lsps5]: /en/newsletters/2025/08/01/#ldk-3662
+[news386 sendonion]: /en/newsletters/2026/01/02/#lnd-9489
+[news265 x86sha]: /en/newsletters/2023/08/23/#rust-bitcoin-1962
