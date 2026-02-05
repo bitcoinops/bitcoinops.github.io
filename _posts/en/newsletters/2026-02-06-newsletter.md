@@ -53,6 +53,41 @@ to popular Bitcoin infrastructure software.
   all paths requiring at least one signature and similar. Similar to
   miniscript, it can target various Script versions.
 
+- **Discussion of dust attack mitigations**: Bubb1es [posted][dust attacks del]
+  to Delving Bitcoin about a way to dispose of [dust
+  attacks][topic output linking] in onchain wallets. A dust attack happens when
+  an adversary sends dust UTXO's to all the anonymous addresses they want to
+  know about. Hoping that some will be spent unintentionally with an unrelated
+  UTXO.
+
+  The way _most_ wallets choose to handle this today is by preventing spending of the dust
+  UTXOs by marking them as dust UTXOs in the wallets client. This can become an
+  issue in the future if the user restores from keys and the new wallet client
+  doesn't know these UTXOs are marked and "unlocks" the dust UTXOs to be spent.
+  Bubb1es suggests another way to prevent this dust UTXO attack by
+  creating a transaction with the dust UTXO that uses the entire amount and has
+  an `OP_RETURN` output making it provably unspendable. This is possible because
+  Bitcoin Core v30.0 has a lower minimum relay fee rate (0.1 sats/vbyte).
+
+  He then lists out a few risks with implementing a wallet that handles dust
+  UTXOs like this.
+
+  1. Fingerprinting issues if only a few wallets implement this.
+
+  2. If multiple dust UTXOs are broadcast at the same time, then there can be
+     correlation.
+
+  3. Rebroadcasting might need to be done if fee rates go up.
+
+  4. It can be confusing to sign for dust UTXOs in multi-sig and hardware
+     signing setups.
+
+  AJ Towns mentioned that the minimum relay size is 65 bytes and explains that
+  using ANYONECANPAY|ALL with a 3-byte OP_RETURN would make it more efficient.
+
+  Bubb1es then provides an experimental tool [ddust][ddust tool] to demonstrate
+  how this would be done.
+
 ## Changing consensus
 
 _A monthly section summarizing proposals and discussion about changing
@@ -161,3 +196,5 @@ FIXME:Gustavojfe
 [lsmt wiki]: https://en.wikipedia.org/wiki/Log-structured_merge-tree
 [hash map wiki]: https://en.wikipedia.org/wiki/Hash_table
 [libbitcoin gh]: https://github.com/libbitcoin
+[dust attacks del]: https://delvingbitcoin.org/t/disposing-of-dust-attack-utxos/2215
+[ddust tool]: https://github.com/bubb1es71/ddust
