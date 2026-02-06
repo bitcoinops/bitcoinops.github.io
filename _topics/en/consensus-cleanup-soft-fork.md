@@ -91,8 +91,8 @@ see_also:
  - title: "CVE-2017-12842: fake SPV proofs using 64-byte transactions"
    link: "https://bitcoinops.org/en/topics/cve/#CVE-2017-12842"
 ---
-  After a prior draft in 2019 was deferred, renewed efforts since 2024
-  substianted into a concrete proposal, BIP54: Consensus Cleanup. The soft fork
+  After a prior draft in 2019 was deferred, renewed efforts since 2023
+  substantiated into a concrete proposal, BIP54: Consensus Cleanup. The soft fork
   proposal advocates for fixing the following four issues.
 
   - Timewarp bug: an off-by-one error in the difficulty adjustment algorithm
@@ -100,13 +100,13 @@ see_also:
     This is mitigated by limiting the permitted timestamps for the first block
     in difficulty periods and requiring that at an entire difficulty period has
     a non-negative duration.
-  - Poison blocks: attackers may use uncommon script patterns to compose blocks
+  - Slow-to-validate blocks: attackers may use uncommon script patterns to compose blocks
     that are prohibitively expensive to process. These forms of malicious
     transactions are prevented by introducing limits on signature operations
     that curb this malicious use but far exceed organic uses.
   - Merkle tree weakness: the construction of the merkle tree on a block’s
-    transactions is ambiguous membership of transactions with stripped sizes of
-    64 bytes or inner nodes. Forbidding such transactions prevents two ways of
+    transactions treats transactions with witness-stripped sizes of
+    64 bytes indistinguishably from inner nodes. Forbidding such transactions prevents two ways of
     creating fake transaction inclusion proofs.
   - Duplicate transaction vector: Some early coinbase transactions exhibit
     patterns that would allow them to be replayed in future blocks. Requiring
