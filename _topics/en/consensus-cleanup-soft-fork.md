@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Discussion of BIP54's timewarp fix and its impact on the 2106 block timestamp overflow issue"
     url: /en/newsletters/2026/01/02/#relax-bip54-timestamp-restriction-for-2106-soft-fork
 
+  - title: "Addressing remaining points on BIP54"
+    url: /en/newsletters/2026/02/06/#addressing-remaining-points-on-bip54
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation

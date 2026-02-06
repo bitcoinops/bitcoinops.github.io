@@ -100,6 +100,9 @@ optech_mentions:
   - title: "New library for encrypting descriptors and miniscript to the included public keys"
     url: /en/newsletters/2025/06/13/#descriptor-encryption-library
 
+  - title: "Bithoven: A formal, imperative language for Bitcoin Script similar to Miniscript"
+    url: /en/newsletters/2026/02/06/#bithoven-a-formally-verified-imperative-language-for-bitcoin-script
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

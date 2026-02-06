@@ -100,6 +100,15 @@ optech_mentions:
   - title: "Brassard-Høyer-Tapp (BHT) algorithm and Bitcoin"
     url: /en/newsletters/2026/01/30/#brassard-hoyer-tapp-bht-algorithm-and-bitcoin-bip360
 
+  - title: "SHRINCS: 324-byte stateful post-quantum signatures with static backups"
+    url: /en/newsletters/2026/02/06/#shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups
+
+  - title: "Falcon post-quantum signature scheme proposal"
+    url: /en/newsletters/2026/02/06/#falcon-post-quantum-signature-scheme-proposal
+
+  - title: "SLH-DSA verification can compete with ECC"
+    url: /en/newsletters/2026/02/06/#slh-dsa-verification-can-compete-with-ecc
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
