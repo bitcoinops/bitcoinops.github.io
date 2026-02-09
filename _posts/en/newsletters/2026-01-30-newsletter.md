@@ -82,7 +82,7 @@ answers posted since our last update.*
   (BHT) [quantum][topic quantum resistance] algorithm to diminish SHA256
   security would not affect addresses created before the capability. {% assign timestamp="38:31" %}
 
-- [Why does BitHash alternate sha256 and ripmed160?]({{bse}}130373)
+- [Why does BitHash alternate sha256 and ripemd160?]({{bse}}130373)
   Sjors Provoost outlines the rationale around [BitVM3][topic acc]'s BitHash
   function, a hash function tailored for Bitcoin's Script language. {% assign timestamp="39:24" %}
 
