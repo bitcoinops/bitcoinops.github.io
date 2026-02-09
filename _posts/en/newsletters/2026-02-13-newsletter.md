@@ -15,7 +15,24 @@ popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Proposal to limit the number of per-group silent payment recipients**: Sebastian
+  Falbesoner [posted][kmax mailing list] to the Bitcoin-Dev mailing list the discovery and
+  mitigation of a theoretical attack on [silent
+  payment][topic silent payments] recipients. The attack occurs when an adversary
+  constructs a transaction with a large number of taproot outputs (23255 max outputs per
+  block according to current consensus rules) that all target the same entity.
+  If there were no limit on group size, it would take several minutes
+  to process, rather than tens of seconds.
+
+  This motivated a mitigation to add a new parameter, `K_max`, that limits the
+  number of per-group recipients within a single transaction. In theory, this
+  change would not be backward-compatible, but in practice, none of the
+  existing silent payment wallets should be affected
+  for a sufficiently high `K_max`. Falbesoner is proposing `K_max=1000`.
+
+  Falbesoner is seeking feedback or concerns about the proposed restriction. He
+  also notes that most silent payment wallet developers have been notified and
+  are aware of the issue.
 
 ## Releases and release candidates
 
@@ -40,4 +57,4 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-02-17 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[kmax mailing list]: https://groups.google.com/g/bitcoindev/c/tgcAQVqvzVg
