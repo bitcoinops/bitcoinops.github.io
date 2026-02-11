@@ -40,7 +40,7 @@ to popular Bitcoin infrastructure software.
 
   In the discussion that followed, other developers suggested Sharp to compare
   performance against [libbitcoin][libbitcoin gh], which is known for providing a
-  very efficient IBD.
+  very efficient IBD. {% assign timestamp="25:40" %}
 
 - **Bithoven: A formally verified, imperative language for Bitcoin Script:**
   Hyunhum Cho [wrote][delving hc bithoven] on Delving Bitcoin about his
@@ -51,7 +51,7 @@ to popular Bitcoin infrastructure software.
   and `return` as its primary operations. The compiler handles all stack
   management and makes similar guarantees to the miniscript compiler regarding
   all paths requiring at least one signature and similar. Similar to
-  miniscript, it can target various Script versions.
+  miniscript, it can target various Script versions. {% assign timestamp="44:48" %}
 
 - **Discussion of dust attack mitigations**: Bubb1es [posted][dust attacks del]
   to Delving Bitcoin about a way to dispose of [dust
@@ -86,7 +86,7 @@ to popular Bitcoin infrastructure software.
   using ANYONECANPAY|ALL with a 3-byte OP_RETURN would make it more efficient.
 
   Bubb1es then provides an experimental tool [ddust][ddust tool] to demonstrate
-  how this would be done.
+  how this would be done. {% assign timestamp="1:43:33" %}
 
 ## Changing consensus
 
@@ -114,7 +114,7 @@ Bitcoin's consensus rules._
   signature and the verifier checks that the returned public key hashes with
   the provided public key to the key specified in the locking script. The
   Unbalanced XMSS scheme is chosen to optimize for cases where relatively few
-  signatures are needed from a key.
+  signatures are needed from a key. {% assign timestamp="1:30" %}
 
 - **Addressing remaining points on BIP54:** Antoine Poinsot [wrote][ml ap
   gcc] about the remaining points of discussion for the [consensus
@@ -136,7 +136,7 @@ Bitcoin's consensus rules._
   similar) light clients from certain attacks. Several posters questioned
   whether this change is even worthwhile, given that other mitigations exist,
   and it introduces a potentially surprising validity gap for certain types of
-  transactions (e.g. [CPFPs][topic cpfp] for certain protocols).
+  transactions (e.g. [CPFPs][topic cpfp] for certain protocols). {% assign timestamp="1:10:08" %}
 
 - **Falcon post-quantum signature scheme proposal:** Giulio Golinelli
   [posted][ml gg falcon] on the mailing list proposing a fork to enable Falcon
@@ -154,12 +154,12 @@ Bitcoin's consensus rules._
   Note: While the mailing list post describes it as a soft fork, it appears to
   be implemented as a flag-day disjunction in the P2WPKH verification path
   which would be a hard fork. Further work would be necessary to develop a
-  soft fork client for this algorithm.
+  soft fork client for this algorithm. {% assign timestamp="20:05" %}
 
 - **SLH-DSA verification can compete with ECC:** Conduition [wrote][ml cond
   slh-dsa] about his ongoing work benchmarking his post-quantum SLH-DSA
   verification implementation against libsecp256k1. His results show that
-  SLH-DSA verification can compete with [schnorr][topic schnorr signatures] verification in common cases.
+  SLH-DSA verification can compete with [schnorr][topic schnorr signatures] verification in common cases. {% assign timestamp="23:28" %}
 
 ## Releases and release candidates
 
@@ -173,7 +173,7 @@ release candidates._
   transactions were present. Version 0.2.1 additionally fixes an issue
   where `splice_channel` didn't fail immediately when the peer doesn't
   support [splicing][topic splicing], makes the `AttributionData` struct
-  public, and includes several other bug fixes.
+  public, and includes several other bug fixes. {% assign timestamp="1:50:27" %}
 
 ## Notable code and documentation changes
 
@@ -193,32 +193,32 @@ repo], and [BINANAs][binana repo]._
   handle a potential reorg. However, this restriction persisted
   unnecessarily even after background validation had finished, despite
   the fact that the node could handle reorgs. Nodes now only apply this
-  restriction while background validation is ongoing.
+  restriction while background validation is ongoing. {% assign timestamp="1:53:10" %}
 
 - [Bitcoin Core #34358][] fixes a wallet bug that occurred when removing
   transactions via the `removeprunedfunds` RPC. Previously, removing a
   transaction marked all of its inputs as spendable again, even if the
   wallet contained a conflicting transaction that also spent the same
-  UTXOs.
+  UTXOs. {% assign timestamp="1:54:58" %}
 
 - [Core Lightning #8824][] adds an `auto.include_fees` layer to the
   pathfinding `askrene` plugin (see [Newsletter #316][news316 askrene])
   that deducts routing fees from the payment amount, effectively making
-  the receiver pay for the fees.
+  the receiver pay for the fees. {% assign timestamp="1:56:20" %}
 
 - [Eclair #3244][] adds two events: `PaymentNotRelayed`, emitted when a
   payment couldn't be relayed to the next node likely due to
   insufficient liquidity, and `OutgoingHtlcNotAdded`, emitted when an
   [HTLC][topic htlc] couldn't be added to a specific channel. These
   events help node operators build heuristics for liquidity allocation,
-  though the PR notes that a single event shouldn't trigger allocation.
+  though the PR notes that a single event shouldn't trigger allocation. {% assign timestamp="1:58:17" %}
 
 - [LDK #4263][] adds a `custom_tlvs` optional parameter to the
   `pay_for_bolt11_invoice` API, enabling callers to embed arbitrary
   metadata in the payment onion. Although the low-level endpoint
   `send_payment` already allowed for custom Type-Length-Values
   ([TLVs][]) in [BOLT11][] payments, it wasn't properly surfaced on
-  higher-level endpoints.
+  higher-level endpoints. {% assign timestamp="2:00:07" %}
 
 - [LDK #4300][] adds support for generic [HTLC][topic htlc]
   interception, building on the HTLC holding mechanism added for [async
@@ -229,19 +229,19 @@ repo], and [BINANAs][binana repo]._
   offline private channels (useful for LSPs to wake sleeping clients),
   online private channels, public channels, and unknown SCIDs. This lays
   the groundwork for supporting LSPS5 (see [Newsletter #365][news365
-  lsps5] for the client-side implementation) and other LSP use cases.
+  lsps5] for the client-side implementation) and other LSP use cases. {% assign timestamp="2:01:54" %}
 
 - [LND #10473][] makes the `SendOnion` RPC (see [Newsletter
   #386][news386 sendonion]) fully idempotent, enabling clients to safely
   retry requests after network failures without risking duplicate
   payments. If a request with the same `attempt_id` has already been
-  processed, the RPC will return a `DUPLICATE_HTLC` error.
+  processed, the RPC will return a `DUPLICATE_HTLC` error. {% assign timestamp="2:03:57" %}
 
 - [Rust Bitcoin #5493][] adds the ability to use hardware-optimized
   SHA256 operations on compatible ARM architectures. Benchmarks show
   that hashing is approximately five times faster for large blocks. This
   complements the existing SHA256 acceleration on x86 architectures (see
-  [Newsletter #265][news265 x86sha]).
+  [Newsletter #265][news265 x86sha]). {% assign timestamp="2:07:36" %}
 
 {% include snippets/recap-ad.md when="2026-02-10 17:30" %}
 {% include references.md %}
