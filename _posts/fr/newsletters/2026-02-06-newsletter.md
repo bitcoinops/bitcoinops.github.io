@@ -77,7 +77,7 @@ et décrivant les changements notables dans les projets d'infrastructure Bitcoin
 	AJ Towns a mentionné que la taille minimum de relais est de 65 octets et explique qu'utiliser
 	ANYONECANPAY|ALL avec un OP_RETURN de 3 octets le rendrait plus efficace.
 
-	Bubb1es fournit ensuite un outil expérimental [ddust][outil ddust] pour démontrer comment cela
+	Bubb1es fournit ensuite un outil expérimental [ddust][ddust tool] pour démontrer comment cela
 	serait réalisé.
 
 ## Modification du consensus
