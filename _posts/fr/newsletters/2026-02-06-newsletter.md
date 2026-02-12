@@ -107,7 +107,7 @@ règles de consensus de Bitcoin._
 	XMSS est choisi pour optimiser les cas où relativement peu de signatures sont nécessaires d'une clé.
 
 - **Abordant les points restants sur BIP54 :** Antoine Poinsot [a écrit][ml ap gcc]
-	gcc] à propos des points restants de discussion pour le [consensus cleanup soft fork][topic
+	à propos des points restants de discussion pour le [consensus cleanup soft fork][topic
 	consensus cleanup].
 
 	La première discussion porte sur la proposition d'exiger que le `nLockTime` de la transaction
