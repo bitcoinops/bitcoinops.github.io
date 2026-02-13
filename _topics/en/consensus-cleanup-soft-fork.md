@@ -83,6 +83,9 @@ optech_mentions:
   - title: "Addressing remaining points on BIP54"
     url: /en/newsletters/2026/02/06/#addressing-remaining-points-on-bip54
 
+  - title: "Bitcoin Inquisition adds an implementation of the BIP54 consensus cleanup soft fork rules"
+    url: /en/newsletters/2026/02/13/#bitcoin-inquisition-99
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation
