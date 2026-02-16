@@ -37,6 +37,7 @@ lang: zh
 *热门比特币基础项目的新版本和候选版本。请考虑升级到新版本，或帮助测试候选版本。*
 
 - [Bitcoin Core 30.2][] 是一个维护版本，修复了一个在迁移一个未命名传统格式钱包时可能意外删除整个 `wallets` 目录的 bug（详见周报 [#387][news387 wallet]）。还包含少量其它提升和修复，详见其[发行公告][release notes]。
+
 - [BTCPay Server 2.3.3][] 是这种自主托管的支付解决方案的一个次要发行版，通过 `Greenfield` API 引入了冷钱包交易支持（详见下文），移除了基于 CoinGecko 交易所的汇率信息，还修复了多项 bug 。
 
 ## 重要的代码和说明书变更
@@ -44,13 +45,21 @@ lang: zh
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs][blips repo]、[Bitcoin Inquisition][bitcoin inquisition repo] 和 [BINANAs][binana repo]。*
 
 - [Bitcoin Core #33819][] 在 `Mining` 接口（详见[周报 #310][news310 mining]）中加入了一种新的 `getCoinbaseTX()` 方法，它会返回一个结构体，其中包含了客户端构造一笔 coinbase 交易所需的所有字段。现有的 `getCoinbaseTx()` 会返回一笔序列化之后的模型交易，客户端必须自己解析和操作，已经被重命名为 `getCoinbaseRawTx()`，并且跟 `getCoinbaseCommitment()` 和 `getWitnessCommitmentIndex()` 一起被弃用。
+
 - [Bitcoin Core #29415][] 加入了一种新的 `privatebroadcast` 布尔选项，可以在使用 `sendrawtransaction` RPC 时，通过短期的 [Tor][topic anonymity networks] 或 I2P 连接广播交易，或通过 Tor 代理转发给 IPv4/IPv6 对等节点。这种方法通过隐藏 IP 地址并为每一笔交易使用单独的连接来防止可关联性，保护了交易发起人的隐私。
+
 - [Core Lightning #8830][] 向 `hsmtool` 用法（详见 [周报 #73][news73 hsmtool]）添加了一个 `getsecret` 命令，以取代现有的 `getsecretcodex` 命令，并额外支持复原在 v25.12 引入变更（详见 [周报 #383][news383 bip39]）之后创建的节点。这种新的命令，会为新节点的一个给定的 `hsm_secret` 文件输出 [BIP39][] 助记种子词，同时保留为传统节点输出 `Codex32` 字符串的功能。`recover` 插件更新为接受助记词。
+
 - [Eclair #3233][] 开始在 [testnet3][topic testnet] 和 testnet 4 上使用配置好的默认费率，当 Bitcoin Core 因为区块数据不足而无法估计手续费率时。默认的费率会更新，以更好地匹配当前的价格。
+
 - [Eclair #3237][] 重新开发了通道生命周期事件，以跟 “通道拼接（[splicing][topic splicing]）” 兼容并与 “零确认通道（[zero-conf][topic zero-conf channels]）” 保持一致：加入了 `channel-confirmed`，它表明注资交易或拼接交易已经被确认；加入了 `channel-ready`，它表明通道已经准备好支付；移除了 `channel-opened`。
+
 - [LDK #4232][] 添加了对实验性的 `accountable` 信号的支持，以取代 “[HTLC 背书][topic htlc endorsement]”，如 [BLIPs #67][] 和 [BOLTs #1280][] 所提议的。LDK 现在会给自己的支付以及转发中的未设置信号的支付设置零值的 accountable 信号，并复制进入支付的 accountable 数值（如果有的话）到转出支付中。这跟随了 Eclair 和 LND 中的类似变化（详见[周报 #387][news387 accountable]）。
+
 - [LND #10296][] 添加了一个 `inputs` 字段到 `EstimateFee` RPC 命令请求中，从而允许用户为一笔使用具体输入的交易获得[手续费估计][topic fee estimation]，而不是让钱包自动挑选它们。
+
 - [BTCPay Server #7068][] 通过 `Greenfield` API 添加了对冷钱包交易的支持，该 API 允许用户生成未签名的 [PSBTs][topic psbt] 以及通过一个新的端点来广播外部签名的交易。这一特性在自动化环境中提供了更好的安全性，并允许建立满足更高合规要求的装置。
+
 - [BIPs #1982][] 添加了 [BIP433][] 来指定 [Pay-to-Anchor (P2A)][topic ephemeral anchors] 标准输出类型，并让花费这种输出类型的交易变成标准交易。
 
 {% include references.md %}
