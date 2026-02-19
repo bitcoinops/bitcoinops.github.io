@@ -88,7 +88,31 @@ software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Second releases hArk-based Ark software:**
+  Second's [Ark][topic ark] libraries were updated to use hArk, hash-lock Ark,
+  in version [0.1.0-beta.6][second 0.1.0 beta6]. The new protocol eliminates the
+  synchronous interactivity requirement for users during rounds, with its own
+  set of tradeoffs. The release includes various other updates,
+  including breaking changes.
+
+- **Amboss announces RailsX:**
+  The [RailsX announcement][amboss blog] outlines a platform using LN and
+  [Taproot Assets][topic client-side validation] to support swaps and various
+  other financial services.
+
+- **Nunchuk adds silent payment support:**
+  Nunchuk [announced][nunchuk post] support for sending to [silent
+  payment][topic silent payments] addresses.
+
+- **Electrum adds submarine swap features:**
+  [Electrum 4.7.0][electrum release notes] allows users to pay onchain using
+  their Lightning balance (see [submarine swaps][topic submarine swaps]), among
+  other features and fixes.
+
+- **Sigbash v2 announced:**
+  [Sigbash v2][sigbash post] now uses [MuSig2][topic musig], WebAssembly
+  (WASM), and zero-knowledge proofs to achieve better cosigning-service privacy.
+  See our [previous coverage][news298 sigbash] on Sigbash for more.
 
 ## Releases and release candidates
 
@@ -116,6 +140,12 @@ FIXME:Gustavojfe
 [post op_return stats]: https://delvingbitcoin.org/t/recent-op-return-output-statistics/2248
 [pipes del]: https://delvingbitcoin.org/t/bitcoin-pipes-v2/2249
 [pipes v2 paper]: https://eprint.iacr.org/2026/186
+[second 0.1.0 beta6]: https://docs.second.tech/changelog/changelog/#010-beta6
+[amboss blog]: https://amboss.tech/blog/railsx-first-lightning-native-dex
+[nunchuk post]: https://x.com/nunchuk_io/status/2021588854969414119
+[electrum release notes]: https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES
+[news298 sigbash]: /en/newsletters/2024/04/17/#key-agent-sigbash-launches
+[sigbash post]: https://x.com/arbedout/status/2020885323778044259
 [murch dashboard]: https://dune.com/murchandamus/opreturn-counts
 [murch twitter]: https://x.com/murchandamus/status/2022930707820269670
 [orangesurf report]: https://research.mempool.space/opreturn-report/
