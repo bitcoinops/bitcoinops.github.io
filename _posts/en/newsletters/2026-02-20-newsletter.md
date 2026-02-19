@@ -49,6 +49,40 @@ software.
   statistics, and that orangesurf published a [report][orangesurf report] on
   OP_RETURN for mempool research.
 
+- **Bitcoin PIPEs v2**: Misha Komarov [posted][pipes del] to Delving Bitcoin
+  about Bitcoin PIPEs, a protocol that allows enforcement of spending conditions
+  without the need for consensus changes or optimistic challenge mechanisms.
+
+  The Bitcoin protocol is based on a minimal transaction validation model, which
+  consists of verifying that a UTXO being spent is authorized by a valid digital
+  signature. Thus, instead of relying on spending conditions expressed by Bitcoin
+  Script, Bitcoin PIPEs adds prerequisites on whether a valid signature can be
+  produced or not. In other words, a private key is cryptographically locked behind a
+  predetermined condition. If and only if the condition is fulfilled, the private key
+  is revealed, allowing for a valid signature. While the Bitcoin protocol
+  only has to validate a single [schnorr signature][topic schnorr signatures],
+  all the conditional logic is processed off-chain.
+
+  On a formal level, Bitcoin PIPEs consists of two main phases:
+
+  - *Setup*: A standard Bitcoin keypair `(sk, pk)` is generated. `sk` is then
+    encrypted behind a spending condition statement using witness encryption.
+
+  - *Signing*: A witness `w` is provided for the statement. If `w` is valid, `sk` is
+    revealed and a schnorr signature can be produced. Otherwise, recovering `sk`
+    becomes computationally infeasible.
+
+  According to Komarov, Bitcoin PIPEs can be used to reproduce [covenant][topic covenants] semantics. In
+  particular, [Bitcoin PIPEs v2][pipes v2 paper] focuses on a limited set of spending
+  conditions, enforcing binary covenants. This model naturally captures a wide range of
+  useful conditions whose outcomes are binary, such as providing a valid zk-proof,
+  satisfying an exit condition, or existence of a fraud proof. Basically, it all comes
+  down to a single question: "Is the condition satisfied or not?".
+
+  Finally, Komarov provided real-world examples of how PIPEs could be leveraged instead
+  of new opcodes, and how it could be used to improve the optimistic verification flow
+  of the [BitVM][topic acc] protocol.
+
 ## Changes to services and client software
 
 *In this monthly feature, we highlight interesting updates to Bitcoin
@@ -80,6 +114,8 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2026-02-24 17:30" %}
 {% include references.md %}
 [post op_return stats]: https://delvingbitcoin.org/t/recent-op-return-output-statistics/2248
+[pipes del]: https://delvingbitcoin.org/t/bitcoin-pipes-v2/2249
+[pipes v2 paper]: https://eprint.iacr.org/2026/186
 [murch dashboard]: https://dune.com/murchandamus/opreturn-counts
 [murch twitter]: https://x.com/murchandamus/status/2022930707820269670
 [orangesurf report]: https://research.mempool.space/opreturn-report/
