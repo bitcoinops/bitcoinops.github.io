@@ -16,7 +16,38 @@ software.
 
 ## News
 
-FIXME:bitschmidty
+- **Recent OP_RETURN output statistics**: Anthony Towns posted to
+  [Delving][post op_return stats] about the recent OP_RETURN statistics since
+  the release of Bitcoin Core v30.0 on October 10, which included changes to
+  the mempool policy limits for OP_RETURN outputs (allowing multiple OP_RETURN
+  outputs and allowing up to 100kB of data in OP_RETURN outputs). The range of
+  blocks he looked at was heights 915800 to 936000, with the following
+  results:
+
+  - 24,362,310 txs with OP_RETURN outputs
+
+  - 61 txs with multiple OP_RETURN outputs
+
+  - 396 txs with total OP_RETURN output script sizes greater than 83 bytes
+
+  - Total OP_RETURN output script data over the period was 473,815,552 bytes (of
+    which large OP_RETURNS accounted for 0.44%)
+
+  - There are 34,283 txs burning sats to OP_RETURN outputs, for a total of
+    1,463,488 sats burnt
+
+  - There are 949,003 txs with between 43 and 83 bytes of OP_RETURN data, and
+    23,412,911 txs with OP_RETURN data of 42 bytes or less
+
+  Towns also included a chart showing the frequency of sizes for the 396
+  transactions with large OP_RETURN outputs. 50% of these transactions had less
+  than 210 bytes of OP_RETURN data. Also, 10% had more than 10KB of OP_RETURN
+  data.
+
+  He later added that Murch subsequently published a [similar analysis][murch twitter] on
+  X and a [dashboard][murch dashboard] of OP_RETURN
+  statistics, and that orangesurf published a [report][orangesurf report] on
+  OP_RETURN for mempool research.
 
 ## Changes to services and client software
 
@@ -48,4 +79,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-02-24 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[post op_return stats]: https://delvingbitcoin.org/t/recent-op-return-output-statistics/2248
+[murch dashboard]: https://dune.com/murchandamus/opreturn-counts
+[murch twitter]: https://x.com/murchandamus/status/2022930707820269670
+[orangesurf report]: https://research.mempool.space/opreturn-report/
