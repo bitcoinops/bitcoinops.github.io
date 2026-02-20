@@ -58,6 +58,9 @@ optech_mentions:
   - title: "Using Ark as a channel factory"
     url: /en/newsletters/2026/01/09/#using-ark-as-a-channel-factory
 
+  - title: "Hash-lock based Ark protocol, hArk, software released"
+    url: /en/newsletters/2026/02/20/#second-releases-hark-based-ark-software
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools

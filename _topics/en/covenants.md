@@ -127,6 +127,9 @@ optech_mentions:
   - title: "Suggestion for opcodes to enable recursive covenants through quines"
     url: /en/newsletters/2025/05/16/#proposed-opcodes-for-enabling-recursive-covenants-through-quines
 
+  - title: "Using the Bitcoin PIPEs v2 offchain protocol to enforce covenant-like spending conditions"
+    url: /en/newsletters/2026/02/20/#bitcoin-pipes-v2
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
