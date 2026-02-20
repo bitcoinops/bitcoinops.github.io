@@ -89,6 +89,9 @@ optech_mentions:
   - title: "Proposal to limit the number of per-group silent payment recipients"
     url: /en/newsletters/2026/02/13/#proposal-to-limit-the-number-of-per-group-silent-payment-recipients
 
+  - title: "Nunchuk adds silent payment support"
+    url: /en/newsletters/2026/02/20/#nunchuk-adds-silent-payment-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
