@@ -83,7 +83,7 @@ lang: zh
 
 [channels post]: https://delvingbitcoin.org/t/a-mathematical-theory-of-payment-channel-networks/2204
 [channels paper]: https://arxiv.org/pdf/2601.04835
-[news309 feasibility]: /zh/newsletters/2024/06/28/#estimating-the-likelihood-that-an-ln-payment-is-feasible
+[news309 feasibility]: /zh/newsletters/2024/06/28/#estimating-the-likelihood-that-an-ln-payment-is-feasible-ln
 [mitigation post]: https://delvingbitcoin.org/t/mitigating-channel-depletion-in-the-lightning-network-a-survey-of-potential-solutions/1640/1
 [news333 depletion]: /zh/newsletters/2024/12/13/#insights-into-channel-depletion
 [new387 ark]: /zh/newsletters/2026/01/09/#using-ark-as-a-channel-factory
