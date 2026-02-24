@@ -47,7 +47,7 @@ software.
   He later added that Murch subsequently published a [similar analysis][murch twitter] on
   X and a [dashboard][murch dashboard] of OP_RETURN
   statistics, and that orangesurf published a [report][orangesurf report] on
-  OP_RETURN for mempool research.
+  OP_RETURN for mempool research. {% assign timestamp="45:54" %}
 
 - **Bitcoin PIPEs v2**: Misha Komarov [posted][pipes del] to Delving Bitcoin
   about Bitcoin PIPEs, a protocol that allows enforcement of spending conditions
@@ -81,7 +81,7 @@ software.
 
   Finally, Komarov provided real-world examples of how PIPEs could be leveraged instead
   of new opcodes, and how it could be used to improve the optimistic verification flow
-  of the [BitVM][topic acc] protocol.
+  of the [BitVM][topic acc] protocol. {% assign timestamp="1:33" %}
 
 ## Changes to services and client software
 
@@ -93,26 +93,26 @@ wallets and services.*
   in version [0.1.0-beta.6][second 0.1.0 beta6]. The new protocol eliminates the
   synchronous interactivity requirement for users during rounds, with its own
   set of tradeoffs. The release includes various other updates,
-  including breaking changes.
+  including breaking changes. {% assign timestamp="20:21" %}
 
 - **Amboss announces RailsX:**
   The [RailsX announcement][amboss blog] outlines a platform using LN and
   [Taproot Assets][topic client-side validation] to support swaps and various
-  other financial services.
+  other financial services. {% assign timestamp="55:35" %}
 
 - **Nunchuk adds silent payment support:**
   Nunchuk [announced][nunchuk post] support for sending to [silent
-  payment][topic silent payments] addresses.
+  payment][topic silent payments] addresses. {% assign timestamp="56:11" %}
 
 - **Electrum adds submarine swap features:**
   [Electrum 4.7.0][electrum release notes] allows users to pay onchain using
   their Lightning balance (see [submarine swaps][topic submarine swaps]), among
-  other features and fixes.
+  other features and fixes. {% assign timestamp="58:08" %}
 
 - **Sigbash v2 announced:**
   [Sigbash v2][sigbash post] now uses [MuSig2][topic musig], WebAssembly
   (WASM), and zero-knowledge proofs to achieve better cosigning-service privacy.
-  See our [previous coverage][news298 sigbash] on Sigbash for more.
+  See our [previous coverage][news298 sigbash] on Sigbash for more. {% assign timestamp="33:56" %}
 
 ## Releases and release candidates
 
@@ -123,12 +123,12 @@ release candidates._
 - [BTCPay Server 2.3.5][] is a minor release of this self-hosted payment
   solution that adds multi-crypto wallet balance widgets on the dashboard,
   a custom textbox for checkout, new exchange rate providers, and includes
-  several bug fixes.
+  several bug fixes. {% assign timestamp="1:00:11" %}
 
 - [LND 0.20.1-beta][] is a maintenance release of this popular LN node
   implementation, which adds a panic recovery for gossip message
   processing, improves reorg protection, implements LSP detection
-  heuristics, and fixes multiple bugs and race conditions.
+  heuristics, and fixes multiple bugs and race conditions. {% assign timestamp="1:01:43" %}
 
 ## Notable code and documentation changes
 
@@ -148,13 +148,13 @@ repo], and [BINANAs][binana repo]._
   the latter, it takes precedence. For RPC callers who never set this
   value, the startup config `-blockreservedweight` always takes effect.
   This PR also enforces the `MINIMUM_BLOCK_RESERVED_WEIGHT` for IPC
-  callers, preventing them from setting a value below it.
+  callers, preventing them from setting a value below it. {% assign timestamp="1:02:55" %}
 
 - [Eclair #3248][] starts prioritizing private channels over public ones
   when forwarding [HTLCs][topic htlc], if both options are available.
   This keeps more liquidity available in public channels, which are
   visible to the network. When two channels have the same visibility,
-  Eclair now prioritizes the channel with the smaller balance.
+  Eclair now prioritizes the channel with the smaller balance. {% assign timestamp="1:05:55" %}
 
 - [Eclair #3246][] adds new fields to several internal events:
   `TransactionPublished` splits the single `miningFee` field into
@@ -162,7 +162,7 @@ repo], and [BINANAs][binana repo]._
   an optional `LiquidityAds.PurchaseBasicInfo` linking the transaction
   to a [liquidity purchase][topic liquidity advertisements]. Channel
   lifecycle events now include the `commitmentFormat` to describe the
-  channel type, and `PaymentRelayed` adds a `relayFee` field.
+  channel type, and `PaymentRelayed` adds a `relayFee` field. {% assign timestamp="1:07:08" %}
 
 - [LDK #4335][] adds initial support for phantom node payments (see
   [Newsletter #188][news188 phantom]) using [BOLT12 offers][topic
@@ -173,7 +173,7 @@ repo], and [BINANAs][binana repo]._
   includes multiple [blinded paths][topic rv routing] terminating at each
   participating node. The current implementation allows multiple nodes to
   respond to the invoice request, though the resulting invoice can only
-  be paid to the responding node.
+  be paid to the responding node. {% assign timestamp="1:08:52" %}
 
 - [LDK #4318][] removes the `max_funding_satoshis` field from the
   `ChannelHandshakeLimits` struct, effectively eliminating the
@@ -182,14 +182,14 @@ repo], and [BINANAs][binana repo]._
   via the `option_support_large_channels` feature flag by default, which
   could have incorrectly signaled support to peers by conflicting with
   the former setting. Users who want to limit risk can use the manual
-  channel acceptance flow.
+  channel acceptance flow. {% assign timestamp="1:14:32" %}
 
 - [LND #10542][] extends the graph database layer to support gossip v1.75
   (see Newsletters [#261][news261 gossip] and [#326][news326 gossip]).
   LND can now store and retrieve [channel announcements][topic channel
   announcements] for [simple taproot channels][topic simple taproot
   channels]. Gossip v1.75 remains disabled at the network level, pending
-  the completion of the validation and gossiper subsystems.
+  the completion of the validation and gossiper subsystems. {% assign timestamp="1:15:55" %}
 
 - [BIPs #1670][] publishes [BIP360][], which specifies Pay-to-Merkle-Root
   (P2MR), a new output type that operates like [P2TR][topic taproot] but
@@ -201,7 +201,7 @@ repo], and [BINANAs][binana repo]._
   transaction is unconfirmed, requires a separate [post-quantum][topic quantum resistance] signature
   proposal. See [Newsletter #344][news344 p2qrh] for earlier coverage when the
   proposal was known as P2QRH and [Newsletter #385][news385 bip360] when the proposal was
-  known as P2TSH.
+  known as P2TSH. {% assign timestamp="1:17:02" %}
 
 - [BOLTs #1236][] updates the [dual funding][topic dual funding]
   specification to allow either node to send `tx_init_rbf` during
@@ -211,7 +211,7 @@ repo], and [BINANAs][binana repo]._
   splicing], where either side could already initiate an RBF. The PR
   also adds a requirement that both the senders of `tx_init_rbf` and
   `tx_ack_rbf` must reuse at least one input from a previous attempt,
-  ensuring that the new transaction double-spends all prior attempts.
+  ensuring that the new transaction double-spends all prior attempts. {% assign timestamp="1:27:50" %}
 
 - [BOLTs #1289][] changes how `commitment_signed` is retransmitted
   during reconnection in the interactive transaction protocol used by
@@ -223,7 +223,7 @@ repo], and [BINANAs][binana repo]._
   unnecessary retransmission, which is especially important for future
   [simple taproot channels][topic simple taproot channels] where
   retransmitting would require a full [MuSig2][topic musig] signing
-  round due to nonce changes.
+  round due to nonce changes. {% assign timestamp="1:29:10" %}
 
 {% include snippets/recap-ad.md when="2026-02-24 17:30" %}
 {% include references.md %}
