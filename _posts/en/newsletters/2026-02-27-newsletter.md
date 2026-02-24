@@ -15,7 +15,33 @@ Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Draft BIP for output script descriptor annotations**: Craig Raw
+  [posted][annot ml] to the Bitcoin-Dev mailing list about a new BIP idea to
+  address feedback that emerged during the discussion around BIP392
+  (see [Newsletter #387][news387 sp]).
+  According to Raw, metadata, such as the wallet birthday expressed as a
+  block height, could make [silent payment][topic silent payments] scanning more efficient.
+  However, metadata is not technically needed to determine output scripts,
+  thus it is deemed unsuitable for inclusion in a [descriptor][topic descriptors].
+
+  Raw's BIP proposes to provide useful metadata in the form of annotations, expressed
+  as key/value pairs, appended directly to the descriptor string using URL-like query
+  delimiters. An annotated descriptor would look like this:
+  `SCRIPT?key=value&key=value#CHECKSUM`.
+  Notably, characters `?`, `&`, and `=` are already defined in [BIP380][], thus the
+  checksum algorithm would not need to be updated.
+
+  In the [draft BIP][annot draft], Raw also defines three initial annotation keys specifically to make funds silent payment scanning more efficient:
+
+  - Block Height `bh`: The block height at which a wallet received the first funds;
+
+  - Gap Limit `gl`: The number of unused addresses to derive before stopping;
+
+  - Max Label `ml`: The maximum label index to scan for, for silent payments wallets.
+
+  Finally, Raw noted that annotations should not be used in the general wallet backup process,
+  but only for making funds recovery more efficient without altering the scripts
+  produced by the descriptor.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -53,4 +79,6 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-03-03 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[annot ml]: https://groups.google.com/g/bitcoindev/c/ozjr1lF3Rkc
+[news387 sp]: /en/newsletters/2026/01/09/#draft-bip-for-silent-payment-descriptors
+[annot draft]: https://github.com/craigraw/bips/blob/descriptorannotations/bip-descriptorannotations.mediawiki
