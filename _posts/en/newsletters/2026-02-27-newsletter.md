@@ -54,7 +54,19 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Is Bitcoin BIP324 v2 P2P transport distinguishable from random traffic?]({{bse}}130500)
+  Pieter Wuille points out that [BIP324][]'s [v2 encrypted transport][topic v2 p2p
+  transport] protocol supports shaping traffic patterns, although no known
+  software implements that feature, concluding "today's implementations only
+  defeat protocol signatures that involve patterns in the sent bytes, not in
+  traffic".
+
+- [What if a miner just broadcasts the header and never gives the block?]({{bse}}130456)
+  User bigjosh outlines how a miner might behave after receiving a block header
+  on the P2P network but before receiving the block's contents: by mining an
+  empty block on top of it. Pieter Wuille clarifies that, in practice, many
+  miners actually see new block headers by monitoring the work other mining
+  pools give out to their miners, a technique known as spy mining.
 
 ## Releases and release candidates
 
