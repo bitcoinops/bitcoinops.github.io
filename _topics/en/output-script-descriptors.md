@@ -209,6 +209,9 @@ optech_mentions:
   - title: "Draft BIP for silent payment descriptors"
     url: /en/newsletters/2026/01/09/#draft-bip-for-silent-payment-descriptors
 
+  - title: "Draft BIP for output script descriptor annotations"
+    url: /en/newsletters/2026/02/27/#draft-bip-for-output-script-descriptor-annotations
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
