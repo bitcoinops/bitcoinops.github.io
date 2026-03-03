@@ -194,6 +194,24 @@ optech_mentions:
   - title: "Bitcoin Core #31603 begins rejecting descriptors containing unnecessary whitespace"
     url: /en/newsletters/2025/03/28/#bitcoin-core-31603
 
+  - title: "Proposed standard for backing up wallet descriptors"
+    url: /en/newsletters/2025/04/25/#standardized-backup-for-wallet-descriptors
+
+  - title: "New library for encrypting descriptors and miniscript to the included public keys"
+    url: /en/newsletters/2025/06/13/#descriptor-encryption-library
+
+  - title: "New library for compressing descriptors and miniscript"
+    url: /en/newsletters/2025/07/11/#compressed-descriptors
+
+  - title: "Brainstorming how to use output script descriptors for CTV-style vaults"
+    url: /en/newsletters/2025/07/04/#vault-output-script-descriptor
+
+  - title: "Draft BIP for silent payment descriptors"
+    url: /en/newsletters/2026/01/09/#draft-bip-for-silent-payment-descriptors
+
+  - title: "Draft BIP for output script descriptor annotations"
+    url: /en/newsletters/2026/02/27/#draft-bip-for-output-script-descriptor-annotations
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

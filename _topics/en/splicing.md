@@ -98,6 +98,15 @@ optech_mentions:
   - title: "LDK #3624 enables funding key rotation after successful channel splices"
     url: /en/newsletters/2025/03/14/#ldk-3624
 
+  - title: "Core Lightning #8021 finalizes splicing interoperability with Eclair"
+    url: /en/newsletters/2025/05/23/#core-lightning-8021
+
+  - title: "Eclair #3103 adds support for dual funding and splicing in simple taproot channels"
+    url: /en/newsletters/2025/08/22/#eclair-3103
+
+  - title: "LDK #3979 adds splice-out support, completing LDK's splicing support"
+    url: /en/newsletters/2025/08/29/#ldk-3979
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

@@ -2,7 +2,6 @@
 layout: page
 title: About
 permalink: /zh/about/
-redirect_from: /about
 ---
 
 Bitcoin Operations Technology Group（简称 Optech）致力于将最好的开源技术和技术手段引入使用比特币的企业，以降低成本并改善客户体验。

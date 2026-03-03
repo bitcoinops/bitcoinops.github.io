@@ -90,6 +90,12 @@ optech_mentions:
   - title: "BIP328 added with a specifications BIP32-compatible MuSig2 key derivation"
     url: /en/newsletters/2024/07/05/#bips-1540
 
+  - title: "Proposed scheme to prevent BIP32 path reuse to avoid output linking and other problems"
+    url: /en/newsletters/2025/05/09/#avoiding-bip32-path-reuse
+
+  - title: "Chain code withholding to improve privacy when using co-signer services"
+    url: /en/newsletters/2025/07/25/#chain-code-withholding-for-multisig-scripts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output script descriptors

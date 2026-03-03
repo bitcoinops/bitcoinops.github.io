@@ -86,6 +86,9 @@ optech_mentions:
   - title: "Rust Bitcoin #3792 adds support for encoding and decoding BIP324 messages"
     url: /en/newsletters/2025/01/17/#rust-bitcoin-3792
 
+  - title: "Traffic shaping with BIP324"
+    url: /en/newsletters/2026/02/27/#is-bitcoin-bip324-v2-p2p-transport-distinguishable-from-random-traffic
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151

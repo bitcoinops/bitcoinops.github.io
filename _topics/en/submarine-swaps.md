@@ -37,6 +37,9 @@ optech_mentions:
   - title: Proposal to extend BOLT11 invoices to allow requesting prepayment for submarine swaps
     url: /en/newsletters/2023/06/21/#submarine-swaps
 
+  - title: "Electrum 4.6.0 adds support for submarine swaps using nostr for discoverability"
+    url: /en/newsletters/2025/07/18/#electrum-4-6-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Splicing

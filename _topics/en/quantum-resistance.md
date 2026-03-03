@@ -64,6 +64,51 @@ optech_mentions:
   - title: "Update on BIP360 pay-to-quantum-resistant-hash (P2QRH)"
     url: /en/newsletters/2025/03/07/#update-on-bip360-pay-to-quantum-resistant-hash-p2qrh
 
+  - title: "Discussion about whether quantum-vulnerable bitcoins should be destroyed to prevent theft"
+    url: /en/newsletters/2025/04/04/#should-vulnerable-bitcoins-be-destroyed
+
+  - title: "Discussion of Guy Fawkes signatures to protect some current bitcoins against quantum theft"
+    url: /en/newsletters/2025/04/04/#securely-proving-utxo-ownership-by-revealing-a-sha256-preimage
+
+  - title: "Draft BIP for destroying quantum-insecure bitcoins"
+    url: /en/newsletters/2025/04/04/#draft-bip-for-destroying-quantum-insecure-bitcoins
+
+  - title: Report about quantum computing and Bitcoin
+    url: /en/newsletters/2025/06/06/#quantum-computing-report
+
+  - title: "Prototype implementation of Winternitz signatures for Bitcoin using `OP_CAT`"
+    url: /en/newsletters/2025/07/04/#op-cat-enables-winternitz-signatures
+
+  - title: "Commit/reveal function for post-quantum recovery of insecure bitcoins"
+    url: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
+
+  - title: "Research indicates many Bitcoin primitives are compatible with quantum-resistant signatures"
+    url: /en/newsletters/2025/07/25/#research-indicates-common-bitcoin-primitives-are-compatible-with-quantum-resistant-signature-algorithms
+
+  - title: "Discussion about forcing migration from quantum-vulnerable outputs"
+    url: /en/newsletters/2025/08/01/#migration-from-quantum-vulnerable-outputs
+
+  - title: "Paper analyzes the security of taproot commitments against quantum computers"
+    url: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
+
+  - title: "SLH-DSA (SPHINCS) post-quantum signature optimizations"
+    url: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
+
+  - title: "Technical report of hash-based post-quantum signature schemes"
+    url: /en/newsletters/2026/01/02/#hash-based-signatures-for-bitcoin-s-post-quantum-future
+
+  - title: "Brassard-Høyer-Tapp (BHT) algorithm and Bitcoin"
+    url: /en/newsletters/2026/01/30/#brassard-hoyer-tapp-bht-algorithm-and-bitcoin-bip360
+
+  - title: "SHRINCS: 324-byte stateful post-quantum signatures with static backups"
+    url: /en/newsletters/2026/02/06/#shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups
+
+  - title: "Falcon post-quantum signature scheme proposal"
+    url: /en/newsletters/2026/02/06/#falcon-post-quantum-signature-scheme-proposal
+
+  - title: "SLH-DSA verification can compete with ECC"
+    url: /en/newsletters/2026/02/06/#slh-dsa-verification-can-compete-with-ecc
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

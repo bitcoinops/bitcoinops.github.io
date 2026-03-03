@@ -57,6 +57,54 @@ lang: zh
 
 - [C-Lightning #4669][] 修复了其[闪电网络报价][topic offers]解析和验证逻辑中的多个错误。此外，如果用户尝试创建相同参数的新报价，系统将返回先前创建但尚未过期的报价；这对默认不设置到期日期的报价尤为有用。
 
+- [C-Lightning #4639][] 新增对 [BOLTs #878][] 提案中流动性广告功能的实验性支持。该功能允许节点通过闪电网络 gossip 协议广播其愿意在一定期限内出租资金的意向，使其他节点能够购买入账容量以实现即时收款。看到广告的节点可通过[双向资助][topic dual funding]的通道开通方式，在支付的同时获得入账容量。虽然无法强制广告节点实际路由支付，但该提案整合了早期[方案][zmn liquidity providers]（计划<!-- [1] -->用于 [Lightning Pool][]），确保广告方在约定的租赁期内无法将资金挪作他用。因此拒绝路由支付只会剥夺其赚取路由手续费的机会。下表对比了流动性广告与 [Newsletter #123][news123 lightning pool] 中描述的 Lightning Pool 市场：
+
+  <!-- [1]: 参见 "Service-Level Based Lifetime Enforcement"
+  https://lightning.engineering/posts/2020-11-02-pool-deep-dive/ -->
+
+  <table>
+    <tr>
+     <th></th>
+     <th>Lightning Pool</th>
+     <th>流动性广告</th>
+    </tr>
+
+    <tr>
+     <th>上架控制</th>
+     <td>中心化：可筛选高质量列表，但也存在审查风险</td>
+     <td>去中心化：无法审查列表，但用户需自行调研租赁方</td>
+    </tr>
+
+    <tr>
+     <th>许可协议</th>
+     <td>客户端开源，服务端专有，协议开放</td>
+     <td>全栈开源</td>
+    </tr>
+
+    <tr>
+     <th>价格信息</th>
+     <td>实际成交价通过公开拍卖结果可见</td>
+     <td>广告价通过 gossip 网络公开可见</td>
+    </tr>
+
+    <tr>
+     <th markdown="span">
+
+     第三方购买流动性（"[侧车通道][sidecar channels]"）
+
+     </th>
+     <td>支持，Alice 可支付 Bob 以开通与 Carol 的通道</td>
+     <td markdown="span">
+
+     [可能支持]({{bse}}107786)
+
+     </td>
+    </tr>
+
+  </table>
+
+- [BIPs #1072][] 合并了信息类提案 [BIP48][] ——"多签钱包的多脚本层级"。该文档描述了基于 `m/48'` 前缀的多签钱包层级派生标准，并详细阐述了方案使用的六个派生层级。
+
 - [BIPs #1139][] 添加了 [BIP371][]，该文档规范了在 [Taproot][topic taproot] 交易中使用 [PSBT][topic psbt]（包括[版本 0][BIP174]和[版本 2][BIP370]）的新字段。有关详细信息，请参见 [Newsletter #155][news155 tr psbts]。
 
 ## 致谢与修改

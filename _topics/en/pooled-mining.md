@@ -92,6 +92,9 @@ optech_mentions:
   - title: "DMND pool launches Stratum v2 pooled mining"
     url: /en/newsletters/2025/03/21/#dmnd-launching-pooled-mining
 
+  - title: "Stratum v2 STARK proof demo for private block template fee reporting"
+    url: /en/newsletters/2025/06/20/#stratum-v2-stark-proof-demo
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:

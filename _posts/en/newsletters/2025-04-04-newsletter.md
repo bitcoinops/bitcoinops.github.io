@@ -29,7 +29,7 @@ infrastructure software.
   already includes "custom and sometimes subtly diverging
   implementations of secp256k1."  They hope to improve this situation
   going forward, perhaps starting with an upcoming BIP for ChillDKG (see
-  [Newsletter #312][news312 chilldkg]).
+  [Newsletter #312][news312 chilldkg]). {% assign timestamp="1:09" %}
 
 ## Changing consensus
 
@@ -40,7 +40,7 @@ Bitcoin's consensus rules._
   several conversations examined how Bitcoiners could respond to quantum
   computers becoming powerful enough to allow stealing bitcoins.
 
-  - *Should vulnerable bitcoins be destroyed?* Jameson Lopp [posted][lopp
+  - **Should vulnerable bitcoins be destroyed?** Jameson Lopp [posted][lopp
     destroy] to the Bitcoin-Dev mailing list several arguments for the
     destruction of bitcoins vulnerable to quantum theft after an upgrade
     path to [quantum resistance][topic quantum resistance] has been
@@ -88,9 +88,9 @@ Bitcoin's consensus rules._
     [timelocked][topic timelocks] beyond the upgrade deadline should
     also be destroyed.  Lopp notes existing pitfalls of long timelocks
     and says he personally gets "a bit nervous locking funds for more
-    than a year or two."
+    than a year or two." {% assign timestamp="9:17" %}
 
-  - *Securely proving UTXO ownership by revealing a SHA256 preimage:*
+  - **Securely proving UTXO ownership by revealing a SHA256 preimage:**
     Martin Habovštiak [posted][habovstiak gfsig] to the Bitcoin-Dev
     mailing list an idea that could allow someone to prove they
     controlled a UTXO even if ECDSA and [schnorr signatures][topic
@@ -167,9 +167,9 @@ Bitcoin's consensus rules._
     nonpublic] that UTXOs vulnerable to quantum theft also include keys
     that have not been used publicly but which are known to multiple
     parties, such as in various forms of multisig (including LN,
-    [DLCs][topic dlc], and escrow services).
+    [DLCs][topic dlc], and escrow services). {% assign timestamp="34:52" %}
 
-  - *Draft BIP for destroying quantum-insecure bitcoins:* Agustin Cruz
+  - **Draft BIP for destroying quantum-insecure bitcoins:** Agustin Cruz
     [posted][cruz qramp] to the Bitcoin-Dev mailing a [draft BIP][cruz
     bip] that describes several options for a general process of
     destroying bitcoins that are vulnerable to quantum theft (if
@@ -183,14 +183,14 @@ Bitcoin's consensus rules._
     Very little of the discussion on the thread focused on the draft
     BIP.  Most of it focused on whether or not destroying
     quantum-vulnerable bitcoins was a good idea, similar to the thread later
-    started by Jameson Lopp (described in a previous sub-item).
+    started by Jameson Lopp (described in a previous sub-item). {% assign timestamp="44:01" %}
 
 - **Multiple discussions about a CTV+CSFS soft fork:** several
   conversations examined various aspects of soft forking in the
   [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) and
   [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS) opcodes.
 
-  - *Criticism of CTV motivation:* Anthony Towns [posted][towns ctvmot]
+  - **Criticism of CTV motivation:** Anthony Towns [posted][towns ctvmot]
     a criticism of [BIP119][]'s described motivation for CTV, a
     motivation which he argued would be undermined by adding both CTV
     and CSFS to Bitcoin.  Several days after the discussion started,
@@ -263,7 +263,9 @@ Bitcoin's consensus rules._
       [readiness][obeirne readiness] of bll and Simplicity in comparison
       to CTV and CSFS.
 
-  - *CTV+CSFS benefits:* Steven Roose [posted][roose ctvcsfs] to Delving
+    {% assign timestamp="51:16" %}
+
+  - **CTV+CSFS benefits:** Steven Roose [posted][roose ctvcsfs] to Delving
     Bitcoin to suggest adding CTV and CSFS to Bitcoin as a first step to
     other changes that would increase expressivity further.  Most of the
     discussion focused on qualifying the possible benefits or CTV, CSFS,
@@ -361,10 +363,12 @@ Bitcoin's consensus rules._
       Roose would later start a separate thread to discuss the
       benefits of CTV for users of Ark (see our summary below).
 
-  - *Benefit of CTV to Ark users:* Steven Roose [posted][roose
+    {% assign timestamp="1:06:02" %}
+
+  - **Benefit of CTV to Ark users:** Steven Roose [posted][roose
     ctv-for-ark] to Delving Bitcoin a short description of the
     [Ark][topic ark] protocol currently deployed to [signet][topic
-    signet], called [coventless Ark][clark doc] (clArk), and how the
+    signet], called [covenantless Ark][clark doc] (clArk), and how the
     availability of the [OP_CHECKTEMPLATEVERIFY][topic
     op_checktemplateverify] (CTV) opcode could make a [covenant][topic
     covenants]-using version of the protocol more appealing to users when
@@ -481,6 +485,8 @@ Bitcoin's consensus rules._
       completed signatures.  With CTV, less data would need to be
       generated and stored and less interaction would be required.
 
+    {% assign timestamp="1:24:37" %}
+
 - **OP_CHECKCONTRACTVERIFY semantics:** Salvatore Ingala
   [posted][ingala ccv] to Delving Bitcoin to describe the semantics of
   the proposed [OP_CHECKCONTRACTVERIFY][topic matt] (CCV) opcode, link
@@ -512,7 +518,7 @@ Bitcoin's consensus rules._
     SHA256 operations.
 
   Only transferring the spending conditions from the output being spent
-  to an output being can be useful, but many covenants will want to
+  to an output being created can be useful, but many covenants will want to
   ensure some or all of the bitcoins in the output being spent are
   passed through to the output being created.  Ingala describes CCV's
   three options for handling values.
@@ -569,7 +575,7 @@ Bitcoin's consensus rules._
   `OP_CCV` plus [OP_CTV][topic op_checktemplateverify] that are roughly
   equivalent to [...[BIP345][]...]  Moreover, a reduced-functionality
   version using just `OP_CCV` is implemented as a functional test in the
-  Bitcoin Core implementation of `OP_CCV`."
+  Bitcoin Core implementation of `OP_CCV`." {% assign timestamp="1:31:49" %}
 
 - **Draft BIP published for consensus cleanup:** Antoine Poinsot
   [posted][poinsot cleanup] to the Bitcoin-Dev mailing list a link to a
@@ -620,7 +626,7 @@ Bitcoin's consensus rules._
   in a future coinbase transaction prevents the duplicate transactions
   vulnerability.  The objection to this proposal was that it wasn't
   clear whether all miners are capable of setting the locktime
-  enforcement flag.
+  enforcement flag. {% assign timestamp="1:58:29" %}
 
 ## Releases and release candidates
 
@@ -630,19 +636,19 @@ release candidates._
 
 - [BDK wallet 1.2.0][] adds flexibility for sending payments to custom
   scripts, fixes an edge case related to coinbase transactions, and
-  includes several other features and bug fixes.
+  includes several other features and bug fixes. {% assign timestamp="2:06:03" %}
 
 - [LDK v0.1.2][] is a release of this library for building LN-enabled
   applications.  It contains several performance improvements and bug
-  fixes.
+  fixes. {% assign timestamp="2:06:48" %}
 
 - [Bitcoin Core 29.0rc3][] is a release candidate for the next major
   version of the network's predominate full node.  Please see the
-  [version 29 testing guide][bcc29 testing guide].
+  [version 29 testing guide][bcc29 testing guide]. {% assign timestamp="2:07:13" %}
 
 - [LND 0.19.0-beta.rc1][] is a release candidate for this popular LN
   node.  One of the major improvements that could probably use testing
-  is the new RBF-based fee bumping for cooperative closes.
+  is the new RBF-based fee bumping for cooperative closes. {% assign timestamp="2:08:36" %}
 
 ## Notable code and documentation changes
 
@@ -664,12 +670,12 @@ repo], and [BINANAs][binana repo]._
   `TxGraph` also supports staging of changes with commit and abort
   functionality. This is part of the [cluster mempool][topic cluster mempool]
   project, and prepares for future improvements to mempool eviction,
-  reorganization handling, and cluster-aware mining logic.
+  reorganization handling, and cluster-aware mining logic. {% assign timestamp="2:09:03" %}
 
 - [Bitcoin Core #31278][] deprecates the `settxfee` RPC command and the
   `-paytxfee` startup option, which allow users to set a static fee rate for all
   transactions. Users should instead rely on [fee estimation][topic fee estimation] or set a
-  per-transaction fee rate. They are marked for removal in Bitcoin Core 31.0.
+  per-transaction fee rate. They are marked for removal in Bitcoin Core 31.0. {% assign timestamp="2:09:44" %}
 
 - [Eclair #3050][] updates how [BOLT12][topic offers] payment failures are
   relayed when the recipient is a directly connected node, to always forward the
@@ -679,7 +685,7 @@ repo], and [BINANAs][binana repo]._
   about [unannounced channels][topic unannounced channels]. For [blinded
   routes][topic rv routing] involving other nodes, Eclair continues to override
   failures with `invalidOnionBlinding`. All failure messages are encrypted using
-  the wallet’s `blinded_node_id`.
+  the wallet’s `blinded_node_id`. {% assign timestamp="2:12:41" %}
 
 - [Eclair #2963][] implements one-parent-one-child (1p1c) [package relay][topic package relay] by
   calling Bitcoin Core’s `submitpackage` RPC command during channel force
@@ -688,22 +694,22 @@ repo], and [BINANAs][binana repo]._
   below the mempool minimum, but requires connecting to peers running Bitcoin
   Core 28.0 or later. This change removes the need to dynamically set the
   feerate of commitment transactions, and ensures that force closures don’t get
-  stuck when nodes disagree on the current feerate.
+  stuck when nodes disagree on the current feerate. {% assign timestamp="2:13:54" %}
 
 - [Eclair #3045][] makes the `payment_secret` field in the outer onion payload
   optional for single-part [trampoline payments][topic trampoline payments].
   Previously, every trampoline payment included a `payment_secret`, even if
   a [multipath payment][topic multipath payments] (MPP) wasn't used. Since
   payment secrets may be required when handling modern [BOLT11][] invoices, Eclair inserts a
-  dummy one on decryption if one isn’t provided.
+  dummy one on decryption if one isn’t provided. {% assign timestamp="2:14:44" %}
 
 - [LDK #3670][] adds support for handling and receiving [trampoline
   payments][topic trampoline payments], but does not yet implement providing a
   trampoline routing service. This is a prerequisite for a type of [async
-  payment][topic async payments] that LDK plans to deploy.
+  payment][topic async payments] that LDK plans to deploy. {% assign timestamp="2:15:47" %}
 
 - [LND #9620][] adds [testnet4][topic testnet] support by adding the necessary
-  parameters and blockchain constants such as its genesis hash.
+  parameters and blockchain constants such as its genesis hash. {% assign timestamp="2:16:24" %}
 
 {% include snippets/recap-ad.md when="2025-04-08 15:30" %}
 {% include references.md %}

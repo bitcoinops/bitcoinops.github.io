@@ -2,7 +2,6 @@
 layout: page
 title: Workshops
 permalink: /zh/workshops/
-redirect_from: /workshops
 ---
 比特币 Optech 将举办一系列研讨会，将比特币工程师聚集在一起，讨论实施扩容技术的方式和挑战。每个研讨会都会根据参与的会员公司及其面临的具体扩容挑战进行定制。
 

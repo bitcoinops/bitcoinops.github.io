@@ -40,6 +40,9 @@ optech_mentions:
   - title: "Frequent use of exogenous fees may risk mining decentralization due to out-of-band fees"
     url: /en/newsletters/2024/01/10/#frequent-use-of-exogenous-fees-may-risk-mining-decentralization
 
+  - title: Soft fork to limit transaction weight proposed to prevent a cause of out-of-band fees
+    url: /en/newsletters/2025/06/06/#transaction-weight-limit-with-exception-to-prevent-confiscation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Fee sniping

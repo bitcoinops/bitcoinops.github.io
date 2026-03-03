@@ -58,6 +58,27 @@ optech_mentions:
   - title: "Proposed CTV enhancement opcodes for more flexible vaults and accountable computing"
     url: /en/newsletters/2025/01/03/#ctv-enhancement-opcodes
 
+  - title: "Summary and criticism of CTV + CSFS benefits for accountable computing contracts"
+    url: /en/newsletters/2025/04/04/#accountable-computing-contracts
+
+  - title: "Description of benefits to BitVM from `OP_CTV` and `OP_CSFS`"
+    url: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
+
+  - title: Discussion about transaction weight limit in response to large BitVM transactions
+    url: /en/newsletters/2025/06/06/#transaction-weight-limit-with-exception-to-prevent-confiscation
+
+  - title: "Improvments to BitVM-style contracts allowing disprove transactions to be just 200 bytes"
+    url: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
+
+  - title: "Continued discussion about CTV+CSFS advantages for BitVM"
+    url: /en/newsletters/2025/07/04/#continued-discussion-about-ctv-csfs-advantages-for-bitvm
+
+  - title: "Garbled locks for efficient accountable computing contracts"
+    url: /en/newsletters/2025/08/29/#garbled-locks-for-accountable-computing-contracts
+
+  - title: "Argo: a garbled-circuits scheme with more efficient off-chain computation"
+    url: /en/newsletters/2026/01/30/#argo-a-garbled-circuits-scheme-with-more-efficient-off-chain-computation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"

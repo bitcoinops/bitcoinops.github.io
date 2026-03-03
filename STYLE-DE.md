@@ -1,152 +1,123 @@
 # Optech Style Guide für deutsche Übersetzungen
 
+## Referenzierung von Newslettern
+
+Beim Verweis auf einen einzelnen Newsletter wird die Form „[Newsletter #nnn]“ verwendet, z. B.:
+
+> (siehe auch [Newsletter #315][news315 cb])
+
+Bei Verweisen auf mehrere Newsletter werden die Nummern mit Kommas getrennt, z. B.:
+
+> (siehe Newsletter [#315], [#339] und [#361])
+
+Diese Konvention gilt sowohl im Fließtext als auch in Aufzählungen. Die Referenzlinks werden wie im englischen Original am Ende der Datei gepflegt.
+
 ## Grundsätzliches
 
-Die deutsche Übersetzung von Optech Inhalten sollte wo immer möglich den Regeln
-des englischen [Hauptleitfaden](STYLE.md) folgen.
+Die deutsche Übersetzung von Optech-Inhalten sollte möglichst den Regeln des englischen [Hauptleitfaden](STYLE.md) folgen.
+
+---
+
+## Abschnittsüberschriften (Standardübersetzungen)
+
+| Englisch                                 | Deutsch                                                   |
+|------------------------------------------|-----------------------------------------------------------|
+| News                                     | Nachrichten                                               |
+| Changes to services and client software  | Änderungen an Diensten und Client-Software                |
+| Releases and release candidates          | Releases und Release-Kandidaten                           |
+| Notable code and documentation changes   | Wichtige Code- und Dokumentationsänderungen               |
+| Selected Q&A from Bitcoin Stack Exchange | Ausgewählte Fragen & Antworten von Bitcoin Stack Exchange |
+| Correction                               | Korrektur                                                 |
+| Consensus changes                        | Konsensänderungen                                         |
+
+---
 
 ## Vokabular
 
 ### Eigennamen
 
-Wie im Hauptleitfaden beschrieben, werden auch in der deutschen Übersetzung
-Eigennamen groß geschrieben.
+Eigennamen werden wie im Hauptleitfaden groß geschrieben.
 
 ### Gebräuchliche Substantive
 
-Anders als im Englischen, wird, mit Ausnahme der unten aufgelisteten Begriffe,
-der erste Buchstabe von gebräuchlichen Substantiven groß geschrieben.
+Im Deutschen werden Substantive groß geschrieben.
 
 - Bech32
 - Bitcoin (die Währung)
 - BIPxxx
 
-### Abkürzungen
-
-Siehe [Hauptleitfaden](STYLE.md).
-
-#### Nicht eingeführte Abkürzungen
-
-Siehe [Hauptleitfaden](STYLE.md).
-
-#### Unzulässige Begriffe und Abkürzungen
-
-Siehe [Hauptleitfaden](STYLE.md).
-
 ### Zusammengesetzte Begriffe
-Zusammengesetzte Fremdwörter sollten, zwecks besserer Lesbarkeit, nach
-Möglichkeit mit Bindestrich geschrieben werden. Siehe dazu auch [Duden, D41](https://www.duden.de/sprachwissen/rechtschreibregeln/fremdwoerter#D41)
 
-### Rechtschreibung
+Fremdwörter möglichst mit Bindestrich schreiben (siehe [Duden, D41](https://www.duden.de/sprachwissen/rechtschreibregeln/fremdwoerter#D41)).
 
-Übersetzungen sollten den Regeln der neuen deutschen Rechtschreibung folgen.
 
-### Bevorzugte Begriffe für deutsche Übersetzung
+## Bevorzugte Begriffe für deutsche Übersetzung
 
-Wo sinnvoll und verständnisfördernd sollten Fachbegriffe nur dann übersetzt,
-und Fremd- bzw. Lehnwörter nur dann verwendet werden, wenn sich diese in der
-deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
-Übersetzungen bevorzugt:
+| Englisch                | Bevorzugt (DE)           | Zu vermeiden         | Anmerkung/Kommentar                      |
+|-------------------------|--------------------------|----------------------|------------------------------------------|
+| blinded transaction     | verdeckte Zahlung        |                      |                                          |
+| derivation path         | Ableitungspfad           |                      |                                          |
+| descriptor              | Deskriptor               |                      |                                          |
+| dual funding            | beidseitige Finanzierung |                      |                                          |
+| fee                     | Gebühr                   |                      |                                          |
+| funds                   | Kapital                  |                      |                                          |
+| lightning network       | Lightning Netzwerk       |                      |                                          |
+| listening node          | empfangender Knoten      | lauschender Knoten   | "lauschend" hat Konnotation des Abhörens |
+| node                    | Knoten                   | Node                 | Full Node wird nicht übersetzt           |
+| relay                   | Weiterleitung            |                      |                                          |
+| work                    | Arbeitsnachweis          | Arbeit               | Im Kontext von PoW                       |
 
-| Englischer Ausdruck               | Bevorzugt                     | Zu vermeiden         | Anmerkungen                               |
-|-----------------------------------|-------------------------------|----------------------|-------------------------------------------|
-| blinded transaction               | verdeckte Zahlung             |                      |                                           |
-| Countersign                       | Countersign                   |                      | Eigenname des Verfahrens                  |
-| channel                           | Channel                       | Kanal                |                                           |
-| derivation path                   | Ableitungspfad                |                      |                                           |
-| descriptor                        | Deskriptor                    |                      |                                           |
-| dual funding                      | beidseitige Finanzierung      |                      |                                           |
-| fee                               | Gebühr                        |                      |                                           |
-| funds                             | Kapital                       |                      |                                           |
-| HTLC                              |                               |                      | Genus Maskulinum                          |
-| lightning network                 | Lightning Netzwerk            |                      |                                           |
-| node                              | Knoten                        | Node                 |                                           |
-| relay                             | Weiterleitung                 |                      |                                           |
-| output                            | Ausgabe                       | Output               | Im Kontext von UTXO                       |
-| silent payment                    | Stille Zahlung                |                      |                                           |
-| UTXO                              |                               |                      | Genus Maskulinum                          |
-| wallet                            | Wallet                        | Geldbörse            | Genus Neutrum                             |
-| work                              | Arbeitsnachweis               | Arbeit               | Im Kontext von PoW                        |
-| nothing up my sleeve (NUMS)-Punkt |                               |                      |                                           |
-| Scriptpath                        |                               |                      |                                           |
-| Tapleaf                           |                               |                      |                                           |
-| Tapscript                         |                               |                      |                                           |
-| Orakel-Bestätigung                |                               |                      |                                           |
-| Timelock                          |                               |                      |                                           |
+---
 
-### Nicht übersetzte Begriffe
+## Nicht übersetzte Begriffe und Ausnahmen
 
-#### Mining und Pool-Begriffe
+| Englischer Ausdruck            | Kontext / Anmerkung                                 | Genus                      |
+|------------------------------- |-----------------------------------------------------|----------------------------|
+| BDK                            | Produktname                                         |                            |
+| BIP(mit nummer)                | Protokoll-/Standardbegriff                          |                            |
+| BLIP                           | Protokoll-/Standardbegriff                          |                            |
+| BTCPay Server                  | Produktname                                         | Maskulinum                 |
+| Channel                        | Etablierter Fachbegriff                             | Maskulinum                 |
+| coin / coins                   | Coin ist im Kontext ein Fachbegriff                 | Maskulinum                 |
+| Core Lightning                 | Produktname                                         |                            |
+| Countersign                    | Eigenname des Verfahrens                            | Neutrum                    |
+| Delving Bitcoin                | Plattform-/Listenname                               |                            |
+| DLC                            | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
+| DLC-Dev                        | Plattform-/Listenname                               |                            |
+| E-Cash-Share                   | Korrigiert von "E-Cash-Anteil"                      | Maskulinum                 |
+| Eclair                         | Produktname                                         |                            |
+| FPPS                           | Technischer Begriff/Auszahlungssystem               |                            |
+| Full Node / Full Nodes         | Immer im Original belassen                          |                            |
+| HTLC                           | Immer im Original belassen                          |                            |
+| Human Readable Names           | Produkt-/Technikname                                |                            |
+| LDK                            | Produkt-/Technikname                                |                            |
+| LN                             | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
+| LSPS                           | Produkt-/Technikname                                |                            |
+| merged                         | Git/GitHub-Terminologie                             |                            |
+| Mining                         | Etablierter Fachbegriff                             | Femininum                  |
+| non-custodial                  | Immer im Original belassen, ist etabliert           |                            |
+| Offchain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
+| On-Chain                       | Layer-2/Smart-Contract/Transaktionsbegriff          |                            |
+| OP_CHECKTEMPLATEVERIFY (CTV)   | Protokoll-/Standardbegriff                          |                            |
+| Oracle                         | Lightning/DLC-Technik                               |                            |
+| output / input (bei UTXO)      | Nur im UTXO-Kontext nicht übersetzen                | Maskulinum                 |
+| Pay-per-Last-N-Shares          | Technische Begriffe/Auszahlungssysteme              |                            |
+| Pool                           | Etablierter Fachbegriff                             | Maskulinum                 |
+| Pool-Miner                     | Etablierter Fachbegriff                             | Maskulinum                 |
+| PR                             | Git/GitHub-Terminologie                             | Maskulinum                 |
+| Proxy                          | Technischer Begriff                                 | Maskulinum                 |
+| PSBT                           | Protokoll-/Standardbegriff                          |                            |
+| PPLNS                          | Technischer Begriff/Auszahlungssystem               |                            |
+| Release                        | Softwarebegriff                                     | Neutrum                    |
+| Reviewer                       | Softwarebegriff                                     | Maskulinum                 |
+| Rust Bitcoin                   | Produktname                                         |                            |
+| SCID                           | Protokoll-/Standardbegriff                          |                            |
+| Silent payment                 | Standardbegriff                                     |                            |
+| Simple Taproot Channels        | Lightning/DLC-Technik                               |                            |
+| Splice                         | Protokoll-/Standardbegriff                          |                            |
+| Splicing                       | Protokoll-/Standardbegriff                          | Neutrum                    |
+| TIDES                          | Name des Systems                                    |                            |
+| UTXO                           | Immer im Original belassen                          |                            |
+| Wallet                         | Produkt-/Technikname                                |                            |
 
-| Englischer Ausdruck           | Begründung                                                                                                                                        |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Pool-Miner                    | ist ein etablierter Fachbegriff                                                                                                                   |
-| Mining                        | etablierter Fachbegriff                                                                                                                           |
-| Pool                          | etablierter Fachbegriff                                                                                                                           |
-| E-Cash-Shares                 | wurde von "E-Cash-Anteile" korrigiert                                                                                                             |
-| Pay-per-Last-N-Shares         | technischer Begriff                                                                                                                               |
-| PPLNS                         | "Pay-Per-Last-N-Shares", ein Auszahlungssystem bei Mining-Pools, bei dem die letzten N Shares für die Berechnung der Auszahlung verwendet werden  |
-| TIDES                         | Name des Systems                                                                                                                                  |
-| FPPS                          | "Full Pay-Per-Share", ein Auszahlungssystem, das die volle Blockbelohnung (inkl. Gebühren) pro Share auszahlt                                     |
-| Proxy                         | technischer Begriff                                                                                                                               |
-
-#### Lightning Network & DLC Begriffe
-
-| Englischer Ausdruck           | Begründung                                                                                                                                        |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| LN                            | "Lightning Network", ein Layer-2-Protokoll für schnelle Bitcoin-Transaktionen                                                                     |
-| DLC                           | "Discreet Log Contract", ein Protokoll für Bitcoin-basierte Smart Contracts                                                                       |
-| Offchain                      | beschreibt Transaktionen außerhalb der Blockchain                                                                                                 |
-| On-Chain                      | beschreibt Transaktionen auf der Blockchain                                                                                                       |
-| HTLC                          | "Hash Time-Locked Contract", ein Vertragskonstrukt für sichere Zahlungsweiterleitung im Lightning Network                                         |
-| Oracle                        | technischer Begriff                                                                                                                               |
-| Simple Taproot Channels       | Lightning Network Typ                                                                                                                             |
-
-#### Software & Entwicklung
-
-| Englischer Ausdruck           | Begründung                                                                                                                                        |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Release                       | etablierter Begriff                                                                                                                               |
-| Release-Kandidaten            | teilweise etablierter Begriff                                                                                                                     |
-| LDK                           | "Lightning Development Kit", eine Bibliothek zur Entwicklung von Lightning-Network-Anwendungen                                                    |
-| Wallet                        | etablierter Begriff                                                                                                                               |
-| LSPS                          | "Lightning Service Provider Specification", ein Standard für Lightning Network Dienstleister                                                      |
-| Human Readable Names          | technischer Begriff                                                                                                                               |
-| Core Lightning                | Produktname                                                                                                                                       |
-| Eclair                        | Produktname                                                                                                                                       |
-| BTCPay Server                 | Produktname                                                                                                                                       |
-| BDK                           | Produktname                                                                                                                                       |
-| Rust Bitcoin                  | Produktname                                                                                                                                       |
-| PR                            | "Pull Request", eine Funktion von Git/GitHub, bei der ein Entwickler eine Änderung an einem Repository vorschlägt                                 |
-
-#### Protokolle & Standards
-
-| Englischer Ausdruck           | Begründung                                                                                                                                        |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| BIP                           | "Bitcoin Improvement Proposal", standardisierte Vorschläge zur Verbesserung des Bitcoin-Protokolls                                                |
-| BOLT                          | "Basis of Lightning Technology", die technischen Spezifikationen des Lightning Networks                                                           |
-| BLIP                          | "Bitcoin Lightning Improvement Proposal", Verbesserungsvorschläge für das Lightning Network                                                       |
-| PSBT                          | "Partially Signed Bitcoin Transaction", ein Format für teilweise signierte Bitcoin-Transaktionen                                                  |
-| DLEQ                          | "Discrete Logarithm Equality", ein kryptographischer Beweis für die Gleichheit diskreter Logarithmen                                              |
-| Splice                        | technischer Begriff                                                                                                                               |
-| Short Channel Identifier(SCID)| technischer Begriff                                                                                                                               |
-| BIP331                        | Abkürzung für ein spezifisches Bitcoin Improvement Proposal                                                                                       |
-| OP_CHECKTEMPLATEVERIFY (CTV)  | spezifischer Opcode im Bitcoin-Protokoll                                                                                                          |
-| CTV                           | "Check Template Verify", siehe oben OP_CHECKTEMPLATEVERIFY                                                                                        |
-
-#### Plattformen & Listen
-
-| Englischer Ausdruck           | Begründung                                                                                                                                        |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Delving Bitcoin               | Name der Plattform                                                                                                                                |
-| DLC-Dev                       | Name der Mailingliste                                                                                                                             |
-
-#### Entwicklungsbegriffe
-
-| Englischer Ausdruck           | Begründung                                                                                                                                        |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| merged                        | Git/GitHub Terminologie                                                                                                                           |
-
-### Maßeinheiten
-
-Siehe [Hauptleitfaden](STYLE.md).
+---

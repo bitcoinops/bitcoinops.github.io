@@ -86,6 +86,9 @@ optech_mentions:
   - title: "Offchain DLCs: DLC channels compared to DLC factories"
     url: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
 
+  - title: "Summary and criticism of CTV + CSFS benefits for discreet log contracts (DLCs)"
+    url: /en/newsletters/2025/04/04/#dlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signature adaptors

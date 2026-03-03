@@ -256,14 +256,14 @@ _Wichtige aktuelle Änderungen in [Bitcoin Core][bitcoin core repo], [Core Light
 [miningpool.observer]: https://miningpool.observer/template-and-block
 [b10c cb]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/5
 [news315 cb]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
-[news338 orphan]: /en/newsletters/2025/01/24/#bitcoin-core-31397
+[news338 orphan]: /de/newsletters/2025/01/24/#bitcoin-core-31397
 [news274 cycle]: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
 [ldk v0.1.1]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.1
 [morehouse ldk-dos]: https://delvingbitcoin.org/t/disclosure-ldk-duplicate-htlc-force-close-griefing/1410
 [news281 griefing]: /en/newsletters/2023/12/13/#discussion-about-griefing-liquidity-ads
 [news238 peer]: /en/newsletters/2023/02/15/#core-lightning-5361
 [news335 peer]: /en/newsletters/2025/01/03/#eclair-2888
-[news338 psbtv2]: /en/newsletters/2025/01/24/#psbtv2-integration-testing
+[news338 psbtv2]: /de/newsletters/2025/01/24/#psbtv2-integrationstests
 [mempool genesis block]: https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
 [policy series]: /en/blog/waiting-for-confirmation/#policy-for-protection-of-node-resources
 [news316 xor]: /en/newsletters/2024/08/16/#bitcoin-core-28052

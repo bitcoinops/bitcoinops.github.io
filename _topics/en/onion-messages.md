@@ -98,6 +98,9 @@ optech_mentions:
   - title: "Eclair #2865 enables waking up a disconnected mobile peer for async payments or onion messages"
     url: /en/newsletters/2024/09/06/#eclair-2865
 
+  - title: "Discussion about separating onion message relay from HTLC relay"
+    url: /en/newsletters/2025/07/04/#separating-onion-message-relay-from-htlc-relay
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

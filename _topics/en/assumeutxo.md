@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Bitcoin Core #30807 has assumeUTXO nodes during background sync signal NODE_NETWORK_LIMITED"
     url: /en/newsletters/2024/09/20/#bitcoin-core-30807
 
+  - title: "SwiftSync faster syncs compatible and complementary with assumeUTXO"
+    url: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"

@@ -37,6 +37,9 @@ optech_mentions:
   - title: "BDK #779 adds support for creating low-r signatures"
     url: /en/newsletters/2022/11/02/#bdk-779
 
+  - title: "BOLTs #1243 updates BOLT11 to specify handling of low-r signatures on invoices"
+    url: /en/newsletters/2025/06/13/#bolts-1243
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: What is signature grinding?

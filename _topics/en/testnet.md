@@ -110,6 +110,9 @@ optech_mentions:
   - title: "Discussion about retiring testnet3 and hard forking testnet4 to remove difficulty reset rule"
     url: /en/newsletters/2025/03/28/#discussion-of-testnets-3-and-4
 
+  - title: "LND #9620 adds testnet4 support"
+    url: /en/newsletters/2025/04/04/#lnd-9620
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signet

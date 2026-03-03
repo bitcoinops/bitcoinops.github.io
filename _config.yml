@@ -33,6 +33,13 @@ author: "Bitcoin Optech"  ## Default author name for blog posts
 # Build settings
 markdown: kramdown
 theme: minima
+sass:
+  # quiet_deps silences warnings from dependencies loaded via sass_dir
+  quiet_deps: true
+  # Silence @import deprecation warnings - migration to @use/@forward requires
+  # significant refactoring of minima theme. Track: https://sass-lang.com/d/import
+  silence_deprecations:
+    - import
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
@@ -46,6 +53,7 @@ exclude:
    - Makefile
    - README.md
    - CONTRIBUTING.md
+   - .jj
 
 include: [".well-known"]
 
@@ -64,18 +72,9 @@ defaults:
       layout: topic
       permalink: /en/topics/:title/
       localizable: false
-  - scope:
-      path: "_compat"
-    values:
-      layout: page
-      title: ""
-      permalink: /en/compatibility/:title/
-      localizable: false
 
 collections:
   topics:
-    output: true
-  compat:
     output: true
 
 languages:
@@ -93,5 +92,7 @@ languages:
     name: German
   - code: fr
     name: French
+  - code: pt
+    name: Portuguese
 ## In-text aliases
 trb: "709,632" # TapRoot Block (activation)

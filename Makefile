@@ -10,8 +10,6 @@ export GIT_PAGER='_contrib/kill0'
 JEKYLL_FLAGS = --future --drafts --unpublished --incremental
 
 ## Expected filenames in output directory
-compatibility_validation = $(wildcard _compat/en/*.md)
-compatibility_validation := $(patsubst _compat/en/%.md,_site/en/compatibility/%/index.html,$(compatibility_validation))
 topic_validation = $(wildcard _topics/en/*.md)
 topic_validation := $(patsubst _topics/en/%.md,_site/en/topics/%/index.html,$(topic_validation))
 
@@ -27,7 +25,9 @@ preview:
 	      _site/*/topics/categories/index.html \
 	      _site/*/topics/dates/index.html \
 	      _site/*/topics/index.html
-	bundle exec jekyll serve --host 0.0.0.0 $(JEKYLL_FLAGS)
+	## Build with dev config (for correct redirect URLs), then serve
+	bundle exec jekyll build --config _config.yml,_config_dev.yml $(JEKYLL_FLAGS) && \
+	bundle exec jekyll serve --host 0.0.0.0 --skip-initial-build $(JEKYLL_FLAGS)
 
 build:
 	@# Tiny sleep for when running concurrently to ensure output
@@ -38,7 +38,7 @@ build:
 	bundle exec jekyll build $(JEKYLL_FLAGS)
 
 
-test-before-build: $(compatibility_validation) $(topic_validation)
+test-before-build: $(topic_validation)
 	## Check for Markdown formatting problems
 	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
 	bundle exec mdl -g -r MD009 .
@@ -111,7 +111,7 @@ test-after-build: build
 	done | grep .
 
 	## Check for broken links
-	bundle exec htmlproofer --check-html --disable-external --url-ignore '/^\/bin/.*/' ./_site
+	bundle exec htmlproofer --disable-external --no-enforce-https --ignore-urls '/^\/bin/.*/' ./_site
 
 ## Tests to run last because they identify problems that may not be fixable during initial commit review.
 ## However, these should not be still failing when the site goes to production
@@ -129,8 +129,5 @@ email: clean
 	$(MAKE) preview JEKYLL_ENV=email
 
 ## Path-based rules
-_site/en/compatibility/%/index.html : _compat/en/%.md
-	bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml $<
-
 _site/en/topics/%/index.html : _topics/en/%.md
 	bundle exec _contrib/schema-validator.rb _data/schemas/topics.yaml $<

@@ -1,0 +1,209 @@
+---
+title: 'Bitcoin Optech Newsletter #373'
+permalink: /en/newsletters/2025/09/26/
+name: 2025-09-26-newsletter
+slug: 2025-09-26-newsletter
+type: newsletter
+layout: newsletter
+lang: en
+---
+This week's newsletter summarizes a vulnerability affecting old versions of
+Eclair and summarizes research into full node feerate settings.  Also included
+are our regular sections summarizing popular questions and answers on the
+Bitcoin Stack Exchange, announcing new releases and release candidates, and
+describing notable changes to popular Bitcoin infrastructure software.
+
+## News
+
+- **Eclair vulnerability:** Matt Morehouse [posted][morehouse eclair] to
+  Delving Bitcoin to announce the [responsible disclosure][topic
+  responsible disclosures] of a vulnerability affecting older versions
+  of Eclair.  All Eclair users are recommended to upgrade to version
+  0.12 or greater.  The vulnerability allowed an attacker to broadcast
+  an old commitment transaction to steal all current funds from a
+  channel.  In addition to fixing the vulnerability, Eclair developers
+  added a comprehensive testing suite designed to catch similar problems. {% assign timestamp="18:50" %}
+
+- **Research into feerate settings:** Daniela Brozzoni [posted][brozzoni
+  feefilter] to Delving Bitcoin the results of a scan of almost 30,000
+  full nodes that were accepting incoming connections.  Each node was
+  queried for its [BIP133][] fee filter, which indicates the lowest
+  feerate at which it will currently accept relayed unconfirmed
+  transactions.  When node mempools aren't full, this is
+  the node's [default minimum transaction relay feerate][topic default
+  minimum transaction relay feerates].  Her results indicate most nodes
+  used the default of 1 sat/vbyte (s/v), which has long been the default
+  in Bitcoin Core.  About 4% of nodes used 0.1 s/v, the default for the
+  upcoming 30.0 version of Bitcoin Core, and about 8% of nodes didn't
+  respond to the query---indicating that they might be spy nodes.
+
+  A small percentage of the nodes used a feefilter value of 9,170,997
+  (10,000 s/v), which developer 0xB10C [noted][0xb10c feefilter] is the
+  value Bitcoin Core sets, through rounding, when the node is more than
+  100 blocks behind the tip of the chain and is focused on receiving
+  block data rather than transactions that might be confirmed in later
+  blocks. {% assign timestamp="0:35" %}
+
+## Selected Q&A from Bitcoin Stack Exchange
+
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
+contributors look for answers to their questions---or when we have a
+few spare moments to help curious or confused users.  In
+this monthly feature, we highlight some of the top-voted questions and
+answers posted since our last update.*
+
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
+{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
+
+- [Implications of OP_RETURN changes in upcoming Bitcoin Core version 30.0?]({{bse}}127895)
+  Pieter Wuille describes his perspectives on the effectiveness and drawbacks of
+  using [mempool and relay policy][policy series] to affect the contents of mined blocks. {% assign timestamp="28:27" %}
+
+- [If OP_RETURN relay limits are ineffective, why remove the safeguard instead of keeping it as a default discouragement?]({{bse}}127904)
+  Antoine Poinsot explains the malincentive created by the current OP_RETURN
+  default limit value in Bitcoin Core and the rationale for removing it. {% assign timestamp="42:12" %}
+
+- [What are the worst-case stress scenarios from uncapped OP_RETURNs in Bitcoin Core v30?]({{bse}}127914)
+  Vojtěch Strnad and Pieter Wuille respond to a list of extreme scenarios that
+  might occur with the OP_RETURN limit policy default setting changing. {% assign timestamp="43:25" %}
+
+- [If OP_RETURN needed more room, why was the 80-byte cap removed instead of being raised to 160?]({{bse}}127915)
+  Ava Chow and Antoine Poinsot outline considerations against a 160-byte default
+  OP_RETURN value including an aversion to continually setting the cap, existing
+  large miners already bypassing the cap, and risks of not anticipating future
+  on-chain activity. {% assign timestamp="50:39" %}
+
+- [If arbitrary data is inevitable, does removing OP_RETURN limits shift demand toward more harmful storage methods (like UTXO-inflating addresses)?]({{bse}}127916)
+  Ava Chow points out that dropping the OP_RETURN limit provides incentives
+  to use a less harmful alternative for output data storage in certain situations. {% assign timestamp="59:48" %}
+
+- [If OP_RETURN uncapping doesn’t increase the UTXO set, how does it still contribute to blockchain bloat and centralization pressure?]({{bse}}127912)
+  Ava Chow explains how increased use of OP_RETURN outputs affects the resource
+  utilization of Bitcoin nodes. {% assign timestamp="1:00:17" %}
+
+- [How does uncapping OP_RETURN impact long-term fee-market quality and security budget?]({{bse}}127906)
+  Ava Chow answers a series of questions about hypothetical OP_RETURN usage and
+  its impact on future Bitcoin mining revenues. {% assign timestamp="1:02:11" %}
+
+- [Assurance blockchain will not suffer from illegal content with 100KB OP_RETURN?]({{bse}}127958)
+  User jb55 provides several examples of potential encoding schemes for data
+  concluding "So no, in general you can't really stop these kinds of things in a
+  censorship resistant, decentralized network." {% assign timestamp="1:04:34" %}
+
+- [What analysis shows OP_RETURN uncapping won’t harm block propagation or orphan risk?]({{bse}}127905)
+  Ava Chow points out that while there is no dataset specifically isolating
+  large OP_RETURNs, previous analyses of [compact blocks][topic compact block
+  relay] and stale blocks indicate there is no reason to expect them to behave
+  differently. {% assign timestamp="1:05:25" %}
+
+- [Where does Bitcoin Core keep the XOR obfuscation keys for both block data files and level DB indexes?]({{bse}}127927)
+  Vojtěch Strnad notes the chainstate key is stored in LevelDB under the
+  "\000obfuscate_key" key and the block and undo data key is stored in the blocks/xor.dat file. {% assign timestamp="1:06:10" %}
+
+- [How robust is 1p1c transaction relay in bitcoin core 28.0?]({{bse}}127873)
+  Glozow clarifies that the non-robustness referred to in the original
+  opportunistic [one parent one child (1P1C) relay][28.0 1p1c] pull request means "not
+  guaranteed to work, particularly in the presence of adversaries or when volume
+  is really high so we miss things." {% assign timestamp="1:06:34" %}
+
+- [How can I allow getblocktemplate to include sub 1 sat/vbyte transactions?]({{bse}}127881)
+  User inersha discovers the settings required to not only relay sub 1 sat/vbyte
+  transactions but also have them included in a candidate block template. {% assign timestamp="1:10:37" %}
+
+## Releases and release candidates
+
+_New releases and release candidates for popular Bitcoin infrastructure
+projects.  Please consider upgrading to new releases or helping to test
+release candidates._
+
+- [Bitcoin Core 30.0rc1][] is a release candidate for the next major version of
+  this full verification node software. Please see the [version 30 release
+  candidate testing guide][bcc30 testing]. {% assign timestamp="1:13:00" %}
+
+## Notable code and documentation changes
+
+_Notable recent changes in [Bitcoin Core][bitcoin core repo], [Core
+Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
+[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
+Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
+Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
+Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
+[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
+repo], and [BINANAs][binana repo]._
+
+- [Bitcoin Core #33333][] emits a startup warning message if a node's `dbcache`
+  setting exceeds a cap derived from the node's system RAM, to prevent
+  out-of-memory errors or heavy swapping. For systems with less than 2GB of RAM,
+  the `dbcache` warning threshold is 450MB; otherwise, the threshold is 75% of
+  the total RAM. The `dbcache` 16GB limit was removed in September 2024 (see
+  Newsletter [#321][news321 dbcache]). {% assign timestamp="1:15:26" %}
+
+- [Bitcoin Core #28592][] increases the per-peer transaction relay rate from 7
+  to 14 for inbound peers due to an increased presence of smaller transactions on
+  the network. The rate for outbound peers is 2.5 times higher, increasing to 35
+  transactions per second. The transaction relay rate limits the number of
+  transactions a node sends to its peers. {% assign timestamp="1:18:36" %}
+
+- [Eclair #3171][] removes `PaymentWeightRatios`, a pathfinding method that
+  assumed uniformity in channel balances, and replaces it with a newly
+  introduced probabilistic approach based on past payment attempt history (see
+  Newsletter [#371][news371 path]). {% assign timestamp="1:22:33" %}
+
+- [Eclair #3175][] starts rejecting unpayable [BOLT12][] [offers][topic offers]
+  where the fields `offer_chains`, `offer_paths`, `invoice_paths`, and
+  `invoice_blindedpay` are present but empty. {% assign timestamp="1:26:41" %}
+
+- [LDK #4064][] updates its signature verification logic to ensure that if the
+  `n` field (payee’s pubkey) is present, the signature is verified against it.
+  Otherwise, the payee’s pubkey is extracted from the [BOLT11][] invoice with
+  either a high-S or low-S signature. This PR aligns signature checks with the
+  proposed [BOLTs #1284][] and with other implementations such as Eclair (See
+  Newsletter [#371][news371 pubkey]). {% assign timestamp="1:29:36" %}
+
+- [LDK #4067][] adds support for spending [P2A ephemeral anchor][topic
+  ephemeral anchors] outputs from [zero-fee commitment][topic v3 commitments] transactions, ensuring
+  that channel peers can claim their funds back on-chain. See Newsletter
+  [#371][news371 p2a] for LDK’s implementation of zero-fee commitment channels. {% assign timestamp="1:31:04" %}
+
+- [LDK #4046][] enables an often-offline sender to send [async payments][topic
+  async payments] to an often-offline recipient. The sender sets a flag in the
+  `update_add_htlc` message to indicate that the [HTLC][topic htlc] should be
+  held by the LSP until the recipient comes back online and sends a
+  `release_held_htlc` [onion message][topic onion messages] to claim the
+  payment. {% assign timestamp="1:32:43" %}
+
+- [LDK #4083][] deprecates the `pay_for_offer_from_human_readable_name` endpoint
+  to remove duplicate [BIP353][] HRN payment APIs. Wallets are encouraged to use
+  the `bitcoin-payment-instructions` crate to parse and resolve payment
+  instructions before calling `pay_for_offer_from_hrn` to pay an [offer][topic
+  offers] from a [BIP353][] HRN (e.g. satoshi@nakamoto.com). {% assign timestamp="1:35:27" %}
+
+- [LND #10189][] updates its `sweeper` system (see Newsletter [#346][news346
+  sweeper]) to properly recognize the `ErrMinRelayFeeNotMet` error code and
+  retry failed transactions by [fee bumping][topic rbf] until the broadcast is
+  successful. Previously, the error would be mismatched, and the transaction
+  wouldn't be retried. This PR also improves weight estimation by accounting for
+  a possible extra change output, which is relevant in [taproot][topic taproot]
+  overlay channels used to enhance LND’s [Taproot Assets][topic client-side
+  validation]. {% assign timestamp="1:38:23" %}
+
+- [BIPs #1963][] updates the status of the BIPs that specify [compact block
+  filters][topic compact block filters], [BIP157][] and [BIP158][], from `Draft`
+  to `Final` as they’ve been deployed in Bitcoin Core and other software since
+  2020. {% assign timestamp="1:41:17" %}
+
+{% include snippets/recap-ad.md when="2025-09-30 16:30" %}
+{% include references.md %}
+{% include linkers/issues.md v=2 issues="33333,28592,3171,3175,4064,4067,4046,4083,10189,1963,1284" %}
+[morehouse eclair]: https://delvingbitcoin.org/t/disclosure-eclair-preimage-extraction-exploit/2010
+[brozzoni feefilter]: https://delvingbitcoin.org/t/measuring-minrelaytxfee-across-the-bitcoin-network/1989
+[0xb10c feefilter]: https://delvingbitcoin.org/t/measuring-minrelaytxfee-across-the-bitcoin-network/1989/3
+[bitcoin core 30.0rc1]: https://bitcoincore.org/bin/bitcoin-core-30.0/
+[bcc30 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/30.0-Release-Candidate-Testing-Guide/
+[news321 dbcache]: /en/newsletters/2024/09/20/#bitcoin-core-28358
+[news371 path]: /en/newsletters/2025/09/12/#eclair-2308
+[news371 pubkey]: /en/newsletters/2025/09/12/#eclair-3163
+[news371 p2a]: /en/newsletters/2025/09/12/#ldk-4053
+[news346 sweeper]: /en/newsletters/2025/03/21/#discussion-of-lnd-s-dynamic-feerate-adjustment-system
+[policy series]: /en/blog/waiting-for-confirmation/
+[28.0 1p1c]: /en/bitcoin-core-28-wallet-integration-guide/#one-parent-one-child-1p1c-relay

@@ -39,6 +39,9 @@ optech_mentions:
   - title: Interplay between CISA and Musig1 interactive aggregated signature
     url: /en/newsletters/2025/01/31/#how-does-musig-work-in-real-bitcoin-scenarios
 
+  - title: "DahLIAS interactive aggregate signatures for secp256k1"
+    url: /en/newsletters/2025/04/25/#interactive-aggregate-signatures-compatible-with-secp256k1
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
