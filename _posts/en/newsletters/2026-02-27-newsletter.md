@@ -41,7 +41,7 @@ Bitcoin infrastructure software.
 
   Finally, Raw noted that annotations should not be used in the general wallet backup process,
   but only for making funds recovery more efficient without altering the scripts
-  produced by the descriptor.
+  produced by the descriptor. {% assign timestamp="1:25" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -59,14 +59,14 @@ answers posted since our last update.*
   transport] protocol supports shaping traffic patterns, although no known
   software implements that feature, concluding "today's implementations only
   defeat protocol signatures that involve patterns in the sent bytes, not in
-  traffic".
+  traffic". {% assign timestamp="35:16" %}
 
 - [What if a miner just broadcasts the header and never gives the block?]({{bse}}130456)
   User bigjosh outlines how a miner might behave after receiving a block header
   on the P2P network but before receiving the block's contents: by mining an
   empty block on top of it. Pieter Wuille clarifies that, in practice, many
   miners actually see new block headers by monitoring the work other mining
-  pools give out to their miners, a technique known as spy mining.
+  pools give out to their miners, a technique known as spy mining. {% assign timestamp="39:53" %}
 
 ## Releases and release candidates
 
@@ -76,14 +76,14 @@ release candidates._
 
 - [Bitcoin Core 28.4rc1][] is a release candidate for a maintenance
   release of a previous major release series. It primarily contains
-  wallet migration fixes and removal of an unreliable DNS seed.
+  wallet migration fixes and removal of an unreliable DNS seed. {% assign timestamp="47:27" %}
 
 - [Rust Bitcoin 0.33.0-beta][] is a beta release of this library for
   working with Bitcoin data structures. This is a large update with over
   300 commits that introduces a new `bitcoin-consensus-encoding` crate,
   adds P2P network message encoding traits, rejects transactions with
   duplicate inputs or output sums exceeding `MAX_MONEY` during
-  decoding, and bumps major versions across all sub-crates.
+  decoding, and bumps major versions across all sub-crates. {% assign timestamp="47:46" %}
 
 ## Notable code and documentation changes
 
@@ -106,7 +106,7 @@ repo], and [BINANAs][binana repo]._
   declared in the schema. The `Init.makeMining` version number is bumped
   so that older clients receive a clear error instead of silently
   misinterpreting the new schema. The threading change is a prerequisite
-  for the cooldown feature covered next.
+  for the cooldown feature covered next. {% assign timestamp="48:48" %}
 
 - [Bitcoin Core #34184][] adds an optional cooldown to the
   `createNewBlock()` method on the Mining IPC interface. When enabled,
@@ -115,7 +115,7 @@ repo], and [BINANAs][binana repo]._
   prevents [Stratum v2][topic pooled mining] clients from being flooded
   with rapidly outdated templates during startup. A new `interrupt()`
   method is also added so IPC clients can cleanly abort a blocking
-  `createNewBlock()` or `waitTipChanged()` call.
+  `createNewBlock()` or `waitTipChanged()` call. {% assign timestamp="50:37" %}
 
 - [Bitcoin Core #24539][] adds a new `-txospenderindex` option that
   maintains an index of which transaction spent each confirmed output.
@@ -127,7 +127,7 @@ repo], and [BINANAs][binana repo]._
   returns the full spending transaction. The index does not require
   `-txindex` and is incompatible with pruning. This is particularly
   useful for Lightning and other second-layer protocols that need to
-  track chains of spending transactions.
+  track chains of spending transactions. {% assign timestamp="51:57" %}
 
 - [Bitcoin Core #34329][] adds two new RPCs for managing private
   transaction broadcasts (see [Newsletter #388][news388 private]):
@@ -135,7 +135,7 @@ repo], and [BINANAs][binana repo]._
   currently in the private broadcast queue, including the chosen peer
   addresses and when each broadcast was sent, and
   `abortprivatebroadcast` cancels the broadcast of a specific
-  transaction and its pending connections.
+  transaction and its pending connections. {% assign timestamp="53:52" %}
 
 - [Bitcoin Core #28792][] completes the embedded ASMap series of PRs by bundling
   ASMap data directly in the Bitcoin Core binary, so users who enable
@@ -146,14 +146,14 @@ repo], and [BINANAs][binana repo]._
   Newsletters [#52][news52 asmap] and [#290][news290 asmap]). The
   feature remains off by default; the user must still specify `-asmap`
   to enable it. A new [documentation file][github asmap-data] outlines the
-  process for sourcing the data and including it in a Bitcoin Core release.
+  process for sourcing the data and including it in a Bitcoin Core release. {% assign timestamp="15:35" %}
 
 - [Bitcoin Core #32138][] removes the `settxfee` RPC and `-paytxfee`
   startup option, which allowed users to set a static fee rate for all
   transactions. Both were deprecated in Bitcoin Core 30.0 (see
   [Newsletter #349][news349 settxfee]). Users should instead rely on
   [fee estimation][topic fee estimation] or set a per-transaction fee
-  rate.
+  rate. {% assign timestamp="54:56" %}
 
 - [Bitcoin Core #34512][] adds a `coinbase_tx` field to the `getblock`
   RPC response at verbosity level 1 and above, containing the coinbase
@@ -163,7 +163,7 @@ repo], and [BINANAs][binana repo]._
   verbosity 2, which decodes every transaction in the block. This is
   useful for monitoring [BIP54][] ([consensus cleanup][topic consensus
   cleanup]) coinbase locktime requirements or identifying mining pools
-  from the coinbase script.
+  from the coinbase script. {% assign timestamp="56:44" %}
 
 - [Core Lightning #8490][] adds a new `payment-fronting-node`
   configuration option that specifies one or more nodes to always use
@@ -173,7 +173,7 @@ repo], and [BINANAs][binana repo]._
   requests are constructed to use only the specified fronting nodes.
   Previously, CLN would automatically select from the node's channel
   peers, potentially exposing different peers across invoices. The
-  option can be set globally or overridden per offer.
+  option can be set globally or overridden per offer. {% assign timestamp="58:16" %}
 
 - [Eclair #3250][] allows the `OpenChannelInterceptor` to automatically
   select a `channel_type` when the local node opens a channel without
@@ -181,7 +181,7 @@ repo], and [BINANAs][binana repo]._
   an LSP opening channels to clients) would fail unless a type was
   provided. The current default prefers [anchor channels][topic anchor
   outputs], with [simple taproot channels][topic simple taproot
-  channels] expected to take priority in follow-up PRs.
+  channels] expected to take priority in follow-up PRs. {% assign timestamp="59:07" %}
 
 - [LDK #4373][] adds support for sending [multipath payments][topic
   multipath payments] where the local node pays only a portion of the
@@ -191,13 +191,13 @@ repo], and [BINANAs][binana repo]._
   pay a single invoice by each contributing part of the payment. The
   receiver collects HTLCs from all contributing nodes and claims the
   payment once the full amount arrives. [BOLT12][topic offers] support
-  is left for a follow-up.
+  is left for a follow-up. {% assign timestamp="59:55" %}
 
 - [BDK #2081][] adds `spent_txouts()` and `created_txouts()` methods to
   `SpkTxOutIndex` and `KeychainTxOutIndex` that, given a transaction,
   return which tracked outputs it spent and which new tracked outputs it
   created. This enables wallets to easily determine the addresses and
-  amounts involved in transactions they care about.
+  amounts involved in transactions they care about. {% assign timestamp="1:02:13" %}
 
 {% include snippets/recap-ad.md when="2026-03-03 17:30" %}
 {% include references.md %}
