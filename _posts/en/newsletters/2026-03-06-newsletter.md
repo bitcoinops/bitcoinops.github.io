@@ -16,7 +16,28 @@ changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **A standard for stateless VTXO verification**: Jgmcalpine [posted][vpack del]
+  to Delving Bitcoin about his proposal for V-PACK, a stateless [VTXO][topic ark] verification
+  standard, which aims to provide a mechanism to independently verify and visualize
+  VTXOs in the Ark ecosystem. The goal is to develop a lean verifier able to run on
+  embedded environments, such as hardware wallets, to allow auditing off-chain state and
+  maintaining an independent backup of the data required for unilateral exit.
+
+  In particular, V-PACK verifies that a unilateral exit path exists, by checking that
+  the merkle path leads to a valid on-chain anchor and that the transaction preimages
+  match the signatures. However, Second CEO, Steven Roose, pointed out that path
+  exclusivity (i.e. verifying that the Ark Service Provider (ASP) did not introduce a
+  backdoor) is not checked for, to which Jgmcalpine answered that the topic would be
+  given the highest priority in the roadmap.
+
+  Due to significant differences among Ark implementations
+  (specifically, Arkade and Bark), V-PACK proposes a Minimal Viable VTXO (MVV) schema
+  to allow translating from an implementation's "dialect" to a common neutral format,
+  without the need for an embedded environment to import all the specific
+  implementation's codebase.
+
+  The V-PACK implementation, [libvpack-rs][vpack gh], is open-source, and a
+  [live tool][vpack tool] to visualize VTXOs is available for testing.
 
 ## Changing consensus
 
@@ -48,4 +69,6 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-03-10 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[vpack del]: https://delvingbitcoin.org/t/stateless-vtxo-verification-decoupling-custody-from-implementation-specific-stacks/2267
+[vpack gh]: https://github.com/jgmcalpine/libvpack-rs
+[vpack tool]: https://www.vtxopack.org/
