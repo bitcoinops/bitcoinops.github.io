@@ -109,6 +109,15 @@ optech_mentions:
   - title: "SLH-DSA verification can compete with ECC"
     url: /en/newsletters/2026/02/06/#slh-dsa-verification-can-compete-with-ecc
 
+  - title: "Hourglass V2 proposal to limit P2PK spends"
+    url: /en/newsletters/2026/03/06/#hourglass-v2-update
+
+  - title: "Discussion of cryptographic algorithm agility in Bitcoin"
+    url: /en/newsletters/2026/03/06/#algorithm-agility-for-bitcoin
+
+  - title: "Discussion of the limits of cryptographic algorithm agility in Bitcoin"
+    url: /en/newsletters/2026/03/06/#the-limitations-of-cryptographic-agility-in-bitcoin
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
