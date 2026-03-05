@@ -147,7 +147,9 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Bitcoin Core 28.4rc1][] is a release candidate for a maintenance release of a
+  previous major release series. It primarily contains wallet migration fixes
+  and removal of an unreliable DNS seed.
 
 ## Notable code and documentation changes
 
@@ -160,10 +162,111 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33616][] skips the [ephemeral dust][topic ephemeral
+  anchors] spend check (`CheckEphemeralSpends`) during block reorgs when
+  confirmed transactions re-enter the mempool. Previously, these
+  transactions would be rejected by relay policy because they're brought
+  back individually rather than as a package. This follows the same
+  pattern as [Bitcoin Core #33504][] (see [Newsletter #375][news375
+  truc]), which skipped [TRUC][topic v3 transaction relay] topology
+  checks during reorgs for the same reason.
+
+- [Bitcoin Core #34616][] introduces a more accurate cost model for the
+  spanning-forest [cluster linearization][topic cluster mempool] (SFL)
+  algorithm (see [Newsletter #386][news386 sfl]), by using cost limits to
+  bound the amount of CPU time spent searching for an optimal
+  linearization of each cluster. The previous model only tracked one type
+  of internal operation, resulting in a poor correlation between the
+  reported cost and the actual CPU time spent. The new model tracks many
+  internal operations with weights calibrated from benchmarks across
+  diverse hardware, providing a much closer approximation of real time.
+
+- [Eclair #3256][] adds a new `ChannelFundingCreated` event emitted when
+  a funding or [splice][topic splicing] transaction has been signed and
+  is ready to be published. This is particularly useful for single-funded
+  channels where the non-funding side has no opportunity to validate
+  inputs beforehand and may want to force-close before the channel
+  confirms.
+
+- [Eclair #3258][] adds a `ValidateInteractiveTxPlugin` trait that
+  enables plugins to inspect and reject the remote peer's inputs and
+  outputs in interactive transactions before signing. This applies to
+  [dual-funded][topic dual funding] channel opens and [splices][topic
+  splicing], where both sides participate in transaction construction.
+
+- [Eclair #3255][] fixes the automatic channel type selection introduced
+  in [Eclair #3250][] (see [Newsletter #394][news394 eclair3250]) so
+  that it no longer includes `scid_alias` for public channels. Per the
+  BOLTs, `scid_alias` is only allowed for [private channels][topic
+  unannounced channels].
+
+- [LDK #4402][] fixes the HTLC claim timer to use the actual HTLC CLTV
+  expiry rather than the value from the onion payload. For
+  [trampoline][topic trampoline payments] payments where a node is both a
+  trampoline hop and the final recipient, the actual HTLC expiry is
+  higher than what the onion specifies, because the outer trampoline
+  route added its own [CLTV delta][topic cltv expiry delta]. Using the
+  onion value caused the node to set a tighter claim deadline than
+  necessary.
+
+- [LND #10604][] adds a SQL backend (SQLite or Postgres) for LND's
+  outgoing payments database, as an alternative to the existing bbolt
+  key-value (KV) store. This consolidation PR brings together several
+  sub-PRs, notably [#10153][LND #10153] which introduced an abstract
+  payment store interface, [#9147][LND #9147] which implemented the SQL
+  schema and core backend, and [#10485][LND #10485] which added an
+  experimental KV-to-SQL data migration. LND added support for
+  PostgreSQL in [Newsletter #169][news169 lnd-sql] and SQLite in
+  [Newsletter #237][news237 lnd-sql].
+
+- [BIPs #1699][] publishes [BIP442][] specifying `OP_PAIRCOMMIT`, a new
+  [tapscript][topic tapscript] opcode that pops two elements off the
+  stack and pushes their tagged SHA256 hash. This provides
+  multi-commitment functionality similar to what [OP_CAT][topic op_cat]
+  enables but avoids enabling recursive [covenants][topic covenants].
+  `OP_PAIRCOMMIT` is part of the [LNHANCE][news383 lnhance] soft fork
+  proposal alongside [OP_CHECKTEMPLATEVERIFY][topic
+  op_checktemplateverify] ([BIP119][]),
+  [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] ([BIP348][]), and
+  OP_INTERNALKEY ([BIP349][]). See [Newsletter #330][news330 paircommit]
+  for the initial proposal.
+
+- [BIPs #2106][] updates [BIP352][] ([silent payments][topic silent
+  payments]) to introduce a per-group recipient limit of `K_max` = 2323,
+  mitigating worst-case scanning time from adversarial transactions (see
+  [Newsletter #392][news392 kmax]). This limit caps the number of
+  outputs that a scanner must check per recipient group within a single
+  transaction. The value was originally proposed at 1000 but increased to
+  2323 to match the maximum number of [P2TR][topic taproot] outputs that
+  can fit in a standard-sized (100 kvB) transaction and to avoid
+  fingerprinting silent payment transactions.
+
+- [BIPs #2068][] publishes [BIP128][], which specifies a standard JSON
+  format for storing timelock-recovery plans. A recovery plan consists of
+  two pre-signed transactions for recovering funds if the owner loses
+  access to their wallet: an alert transaction that consolidates the
+  wallet's UTXOs to a single address, and a recovery transaction that
+  moves those funds to backup wallets after a relative [timelock][topic
+  timelocks] of 2–388 days. If the alert transaction is broadcast
+  prematurely, the owner can simply spend from the alert address to
+  invalidate the recovery.
+
+- [BOLTs #1301][] updates the specification to recommend a higher
+  `dust_limit_satoshis` for [anchor][topic anchor outputs] channels.
+  With `option_anchors`, pre-signed HTLC transactions have zero fees,
+  so their cost is no longer factored into the dust calculation. This
+  means HTLC outputs that pass the dust check may still be
+  [uneconomical][topic uneconomical outputs] to claim on-chain, since
+  spending them requires a second-stage transaction whose fee can exceed
+  the output's value. The spec now recommends that nodes set a dust
+  limit that accounts for the cost of these second-stage transactions,
+  and that nodes accept values above Bitcoin Core's standard dust
+  thresholds from their peers.
 
 {% include snippets/recap-ad.md when="2026-03-10 17:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="33616,33504,34616,3256,3258,3255,3250,4402,10604,10153,9147,10485,1699,2106,2068,1301" %}
+
 [vpack del]: https://delvingbitcoin.org/t/stateless-vtxo-verification-decoupling-custody-from-implementation-specific-stacks/2267
 [vpack gh]: https://github.com/jgmcalpine/libvpack-rs
 [vpack tool]: https://www.vtxopack.org/
@@ -178,3 +281,12 @@ FIXME:Gustavojfe
 [eh ml agility2]: https://groups.google.com/g/bitcoindev/c/O6l3GUvyO7A/m/OXmZ-PnVAwAJ
 [jl ml agility]: https://groups.google.com/g/bitcoindev/c/O6l3GUvyO7A/m/5GnsttP2AwAJ
 [c ml agility]: https://groups.google.com/g/bitcoindev/c/O6l3GUvyO7A/m/5y9GkeXVBAAJ
+[news375 truc]: /en/newsletters/2025/10/10/#bitcoin-core-33504
+[news386 sfl]: /en/newsletters/2026/01/02/#bitcoin-core-32545
+[news394 eclair3250]: /en/newsletters/2026/02/27/#eclair-3250
+[news169 lnd-sql]: /en/newsletters/2021/10/06/#lnd-5366
+[news237 lnd-sql]: /en/newsletters/2023/02/08/#lnd-7252
+[news330 paircommit]: /en/newsletters/2024/11/22/#update-to-lnhance-proposal
+[news383 lnhance]: /en/newsletters/2025/12/05/#lnhance-soft-fork
+[news392 kmax]: /en/newsletters/2026/02/13/#proposal-to-limit-the-number-of-per-group-silent-payment-recipients
+[Bitcoin Core 28.4rc1]: https://bitcoincore.org/bin/bitcoin-core-28.4/test.rc1/

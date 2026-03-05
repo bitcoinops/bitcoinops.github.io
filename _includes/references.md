@@ -132,6 +132,7 @@ for details --> {% endcomment %}
 [BIP119]: https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki
 [BIP125]: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki
 [BIP127]: https://github.com/bitcoin/bips/blob/master/bip-0127.mediawiki
+[BIP128]: https://github.com/bitcoin/bips/blob/master/bip-0128.mediawiki
 [BIP129]: https://github.com/bitcoin/bips/blob/master/bip-0129.mediawiki
 [BIP130]: https://github.com/bitcoin/bips/blob/master/bip-0130.mediawiki
 [BIP133]: https://github.com/bitcoin/bips/blob/master/bip-0133.mediawiki
@@ -209,6 +210,7 @@ for details --> {% endcomment %}
 [BIP431]: https://github.com/bitcoin/bips/blob/master/bip-0431.mediawiki
 [BIP434]: https://github.com/bitcoin/bips/blob/master/bip-0434.md
 [BIP433]: https://github.com/bitcoin/bips/blob/master/bip-0433.mediawiki
+[BIP442]: https://github.com/bitcoin/bips/blob/master/bip-0442.md
 [BIP443]: https://github.com/bitcoin/bips/blob/master/bip-0443.mediawiki
 
 {% for i in (1..10) %}
