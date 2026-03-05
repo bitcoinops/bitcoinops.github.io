@@ -103,6 +103,9 @@ optech_mentions:
   - title: "Bithoven: A formal, imperative language for Bitcoin Script similar to Miniscript"
     url: /en/newsletters/2026/02/06/#bithoven-a-formally-verified-imperative-language-for-bitcoin-script
 
+  - title: "Extensions to tooling, including miniscript, for TEMPLATEHASH-CSFS-IK support"
+    url: /en/newsletters/2026/03/06/#extensions-to-standard-tooling-for-templatehash-csfs-ik-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

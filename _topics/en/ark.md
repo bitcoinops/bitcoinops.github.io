@@ -61,6 +61,9 @@ optech_mentions:
   - title: "Hash-lock based Ark protocol, hArk, software released"
     url: /en/newsletters/2026/02/20/#second-releases-hark-based-ark-software
 
+  - title: "V-PACK, a standard for stateless VTXO verification"
+    url: /en/newsletters/2026/03/06/#a-standard-for-stateless-vtxo-verification
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools

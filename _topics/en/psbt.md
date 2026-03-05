@@ -240,6 +240,9 @@ optech_mentions:
   - title: "PSBTv2 integration testing, merklized PSBTv2, and silent payments PSBTv2"
     url: /en/newsletters/2025/01/24/#psbtv2-integration-testing
 
+  - title: "Extensions to tooling, including PSBTs, for TEMPLATEHASH-CSFS-IK support"
+    url: /en/newsletters/2026/03/06/#extensions-to-standard-tooling-for-templatehash-csfs-ik-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
