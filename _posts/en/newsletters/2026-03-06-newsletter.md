@@ -39,6 +39,24 @@ changes to popular Bitcoin infrastructure software.
   The V-PACK implementation, [libvpack-rs][vpack gh], is open-source, and a
   [live tool][vpack tool] to visualize VTXOs is available for testing.
 
+- **Draft BIP for expanded `nVersion` nonce space for miners**: Matt Corallo
+  [posted][mailing list nversion] to the Bitcoin-Dev mailing list a draft
+  BIP to increase the number of bits available in `nVersion`'s nonce space for
+  miners from 16 to 24. This will enable more possible block candidates for
+  header-only mining without relying on rolling `nTime` more often than once per
+  second and would supersede [BIP320][BIP 320].
+
+  The motivation for this change is that BIP320 previously defined 16 bits
+  of `nVersion` as additional nonce space, but it turns out
+  that mining devices have started using 7 bits from `nTime` for extra nonce space.
+  Given the limited utility of the additional `nVersion` bits for use in soft fork signaling,
+  this BIP draft suggests to instead use some of those signaling bits to expand the `nVersion` extra nonce space.
+
+  The rationale behind this is that providing additional nonce space for the
+  ASICs to roll without needing fresh work from the controller may simplify ASIC
+  design and it is preferable to do so in `nVersion` instead of `nTime`, which
+  can distort block timestamps.
+
 ## Changing consensus
 
 _A monthly section summarizing proposals and discussion about changing
@@ -290,3 +308,5 @@ repo], and [BINANAs][binana repo]._
 [news383 lnhance]: /en/newsletters/2025/12/05/#lnhance-soft-fork
 [news392 kmax]: /en/newsletters/2026/02/13/#proposal-to-limit-the-number-of-per-group-silent-payment-recipients
 [Bitcoin Core 28.4rc1]: https://bitcoincore.org/bin/bitcoin-core-28.4/test.rc1/
+[mailing list nversion]: https://groups.google.com/g/bitcoindev/c/fCfbi8hy-AE
+[BIP 320]: https://github.com/bitcoin/bips/blob/master/bip-0320.mediawiki
