@@ -11,7 +11,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--a-constant-time-parallelized-utxo-database-->常数时间并行化 UTXO 数据库**：Toby Sharp 在 Delving Bitcoin 上[发布][hornet del]了关于他最新项目的文章——一个名为 Hornet UTXO(1) 的自定义高度并行化 UTXO 数据库，支持常数时间查询。这是 [Hornet Node][hornet website] 的一个新增组件，Hornet Node 是一个实验性的比特币客户端，专注于提供比特币共识规则的最小可执行规范。该新数据库旨在通过无锁、高并发的架构来改善初始区块下载（IBD）。
+- **<!--a-constant-time-parallelized-utxo-database-->****常数时间并行化 UTXO 数据库**：Toby Sharp 在 Delving Bitcoin 上[发布][hornet del]了关于他最新项目的文章——一个名为 Hornet UTXO(1) 的自定义高度并行化 UTXO 数据库，支持常数时间查询。这是 [Hornet Node][hornet website] 的一个新增组件，Hornet Node 是一个实验性的比特币客户端，专注于提供比特币共识规则的最小可执行规范。该新数据库旨在通过无锁、高并发的架构来改善初始区块下载（IBD）。
 
   代码使用现代 C++23 编写，无外部依赖。为优化速度，选用了排序数组和 [LSM 树][lsmt wiki]，而非[哈希映射][hash map wiki]。追加、查询和获取等操作可并发执行，区块在到达时以乱序处理，数据依赖关系会自动解决。代码尚未公开。
 
@@ -19,9 +19,9 @@ lang: zh
 
   在随后的讨论中，其他开发者建议 Sharp 将其性能与 [libbitcoin][libbitcoin gh] 进行对比，后者以提供非常高效的 IBD 而闻名。
 
-- **<!--bithoven-a-formally-verified-imperative-language-for-bitcoin-script-->Bithoven：一种经过形式化验证的比特币脚本命令式语言**：Hyunhum Cho 在 Delving Bitcoin 上[撰文][delving hc bithoven]介绍了他在 Bithoven 上的[工作][arxiv hc bithoven]，这是 [miniscript][topic miniscript] 的一种替代方案。与 miniscript 使用谓词语言来表达锁定脚本的可能满足条件不同，Bithoven 使用更熟悉的 C 系语法，以 `if`、`else`、`verify` 和 `return` 作为其主要操作。编译器负责所有的栈管理，并提供与 miniscript 编译器类似的保证——所有路径都要求至少一个签名等。与 miniscript 类似，它可以针对不同的脚本版本生成代码。
+- **<!--bithoven-a-formally-verified-imperative-language-for-bitcoin-script-->****Bithoven：一种经过形式化验证的比特币脚本命令式语言**：Hyunhum Cho 在 Delving Bitcoin 上[撰文][delving hc bithoven]介绍了他在 Bithoven 上的[工作][arxiv hc bithoven]，这是 [miniscript][topic miniscript] 的一种替代方案。与 miniscript 使用谓词语言来表达锁定脚本的可能满足条件不同，Bithoven 使用更熟悉的 C 系语法，以 `if`、`else`、`verify` 和 `return` 作为其主要操作。编译器负责所有的栈管理，并提供与 miniscript 编译器类似的保证——所有路径都要求至少一个签名等。与 miniscript 类似，它可以针对不同的脚本版本生成代码。
 
-- **<!--discussion-of-dust-attack-mitigations-->粉尘攻击缓解方案的讨论**：Bubb1es 在 Delving Bitcoin 上[发帖][dust attacks del]讨论了一种在链上钱包中处理[粉尘攻击][topic output linking]的方法。粉尘攻击是指攻击者向所有他想了解的匿名地址发送粉尘 UTXO，希望其中一些会与不相关的 UTXO 一起被无意中花费。
+- **<!--discussion-of-dust-attack-mitigations-->****粉尘攻击缓解方案的讨论**：Bubb1es 在 Delving Bitcoin 上[发帖][dust attacks del]讨论了一种在链上钱包中处理[粉尘攻击][topic output linking]的方法。粉尘攻击是指攻击者向所有他想了解的匿名地址发送粉尘 UTXO，希望其中一些会与不相关的 UTXO 一起被无意中花费。
 
   目前_大多数_钱包处理此问题的方式是通过在钱包客户端中将粉尘 UTXO 标记为粉尘，从而阻止其被花费。但如果用户未来从密钥恢复钱包，新的钱包客户端可能不知道这些 UTXO 已被标记，从而"解锁"粉尘 UTXO 使其可被花费。Bubb1es 建议另一种方式来防止粉尘 UTXO 攻击：创建一笔使用粉尘 UTXO 全部金额的交易，并带有 `OP_RETURN` 输出使其可证明不可花费。这在 Bitcoin Core v30.0 引入更低的最低中继手续费率（0.1 sats/vbyte）后成为可能。
 
@@ -43,25 +43,25 @@ lang: zh
 
 _本月栏目总结了关于比特币共识规则变更的提案和讨论。_
 
-- **<!--shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups-->SHRINCS：324 字节有状态后量子签名，支持静态备份**：继[面向比特币后量子未来的基于哈希的签名][news386 jn hash]之后，Jonas Nick 在 Delving Bitcoin 上[详细介绍][delving jn shrings]了一种具有潜在有用特性的基于哈希的[抗量子][topic quantum resistance]签名算法，可用于比特币。
+- **<!--shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups-->****SHRINCS：324 字节有状态后量子签名，支持静态备份**：继[面向比特币后量子未来的基于哈希的签名][news386 jn hash]之后，Jonas Nick 在 Delving Bitcoin 上[详细介绍][delving jn shrings]了一种具有潜在有用特性的基于哈希的[抗量子][topic quantum resistance]签名算法，可用于比特币。
 
   论文中讨论了有状态和无状态基于哈希的签名之间的权衡，其中有状态签名可以显著降低成本，但代价是复杂的备份方案。SHRINCS 提供了一种折衷方案：当密钥+状态的完整性可以确定时使用有状态签名，但如果对状态的有效性存在疑虑，则以更高成本回退到无状态签名。
 
   SHRINCS 选择的两种方案是用于无状态签名的 SPHINCS+ 和用于有状态签名的 Unbalanced XMSS。发布在输出脚本中的公钥是有状态和无状态密钥的哈希。由于这些基于哈希的签名方案在验证过程中会返回签名公钥，签名者需要同时提供未使用的公钥及其签名，验证者检查返回的公钥与提供的公钥的哈希是否与锁定脚本中指定的密钥一致。选择 Unbalanced XMSS 方案是为了优化只需要较少签名的密钥的使用场景。
 
-- **<!--addressing-remaining-points-on-bip54-->解决 BIP54 的剩余讨论点**：Antoine Poinsot [撰文][ml ap gcc]讨论了[共识清理软分叉][topic consensus cleanup]的剩余讨论点。
+- **<!--addressing-remaining-points-on-bip54-->****解决 BIP54 的剩余讨论点**：Antoine Poinsot [撰文][ml ap gcc]讨论了[共识清理软分叉][topic consensus cleanup]的剩余讨论点。
 
   首先讨论的是强制将 coinbase 交易的 `nLockTime` 设置为区块高度减一的提案。讨论的核心在于这一变更是否会不必要地限制矿机使用该字段作为额外 nonce 的能力，因为未来的矿工可能会耗尽现有 version、timestamp 和 nonce 字段中的 nonce 空间。多位发帖者指出 `nLockTime` 字段已经具有共识强制的语义，因此不是额外 nonce 翻转的首选候选字段。提出了多种替代 nonce 空间的方案，包括额外的 version 位和单独的 `OP_RETURN` 输出。
 
   另一个讨论的变更是使 64 个非见证字节的交易在共识中无效。此类交易也受到默认中继策略的限制，但共识变更将保护 SPV（或其他类似的）轻客户端免受某些攻击。多位发帖者质疑这一变更是否值得，因为存在其他缓解措施，而且它会为某些类型的交易（例如某些协议的 [CPFP][topic cpfp]）引入一个可能令人意外的有效性间隙。
 
-- **<!--falcon-post-quantum-signature-scheme-proposal-->Falcon 后量子签名方案提案**：Giulio Golinelli 在邮件列表上[发帖][ml gg falcon]提出了一个在比特币中启用 Falcon 签名验证的分叉方案。Falcon 算法基于格密码学，正在寻求作为后量子签名算法的 FIPS 标准化。它在链上所需空间约为 ECDSA 签名的 20 倍，但验证速度约为两倍。这使其成为迄今为止为比特币提出的最小的后量子签名方案之一。
+- **<!--falcon-post-quantum-signature-scheme-proposal-->****Falcon 后量子签名方案提案**：Giulio Golinelli 在邮件列表上[发帖][ml gg falcon]提出了一个在比特币中启用 Falcon 签名验证的分叉方案。Falcon 算法基于格密码学，正在寻求作为后量子签名算法的 FIPS 标准化。它在链上所需空间约为 ECDSA 签名的 20 倍，但验证速度约为两倍。这使其成为迄今为止为比特币提出的最小的后量子签名方案之一。
 
   Conduition 指出了 Falcon 算法的一些限制，特别是在常数时间内实现签名的困难。其他人讨论了比特币的后量子签名算法是否应该在设计时考虑未来的 STARK/SNARK 友好性。
 
   注意：虽然邮件列表帖子将其描述为软分叉，但它似乎是在 P2WPKH 验证路径中以 flag-day 析取方式实现的，这将是一个硬分叉。要为该算法开发软分叉客户端还需要进一步的工作。
 
-- **<!--slh-dsa-verification-can-compete-with-ecc-->SLH-DSA 验证可与 ECC 竞争**：Conduition [撰文][ml cond slh-dsa]介绍了他将后量子 SLH-DSA 验证实现与 libsecp256k1 进行基准测试的持续工作。他的结果表明，SLH-DSA 验证在常见情况下可以与 [schnorr][topic schnorr signatures] 验证竞争。
+- **<!--slh-dsa-verification-can-compete-with-ecc-->****SLH-DSA 验证可与 ECC 竞争**：Conduition [撰文][ml cond slh-dsa]介绍了他将后量子 SLH-DSA 验证实现与 libsecp256k1 进行基准测试的持续工作。他的结果表明，SLH-DSA 验证在常见情况下可以与 [schnorr][topic schnorr signatures] 验证竞争。
 
 ## 版本发布和候选版本
 
