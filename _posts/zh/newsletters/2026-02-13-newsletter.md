@@ -70,8 +70,8 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 {% include linkers/issues.md v=2 issues="32420,8772,10507,4387,4355,4354,4303,784,2092,2004,2017,99" %}
 [kmax mailing list]: https://groups.google.com/g/bitcoindev/c/tgcAQVqvzVg
 [blisk del]: https://delvingbitcoin.org/t/blisk-boolean-circuit-logic-integrated-into-the-single-key/2217
-[ecdh wiki]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman
-[nizk wiki]: https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof
+[ecdh wiki]: https://zh.wikipedia.org/wiki/%E6%A9%A2%E5%9C%93%E6%9B%B2%E7%B7%9A%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E9%87%91%E9%91%B0%E4%BA%A4%E6%8F%9B
+[nizk wiki]: https://zh.wikipedia.org/wiki/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E
 [blisk gh]: https://github.com/zero-art-rs/blisk
 [Bitcoin Core 29.3]: https://bitcoincore.org/bin/bitcoin-core-29.3/
 [bcc29.3 rn]: https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-29.3.md
@@ -85,5 +85,5 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [news193 legacy]: /zh/newsletters/2022/03/30/#c-lightning-5058
 [news220 bolts]: /zh/newsletters/2022/10/05/#bolts-962
 [news364 delegation]: /zh/newsletters/2025/07/25/#chain-code-withholding-for-multisig-scripts
-[news379 rdts]: /en/newsletters/2025/11/07/#temporary-soft-fork-to-reduce-data
+[news379 rdts]: /zh/newsletters/2025/11/07/#temporary-soft-fork-to-reduce-data
 [BIP89]: https://github.com/bitcoin/bips/blob/master/bip-0089.mediawiki
