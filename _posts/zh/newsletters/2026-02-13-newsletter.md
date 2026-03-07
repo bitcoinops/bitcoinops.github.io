@@ -85,5 +85,5 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [news193 legacy]: /zh/newsletters/2022/03/30/#c-lightning-5058
 [news220 bolts]: /zh/newsletters/2022/10/05/#bolts-962
 [news364 delegation]: /zh/newsletters/2025/07/25/#chain-code-withholding-for-multisig-scripts
-[news379 rdts]: /zh/newsletters/2025/11/07/#temporary-soft-fork-to-reduce-data
+[news379 rdts]: /en/newsletters/2025/11/07/#temporary-soft-fork-to-reduce-data
 [BIP89]: https://github.com/bitcoin/bips/blob/master/bip-0089.mediawiki
