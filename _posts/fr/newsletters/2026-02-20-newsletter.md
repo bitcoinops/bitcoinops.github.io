@@ -188,17 +188,17 @@ _Changements notables récents dans [Bitcoin Core][bitcoin core repo], [Core Lig
 [amboss blog]: https://amboss.tech/blog/railsx-first-lightning-native-dex
 [nunchuk post]: https://x.com/nunchuk_io/status/2021588854969414119
 [electrum release notes]: https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES
-[news298 sigbash]: /en/newsletters/2024/04/17/#key-agent-sigbash-launches
+[news298 sigbash]: /fr/newsletters/2024/04/17/#lancement-du-service-de-signature-sigbash
 [sigbash post]: https://x.com/arbedout/status/2020885323778044259
 [BTCPay Server 2.3.5]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.3.5
 [LND 0.20.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.1-beta
-[news342 weight]: /en/newsletters/2025/02/21/#bitcoin-core-31384
-[news310 mining]: /en/newsletters/2024/07/05/#bitcoin-core-30200
-[news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
-[news261 gossip]: /en/newsletters/2023/07/26/#updated-channel-announcements
-[news326 gossip]: /en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
-[news344 p2qrh]: /en/newsletters/2025/03/07/#update-on-bip360-pay-to-quantum-resistant-hash-p2qrh
-[news385 bip360]: /en/newsletters/2025/12/19/#quantum
+[news342 weight]: /fr/newsletters/2025/02/21/#bitcoin-core-31384
+[news310 mining]: /fr/newsletters/2024/07/05/#bitcoin-core-30200
+[news188 phantom]: /fr/newsletters/2022/02/23/#ldk-1199
+[news261 gossip]: /fr/newsletters/2023/07/26/#annonces-de-canaux-mises-a-jour
+[news326 gossip]: /fr/newsletters/2024/10/25/#mises-a-jour-de-la-proposition-d-annonces-de-canal-version-1-75
+[news344 p2qrh]: /fr/newsletters/2025/03/07/#mise-a-jour-sur-bip360-pay-to-quantum-resistant-hash-p2qrh
+[news385 bip360]: /fr/newsletters/2025/12/19/#quantum
 [murch dashboard]: https://dune.com/murchandamus/opreturn-counts
 [murch twitter]: https://x.com/murchandamus/status/2022930707820269670
 [orangesurf report]: https://research.mempool.space/opreturn-report/
