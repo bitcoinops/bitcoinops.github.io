@@ -194,7 +194,7 @@ _Changements notables récents dans [Bitcoin Core][bitcoin core repo], [Core Lig
 [LND 0.20.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.1-beta
 [news342 weight]: /fr/newsletters/2025/02/21/#bitcoin-core-31384
 [news310 mining]: /fr/newsletters/2024/07/05/#bitcoin-core-30200
-[news188 phantom]: /fr/newsletters/2022/02/23/#ldk-1199
+[news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
 [news261 gossip]: /fr/newsletters/2023/07/26/#annonces-de-canaux-mises-a-jour
 [news326 gossip]: /fr/newsletters/2024/10/25/#mises-a-jour-de-la-proposition-d-annonces-de-canal-version-1-75
 [news344 p2qrh]: /fr/newsletters/2025/03/07/#mise-a-jour-sur-bip360-pay-to-quantum-resistant-hash-p2qrh
