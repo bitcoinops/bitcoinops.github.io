@@ -216,7 +216,7 @@ Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],[LND][ln
 [news375 truc]: /fr/newsletters/2025/10/10/#bitcoin-core-33504
 [news386 sfl]: /fr/newsletters/2026/01/02/#bitcoin-core-32545
 [news394 eclair3250]: /fr/newsletters/2026/02/27/#eclair-3250
-[news169 lnd-sql]: /fr/newsletters/2021/10/06/#lnd-5366
+[news169 lnd-sql]: /en/newsletters/2021/10/06/#lnd-5366
 [news237 lnd-sql]: /fr/newsletters/2023/02/08/#lnd-7252
 [news330 paircommit]: /fr/newsletters/2024/11/22/#mise-a-jour-de-la-proposition-lnhance
 [news383 lnhance]: /fr/newsletters/2025/12/05/#soft-fork-lnhance
