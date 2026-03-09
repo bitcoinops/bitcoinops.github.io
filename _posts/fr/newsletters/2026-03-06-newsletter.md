@@ -7,7 +7,8 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-La newsletter de cette semaine décrit une norme pour la vérification des VTXOs à travers différentes implémentations d'Ark et renvoie à un projet de BIP pour l'expansion de l'espace nonce utilisable par les mineurs dans le champ `nVersion` de l'en-tête de bloc.
+La newsletter de cette semaine décrit une norme pour la vérification des VTXOs à travers différentes implémentations d'Ark et renvoie à un projet de BIP pour
+l'expansion de l'espace nonce utilisable par les mineurs dans le champ `nVersion` de l'en-tête de bloc.
 Sont également incluses nos sections régulières résumant les récentes discussions sur
 la modification des règles de consensus de Bitcoin, annonçant des mises à jour et des versions candidates,
 et décrivant les changements notables dans les projets d'infrastructure Bitcoin populaires.
