@@ -146,7 +146,7 @@ _Changements notables récents dans [Bitcoin Core][bitcoin core repo], [Core Lig
 {% include linkers/issues.md v=2 issues="34568,34184,24539,34329,28792,32138,34512,8490,3250,4373,2081" %}
 
 [annot ml]: https://groups.google.com/g/bitcoindev/c/ozjr1lF3Rkc
-[news387 sp]: /en/newsletters/2026/01/09/#draft-bip-for-silent-payment-descriptors
+[news387 sp]: /fr/newsletters/2026/01/09/#projet-de-bip-pour-descripteurs-de-paiement-silencieux
 [annot draft]: https://github.com/craigraw/bips/blob/descriptorannotations/bip-descriptorannotations.mediawiki
 [news310 mining]: /fr/newsletters/2024/07/05/#bitcoin-core-30200
 [news388 mining]: /fr/newsletters/2026/01/16/#bitcoin-core-33819
