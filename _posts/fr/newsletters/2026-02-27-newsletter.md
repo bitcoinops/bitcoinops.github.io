@@ -44,6 +44,9 @@ cherchent des réponses à leurs questions---ou quand nous avons quelques moment
 les utilisateurs curieux ou confus. Dans cette rubrique mensuelle, nous mettons en lumière certaines
 des questions et réponses les mieux votées postées depuis notre dernière mise à jour.*
 
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
+{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
+
 - [Le transport P2P v2 de Bitcoin BIP324 est-il distinguable du trafic aléatoire ?]({{bse}}130500)
   Pieter Wuille souligne que le protocole de transport chiffré [v2][topic v2 p2p transport] de [BIP324][] prend en charge
   la formation de modèles de trafic, bien qu'aucun logiciel connu n'implémente cette fonctionnalité, concluant que
@@ -145,7 +148,7 @@ _Changements notables récents dans [Bitcoin Core][bitcoin core repo], [Core Lig
 [annot ml]: https://groups.google.com/g/bitcoindev/c/ozjr1lF3Rkc
 [news387 sp]: /en/newsletters/2026/01/09/#draft-bip-for-silent-payment-descriptors
 [annot draft]: https://github.com/craigraw/bips/blob/descriptorannotations/bip-descriptorannotations.mediawiki
-[news310 mining]: /frnewsletters/2024/07/05/#bitcoin-core-30200
+[news310 mining]: /fr/newsletters/2024/07/05/#bitcoin-core-30200
 [news388 mining]: /fr/newsletters/2026/01/16/#bitcoin-core-33819
 [news388 private]: /fr/newsletters/2026/01/16/#bitcoin-core-29415
 [capn proto]: https://capnproto.org/
