@@ -1,6 +1,6 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Optech #395'
-permalink : /fr/newsletters/2026/03/06/
+permalink: /fr/newsletters/2026/03/06/
 name: 2026-03-06-newsletter-fr
 slug: 2026-03-06-newsletter-fr
 type: newsletter
