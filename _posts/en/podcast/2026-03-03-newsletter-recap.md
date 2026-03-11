@@ -9,7 +9,7 @@ layout: podcast-episode
 lang: en
 ---
 Mark “Murch” Erhardt and Mike Schmidt are joined by Craig Raw and Fabian Jahr to
-discuss [Newsletter #393]({{page.reference}}).
+discuss [Newsletter #394]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
