@@ -90,7 +90,7 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [news45 wallettool]: /zh/newsletters/2019/05/07/#new-wallet-tool
 [news130 wallettool]: /zh/newsletters/2021/01/06/#bitcoin-core-19137-adds-dump-and-createfromdump-commands-to-wallet-tool
 [news387 unnamed]: /zh/newsletters/2026/01/09/#bitcoin-core-wallet-migration-bug
-[news372 mtp]: /en/newsletters/2025/09/19/#bdk-1582
+[news372 mtp]: /zh/newsletters/2025/09/19/#bdk-1582
 [news87 negotiation]: /zh/newsletters/2020/03/04/#improving-feature-negotiation-between-full-nodes-at-startup
 [news386 feature]: /zh/newsletters/2026/01/02/#peer-feature-negotiation
 [news366 template]: /zh/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
