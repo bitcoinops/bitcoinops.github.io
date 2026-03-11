@@ -37,7 +37,7 @@ changes to popular Bitcoin infrastructure software.
   implementation's codebase.
 
   The V-PACK implementation, [libvpack-rs][vpack gh], is open-source, and a
-  [live tool][vpack tool] to visualize VTXOs is available for testing.
+  [live tool][vpack tool] to visualize VTXOs is available for testing. {% assign timestamp="1:31" %}
 
 - **Draft BIP for expanded `nVersion` nonce space for miners**: Matt Corallo
   [posted][mailing list nversion] to the Bitcoin-Dev mailing list a draft
@@ -55,7 +55,7 @@ changes to popular Bitcoin infrastructure software.
   The rationale behind this is that providing additional nonce space for the
   ASICs to roll without needing fresh work from the controller may simplify ASIC
   design and it is preferable to do so in `nVersion` instead of `nTime`, which
-  can distort block timestamps.
+  can distort block timestamps. {% assign timestamp="1:23:45" %}
 
 ## Changing consensus
 
@@ -80,7 +80,7 @@ Bitcoin's consensus rules._
 
   The modifications required for PSBTs are simpler, primarily a per-output
   field to map `OP_TEMPLATEHASH` commitments to their full transactions for
-  verification by signers.
+  verification by signers. {% assign timestamp="13:52" %}
 
 - **Hourglass V2 update:** Mike Casey [posted][mk ml hourglass] an update to
   the Bitcoin-Dev mailing list for the [Hourglass protocol][bip draft hourglass2] to
@@ -95,7 +95,7 @@ Bitcoin's consensus rules._
   argued that possession of secret keys to unlock some Bitcoin is the only way
   the protocol can identify ownership and that even in the face of a break in
   the underlying cryptographic security, the protocol should not apply
-  additional restrictions on coin ownership or movement.
+  additional restrictions on coin ownership or movement. {% assign timestamp="25:40" %}
 
 - **Algorithm agility for Bitcoin:** Ethan Heilman [wrote][eh ml agility] on
   the Bitcoin-Dev mailing list regarding the potential need for [RFC7696 Cryptographic
@@ -121,7 +121,7 @@ Bitcoin's consensus rules._
   cryptographic break and only the fallback must be a merkle leaf. Heilman
   suggested that cold storage users would prefer P2MR and hot wallets could
   readily switch to a new output type as needed, making the keyspend with
-  script backup signature algorithm irrelevant for both major types of users.
+  script backup signature algorithm irrelevant for both major types of users. {% assign timestamp="51:15" %}
 
 - **The limitations of cryptographic agility in Bitcoin:**
   Pieter Wuille [wrote][pw ml agility] to the Bitcoin-Dev mailing list about the
@@ -157,7 +157,7 @@ Bitcoin's consensus rules._
 
   The discussion continues with some clarifications but no firm conclusions as
   to how Bitcoin can practically migrate from one cryptosystem to another
-  whether in response to a quantum adversary or any other reason.
+  whether in response to a quantum adversary or any other reason. {% assign timestamp="1:05:15" %}
 
 ## Releases and release candidates
 
@@ -167,7 +167,7 @@ release candidates._
 
 - [Bitcoin Core 28.4rc1][] is a release candidate for a maintenance release of a
   previous major release series. It primarily contains wallet migration fixes
-  and removal of an unreliable DNS seed.
+  and removal of an unreliable DNS seed. {% assign timestamp="1:36:53" %}
 
 ## Notable code and documentation changes
 
@@ -187,7 +187,7 @@ repo], and [BINANAs][binana repo]._
   back individually rather than as a package. This follows the same
   pattern as [Bitcoin Core #33504][] (see [Newsletter #375][news375
   truc]), which skipped [TRUC][topic v3 transaction relay] topology
-  checks during reorgs for the same reason.
+  checks during reorgs for the same reason. {% assign timestamp="1:38:30" %}
 
 - [Bitcoin Core #34616][] introduces a more accurate cost model for the
   spanning-forest [cluster linearization][topic cluster mempool] (SFL)
@@ -197,26 +197,26 @@ repo], and [BINANAs][binana repo]._
   of internal operation, resulting in a poor correlation between the
   reported cost and the actual CPU time spent. The new model tracks many
   internal operations with weights calibrated from benchmarks across
-  diverse hardware, providing a much closer approximation of real time.
+  diverse hardware, providing a much closer approximation of real time. {% assign timestamp="1:42:23" %}
 
 - [Eclair #3256][] adds a new `ChannelFundingCreated` event emitted when
   a funding or [splice][topic splicing] transaction has been signed and
   is ready to be published. This is particularly useful for single-funded
   channels where the non-funding side has no opportunity to validate
   inputs beforehand and may want to force-close before the channel
-  confirms.
+  confirms. {% assign timestamp="1:46:20" %}
 
 - [Eclair #3258][] adds a `ValidateInteractiveTxPlugin` trait that
   enables plugins to inspect and reject the remote peer's inputs and
   outputs in interactive transactions before signing. This applies to
   [dual-funded][topic dual funding] channel opens and [splices][topic
-  splicing], where both sides participate in transaction construction.
+  splicing], where both sides participate in transaction construction. {% assign timestamp="1:48:34" %}
 
 - [Eclair #3255][] fixes the automatic channel type selection introduced
   in [Eclair #3250][] (see [Newsletter #394][news394 eclair3250]) so
   that it no longer includes `scid_alias` for public channels. Per the
   BOLTs, `scid_alias` is only allowed for [private channels][topic
-  unannounced channels].
+  unannounced channels]. {% assign timestamp="1:50:14" %}
 
 - [LDK #4402][] fixes the HTLC claim timer to use the actual HTLC CLTV
   expiry rather than the value from the onion payload. For
@@ -225,7 +225,7 @@ repo], and [BINANAs][binana repo]._
   higher than what the onion specifies, because the outer trampoline
   route added its own [CLTV delta][topic cltv expiry delta]. Using the
   onion value caused the node to set a tighter claim deadline than
-  necessary.
+  necessary. {% assign timestamp="1:52:27" %}
 
 - [LND #10604][] adds a SQL backend (SQLite or Postgres) for LND's
   outgoing payments database, as an alternative to the existing bbolt
@@ -235,7 +235,7 @@ repo], and [BINANAs][binana repo]._
   schema and core backend, and [#10485][LND #10485] which added an
   experimental KV-to-SQL data migration. LND added support for
   PostgreSQL in [Newsletter #169][news169 lnd-sql] and SQLite in
-  [Newsletter #237][news237 lnd-sql].
+  [Newsletter #237][news237 lnd-sql]. {% assign timestamp="1:53:56" %}
 
 - [BIPs #1699][] publishes [BIP442][] specifying `OP_PAIRCOMMIT`, a new
   [tapscript][topic tapscript] opcode that pops two elements off the
@@ -247,7 +247,7 @@ repo], and [BINANAs][binana repo]._
   op_checktemplateverify] ([BIP119][]),
   [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] ([BIP348][]), and
   OP_INTERNALKEY ([BIP349][]). See [Newsletter #330][news330 paircommit]
-  for the initial proposal.
+  for the initial proposal. {% assign timestamp="1:55:34" %}
 
 - [BIPs #2106][] updates [BIP352][] ([silent payments][topic silent
   payments]) to introduce a per-group recipient limit of `K_max` = 2323,
@@ -257,7 +257,7 @@ repo], and [BINANAs][binana repo]._
   transaction. The value was originally proposed at 1000 but increased to
   2323 to match the maximum number of [P2TR][topic taproot] outputs that
   can fit in a standard-sized (100 kvB) transaction and to avoid
-  fingerprinting silent payment transactions.
+  fingerprinting silent payment transactions. {% assign timestamp="1:57:30" %}
 
 - [BIPs #2068][] publishes [BIP128][], which specifies a standard JSON
   format for storing timelock-recovery plans. A recovery plan consists of
@@ -267,7 +267,7 @@ repo], and [BINANAs][binana repo]._
   moves those funds to backup wallets after a relative [timelock][topic
   timelocks] of 2–388 days. If the alert transaction is broadcast
   prematurely, the owner can simply spend from the alert address to
-  invalidate the recovery.
+  invalidate the recovery. {% assign timestamp="2:01:28" %}
 
 - [BOLTs #1301][] updates the specification to recommend a higher
   `dust_limit_satoshis` for [anchor][topic anchor outputs] channels.
@@ -279,7 +279,7 @@ repo], and [BINANAs][binana repo]._
   the output's value. The spec now recommends that nodes set a dust
   limit that accounts for the cost of these second-stage transactions,
   and that nodes accept values above Bitcoin Core's standard dust
-  thresholds from their peers.
+  thresholds from their peers. {% assign timestamp="2:04:54" %}
 
 {% include snippets/recap-ad.md when="2026-03-10 17:30" %}
 {% include references.md %}
