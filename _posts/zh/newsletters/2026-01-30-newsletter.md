@@ -82,11 +82,11 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [bolts fork]: https://github.com/instagibbs/bolts/tree/eltoo_trucd
 [cln fork]: https://github.com/instagibbs/lightning/tree/2026-01-eltoo_rebased
 [news365 op proposal]: /zh/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
-[news388 private broadcast]: /en/newsletters/2026/01/16/#bitcoin-core-29415
+[news388 private broadcast]: /zh/newsletters/2026/01/16/#bitcoin-core-29415
 [bolt th]: https://github.com/instagibbs/bolts/tree/2026-01-eltoo_th
 [cln th]: https://github.com/instagibbs/lightning/commits/2026-01-eltoo_templatehash
 [Libsecp256k1 0.7.1]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.7.1
-[news380 kernel]: /en/newsletters/2025/11/14/#bitcoin-core-30595
+[news380 kernel]: /zh/newsletters/2025/11/14/#bitcoin-core-30595
 [news45 wallettool]: /zh/newsletters/2019/05/07/#new-wallet-tool
 [news130 wallettool]: /zh/newsletters/2021/01/06/#bitcoin-core-19137-adds-dump-and-createfromdump-commands-to-wallet-tool
 [news387 unnamed]: /zh/newsletters/2026/01/09/#bitcoin-core-wallet-migration-bug
@@ -95,4 +95,4 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [news386 feature]: /zh/newsletters/2026/01/02/#peer-feature-negotiation
 [news366 template]: /zh/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
 [news185 txhash]: /zh/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
-[news272 txhash]: /en/newsletters/2023/10/11/#specification-for-op-txhash-proposed
+[news272 txhash]: /zh/newsletters/2023/10/11/#op-txhash
