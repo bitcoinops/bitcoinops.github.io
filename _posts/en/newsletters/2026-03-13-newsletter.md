@@ -44,6 +44,23 @@ infrastructure software.
   properties mean developers can construct protocols that reason about
   transaction data on-chain today, using only existing script primitives.
 
+- **Continued discussion of Gossip Observer traffic analysis tool**: In November, Jonathan
+  Harvey-Buschel [announced][news 381 gossip observer] Gossip Observer, a tool
+  for collecting LN gossip traffic and computing metrics to evaluate replacing
+  message flooding with a set-reconciliation-based protocol.
+
+  Since then, Rusty Russell and others [joined the discussion][gossip observer
+  delving] on how best to transmit sketches. Russell suggested encoding
+  improvements for efficiency, including skipping the `GETDATA` round-trip by
+  using the block number suffix as the set key for a message, avoiding an
+  unnecessary request/response exchange when the receiver can already infer the
+  relevant block context.
+
+  In response, Harvey-Buschel [updated][gossip observer github] his version of
+  Gossip Observer that is running and continuing to collect data. He
+  [posted][gossip observer update] analysis of average daily messages, a model of
+  detected communities, and propagation delays.
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -70,3 +87,7 @@ FIXME:Gustavojfe
 [bino del]: https://delvingbitcoin.org/t/binohash-transaction-introspection-without-softforks/2288
 [bino paper]: https://robinlinus.com/binohash.pdf
 [lamport wiki]: https://en.wikipedia.org/wiki/Lamport_signature
+[gossip observer delving]: https://delvingbitcoin.org/t/gossip-observer-new-project-to-monitor-the-lightning-p2p-network/2105
+[gossip observer update]: https://delvingbitcoin.org/t/gossip-observer-new-project-to-monitor-the-lightning-p2p-network/2105/23
+[gossip observer github]: https://github.com/jharveyb/gossip_observer
+[news 381 gossip observer]: /en/newsletters/2025/11/21/#ln-gossip-traffic-analysis-tool-announced
