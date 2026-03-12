@@ -207,6 +207,7 @@ for details --> {% endcomment %}
 [BIP388]: https://github.com/bitcoin/bips/blob/master/bip-0388.mediawiki
 [BIP389]: https://github.com/bitcoin/bips/blob/master/bip-0389.mediawiki
 [BIP390]: https://github.com/bitcoin/bips/blob/master/bip-0390.mediawiki
+[BIP392]: https://github.com/bitcoin/bips/blob/master/bip-0392.mediawiki
 [BIP431]: https://github.com/bitcoin/bips/blob/master/bip-0431.mediawiki
 [BIP434]: https://github.com/bitcoin/bips/blob/master/bip-0434.md
 [BIP433]: https://github.com/bitcoin/bips/blob/master/bip-0433.mediawiki
