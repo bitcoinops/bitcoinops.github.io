@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter describes a collision-resistant hash function using
 Bitcoin Script and summarizes continued discussion of Lightning Network traffic
-analysis. Also included are our regular sections announcements of new releases
+analysis. Also included are our regular sections with announcements of new releases
 and release candidates and descriptions of notable changes to popular Bitcoin
 infrastructure software.
 

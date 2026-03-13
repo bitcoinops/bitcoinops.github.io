@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter summarizes discussion of improving worst-case silent
 payment scanning performance and describes an idea for enabling many spending
-conditions in a single key.  Also included are our regular sections announcements
+conditions in a single key.  Also included are our regular sections with announcements
 of new releases and release candidates and descriptions of notable changes to
 popular Bitcoin infrastructure software.
 
