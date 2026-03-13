@@ -95,6 +95,9 @@ optech_mentions:
   - title: "BIPs #2106 updates BIP352 to limit per-group recipients to 2323"
     url: /en/newsletters/2026/03/06/#bips-2106
 
+  - title: "BIPs #2047 publishes BIP392, defining a descriptor format for silent payments"
+    url: /en/newsletters/2026/03/13/#bips-2047
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
