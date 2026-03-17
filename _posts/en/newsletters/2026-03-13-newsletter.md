@@ -42,7 +42,7 @@ infrastructure software.
   approximately 84 bits of collision resistance; and it is [Lamport-signable][lamport wiki],
   allowing it to be committed to inside a BitVM program. Together these
   properties mean developers can construct protocols that reason about
-  transaction data on-chain today, using only existing script primitives.
+  transaction data on-chain today, using only existing script primitives. {% assign timestamp="0:30" %}
 
 - **Continued discussion of Gossip Observer traffic analysis tool**: In November, Jonathan
   Harvey-Buschel [announced][news 381 gossip observer] Gossip Observer, a tool
@@ -59,7 +59,7 @@ infrastructure software.
   In response, Harvey-Buschel [updated][gossip observer github] his version of
   Gossip Observer that is running and continuing to collect data. He
   [posted][gossip observer update] analysis of average daily messages, a model of
-  detected communities, and propagation delays.
+  detected communities, and propagation delays. {% assign timestamp="8:58" %}
 
 ## Releases and release candidates
 
@@ -74,7 +74,7 @@ release candidates._
   throughout the API to distinguish mainnet from testnet. The release
   also adds Caravan (see [Newsletter #77][news77 caravan]) wallet format
   import/export and a migration utility for SQLite databases from before
-  version 1.0.
+  version 1.0. {% assign timestamp="28:04" %}
 
 ## Notable code and documentation changes
 
@@ -93,12 +93,12 @@ repo], and [BINANAs][binana repo]._
   Internally, the `getaddrmaninfo` RPC (see [Newsletter #275][news275
   addrmaninfo]) is used instead of the `getnodeaddresses` RPC (see
   [Newsletter #14][news14 rpc]). The returned count now matches the
-  unfiltered set used to select outbound peers.
+  unfiltered set used to select outbound peers. {% assign timestamp="30:39" %}
 
 - [Bitcoin Core #34692][] increases the default `dbcache` from 450 MiB
   to 1 GiB on 64-bit systems with at least 4 GiB of RAM, falling back
   to 450 MiB otherwise. This change only affects `bitcoind`; the kernel
-  library retains 450 MiB as its default.
+  library retains 450 MiB as its default. {% assign timestamp="32:22" %}
 
 - [LDK #4304][] refactors [HTLC][topic htlc] forwarding to support
   multiple incoming and outgoing HTLCs per forward, laying the
@@ -109,7 +109,7 @@ repo], and [BINANAs][binana repo]._
   across multiple outgoing HTLCs. A new `HTLCSource::TrampolineForward`
   variant tracks all HTLCs for a trampoline forward. Claims and failures
   are handled properly, and channel monitor recovery is extended to
-  reconstruct the trampoline forward state upon restart.
+  reconstruct the trampoline forward state upon restart. {% assign timestamp="33:21" %}
 
 - [LDK #4416][] enables an acceptor to contribute funds when both peers
   attempt to initiate a [splice][topic splicing] simultaneously,
@@ -121,7 +121,7 @@ repo], and [BINANAs][binana repo]._
   had prepared to be the initiator, their fee is adjusted from the
   initiator rate (which covers common transaction fields) to the
   acceptor rate. The `splice_channel` API now also accepts a
-  `max_feerate` parameter to target a maximum feerate.
+  `max_feerate` parameter to target a maximum feerate. {% assign timestamp="35:41" %}
 
 - [LND #10089][] adds [onion message][topic onion messages] forwarding
   support, building on the message types and RPCs from [Newsletter
@@ -129,7 +129,7 @@ repo], and [BINANAs][binana repo]._
   to decode the onion's inner payload, and a per-peer actor that handles
   decryption and forwarding decisions. The feature can be disabled using
   the `--protocol.no-onion-messages` flag. This is part of LND's
-  roadmap toward [BOLT12 offers][topic offers] support.
+  roadmap toward [BOLT12 offers][topic offers] support. {% assign timestamp="38:01" %}
 
 - [Libsecp256k1 #1777][] adds a new
   `secp256k1_context_set_sha256_compression()` API, which allows
@@ -137,7 +137,7 @@ repo], and [BINANAs][binana repo]._
   runtime. This API allows environments such as Bitcoin Core, which
   already detect CPU features at startup, to route libsecp256k1's
   hashing through hardware-accelerated SHA256 without recompiling the
-  library.
+  library. {% assign timestamp="39:46" %}
 
 - [BIPs #2047][] publishes [BIP392][], which defines a
   [descriptor][topic descriptors] format for [silent payment][topic
@@ -151,13 +151,13 @@ repo], and [BINANAs][binana repo]._
   key as first expression and a separate spend key expression, either
   public or private with support for [MuSig2][topic musig] aggregate
   keys via [BIP390][]. See [Newsletter #387][news387 sp] for the
-  initial mailing list discussion.
+  initial mailing list discussion. {% assign timestamp="42:39" %}
 
 - [BOLTs #1316][] clarifies that `offer_amount` in [BOLT12 offers][topic
   offers] must be greater than zero when present. Writers must set the
   `offer_amount` to a value greater than zero, and readers must not
   respond to offers where the amount is zero. Test vectors for invalid
-  zero-amount offers are added.
+  zero-amount offers are added. {% assign timestamp="46:42" %}
 
 - [BOLTs #1312][] adds a test vector for [BOLT12][topic offers] offers
   with invalid [bech32][topic bech32] padding, clarifying that such
@@ -165,7 +165,7 @@ repo], and [BINANAs][binana repo]._
   discovered through differential fuzzing across Lightning
   implementations, which revealed that CLN and LDK accepted offers with
   invalid padding while Eclair and Lightning-KMP correctly rejected
-  them. See [Newsletter #390][news390 bech32] for LDK's fix.
+  them. See [Newsletter #390][news390 bech32] for LDK's fix. {% assign timestamp="47:26" %}
 
 {% include snippets/recap-ad.md when="2026-03-17 16:30" %}
 {% include references.md %}
