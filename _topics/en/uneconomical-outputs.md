@@ -75,6 +75,9 @@ optech_mentions:
   - title: "Proposal for removing uneconomical outputs from the stored UTXO set"
     url: /en/newsletters/2025/06/06/#removing-outputs-from-the-utxo-set-based-on-value-and-time
 
+  - title: "BOLTs #1301 recommends a higher dust_limit_satoshis for anchor channels"
+    url: /en/newsletters/2026/03/06/#bolts-1301
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)

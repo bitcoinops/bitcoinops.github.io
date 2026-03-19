@@ -107,6 +107,12 @@ optech_mentions:
   - title: "LDK #3979 adds splice-out support, completing LDK's splicing support"
     url: /en/newsletters/2025/08/29/#ldk-3979
 
+  - title: "Core Lightning #8817 fixes splice interoperability issues with Eclair"
+    url: /en/newsletters/2026/03/20/#core-lightning-8817
+
+  - title: "LDK #4427 adds RBF of negotiated splice funding transactions that are not yet locked"
+    url: /en/newsletters/2026/03/20/#ldk-4427
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol
