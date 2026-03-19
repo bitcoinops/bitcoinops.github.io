@@ -138,6 +138,9 @@ optech_mentions:
   - title: "LDK #3649 adds support for paying Lightning Service Providers (LSPs) with BOLT12 offers"
     url: /en/newsletters/2025/03/28/#ldk-3649
 
+  - title: "BOLTs #1316 clarifies that offer_amount in BOLT12 offers must be greater than zero when present"
+    url: /en/newsletters/2026/03/13/#bolts-1316
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

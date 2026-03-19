@@ -207,6 +207,9 @@ optech_mentions:
   - title: "LND introduces an RBF cooperative close flow that allows either peer to bump the fee rate"
     url: /en/newsletters/2025/03/28/#lnd-8453
 
+  - title: "LDK #4427 adds RBF of negotiated splice funding transactions that are not yet locked"
+    url: /en/newsletters/2026/03/20/#ldk-4427
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
