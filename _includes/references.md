@@ -213,6 +213,8 @@ for details --> {% endcomment %}
 [BIP433]: https://github.com/bitcoin/bips/blob/master/bip-0433.mediawiki
 [BIP442]: https://github.com/bitcoin/bips/blob/master/bip-0442.md
 [BIP443]: https://github.com/bitcoin/bips/blob/master/bip-0443.mediawiki
+[BIP446]: https://github.com/bitcoin/bips/blob/master/bip-0446.md
+[BIP448]: https://github.com/bitcoin/bips/blob/master/bip-0448.md
 
 {% for i in (1..10) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}
