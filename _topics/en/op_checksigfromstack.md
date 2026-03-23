@@ -91,6 +91,9 @@ optech_mentions:
   - title: "Discussion of open letter about CTV and CSFS"
     url: /en/newsletters/2025/07/04/#open-letter-about-ctv-and-csfs
 
+  - title: "Why doesn't CSFS bind signatures to specific inputs?"
+    url: /en/newsletters/2026/03/27/#does-op-checksigfromstack-intentionally-allow-cross-utxo-signature-reuse
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
