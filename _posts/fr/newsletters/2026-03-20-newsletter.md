@@ -129,10 +129,10 @@ _Changements notables récents dans [Bitcoin Core][bitcoin core repo], [Core Lig
 [bcc31 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/31.0-Release-Candidate-Testing-Guide
 [BTCPay Server 2.3.6]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.3.6
 [news72 dump]: /en/newsletters/2019/11/13/#bitcoin-core-16899
-[news342 sqlite] : /fr/newsletters/2025/02/21/#bitcoin-core-27432
-[news331 interop] : /fr/newsletters/2024/11/29/#core-lightning-7719
-[news355 interop] : /fr/newsletters/2025/05/23/#core-lightning-8021
-[news396 amount] : /fr/newsletters/2026/03/13/#bolts-1316
-[news396 splice] : /fr/newsletters/2026/03/13/#ldk-4416
-[news395 dust] : /fr/newsletters/2026/03/06/#bolts-1301
-[news365 op] : /fr/newsletters/2025/08/01/#proposition-de-op-templatehash-natif-a-taproot
+[news342 sqlite]: /fr/newsletters/2025/02/21/#bitcoin-core-27432
+[news331 interop]: /fr/newsletters/2024/11/29/#core-lightning-7719
+[news355 interop]: /fr/newsletters/2025/05/23/#core-lightning-8021
+[news396 amount]: /fr/newsletters/2026/03/13/#bolts-1316
+[news396 splice]: /fr/newsletters/2026/03/13/#ldk-4416
+[news395 dust]: /fr/newsletters/2026/03/06/#bolts-1301
+[news365 op]: /fr/newsletters/2025/08/01/#proposition-de-op-templatehash-natif-a-taproot
