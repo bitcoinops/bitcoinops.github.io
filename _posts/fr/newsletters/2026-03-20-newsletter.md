@@ -114,6 +114,7 @@ _Changements notables récents dans [Bitcoin Core][bitcoin core repo], [Core Lig
 {% include snippets/recap-ad.md when="2026-03-24 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="31560,31774,8817,3265,4324,4427,4484,1974,1301" %}
+
 [sources]: /en/internal/sources/
 [cake ln post]: https://blog.cakewallet.com/our-lightning-journey/
 [sparrow 2.4.0]: https://github.com/sparrowwallet/sparrow/releases/tag/2.4.0
@@ -132,7 +133,7 @@ _Changements notables récents dans [Bitcoin Core][bitcoin core repo], [Core Lig
 [news342 sqlite]: /fr/newsletters/2025/02/21/#bitcoin-core-27432
 [news331 interop]: /fr/newsletters/2024/11/29/#core-lightning-7719
 [news355 interop]: /fr/newsletters/2025/05/23/#core-lightning-8021
-[news396 amount]: /fr/newsletters/2026/03/13/#bolts-1316
-[news396 splice]: /fr/newsletters/2026/03/13/#ldk-4416
-[news395 dust]: /fr/newsletters/2026/03/06/#bolts-1301
+[news396 amount]: /en/newsletters/2026/03/13/#bolts-1316
+[news396 splice]: /en/newsletters/2026/03/13/#ldk-4416
+[news395 dust]: /en/newsletters/2026/03/06/#bolts-1301
 [news365 op]: /fr/newsletters/2025/08/01/#proposition-de-op-templatehash-natif-a-taproot
