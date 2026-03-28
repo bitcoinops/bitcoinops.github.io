@@ -26,9 +26,9 @@ _关于提议和讨论变更比特币共识规则的月度部分。_
 
 - **<!--multiple-discussions-about-restricting-data-->****关于限制数据的多个讨论**：多个对话探讨了在共识中改变各种字段限制的想法：
 
-  * *<!--limiting-scriptpubkeys-to-520-bytes-->**将 scriptPubkeys 限制为 520 字节*：PortlandHODL 在 Bitcoin-Dev 邮件列表[发布][ph 520spk post]了一项提议，寻求在共识规则中将 `scriptPubKey` 大小限制为 520 字节。与 BIP54 [共识清理][topic consensus cleanup]类似，这将限制传统脚本在边缘情况下的最大区块验证成本。它还将使得无法使用 `OP_RETURN` 创建更大的连续数据段。对该想法的反馈中有一些反对意见，认为与 BIP54（也限制最大区块验证成本）相比，这一变更对于较旧的预签名协议会有更大的没收（confiscation）范围，并且它会关闭某些潜在的[软分叉升级][topic soft fork activation]路径（尤其是围绕[量子抗性][topic quantum resistance]方面）。
+  - **<!--limiting-scriptpubkeys-to-520-bytes-->****将 scriptPubkeys 限制为 520 字节**：PortlandHODL 在 Bitcoin-Dev 邮件列表[发布][ph 520spk post]了一项提议，寻求在共识规则中将 `scriptPubKey` 大小限制为 520 字节。与 BIP54 [共识清理][topic consensus cleanup]类似，这将限制传统脚本在边缘情况下的最大区块验证成本。它还将使得无法使用 `OP_RETURN` 创建更大的连续数据段。对该想法的反馈中有一些反对意见，认为与 BIP54（也限制最大区块验证成本）相比，这一变更对于较旧的预签名协议会有更大的没收（confiscation）范围，并且它会关闭某些潜在的[软分叉升级][topic soft fork activation]路径（尤其是围绕[量子抗性][topic quantum resistance]方面）。
 
-  * *<!--temporary-soft-fork-to-reduce-data-->**临时软分叉以减少数据*：Dathon Ohm 提交了一个 BIPs [拉取请求][BIPs #2017]并在 Bitcoin-Dev 邮件列表[发布][do post]了一项提议，临时限制比特币交易用于编码数据的方式。虽然该软分叉被描述为[临时性的][topic transitory soft forks]，但邮件列表和拉取请求中的讨论对所提议变更的大量没收范围持批评态度。此外，虽然临时软分叉是可能的，但围绕临时软分叉何时到期的任何争议都会将这个到期时间变成有争议的硬分叉。Peter Todd [展示][pt post tx]了这种方法的局限性，他将提议的 BIP 文本编码成一笔比特币交易，该交易在提议的共识规则下是有效的。
+  - **<!--temporary-soft-fork-to-reduce-data-->****临时软分叉以减少数据**：Dathon Ohm 提交了一个 BIPs [拉取请求][BIPs #2017]并在 Bitcoin-Dev 邮件列表[发布][do post]了一项提议，临时限制比特币交易用于编码数据的方式。虽然该软分叉被描述为[临时性的][topic transitory soft forks]，但邮件列表和拉取请求中的讨论对所提议变更的大量没收范围持批评态度。此外，虽然临时软分叉是可能的，但围绕临时软分叉何时到期的任何争议都会将这个到期时间变成有争议的硬分叉。Peter Todd [展示][pt post tx]了这种方法的局限性，他将提议的 BIP 文本编码成一笔比特币交易，该交易在提议的共识规则下是有效的。
 
 - **<!--post-quantum-signature-aggregation-->****后量子签名聚合**：Tadge Dryja 在 Bitcoin-Dev 邮件列表[发布][td post civ]了一项关于 `OP_CHECKINPUTVERIFY`（`OP_CIV`）操作码的提议，该操作码使锁定脚本能够承诺在同一交易中花费的特定 UTXO。这使得一组相关的 UTXO 可以通过单个授权签名进行花费，效果类似于[跨输入签名聚合][topic cisa]。这种方法比单独的 ECDSA 或 [BIP340][] 签名更昂贵，但在使用数千字节大小的后量子签名时可以节省大量交易 vbytes。`OP_CIV` 还可以用于 [BitVM][topic acc] 等协议中的通用同辈间输入检查。其他提议（如 `OP_CHECKCONTRACTVERIFY`）可以通过承诺同辈间 `scriptPubKeys` 来实现类似的签名共享方案，但具有不同（可能更差）的权衡。
 
