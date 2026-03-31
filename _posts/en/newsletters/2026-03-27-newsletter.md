@@ -31,17 +31,20 @@ answers posted since our last update.*
   Pieter Wuille distinguishes encryption for purposes concealing data from
   unauthorized parties (which Bitcoin's ECDSA cannot be used for) from the
   digital signatures Bitcoin uses for verification and authentication.
+  {% assign timestamp="28:44" %}
 
 - [When and why did Bitcoin Script shift to a commit–reveal structure?]({{bse}}130580)
   User bca-0353f40e explains the evolution from Bitcoin's original approach of
   users paying directly to public keys toward P2PKH and then to P2SH, [segwit][topic
   segwit] and [taproot][topic taproot] approaches, where spending conditions are
   committed to in the output and only revealed when spent.
+  {% assign timestamp="30:26" %}
 
 - [Does P2TR-MS (Taproot M-of-N multisig) leak public keys?]({{bse}}130574)
   Murch confirms that a single-leaf taproot scriptpath multisig exposes all
   eligible public keys on spend since OP_CHECKSIG and OP_CHECKSIGADD both
   require that the public key corresponding to the signature is present.
+  {% assign timestamp="31:50" %}
 
 - [Does OP_CHECKSIGFROMSTACK intentionally allow cross-UTXO signature reuse?]({{bse}}130598)
   User bca-0353f40e explains that [OP_CHECKSIGFROMSTACK][topic
@@ -49,6 +52,7 @@ answers posted since our last update.*
   specific inputs which allows CSFS to be combined with other [convenant][topic
   covenants] opcodes to enable re-bindable signatures, the mechanism
   underlying [LN-Symmetry][topic eltoo].
+  {% assign timestamp="33:24" %}
 
 ## Releases and release candidates
 
@@ -59,10 +63,11 @@ release candidates._
 - [Bitcoin Core 28.4][] is a maintenance release for a previous major release
   series of the predominant full node implementation. It primarily contains
   wallet migration fixes and removal of an unreliable DNS seed. See the [release
-  notes][bcc 28.4 rn] for details.
+  notes][bcc 28.4 rn] for details. {% assign timestamp="35:05" %}
 
 - [Core Lightning 26.04rc1][] is a release candidate for the next major version
   of this popular LN node which includes many splicing updates and bug fixes.
+  {% assign timestamp="36:19" %}
 
 ## Notable code and documentation changes
 
@@ -81,7 +86,7 @@ repo], and [BINANAs][binana repo]._
   block height and hash for background validation, median time, chainwork, and
   verification progress. Previously, `getblockchaininfo`'s response would simply
   indicate that verification and IBD were complete with no information on the
-  background validation.
+  background validation. {% assign timestamp="37:51" %}
 
 - [Bitcoin Core #33414][] enables Tor [proof of work defenses][tor pow] for
   automatically created onion services when supported by the connected Tor
@@ -89,7 +94,7 @@ repo], and [BINANAs][binana repo]._
   `listenonion` setting is on (default), it will automatically create a hidden
   service. This doesn't apply to manually created onion services, but it's
   suggested that users add `HiddenServicePoWDefensesEnabled 1` to enable proof
-  of work defenses.
+  of work defenses. {% assign timestamp="39:49" %}
 
 - [Bitcoin Core #34846][] adds the functions `btck_transaction_get_locktime` and
   `btck_transaction_input_get_sequence` to the `libbitcoinkernel` C API (see
@@ -98,7 +103,7 @@ repo], and [BINANAs][binana repo]._
   checking [BIP54][] ([consensus cleanup][topic consensus cleanup]) rules such
   as coinbase `nLockTime` constraints without manually deserializing the
   transaction (other BIP54 rules, such as sigops limits, still require separate
-  handling).
+  handling). {% assign timestamp="41:38" %}
 
 - [Core Lightning #8450][] extends CLN's [splice][topic splicing] scripting
   engine to handle cross-channel splices, multi-channel splices (more than
@@ -106,6 +111,7 @@ repo], and [BINANAs][binana repo]._
   dependency in fee estimation: adding wallet inputs increases transaction
   weight and therefore the required fee, which may in turn require additional
   inputs. This infrastructure underlies the new `splicein` and `spliceout` RPCs.
+  {% assign timestamp="13:39" %}
 
 - [Core Lightning #8856][] and [#8857][core lightning #8857] add `splicein` and
   `spliceout` RPC commands for adding funds from the internal wallet into a
@@ -113,6 +119,7 @@ repo], and [BINANAs][binana repo]._
   Bitcoin address, or another channel (effectively a cross-splice). The new
   commands avoid operators having to construct [splicing][topic splicing]
   transactions manually with the experimental `dev-splice` RPC.
+  {% assign timestamp="22:08" %}
 
 - [Eclair #3247][] adds an optional peer-scoring system that tracks per-peer
   forwarding revenue and payment volume over time. When enabled, it periodically
@@ -120,25 +127,27 @@ repo], and [BINANAs][binana repo]._
   top-earning peers, auto-close unproductive channels to reclaim liquidity, and
   auto-adjust relay fees based on volume, all within configurable bounds.
   Operators can start with visibility only before opting into automation.
+  {% assign timestamp="44:21" %}
 
 - [LDK #4472][] fixes a potential funds-loss scenario during channel funding and
   [splicing][topic splicing] where `tx_signatures` could be sent before the
   counterparty's commitment signature was durably persisted. If the transaction
   confirms and the node then crashes, it would lose the ability to enforce its
   channel state. The fix defers releasing `tx_signatures` until the
-  corresponding monitor update completes.
+  corresponding monitor update completes. {% assign timestamp="25:00" %}
 
 - [LND #10602][] adds a `DeleteAttempts` RPC to the experimental `switchrpc`
   subsystem (see [Newsletter #386][news386 sendonion]) to allow external
   controllers to explicitly delete completed (succeeded or failed, not pending)
   [HTLC][topic htlc] attempt records from LND's attempt store.
+  {% assign timestamp="47:25" %}
 
 - [LND #10481][] adds a `bitcoind` miner backend to LND's integration test
   framework. Previously, `lntest` assumed a `btcd`-based miner even when using
   `bitcoind` as the chain backend. This change allows tests to exercise behavior
   that depends on Bitcoin Core's mempool and mining policy, including [v3
   transaction relay][topic v3 transaction relay] and [package relay][topic
-  package relay].
+  package relay]. {% assign timestamp="49:38" %}
 
 - [BOLTs #1160][] merges the [splicing][topic splicing] protocol into the
   Lightning specification, replacing the draft in [BOLTs #863][] with updated
@@ -150,7 +159,7 @@ repo], and [BINANAs][binana repo]._
   interactive construction of the splice transaction, continuing to operate the
   channel while a splice is unconfirmed, [RBF][topic rbf] of pending splices,
   reconnect behavior, `splice_locked` after sufficient depth, and updated
-  [channel announcements][topic channel announcements].
+  [channel announcements][topic channel announcements]. {% assign timestamp="0:51" %}
 
 {% include snippets/recap-ad.md when="2026-03-31 16:30" %}
 {% include references.md %}
