@@ -16,7 +16,43 @@ popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Wallet fingerprinting risks for payjoin privacy**: Armin Sabouri
+  [posted][topic payjoin fingerprinting] to Delving Bitcoin about how differences in
+  payjoin implementations make it possible to fingerprint [payjoin][topic payjoin] transactions
+  and can damage payjoin's privacy.
+
+  Sabouri states that payjoin transactions should appear indistinguishable from
+  standard single-party transactions. However, there can be artifacts of collaborative transactions:
+
+  - Intra-transaction
+
+    - Partition inputs and outputs by owner within a single transaction.
+
+    - Differences in input encoding.
+
+    - Inputs length in bytes.
+
+  - Inter-transaction
+
+    - Backward: Each input was created by a prior transaction that carries its own fingerprint.
+
+    - Forward: Each output may be spent in a future transaction, revealing fingerprints.
+
+  He then reviewed three payjoin implementations: Samourai, the PDK demo,
+  and Cake Wallet (sending to Bull Bitcoin Mobile). In each of these examples, he finds
+  a few discrepancies which make it possible to fingerprint these
+  implementations. This includes but is not limited to:
+
+  - Differences in encoded input signatures.
+
+  - SIGHASH_ALL byte being included in one input but not the other.
+
+  - Output value assignment.
+
+  Sabouri concludes that while some of these
+  wallet fingerprints are trivial to eliminate, others are intrinsic to a
+  particular wallet's design choice. Wallet developers should be aware of these
+  potential privacy leaks when implementing payjoin into their wallets.
 
 ## Changing consensus
 
@@ -48,4 +84,6 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-04-07 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+
+[topic payjoin]: /en/topics/payjoin/
+[topic payjoin fingerprinting]: https://delvingbitcoin.org/t/how-wallet-fingerprints-damage-payjoin-privacy/2354
