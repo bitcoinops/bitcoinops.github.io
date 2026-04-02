@@ -54,6 +54,23 @@ popular Bitcoin infrastructure software.
   particular wallet's design choice. Wallet developers should be aware of these
   potential privacy leaks when implementing payjoin into their wallets.
 
+- **Draft BIP for a wallet backup metadata format**: Pythcoiner
+  [posted][wallet bip ml] to the Bitcoin-Dev mailing list about a new
+  proposal for a common structure for wallet backup metadata.
+  The draft BIP, available at [BIPs #2130][], specifies a standard
+  way to store various type of metadata, such as account descriptors,
+  keys, [labels][topic wallet labels], [PSBTs][topic psbt], and more, allowing compatibility between
+  different wallet implementations and a simpler wallet migration and
+  recovery processes. According to Pythcoiner, the ecosystem lacks a
+  common specification and this proposal aims to fill this gap.
+
+  From a technical perspective, the proposed format is a UTF-8 encoded
+  text file containing a single valid JSON object representing the
+  backup structure. The BIP lists all the different fields that could be
+  included in the JSON object, specifies that each is
+  optional, and notes that any wallet implementation should be free to ignore any
+  metadata not deemed useful.
+
 ## Changing consensus
 
 _A monthly section summarizing proposals and discussion about changing
@@ -160,3 +177,4 @@ FIXME:Gustavojfe
 [jn delving shrimps]: https://delvingbitcoin.org/t/shrimps-2-5-kb-post-quantum-signatures-across-multiple-stateful-devices/2355
 [news383 sphincs]: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
 [news391 shrincs]: /en/newsletters/2026/02/06/#shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups
+[wallet bip ml]: https://groups.google.com/g/bitcoindev/c/ylPeOnEIhO8
