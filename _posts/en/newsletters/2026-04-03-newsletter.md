@@ -150,7 +150,19 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Bitcoin Core 31.0rc2][] is a release candidate for the next major version
+  of the predominant full node implementation. A [testing guide][bcc31 testing]
+  is available.
+
+- [Core Lightning 26.04rc2][] is the latest release candidate for the next
+  major version of this popular LN node, continuing the splicing updates and
+  bug fixes from earlier candidates.
+
+- [BTCPay Server 2.3.7][] is a minor release of this self-hosted payment
+  solution that migrates the project to .NET 10, adds subscription and invoice
+  checkout improvements, and several other enhancements and bug fixes. Plugin
+  developers should follow the project's
+  [.NET 10 migration guide][btcpay net10] when updating.
 
 ## Notable code and documentation changes
 
@@ -163,10 +175,64 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #32297][] adds an `-ipcconnect` option to `bitcoin-cli` so it
+  can connect to and control a `bitcoin-node` instance via inter-process
+  communication (IPC) over a Unix socket instead of HTTP when Bitcoin Core is
+  built with `ENABLE_IPC` and the node is started with `-ipcbind` (see
+  Newsletters [#320][news320 ipc] and [#369][news369 ipc]). Even when
+  `-ipcconnect` is omitted, `bitcoin-cli` tries IPC first and falls back to
+  HTTP if IPC is unavailable. This is part of the [multiprocess separation
+  project][multiprocess].
+
+- [Bitcoin Core #34379][] fixes a bug where calling the `gethdkeys` RPC (see
+  [Newsletter #297][news297 rpc]) with `private=true` failed if the wallet
+  contained any [descriptor][topic descriptors] for which it had some but not
+  all of the private keys. Similar to the fix for `listdescriptors` (see
+  [Newsletter #389][news389 descriptor]), this PR returns the available private
+  keys. Calling `gethdkeys private=true` on a strictly watch-only wallet still
+  fails.
+
+- [Eclair #3269][] adds automatic liquidity reclamation from idle channels.
+  When the `PeerScorer` detects that a channel's total payment volume in both
+  directions falls below 5% of its capacity, it gradually lowers
+  [relay fees][topic inbound forwarding fees] toward the configured minimum.
+  If fees have been at the minimum for at least five days and volume still has
+  not picked up, Eclair closes the channel when it is redundant with that peer.
+  Channels are closed only if the node holds at least 25% of the funds and the
+  local balance exceeds the existing `localBalanceClosingThreshold` setting.
+
+- [LDK #4486][] merges the `rbf_channel` endpoint into `splice_channel` as a
+  single entry point for both new [splices][topic splicing] and fee bumping an
+  in-flight splice. When a splice is already in progress, the `FundingTemplate`
+  returned from `splice_channel` carries `PriorContribution` so users can
+  [RBF][topic rbf] the splice without new [coin selection][topic coin selection].
+  See [Newsletter #397][news397 rbf] for related splice RBF behavior.
+
+- [LDK #4428][] adds support for opening and accepting channels with zero
+  channel reserve via a new `create_channel_to_trusted_peer_0reserve` method
+  for trusted peers. Zero-reserve channels let the counterparty spend their
+  full on-chain balance in the channel. This is enabled for both channels using
+  [anchor outputs][topic anchor outputs] and zero-fee commitment channels (see
+  [Newsletter #371][news371 0fc]).
+
+- [LND #9982][], [#10650][lnd #10650], and [#10693][lnd #10693] harden
+  [MuSig2][topic musig] nonce handling on the wire for [taproot][topic taproot]
+  channels: `ChannelReestablish` gains a `LocalNonces` field so peers can
+  coordinate multiple nonces for [splicing][topic splicing]-related updates,
+  `lnwire` validates MuSig2 public nonces at TLV decode for nonce-carrying
+  messages, and `LocalNoncesData` decoding validates each nonce entry.
+
+- [LND #10063][] extends the [RBF][topic rbf] cooperative close flow to
+  [simple taproot channels][topic simple taproot channels] using [MuSig2][topic musig].
+  Wire messages carry [taproot][topic taproot]-specific nonce and
+  partial-signature fields, and the closing state machine uses MuSig2 sessions
+  with a just-in-time nonce pattern across `shutdown`, `closing_complete`, and
+  `closing_sig` (see [Newsletter #347][news347 rbf coop] for background on the
+  RBF cooperative close flow).
 
 {% include snippets/recap-ad.md when="2026-04-07 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="2130,32297,34379,3269,4486,4428,9982,10650,10693,10063" %}
 
 [topic payjoin]: /en/topics/payjoin/
 [topic payjoin fingerprinting]: https://delvingbitcoin.org/t/how-wallet-fingerprints-damage-payjoin-privacy/2354
@@ -178,3 +244,16 @@ FIXME:Gustavojfe
 [news383 sphincs]: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
 [news391 shrincs]: /en/newsletters/2026/02/06/#shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups
 [wallet bip ml]: https://groups.google.com/g/bitcoindev/c/ylPeOnEIhO8
+[news297 rpc]: /en/newsletters/2024/04/10/#bitcoin-core-29130
+[news320 ipc]: /en/newsletters/2024/09/13/#bitcoin-core-30509
+[news347 rbf coop]: /en/newsletters/2025/03/28/#lnd-8453
+[news369 ipc]: /en/newsletters/2025/08/29/#bitcoin-core-31802
+[news371 0fc]: /en/newsletters/2025/09/12/#ldk-4053
+[news389 descriptor]: /en/newsletters/2026/01/23/#bitcoin-core-32471
+[news397 rbf]: /en/newsletters/2026/03/20/#ldk-4427
+[multiprocess]: https://github.com/bitcoin/bitcoin/issues/28722
+[bitcoin core 31.0rc2]: https://bitcoincore.org/bin/bitcoin-core-31.0/test.rc2/
+[Core Lightning 26.04rc2]: https://github.com/ElementsProject/lightning/releases/tag/v26.04rc2
+[BTCPay Server 2.3.7]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.3.7
+[bcc31 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/31.0-Release-Candidate-Testing-Guide
+[btcpay net10]: https://blog.btcpayserver.org/migrating-to-net10/
