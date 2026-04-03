@@ -117,6 +117,9 @@ optech_mentions:
   - title: "BIPs #1483 merges BIP77 which proposes payjoin v2, an asynchronous serverless variant"
     url: /en/newsletters/2025/06/06/#bips-1483
 
+  - title: "Wallet fingerprinting risks for payjoin privacy"
+    url: /en/newsletters/2026/04/03/#wallet-fingerprinting-risks-for-payjoin-privacy
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
