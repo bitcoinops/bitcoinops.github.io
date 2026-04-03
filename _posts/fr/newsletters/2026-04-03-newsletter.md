@@ -183,8 +183,8 @@ BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin
 [news374 varops]: /fr/newsletters/2025/10/03/#brouillons-de-bip-pour-la-restauration-de-script
 [news374 c2]: /fr/newsletters/2025/10/03/#brouillons-de-bip-pour-la-restauration-de-script
 [jn delving shrimps]: https://delvingbitcoin.org/t/shrimps-2-5-kb-post-quantum-signatures-across-multiple-stateful-devices/2355
-[news383 sphincs]: /en/newsletters/2025/12/05/#optimisations-de-signature-post-quantique-slh-dsa-sphincs
-[news391 shrincs]: /en/newsletters/2026/02/06/#shrincs-signatures-post-quantiques-etatiques-de-324-octets-avec-sauvegardes-statiques
+[news383 sphincs]: /fr/newsletters/2025/12/05/#optimisations-de-signature-post-quantique-slh-dsa-sphincs
+[news391 shrincs]: /fr/newsletters/2026/02/06/#shrincs-signatures-post-quantiques-etatiques-de-324-octets-avec-sauvegardes-statiques
 [wallet bip ml]: https://groups.google.com/g/bitcoindev/c/ylPeOnEIhO8
 [news297 rpc]: /fr/newsletters/2024/04/10/#bitcoin-core-29130
 [news320 ipc]: /fr/newsletters/2024/09/13/#bitcoin-core-30509
