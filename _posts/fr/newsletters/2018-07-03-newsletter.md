@@ -30,7 +30,7 @@ Comme toujours, n'hésitez pas à nous contacter si vous avez des retours ou des
 Un rappel aux entreprises qui ne sont pas encore devenues membres officiels. Nous vous demandons de verser une contribution symbolique de 5
 000 $ pour aider à financer nos dépenses.
 
-[newsletter page]]: /fr/newsletters/
+[newsletter page]: /fr/newsletters/
 
 ## Premier atelier Optech !
 
