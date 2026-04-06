@@ -92,7 +92,7 @@ plusieurs fusions récentes notables dans Bitcoin Core.
 [eltoo]: https://blockstream.com/eltoo.pdf
 [unsafe sighash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016187.html
 [popular twitter thread]: https://twitter.com/orionwl/status/1014829318986436608
-[schnorr feature]: /fr/newsletter/2018/07/10/#nouvelle-en-vedette-proposition-de-bip-pour-les-signatures-schnorr
+[schnorr feature]: /fr/newsletters/2018/07/10/#nouvelle-en-vedette-proposition-de-bip-pour-les-signatures-schnorr
 [#12257]: https://github.com/bitcoin/bitcoin/pull/12257
 [#13072]: https://github.com/bitcoin/bitcoin/pull/13072
 [#13543]: https://github.com/bitcoin/bitcoin/pull/13543
