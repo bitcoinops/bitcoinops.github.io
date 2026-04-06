@@ -84,7 +84,7 @@ plusieurs fusions récentes notables dans Bitcoin Core.
 - **<!--n-->[#13096][] :** augmentation de la taille maximale des transactions qui seront relayées par défaut de 99 999 vbytes à 100 000
   vbytes.
 
-[le bulletin #3]: /fr/newsletters/2018/07/10/
+[bulletin #3]: /fr/newsletters/2018/07/10/
 [frais recommandés]: https://p2sh.info/dashboard/db/fee-estimation?orgId=1&from=now-7d&to=now&var-source=bitcoind
 [multiparty signatures]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016215.html
 [rearrange schnorr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016211.html
