@@ -28,7 +28,7 @@ Lisbonne.
   [bulletin #1][] pour plus de détails
 
 [alert released]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
-[le bulletin #1]: /fr/newsletter/2018/06/26/
+[le bulletin #1]: /en/newsletter/2018/06/26/
 
 ## Éléments du tableau de bord
 
