@@ -1,6 +1,6 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Optech #3'
-permalink: /fr/newsletters/2018/07/10/
+permalink: /fr/newsletter/2018/07/10/
 name: 2018-07-10-newsletter-fr
 slug: 2018-07-10-newsletter-fr
 type: newsletter
