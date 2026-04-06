@@ -1,6 +1,6 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Optech #3'
-permalink: /fr/newsletter/2018/07/10/
+permalink: /fr/newsletters/2018/07/10/
 name: 2018-07-10-newsletter-fr
 slug: 2018-07-10-newsletter-fr
 type: newsletter
@@ -28,7 +28,7 @@ Lisbonne.
   [bulletin #1][] pour plus de détails
 
 [alert released]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
-[bulletin #1]: /en/newsletter/2018/06/26/
+[bulletin #1]: /fr/newsletter/2018/06/26/
 
 ## Éléments du tableau de bord
 
