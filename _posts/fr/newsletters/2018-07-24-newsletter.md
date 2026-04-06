@@ -125,7 +125,7 @@ mise en œuvre d'une meilleure technologie Bitcoin, veuillez nous contacter !
 [bcc meeting 7/19]: https://bitcoincore.org/en/meetings/2018/07/19/
 [rand delay]: https://github.com/bitcoin/bitcoin/commit/22f721dbf23cf5ce9e3ded9bcfb65a3894cc0f8c#diff-118fcbaaba162ba17933c7893247df3aR718
 [p2shinfo bech32]: https://p2sh.info/dashboard/db/bech32-statistics?orgId=1
-[consolidate utxos]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
+[consolider des UTXOs]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [Bitcoin Core 0.16.2rc2]: https://bitcoincore.org/bin/bitcoin-core-0.16.2/test.rc2/
 [announce bmag]: https://bitcoinmagazine.com/articles/chaincode-devs-google-alumni-create-industry-group-help-bitcoin-scale/
 [announce cdesk]: https://www.coindesk.com/bitcoins-biggest-startups-are-backing-a-new-effort-to-keep-fees-low/
