@@ -52,7 +52,7 @@ popular Bitcoin infrastructure software.
   Sabouri concludes that while some of these
   wallet fingerprints are trivial to eliminate, others are intrinsic to a
   particular wallet's design choice. Wallet developers should be aware of these
-  potential privacy leaks when implementing payjoin into their wallets.
+  potential privacy leaks when implementing payjoin into their wallets. {% assign timestamp="44:15" %}
 
 - **Draft BIP for a wallet backup metadata format**: Pythcoiner
   [posted][wallet bip ml] to the Bitcoin-Dev mailing list about a new
@@ -69,7 +69,7 @@ popular Bitcoin infrastructure software.
   backup structure. The BIP lists all the different fields that could be
   included in the JSON object, specifies that each is
   optional, and notes that any wallet implementation should be free to ignore any
-  metadata not deemed useful.
+  metadata not deemed useful. {% assign timestamp="1:04:26" %}
 
 ## Changing consensus
 
@@ -105,7 +105,7 @@ Bitcoin's consensus rules._
   size of keys in ECDLP-dependent cryptosystems. Much smaller than hash-based
   or lattice-based cryptosystems. Verification is costly even on desktop
   machines (on the order of 1 millisecond per verification), in the same
-  ballpark as hash-based and lattice-based.
+  ballpark as hash-based and lattice-based. {% assign timestamp="24:23" %}
 
 - **Varops budget and tapscript leaf 0xc2 (aka "Script Restoration") are BIPs 440 and 441**:
   Rusty Russell [wrote][rr ml gsr bips] on the Bitcoin-Dev mailing list
@@ -117,7 +117,7 @@ Bitcoin's consensus rules._
   validation cost cannot exceed the cost of validating a block containing the
   worst case number of signature operations. [BIP441][news374 c2] describes
   the validation of a new [tapscript][topic tapscript] version which restores the opcodes
-  disabled by Satoshi in 2010.
+  disabled by Satoshi in 2010. {% assign timestamp="1:13:24" %}
 
 - **SHRIMPS: 2.5 KB post-quantum signatures across multiple stateful devices**:
   Jonas Nick [writes][jn delving shrimps] on Delving Bitcoin about a new
@@ -142,7 +142,7 @@ Bitcoin's consensus rules._
   state must be retained, but each signing device must record a few bits of
   state for each SHRIMPS key it signs with (as little as a single bit if only
   the first signature from each device-key tuple takes advantage of the small
-  signature).
+  signature). {% assign timestamp="02:02" %}
 
 ## Releases and release candidates
 
@@ -152,17 +152,17 @@ release candidates._
 
 - [Bitcoin Core 31.0rc2][] is a release candidate for the next major version
   of the predominant full node implementation. A [testing guide][bcc31 testing]
-  is available.
+  is available. {% assign timestamp="1:22:07" %}
 
 - [Core Lightning 26.04rc2][] is the latest release candidate for the next
   major version of this popular LN node, continuing the splicing updates and
-  bug fixes from earlier candidates.
+  bug fixes from earlier candidates. {% assign timestamp="1:23:32" %}
 
 - [BTCPay Server 2.3.7][] is a minor release of this self-hosted payment
   solution that migrates the project to .NET 10, adds subscription and invoice
   checkout improvements, and several other enhancements and bug fixes. Plugin
   developers should follow the project's
-  [.NET 10 migration guide][btcpay net10] when updating.
+  [.NET 10 migration guide][btcpay net10] when updating. {% assign timestamp="1:24:04" %}
 
 ## Notable code and documentation changes
 
@@ -182,7 +182,7 @@ repo], and [BINANAs][binana repo]._
   Newsletters [#320][news320 ipc] and [#369][news369 ipc]). Even when
   `-ipcconnect` is omitted, `bitcoin-cli` tries IPC first and falls back to
   HTTP if IPC is unavailable. This is part of the [multiprocess separation
-  project][multiprocess].
+  project][multiprocess]. {% assign timestamp="1:26:29" %}
 
 - [Bitcoin Core #34379][] fixes a bug where calling the `gethdkeys` RPC (see
   [Newsletter #297][news297 rpc]) with `private=true` failed if the wallet
@@ -190,7 +190,7 @@ repo], and [BINANAs][binana repo]._
   all of the private keys. Similar to the fix for `listdescriptors` (see
   [Newsletter #389][news389 descriptor]), this PR returns the available private
   keys. Calling `gethdkeys private=true` on a strictly watch-only wallet still
-  fails.
+  fails. {% assign timestamp="1:28:54" %}
 
 - [Eclair #3269][] adds automatic liquidity reclamation from idle channels.
   When the `PeerScorer` detects that a channel's total payment volume in both
@@ -199,28 +199,28 @@ repo], and [BINANAs][binana repo]._
   If fees have been at the minimum for at least five days and volume still has
   not picked up, Eclair closes the channel when it is redundant with that peer.
   Channels are closed only if the node holds at least 25% of the funds and the
-  local balance exceeds the existing `localBalanceClosingThreshold` setting.
+  local balance exceeds the existing `localBalanceClosingThreshold` setting. {% assign timestamp="1:30:37" %}
 
 - [LDK #4486][] merges the `rbf_channel` endpoint into `splice_channel` as a
   single entry point for both new [splices][topic splicing] and fee bumping an
   in-flight splice. When a splice is already in progress, the `FundingTemplate`
   returned from `splice_channel` carries `PriorContribution` so users can
   [RBF][topic rbf] the splice without new [coin selection][topic coin selection].
-  See [Newsletter #397][news397 rbf] for related splice RBF behavior.
+  See [Newsletter #397][news397 rbf] for related splice RBF behavior. {% assign timestamp="1:32:59" %}
 
 - [LDK #4428][] adds support for opening and accepting channels with zero
   channel reserve via a new `create_channel_to_trusted_peer_0reserve` method
   for trusted peers. Zero-reserve channels let the counterparty spend their
   full on-chain balance in the channel. This is enabled for both channels using
   [anchor outputs][topic anchor outputs] and zero-fee commitment channels (see
-  [Newsletter #371][news371 0fc]).
+  [Newsletter #371][news371 0fc]). {% assign timestamp="1:35:00" %}
 
 - [LND #9982][], [#10650][lnd #10650], and [#10693][lnd #10693] harden
   [MuSig2][topic musig] nonce handling on the wire for [taproot][topic taproot]
   channels: `ChannelReestablish` gains a `LocalNonces` field so peers can
   coordinate multiple nonces for [splicing][topic splicing]-related updates,
   `lnwire` validates MuSig2 public nonces at TLV decode for nonce-carrying
-  messages, and `LocalNoncesData` decoding validates each nonce entry.
+  messages, and `LocalNoncesData` decoding validates each nonce entry. {% assign timestamp="1:37:13" %}
 
 - [LND #10063][] extends the [RBF][topic rbf] cooperative close flow to
   [simple taproot channels][topic simple taproot channels] using [MuSig2][topic musig].
@@ -228,7 +228,7 @@ repo], and [BINANAs][binana repo]._
   partial-signature fields, and the closing state machine uses MuSig2 sessions
   with a just-in-time nonce pattern across `shutdown`, `closing_complete`, and
   `closing_sig` (see [Newsletter #347][news347 rbf coop] for background on the
-  RBF cooperative close flow).
+  RBF cooperative close flow). {% assign timestamp="1:39:00" %}
 
 {% include snippets/recap-ad.md when="2026-04-07 16:30" %}
 {% include references.md %}
