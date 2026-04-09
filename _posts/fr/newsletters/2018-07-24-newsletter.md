@@ -130,7 +130,7 @@ mise en œuvre d'une meilleure technologie Bitcoin, veuillez nous contacter !
 [announce bmag]: https://bitcoinmagazine.com/articles/chaincode-devs-google-alumni-create-industry-group-help-bitcoin-scale/
 [announce cdesk]: https://www.coindesk.com/bitcoins-biggest-startups-are-backing-a-new-effort-to-keep-fees-low/
 [inv]: https://bitcoin.org/en/developer-reference#inv
-[workshop announce]: /en/newsletters/2018/06/26/#first-optech-workshop
+[workshop announce]: /fr/newsletters/2018/06/26/#premier-atelier-optech
 [descripteurs de scripts de sortie]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 
 {% include references.md %}
