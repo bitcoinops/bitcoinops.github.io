@@ -130,5 +130,5 @@ d84d358562a3bcdf48856fdea24511907ff53fd9..0b597f671aa31c1c56d32a554fcdf089646fc7
 [bse 76541]: {{bse}}76541
 
 [lnd ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c]: https://github.com/lightningnetwork/lnd/commit/ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c
-[bulletin #3]: /en/newsletters/2018/07/10/#transaction-fees-remain-very-low
+[bulletin #3]: /fr/newsletters/2018/07/10/#les-frais-de-transaction-restent-tres-bas
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
