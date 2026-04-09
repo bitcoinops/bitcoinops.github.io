@@ -18,11 +18,40 @@ infrastructure projects.
 ## Bitcoin Core PR Review Club
 
 *In this monthly section, we summarize a recent [Bitcoin Core PR Review
-Club][] meeting, highlighting some of the important questions and
-answers.  Click on a question below to see a summary of the answer from
-the meeting.*
+Club][] meeting.*
 
-FIXME:stickies-v
+[Testing Bitcoin Core 31.0 Release Candidates][review club
+v31-rc-testing] was a review club meeting that did not review a
+particular PR, but rather was a group testing effort.
+
+Before each [major Bitcoin Core release][], extensive testing by the
+community is considered essential. For this reason, a volunteer writes a
+testing guide for a release candidate so that as many people as
+possible can productively test without having to independently ascertain
+what's new or changed in the release, and reinvent the various setup
+steps to test these features or changes.
+
+Testing can be difficult because when one encounters unexpected
+behavior, it's often unclear if it's due to an actual bug or if the
+tester is making a mistake. It wastes developers' time to report bugs to
+them that aren't real bugs. To mitigate these problems and promote
+testing efforts, a Review Club meeting is held for a particular release
+candidate.
+
+The [31.0 release candidate testing guide][31.0 testing] was written by
+[svanstaa][gh svanstaa] (see [Podcast #397][pod397 v31rc1]), who also hosted the review club meeting.
+
+Attendees were also encouraged to get testing ideas by reading the [31.0
+release notes][].
+
+The testing guide covers [cluster mempool][topic cluster mempool] including new
+RPCs and cluster limits (see [Newsletter #382][news382 bc33629]), private broadcast
+(see [Newsletter #388][news388 bc29415]), an updated `getblock` RPC with a new `coinbase_tx` field
+(see [Newsletter #394][news394 bc34512]), a new `txospenderindex` which tracks which
+transaction spends each output (see [Newsletter #394][news394 bc24539]), an increased default
+`-dbcache` size (see [Newsletter #396][news396 bc34692]), embedded ASMap data
+(see [Newsletter #394][news394 bc28792]), and a new REST API `blockpart` endpoint
+(see [Newsletter #386][news386 bc33657]).
 
 ## Notable code and documentation changes
 
@@ -101,3 +130,16 @@ repo], and [BINANAs][binana repo]._
 [BIP393]: https://github.com/bitcoin/bips/blob/master/bip-0393.mediawiki
 [BIP440]: https://github.com/bitcoin/bips/blob/master/bip-0440.mediawiki
 [BIP441]: https://github.com/bitcoin/bips/blob/master/bip-0441.mediawiki
+[review club v31-rc-testing]: https://bitcoincore.reviews/v31-rc-testing
+[major bitcoin core release]: https://bitcoincore.org/en/lifecycle/#versioning
+[31.0 release notes]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/31.0-Release-Notes-Draft
+[31.0 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/31.0-Release-Candidate-Testing-Guide
+[gh svanstaa]: https://github.com/svanstaa
+[pod397 v31rc1]: /en/podcast/2026/03/24/#bitcoin-core-31-0rc1-transcript
+[news382 bc33629]: /en/newsletters/2025/11/28/#bitcoin-core-33629
+[news388 bc29415]: /en/newsletters/2026/01/16/#bitcoin-core-29415
+[news394 bc34512]: /en/newsletters/2026/02/27/#bitcoin-core-34512
+[news394 bc24539]: /en/newsletters/2026/02/27/#bitcoin-core-24539
+[news396 bc34692]: /en/newsletters/2026/03/13/#bitcoin-core-34692
+[news394 bc28792]: /en/newsletters/2026/02/27/#bitcoin-core-28792
+[news386 bc33657]: /en/newsletters/2026/01/02/#bitcoin-core-33657
