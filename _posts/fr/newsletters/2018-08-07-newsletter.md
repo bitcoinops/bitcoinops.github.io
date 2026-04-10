@@ -98,7 +98,7 @@ la scalabilité, ainsi que quelques commits notables des projets Bitcoin Core, L
 {% include linkers/issues.md issues="13697,13799,1579,1543" %}
 
 [bls announce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016273.html
-[#3 schnorr]: /fr/newsletters/2018/07/10/nouvelle-en-vedette--proposition-de-bip-pour-les-signatures-schnorr
+[#3 schnorr]: /fr/newsletters/2018/07/10/#nouvelle-en-vedette--proposition-de-bip-pour-les-signatures-schnorr
 [musig]: https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html
 [signatures bls]: https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham
 [papier mimblewimble]: https://scalingbitcoin.org/papers/mimblewimble.txt
