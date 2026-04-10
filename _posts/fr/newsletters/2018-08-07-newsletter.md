@@ -98,7 +98,7 @@ la scalabilité, ainsi que quelques commits notables des projets Bitcoin Core, L
 {% include linkers/issues.md issues="13697,13799,1579,1543" %}
 
 [bls announce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016273.html
-[#3 schnorr]: /en/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
+[#3 schnorr]: /fr/newsletters/2018/07/10/nouvelle-en-vedette--proposition-de-bip-pour-les-signatures-schnorr
 [musig]: https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html
 [signatures bls]: https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham
 [papier mimblewimble]: https://scalingbitcoin.org/papers/mimblewimble.txt
@@ -107,5 +107,5 @@ la scalabilité, ainsi que quelques commits notables des projets Bitcoin Core, L
 [contract thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001383.html
 [fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
-[le bulletin #5]: /en/newsletters/2018/07/24/#first-use-of-output-script-descriptors
+[le bulletin #5]: /fr/newsletters/2018/07/24/#premiere-utilisation-des-descripteurs-de-scripts-de-sortie
 [descripteurs de scripts de sortie]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
