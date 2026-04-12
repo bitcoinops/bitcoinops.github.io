@@ -97,8 +97,8 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [topic payjoin fingerprinting]: https://delvingbitcoin.org/t/how-wallet-fingerprints-damage-payjoin-privacy/2354
 [c delving ibc hd]: https://delvingbitcoin.org/t/compact-isogeny-pqc-can-replace-hd-wallets-key-tweaking-silent-payments/2324
 [rr ml gsr bips]: https://groups.google.com/g/bitcoindev/c/T8k47suwuOM
-[news374 varops]: /zh/newsletters/2025/10/03/#first-bip
-[news374 c2]: /zh/newsletters/2025/10/03/#second-bip
+[news374 varops]: /zh/newsletters/2025/10/03/#varops-budget-for-script-runtime-constraint
+[news374 c2]: /zh/newsletters/2025/10/03/#restoration-of-disabled-script-functionality-tapscript-v2
 [jn delving shrimps]: https://delvingbitcoin.org/t/shrimps-2-5-kb-post-quantum-signatures-across-multiple-stateful-devices/2355
 [news383 sphincs]: /zh/newsletters/2025/12/05/#lh-dsa-post-quantum-signature-optimizations
 [news391 shrincs]: /zh/newsletters/2026/02/06/#shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups
