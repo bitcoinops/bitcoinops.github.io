@@ -190,7 +190,7 @@ cette avance plus souvent et une plus petite partie de leur preuve de travail es
 
 {% include references.md %}
 
-[videos]: https://tokyo2018.scalingbitcoin.org/#remote-participation
+[vidéos]: https://tokyo2018.scalingbitcoin.org/#remote-participation
 [transcriptions]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/
 [vid subsidy]: https://youtu.be/y8hJ0VTPE34?t=39
 [tx subsidy]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/playing-with-fire-adjusting-bitcoin-block-subsidy/
