@@ -159,7 +159,7 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
 [lightning network hackday]: https://lightninghackday.fulmo.org/
 [bitpay bip70 comment]: https://github.com/bitcoin/bitcoin/pull/14451#issuecomment-431496319
 [bitcoin core 0.9.1]: https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.9.1.md
-[heartbleed vulnerability]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
+[vulnérabilité Heartbleed]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
 [term block reward]: https://btcinformation.org/en/glossary/block-reward
 [origine de clé]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82#key-origin-identification
 [towns mining estimate]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/playing-with-fire-adjusting-bitcoin-block-subsidy/
