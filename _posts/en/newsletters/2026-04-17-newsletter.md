@@ -15,7 +15,40 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Discussion of using nested MuSig2 in the Lightning Network**: ZmnSCPxj [posted][kofn post del]
+  to Delving Bitcoin about the idea to create k-of-n multisignature Lightning
+  nodes by leveraging nested MuSig2 as discussed in a recent
+  [paper][nmusig2 paper].
+
+  According to ZmnSCPxj, the need for a k-of-n signature scheme in Lightning
+  derives from large holders wanting to provide their liquidity to the network
+  in exchange for fees. Those large holders may need strong guarantees on the
+  safety of their funds, which a single key may not grant. Instead, a k-of-n
+  scheme would provide the required security as long as less than k keys are
+  compromised.
+
+  As of today, the BOLTs specifications do not allow for a secure way
+  to implement a k-of-n multisig scheme, with the main obstacle being the revocation
+  key. According to the BOLTs, the revocation key is created using a
+  shachain, which, due to its characteristics, is not suitable for use with k-of-n
+  multisig schemes.
+
+  ZmnSCPxj proposes a modification to the BOLTs specifications to make it
+  optional for nodes to perform shachain validation of revocation keys from channel
+  parties by signaling a new pair of feature bits, named `no_more_shachains`, in
+  both `globalfeatures` and `localfeatures`. An odd bit would signal that the node
+  will not perform shachain validation on the counterparty, while still providing
+  shachain-valid revocation keys to keep compatibility with legacy nodes. An
+  even bit would signal that the node will neither validate nor provide
+  shachain-valid revocation keys. The former bit would be used by gateway nodes,
+  as ZmnSCPxj defines them, which would connect the rest of the network to the
+  k-of-n nodes, those featuring the even bit.
+
+  Finally, ZmnSCPxj emphasizes how this proposal would present a major trade-off,
+  namely the storage requirements for revocation keys. In fact, nodes would be
+  required to store individual revocation keys instead of the compact shachain
+  representation, effectively tripling the on-disk space needed.
+
 
 ## Changes to services and client software
 
@@ -81,3 +114,5 @@ FIXME:Gustavojfe
 [backbone ml 2]: https://groups.google.com/g/bitcoindev/c/ViIOYc76CjU/m/cFOAYKHJAgAJ
 [news349 swiftsync]: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
 [utreexod blog]: https://delvingbitcoin.org/t/new-utreexo-releases/2371
+[kofn post del]: https://delvingbitcoin.org/t/towards-a-k-of-n-lightning-network-node/2395
+[nmusig2 paper]: https://eprint.iacr.org/2026/223
