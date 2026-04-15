@@ -166,7 +166,7 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
 [square]: https://cash.app/bitcoin
 [le bulletin #5]: /fr/newsletters/2018/07/24/#premiere-utilisation-des-descripteurs-de-scripts-de-sortie
 [le bulletin #7]: /fr/newsletters/2018/08/07/#bitcoin-core-13697
-[le bulletin #9]: /en/newsletters/2018/08/21/#ameliorations-des-descripteurs-de-scripts-de-sortie
+[le bulletin #9]: /fr/newsletters/2018/08/21/#ameliorations-des-descripteurs-de-scripts-de-sortie
 [le bulletin #12]: /fr/newsletters/2018/09/11/#bitcoin-core-14096
-[le bulletin #17]: /en/newsletters/2018/10/16/#descripteurs-de-script-et-descript
+[le bulletin #17]: /fr/newsletters/2018/10/16/#descripteurs-de-script-et-descript
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
