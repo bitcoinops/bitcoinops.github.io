@@ -49,6 +49,23 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
   required to store individual revocation keys instead of the compact shachain
   representation, effectively tripling the on-disk space needed.
 
+- **Formal verification of secp256k1 modular scalar multiplication**:
+  Remix7531 [posted][topic secp formalization] to the Bitcoin-Dev mailing list about
+  formally verifying secp256k1's modular scalar multiplication. The
+  project demonstrates that formal verification of a subset of
+  bitcoin-core/secp256k1 is practical.
+
+  In the [secp256k1-scalar-fv-test codebase][secp verification codebase],
+  Remix7531 takes real C code from the library and proves it correct with
+  respect to a formal mathematical specification using Rocq and the Verified
+  Software Toolchain (VST). Formalization with Rocq can prove the absence of memory
+  errors, correctness against a specification, and termination.
+
+  He plans to port the existing scalar multiplication proof to
+  RefinedC, which would give a direct comparison of both frameworks on the
+  same verified code. Also, on the
+  verification side, the next target is Pippenger's algorithm for multi-scalar
+  multiplication, which is used for batch verification of signatures.
 
 ## Changes to services and client software
 
@@ -185,3 +202,5 @@ repo], and [BINANAs][binana repo]._
 [news337 bip375]: /en/newsletters/2025/01/17/#bips-1687
 [BIP376]: https://github.com/bitcoin/bips/blob/master/bip-0376.mediawiki
 [LUD-21]: https://github.com/lnurl/luds/blob/luds/21.md
+[topic secp formalization]: https://groups.google.com/g/bitcoindev/c/l7AdGAKd1Oo
+[secp verification codebase]: https://github.com/remix7531/secp256k1-scalar-fv-test
