@@ -102,8 +102,8 @@ wallets and services.*
 
 - **Floresta 0.9.0 released:**
   Floresta [v0.9.0][floresta v0.9.0] aligns its P2P networking with the
-  [BIP-0183][news366 utreexo bips] for UTXO proof exchange, and replaces
-  libbitcoinconsensus with libbitcoinkernel for approximately 15x faster script
+  [BIP183][news366 utreexo bips] for UTXO proof exchange, and replaces
+  libbitcoinconsensus with Bitcoin Kernel for approximately 15x faster script
   validation, among other changes.
 
 ## Releases and release candidates
