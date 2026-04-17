@@ -62,6 +62,9 @@ optech_mentions:
   - title: "Eclair #3103 adds support for simple taproot channels"
     url: /en/newsletters/2025/08/22/#eclair-3103
 
+  - title: "LND #9985 adds end-to-end support for production simple taproot channels"
+    url: /en/newsletters/2026/04/17/#lnd-9985
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
