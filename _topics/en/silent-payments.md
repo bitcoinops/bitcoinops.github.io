@@ -98,6 +98,9 @@ optech_mentions:
   - title: "BIPs #2047 publishes BIP392, defining a descriptor format for silent payments"
     url: /en/newsletters/2026/03/13/#bips-2047
 
+  - title: "BIPs #2089 publishes BIP376, defining new PSBTv2 fields for BIP352 tweak data"
+    url: /en/newsletters/2026/04/17/#bips-2089
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
