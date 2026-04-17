@@ -97,7 +97,7 @@ wallets and services.*
   Utreexod [v0.5][utreexod blog] introduces IBD using [SwiftSync][news349
   swiftsync] which uses cryptographic aggregation to eliminate the need for
   downloading and verifying accumulator inclusion proofs during IBD, and
-  eliminates the extra data downloaded during IBD from 1.4 TB to ~200 GB, with
+  eliminates the extra data downloaded by Compact State Nodes during IBD from 1.4 TB to ~200 GB, with
   further reductions possible through proof caching.
 
 - **Floresta 0.9.0 released:**
