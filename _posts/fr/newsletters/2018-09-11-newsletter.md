@@ -71,7 +71,7 @@ version 0.17---vous devrez probablement attendre la version 0.18 dans environ si
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
 [workshop]: /en/workshops
-[documentation for output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+[documentation pour les descripteurs de scripts de sortie]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 [news10 news]: /fr/newsletters/2018/08/28/#pr-ouverte-pour-le-support-initial-de-bip151
 [decker w3c]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001404.html
 [schnelli bip151]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016355.html
