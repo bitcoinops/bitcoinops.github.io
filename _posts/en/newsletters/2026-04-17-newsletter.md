@@ -95,9 +95,16 @@ wallets and services.*
 
 - **Utreexod 0.5 released:**
   Utreexod [v0.5][utreexod blog] introduces IBD using [SwiftSync][news349
-  swiftsync], reducing extra data downloaded from 1.4TB to 200GB. The release
-  uses Floresta 0.9, a minimal [utreexo][topic utreexo] node implementation with
-  an integrated Electrum server that uses assumeutreexo for fast setup.
+  swiftsync] which uses cryptographic aggregation to eliminate the need for
+  downloading and verifying accumulator inclusion proofs during IBD, and
+  eliminates the extra data downloaded during IBD from 1.4 TB to ~200 GB, with
+  further reductions possible through proof caching.
+
+- **Floresta 0.9.0 released:**
+  Floresta [v0.9.0][floresta v0.9.0] aligns its P2P networking with the
+  [BIP-0183][news366 utreexo bips] for UTXO proof exchange, and replaces
+  libbitcoinconsensus with libbitcoinkernel for approximately 15x faster script
+  validation, among other changes.
 
 ## Releases and release candidates
 
@@ -189,6 +196,8 @@ repo], and [BINANAs][binana repo]._
 [backbone ml 2]: https://groups.google.com/g/bitcoindev/c/ViIOYc76CjU/m/cFOAYKHJAgAJ
 [news349 swiftsync]: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
 [utreexod blog]: https://delvingbitcoin.org/t/new-utreexo-releases/2371
+[floresta v0.9.0]: https://www.getfloresta.org/blog/release-v0.9.0
+[news366 utreexo bips]: /en/newsletters/2025/08/08/#draft-bips-proposed-for-utreexo
 [kofn post del]: https://delvingbitcoin.org/t/towards-a-k-of-n-lightning-network-node/2395
 [nmusig2 paper]: https://eprint.iacr.org/2026/223
 [bitcoin core 31.0rc4]: https://bitcoincore.org/bin/bitcoin-core-31.0/test.rc4/
