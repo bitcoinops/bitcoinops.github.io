@@ -38,8 +38,7 @@ them that aren't real bugs. To mitigate these problems and promote
 testing efforts, a Review Club meeting is held for a particular release
 candidate.
 
-The [31.0 release candidate testing guide][31.0 testing] was written by
-[svanstaa][gh svanstaa] (see [Podcast #397][pod397 v31rc1]), who also hosted the review club meeting.
+The [31.0 release candidate testing guide][31.0 testing] was written by [svanstaa][gh svanstaa] (see [Podcast #397][pod397 v31rc1]), who also hosted the review club meeting.
 
 Attendees were also encouraged to get testing ideas by reading the [31.0
 release notes][].
@@ -51,7 +50,7 @@ RPCs and cluster limits (see [Newsletter #382][news382 bc33629]), private broadc
 transaction spends each output (see [Newsletter #394][news394 bc24539]), an increased default
 `-dbcache` size (see [Newsletter #396][news396 bc34692]), embedded ASMap data
 (see [Newsletter #394][news394 bc28792]), and a new REST API `blockpart` endpoint
-(see [Newsletter #386][news386 bc33657]).
+(see [Newsletter #386][news386 bc33657]). {% assign timestamp="29:00" %}
 
 ## Notable code and documentation changes
 
@@ -69,39 +68,39 @@ repo], and [BINANAs][binana repo]._
   validating candidate blocks with context-free checks: block size/weight
   limits, coinbase rules, and per-transaction checks that do not depend on
   chainstate, the block index, or the UTXO set. Callers can optionally enable
-  proof-of-work verification and merkle-root verification in this endpoint.
+  proof-of-work verification and merkle-root verification in this endpoint. {% assign timestamp="31:56" %}
 
 - [Eclair #3283][] adds a `fee` field (in msats) to the full-format responses
   of the `findroute`, `findroutetonode`, and `findroutebetweennodes` endpoints
   used for pathfinding. This field provides the route's total
   [forwarding fee][topic inbound forwarding fees], eliminating the need for
-  callers to compute it manually.
+  callers to compute it manually. {% assign timestamp="37:06" %}
 
 - [LDK #4529][] enables operators to set different limits for announced and
   [unannounced channels][topic unannounced channels] when configuring the total
   value of inbound [HTLCs][topic htlc] in flight, as a percentage of channel
   capacity. The defaults are now 25% for announced channels and 100% for
-  unannounced channels.
+  unannounced channels. {% assign timestamp="38:12" %}
 
 - [LDK #4494][] updates its internal [RBF][topic rbf] logic to ensure compliance
   with [BIP125][]'s replacement rules at low feerates. Instead of only applying
   the 25/24 feerate multiplier specified in [BOLT2][], LDK now uses whichever is
   larger: that multiplier or an additional 25 sat/kwu. A related specification
-  clarification is being discussed in [BOLTs #1327][].
+  clarification is being discussed in [BOLTs #1327][]. {% assign timestamp="39:55" %}
 
 - [LND #10666][] adds a `DeleteForwardingHistory` RPC and an `lncli
   deletefwdhistory` command, enabling operators to selectively delete forwarding
   events older than a chosen cutoff timestamp. A minimum age guard of one hour
   prevents the accidental removal of recent data. This feature enables routing
   nodes to delete historical forwarding records without resetting the database
-  or taking the node offline.
+  or taking the node offline. {% assign timestamp="45:31" %}
 
 - [BIPs #2099][] publishes [BIP393][], which specifies an optional annotation
   syntax for output script [descriptors][topic descriptors], enabling wallets to
   store recovery hints, such as a birthday height to speed up wallet scanning
   (including for [silent payment][topic silent payments] scanning). See [Newsletter
   #394][news394 bip393] for initial coverage of this BIP with additional
-  details.
+  details. {% assign timestamp="46:40" %}
 
 - [BIPs #2118][] publishes [BIP440][] and [BIP441][] as Draft BIPs in the Great
   Script Restoration (or Grand Script Renaissance) series (see [Newsletter #399][news399 bips]).
@@ -109,14 +108,14 @@ repo], and [BINANAs][binana repo]._
   [Newsletter #374][news374 varops]); [BIP441][] describes a new
   [tapscript][topic tapscript] version that restores opcodes disabled in 2010
   such as [OP_CAT][topic op_cat] (see [Newsletter #374][news374 tapscript]) and
-  limits script evaluation costs per the varops budget introduced in BIP440.
+  limits script evaluation costs per the varops budget introduced in BIP440. {% assign timestamp="1:15" %}
 
 - [BIPs #2134][] updates [BIP352][] ([silent payments][topic silent payments]) to
   warn wallet developers not to let policy filtering, such as for
   [dust][topic uneconomical outputs], affect whether scanning continues after a
   match is found. Treating a filtered-out output as if there were no match can
   cause the wallet to prematurely stop scanning and miss later outputs from the
-  same sender.
+  same sender. {% assign timestamp="51:08" %}
 
 {% include snippets/recap-ad.md when="2026-04-14 16:30" %}
 {% include references.md %}
