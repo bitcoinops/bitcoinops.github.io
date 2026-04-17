@@ -38,6 +38,9 @@ optech_mentions:
   - title: "LDK #3792 introduces initial support for v3 commitment transactions"
     url: /en/newsletters/2025/06/13/#ldk-3792
 
+  - title: "LDK #4515 switches the zero-fee commitment channel feature bit to production"
+    url: /en/newsletters/2026/04/17/#ldk-4515
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel commitment upgrades

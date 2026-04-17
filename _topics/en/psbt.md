@@ -243,6 +243,9 @@ optech_mentions:
   - title: "Extensions to tooling, including PSBTs, for TEMPLATEHASH-CSFS-IK support"
     url: /en/newsletters/2026/03/06/#extensions-to-standard-tooling-for-templatehash-csfs-ik-support
 
+  - title: "BIPs #2089 publishes BIP376, defining new PSBTv2 fields for BIP352 tweak data"
+    url: /en/newsletters/2026/04/17/#bips-2089
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
