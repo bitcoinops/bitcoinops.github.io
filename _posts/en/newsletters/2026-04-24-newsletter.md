@@ -29,7 +29,25 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why did BIP342 replace CHECKMULTISIG with a new opcode, instead of just removing FindAndDelete from it?]({{bse}}130665)
+  Pieter Wuille explains that the replacement of `OP_CHECKMULTISIG` with
+  `OP_CHECKSIGADD` in [tapscript][topic tapscript] was necessary to enable batch
+  verification of [schnorr][topic schnorr signatures] signatures (see
+  [Newsletter #46][news46 batch]) in a potential future protocol change.
+
+- [Does SIGHASH_ANYPREVOUT commit to the tapleaf hash or the full taproot merkle path?]({{bse}}130637)
+  Antoine Poinsot confirms that [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]
+  signatures currently commit only to the tapleaf hash, not the full merkle path
+  in the [taproot][topic taproot] tree. However, this design is under discussion
+  as one BIP co-author has suggested committing to the full merkle path instead.
+
+- [What does the BIP86 tweak guarantee in a MuSig2 Lightning channel, beyond address format?]({{bse}}130652)
+  Ava Chow points out that the tweak prevents the use of hidden script paths
+  because [MuSig2's][topic musig] signing protocol requires all participants to
+  apply the same [BIP86][] tweak for signature aggregation to succeed. If one
+  party attempts to use a different tweak, such as one derived from a hidden
+  script tree, their partial signature won't aggregate into a valid final
+  signature.
 
 ## Releases and release candidates
 
@@ -54,4 +72,4 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-04-28 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[news46 batch]: /en/newsletters/2019/05/14/#new-script-based-multisig-semantics
