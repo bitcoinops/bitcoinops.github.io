@@ -47,7 +47,7 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
   Finally, ZmnSCPxj emphasizes how this proposal would present a major trade-off,
   namely the storage requirements for revocation keys. In fact, nodes would be
   required to store individual revocation keys instead of the compact shachain
-  representation, effectively tripling the on-disk space needed.
+  representation, effectively tripling the on-disk space needed. {% assign timestamp="34:05" %}
 
 - **Formal verification of secp256k1 modular scalar multiplication**:
   Remix7531 [posted][topic secp formalization] to the Bitcoin-Dev mailing list about
@@ -65,7 +65,7 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
   RefinedC, which would give a direct comparison of both frameworks on the
   same verified code. Also, on the
   verification side, the next target is Pippenger's algorithm for multi-scalar
-  multiplication, which is used for batch verification of signatures.
+  multiplication, which is used for batch verification of signatures. {% assign timestamp="01:10" %}
 
 ## Changes to services and client software
 
@@ -76,14 +76,14 @@ wallets and services.*
   Coldcard [6.5.0][coldcard 6.5.0] adds [MuSig2][topic musig] signing support,
   [BIP322][] proof of reserve capabilities, and additional [miniscript][topic
   miniscript] and [taproot][topic taproot] features including [tapscript][topic
-  tapscript] support for up to eight leaves.
+  tapscript] support for up to eight leaves. {% assign timestamp="40:56" %}
 
 - **Frigate 1.4.0 released:**
   Frigate [v1.4.0][frigate blog], an experimental Electrum server for [silent
   payments][topic silent payments] scanning (see [Newsletter #389][news389
   frigate]), now uses the UltrafastSecp256k1 library in conjunction with modern
   GPU computation to reduce scanning time for a few months of blocks from an
-  hour to half a second.
+  hour to half a second. {% assign timestamp="41:46" %}
 
 - **Bitcoin Backbone updates:**
   Bitcoin Backbone [released][backbone ml 1] multiple [updates][backbone ml 2]
@@ -91,20 +91,20 @@ wallets and services.*
   transaction and address management improvements, and multiprocess interface
   groundwork (see [Newsletter #368][news368 backbone]). The announcement also
   proposes Bitcoin Kernel API extensions for standalone header verification and
-  transaction validation.
+  transaction validation. {% assign timestamp="47:10" %}
 
 - **Utreexod 0.5 released:**
   Utreexod [v0.5][utreexod blog] introduces IBD using [SwiftSync][news349
   swiftsync] which uses cryptographic aggregation to eliminate the need for
   downloading and verifying accumulator inclusion proofs during IBD, and
   eliminates the extra data downloaded by Compact State Nodes during IBD from 1.4 TB to ~200 GB, with
-  further reductions possible through proof caching.
+  further reductions possible through proof caching. {% assign timestamp="16:18" %}
 
 - **Floresta 0.9.0 released:**
   Floresta [v0.9.0][floresta v0.9.0] aligns its P2P networking with the
   [BIP183][news366 utreexo bips] for UTXO proof exchange, and replaces
   libbitcoinconsensus with Bitcoin Kernel for approximately 15x faster script
-  validation, among other changes.
+  validation, among other changes. {% assign timestamp="19:41" %}
 
 ## Releases and release candidates
 
@@ -114,11 +114,11 @@ release candidates._
 
 - [Bitcoin Core 31.0rc4][] is a release candidate for the next major version
   of the predominant full node implementation. A [testing guide][bcc31 testing]
-  is available.
+  is available. {% assign timestamp="48:01" %}
 
 - [Core Lightning 26.04rc3][] is the latest release candidate for the next
   major version of this popular LN node, continuing the splicing updates and
-  bug fixes from earlier candidates.
+  bug fixes from earlier candidates. {% assign timestamp="49:00" %}
 
 ## Notable code and documentation changes
 
@@ -135,54 +135,54 @@ repo], and [BINANAs][binana repo]._
   `libbitcoinkernel` C API (see Newsletters [#380][news380 kernel] and
   [#390][news390 header]) by adding a method to serialize a block
   header into its standard byte encoding. This allows external programs using
-  the C API to store, transmit, or compare serialized headers without needing separate serialization code.
+  the C API to store, transmit, or compare serialized headers without needing separate serialization code. {% assign timestamp="50:01" %}
 
 - [Bitcoin Core #35032][] stops storing network addresses learned when using the
   `privatebroadcast` option (see [Newsletter #388][news388 private]) with the
-  `sendrawtransaction` RPC in `addrman`, Bitcoin Core’s peer address manager. The
+  `sendrawtransaction` RPC in `addrman`, Bitcoin Core's peer address manager. The
   `privatebroadcast` option allows users to broadcast transactions through
   short-lived [Tor][topic anonymity networks] or I2P connections, or through
-  the Tor proxy to IPv4/IPv6 peers.
+  the Tor proxy to IPv4/IPv6 peers. {% assign timestamp="51:51" %}
 
 - [Core Lightning #9021][] enables [splicing][topic splicing] by default by
   removing it from experimental status, following the merge of the splicing
-  protocol into the BOLTs specification (see [Newsletter #398][news398 splicing]).
+  protocol into the BOLTs specification (see [Newsletter #398][news398 splicing]). {% assign timestamp="55:33" %}
 
 - [Core Lightning #9046][] increases the assumed `final_cltv_expiry` (the
   [CLTV expiry delta][topic cltv expiry delta] for the last hop) for [keysend
-  payments][topic spontaneous payments] from 22 to 42 blocks to match LDK’s
-  value, restoring interoperability.
+  payments][topic spontaneous payments] from 22 to 42 blocks to match LDK's
+  value, restoring interoperability. {% assign timestamp="56:53" %}
 
 - [LDK #4515][] switches [zero-fee commitment][topic v3 commitments] channels (see [Newsletter
   #371][news371 0fc]) from the experimental feature bit to the production feature
   bit. Zero-fee commitment channels replace the two [anchor outputs][topic anchor outputs] with
   one shared [Pay-to-Anchor (P2A)][topic ephemeral anchors] output, capped at a
-  value of 240 sats.
+  value of 240 sats. {% assign timestamp="58:25" %}
 
 - [LDK #4558][] applies the existing receiver-side timeout for incomplete
   [multipath payments][topic multipath payments] to [keysend payments][topic
   spontaneous payments]. Previously, incomplete keysend MPPs could remain pending
   until CLTV expiry, tying up [HTLC][topic htlc] slots instead of failing back
-  after the normal timeout period.
+  after the normal timeout period. {% assign timestamp="59:51" %}
 
 - [LND #9985][] adds end-to-end support for production [simple taproot
   channels][topic simple taproot channels] with a distinct commitment type
   (`SIMPLE_TAPROOT_FINAL`) and production feature bits 80/81. Production uses
   optimized [tapscripts][topic tapscript] that prefer `OP_CHECKSIGVERIFY` over
   `OP_CHECKSIG`+`OP_DROP`, and adds map-based nonce handling on `revoke_and_ack`
-  keyed by funding txid as groundwork for future [splicing][topic splicing].
+  keyed by funding txid as groundwork for future [splicing][topic splicing]. {% assign timestamp="1:01:53" %}
 
 - [BTCPay Server #7250][] adds [LUD-21][] support by introducing an optional
   unauthenticated endpoint named `verify` that allows external services to verify
   whether a [BOLT11][] invoice created via [LNURL-pay][topic lnurl] has been
-  settled.
+  settled. {% assign timestamp="1:04:07" %}
 
 - [BIPs #2089][] publishes [BIP376][], which defines new [PSBTv2][topic psbt]
   per-input fields to carry the [BIP352][] tweak data needed to sign and spend
   [silent payment][topic silent payments] outputs, plus an optional spend-key
-  [BIP32][topic bip32] derivation field compatible with BIP352’s 33-byte
+  [BIP32][topic bip32] derivation field compatible with BIP352's 33-byte
   spend keys. This complements [BIP375][], which specifies how to create silent
-  payment outputs using PSBTs (see [Newsletter #337][news337 bip375]).
+  payment outputs using PSBTs (see [Newsletter #337][news337 bip375]). {% assign timestamp="1:07:28" %}
 
 {% include snippets/recap-ad.md when="2026-04-21 16:30" %}
 {% include references.md %}
