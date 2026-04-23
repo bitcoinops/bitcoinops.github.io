@@ -29,6 +29,53 @@ popular Bitcoin infrastructure software.
   script validation, and discusses potential comparisons with other
   implementations such as libbitcoin in response to feedback from Eric Voskuil.
 
+- **Onion message jamming in the Lightning Network**: Erick Cestari [posted][onion del] to
+  Delving Bitcoin about the [onion message][topic onion messages] jamming problem affecting
+  the Lightning Network. BOLT4 acknowledges onion messages to be unreliable, recommending
+  to apply rate limiting techniques. According to Cestari, these techniques are what makes message jamming possible. Attackers
+  may spin up malicious nodes and flood the network with spam messages triggering rate limits
+  of peers, forcing them to drop legitimate messages. Moreover, BOLT4 does not enforce a
+  maximum message length, allowing attackers to maximize the reach of a single message.
+
+  Cestari reviewed several mitigations to onion message jamming and provided a
+  comprehensive overview of the techniques he deemed more suitable:
+
+  - *Upfront fees*: This technique was first proposed by Carla Kirk-Cohen in [BOLTs #1052][]
+    as a solution for channel jamming, but can be easily extended. Nodes would advertise a per-message
+    flat fee, to be included in the onion payload and deducted at each hop. In case the fee is not
+    paid, the message would be just dropped by the node. This method presents some limitations, such
+    as being able to only forward messages to channel peers and increased p2p overhead.
+
+  - *Hop limit and proof-of-stake based on channel balances*: This technique was [proposed][mitig2 onion]
+    by Bashiri and Khabbazian at the University of Alberta and has two different components:
+
+    - Leashing hop count: Either setting a hard-cap on the maximum number of hops that a message could do
+      (e.g. 3 hops), or having the sender solve a proof-of-work puzzle, whose difficulty increases
+      exponentially with the number of hops.
+
+    - Proof-of-stake forwarding rule: Each node sets per-peer rate limits according to the peer's aggregate
+      channel balance, granting well-funded nodes more forwarding power.
+
+    The trade-offs of this approach are related to centralization pressure, due to larger nodes being at
+    an advantage, while the 3-hops hard-cap could reduce anonymity set.
+
+  - *Bandwidth metered payment*: [Proposed][mitig3 onion] by Olaoluwa Osuntokun, this technique is
+    similar in scope as upfront fees, but adds per-session state and settles through
+    [AMP payments][topic amp]. A sender would first send the AMP payment, dropping fees
+    at each intermediate step and delivering an ID for the session. The sender would then include the
+    ID in the onion message. Known limitations of the approach are related to the ability to only forward
+    messages to channel peers and the possibility to link all the messages belonging to the same session.
+
+  - *Backpropagation-based rate limiting*: This approach, [proposed][mitig4 onion] by Bastien Teinturier,
+    uses a backpressure mechanism that is statistically able to trace back spam to its source.
+    When the per-peer rate limiting is hit, the node sends a drop message back to the sender, which in turn
+    relays it to the last peer that forwarded the original message halving its rate limit. While the correct
+    sender is statistically identified, the wrong peer could be penalized. Moreover, an attacker could fake
+    the drop message, lowering rate limits of honest nodes.
+
+  Finally, Cestari invited LN developers to join the discussion, stating that a window is still available to
+  mitigate the issue before prolonged DDoS attacks hit the network, as [happened to Tor][tor issue] recently.
+
 ## Selected Q&A from Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
@@ -87,3 +134,8 @@ FIXME:Gustavojfe
 [topic hornet update]: https://delvingbitcoin.org/t/hornet-update-a-declarative-executable-specification-of-consensus-rules/2420
 [hornet ml post]: https://groups.google.com/g/bitcoindev/c/M7jyQzHr2g4
 [topic hornet]: /en/newsletters/2026/02/06/#a-constant-time-parallelized-utxo-database
+[onion del]: https://delvingbitcoin.org/t/onion-message-jamming-in-the-lightning-network/2414
+[mitig2 onion]: https://ualberta.scholaris.ca/items/245a6a68-e1a6-481d-b219-ba8d0e640b5d
+[mitig3 onion]: https://diyhpl.us/~bryan/irc/bitcoin/bitcoin-dev/linuxfoundation-pipermail/lightning-dev/2022-February/003498.txt
+[mitig4 onion]: https://diyhpl.us/~bryan/irc/bitcoin/bitcoin-dev/linuxfoundation-pipermail/lightning-dev/2022-June/003623.txt
+[tor issue]: https://blog.torproject.org/tor-network-ddos-attack/
