@@ -113,7 +113,30 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Bitcoin Core 31.0][] is the latest major version release of the network’s
+  predominant full node implementation. The [release notes][notes31] describe
+  several significant improvements, including the implementation of the [cluster
+  mempool][topic cluster mempool] design, a new `-privatebroadcast` option for
+  `sendrawtransaction` (see [Newsletter #388][news388 private]), `asmap` data
+  optionally embedded into the binary for [eclipse attack][topic eclipse
+  attacks] protection, and an increase in the default `-dbcache` to 1024 MiB on
+  systems with at least 4096 MiB of RAM, among many other updates.
+
+- [Core Lightning 26.04][] is a major release of this popular LN node
+  implementation. It enables [splicing][topic splicing] by default, adds new
+  `splicein` and `spliceout` commands including a `cross-splice` mode that
+  targets a second channel as the destination of a splice-out, redesigns
+  `bkpr-report` for income summaries, adds parallel pathfinding and multiple bug
+  fixes in `askrene`, adds a `fronting_nodes` option on the `offer` RPC and a
+  `payment-fronting-node` config, and removes support for the legacy onion
+  format. See the [release notes][notes cln] for additional details.
+
+- [LND 0.21.0-beta.rc1][] is the first release candidate for the next major
+  version of this popular LN node. Users running nodes with the
+  `--db.use-native-sql` flag against an SQLite or PostgreSQL backend should note that
+  this version migrates the payment store from the key-value (KV) format to
+  native SQL, with an opt-out via `--db.skip-native-sql-migration`. See the
+  [release notes][notes lnd].
 
 ## Notable code and documentation changes
 
@@ -126,10 +149,62 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33477][] updates how the `dumptxoutset` RPC’s `rollback` mode
+  (see [Newsletter #72][news72 dump]) builds historical UTXO set dumps used for
+  [assumeUTXO][topic assumeutxo] snapshots. Instead of rolling back the main
+  chainstate by invalidating blocks, Bitcoin Core creates a temporary UTXO
+  database, rolls it back to the requested height, and writes the snapshot from
+  the temporary database. This preserves the main chainstate, eliminating the
+  need to suspend network activity and the risk of fork-related interference
+  with the rollback, at the cost of additional temporary disk space and slower
+  dumps. A new `in_memory` option keeps the temporary UTXO database entirely in
+  RAM, enabling faster rollbacks but requiring over 10 GB of free memory on
+  mainnet. For deep rollbacks, it is recommended to use no RPC timeout (`bitcoin-cli
+  -rpcclienttimeout=0`) as it may take several minutes.
+
+- [Bitcoin Core #35006][] adds a `-rpcid` option to `bitcoin-cli` to set a
+  custom string as the JSON-RPC request `id` instead of the default hardcoded
+  value of `1`. This allows requests and responses to be correlated when
+  multiple clients make concurrent calls. The identifier is also included in the
+  server-side RPC debug log.
+
+- [BIPs #1895][] publishes [BIP361][], an abstract proposal for
+  [post-quantum][topic quantum resistance] migration and legacy signature
+  sunset. Assuming a separate post-quantum (PQ) signature scheme is standardized
+  and deployed, it outlines a phased migration away from ECDSA/[schnorr][topic
+  schnorr signatures] signature schemes. The current version of the proposal is
+  divided into two phases. Phase A prohibits sending funds to quantum-vulnerable
+  addresses, thereby accelerating the adoption of PQ address types. Phase B
+  restricts ECDSA/schnorr spending and includes a quantum-safe rescue protocol
+  to prevent theft of quantum-vulnerable UTXOs.
+
+- [BIPs #2142][] updates [BIP352][], the [silent payments][topic silent
+  payments] BIP proposal, by adding a send/receive test vector for an edge case
+  where the running sum of input keys hits zero after two inputs but the final
+  sum over all inputs is non-zero. This catches implementations that reject
+  early during incremental summation instead of summing all inputs first.
+
+- [LDK #4555][] fixes how forwarding nodes enforce [`max_cltv_expiry`][topic
+  cltv expiry delta] for [blinded payment paths][topic rv routing]. The field is
+  meant to ensure an expired blinded route is rejected at the introduction hop
+  rather than being forwarded through the blinded segment and failing closer to
+  the receiver. Previously, LDK compared the constraint against the hop's
+  outgoing CLTV value; it now checks the inbound CLTV expiry as intended.
+
+- [LND #10713][] adds per-peer and global token-bucket rate limits for incoming
+  [onion messages][topic onion messages], dropping excess traffic at ingress
+  before it reaches the onion handler. This hardens LND's recently added onion
+  message forwarding support (see [Newsletter #396][news396 lnd onion]) against
+  high-volume abuse from fast peers. The per-peer and global split mirrors LND's
+  earlier gossip bandwidth limits (see [Newsletter #370][news370 lnd gossip]).
+
+- [LND #10754][] stops forwarding an [onion message][topic onion messages] when
+  the chosen next hop is the same peer that delivered it, avoiding an immediate
+  bounce on the same connection.
 
 {% include snippets/recap-ad.md when="2026-04-28 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="1052,33477,35006,4555,10713,10754,1895,2142" %}
 [news46 batch]: /en/newsletters/2019/05/14/#new-script-based-multisig-semantics
 [topic hornet update]: https://delvingbitcoin.org/t/hornet-update-a-declarative-executable-specification-of-consensus-rules/2420
 [hornet ml post]: https://groups.google.com/g/bitcoindev/c/M7jyQzHr2g4
@@ -139,3 +214,13 @@ FIXME:Gustavojfe
 [mitig3 onion]: https://diyhpl.us/~bryan/irc/bitcoin/bitcoin-dev/linuxfoundation-pipermail/lightning-dev/2022-February/003498.txt
 [mitig4 onion]: https://diyhpl.us/~bryan/irc/bitcoin/bitcoin-dev/linuxfoundation-pipermail/lightning-dev/2022-June/003623.txt
 [tor issue]: https://blog.torproject.org/tor-network-ddos-attack/
+[Bitcoin Core 31.0]: https://bitcoincore.org/bin/bitcoin-core-31.0/
+[notes31]: https://bitcoincore.org/en/releases/31.0/
+[news388 private]: /en/newsletters/2026/01/16/#bitcoin-core-29415
+[Core Lightning 26.04]: https://github.com/ElementsProject/lightning/releases/tag/v26.04
+[notes cln]: https://github.com/ElementsProject/lightning/releases/tag/v26.04
+[LND 0.21.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.21.0-beta.rc1
+[notes lnd]: https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.21.0.md
+[news72 dump]: /en/newsletters/2019/11/13/#bitcoin-core-16899
+[news396 lnd onion]: /en/newsletters/2026/03/13/#lnd-10089
+[news370 lnd gossip]: /en/newsletters/2025/09/05/#lnd-10103
