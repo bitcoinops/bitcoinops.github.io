@@ -16,7 +16,18 @@ popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Hornet Node's declarative executable specification of Bitcoin consensus rules**:
+  Toby Sharp [posted][topic hornet update] to Delving Bitcoin and the Bitcoin-Dev [mailing
+  list][hornet ml post] an update on the Hornet node project. Sharp had
+  [previously][topic hornet] described a new node implementation Hornet that
+  reduced initial block download times from 167 minutes down to 15 minutes. In
+  this update, he reports completing a declarative specification of non-script
+  block validation rules, consisting of 34 semantic invariants composed using a
+  simple algebra.
+
+  Sharp also outlines future work, including extending the specification to
+  script validation, and discusses potential comparisons with other
+  implementations such as libbitcoin in response to feedback from Eric Voskuil.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -73,3 +84,6 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2026-04-28 16:30" %}
 {% include references.md %}
 [news46 batch]: /en/newsletters/2019/05/14/#new-script-based-multisig-semantics
+[topic hornet update]: https://delvingbitcoin.org/t/hornet-update-a-declarative-executable-specification-of-consensus-rules/2420
+[hornet ml post]: https://groups.google.com/g/bitcoindev/c/M7jyQzHr2g4
+[topic hornet]: /en/newsletters/2026/02/06/#a-constant-time-parallelized-utxo-database
