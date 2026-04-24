@@ -101,6 +101,9 @@ optech_mentions:
   - title: "BIPs #2089 publishes BIP376, defining new PSBTv2 fields for BIP352 tweak data"
     url: /en/newsletters/2026/04/17/#bips-2089
 
+  - title: "BIPs #2142 adds a send/receive test vector to the BIP352 silent payments specification"
+    url: /en/newsletters/2026/04/24/#bips-2142
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
