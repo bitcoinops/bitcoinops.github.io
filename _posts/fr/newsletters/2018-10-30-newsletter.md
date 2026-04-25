@@ -58,9 +58,9 @@ code de projets populaires d'infrastructure Bitcoin.
   Residency][] pour aider à intégrer des développeurs à ce protocole naissant. À la suite de cela, Fulmo a organisé son quatrième [Lightning
   Network Hackday][] (en réalité deux jours) également à New York, avec quelques discours, de nombreuses démos et beaucoup de hacking.
 
-  Pierre Rochard a rédigé des résumés de toutes les présentations données lors du programme residency ([jour 1][lr1], [jour 2][lr2], [jour
-  3][lr3], [jour 4][lr4]) et les vidéos des présentations devraient être publiées prochainement. Les vidéos du hackday sont déjà disponibles
-  : [jour 1][hd1], [jour 2][hd2].
+  Pierre Rochard a rédigé des résumés de toutes les présentations données lors du programme residency ([jour 1][lr1], [jour 2][lr2],
+  [jour 3][lr3], [jour 4][lr4]) et les vidéos des présentations devraient être publiées prochainement. Les vidéos du hackday sont déjà
+  disponibles : [jour 1][hd1], [jour 2][hd2].
 
 ## Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
@@ -125,7 +125,8 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
 
 - [LND #1981][] garantit que LND ne divulgue pas d'informations à propos de ses pairs qui ne s'annoncent pas comme nœuds publics.
 
-- {:#lnd-1535-1512} LND [#1535][LND #1535] et [#1512][LND #1512] ajoutent le protocole de communication côté serveur pour les watchtowers
+- {:#lnd-1535-1512}
+  LND [#1535][LND #1535] et [#1512][LND #1512] ajoutent le protocole de communication côté serveur pour les watchtowers
   ainsi que de nombreux tests vérifiant leur bon fonctionnement. L'utilisation correcte du protocole LN nécessite une surveillance régulière
   des transactions qui sont ajoutées à la chaîne de blocs ; les watchtowers sont donc des serveurs conçus pour aider à défendre les canaux
   de paiement des utilisateurs qui s'attendent à être hors ligne pendant une période prolongée. À ce titre, les watchtowers sont considérées
@@ -166,7 +167,7 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
 [square]: https://cash.app/bitcoin
 [le bulletin #5]: /fr/newsletters/2018/07/24/#premiere-utilisation-des-descripteurs-de-scripts-de-sortie
 [le bulletin #7]: /fr/newsletters/2018/08/07/#bitcoin-core-13697
-[le bulletin #9]: /fr/newsletters/2018/08/21/#ameliorations-des-descripteurs-de-scripts-de-sortie
+[le bulletin #9]: /fr/newsletters/2018/08/21/#descripteurs-de-script-et-descript-script-descriptors-and-descript
 [le bulletin #12]: /fr/newsletters/2018/09/11/#bitcoin-core-14096
 [le bulletin #17]: /fr/newsletters/2018/10/16/#descripteurs-de-script-et-descript
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
