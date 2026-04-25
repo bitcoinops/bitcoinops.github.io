@@ -76,6 +76,9 @@ optech_mentions:
   - title: "SwiftSync faster syncs compatible and complementary with assumeUTXO"
     url: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
 
+  - title: "Bitcoin Core #33477 improves assumeUTXO snapshot creation using a temporary chainstate"
+    url: /en/newsletters/2026/04/24/#bitcoin-core-33477
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"

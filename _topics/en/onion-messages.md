@@ -101,6 +101,9 @@ optech_mentions:
   - title: "Discussion about separating onion message relay from HTLC relay"
     url: /en/newsletters/2025/07/04/#separating-onion-message-relay-from-htlc-relay
 
+  - title: "Discussion of onion message jamming and mitigation techniques"
+    url: /en/newsletters/2026/04/24/#onion-message-jamming-in-the-lightning-network
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

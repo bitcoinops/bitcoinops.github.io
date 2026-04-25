@@ -124,6 +124,9 @@ optech_mentions:
   - title: "SHRIMPS: 2.5 KB post-quantum signatures across multiple stateful devices"
     url: /en/newsletters/2026/04/03/#shrimps-2-5-kb-post-quantum-signatures-across-multiple-stateful-devices
 
+  - title: "BIPs #1895 publishes BIP361, a post-quantum migration and legacy signature deprecation proposal"
+    url: /en/newsletters/2026/04/24/#bips-1895
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
