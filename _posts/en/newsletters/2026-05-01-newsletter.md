@@ -15,7 +15,31 @@ notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Binary fuse filters as an alternative to BIP158's GCS**: Csaba Purszki
+  [posted][bin fuse del] to Delving Bitcoin his research on finding a better alternative
+  to Golomb-Rice Coded Sets (GCS) used for [compact block filters][topic compact block filters]
+  as defined in [BIP158][].
+
+  According to Purszki, a suitable alternative can be found in binary fuse
+  filters, a family of probabilistic data structures for approximate set
+  membership, and specifically the 16-bit variant, called Fuse16. The main
+  characteristic of this type of algorithm is the ability to give O(1) query
+  time (for reference, GCS gives O(N)), which reduces the CPU power required to
+  query the filters. Moreover, these filters guarantee zero false negatives,
+  with a rate of false positives equal to `1/2^k`, with `k` being the number of
+  bits.
+
+  Purszki provided the preliminary results of his research, which compare the current GCS
+  performance against binary fuse filters. Tests were performed on 10 different wallet
+  use cases (from 24 scripts up to 480), running filters on 50,000 mainnet blocks,
+  on two different CPUs, a desktop x86_64, and an ARM. Binary fuse filters were able to
+  obtain a 6x-45x speedup on ARM, according to the different wallet use cases, and 9x-80x
+  on desktop at the cost of a slight increase in bandwidth, 0%-3%. For a full write up on
+  the methodology and full results, the reader can refer to [Purszki's website][bin fuse web].
+
+  Kyoto developer Robert Netzke commented on the differences in false positive
+  rates with respect to GCS and possible failures that could occur in the
+  algorithm.
 
 ## Changing consensus
 
@@ -129,3 +153,5 @@ FIXME:Gustavojfe
 [db ml minpqc]: https://groups.google.com/g/bitcoindev/c/jn7COyeHtW0
 [ap delving slowblocks]: https://delvingbitcoin.org/t/consensus-cleanup-demo-of-slow-blocks-on-signet/2367
 [oo ml pqrecovery]: https://groups.google.com/g/bitcoindev/c/Q06piCEJhkI
+[bin fuse del]: https://delvingbitcoin.org/t/binary-fuse-filters-as-an-alternative-to-bip-158-gcs/2428
+[bin fuse web]: https://purszki.github.io/bitcoin_research_01/
