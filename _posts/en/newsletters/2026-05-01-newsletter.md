@@ -129,7 +129,19 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Core Lightning 26.04.1][] is a maintenance release that includes
+  [gossip][topic channel announcements] protocol fixes, as well as build system
+  fixes for environments that experienced problems immediately after the major
+  release.
+
+- [BTCPay Server 2.3.8][] is a minor release of this self-hosted payment
+  solution that includes subscription and point-of-sale updates, LUD21 [LNURL-pay][topic
+  lnurl] support, an additional API surface for managing subscription offerings,
+  and other fixes and improvements.
+
+- [BTCPay Server 2.3.9][] is a maintenance release that addresses server
+  recovery after a plugin crash and fixes an xpub parsing issue that was
+  introduced in v2.3.8.
 
 ## Notable code and documentation changes
 
@@ -142,10 +154,67 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #33671][] adds a `nonmempool` field to the `getbalances` RPC
+  (see [Newsletter #46][news46 getbalances]) for wallet UTXOs spent by
+  transactions that are neither confirmed nor in the node’s mempool, such as
+  unbroadcasted, non-standard, evicted, or transactions that are part of
+  too-long mempool chains. Previously, balance buckets could omit value tied
+  to those in-flight spends even though the wallet still recorded the
+  transactions, so `getbalances` did not fully reflect how the wallet was
+  accounting for those coins. The PR counts that value in the usual `mine`
+  buckets where it belongs and applies an offset via `nonmempool` so the
+  fields sum to the wallet’s overall balance while making the mempool mismatch
+  explicit.
+
+- [Bitcoin Core #34885][] adds `btck_block_tree_entry_get_ancestor()` to the
+  `libbitcoinkernel` C API (see [Newsletter #380][news380 kernel]) for
+  retrieving the ancestor of a block at a specified height on its chain branch.
+  Instead of walking backward one block at a time with repeated calls to
+  `btck_block_tree_entry_get_previous()`, callers constructing block locators
+  from a stale or forked tip can directly request ancestors at the needed
+  heights.
+
+- [Bitcoin Core #33920][] adds an `exportasmap` RPC that exports the node’s
+  ASMap data embedded at build time (see [Newsletter #394][news394 asmap]) to a
+  file. This allows users to inspect, validate, and analyze the data using tools
+  such as `contrib/asmap-tool.py`.
+
+- [Bitcoin Core #34911][] removes deprecated [RBF][topic rbf]-related boolean
+  fields from several mempool RPC responses unless they are explicitly requested
+  using the `deprecatedrpc` configuration option. The `getmempoolinfo` RPC no
+  longer returns the `fullrbf` field by default, as full-RBF behavior has been
+  the default since Bitcoin Core 28.0 and the `mempoolfullrbf` option was
+  removed in Bitcoin Core 29.0. The `getrawmempool`, `getmempoolentry`,
+  `getmempoolancestors`, and `getmempooldescendants` RPCs no longer return the
+  deprecated `bip125-replaceable` field described in [BIP125][] by default.
+
+- [BIPs #1548][] adds [BIP391][], a specification for Binary Output Descriptors
+  (BOD), an efficient container format for [output script descriptors][topic
+  descriptors] based on [PSBT][topic psbt]-style key-value maps. This BIP has a
+  closed status and lists [BIP393][] as a proposed replacement, noting that
+  [BIP391][] was withdrawn after [BIP393][] proposed an alternative method for
+  handling wallet metadata such as descriptor annotations (see [Newsletter
+  #400][news400 bip393]).
+
+- [HWI #831][] adds support for the Ledger Nano Gen5 hardware signing device.
+
+- [BDK #2188][] starts verifying that a transaction returned by an Electrum
+  server matches the requested txid before caching or using it. Previously, a
+  server could respond to a `fetch_tx()` request with any transaction data and a
+  different txid, and BDK would accept it.
+
+- [BDK #2115][] adds previous-block-hash awareness to `CheckPoint` by extending
+  the `ToBlockHash` trait with an optional `prev_blockhash()` method. This
+  allows BDK to verify that adjacent checkpoints connect when their payloads
+  contain previous-block-hash information, such as in block headers. This also
+  prevents `merge_chains()` from treating a conflicting height-0 checkpoint as a
+  normal reorg and replacing it. Now, if two checkpoint chains disagree on
+  genesis, the merge fails. See Newsletters [#372][news372 checkpoint] and
+  [#390][news390 checkpoint] for previous work on `CheckPoint`.
 
 {% include snippets/recap-ad.md when="2026-05-05 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="33671,34885,33920,34911,831,2188,2115,1548" %}
 [c ml pq bip32]: https://groups.google.com/g/bitcoindev/c/5tLKm8RsrZ0
 [news383 sphincs]: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
 [secp256k1]: https://en.bitcoin.it/wiki/Secp256k1
@@ -155,3 +224,13 @@ FIXME:Gustavojfe
 [oo ml pqrecovery]: https://groups.google.com/g/bitcoindev/c/Q06piCEJhkI
 [bin fuse del]: https://delvingbitcoin.org/t/binary-fuse-filters-as-an-alternative-to-bip-158-gcs/2428
 [bin fuse web]: https://purszki.github.io/bitcoin_research_01/
+[BTCPay Server 2.3.8]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.3.8
+[BTCPay Server 2.3.9]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.3.9
+[Core Lightning 26.04.1]: https://github.com/ElementsProject/lightning/releases/tag/v26.04.1
+[LUD-21]: https://github.com/lnurl/luds/blob/luds/21.md
+[news372 checkpoint]: /en/newsletters/2025/09/19/#bdk-1582
+[news380 kernel]: /en/newsletters/2025/11/14/#bitcoin-core-30595
+[news390 checkpoint]: /en/newsletters/2026/01/30/#bdk-2037
+[news394 asmap]: /en/newsletters/2026/02/27/#bitcoin-core-28792
+[news400 bip393]: /en/newsletters/2026/04/10/#bips-2099
+[news46 getbalances]: /en/newsletters/2019/05/14/#bitcoin-core-15930
