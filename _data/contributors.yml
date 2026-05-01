@@ -3,25 +3,12 @@
 ## differentiate the two types of information
 contributors:
   -
-    name: David A. Harding
-    github: harding
-    avatar: harding.png
-    quote: >-
-      "The terrible thing about a consensus system like Bitcoin is that every on-chain action we perform affects every other user of the system. That makes all of us neighbors, so we're faced with the choice of either being the bad neighbors who complain endlessly about each other or the good neighbors who work together to solve problems and find ways to coexist in harmony."
-  -
     name: Mike Schmidt
     other_affiliation: Executive Director, <a href="https://brink.dev">Brink</a>
     github: bitschmidty
-    avatar: schmidt.png
+    avatar: schmidt.jpg
     quote: >-
       "Bitcoin has a pipeline of innovations flowing from the open source community. I am excited to help with the blocking and tackling needed to help roll out these innovations with the wider community of businesses, wallets, exchanges, and users."
-  -
-    name: Adam Jonas
-    other_affiliation: CEO, <a href="https://chaincode.com">Chaincode Labs</a>
-    github: adamjonas
-    avatar: jonas.png
-    quote: >-
-      "I am excited about the opportunity Bitcoin has before it as it grows.  I hope to contribute my small part as a liaison to help businesses take advantage of all that Bitcoin has to offer as well as gather feedback for the open source community so that we can together bring this wonderfully evolving technology to the masses."
   -
     name: Mark Erhardt
     other_affiliation: Developer, <a href="https://lclhost.org/">localhost research</a>
@@ -29,13 +16,6 @@ contributors:
     avatar: erhardt.png
     quote: >-
       "The Optech newsletter has been one of the most informative and reliable resources for any Bitcoin engineer since its inception. With its workshops, the Bitcoin Optech Group is bringing together the engineers in the space and paving the road for adoption of best practices and new protocol features."
-  -
-    name: Gloria Zhao
-    other_affiliation: Developer, <a href="https://chaincode.com">Chaincode Labs</a>
-    github: glozow
-    avatar: zhao.jpg
-    quote: >-
-      "As a developer, it feels like Bitcoin development innovates far too quickly for anyone to keep up! But engineering isn't enough to translate technological advancement into tangible improvements in a real person's life. Optech has been an incredible resource throughout my journey; I hope to help it be the same for the thousands of builders, designers, educators and trailblazers we'll need to bring Bitcoin to a billion people."
   -
     name: Shigeyuki Azuchi
     other_affiliation: CTO, <a href="https://www.chaintope.com/">Chaintope</a>
@@ -65,8 +45,19 @@ contributors:
 
 contributors_alum:
  -
+    name: Adam Jonas
+    github: adamjonas
+    avatar: jonas.png
+ -
+    name: Gloria Zhao
+    github: glozow
+    avatar: zhao.jpg
+ -
+    name: David A. Harding
+    github: harding
+    avatar: harding.png
+ -
     name: Carl Dong
-    other_affiliation: Developer
     github: dongcarl
     avatar: dong.jpg
  -
@@ -75,21 +66,17 @@ contributors_alum:
     avatar: newbery.jpg
  -
     name: Jon Atack
-    other_affiliation: Bitcoin Core Developer
     github: jonatack
     avatar: atack.jpg
  -
     name: Steve Lee
-    other_affiliation: Director, <a href="https://spiral.xyz">Spiral</a>
     github: moneyball
     avatar: lee.png
  -
     name: James O'Beirne
-    other_affiliation: Open Source Engineer, <a href="https://nydig.com/">NYDIG</a>
     github: jamesob
     avatar: https://avatars1.githubusercontent.com/u/73197?s=400&v=4
  -
     name: Marcin Jachymiak
-    other_affiliation: Software Engineer, <a href="https://gauntlet.network/">Gauntlet</a>
     github: marcinja
     avatar: https://avatars1.githubusercontent.com/u/12243734?s=400&v=4
