@@ -89,6 +89,9 @@ optech_mentions:
   - title: "Bitcoin Inquisition adds an implementation of the BIP54 consensus cleanup soft fork rules"
     url: /en/newsletters/2026/02/13/#bitcoin-inquisition-99
 
+  - title: "BIP54 demonstration of slow blocks on signet"
+    url: /en/newsletters/2026/05/01/#bip54-demonstration-of-slow-blocks-on-signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation

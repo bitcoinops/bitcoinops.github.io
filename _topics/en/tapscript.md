@@ -88,6 +88,9 @@ optech_mentions:
   - title: "Research showing effect of OP_SUCCESSx on covenants using output script introspection"
     url: /en/newsletters/2023/10/25/#op-success-changes-would-be-beneficial
 
+  - title: "Proposal to embed post-quantum keys in tapscript without consensus changes"
+    url: /en/newsletters/2026/05/01/#proposal-to-embed-post-quantum-keys-in-tapscript-without-consensus-changes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

@@ -210,6 +210,9 @@ optech_mentions:
   - title: "LDK #4427 adds RBF of negotiated splice funding transactions that are not yet locked"
     url: /en/newsletters/2026/03/20/#ldk-4427
 
+  - title: "Bitcoin Core #34911 removes deprecated RBF-related boolean fields from mempool RPCs"
+    url: /en/newsletters/2026/05/01/#bitcoin-core-34911
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

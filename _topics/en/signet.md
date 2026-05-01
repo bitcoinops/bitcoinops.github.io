@@ -126,6 +126,9 @@ optech_mentions:
   - title: "Post and website examining soft fork testing on the default signet"
     url: /en/newsletters/2024/11/22/#signet-activity-report
 
+  - title: "BIP54 demonstration of slow blocks on signet"
+    url: /en/newsletters/2026/05/01/#bip54-demonstration-of-slow-blocks-on-signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

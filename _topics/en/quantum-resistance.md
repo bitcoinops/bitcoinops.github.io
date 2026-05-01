@@ -127,6 +127,18 @@ optech_mentions:
   - title: "BIPs #1895 publishes BIP361, a post-quantum migration and legacy signature deprecation proposal"
     url: /en/newsletters/2026/04/24/#bips-1895
 
+  - title: "Post-quantum HD wallets with fallback SPHINCS keys"
+    url: /en/newsletters/2026/05/01/#post-quantum-hd-wallets-with-fallback-sphincs-keys
+
+  - title: "Discussion of a post-quantum output type"
+    url: /en/newsletters/2026/05/01/#discussion-of-a-post-quantum-output-type
+
+  - title: "Proposal to embed post-quantum keys in tapscript without consensus changes"
+    url: /en/newsletters/2026/05/01/#proposal-to-embed-post-quantum-keys-in-tapscript-without-consensus-changes
+
+  - title: "Post-quantum BIP86 recovery using zk-STARK proofs of BIP32 seeds"
+    url: /en/newsletters/2026/05/01/#post-quantum-bip86-recovery-using-zk-stark-proofs-of-bip32-seeds
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

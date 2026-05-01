@@ -215,6 +215,12 @@ optech_mentions:
   - title: "BIPs #2047 publishes BIP392, defining a descriptor format for silent payments"
     url: /en/newsletters/2026/03/13/#bips-2047
 
+  - title: "BIPs #2099 publishes BIP393, an optional annotation syntax for output script descriptors"
+    url: /en/newsletters/2026/04/10/#bips-2099
+
+  - title: "BIPs #1548 adds BIP391, a closed specification for Binary Output Descriptors superseded by BIP393"
+    url: /en/newsletters/2026/05/01/#bips-1548
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
