@@ -27,7 +27,7 @@ popular Bitcoin infrastructure software.
 
   Sharp also outlines future work, including extending the specification to
   script validation, and discusses potential comparisons with other
-  implementations such as libbitcoin in response to feedback from Eric Voskuil.
+  implementations such as libbitcoin in response to feedback from Eric Voskuil. {% assign timestamp="1:02" %}
 
 - **Onion message jamming in the Lightning Network**: Erick Cestari [posted][onion del] to
   Delving Bitcoin about the [onion message][topic onion messages] jamming problem affecting
@@ -74,7 +74,7 @@ popular Bitcoin infrastructure software.
     the drop message, lowering rate limits of honest nodes.
 
   Finally, Cestari invited LN developers to join the discussion, stating that a window is still available to
-  mitigate the issue before prolonged DDoS attacks hit the network, as [happened to Tor][tor issue] recently.
+  mitigate the issue before prolonged DDoS attacks hit the network, as [happened to Tor][tor issue] recently. {% assign timestamp="23:22" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -91,13 +91,13 @@ answers posted since our last update.*
   Pieter Wuille explains that the replacement of `OP_CHECKMULTISIG` with
   `OP_CHECKSIGADD` in [tapscript][topic tapscript] was necessary to enable batch
   verification of [schnorr][topic schnorr signatures] signatures (see
-  [Newsletter #46][news46 batch]) in a potential future protocol change.
+  [Newsletter #46][news46 batch]) in a potential future protocol change. {% assign timestamp="40:53" %}
 
 - [Does SIGHASH_ANYPREVOUT commit to the tapleaf hash or the full taproot merkle path?]({{bse}}130637)
   Antoine Poinsot confirms that [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]
   signatures currently commit only to the tapleaf hash, not the full merkle path
   in the [taproot][topic taproot] tree. However, this design is under discussion
-  as one BIP co-author has suggested committing to the full merkle path instead.
+  as one BIP co-author has suggested committing to the full merkle path instead. {% assign timestamp="43:28" %}
 
 - [What does the BIP86 tweak guarantee in a MuSig2 Lightning channel, beyond address format?]({{bse}}130652)
   Ava Chow points out that the tweak prevents the use of hidden script paths
@@ -105,7 +105,7 @@ answers posted since our last update.*
   apply the same [BIP86][] tweak for signature aggregation to succeed. If one
   party attempts to use a different tweak, such as one derived from a hidden
   script tree, their partial signature won't aggregate into a valid final
-  signature.
+  signature. {% assign timestamp="45:23" %}
 
 ## Releases and release candidates
 
@@ -120,7 +120,7 @@ release candidates._
   `sendrawtransaction` (see [Newsletter #388][news388 private]), `asmap` data
   optionally embedded into the binary for [eclipse attack][topic eclipse
   attacks] protection, and an increase in the default `-dbcache` to 1024 MiB on
-  systems with at least 4096 MiB of RAM, among many other updates.
+  systems with at least 4096 MiB of RAM, among many other updates. {% assign timestamp="47:10" %}
 
 - [Core Lightning 26.04][] is a major release of this popular LN node
   implementation. It enables [splicing][topic splicing] by default, adds new
@@ -129,14 +129,14 @@ release candidates._
   `bkpr-report` for income summaries, adds parallel pathfinding and multiple bug
   fixes in `askrene`, adds a `fronting_nodes` option on the `offer` RPC and a
   `payment-fronting-node` config, and removes support for the legacy onion
-  format. See the [release notes][notes cln] for additional details.
+  format. See the [release notes][notes cln] for additional details. {% assign timestamp="54:26" %}
 
 - [LND 0.21.0-beta.rc1][] is the first release candidate for the next major
   version of this popular LN node. Users running nodes with the
   `--db.use-native-sql` flag against an SQLite or PostgreSQL backend should note that
   this version migrates the payment store from the key-value (KV) format to
   native SQL, with an opt-out via `--db.skip-native-sql-migration`. See the
-  [release notes][notes lnd].
+  [release notes][notes lnd]. {% assign timestamp="56:29" %}
 
 ## Notable code and documentation changes
 
@@ -160,13 +160,13 @@ repo], and [BINANAs][binana repo]._
   dumps. A new `in_memory` option keeps the temporary UTXO database entirely in
   RAM, enabling faster rollbacks but requiring over 10 GB of free memory on
   mainnet. For deep rollbacks, it is recommended to use no RPC timeout (`bitcoin-cli
-  -rpcclienttimeout=0`) as it may take several minutes.
+  -rpcclienttimeout=0`) as it may take several minutes. {% assign timestamp="57:55" %}
 
 - [Bitcoin Core #35006][] adds a `-rpcid` option to `bitcoin-cli` to set a
   custom string as the JSON-RPC request `id` instead of the default hardcoded
   value of `1`. This allows requests and responses to be correlated when
   multiple clients make concurrent calls. The identifier is also included in the
-  server-side RPC debug log.
+  server-side RPC debug log. {% assign timestamp="1:02:26" %}
 
 - [BIPs #1895][] publishes [BIP361][], an abstract proposal for
   [post-quantum][topic quantum resistance] migration and legacy signature
@@ -176,31 +176,31 @@ repo], and [BINANAs][binana repo]._
   divided into two phases. Phase A prohibits sending funds to quantum-vulnerable
   addresses, thereby accelerating the adoption of PQ address types. Phase B
   restricts ECDSA/schnorr spending and includes a quantum-safe rescue protocol
-  to prevent theft of quantum-vulnerable UTXOs.
+  to prevent theft of quantum-vulnerable UTXOs. {% assign timestamp="1:04:31" %}
 
 - [BIPs #2142][] updates [BIP352][], the [silent payments][topic silent
   payments] BIP proposal, by adding a send/receive test vector for an edge case
   where the running sum of input keys hits zero after two inputs but the final
   sum over all inputs is non-zero. This catches implementations that reject
-  early during incremental summation instead of summing all inputs first.
+  early during incremental summation instead of summing all inputs first. {% assign timestamp="1:12:47" %}
 
 - [LDK #4555][] fixes how forwarding nodes enforce [`max_cltv_expiry`][topic
   cltv expiry delta] for [blinded payment paths][topic rv routing]. The field is
   meant to ensure an expired blinded route is rejected at the introduction hop
   rather than being forwarded through the blinded segment and failing closer to
   the receiver. Previously, LDK compared the constraint against the hop's
-  outgoing CLTV value; it now checks the inbound CLTV expiry as intended.
+  outgoing CLTV value; it now checks the inbound CLTV expiry as intended. {% assign timestamp="1:15:03" %}
 
 - [LND #10713][] adds per-peer and global token-bucket rate limits for incoming
   [onion messages][topic onion messages], dropping excess traffic at ingress
   before it reaches the onion handler. This hardens LND's recently added onion
   message forwarding support (see [Newsletter #396][news396 lnd onion]) against
   high-volume abuse from fast peers. The per-peer and global split mirrors LND's
-  earlier gossip bandwidth limits (see [Newsletter #370][news370 lnd gossip]).
+  earlier gossip bandwidth limits (see [Newsletter #370][news370 lnd gossip]). {% assign timestamp="1:16:23" %}
 
 - [LND #10754][] stops forwarding an [onion message][topic onion messages] when
   the chosen next hop is the same peer that delivered it, avoiding an immediate
-  bounce on the same connection.
+  bounce on the same connection. {% assign timestamp="1:18:02" %}
 
 {% include snippets/recap-ad.md when="2026-04-28 16:30" %}
 {% include references.md %}
