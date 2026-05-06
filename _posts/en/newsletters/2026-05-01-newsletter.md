@@ -39,7 +39,7 @@ notable changes to popular Bitcoin infrastructure software.
 
   Kyoto developer Robert Netzke commented on the differences in false positive
   rates with respect to GCS and possible failures that could occur in the
-  algorithm.
+  algorithm. {% assign timestamp="19:05" %}
 
 ## Changing consensus
 
@@ -63,7 +63,7 @@ Bitcoin's consensus rules._
   enable migration to quantum-resistant wallets. Conduition suggests that such
   a wallet structure might also be combined with future lower-cost
   post-quantum signature algorithms with SPHINCS providing a dependable
-  fallback in case they are proven insecure.
+  fallback in case they are proven insecure. {% assign timestamp="31:07" %}
 
 - **Discussion of a post-quantum output type**: Antoine Poinsot [wrote][ap ml pqout] to
   the Bitcoin-Dev mailing list defending a plain post-quantum output type (as
@@ -76,7 +76,7 @@ Bitcoin's consensus rules._
   post-quantum signing to [tapscript][topic tapscript] and adding a plain post-quantum output
   type. Several open questions remain, including whether and to what degree to
   incentivize migration and when / whether to disable quantum-vulnerable
-  signatures.
+  signatures. {% assign timestamp="34:42" %}
 
 - **Proposal to embed post-quantum keys in tapscript without consensus changes**: Daniel
   Buchner [sent][db ml minpqc] a proposal to the Bitcoin-Dev mailing list
@@ -93,7 +93,7 @@ Bitcoin's consensus rules._
   spending with the post-quantum keys. Like many quantum migration proposals,
   this proposal only retains security in the face of a quantum adversary if
   key reuse is strictly prevented. Buchner is seeking feedback on the
-  proposal.
+  proposal. {% assign timestamp="38:03" %}
 
 - **BIP54 demonstration of slow blocks on signet**: On Delving Bitcoin,
   Antoine Poinsot [wrote][ap delving slowblocks] about a demonstration of the
@@ -108,7 +108,7 @@ Bitcoin's consensus rules._
   the network and required significantly more time to be fully validated on
   individual nodes compared to typical blocks. It should be noted that these
   demonstration blocks were far from the worst case that is prevented by
-  BIP54.
+  BIP54. {% assign timestamp="43:28" %}
 
 - **Post-quantum BIP86 recovery using zk-STARK proofs of BIP32 seeds**:
   Olaoluwa Osuntokun (roasbeef) [posted][oo ml pqrecovery] on the Bitcoin-Dev
@@ -121,7 +121,7 @@ Bitcoin's consensus rules._
   required prover and verifier and provided benchmarks showing that recovery
   using this method is, at least, possible. The original implementation was
   intentionally not optimized and several developers offered optimizations
-  that make the recovery less costly both to prove and to verify.
+  that make the recovery less costly both to prove and to verify. {% assign timestamp="1:05" %}
 
 ## Releases and release candidates
 
@@ -132,16 +132,16 @@ release candidates._
 - [Core Lightning 26.04.1][] is a maintenance release that includes
   [gossip][topic channel announcements] protocol fixes, as well as build system
   fixes for environments that experienced problems immediately after the major
-  release.
+  release. {% assign timestamp="48:16" %}
 
 - [BTCPay Server 2.3.8][] is a minor release of this self-hosted payment
   solution that includes subscription and point-of-sale updates, LUD21 [LNURL-pay][topic
   lnurl] support, an additional API surface for managing subscription offerings,
-  and other fixes and improvements.
+  and other fixes and improvements. {% assign timestamp="50:15" %}
 
 - [BTCPay Server 2.3.9][] is a maintenance release that addresses server
   recovery after a plugin crash and fixes an xpub parsing issue that was
-  introduced in v2.3.8.
+  introduced in v2.3.8. {% assign timestamp="51:52" %}
 
 ## Notable code and documentation changes
 
@@ -164,7 +164,7 @@ repo], and [BINANAs][binana repo]._
   accounting for those coins. The PR counts that value in the usual `mine`
   buckets where it belongs and applies an offset via `nonmempool` so the
   fields sum to the wallet’s overall balance while making the mempool mismatch
-  explicit.
+  explicit. {% assign timestamp="52:39" %}
 
 - [Bitcoin Core #34885][] adds `btck_block_tree_entry_get_ancestor()` to the
   `libbitcoinkernel` C API (see [Newsletter #380][news380 kernel]) for
@@ -172,12 +172,12 @@ repo], and [BINANAs][binana repo]._
   Instead of walking backward one block at a time with repeated calls to
   `btck_block_tree_entry_get_previous()`, callers constructing block locators
   from a stale or forked tip can directly request ancestors at the needed
-  heights.
+  heights. {% assign timestamp="58:01" %}
 
 - [Bitcoin Core #33920][] adds an `exportasmap` RPC that exports the node’s
   ASMap data embedded at build time (see [Newsletter #394][news394 asmap]) to a
   file. This allows users to inspect, validate, and analyze the data using tools
-  such as `contrib/asmap-tool.py`.
+  such as `contrib/asmap-tool.py`. {% assign timestamp="59:57" %}
 
 - [Bitcoin Core #34911][] removes deprecated [RBF][topic rbf]-related boolean
   fields from several mempool RPC responses unless they are explicitly requested
@@ -186,7 +186,7 @@ repo], and [BINANAs][binana repo]._
   the default since Bitcoin Core 28.0 and the `mempoolfullrbf` option was
   removed in Bitcoin Core 29.0. The `getrawmempool`, `getmempoolentry`,
   `getmempoolancestors`, and `getmempooldescendants` RPCs no longer return the
-  deprecated `bip125-replaceable` field described in [BIP125][] by default.
+  deprecated `bip125-replaceable` field described in [BIP125][] by default. {% assign timestamp="1:02:00" %}
 
 - [BIPs #1548][] adds [BIP391][], a specification for Binary Output Descriptors
   (BOD), an efficient container format for [output script descriptors][topic
@@ -194,14 +194,14 @@ repo], and [BINANAs][binana repo]._
   closed status and lists [BIP393][] as a proposed replacement, noting that
   [BIP391][] was withdrawn after [BIP393][] proposed an alternative method for
   handling wallet metadata such as descriptor annotations (see [Newsletter
-  #400][news400 bip393]).
+  #400][news400 bip393]). {% assign timestamp="1:04:47" %}
 
-- [HWI #831][] adds support for the Ledger Nano Gen5 hardware signing device.
+- [HWI #831][] adds support for the Ledger Nano Gen5 hardware signing device. {% assign timestamp="1:08:17" %}
 
 - [BDK #2188][] starts verifying that a transaction returned by an Electrum
   server matches the requested txid before caching or using it. Previously, a
   server could respond to a `fetch_tx()` request with any transaction data and a
-  different txid, and BDK would accept it.
+  different txid, and BDK would accept it. {% assign timestamp="1:09:11" %}
 
 - [BDK #2115][] adds previous-block-hash awareness to `CheckPoint` by extending
   the `ToBlockHash` trait with an optional `prev_blockhash()` method. This
@@ -210,7 +210,7 @@ repo], and [BINANAs][binana repo]._
   prevents `merge_chains()` from treating a conflicting height-0 checkpoint as a
   normal reorg and replacing it. Now, if two checkpoint chains disagree on
   genesis, the merge fails. See Newsletters [#372][news372 checkpoint] and
-  [#390][news390 checkpoint] for previous work on `CheckPoint`.
+  [#390][news390 checkpoint] for previous work on `CheckPoint`. {% assign timestamp="1:10:14" %}
 
 {% include snippets/recap-ad.md when="2026-05-05 16:30" %}
 {% include references.md %}
