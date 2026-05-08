@@ -119,6 +119,9 @@ optech_mentions:
   - title: "Core Lightning #8856 and #8857 add splicein and spliceout RPC commands"
     url: /en/newsletters/2026/03/27/#core-lightning-8856
 
+  - title: "Eclair #2887 adds support for the official splicing protocol"
+    url: /en/newsletters/2026/05/08/#eclair-2887
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

@@ -213,6 +213,9 @@ optech_mentions:
   - title: "Bitcoin Core #34911 removes deprecated RBF-related boolean fields from mempool RPCs"
     url: /en/newsletters/2026/05/01/#bitcoin-core-34911
 
+  - title: "BOLTs #1327 updates the RBF feerate bump rule to ensure compliance at low feerates"
+    url: /en/newsletters/2026/05/08/#bolts-1327
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

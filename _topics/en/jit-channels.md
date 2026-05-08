@@ -42,6 +42,9 @@ optech_mentions:
   - title: "BLIPs #25 allows accepting underfunded HTLCs in support of JIT channel creation"
     url: /en/newsletters/2024/07/19/#blips-25
 
+  - title: Public fraud proof proposal to improve incentives for just-in-time channels
+    url: /en/newsletters/2026/05/08/#public-fraud-proof-for-just-in-time-channels
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

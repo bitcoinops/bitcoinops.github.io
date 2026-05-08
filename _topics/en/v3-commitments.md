@@ -41,6 +41,12 @@ optech_mentions:
   - title: "LDK #4515 switches the zero-fee commitment channel feature bit to production"
     url: /en/newsletters/2026/04/17/#ldk-4515
 
+  - title: "LDK #4592 checks node reserves before opening new zero-fee commitment channels"
+    url: /en/newsletters/2026/05/08/#ldk-4592
+
+  - title: "BOLTs #1228 specifies zero-fee commitment channels"
+    url: /en/newsletters/2026/05/08/#bolts-1228
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel commitment upgrades

@@ -246,6 +246,9 @@ optech_mentions:
   - title: "BIPs #2089 publishes BIP376, defining new PSBTv2 fields for BIP352 tweak data"
     url: /en/newsletters/2026/04/17/#bips-2089
 
+  - title: "Bitcoin Core #21283 implements BIP370 PSBTv2 support"
+    url: /en/newsletters/2026/05/08/#bitcoin-core-21283
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
