@@ -12,6 +12,49 @@ links to discussion of using public fraud proofs to improve incentives around
 just-in-time channels. Also included are our regular sections describing notable
 changes to popular Bitcoin infrastructure software.
 
+<script>
+(function () {
+  var DELAY = 2500;
+  var FADE  = 600;
+
+  var style = document.createElement('style');
+  style.textContent =
+    '#nl404 { font-family: serif; text-align: center; padding: 2em 0; }' +
+    '#nl404 h1 { font-weight: normal; font-size: 1.5em; margin-bottom: 0.5em; }' +
+    '#nl404 hr { border: 1px solid #000; margin: 0.5em 0; }' +
+    '.nl404-hide { display: none !important; }' +
+    '@keyframes nl404fi { from { opacity: 0; } to { opacity: 1; } }' +
+    '.nl404-show { animation: nl404fi ' + FADE + 'ms ease forwards; }';
+  (document.head || document.documentElement).appendChild(style);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (sessionStorage.getItem('nl404shown')) return;
+    sessionStorage.setItem('nl404shown', '1');
+
+    var wrap = document.querySelector('.post-content');
+    if (!wrap) return;
+
+    var kids = Array.prototype.slice.call(wrap.children);
+    kids.forEach(function (el) { el.classList.add('nl404-hide'); });
+
+    var box = document.createElement('div');
+    box.id = 'nl404';
+    box.innerHTML =
+      '<h1>Newsletter Not Found</h1>' +
+      '<p>:)</p>';
+    wrap.insertBefore(box, wrap.firstChild);
+
+    setTimeout(function () {
+      box.remove();
+      kids.forEach(function (el) {
+        el.classList.remove('nl404-hide');
+        el.classList.add('nl404-show');
+      });
+    }, DELAY);
+  });
+}());
+</script>
+
 ## News
 
 - **Possible solutions to node fingerprinting**: Naiyoma [posted][fing del] to Delving Bitcoin
