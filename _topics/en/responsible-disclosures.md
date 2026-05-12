@@ -186,6 +186,10 @@ optech_mentions:
     url: /en/newsletters/2025/10/31//#cpu-dos-from-unconfirmed-transaction-processing
     date: 2025-04-25
 
+  - title: "Cory Fields responsibly disclosed a script interpreter remote crash vulnerability in Bitcoin Core"
+    url: /en/newsletters/2026/05/15/#bitcoin-core-script-interpreter-remote-crash-disclosure
+    date: 2025-11-02
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

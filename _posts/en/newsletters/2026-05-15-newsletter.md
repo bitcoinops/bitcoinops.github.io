@@ -16,7 +16,26 @@ software.
 
 ## News
 
-FIXME:bitschmidty
+- **Bitcoin Core script interpreter remote crash disclosure:**
+  Niklas Gögge [posted][topic cve mailing list] to the Bitcoin-Dev mailing list
+  disclosing [CVE-2024-52911][topic cve disclosure], a vulnerability affecting versions of Bitcoin Core
+  after version 0.14.0 and before 29.0. After version 0.14.0 (released
+  March 2017), validating a specially-crafted block could cause the node to access
+  previously freed memory. During validation, data required for
+  checking transaction inputs is cached. The bug occurred due to object lifetime
+  ordering during parallel script validation, where cached precomputed
+  transaction data could be freed before background script-check threads
+  completed. For specially-crafted invalid blocks, it was possible for this data
+  to be destroyed while it was still being accessed by background threads.
+
+  An attacker with sufficient proof of work could, using the specially-crafted invalid block, crash a
+  victim's node. Because of the nature of use-after-free bugs, it is possible
+  to perform remote code execution on the victims' nodes, but actually executing
+  that attack is unlikely due to the difficulty of crafting a block that achieves it.
+
+  The vulnerability was discovered and [responsibly disclosed][topic responsible disclosures] by Cory Fields, who
+  also provided a proof of concept and proposed mitigation. The issue was fixed
+  in Bitcoin Core 29.0.
 
 ## Releases and release candidates
 
@@ -41,4 +60,5 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-05-19 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[topic cve mailing list]: https://groups.google.com/g/bitcoindev/c/e1UEdViSYkU
+[topic cve disclosure]: https://bitcoincore.org/en/2026/05/05/disclose-cve-2024-52911/

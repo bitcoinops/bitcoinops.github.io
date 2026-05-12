@@ -22,6 +22,7 @@ title-aliases:
   - CVE-2020-26896
   - CVE-2021-31876
   - CVE-2023-39910
+  - CVE-2024-52911
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -97,6 +98,9 @@ optech_mentions:
   - title: "CVE-2015-3641: out-of-memory crash when Bitcoin Core would accept over 4 GB in messages from peers"
     url: /en/newsletters/2024/07/05/#node-crash-dos-from-multiple-peers-with-large-messages
 
+  - title: "CVE-2024-52911: script interpreter remote crash in Bitcoin Core"
+    url: /en/newsletters/2026/05/15/#bitcoin-core-script-interpreter-remote-crash-disclosure
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Responsible disclosures
@@ -112,6 +116,15 @@ excerpt: >
 
 extra:
   cves:
+    CVE-2024-52911:
+      link: /en/newsletters/2026/05/15/#bitcoin-core-script-interpreter-remote-crash-disclosure
+      summary: >
+        Use-after-free vulnerability in Bitcoin Core's parallel script
+        validation affecting versions after 0.14.0 and before 29.0. An
+        attacker with sufficient proof-of-work could crash victims' nodes
+        and potentially achieve remote code execution. Discovered by Cory
+        Fields and fixed in Bitcoin Core 29.0.
+
     CVE-2023-39910:
       link: /en/newsletters/2023/08/09/#libbitcoin-bitcoin-explorer-security-disclosure
       summary: >
@@ -235,4 +248,3 @@ extra:
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
-
