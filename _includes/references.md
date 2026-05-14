@@ -166,6 +166,7 @@ for details --> {% endcomment %}
 [BIP320]: https://github.com/bitcoin/bips/blob/master/bip-0320.mediawiki
 [BIP321]: https://github.com/bitcoin/bips/blob/master/bip-0321.mediawiki
 [BIP322]: https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki
+[BIP323]: https://github.com/bitcoin/bips/blob/master/bip-0323.mediawiki
 [BIP324]: https://github.com/bitcoin/bips/blob/master/bip-0324.mediawiki
 [BIP325]: https://github.com/bitcoin/bips/blob/master/bip-0325.mediawiki
 [BIP326]: https://github.com/bitcoin/bips/blob/master/bip-0326.mediawiki
