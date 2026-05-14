@@ -75,6 +75,15 @@ repo], and [BINANAs][binana repo]._
   without relying on rolling `nTime` more often than once per second. See
   [Newsletter #395][news395 nversion] for previous discussion.
 
+- [BIPs #2141][] and [BIPs #2155][] revise and extend [BIP322][], which originally
+  proposed a [generic signed message format][topic generic signmessage] in 2018. The update addresses
+  long-standing open questions and feedback, fleshes out the proposed proof of
+  funds construction, and adds a PSBT-based signing flow. The revision makes
+  breaking changes to the previous specification including the addition of a new
+  human-readable prefix to the signature and changes to the proof of funds
+  signature format. A more comprehensive reference implementation based on btcd
+  and additional test vectors are added as the BIP is advanced to
+  Complete and formally proposed to the ecosystem for adoption.
 
 - [Core Lightning #9116][] adds experimental support for [BOLT12][topic offers]
   payer proofs, implementing the latest draft proposal from [BOLTs #1295][].
