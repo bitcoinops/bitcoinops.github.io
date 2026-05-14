@@ -37,6 +37,24 @@ software.
   also provided a proof of concept and proposed mitigation. The issue was fixed
   in Bitcoin Core 29.0.
 
+- **BIP proposal for UTXO set sharing over P2P network**: Fabian Jahr
+  [posted][p2p share ml] to the Bitcoin-Dev mailing list about a
+  [draft BIP][BIPs #2137] for sharing the UTXO set over the P2P layer.
+  The goal of the proposal is to improve the [assumeUTXO][topic assumeutxo]
+  feature by providing a way for new nodes to receive the UTXO set directly
+  from peers, instead of from external sources. In particular, the proposal
+  defines an extension to the P2P protocol which introduces a new service bit,
+  four new P2P messages, and a UTXO set merkle root known to the requesting node, to
+  verify the correctness of the provided UTXO set.
+
+  The proposal received feedback. Antoine Riard proposed to
+  build the current draft on top of [BIP434][], which defines peer feature negotiation
+  (see [Newsletter #386][news386 feat negot]), and brought up some concerns about
+  malicious peers forwarding a malformed UTXO set. Eric Voskuil warned the author about
+  the long-term risks of such a BIP, which could lead to new proposals for miner
+  commitments to UTXO state. According to Voskuil, this would weaken Bitcoin's security model, with new nodes trusting miners instead of verifying the whole chain
+  from the genesis block.
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -172,3 +190,5 @@ repo], and [BINANAs][binana repo]._
 [news397 templatehash]: /en/newsletters/2026/03/20/#bips-1974
 [news348 op_ccv]: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
 [news356 op_ccv]: /en/newsletters/2025/05/30/#bips-1793
+[p2p share ml]: https://groups.google.com/g/bitcoindev/c/rThmyI8ZN3Q
+[news386 feat negot]: /en/newsletters/2026/01/02/#peer-feature-negotiation
