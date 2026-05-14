@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Bitcoin Core #33477 improves assumeUTXO snapshot creation using a temporary chainstate"
     url: /en/newsletters/2026/04/24/#bitcoin-core-33477
 
+  - title: "Draft BIP proposed for sharing UTXO set over P2P for assumeUTXO bootstrapping"
+    url: /en/newsletters/2026/05/15/#bip-proposal-for-utxo-set-sharing-over-p2p-network
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"

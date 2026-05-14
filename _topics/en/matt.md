@@ -47,6 +47,9 @@ optech_mentions:
   - title: "BIPs #1793 merges BIP443 which proposes the OP_CHECKCONTRACTVERIFY opcode"
     url: /en/newsletters/2025/05/30/#bips-1793
 
+  - title: "BINANAs #20 assigns BIN-2026-0002 to OP_CHECKCONTRACTVERIFY proposal"
+    url: /en/newsletters/2026/05/15/#binanas-20
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

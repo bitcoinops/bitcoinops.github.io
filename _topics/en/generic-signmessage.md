@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Bitcoin Knots 28.1 adds support for BIP322 generic signmessage"
     url: /en/newsletters/2025/04/18/
 
+  - title: "BIPs #2141 and #2155 update BIP322 with proof of funds construction and PSBT-based signing flow"
+    url: /en/newsletters/2026/05/15/#bips-2141
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

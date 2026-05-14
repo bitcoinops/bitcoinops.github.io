@@ -104,6 +104,9 @@ optech_mentions:
   - title: "Discussion of onion message jamming and mitigation techniques"
     url: /en/newsletters/2026/04/24/#onion-message-jamming-in-the-lightning-network
 
+  - title: "LND #10612 adds graph-based pathfinding for onion messages"
+    url: /en/newsletters/2026/05/15/#lnd-10612
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
