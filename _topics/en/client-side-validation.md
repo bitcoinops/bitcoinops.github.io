@@ -23,9 +23,6 @@ primary_sources:
   - title: "Shielded CSV: Private and Efficient Client-Side Validation"
     link: https://github.com/ShieldedCSV/ShieldedCSV/releases/latest/download/shieldedcsv.pdf
 
-  - title: "RGB I.0: Scalable Consensus for Client-Side Validated Smart Contracts"
-    link: https://yellowpaper.rgb.tech/
-
   - title: "RGB v0.11.1 technical documentation"
     link: https://docs.rgb.info/commitment-layer/deterministic-bitcoin-commitments-dbc/tapret
 
