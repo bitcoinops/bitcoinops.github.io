@@ -35,7 +35,7 @@ software.
 
   The vulnerability was discovered and [responsibly disclosed][topic responsible disclosures] by Cory Fields, who
   also provided a proof of concept and proposed mitigation. The issue was fixed
-  in Bitcoin Core 29.0.
+  in Bitcoin Core 29.0. {% assign timestamp="22:00" %}
 
 - **BIP proposal for UTXO set sharing over P2P network**: Fabian Jahr
   [posted][p2p share ml] to the Bitcoin-Dev mailing list about a
@@ -53,7 +53,7 @@ software.
   malicious peers forwarding a malformed UTXO set. Eric Voskuil warned the author about
   the long-term risks of such a BIP, which could lead to new proposals for miner
   commitments to UTXO state. According to Voskuil, this would weaken Bitcoin's security model, with new nodes trusting miners instead of verifying the whole chain
-  from the genesis block.
+  from the genesis block. {% assign timestamp="0:42" %}
 
 ## Releases and release candidates
 
@@ -64,7 +64,7 @@ release candidates._
 - [Core Lightning 26.06rc1][] is a release candidate for the next major version
   of this popular LN node which includes new `graceful`, `sendamount`, and
   `xkeysend` RPCs, begins the `pay` deprecation cycle in favor of `xpay`, and
-  adds BOLT12 payer-proof RPC support.
+  adds BOLT12 payer-proof RPC support. {% assign timestamp="34:58" %}
 
 ## Notable code and documentation changes
 
@@ -85,13 +85,13 @@ repo], and [BINANAs][binana repo]._
   queued `CScriptCheck` objects is destroyed. This prevents early-return
   validation paths from causing background script-check threads to access freed
   memory. This vulnerability was previously fixed in Bitcoin Core 29.0 through
-  a covert fix of the early-return behavior (see [Newsletter #333][news333 fix]).
+  a covert fix of the early-return behavior (see [Newsletter #333][news333 fix]). {% assign timestamp="36:44" %}
 
 - [BIPs #2116][] publishes [BIP323][], which proposes expanding the number of
   bits available in `nVersion`'s nonce space for miners from 16 to 24,
   superseding [BIP320][]. It reserves bits 5 through 28 for header-only mining
   without relying on rolling `nTime` more often than once per second. See
-  [Newsletter #395][news395 nversion] for previous discussion.
+  [Newsletter #395][news395 nversion] for previous discussion. {% assign timestamp="38:20" %}
 
 - [BIPs #2141][] and [BIPs #2155][] revise and extend [BIP322][], which originally
   proposed a [generic signed message format][topic generic signmessage] in 2018. The update addresses
@@ -101,7 +101,7 @@ repo], and [BINANAs][binana repo]._
   human-readable prefix to the signature and changes to the proof of funds
   signature format. A more comprehensive reference implementation based on btcd
   and additional test vectors are added as the BIP is advanced to
-  Complete and formally proposed to the ecosystem for adoption.
+  Complete and formally proposed to the ecosystem for adoption. {% assign timestamp="44:13" %}
 
 - [Core Lightning #9116][] adds experimental support for [BOLT12][topic offers]
   payer proofs, implementing the latest draft proposal from [BOLTs #1295][].
@@ -111,7 +111,7 @@ repo], and [BINANAs][binana repo]._
   `invreq_payer_id`, while allowing selected invoice fields to be omitted for
   privacy. The PR adds common routines for creating and validating payer proofs,
   updates `bolt12-cli`, and adds an experimental `createproof` RPC. The format
-  remains experimental and may change.
+  remains experimental and may change. {% assign timestamp="48:35" %}
 
 - [Core Lightning #9110][] deprecates the `pay`, `paystatus`, `keysend`,
   `getroute`, `renepay`, and `renepaystatus` RPCs, with deprecation beginning
@@ -122,7 +122,7 @@ repo], and [BINANAs][binana repo]._
   parameters, CLTV shadow routing, improved handling of repeated payments, and
   handling of `channel_update` errors. It also updates `getroutes` to return
   clearer per-hop amount, node, and CLTV fields, and updates `sendpay` to accept
-  routes using those fields.
+  routes using those fields. {% assign timestamp="50:27" %}
 
 - [LDK #4598][] updates `OutputSweeper` to ensure its `pending_sweep` flag is
   cleared even if an in-progress sweep attempt is cancelled before completion.
@@ -130,7 +130,7 @@ repo], and [BINANAs][binana repo]._
   cancelled sweep, later attempts would be incorrectly skipped, potentially
   preventing time-sensitive [HTLC][topic htlc] outputs from being claimed until
   the node restarted. The PR now clears the flag using a guard object that runs
-  on normal return, error, or cancellation.
+  on normal return, error, or cancellation. {% assign timestamp="52:10" %}
 
 - [LDK #4528][] commits BOLT11 `payment_metadata` (see
   [Newsletter #182][news182 metadata]) to the inbound payment HMAC. When
@@ -139,14 +139,14 @@ repo], and [BINANAs][binana repo]._
   sender-side modification or omission. In addition, the invoice builder now
   requires payment metadata by default, but users can opt out using
   `optional_payment_metadata()` for compatibility with senders that don't
-  support it.
+  support it. {% assign timestamp="53:30" %}
 
 - [LND #10612][] adds graph-based pathfinding for [onion messages][topic onion
   messages], building on earlier forwarding support (see
   [Newsletter #396][news396 onion]). LND can now find a route to a destination
   through nodes that advertise onion message support using feature bits 38/39.
   Since onion messages are not payments, the search does not consider liquidity
-  or fees.
+  or fees. {% assign timestamp="54:37" %}
 
 - [BTCPay Server #7354][] fixes a hot wallet key exposure issue introduced after
   [BTCPay Server #7329][] added granular wallet permissions. Users with
@@ -155,26 +155,26 @@ repo], and [BINANAs][binana repo]._
   [PSBT][topic psbt] signing. The PR introduces a `HotwalletSafe` helper to
   centralize hot-wallet access, separates permission to sign from permission to
   view seed material, and updates signing flows to use the hot wallet
-  server-side without returning private signing keys through HTTP form fields.
+  server-side without returning private signing keys through HTTP form fields. {% assign timestamp="57:12" %}
 
 - [BDK #2195][] fixes syncing from Electrum servers when a transaction's first
   output isn't indexed, such as an `OP_RETURN` output. Previously,
   `BdkElectrumClient::populate_with_txids` queried confirmation history using
   the first output's script, which could return an empty history. BDK now uses
   the first indexed output script, or falls back to an input's previous output
-  script if none of the outputs are indexed.
+  script if none of the outputs are indexed. {% assign timestamp="58:10" %}
 
 - [Bitcoin Inquisition #100][] implements [BIP446][]'s `OP_TEMPLATEHASH` opcode
   for testing proposed consensus changes on [signet][topic signet].
   `OP_TEMPLATEHASH` is a [tapscript][topic tapscript] opcode that pushes a hash
   of the spending transaction onto the stack (see
   [Newsletter #397][news397 templatehash]). The PR also adds an extensive test
-  framework.
+  framework. {% assign timestamp="1:00:00" %}
 
 - [BINANAs #20][] assigns BIN-2026-0002 to a future Bitcoin Inquisition
   implementation of [BIP443][]'s [OP_CHECKCONTRACTVERIFY][topic matt] (OP_CCV)
   opcode. See Newsletters [#348][news348 op_ccv] and [#356][news356 op_ccv] for
-  previous discussion of this proposed [covenant][topic covenants].
+  previous discussion of this proposed [covenant][topic covenants]. {% assign timestamp="1:02:42" %}
 
 {% include snippets/recap-ad.md when="2026-05-19 16:30" %}
 {% include references.md %}
