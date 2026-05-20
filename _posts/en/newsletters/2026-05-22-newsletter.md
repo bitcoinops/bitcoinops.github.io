@@ -22,15 +22,33 @@ FIXME:bitschmidty
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Ibis Wallet announced:**
+  [Ibis Wallet][ibis wallet] is an Android wallet built on BDK supporting coin
+  control, [RBF][topic rbf] and [CPFP][topic cpfp] fee management, multisig,
+  hardware signing device integration using QR codes, [silent payments][topic
+  silent payments], and [Tor][topic anonymity networks] integration. It also
+  supports optional second layers, including Spark, Liquid, and, in the future,
+  [Ark][topic ark].
 
-## Releases and release candidates
+- **LDK Server announced:**
+  Spiral announced [LDK Server][ldk server], an API-first Lightning node daemon
+  built on LDK Node for payment processors and wallet providers. It provides a gRPC
+  interface, an embedded BDK-based wallet, and a Model Context Protocol (MCP)
+  server for AI-agent interactions with the node.
 
-_New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates._
+- **Mempool.space v3.3.0 released:**
+  Mempool [v3.3.0][mempool v3.3.0] adds [taproot][topic taproot] script tree
+  visualizations, updated [PSBT][topic psbt] previews, improvements to [fee
+  estimation][topic fee estimation], [ephemeral dust][topic ephemeral anchors]
+  support, stale block comparisons, sighash icons, and a merkle-proof API, among
+  other features.
 
-FIXME:Gustavojfe
+- **peer-observer P2P monitoring tooling:**
+  0xB10C [outlined][peer-observer delving] some open-source components used by his
+  [peer-observer][peer-observer site] platform, including infrastructure for
+  extracting events from Bitcoin Core nodes using IPC, logs, P2P, and
+  RPC sources. He also describes ongoing development around archiving, anomaly
+  detection, and alerting tools.
 
 ## Notable code and documentation changes
 
@@ -47,4 +65,8 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-05-26 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[ibis wallet]: https://github.com/aeonBTC/IbisWallet
+[ldk server]: https://github.com/lightningdevkit/ldk-server
+[mempool v3.3.0]: https://github.com/mempool/mempool/releases/tag/v3.3.0
+[peer-observer delving]: https://delvingbitcoin.org/t/peer-observer-a-tool-and-infrastructure-for-monitoring-the-bitcoin-p2p-network-for-attacks-and-anomalies/1988/4
+[peer-observer site]: https://public.peer.observer/
