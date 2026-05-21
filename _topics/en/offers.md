@@ -141,6 +141,9 @@ optech_mentions:
   - title: "BOLTs #1316 clarifies that offer_amount in BOLT12 offers must be greater than zero when present"
     url: /en/newsletters/2026/03/13/#bolts-1316
 
+  - title: "BLIPs #42 adds BLIP42, a specification for BOLT12 contacts"
+    url: /en/newsletters/2026/05/22/#blips-42
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
