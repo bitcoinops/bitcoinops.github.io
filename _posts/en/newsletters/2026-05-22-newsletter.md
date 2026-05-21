@@ -15,7 +15,35 @@ summarizing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **TCP hole punching for Bitcoin nodes behind NATs**: 0xB10C [posted][hole punch del]
+  to Delving Bitcoin about an idea to make more nodes behind a
+  home router NAT accept inbound connections. The initial concept comes from the observation
+  that setting `-natpmp=1` by default starting from [Bitcoin Core v30.0][] did not increase
+  the number of reachable nodes in residential ISPs as expected.
+
+  The idea leverages hole punching, a technique that allows two hosts behind
+  certain types of NATs to connect directly, without relaying traffic through a server.
+  The process works like this: two unreachable hosts, Alice and Bob, exchange their public
+  endpoints (i.e. IP address and port) through a third party and simultaneously
+  initiate a connection to each other. This creates a mapping in the NATs,
+  allowing the hosts to complete the handshake and establish a connection. Since the proposed
+  technique works on TCP, which requires precise synchronization between nodes, it produces
+  higher failure rates compared to a similar technique using UDP.
+
+  0xB10C mentioned multiple approaches for an implementation using Bitcoin's P2P protocol. A first set
+  requires a bridge, referred to as a rendezvous server, to allow Alice and Bob to exchange endpoint
+  information. The server could either provide a matchmaking service, to allow unreachable hosts
+  to offer their connection slots, or it could decide to hand off one of its existing connections
+  to another peer instead of evicting it due to a lack of free inbound slots. He also described
+  a way to perform hole punching directly under [Tor/I2P][topic anonymity networks], bypassing
+  the need for a third-party server to establish the connection. In this approach, Alice would
+  start listening on a dedicated Tor/I2P endpoint, to which Bob would connect and start the
+  hole-punching process.
+
+  The proposal has not been formalized yet, and many questions remain unanswered.
+  0xB10C asked for community feedback and invited discussion to address many open points,
+  such as how to classify hole-punch connections, reliability of TCP hole punching,
+  possible attacks, and implementation efforts.
 
 ## Changes to services and client software
 
@@ -158,3 +186,5 @@ repo], and [BINANAs][binana repo]._
 [news340 lnd]: /en/newsletters/2025/02/07/#lnd-9456
 [news33 lnd]: /en/newsletters/2019/02/12/#lnd-2572
 [news223 erlay]: /en/newsletters/2022/10/26/#bitcoin-core-23443
+[hole punch del]: https://delvingbitcoin.org/t/tcp-hole-punching-for-bitcoin-nodes-behind-home-nats/2497
+[Bitcoin Core v30.0]: https://bitcoincore.org/en/releases/30.0/
