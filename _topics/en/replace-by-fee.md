@@ -216,6 +216,12 @@ optech_mentions:
   - title: "BOLTs #1327 updates the RBF feerate bump rule to ensure compliance at low feerates"
     url: /en/newsletters/2026/05/08/#bolts-1327
 
+  - title: "LDK #4494 updates RBF logic to follow the new BOLT2 feerate bump rule"
+    url: /en/newsletters/2026/04/10/#ldk-4494
+
+  - title: "Eclair #3298 updates RBF logic to follow the new BOLT2 feerate bump rule"
+    url: /en/newsletters/2026/05/22/#eclair-3298
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
