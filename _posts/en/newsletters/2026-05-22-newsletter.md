@@ -15,6 +15,27 @@ summarizing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
+- **Significant updates to BIP322\: Generic Signed Message Format**: Oliver Gugger
+  [posted][guggero bip322 ml] to the Bitcoin-Dev mailing list about his ideas on
+  how to round out [BIP322][topic generic signmessage]. As Gugger had been
+  implementing support in btcd, he had noticed several open questions and gaps
+  in the proposal. He proposed three major amendments to the proposal:
+
+  - Human-readable prefixes to distinguish the three signature variants.
+
+  - Inclusion of UTXO information in the "Proof of Funds" variant.
+
+  - Support for PSBT-based message signing.
+
+  After some discussion and incorporating feedback on the PSBT construction, the update to BIP322
+  was published (see [Newsletter #405][news405 bip322]). Gugger advanced BIP322 to Complete,
+  indicating the specification is now considered stable and ready for implementation. Since the update, it resurfaced that Coldcard had
+  [shipped support][cc 322] for BIP322 in March.
+
+  Projects that previously implemented support for earlier versions of [BIP322][] should review their
+  compatibility with the updated specification, which introduced breaking changes including a new
+  human-readable prefix and a revised proof of funds signature format.
+
 - **TCP hole punching for Bitcoin nodes behind NATs**: 0xB10C [posted][hole punch del]
   to Delving Bitcoin about an idea to make more nodes behind a
   home router NAT accept inbound connections. The initial concept comes from the observation
@@ -188,3 +209,6 @@ repo], and [BINANAs][binana repo]._
 [news223 erlay]: /en/newsletters/2022/10/26/#bitcoin-core-23443
 [hole punch del]: https://delvingbitcoin.org/t/tcp-hole-punching-for-bitcoin-nodes-behind-home-nats/2497
 [Bitcoin Core v30.0]: https://bitcoincore.org/en/releases/30.0/
+[guggero bip322 ml]: https://groups.google.com/g/bitcoindev/c/qd6BNz9gxCk/m/k1fHq4RKAQAJ
+[cc 322]: https://blog.coinkite.com/bip322-wif/
+[news405 bip322]: /en/newsletters/2026/05/15/#bips-2141
