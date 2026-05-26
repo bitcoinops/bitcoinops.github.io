@@ -59,6 +59,18 @@ optech_mentions:
   - title: "LND #9669 downgrades simple taproot channels to always use the legacy cooperative close flow"
     url: /en/newsletters/2025/04/11/#lnd-9669
 
+  - title: "Eclair #3103 adds support for simple taproot channels"
+    url: /en/newsletters/2025/08/22/#eclair-3103
+
+  - title: "LND #9985 adds end-to-end support for production simple taproot channels"
+    url: /en/newsletters/2026/04/17/#lnd-9985
+
+  - title: "Eclair #3144 updates simple taproot channels to use the official feature bit, enabled by default"
+    url: /en/newsletters/2026/05/08/#eclair-3144
+
+  - title: "BOLTs #995 adds an extension BOLT for simple taproot channels"
+    url: /en/newsletters/2026/05/08/#bolts-995
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

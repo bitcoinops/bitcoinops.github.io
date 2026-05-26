@@ -70,6 +70,9 @@ optech_mentions:
   - title: "Sparrow 2.1.0 begins using Lark as an alternative to HWI"
     url: /en/newsletters/2025/02/21/#sparrow-2-1-0-released
 
+  - title: "HWI #831 adds support for the Ledger Nano Gen5 hardware signing device"
+    url: /en/newsletters/2026/05/01/#hwi-831
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)

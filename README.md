@@ -61,17 +61,17 @@ following command:
 
 **Install Ruby**
 
-To install Ruby 2.6.4, simply run this command:
+To install Ruby 3.4, simply run this command:
 
-    rvm install 2.6.4
+    rvm install 3.4
 
 Sometimes this will find a pre-compiled Ruby package for your Linux
 distribution, but sometimes it will need to compile Ruby from scratch
 (which takes about 15 minutes).
 
-After Ruby 2.6.4 is installed, make it your default Ruby:
+After Ruby 3.4 is installed, make it your default Ruby:
 
-    rvm alias create default ruby-2.6.4
+    rvm alias create default ruby-3.4
 
 And tell your system to use it:
 

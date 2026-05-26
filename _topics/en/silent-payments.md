@@ -80,6 +80,30 @@ optech_mentions:
   - title: "BIPs #1687 merges BIP375 to specify sending silent payments using PSBTs"
     url: /en/newsletters/2025/01/17/#bips-1687
 
+  - title: "Draft BIP for silent payment descriptors"
+    url: /en/newsletters/2026/01/09/#draft-bip-for-silent-payment-descriptors
+
+  - title: "Electrum server for testing silent payments"
+    url: /en/newsletters/2026/01/23/#electrum-server-for-testing-silent-payments
+
+  - title: "Proposal to limit the number of per-group silent payment recipients"
+    url: /en/newsletters/2026/02/13/#proposal-to-limit-the-number-of-per-group-silent-payment-recipients
+
+  - title: "Nunchuk adds silent payment support"
+    url: /en/newsletters/2026/02/20/#nunchuk-adds-silent-payment-support
+
+  - title: "BIPs #2106 updates BIP352 to limit per-group recipients to 2323"
+    url: /en/newsletters/2026/03/06/#bips-2106
+
+  - title: "BIPs #2047 publishes BIP392, defining a descriptor format for silent payments"
+    url: /en/newsletters/2026/03/13/#bips-2047
+
+  - title: "BIPs #2089 publishes BIP376, defining new PSBTv2 fields for BIP352 tweak data"
+    url: /en/newsletters/2026/04/17/#bips-2089
+
+  - title: "BIPs #2142 adds a send/receive test vector to the BIP352 silent payments specification"
+    url: /en/newsletters/2026/04/24/#bips-2142
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

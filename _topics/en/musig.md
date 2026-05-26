@@ -160,6 +160,15 @@ optech_mentions:
   - title: "Lightning Loop begins using MuSig2"
     url: /en/newsletters/2025/02/21/#lightning-loop-moves-to-musig2
 
+  - title: "Rust libsecp256k1 #798 completes its MuSig2 implementation"
+    url: /en/newsletters/2025/06/20/#rust-libsecp256k1-798
+
+  - title: "Bitcoin Core #31244 implements the parsing of MuSig2 descriptors as defined in BIP390"
+    url: /en/newsletters/2025/08/08/#bitcoin-core-31244
+
+  - title: "Using a blinded version of MuSig2 to build a vault with blinded co-signers"
+    url: /en/newsletters/2026/01/02/#building-a-vault-using-blinded-co-signers
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures

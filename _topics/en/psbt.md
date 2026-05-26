@@ -240,6 +240,15 @@ optech_mentions:
   - title: "PSBTv2 integration testing, merklized PSBTv2, and silent payments PSBTv2"
     url: /en/newsletters/2025/01/24/#psbtv2-integration-testing
 
+  - title: "Extensions to tooling, including PSBTs, for TEMPLATEHASH-CSFS-IK support"
+    url: /en/newsletters/2026/03/06/#extensions-to-standard-tooling-for-templatehash-csfs-ik-support
+
+  - title: "BIPs #2089 publishes BIP376, defining new PSBTv2 fields for BIP352 tweak data"
+    url: /en/newsletters/2026/04/17/#bips-2089
+
+  - title: "Bitcoin Core #21283 implements BIP370 PSBTv2 support"
+    url: /en/newsletters/2026/05/08/#bitcoin-core-21283
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

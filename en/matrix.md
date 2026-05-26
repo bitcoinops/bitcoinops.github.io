@@ -89,16 +89,30 @@ th, td {
     <td style="border-style:hidden;"></td>
     <td style="border-style:hidden;text-align:left;vertical-align: top;font-size:14px;">
       <font size="3"><b>Select features to display:</b></font><br>
-      &#160;<input type="checkbox" id="showPlatform">Platform<br>
-      &#160;<input type="checkbox" id="showHWInterface">Hardware Wallet Interface<br>
-      &#160;<input type="checkbox" id="showFeeBumping">Fee Bumping<br>
-      &#160;<input type="checkbox" id="showDescriptors">Descriptors<br>
-      &#160;<input type="checkbox" id="showMultiPartyTxn">Multi-Party<font size="1"> (PSBT, MuSig2, Coinjoin, Payjoin)</font><br>
+      &#160;<label>
+              <input type="checkbox" id="showPlatform">Platform<br>
+            </label>
+      &#160;<label>
+              <input type="checkbox" id="showHWInterface">Hardware Wallet Interface<br>
+            </label>
+      &#160;<label>
+              <input type="checkbox" id="showFeeBumping">Fee Bumping<br>
+            </label>
+      &#160;<label>
+              <input type="checkbox" id="showDescriptors">Descriptors<br>
+            </label>
+      &#160;<label>
+              <input type="checkbox" id="showMultiPartyTxn">Multi-Party<font size="1"> (PSBT, MuSig2, Coinjoin, Payjoin)</font><br>
+            </label>
     </td>
     <td style="border-style:hidden;text-align:left;vertical-align: top;font-size:14px;">
       <font size="3"><b></b></font><br>
-      &#160;<input type="checkbox" id="showPC_SilentPayments">Payment Codes, Silent Payments<br>
-      &#160;<input type="checkbox" id="showLightning">Lightning<br>
+      &#160;<label>
+              <input type="checkbox" id="showPC_SilentPayments">Payment Codes, Silent Payments<br>
+            </label>
+      &#160;<label>
+              <input type="checkbox" id="showLightning">Lightning<br>
+            </label>
     </td>
     <td style="border-style:hidden;text-align:left;vertical-align: top;font-size:14px;">
           <font size="3"><b>Legend:</b></font><br>
@@ -265,7 +279,7 @@ th, td {
           <td><font size="3">{{tool.category}}</font></td>
           <td>
                 <div class="tooltip-container"> <!-- Everything within this division activates the tooltip container -->
-                <span class="tooltip">{{tool.keyfeatures}}</span> <!-- This span contains the tooltip text for the tooltip container -->
+                <span class="tooltip">"<em>{{tool.keyfeatures}}</em>"</span> <!-- This span contains the tooltip text for the tooltip container -->
                 &#x1F4A1;
                 </div>
           </td>
@@ -384,7 +398,7 @@ th, td {
 
 <br/>
 _Contributions and corrections are welcome. Please see the [contibuting
-guidelines](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/CONTRIBUTING.md#compatibility-matrix-data)
+guidelines](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/CONTRIBUTING.md#bitcoin-feature-matrix-data)
 for details._
 {: style="text-align: center;"}
 

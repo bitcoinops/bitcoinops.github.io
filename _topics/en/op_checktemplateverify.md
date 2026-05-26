@@ -160,6 +160,24 @@ optech_mentions:
   - title: "Details about how Ark could make use of CTV if activated"
     url: /en/newsletters/2025/04/04/#benefit-of-ctv-to-ark-users
 
+  - title: "Description of benefits to BitVM from `OP_CTV` and `OP_CSFS`"
+    url: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
+
+  - title: "Claim that `OP_CTV` and `OP_CSFS` would provide advantages for using PTLCs"
+    url: /en/newsletters/2025/07/04/#ctv-csfs-advantages-for-ptlcs
+
+  - title: "Continued discussion about CTV+CSFS advantages for BitVM"
+    url: /en/newsletters/2025/07/04/#continued-discussion-about-ctv-csfs-advantages-for-bitvm
+
+  - title: "Discussion of open letter about CTV and CSFS"
+    url: /en/newsletters/2025/07/04/#open-letter-about-ctv-and-csfs
+
+  - title: "`OP_TEMPLATEHASH` proposal as an alternative to CTV"
+    url: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
+
+  - title: "Understanding and mitigating a CTV footgun"
+    url: /en/newsletters/2026/01/02/#understanding-and-mitigating-a-ctv-footgun
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

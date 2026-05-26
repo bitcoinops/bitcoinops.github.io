@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Bitcoin Core #21009 removes logic needed to upgrade a pre-segwit node to segwit"
     url: /en/newsletters/2021/05/05/#bitcoin-core-21009
 
+  - title: Analysis of syncing full nodes without downloading old witnesses
+    url: /en/newsletters/2025/06/06/#syncing-full-nodes-without-witnesses
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

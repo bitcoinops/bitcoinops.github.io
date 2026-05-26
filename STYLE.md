@@ -213,3 +213,7 @@ spelled the same.
   confirmation](/en/topics/version-3-transaction-relay/)
   (TRUC).  Preferred: topologically restricted until confirmation
   ([TRUC](/en/topics/version-3-transaction-relay/)).
+
+- **Newsletter linking:** when linking to previous newsletters, prefer link text
+  as "[Newsletter #nnn]" when it is one newsletter being referenced and
+  "Newsletter [#nnn], [#nnn], [#nnn]" when more than one being referenced.

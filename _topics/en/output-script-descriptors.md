@@ -197,6 +197,30 @@ optech_mentions:
   - title: "Proposed standard for backing up wallet descriptors"
     url: /en/newsletters/2025/04/25/#standardized-backup-for-wallet-descriptors
 
+  - title: "New library for encrypting descriptors and miniscript to the included public keys"
+    url: /en/newsletters/2025/06/13/#descriptor-encryption-library
+
+  - title: "New library for compressing descriptors and miniscript"
+    url: /en/newsletters/2025/07/11/#compressed-descriptors
+
+  - title: "Brainstorming how to use output script descriptors for CTV-style vaults"
+    url: /en/newsletters/2025/07/04/#vault-output-script-descriptor
+
+  - title: "Draft BIP for silent payment descriptors"
+    url: /en/newsletters/2026/01/09/#draft-bip-for-silent-payment-descriptors
+
+  - title: "Draft BIP for output script descriptor annotations"
+    url: /en/newsletters/2026/02/27/#draft-bip-for-output-script-descriptor-annotations
+
+  - title: "BIPs #2047 publishes BIP392, defining a descriptor format for silent payments"
+    url: /en/newsletters/2026/03/13/#bips-2047
+
+  - title: "BIPs #2099 publishes BIP393, an optional annotation syntax for output script descriptors"
+    url: /en/newsletters/2026/04/10/#bips-2099
+
+  - title: "BIPs #1548 adds BIP391, a closed specification for Binary Output Descriptors superseded by BIP393"
+    url: /en/newsletters/2026/05/01/#bips-1548
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

@@ -41,6 +41,15 @@ optech_mentions:
   - title: "Draft CCV BIP and details about amount semantic"
     url: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
 
+  - title: "OP_VAULT proposal withdrawn in favor of OP_CCV"
+    url: /en/newsletters/2025/05/16/#bips-1848
+
+  - title: "BIPs #1793 merges BIP443 which proposes the OP_CHECKCONTRACTVERIFY opcode"
+    url: /en/newsletters/2025/05/30/#bips-1793
+
+  - title: "BINANAs #20 assigns BIN-2026-0002 to OP_CHECKCONTRACTVERIFY proposal"
+    url: /en/newsletters/2026/05/15/#binanas-20
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

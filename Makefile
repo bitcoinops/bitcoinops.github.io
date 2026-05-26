@@ -25,7 +25,9 @@ preview:
 	      _site/*/topics/categories/index.html \
 	      _site/*/topics/dates/index.html \
 	      _site/*/topics/index.html
-	bundle exec jekyll serve --host 0.0.0.0 $(JEKYLL_FLAGS)
+	## Build with dev config (for correct redirect URLs), then serve
+	bundle exec jekyll build --config _config.yml,_config_dev.yml $(JEKYLL_FLAGS) && \
+	bundle exec jekyll serve --host 0.0.0.0 --skip-initial-build $(JEKYLL_FLAGS)
 
 build:
 	@# Tiny sleep for when running concurrently to ensure output
@@ -109,7 +111,7 @@ test-after-build: build
 	done | grep .
 
 	## Check for broken links
-	bundle exec htmlproofer --check-html --disable-external --url-ignore '/^\/bin/.*/' ./_site
+	bundle exec htmlproofer --disable-external --no-enforce-https --ignore-urls '/^\/bin/.*/' ./_site
 
 ## Tests to run last because they identify problems that may not be fixable during initial commit review.
 ## However, these should not be still failing when the site goes to production

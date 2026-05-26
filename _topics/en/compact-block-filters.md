@@ -92,6 +92,9 @@ optech_mentions:
   - title: "LND v0.17.0-beta released with improved compact block filter speed through batched downloading"
     url: /en/newsletters/2023/10/04/#lnd-v0-17-0-beta
 
+  - title: "Binary fuse filters as an alternative to BIP158's GCS"
+    url: /en/newsletters/2026/05/01/#binary-fuse-filters-as-an-alternative-to-bip158-s-gcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering

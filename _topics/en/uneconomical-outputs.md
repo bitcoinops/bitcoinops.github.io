@@ -72,6 +72,15 @@ optech_mentions:
   - title: "Bitcoin Core PR Review Club about exempting ephemeral anchors from the dust limit"
     url: /en/newsletters/2024/11/08/#bitcoin-core-pr-review-club
 
+  - title: "Proposal for removing uneconomical outputs from the stored UTXO set"
+    url: /en/newsletters/2025/06/06/#removing-outputs-from-the-utxo-set-based-on-value-and-time
+
+  - title: "BOLTs #1301 recommends a higher dust_limit_satoshis for anchor channels"
+    url: /en/newsletters/2026/03/06/#bolts-1301
+
+  - title: "BIPs #2150 adds BIP451 specifying a Dust UTXO Disposal Protocol"
+    url: /en/newsletters/2026/05/08/#bips-2150
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)

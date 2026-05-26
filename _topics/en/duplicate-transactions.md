@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Consensus cleanup proposal updated to require setting coinbase lock time to previous block height"
     url: /en/newsletters/2025/02/07/#duplicate-transaction-fix
 
+  - title: "BIP30 consensus failure vulnerability if chain is reorged below block 91880"
+    url: /en/newsletters/2025/05/09/#bip30-consensus-failure-vulnerability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork
@@ -96,8 +99,8 @@ impossible.
 
 The [BIP30][] soft fork limited the damage by forbidding any transaction
 in a new block from having the same txid as a partly unspent previous
-transaction.  A later soft fork [BIP34][] attempted to fix the problem
-entirely by requiring each coinbase transaction include unique data,
+transaction.  A later soft fork, [BIP34][], attempted to fix the problem
+entirely by requiring each coinbase transaction to include unique data,
 ensuring it was a unique transaction with a unique txid.  Unfortunately,
 it was later discovered that some pre-BIP34 blocks contained the unique
 data necessary for a later block to pass the BIP34 rule, called the

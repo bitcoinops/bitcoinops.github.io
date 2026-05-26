@@ -35,6 +35,18 @@ optech_mentions:
   - title: Using v3 commitments to allow mobile wallets to settle channels without extra UTXOs
     url: /en/newsletters/2025/02/21/#allowing-mobile-wallets-to-settle-channels-without-extra-utxos
 
+  - title: "LDK #3792 introduces initial support for v3 commitment transactions"
+    url: /en/newsletters/2025/06/13/#ldk-3792
+
+  - title: "LDK #4515 switches the zero-fee commitment channel feature bit to production"
+    url: /en/newsletters/2026/04/17/#ldk-4515
+
+  - title: "LDK #4592 checks node reserves before opening new zero-fee commitment channels"
+    url: /en/newsletters/2026/05/08/#ldk-4592
+
+  - title: "BOLTs #1228 specifies zero-fee commitment channels"
+    url: /en/newsletters/2026/05/08/#bolts-1228
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel commitment upgrades

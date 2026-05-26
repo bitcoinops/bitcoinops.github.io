@@ -78,8 +78,8 @@ before the main content -->
 
 {{number_of_events}} indexed events in {{number_of_months}} months <!-- {{mentions | size}} events including duplicates -->
 
-[2018](#d2018-12) | [2019](#d2019-12) | [2020](#d2020-12) |
-[2021](#d2021-12)
+[2018](#d2018-12) \| [2019](#d2019-12) \| [2020](#d2020-12) \| [2021](#d2021-12) \|
+[2022](#d2022-12) \| [2023](#d2023-12) \| [2024](#d2024-12) \| [2025](#d2025-12)
 
 </div>
 

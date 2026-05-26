@@ -73,6 +73,72 @@ optech_mentions:
   - title: "Draft BIP for destroying quantum-insecure bitcoins"
     url: /en/newsletters/2025/04/04/#draft-bip-for-destroying-quantum-insecure-bitcoins
 
+  - title: Report about quantum computing and Bitcoin
+    url: /en/newsletters/2025/06/06/#quantum-computing-report
+
+  - title: "Prototype implementation of Winternitz signatures for Bitcoin using `OP_CAT`"
+    url: /en/newsletters/2025/07/04/#op-cat-enables-winternitz-signatures
+
+  - title: "Commit/reveal function for post-quantum recovery of insecure bitcoins"
+    url: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
+
+  - title: "Research indicates many Bitcoin primitives are compatible with quantum-resistant signatures"
+    url: /en/newsletters/2025/07/25/#research-indicates-common-bitcoin-primitives-are-compatible-with-quantum-resistant-signature-algorithms
+
+  - title: "Discussion about forcing migration from quantum-vulnerable outputs"
+    url: /en/newsletters/2025/08/01/#migration-from-quantum-vulnerable-outputs
+
+  - title: "Paper analyzes the security of taproot commitments against quantum computers"
+    url: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
+
+  - title: "SLH-DSA (SPHINCS) post-quantum signature optimizations"
+    url: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
+
+  - title: "Technical report of hash-based post-quantum signature schemes"
+    url: /en/newsletters/2026/01/02/#hash-based-signatures-for-bitcoin-s-post-quantum-future
+
+  - title: "Brassard-Høyer-Tapp (BHT) algorithm and Bitcoin"
+    url: /en/newsletters/2026/01/30/#brassard-hoyer-tapp-bht-algorithm-and-bitcoin-bip360
+
+  - title: "SHRINCS: 324-byte stateful post-quantum signatures with static backups"
+    url: /en/newsletters/2026/02/06/#shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups
+
+  - title: "Falcon post-quantum signature scheme proposal"
+    url: /en/newsletters/2026/02/06/#falcon-post-quantum-signature-scheme-proposal
+
+  - title: "SLH-DSA verification can compete with ECC"
+    url: /en/newsletters/2026/02/06/#slh-dsa-verification-can-compete-with-ecc
+
+  - title: "Hourglass V2 proposal to limit P2PK spends"
+    url: /en/newsletters/2026/03/06/#hourglass-v2-update
+
+  - title: "Discussion of cryptographic algorithm agility in Bitcoin"
+    url: /en/newsletters/2026/03/06/#algorithm-agility-for-bitcoin
+
+  - title: "Discussion of the limits of cryptographic algorithm agility in Bitcoin"
+    url: /en/newsletters/2026/03/06/#the-limitations-of-cryptographic-agility-in-bitcoin
+
+  - title: "Compact Isogeny PQC can replace HD wallets, key-tweaking, silent payments"
+    url: /en/newsletters/2026/04/03/#compact-isogeny-pqc-can-replace-hd-wallets-key-tweaking-silent-payments
+
+  - title: "SHRIMPS: 2.5 KB post-quantum signatures across multiple stateful devices"
+    url: /en/newsletters/2026/04/03/#shrimps-2-5-kb-post-quantum-signatures-across-multiple-stateful-devices
+
+  - title: "BIPs #1895 publishes BIP361, a post-quantum migration and legacy signature deprecation proposal"
+    url: /en/newsletters/2026/04/24/#bips-1895
+
+  - title: "Post-quantum HD wallets with fallback SPHINCS keys"
+    url: /en/newsletters/2026/05/01/#post-quantum-hd-wallets-with-fallback-sphincs-keys
+
+  - title: "Discussion of a post-quantum output type"
+    url: /en/newsletters/2026/05/01/#discussion-of-a-post-quantum-output-type
+
+  - title: "Proposal to embed post-quantum keys in tapscript without consensus changes"
+    url: /en/newsletters/2026/05/01/#proposal-to-embed-post-quantum-keys-in-tapscript-without-consensus-changes
+
+  - title: "Post-quantum BIP86 recovery using zk-STARK proofs of BIP32 seeds"
+    url: /en/newsletters/2026/05/01/#post-quantum-bip86-recovery-using-zk-stark-proofs-of-bip32-seeds
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

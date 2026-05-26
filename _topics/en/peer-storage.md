@@ -42,6 +42,12 @@ optech_mentions:
   - title: "LDK #3575 implements the peer storage protocol"
     url: /en/newsletters/2025/02/21/#ldk-3575
 
+  - title: "Core Lightning #8140 enables peer storage of channel backups by default"
+    url: /en/newsletters/2025/05/23/#core-lightning-8140
+
+  - title: "LDK #3623 extends its peer storage support to provide automatic and encrypted peer backups"
+    url: /en/newsletters/2025/06/20/#ldk-3623
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

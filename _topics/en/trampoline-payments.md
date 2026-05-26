@@ -64,6 +64,9 @@ optech_mentions:
   - title: "LDK #3670 adds support for handling and receiving trampoline payments"
     url: /en/newsletters/2025/04/04/#ldk-3670
 
+  - title: "Eclair #3109 extends its attributable failures support to trampoline payments"
+    url: /en/newsletters/2025/06/27/#eclair-3109
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "BOLTs PR #654: Trampoline Routing"
