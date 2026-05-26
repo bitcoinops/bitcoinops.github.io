@@ -15,7 +15,7 @@ summarizing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-- **Significant updates to BIP322\: Generic Signed Message Format**: Oliver Gugger
+- **Significant updates to BIP322 Generic Signed Message Format**: Oliver Gugger
   [posted][guggero bip322 ml] to the Bitcoin-Dev mailing list about his ideas on
   how to round out [BIP322][topic generic signmessage]. As Gugger had been
   implementing support in btcd, he had noticed several open questions and gaps
@@ -34,7 +34,7 @@ summarizing notable changes to popular Bitcoin infrastructure software.
 
   Projects that previously implemented support for earlier versions of [BIP322][] should review their
   compatibility with the updated specification, which introduced breaking changes including a new
-  human-readable prefix and a revised proof of funds signature format.
+  human-readable prefix and a revised proof of funds signature format. {% assign timestamp="1:17" %}
 
 - **TCP hole punching for Bitcoin nodes behind NATs**: 0xB10C [posted][hole punch del]
   to Delving Bitcoin about an idea to make more nodes behind a
@@ -64,7 +64,7 @@ summarizing notable changes to popular Bitcoin infrastructure software.
   The proposal has not been formalized yet, and many questions remain unanswered.
   0xB10C asked for community feedback and invited discussion to address many open points,
   such as how to classify hole-punch connections, reliability of TCP hole punching,
-  possible attacks, and implementation efforts.
+  possible attacks, and implementation efforts. {% assign timestamp="17:39" %}
 
 ## Changes to services and client software
 
@@ -77,27 +77,27 @@ wallets and services.*
   hardware signing device integration using QR codes, [silent payments][topic
   silent payments], and [Tor][topic anonymity networks] integration. It also
   supports optional second layers, including Spark, Liquid, and, in the future,
-  [Ark][topic ark].
+  [Ark][topic ark]. {% assign timestamp="40:15" %}
 
 - **LDK Server announced:**
   Spiral announced [LDK Server][ldk server], an API-first Lightning node daemon
   built on LDK Node for payment processors and wallet providers. It provides a gRPC
   interface, an embedded BDK-based wallet, and a Model Context Protocol (MCP)
-  server for AI-agent interactions with the node.
+  server for AI-agent interactions with the node. {% assign timestamp="41:10" %}
 
 - **Mempool.space v3.3.0 released:**
   Mempool [v3.3.0][mempool v3.3.0] adds [taproot][topic taproot] script tree
   visualizations, updated [PSBT][topic psbt] previews, improvements to [fee
   estimation][topic fee estimation], [ephemeral dust][topic ephemeral anchors]
   support, stale block comparisons, sighash icons, and a merkle-proof API, among
-  other features.
+  other features. {% assign timestamp="42:06" %}
 
 - **peer-observer P2P monitoring tooling:**
   0xB10C [outlined][peer-observer delving] some open-source components used by his
   [peer-observer][peer-observer site] platform, including infrastructure for
   extracting events from Bitcoin Core nodes using IPC, logs, P2P, and
   RPC sources. He also describes ongoing development around archiving, anomaly
-  detection, and alerting tools.
+  detection, and alerting tools. {% assign timestamp="32:28" %}
 
 ## Notable code and documentation changes
 
@@ -116,14 +116,14 @@ repo], and [BINANAs][binana repo]._
   store a signing key for future use (e.g. for a multisig script), without
   immediately generating addresses from it. The PR also adds a new
   `unused(KEY)` [descriptor][topic descriptors] type, which is returned by
-  `listdescriptors`, so the stored key can be included in wallet backups.
+  `listdescriptors`, so the stored key can be included in wallet backups. {% assign timestamp="43:27" %}
 
 - [Bitcoin Core #34893][] updates the `combinepsbt` RPC to preserve [BIP174][]
   proprietary fields (see Newsletters [#72][news72 psbt] and
   [#181][news181 psbt]) when combining [PSBTs][topic psbt]. Previously,
   `combinepsbt` would silently drop the proprietary fields, resulting in the
   loss of application-specific PSBT metadata. The `decodepsbt` RPC already
-  parses, serializes, and displays those fields properly.
+  parses, serializes, and displays those fields properly. {% assign timestamp="47:24" %}
 
 - [Bitcoin Core #34860][] removes the `include_dummy_extranonce` option from
   the `CreateNewBlock()` method (see Newsletter [#392][news392 mining]).
@@ -133,13 +133,13 @@ repo], and [BINANAs][binana repo]._
   scriptSig length. However, the padding is not included in the
   `scriptSigPrefix` field of the `CoinbaseTx` struct exposed to [Stratum
   V2][topic pooled mining] clients connected through the Mining IPC interface
-  (see Newsletter [#310][news310 ipc] and [#388][news388 ipc]).
+  (see Newsletter [#310][news310 ipc] and [#388][news388 ipc]). {% assign timestamp="48:20" %}
 
 - [Bitcoin Core #31298][] updates the `combinerawtransaction` RPC to reject
   unrelated transactions, instead of silently returning the first one and not
   reporting that they could not be merged. Bitcoin Core now strips input
   scriptSigs and witnesses from each transaction, compares the resulting
-  unsigned transaction hashes, and returns an error if they do not match.
+  unsigned transaction hashes, and returns an error if they do not match. {% assign timestamp="53:52" %}
 
 - [Bitcoin Core #28802][] adds support for command-specific options to
   `ArgsManager`, Bitcoin Core's CLI argument parser. Commands can now declare
@@ -147,7 +147,7 @@ repo], and [BINANAs][binana repo]._
   under the relevant command's help output and automatically reject invalid
   command-option combinations. The PR applies this to `bitcoin-wallet`'s (see
   [Newsletter #32][news32 dump]) `-dumpfile` option, which is now registered
-  only for the `dump` and `createfromdump` commands.
+  only for the `dump` and `createfromdump` commands. {% assign timestamp="57:04" %}
 
 - [Eclair #3298][] updates its internal [RBF][topic rbf] logic to follow the
   new [BOLT2][] feerate bump rule, which is designed to ensure compliance with
@@ -155,7 +155,7 @@ repo], and [BINANAs][binana repo]._
   previous 25/24 feerate multiplier, Eclair now uses whichever is larger: that
   multiplier or an additional 25 sat/kw. This matches the LDK behavior covered
   in Newsletter [#400][news400 rbf] and the BOLT specification update covered
-  in Newsletter [#404][news404 rbf].
+  in Newsletter [#404][news404 rbf]. {% assign timestamp="58:52" %}
 
 - [LDK #4575][] adds a `splice_in_inputs` API that allows users to manually
   select UTXOs when [splicing][topic splicing] funds into a channel. The
@@ -163,7 +163,7 @@ repo], and [BINANAs][binana repo]._
   channel, and no change output is created. This complements the existing
   amount-based splice-in flow, in which the caller specifies the amount to be
   added and the wallet selects the inputs. However, the two input selection
-  flows cannot be mixed in the same funding contribution.
+  flows cannot be mixed in the same funding contribution. {% assign timestamp="1:02:08" %}
 
 - [LND #10814][] removes the deprecated `SendPayment`, `SendPaymentSync`,
   `SendToRoute`, `SendToRouteSync`, and `TrackPayment` endpoints, which were
@@ -171,13 +171,13 @@ repo], and [BINANAs][binana repo]._
   Callers should use the V2 replacements: `SendPaymentV2`, `SendToRouteV2`,
   and `TrackPaymentV2`. The PR also removes the deprecated single-channel
   `outgoing_chan_id` field, requiring callers to use the multi-channel
-  `outgoing_chan_ids` field (see [Newsletter #33][news33 lnd]).
+  `outgoing_chan_ids` field (see [Newsletter #33][news33 lnd]). {% assign timestamp="1:03:13" %}
 
 - [Rust Bitcoin #6191][] adds support for encoding and decoding the
   `sendtxrcncl` P2P message used for [Erlay][topic erlay] transaction
   reconciliation. Bitcoin Core added support for this message as an early part
   of Erlay support (see Newsletter [#223][news223 erlay]). However, full Erlay
-  transaction reconciliation is not yet implemented.
+  transaction reconciliation is not yet implemented. {% assign timestamp="1:04:35" %}
 
 - [BLIPs #42][] adds [BLIP42][], a specification for [BOLT12][] contacts.
   Since [BOLT12 offers][topic offers] can be reused as static Lightning payment
@@ -186,7 +186,7 @@ repo], and [BINANAs][binana repo]._
   payments to a contact, such as a contact secret, their own offer, or a
   [BIP353][] name. This allows recipients to recognize payments from known
   contacts, add new contacts, and send funds back to the payer without
-  additional interaction.
+  additional interaction. {% assign timestamp="1:06:20" %}
 
 {% include snippets/recap-ad.md when="2026-05-26 16:30" %}
 {% include references.md %}
