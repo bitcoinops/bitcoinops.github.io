@@ -15,20 +15,35 @@ notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Core Lightning assertion DoS disclosure:** Chandra Pratap [posted][cln dos
+  delving] to Delving Bitcoin disclosing a denial-of-service vulnerability
+  discovered during a Summer of Bitcoin 2025 internship. The vulnerability
+  affected Core Lightning nodes that accept incoming channels.
 
-## Selected Q&A from Bitcoin Stack Exchange
+  During the channel-opening handshake, a remote peer sends a message
+  containing the txid of the proposed funding transaction. Core Lightning
+  performed an assertion check requiring a non-zero txid. When a peer sent an
+  all-zero txid instead, the assertion failed and crashed the node. Since any
+  peer can initiate a channel-opening handshake and send the malicious
+  message, this allowed a remote attacker to reliably crash any vulnerable node
+  that accepted inbound channels.
 
-*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
-contributors look for answers to their questions---or when we have a
-few spare moments to help curious or confused users.  In
-this monthly feature, we highlight some of the top-voted questions and
-answers posted since our last update.*
+  The vulnerability was [responsibly disclosed][topic responsible disclosures]
+  and discovered through fuzzing. At the time of the report, Rusty Russell had
+  independently been working on a separate crash bug and his fix incidentally
+  resolved this vulnerability as well. The vulnerability was fixed in [Core
+  Lightning 26.04][news402 cln2604].
 
-{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
-{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
-
-FIXME:bitschmidty
+- **Bitcoin Core developer meeting transcripts:** many Bitcoin Core
+  developers met in person in May, and transcripts from the meeting have
+  been [published][coredev 2026-05]. Topics included
+  [SwiftSync][coredev swiftsync], [post-cluster mempool][coredev post-cluster],
+  an [Erlay redesign][coredev erlay], [package relay][coredev pkg relay],
+  [silent payments][coredev silent payments], [TCP hole punching][coredev tcp holepunch]
+  (see [Newsletter #406][news406 tcp holepunch]),
+  [private broadcast][coredev private broadcast], a [modern crypto
+  library][coredev modern crypto], and [mutation testing][coredev mutation
+  testing], among others.
 
 ## Releases and release candidates
 
@@ -53,4 +68,16 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-06-02 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[cln dos delving]: https://delvingbitcoin.org/t/vulnerability-disclosure-assertion-dos-in-core-lightning/2507
+[news402 cln2604]: /en/newsletters/2026/04/24/#core-lightning-26-04
+[coredev 2026-05]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05
+[coredev swiftsync]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/swiftsync
+[coredev post-cluster]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/post-cluster-mempool
+[coredev erlay]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/erlay-redesign
+[coredev pkg relay]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/package-relay
+[coredev silent payments]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/silent-payments
+[coredev tcp holepunch]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/tcp-holepunch
+[news406 tcp holepunch]: /en/newsletters/2026/05/22/#tcp-hole-punching-for-bitcoin-nodes-behind-nats
+[coredev private broadcast]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/private-broadcast
+[coredev modern crypto]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/modern-crypto-library
+[coredev mutation testing]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/mutation-testing
