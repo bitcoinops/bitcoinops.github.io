@@ -47,6 +47,9 @@ optech_mentions:
   - title: "BOLTs #1228 specifies zero-fee commitment channels"
     url: /en/newsletters/2026/05/08/#bolts-1228
 
+  - title: "Eclair #3192 adds experimental support for zero-fee commitment channels"
+    url: /en/newsletters/2026/05/29/#eclair-3192
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel commitment upgrades

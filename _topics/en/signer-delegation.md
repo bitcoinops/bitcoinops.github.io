@@ -33,6 +33,9 @@ optech_mentions:
   - title: Signing delegation under existing consensus rules
     url: /en/newsletters/2021/03/24/#signing-delegation-under-existing-consensus-rules
 
+  - title: "BIPs #1944 adds BIP449 (OP_TWEAKADD) enabling key-tweak verification and signing delegation"
+    url: /en/newsletters/2026/05/29/#bips-1944
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Statechains

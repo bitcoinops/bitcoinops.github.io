@@ -190,6 +190,9 @@ optech_mentions:
     url: /en/newsletters/2026/05/15/#bitcoin-core-script-interpreter-remote-crash-disclosure
     date: 2025-11-02
 
+  - title: "Chandra Pratap responsibly disclosed an assertion DoS vulnerability affecting Core Lightning"
+    url: /en/newsletters/2026/05/29/#core-lightning-assertion-dos-disclosure
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
