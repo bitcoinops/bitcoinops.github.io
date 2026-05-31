@@ -129,7 +129,7 @@ BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin
 [coredev pkg relay]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/package-relay
 [coredev silent payments]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/silent-payments
 [coredev tcp holepunch]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/tcp-holepunch
-[news406 tcp holepunch]: /en/newsletters/2026/05/22/#tcp-hole-punching-for-bitcoin-nodes-behind-nats
+[news406 tcp holepunch]: /fr/newsletters/2026/05/22/#perforage-de-trous-tcp-pour-les-noeuds-bitcoin-derriere-des-nat
 [coredev private broadcast]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/private-broadcast
 [coredev modern crypto]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/modern-crypto-library
 [coredev mutation testing]: https://btctranscripts.com/bitcoin-core-dev-tech/2026-05/mutation-testing
@@ -139,5 +139,5 @@ BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin
 [news323 mining]: /fr/newsletters/2024/10/04/#bitcoin-core-30510
 [news403 rbf]: /fr/newsletters/2026/05/01/#bitcoin-core-34911
 [news404 0fc]: /fr/newsletters/2026/05/08/#bolts-1228
-[news405 metadata]: /en/newsletters/2026/05/15/#ldk-4528
+[news405 metadata]: /fr/newsletters/2026/05/15/#ldk-4528
 [news370 tweak]: /fr/newsletters/2025/09/05/#brouillon-de-bip-pour-op-tweakadd
