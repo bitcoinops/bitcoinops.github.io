@@ -32,7 +32,7 @@ notable changes to popular Bitcoin infrastructure software.
   and discovered through fuzzing. At the time of the report, Rusty Russell had
   independently been working on a separate crash bug and his fix incidentally
   resolved this vulnerability as well. The vulnerability was fixed in [Core
-  Lightning 26.04][news402 cln2604].
+  Lightning 26.04][news402 cln2604]. {% assign timestamp="0:47" %}
 
 - **Bitcoin Core developer meeting transcripts:** many Bitcoin Core
   developers met in person in May, and transcripts from the meeting have
@@ -43,7 +43,7 @@ notable changes to popular Bitcoin infrastructure software.
   (see [Newsletter #406][news406 tcp holepunch]),
   [private broadcast][coredev private broadcast], a [modern crypto
   library][coredev modern crypto], and [mutation testing][coredev mutation
-  testing], among others.
+  testing], among others. {% assign timestamp="14:34" %}
 
 ## Releases and release candidates
 
@@ -56,12 +56,12 @@ release candidates._
   splicing], [simple taproot channels][topic simple taproot channels], and
   [zero-fee commitments][topic v3 commitments], removes support for
   non-[anchor output][topic anchor outputs] channels, and adds experimental
-  peer scoring for liquidity and routing optimization.
+  peer scoring for liquidity and routing optimization. {% assign timestamp="20:30" %}
 
 - [Core Lightning 26.06rc2][] is a release candidate for the next major
   version of this popular LN node which includes new `graceful`, `sendamount`,
   and `xkeysend` RPCs, begins the `pay` deprecation cycle in favor of `xpay`,
-  and adds [BOLT12][topic offers] payer-proof RPC support.
+  and adds [BOLT12][topic offers] payer-proof RPC support. {% assign timestamp="23:01" %}
 
 ## Notable code and documentation changes
 
@@ -82,7 +82,7 @@ repo], and [BINANAs][binana repo]._
   options are parsed into a shared `BlockCreateOptions` object and merged when
   creating or updating block templates. Invalid combinations, such as a
   reserved block weight that exceeds the maximum block weight, are now rejected
-  instead of being silently adjusted to a valid range value.
+  instead of being silently adjusted to a valid range value. {% assign timestamp="24:14" %}
 
 - [Bitcoin Core #34917][] stops returning the deprecated `bip125-replaceable`
   field in wallet transaction RPCs `listtransactions`, `listsinceblock`, and
@@ -90,7 +90,7 @@ repo], and [BINANAs][binana repo]._
   `-deprecatedrpc=bip125` option. The PR also deprecates the `-walletrbf`
   startup option, which now emits a warning and is scheduled for removal in the
   next release. See [Newsletter #403][news403 rbf] for previous removal of
-  [RBF][topic rbf]-related fields.
+  [RBF][topic rbf]-related fields. {% assign timestamp="28:04" %}
 
 - [Bitcoin Core #35017][] updates the [package][topic package relay]
   transaction submission process to prevent later transactions from remaining
@@ -101,7 +101,7 @@ repo], and [BINANAs][binana repo]._
   as a consensus script check), Bitcoin Core would only remove that
   transaction. Now, it also removes all subsequent transactions in the package,
   preventing children from remaining in the mempool after a parent has been
-  removed.
+  removed. {% assign timestamp="30:52" %}
 
 - [BIPs #1944][] adds [BIP449][], a draft soft fork proposal for
   `OP_TWEAKADD`, a [tapscript][topic tapscript] opcode for computing a tweaked
@@ -110,6 +110,7 @@ repo], and [BINANAs][binana repo]._
   key for `P + tG`. This would allow scripts to directly verify key-tweak
   relationships, enabling constructions such as tweak-reveal scripts, proof of
   signing order, and [signing delegation][topic signer delegation] protocols.
+  {% assign timestamp="35:25" %}
 
 - [BIPs #2108][] adds [BIP450][], Formosa, a draft specification for encoding
   [BIP39][]-compatible wallet entropy as story-like mnemonic phrases. Instead
@@ -117,12 +118,13 @@ repo], and [BINANAs][binana repo]._
   encode entropy, producing short, structured sentences. These stories can be
   decoded back into the original entropy and converted into a standard
   BIP39 mnemonic before seed derivation, thus preserving compatibility with
-  BIP39.
+  BIP39. {% assign timestamp="36:14" %}
 
 - [Eclair #3192][] adds experimental support for [zero-fee commitment][topic
   v3 commitments] (0FC) channels, following the specification covered in
   [Newsletter #404][news404 0fc]. The feature is disabled by default and can be
   enabled with `eclair.features.zero_fee_commitments = optional`.
+  {% assign timestamp="39:28" %}
 
 - [LDK #4584][] adds `payment_metadata` maps to [BOLT12][topic offers] blinded
   message and payment path contexts. This adds the plumbing to carry
@@ -130,13 +132,13 @@ repo], and [BINANAs][binana repo]._
   it when the payment is received, similar to [BOLT11][]'s `payment_metadata`.
   Building offers with metadata is not yet supported. The metadata is stored as
   a map from numeric keys to byte arrays, allowing multiple independent pieces
-  of data to be attached to the same payment.
+  of data to be attached to the same payment. {% assign timestamp="40:28" %}
 
 - [LDK #4628][] starts encrypting [BOLT11][] `payment_metadata` when creating
   inbound payments, building on the metadata commitment covered in [Newsletter
   #405][news405 metadata].  After verifying the payment, LDK decrypts the
   metadata, enabling applications to access invoice metadata without exposing
-  it to the payer or implementing encryption themselves.
+  it to the payer or implementing encryption themselves. {% assign timestamp="41:27" %}
 
 - [LND #10552][] adds a fast initial sync for [Neutrino][topic compact block
   filters]-backed LND nodes by allowing them to import prebuilt Bitcoin block
@@ -144,7 +146,7 @@ repo], and [BINANAs][binana repo]._
   resuming normal P2P sync. The new `neutrino.blockheaderssource` and
   `neutrino.filterheaderssource` options must be configured together. Imported
   headers are validated locally, and then Neutrino fetches any headers after
-  the imported tip from network peers.
+  the imported tip from network peers. {% assign timestamp="43:35" %}
 
 - [LND #10820][] prevents LND from implicitly selecting [simple taproot
   channels][topic simple taproot channels] when opening public channels because
@@ -154,7 +156,7 @@ repo], and [BINANAs][binana repo]._
   channels must be explicitly requested, while implicit negotiation can still
   select legacy, static remote key, or [anchor][topic anchor outputs] channel
   types. The PR also updates `lncli openchannel --channel_type=taproot` to
-  select the production simple taproot channel type.
+  select the production simple taproot channel type. {% assign timestamp="48:52" %}
 
 {% include snippets/recap-ad.md when="2026-06-02 16:30" %}
 {% include references.md %}
