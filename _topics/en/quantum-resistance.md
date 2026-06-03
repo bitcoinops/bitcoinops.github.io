@@ -139,6 +139,15 @@ optech_mentions:
   - title: "Post-quantum BIP86 recovery using zk-STARK proofs of BIP32 seeds"
     url: /en/newsletters/2026/05/01/#post-quantum-bip86-recovery-using-zk-stark-proofs-of-bip32-seeds
 
+  - title: "A post-quantum path for BIP324"
+    url: /en/newsletters/2026/06/05/#a-post-quantum-path-for-bip324
+
+  - title: "Post-quantum Lightning discussion"
+    url: /en/newsletters/2026/06/05/#post-quantum-lightning-discussion
+
+  - title: "Quantum attack game theory"
+    url: /en/newsletters/2026/06/05/#quantum-attack-game-theory
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

@@ -178,6 +178,9 @@ optech_mentions:
   - title: "Understanding and mitigating a CTV footgun"
     url: /en/newsletters/2026/01/02/#understanding-and-mitigating-a-ctv-footgun
 
+  - title: "CTV-only vault proof of concept"
+    url: /en/newsletters/2026/06/05/#ctv-only-vault-proof-of-concept
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
