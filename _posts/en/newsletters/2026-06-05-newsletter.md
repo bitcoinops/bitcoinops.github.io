@@ -48,6 +48,16 @@ Bitcoin infrastructure software.
   Encrypts Inner Nested Combiner (OEINC), would use an outer KEM to
   encrypt another inner KEM, achieving a post-quantum channel in a single step.
 
+- **Discussion of QR signing payloads for miniscript wallets**: Pyth [posted][pyth delving qr]
+  to Delving Bitcoin a proposal to standardize the data payloads exchanged
+  between wallet coordinators and air-gapped signing devices over QR codes when
+  using [miniscript][topic miniscript]-based spending policies. While existing
+  QR-based protocols handle standard m-of-n multisig, miniscript's
+  variable policies require additional capabilities that current
+  schemes do not cover. His proposal defines payload types for retrieving xpubs, registering a
+  [descriptor][topic descriptors], verifying addresses, and signing. Pyth is
+  seeking feedback from signing device and wallet developers on the proposed payloads.
+
 ## Changing consensus
 
 _A monthly section summarizing proposals and discussion about changing
@@ -144,3 +154,4 @@ FIXME:Gustavojfe
 [jr ml 64]: https://groups.google.com/g/bitcoindev/c/iCuq6bFKt5Y/m/MCATyQ4zAAAJ
 [pq bip324 ml]: https://groups.google.com/g/bitcoindev/c/n_5WuKVYqwI/m/lBooLis3AQAJ
 [wiki kem]: https://en.wikipedia.org/wiki/Key_encapsulation_mechanism
+[pyth delving qr]: https://delvingbitcoin.org/t/qr-based-signing-flow-payloads-in-miniscript-context/2464
