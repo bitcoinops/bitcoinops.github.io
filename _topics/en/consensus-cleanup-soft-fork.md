@@ -92,6 +92,9 @@ optech_mentions:
   - title: "BIP54 demonstration of slow blocks on signet"
     url: /en/newsletters/2026/05/01/#bip54-demonstration-of-slow-blocks-on-signet
 
+  - title: "BIP54 64-byte transactions and potential legitimate uses"
+    url: /en/newsletters/2026/06/05/#bip54-64-byte-transactions-and-potential-legitimate-uses
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation
