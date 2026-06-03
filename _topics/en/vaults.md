@@ -113,6 +113,9 @@ optech_mentions:
   - title: "Comparison of vaults created with presigned transactinos, CTV, or other methods"
     url: /en/newsletters/2025/07/04/#limits-of-ctv-only-vault-support
 
+  - title: "CTV-only vault proof of concept"
+    url: /en/newsletters/2026/06/05/#ctv-only-vault-proof-of-concept
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults
