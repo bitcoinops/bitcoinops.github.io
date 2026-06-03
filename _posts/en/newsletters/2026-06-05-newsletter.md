@@ -16,7 +16,37 @@ Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **A post-quantum path for BIP324**: Olaoluwa Osuntokun [posted][pq bip324 ml]
+  to the Bitcoin-Dev mailing list his thoughts on possible upgrades
+  needed to make [BIP324][] quantum secure. BIP324 introduced [transport encryption][topic v2 p2p transport]
+  for the P2P protocol, enabling peers to exchange messages on the network with
+  improved privacy and security, and it is designed in such a way that the initial
+  handshake and the whole traffic look completely random for an external viewer.
+  According to Osuntokun, modifying the P2P protocol does not require widespread
+  agreement as a consensus change does, and could be an easier first step to
+  make Bitcoin quantum secure.
+
+  Before proposing a formal BIP, Osuntokun invited discussion on two main design points.
+  The first one covers which [Key-Encapsulation Mechanism][wiki kem] (KEM) should be used,
+  either a hybrid approach or a pure post-quantum one, both leveraging a new
+  primitive called Module-Lattice-based KEM (ML-KEM). The second design point addresses
+  the question of whether the initial handshake should still be indistinguishable
+  from a random byte string or not.
+
+  On the first point, the author specified that a hybrid approach, combining the
+  current ECDH algorithm and ML-KEM, could provide better guarantees,
+  since it would provide protection in case either of the two algorithms is
+  broken. In fact, while ECDH could be broken by a future Cryptographically
+  Relevant Quantum Computer (CRQC), quantum-safe algorithms have not been
+  battle-tested yet and could still fail due to mathematical flaws.
+
+  On the second point, Osuntokun provided possible alternatives, in case
+  the requirement for a handshake to be indistinguishable from a random
+  byte string needs to be maintained. The first approach would use the
+  current BIP324 handshake first to open a classical channel to be used
+  to negotiate the post-quantum one. Another approach, based on Outer
+  Encrypts Inner Nested Combiner (OEINC), would use an outer KEM to
+  encrypt another inner KEM, achieving a post-quantum channel in a single step.
 
 ## Changing consensus
 
@@ -112,3 +142,5 @@ FIXME:Gustavojfe
 [jl delving qag]: https://delvingbitcoin.org/t/quantum-attack-game-theory/2524
 [jl qag]: https://blog.lopp.net/quantum-attack-game-theory/
 [jr ml 64]: https://groups.google.com/g/bitcoindev/c/iCuq6bFKt5Y/m/MCATyQ4zAAAJ
+[pq bip324 ml]: https://groups.google.com/g/bitcoindev/c/n_5WuKVYqwI/m/lBooLis3AQAJ
+[wiki kem]: https://en.wikipedia.org/wiki/Key_encapsulation_mechanism
