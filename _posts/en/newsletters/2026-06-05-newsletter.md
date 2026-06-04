@@ -127,7 +127,11 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Core Lightning 26.06][] is a major release of this popular LN node
+  implementation. It adds new `graceful`, `sendamount`, and `xkeysend` RPCs,
+  begins the `pay` deprecation cycle in favor of `xpay`, and adds experimental
+  [BOLT12][topic offers] payment proof support. See the [changelog][cln 26.06
+  changelog] for additional details.
 
 ## Notable code and documentation changes
 
@@ -140,10 +144,63 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #35269][] fixes [MuSig2][topic musig] [PSBT][topic psbt]
+  signing by including each participant's public nonce in Bitcoin Core's
+  internal MuSig2 signing session identifier. Previously, calling
+  `walletprocesspsbt` more than once on the same nonce-less PSBT could generate
+  a new public nonce but the same internal session ID, triggering an assertion
+  meant to prevent nonce reuse. The new session identifier distinguishes
+  signing sessions with different public nonces, but still crashes if the same
+  nonce appears to be reused to prevent a private key leak.
+
+- [Bitcoin Core #34644][] adds a `submitBlock` method to the Mining IPC
+  interface (see Newsletters [#310][news310 mining] and [#323][news323
+  mining]), allowing [Stratum v2][topic pooled mining] clients to submit a
+  fully assembled block for validation and processing. This is useful when a
+  Stratum v2 job declarator receives a solved block for which Bitcoin Core
+  lacks a corresponding `BlockTemplate` object, making the existing
+  `submitSolution` method insufficient (see [Newsletter #325][news325 ipc]).
+  The new method is similar to the `submitblock` RPC, but it returns a boolean
+  result and rejection details for duplicate, inconclusive, or invalid blocks.
+  Unlike the RPC, IPC callers must submit a complete block, including the
+  coinbase witness when a witness commitment is present.
+
+- [Bitcoin Core #34198][] fixes a migration failure affecting very old legacy
+  wallets created before wallet best block records were added in 2011. It is
+  now possible to migrate a wallet with an empty best block locator to a
+  [descriptor][topic descriptors] wallet, but a full chain rescan is required
+  before the migration is complete.
+
+- [LND #10813][] removes support for producing [Tor][topic anonymity networks]
+  v2 onion services, which were deprecated in LND 0.20 (see Newsletter
+  [#375][news375 tor]). The deprecated `tor.v2` option is removed, however v2
+  addresses are still preserved in peer announcements so existing gossip
+  messages can still be verified and rebroadcast. Tor v2 onion services have
+  been obsolete since October 2021; users should use Tor v3 instead.
+
+- [Rust Bitcoin #6250][] starts validating that the coinbase input contains a
+  32-byte witness reserved value whenever the coinbase transaction includes a
+  witness commitment, aligning rust-bitcoin's block validation with [BIP141][].
+  Previously, rust-bitcoin only performed this check when the block contained
+  other [segwit][topic segwit] transactions, so it could accept a block with a
+  coinbase witness commitment but no coinbase witness reserved value.
+
+- [BOLTs #1338][] updates [BOLT2][] to require nodes to wait at least 100
+  blocks before sending `channel_ready` if the channel funding transaction is a
+  coinbase transaction, preventing a miner from immediately using an immature
+  coinbase output to open a channel.
+
+- [BOLTs #1326][] updates [BOLT4][] to allow final nodes, not just forwarding
+  nodes, to return `invalid_onion_version`, `invalid_onion_hmac`, or
+  `invalid_onion_key` errors. Previously, these errors were incorrectly placed
+  under a rule that final nodes must not use. The PR also clarifies that
+  forwarding nodes must not handle already-paid payment hashes as final
+  recipients do.
 
 {% include snippets/recap-ad.md when="2026-06-09 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="35269,34644,34198,10813,6250,1338,1326" %}
+
 [ademan delving mccv]: https://delvingbitcoin.org/t/ctv-only-vault-concept-v0-1-0-release/2539
 [jamesob ctv vault]: https://github.com/jamesob/simple-ctv-vault
 [news191 simple vault]: /en/newsletters/2022/03/16/#continued-ctv-discussion
@@ -155,3 +212,9 @@ FIXME:Gustavojfe
 [pq bip324 ml]: https://groups.google.com/g/bitcoindev/c/n_5WuKVYqwI/m/lBooLis3AQAJ
 [wiki kem]: https://en.wikipedia.org/wiki/Key_encapsulation_mechanism
 [pyth delving qr]: https://delvingbitcoin.org/t/qr-based-signing-flow-payloads-in-miniscript-context/2464
+[Core Lightning 26.06]: https://github.com/ElementsProject/lightning/releases/tag/v26.06
+[cln 26.06 changelog]: https://github.com/ElementsProject/lightning/blob/v26.06/CHANGELOG.md
+[news310 mining]: /en/newsletters/2024/07/05/#bitcoin-core-30200
+[news323 mining]: /en/newsletters/2024/10/04/#bitcoin-core-30510
+[news325 ipc]: /en/newsletters/2024/10/18/#bitcoin-core-30955
+[news375 tor]: /en/newsletters/2025/10/10/#lnd-10254
