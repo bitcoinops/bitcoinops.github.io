@@ -82,7 +82,7 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [news388 ipc]: /zh/newsletters/2026/01/16/#bitcoin-core-33819
 [news32 dump]: /zh/newsletters/2019/02/05/#bitcoin-core-13926
 [news400 rbf]: /zh/newsletters/2026/04/10/#ldk-4494
-[news404 rbf]: /en/newsletters/2026/05/08/#bolts-1327
+[news404 rbf]: /zh/newsletters/2026/05/08/#bolts-1327
 [news340 lnd]: /zh/newsletters/2025/02/07/#lnd-9456
 [news33 lnd]: /zh/newsletters/2019/02/12/#lnd-2572
 [news223 erlay]: /zh/newsletters/2022/10/26/#bitcoin-core-23443
@@ -90,4 +90,4 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [Bitcoin Core v30.0]: https://bitcoincore.org/en/releases/30.0/
 [guggero bip322 ml]: https://groups.google.com/g/bitcoindev/c/qd6BNz9gxCk/m/k1fHq4RKAQAJ
 [cc 322]: https://blog.coinkite.com/bip322-wif/
-[news405 bip322]: /en/newsletters/2026/05/15/#bips-2141
+[news405 bip322]: /zh/newsletters/2026/05/15/#bips-2141
