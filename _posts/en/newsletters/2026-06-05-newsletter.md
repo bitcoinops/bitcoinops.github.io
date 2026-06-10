@@ -46,7 +46,7 @@ Bitcoin infrastructure software.
   current BIP324 handshake first to open a classical channel to be used
   to negotiate the post-quantum one. Another approach, based on Outer
   Encrypts Inner Nested Combiner (OEINC), would use an outer KEM to
-  encrypt another inner KEM, achieving a post-quantum channel in a single step.
+  encrypt another inner KEM, achieving a post-quantum channel in a single step. {% assign timestamp="37:15" %}
 
 - **Discussion of QR signing payloads for miniscript wallets**: Pyth [posted][pyth delving qr]
   to Delving Bitcoin a proposal to standardize the data payloads exchanged
@@ -56,7 +56,7 @@ Bitcoin infrastructure software.
   variable policies require additional capabilities that current
   schemes do not cover. His proposal defines payload types for retrieving xpubs, registering a
   [descriptor][topic descriptors], verifying addresses, and signing. Pyth is
-  seeking feedback from signing device and wallet developers on the proposed payloads.
+  seeking feedback from signing device and wallet developers on the proposed payloads. {% assign timestamp="1:27" %}
 
 ## Changing consensus
 
@@ -84,7 +84,7 @@ Bitcoin's consensus rules._
   deposited or withdrawn must be precise and enumerated at creation, which
   BIPs 345 and 443 do not require. However, MCCV's rate limiting is not fully
   possible in multi-UTXO vaults. MCCV can also be implemented with
-  `OP_TEMPLATEHASH` ([BIP446][]).
+  `OP_TEMPLATEHASH` ([BIP446][]). {% assign timestamp="13:08" %}
 
 - **Post-quantum Lightning discussion**: Olaoluwa Osuntokun (roasbeef)
   [posted][oo delving ln lbl] to Delving Bitcoin a breakdown of how a [post-quantum][topic quantum resistance] Lightning
@@ -99,14 +99,14 @@ Bitcoin's consensus rules._
   including key exchange. He also notes that due to the large size of
   post-quantum cryptographic elements, it would likely make sense to continue
   using elliptic curve cryptography in parallel to provide security in case of
-  a weakness in the several post-quantum schemes.
+  a weakness in the several post-quantum schemes. {% assign timestamp="43:41" %}
 
 - **Quantum attack game theory**: Jameson Lopp [posted][jl delving qag] to Delving Bitcoin his
   [blog post][jl qag] about the game theory of a quantum attack. Lopp describes the potential incentives and actions of various
   market participants if a quantum computer is built which can reveal Bitcoin
   secret keys from public keys. The potential scenarios he describes are unpredictable, as quantum
   attackers might rapidly gain access to large amounts of Bitcoin without the
-  proof of work and capital investment associated with other large holders.
+  proof of work and capital investment associated with other large holders. {% assign timestamp="47:24" %}
 
 - **BIP54 64-byte transactions and potential legitimate uses**: Jeremy
   Rubin [wrote][jr ml 64] to the Bitcoin-Dev mailing list about potential
@@ -119,7 +119,7 @@ Bitcoin's consensus rules._
   verification schemes safer. Because a 64-byte transaction can have at most 1
   input and 1 anyone-can-spend output, the authors of [BIP54][] had considered
   them not worth protecting. Rubin proposes several potential scenarios where
-  present or future protocols might make use of such transactions.
+  present or future protocols might make use of such transactions. {% assign timestamp="49:15" %}
 
 ## Releases and release candidates
 
@@ -131,7 +131,7 @@ release candidates._
   implementation. It adds new `graceful`, `sendamount`, and `xkeysend` RPCs,
   begins the `pay` deprecation cycle in favor of `xpay`, and adds experimental
   [BOLT12][topic offers] payment proof support. See the [changelog][cln 26.06
-  changelog] for additional details.
+  changelog] for additional details. {% assign timestamp="1:11:15" %}
 
 ## Notable code and documentation changes
 
@@ -151,7 +151,7 @@ repo], and [BINANAs][binana repo]._
   a new public nonce but the same internal session ID, triggering an assertion
   meant to prevent nonce reuse. The new session identifier distinguishes
   signing sessions with different public nonces, but still crashes if the same
-  nonce appears to be reused to prevent a private key leak.
+  nonce appears to be reused to prevent a private key leak. {% assign timestamp="1:15:42" %}
 
 - [Bitcoin Core #34644][] adds a `submitBlock` method to the Mining IPC
   interface (see Newsletters [#310][news310 mining] and [#323][news323
@@ -163,39 +163,39 @@ repo], and [BINANAs][binana repo]._
   The new method is similar to the `submitblock` RPC, but it returns a boolean
   result and rejection details for duplicate, inconclusive, or invalid blocks.
   Unlike the RPC, IPC callers must submit a complete block, including the
-  coinbase witness when a witness commitment is present.
+  coinbase witness when a witness commitment is present. {% assign timestamp="1:20:45" %}
 
 - [Bitcoin Core #34198][] fixes a migration failure affecting very old legacy
   wallets created before wallet best block records were added in 2011. It is
   now possible to migrate a wallet with an empty best block locator to a
   [descriptor][topic descriptors] wallet, but a full chain rescan is required
-  before the migration is complete.
+  before the migration is complete. {% assign timestamp="1:22:21" %}
 
 - [LND #10813][] removes support for producing [Tor][topic anonymity networks]
   v2 onion services, which were deprecated in LND 0.20 (see Newsletter
   [#375][news375 tor]). The deprecated `tor.v2` option is removed, however v2
   addresses are still preserved in peer announcements so existing gossip
   messages can still be verified and rebroadcast. Tor v2 onion services have
-  been obsolete since October 2021; users should use Tor v3 instead.
+  been obsolete since October 2021; users should use Tor v3 instead. {% assign timestamp="1:26:32" %}
 
 - [Rust Bitcoin #6250][] starts validating that the coinbase input contains a
   32-byte witness reserved value whenever the coinbase transaction includes a
   witness commitment, aligning rust-bitcoin's block validation with [BIP141][].
   Previously, rust-bitcoin only performed this check when the block contained
   other [segwit][topic segwit] transactions, so it could accept a block with a
-  coinbase witness commitment but no coinbase witness reserved value.
+  coinbase witness commitment but no coinbase witness reserved value. {% assign timestamp="1:28:05" %}
 
 - [BOLTs #1338][] updates [BOLT2][] to require nodes to wait at least 100
   blocks before sending `channel_ready` if the channel funding transaction is a
   coinbase transaction, preventing a miner from immediately using an immature
-  coinbase output to open a channel.
+  coinbase output to open a channel. {% assign timestamp="1:36:06" %}
 
 - [BOLTs #1326][] updates [BOLT4][] to allow final nodes, not just forwarding
   nodes, to return `invalid_onion_version`, `invalid_onion_hmac`, or
   `invalid_onion_key` errors. Previously, these errors were incorrectly placed
   under a rule that final nodes must not use. The PR also clarifies that
   forwarding nodes must not handle already-paid payment hashes as final
-  recipients do.
+  recipients do. {% assign timestamp="1:37:23" %}
 
 {% include snippets/recap-ad.md when="2026-06-09 16:30" %}
 {% include references.md %}
