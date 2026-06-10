@@ -14,7 +14,27 @@ Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Draft BIP for testnet5**: Pol Espinasa [posted][testnet5 ml] to the
+  Bitcoin-Dev mailing list a [draft BIP][testnet5 BIP], co-authored with Fabian
+  Jahr, to replace [testnet4][topic testnet] with testnet5.
+  The proposal is motivated by testnet4's low reliability, which stems from
+  sustained exploitation of the difficulty exception (also known as the
+  20-minute rule). This rule allows CPU miners to mine blocks at difficulty `1` once 20
+  minutes have passed since the previous block, enabling "block storms" in which
+  large numbers of low-difficulty blocks can be mined in a short time (see
+  [Newsletter #311][news311 block storm]).
+
+  The draft BIP proposes removing the difficulty exception rule so that testnet
+  matches mainnet behavior as closely as possible. Testnet5 would follow the
+  same consensus rules as mainnet except for two changes: activating [BIP54][]
+  (the [consensus cleanup soft fork][topic consensus cleanup]) from block `1`,
+  and setting the maximum proof-of-work target to `0x1a0fffff`
+  (a lower maximum target than testnet4, i.e. a higher minimum difficulty).
+
+  Espinasa invited other developers to provide feedback on the proposal.
+  Discussion on the mailing list thread centered on applying patches to testnet4
+  instead of spinning up a new one, the possibility of pre-mining testnet coins,
+  and the best minimum difficulty for the new network.
 
 ## Releases and release candidates
 
@@ -39,4 +59,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-06-16 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+
+[testnet5 ml]: https://groups.google.com/g/bitcoindev/c/kGUMTxOvdJA/m/Eyx5FxQeAAAJ
+[testnet5 BIP]: https://github.com/bitcoin/bips/pull/2196
+[news311 block storm]: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
