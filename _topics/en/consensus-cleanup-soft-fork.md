@@ -95,6 +95,9 @@ optech_mentions:
   - title: "BIP54 64-byte transactions and potential legitimate uses"
     url: /en/newsletters/2026/06/05/#bip54-64-byte-transactions-and-potential-legitimate-uses
 
+  - title: "Draft BIP for testnet5 would activate BIP54 from block 1"
+    url: /en/newsletters/2026/06/12/#draft-bip-for-testnet5
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation

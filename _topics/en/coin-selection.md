@@ -90,6 +90,9 @@ optech_mentions:
   - title: "BDK #1581 allows a customizable fallback algorithm in branch-and-bound coin selection"
     url: /en/newsletters/2024/09/20/#bdk-1581
 
+  - title: "Bitcoin Core #32150 rewrites the branch-and-bound algorithm to search more distinct candidates"
+    url: /en/newsletters/2026/06/12/#bitcoin-core-32150
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An Evaluation of Coin Selection Strategies
