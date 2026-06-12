@@ -120,6 +120,9 @@ optech_mentions:
   - title: "Wallet fingerprinting risks for payjoin privacy"
     url: /en/newsletters/2026/04/03/#wallet-fingerprinting-risks-for-payjoin-privacy
 
+  - title: "BIPs #2186 updates BIP77 to specify how a payjoin v2 receiver replies to a BIP78-compatible sender"
+    url: /en/newsletters/2026/06/12/#bips-2186
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
