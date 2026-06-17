@@ -34,7 +34,7 @@ Bitcoin infrastructure software.
   Espinasa invited other developers to provide feedback on the proposal.
   Discussion on the mailing list thread centered on applying patches to testnet4
   instead of spinning up a new one, the possibility of pre-mining testnet coins,
-  and the best minimum difficulty for the new network.
+  and the best minimum difficulty for the new network. {% assign timestamp="0:31" %}
 
 ## Releases and release candidates
 
@@ -47,11 +47,11 @@ release candidates._
   forwarding, production-ready simple [taproot][topic taproot] channels with support
   for [RBF][topic rbf] cooperative closes, reorg protection for channel closes,
   faster initial sync for [Neutrino][topic compact block filters]-backed nodes,
-  an optional native-SQL payment store migration, plus multiple bug fixes.
+  an optional native-SQL payment store migration, plus multiple bug fixes. {% assign timestamp="17:25" %}
 
 - [Core Lightning 26.06.1][] is a maintenance release for the current major
   version of this popular LN node. It fixes a `bwatch` plugin registration
-  failure after running `make install`.
+  failure after running `make install`. {% assign timestamp="20:19" %}
 
 ## Notable code and documentation changes
 
@@ -73,7 +73,7 @@ repo], and [BINANAs][binana repo]._
   connections attempts [BIP324][] v2 transport but fails, it retries v1
   transport. Previously, the retry could forget the private broadcast proxy
   override on nodes that otherwise made direct IPv4/IPv6 connections. The proxy
-  override is now stored and carried through v2-to-v1 reconnections.
+  override is now stored and carried through v2-to-v1 reconnections. {% assign timestamp="21:28" %}
 
 - [Bitcoin Core #34779][] implements [BIP323][], reserving block header
   `nVersion` bits 5 through 28 as extra nonce space for miners (see
@@ -81,7 +81,7 @@ repo], and [BINANAs][binana repo]._
   range monitored by the [BIP9][] version bits warning logic for unknown soft
   fork signaling. Bitcoin Core now excludes the [BIP323][]-reserved bits from
   that warning logic, preventing miners who use them for nonce rolling from
-  triggering unknown soft fork warnings.
+  triggering unknown soft fork warnings. {% assign timestamp="38:00" %}
 
 - [Bitcoin Core #32150][] rewrites the [branch-and-bound][] [coin
   selection][topic coin selection] algorithm to avoid walking back through
@@ -90,19 +90,19 @@ repo], and [BINANAs][binana repo]._
   search tracks the next UTXO to try, cuts branches that can't reach the
   target, shifts directly to the next useful candidate, and skips duplicate or
   more wasteful UTXOs with the same effective value. This allows the wallet to
-  use its iteration budget on more distinct candidate selections.
+  use its iteration budget on more distinct candidate selections. {% assign timestamp="41:36" %}
 
 - [LDK #4647][] stops using remote introduction nodes for [BOLT12][topic
   offers] [blinded message paths][topic rv routing] to avoid incompatibility
   with LND's opt-in [onion message][topic onion messages] support, which may
   receive but not forward messages from non-channel peers. LDK now uses the
   announced recipient itself as the introduction point, improving
-  interoperability but reducing receiver privacy.
+  interoperability but reducing receiver privacy. {% assign timestamp="45:14" %}
 
 - [BTCPay Server #7218][] adds a guided setup flow for BTC multisig wallets.
   Store owners can choose a signing policy, invite store users to submit signer
   keys manually or through BTCPay Server Vault, review generated addresses, and
-  create the wallet once the necessary keys are collected.
+  create the wallet once the necessary keys are collected. {% assign timestamp="51:34" %}
 
 - [BIPs #2186][] updates [BIP77][] to specify how a [payjoin v2][topic payjoin]
   receiver replies to a [BIP78][]-compatible sender. [BIP77][]'s normal
@@ -112,7 +112,7 @@ repo], and [BINANAs][binana repo]._
   base64-encoded proposal PSBT back to the receiver's mailbox where the sender
   posted the original PSBT. The receiver uses an OHTTP-encapsulated PUT request
   to the directory. This documents the backwards-compatible response path used
-  by implementations.
+  by implementations. {% assign timestamp="53:07" %}
 
 {% include snippets/recap-ad.md when="2026-06-16 16:30" %}
 {% include references.md %}
