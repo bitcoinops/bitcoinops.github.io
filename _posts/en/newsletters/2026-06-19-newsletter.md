@@ -14,7 +14,29 @@ and notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Discussion of removing RBF signaling from wallet transactions**: rkrux
+  [posted][bip125 ml] to the Bitcoin-Dev mailing list proposing that wallets
+  stop signaling [opt-in RBF][topic rbf] in the transactions they create. A
+  transaction signals replaceability under [BIP125][] when at least one of its
+  inputs sets `nSequence` below `MAX-1` (where `MAX` is `0xffffffff`). That
+  signal no longer affects whether a transaction can be replaced since full RBF
+  became the default (see [Newsletter #315][news315 fullrbf]) and the
+  `mempoolfullrbf` opt-out was removed (see [Newsletter #329][news329 fullrbf]).
+  Nodes using Bitcoin Core's default policy will replace any transaction
+  regardless of its `nSequence` values. Signaling now serves mainly to
+  fingerprint the wallet that created the transaction, so the post argued that
+  wallets should converge on a single value.
+
+  rkrux opened [Bitcoin Core #35405][] to stop the Bitcoin Core wallet from
+  signaling by default, using `nSequence = MAX-1`, and asked other wallet
+  authors which value they could standardize on. Murch and Electrum Wallet
+  contributor SomberNight pointed out that `MAX-2` is already the dominant
+  value, used by about 75% of transactions according to
+  [mainnet-observer][bip125 graph] and by nearly all Electrum Wallet
+  transactions. Because most transactions still signal, moving Bitcoin Core to a
+  non-signaling `MAX-1` would make its transactions stand out rather than blend
+  in, so both favored converging on `MAX-2` instead. rkrux closed the PR in
+  light of that feedback.
 
 ## Changes to services and client software
 
@@ -46,4 +68,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-06-23 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[bip125 ml]: https://groups.google.com/g/bitcoindev/c/C7zNIk8llew/m/YAdpwe33AgAJ
+[bip125 graph]: https://mainnet.observer/charts/transactions-signaling-explicit-rbf/
+[news315 fullrbf]: /en/newsletters/2024/08/09/#bitcoin-core-30493
+[news329 fullrbf]: /en/newsletters/2024/11/15/#bitcoin-core-30592
