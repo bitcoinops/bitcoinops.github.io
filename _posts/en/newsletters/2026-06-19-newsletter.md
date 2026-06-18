@@ -43,15 +43,38 @@ and notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Sparrow Wallet 2.5.0 adds silent payments receiving:**
+  Sparrow [2.5.0][sparrow 2.5.0] adds [silent payments][topic silent payments]
+  receiving wallets, including airgapped hardware wallet signers, building on
+  the send support added in 2.3.0 (see [Newsletter #377][news377 sparrow]).
 
-## Releases and release candidates
+- **Bark live on Bitcoin mainnet:**
+  Second [announced][bark mainnet] that Bark, its [Ark][topic ark] protocol
+  implementation, is now running on Bitcoin mainnet, with a public Ark server
+  plus the Bark SDK and `barkd` daemon for developers. Bark previously launched
+  on signet (see [Newsletter #346][news346 bark]).
 
-_New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates._
+- **Arké Ark wallet announced:**
+  [Arké][arke] is a native iOS wallet integrating the [Ark][topic ark] protocol
+  with onchain ([BDK][bdk repo]) and Lightning payments, displaying transactions
+  from all three layers in a single combined history. It currently runs on
+  signet with mainnet pending.
 
-FIXME:Gustavojfe
+- **Noah Ark wallet announced:**
+  [Noah][noah] is a cross-platform mobile wallet built on the [Ark][topic ark]
+  protocol with Lightning support and a trust-minimized design. It is currently
+  in beta.
+
+- **Alby Hub v1.23.0 released:**
+  Alby Hub [v1.23.0][alby hub v1.23.0] adds [just-in-time channels][topic jit
+  channels] that open automatically to accept incoming payments and an
+  experimental [Ark][topic ark] payment backend, among other improvements.
+
+- **JoinMarket NG 0.32.0 released:**
+  JoinMarket-NG, a community-maintained fork of the [coinjoin][topic coinjoin]
+  implementation, [released][joinmarket 0.32.0] mempool support for the
+  [Neutrino][topic compact block filters] backend so takers can verify maker
+  broadcasts, among other fidelity bond and reliability improvements.
 
 ## Notable code and documentation changes
 
@@ -72,3 +95,11 @@ FIXME:Gustavojfe
 [bip125 graph]: https://mainnet.observer/charts/transactions-signaling-explicit-rbf/
 [news315 fullrbf]: /en/newsletters/2024/08/09/#bitcoin-core-30493
 [news329 fullrbf]: /en/newsletters/2024/11/15/#bitcoin-core-30592
+[sparrow 2.5.0]: https://github.com/sparrowwallet/sparrow/releases/tag/2.5.0
+[news377 sparrow]: /en/newsletters/2025/10/24/#sparrow-2-3-0-released
+[bark mainnet]: https://blog.second.tech/bark-now-on-bitcoin-mainnet/
+[arke]: https://github.com/GBKS/arke
+[noah]: https://github.com/smolcars/noah
+[news346 bark]: /en/newsletters/2025/03/21/#bark-launches-on-signet
+[alby hub v1.23.0]: https://github.com/getAlby/hub/releases/tag/v1.23.0
+[joinmarket 0.32.0]: https://github.com/joinmarket-ng/joinmarket-ng/releases/tag/0.32.0
