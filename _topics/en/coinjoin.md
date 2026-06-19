@@ -88,6 +88,9 @@ optech_mentions:
   - title: "Deanonymization attacks against centralized coinjoin"
     url: /en/newsletters/2025/01/03/#deanonymization-attacks-against-centralized-coinjoin
 
+  - title: "JoinMarket NG 0.32.0 released"
+    url: /en/newsletters/2026/06/19/#joinmarket-ng-0-32-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

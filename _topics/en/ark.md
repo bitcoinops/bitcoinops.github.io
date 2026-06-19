@@ -64,6 +64,9 @@ optech_mentions:
   - title: "V-PACK, a standard for stateless VTXO verification"
     url: /en/newsletters/2026/03/06/#a-standard-for-stateless-vtxo-verification
 
+  - title: "Bark implementation of Ark is now live on Bitcoin mainnet"
+    url: /en/newsletters/2026/06/19/#bark-live-on-bitcoin-mainnet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools
