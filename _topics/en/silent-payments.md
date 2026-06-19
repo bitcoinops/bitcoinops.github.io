@@ -104,6 +104,9 @@ optech_mentions:
   - title: "BIPs #2142 adds a send/receive test vector to the BIP352 silent payments specification"
     url: /en/newsletters/2026/04/24/#bips-2142
 
+  - title: "Sparrow Wallet 2.5.0 adds silent payments receiving"
+    url: /en/newsletters/2026/06/19/#sparrow-wallet-2-5-0-adds-silent-payments-receiving
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

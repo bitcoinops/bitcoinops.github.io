@@ -222,6 +222,9 @@ optech_mentions:
   - title: "Eclair #3298 updates RBF logic to follow the new BOLT2 feerate bump rule"
     url: /en/newsletters/2026/05/22/#eclair-3298
 
+  - title: "Discussion of removing RBF signaling from wallet transactions"
+    url: /en/newsletters/2026/06/19/#discussion-of-removing-rbf-signaling-from-wallet-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

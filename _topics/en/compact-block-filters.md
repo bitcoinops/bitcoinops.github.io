@@ -98,6 +98,9 @@ optech_mentions:
   - title: "LND #10552 adds fast sync for Neutrino nodes using prebuilt block headers and compact filters"
     url: /en/newsletters/2026/05/29/#lnd-10552
 
+  - title: "JoinMarket NG 0.32.0 adds watched mempool support for the Neutrino backend"
+    url: /en/newsletters/2026/06/19/#joinmarket-ng-0-32-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
