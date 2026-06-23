@@ -36,7 +36,7 @@ and notable changes to popular Bitcoin infrastructure software.
   transactions. Because most transactions still signal, moving Bitcoin Core to a
   non-signaling `MAX-1` would make its transactions stand out rather than blend
   in, so both favored converging on `MAX-2` instead. rkrux closed the PR in
-  light of that feedback.
+  light of that feedback. {% assign timestamp="0:57" %}
 
 ## Changes to services and client software
 
@@ -46,35 +46,35 @@ wallets and services.*
 - **Sparrow Wallet 2.5.0 adds silent payments receiving:**
   Sparrow [2.5.0][sparrow 2.5.0] adds [silent payments][topic silent payments]
   receiving wallets, including airgapped hardware wallet signers, building on
-  the send support added in 2.3.0 (see [Newsletter #377][news377 sparrow]).
+  the send support added in 2.3.0 (see [Newsletter #377][news377 sparrow]). {% assign timestamp="59:55" %}
 
 - **Bark live on Bitcoin mainnet:**
   Second [announced][bark mainnet] that Bark, its [Ark][topic ark] protocol
   implementation, is now running on Bitcoin mainnet, with a public Ark server
   plus the Bark SDK and `barkd` daemon for developers. Bark previously launched
-  on signet (see [Newsletter #346][news346 bark]).
+  on signet (see [Newsletter #346][news346 bark]). {% assign timestamp="29:46" %}
 
 - **Arké Ark wallet announced:**
   [Arké][arke] is a native iOS wallet integrating the [Ark][topic ark] protocol
   with onchain ([BDK][bdk repo]) and Lightning payments, displaying transactions
   from all three layers in a single combined history. It currently runs on
-  signet with mainnet pending.
+  signet with mainnet pending. {% assign timestamp="32:18" %}
 
 - **Noah Ark wallet announced:**
   [Noah][noah] is a cross-platform mobile wallet built on the [Ark][topic ark]
   protocol with Lightning support and a trust-minimized design. It is currently
-  in beta.
+  in beta. {% assign timestamp="31:52" %}
 
 - **Alby Hub v1.23.0 released:**
   Alby Hub [v1.23.0][alby hub v1.23.0] adds [just-in-time channels][topic jit
   channels] that open automatically to accept incoming payments and an
-  experimental [Ark][topic ark] payment backend, among other improvements.
+  experimental [Ark][topic ark] payment backend, among other improvements. {% assign timestamp="15:00" %}
 
 - **JoinMarket NG 0.32.0 released:**
   JoinMarket-NG, a community-maintained fork of the [coinjoin][topic coinjoin]
   implementation, [released][joinmarket 0.32.0] mempool support for the
   [Neutrino][topic compact block filters] backend so takers can verify maker
-  broadcasts, among other fidelity bond and reliability improvements.
+  broadcasts, among other fidelity bond and reliability improvements. {% assign timestamp="1:01:02" %}
 
 ## Notable code and documentation changes
 
@@ -95,7 +95,7 @@ repo], and [BINANAs][binana repo]._
   Core currently implements the negotiation mechanism, ignores unknown valid
   feature IDs, and disconnects peers that send malformed `feature` messages,
   send them after `verack`, or send them without negotiating a compatible
-  protocol version. It does not yet advertise any specific optional feature.
+  protocol version. It does not yet advertise any specific optional feature. {% assign timestamp="1:02:13" %}
 
 - [Bitcoin Core #35254][] wipes additional key-derivation material from memory
   after use. `CHMAC_SHA256` and `CHMAC_SHA512` now cleanse their temporary
@@ -104,7 +104,7 @@ repo], and [BINANAs][binana repo]._
   HKDF key material. The type of `ChainCode` has been changed from a `uint256`
   typedef to a type with a `memory_cleanse()` destructor, wiping [BIP32][]
   chain codes in extended keys and local variables when those objects are
-  destroyed.
+  destroyed. {% assign timestamp="1:06:59" %}
 
 - [Bitcoin Core #35498][] fixes a race condition in the `FetchBlock` RPC path
   when requesting a block from a peer that is disconnecting. `FetchBlock` could
@@ -112,7 +112,7 @@ repo], and [BINANAs][binana repo]._
   could remove the peer's `CNodeState` before `BlockRequested()` recorded the
   request, causing an assertion failure. The fix locks `cs_main` before looking
   up the peer, ensuring that the peer's state cannot be removed while the block
-  request is registered.
+  request is registered. {% assign timestamp="1:09:26" %}
 
 - [Eclair #3318][] fixes a [splicing][topic splicing] reconnection edge case
   where Eclair could update its local state for a newly locked splice funding
@@ -121,14 +121,14 @@ repo], and [BINANAs][binana repo]._
   `channel_reestablish`, leaving the peers out of sync about which funding
   states require `commit_sig` messages and causing a force-close. Eclair now
   handles funding lock events while reconnecting and sends `splice_locked` when
-  needed.
+  needed. {% assign timestamp="1:11:06" %}
 
 - [LND #10789][] lays the groundwork for implementing [BOLT12 offers][topic
   offers]: a daemon-independent `bolt12` codec package with an `Offer` message
   type and supporting `lnwire` TLV infrastructure. The new codec validates
   messages before encoding, keeps low-level decoding permissive for diagnostics
   and fuzzing, and preserves unknown signed-range TLVs so `offer_id` remains
-  stable across decode and re-encode.
+  stable across decode and re-encode. {% assign timestamp="1:13:05" %}
 
 - [Rust Bitcoin #6321][] hardens [segwit][topic segwit] witness decoding to
   prevent attacker-controlled element counts from causing excessive memory
@@ -136,7 +136,7 @@ repo], and [BINANAs][binana repo]._
   stack and force an allocation of about 16 MB for witness index space. The new
   decoder appends the received witness bytes to its content buffer and builds
   the element index in `end()` after decoding the witness data, removing the
-  old batched allocation path.
+  old batched allocation path. {% assign timestamp="1:14:09" %}
 
 - [LDK #4685][] moves the nonce used for [BOLT12][topic offers] invoice
   verification back into payer metadata of the invoice request or refund. The
@@ -147,7 +147,7 @@ repo], and [BINANAs][binana repo]._
   payment] (see [Newsletter #405][news405 proof]). Outbound offer and refund
   reply-path contexts now only store the expected `PaymentId`, which is checked
   against the payment ID recovered from the payer metadata of the received
-  invoice.
+  invoice. {% assign timestamp="1:16:14" %}
 
 {% include snippets/recap-ad.md when="2026-06-23 16:30" %}
 {% include references.md %}
