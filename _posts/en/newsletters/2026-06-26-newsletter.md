@@ -117,7 +117,28 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [LDK v0.1.10][] is a maintenance release of this library for building
+  LN-enabled wallets and applications. It fixes several denial-of-service
+  vulnerabilities and a sanitization issue, plus bugs affecting async channel
+  monitor persistence, Electrum syncing, [BOLT12 offer][topic offers]
+  validation, onion-message handling, [MPP][topic multipath payments]
+  [keysend][topic spontaneous payments] [HTLCs][topic htlc], and route-based
+  payment sending.
+
+- [LDK v0.2.3][] is a maintenance release of this library for building
+  LN-enabled wallets and applications. It fixes several security issues,
+  including denial-of-service vulnerabilities, reserve calculation errors for
+  anchor channels, and a sanitization issue, along with bugs affecting async
+  channel monitor persistence, LSPS handling,
+  [zero-fee-commitment channels][topic v3 commitments], BOLT12 offers, onion
+  messaging, and rapid gossip sync memory use.
+
+- [BTCPay Server 2.4.0][] is a release of this self-hosted payment processor.
+  It adds global search, passkey authentication, guided multisig wallet setup,
+  more granular wallet permissions, subscription and point-of-sale improvements,
+  wallet transaction search and filtering, plugin ecosystem improvements, and
+  updated Lightning support, while removing several deprecated Lightning
+  backends.
 
 ## Notable code and documentation changes
 
@@ -130,12 +151,65 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #35070][] prevents duplicate entries from being added to
+  `m_blocks_unlinked`, a validation-internal structure that tracks downloaded
+  blocks that cannot yet be connected due to missing earlier block data.
+  Previously, a pruned node facing a deep reorg could accidentally add duplicate
+  entries to this structure, causing the `ReceivedBlockTransactions()` function
+  to reconsider the same block more than once after receiving the missing data
+  and re-add it to `setBlockIndexCandidates` after modifying its `nSequenceId`.
+  This could corrupt the set's in-memory ordering of candidate chain tips,
+  potentially leading to undefined behavior. The PR routes insertions through a
+  new `AddUnlinkedBlock()` helper that deduplicates entries and strengthens
+  `CheckBlockIndex()` to ensure that no duplicates are present.
+
+- [Bitcoin Core #35182][], [#34411][bitcoin core #34411] replace the
+  libevent-based HTTP server, used for RPC and REST, with a new HTTP and
+  socket-handling implementation maintained in Bitcoin Core. The new server runs
+  its own I/O thread, handles sockets directly, and dispatches accepted requests
+  to the existing HTTP worker pool. The follow-up PR removes the remaining
+  libevent build, CI, dependencies, and CMake plumbing. These changes continue
+  the project's efforts to reduce external dependencies and simplify building
+  Bitcoin Core from source.
+
+- [BIPs #2198][] updates [BIP360][], the P2MR proposal (see [Newsletter
+  #393][news393 p2mr]), so that anyone who knows and reveals the single leaf in
+  a depth-zero script tree can spend the output without that script being
+  executed. This intentionally makes one-path P2MR outputs unsafe: once a user
+  reveals the leaf in an attempted spend, a miner could use the same revealed
+  leaf to spend the output to themselves instead. The change discourages wallets
+  from omitting a [post-quantum][topic quantum resistance] or other fallback
+  leaf merely to save witness bytes.
+
+- [LDK #4713][] adds denial-of-service hardening for Rapid Gossip Sync (RGS)
+  (see [Newsletter #308][news308 rgs]), LDK's format for quickly importing
+  Lightning Network gossip data. The documentation now warns that RGS sources
+  should be considered semi-trusted, since they can prevent successful
+  pathfinding by omitting data and they may also attempt to bloat a client's
+  network graph. LDK now rejects snapshots with nonsensical node or channel
+  update counts, and skips adding new [channel announcements][topic channel
+  announcements] once the graph contains more than ten times the expected number
+  of channels.
+
+- [LDK #4684][] fixes a rare async signer and channel monitor ordering bug that
+  could cause a duplicate `revoke_and_ack` to be sent after reconnecting.
+  Previously, if a signer-unblocked path regenerated and sent an owed
+  `revoke_and_ack` while a monitor update was still pending, the
+  monitor-restored path could later regenerate the same message, causing the
+  peer to reject the duplicate secret and force-close. LDK now clears the
+  monitor-pending `revoke_and_ack` flag when the signer-pending path returns a
+  `revoke_and_ack`, since that message also satisfies the monitor-pending
+  resend.
 
 {% include snippets/recap-ad.md when="2026-06-30 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="2198,34411,35070,35182,4684,4713" %}
 
 [news311 block storm]: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
 [lnd gossip dos delving]: https://delvingbitcoin.org/t/lnd-zero-timestamp-gossip-dos-disclosure/2621
 [news393 lnd 0201]: /en/newsletters/2026/02/20/#lnd-0-20-1-beta
+[LDK v0.1.10]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.10
+[LDK v0.2.3]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.2.3
+[BTCPay Server 2.4.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.4.0
+[news393 p2mr]: /en/newsletters/2026/02/20/#bips-1670
+[news308 rgs]: /en/newsletters/2024/06/21/#ldk-3098
