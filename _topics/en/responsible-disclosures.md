@@ -193,6 +193,9 @@ optech_mentions:
   - title: "Chandra Pratap responsibly disclosed an assertion DoS vulnerability affecting Core Lightning"
     url: /en/newsletters/2026/05/29/#core-lightning-assertion-dos-disclosure
 
+  - title: "Nishant Bansal responsibly disclosed a gossip DoS vulnerability affecting LND"
+    url: /en/newsletters/2026/06/26/#lnd-zero-timestamp-gossip-dos-disclosure
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
