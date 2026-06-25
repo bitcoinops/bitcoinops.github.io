@@ -15,6 +15,27 @@ and descriptions of notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
+- **LND zero-timestamp gossip DoS disclosure:** Nishant Bansal [posted][lnd
+  gossip dos delving] to Delving Bitcoin disclosing a denial-of-service
+  vulnerability he discovered through state-machine fuzzing of LND's gossip
+  handling. Versions of LND prior to v0.20.1-beta could be crashed by a
+  `channel_update` or `node_announcement` gossip message carrying a timestamp of
+  zero. Although [BOLT7][] requires `channel_update` timestamps to be greater
+  than zero, it does not specify how nodes should handle messages that violate
+  that rule, and LND's handling of the value led to a crash.
+
+  When a vulnerable node tried to process one of these zero-timestamp messages,
+  an internal bookkeeping error left a data structure in an invalid state,
+  causing a runtime panic that terminated the node. An attacker could trigger
+  the bug by broadcasting announcements for either a real public channel or a
+  synthetic channel created by funding a 2-of-2 output the attacker controls,
+  the latter being cheaper to repeat without running a Lightning node.
+
+  The vulnerability was [responsibly disclosed][topic responsible disclosures],
+  confirmed independently by Matt Morehouse, and fixed in [LND
+  0.20.1-beta][news393 lnd 0201] by rejecting gossip messages with a zero
+  timestamp at parse time, before they reach the vulnerable code.
+
 ## Selected Q&A from Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
@@ -116,3 +137,5 @@ FIXME:Gustavojfe
 {% include linkers/issues.md v=2 issues="" %}
 
 [news311 block storm]: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
+[lnd gossip dos delving]: https://delvingbitcoin.org/t/lnd-zero-timestamp-gossip-dos-disclosure/2621
+[news393 lnd 0201]: /en/newsletters/2026/02/20/#lnd-0-20-1-beta
