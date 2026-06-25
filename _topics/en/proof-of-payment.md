@@ -49,6 +49,9 @@ optech_mentions:
   - title: "BTCPay Server #4782 adds proof of payment on the receipt page for each payment"
     url: /en/newsletters/2023/04/05/#btcpay-server-4782
 
+  - title: "LDK #4685 moves BOLT12 verification nonce into payer metadata for compatibility with  payment proofs"
+    url: /en/newsletters/2026/06/19/#ldk-4685
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Pay to contract
