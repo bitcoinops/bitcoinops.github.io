@@ -148,6 +148,9 @@ optech_mentions:
   - title: "Quantum attack game theory"
     url: /en/newsletters/2026/06/05/#quantum-attack-game-theory
 
+  - title: "BIPs #2198 makes one-path P2MR outputs unsafe to discourage omitting a post-quantum fallback leaf"
+    url: /en/newsletters/2026/06/26/#bips-2198
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
