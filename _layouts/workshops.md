@@ -1,22 +1,25 @@
 ---
-layout: page
-title: Workshops
-permalink: /en/workshops/
-redirect_from: /workshops
+type: pages
+layout: default
 ---
+<link rel="stylesheet" href="/assets/css/main.css">
 
-Bitcoin Optech will run a series of workshops to bring Bitcoin engineers
-together to discuss approaches and challenges in implementing scaling
-technologies. Each workshop will be tailored to the member companies attending
-and the specific scaling challenges that they are facing.
+<div class="localization">
+  <a href="/en/workshops/">en</a>
+</div>
 
-If you have any requests or suggestions for future workshop events, please
-[contact us][optech email].
+<h1 class="post-title">Workshops</h1>
 
-## Current Status
+{% if content != ""%}
+  <div class="post-content">
+    {{ content }}
+  </div>
+{%- endif -%}
 
-**Currently, no workshops are scheduled.** We are evaluating potential future workshop topics and formats based on community feedback and technical developments in the Bitcoin ecosystem.
+<!-- Info: Show message if no workshops are currently scheduled -->
+<p><strong>Currently, no workshops are scheduled. We are evaluating potential future workshop topics and formats based on community feedback and technical developments in the Bitcoin ecosystem.</strong></p>
 
+<!-- Include: Show previous workshops in a collapsible section -->
 {% include functions/details-list-workshops.md
   title="Previous Workshops"
   content="
@@ -61,5 +64,3 @@ If you have any requests or suggestions for future workshop events, please
 <p>Thanks to Square for hosting the workshop and Coinbase for helping with organization.</p>
 "
 %}
-
-{% include references.md %}
