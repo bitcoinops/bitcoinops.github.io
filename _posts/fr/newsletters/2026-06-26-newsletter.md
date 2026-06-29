@@ -67,8 +67,8 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
   l'exception de difficulté de 20 minutes qui a conduit aux tempêtes de blocs récurrentes de testnet3 (voir le [Bulletin #311][news311 block
   storm]).
 
-- [Pourquoi `-datacarriersize` a-t-il été redéfini en 2022, et pourquoi la proposition de 2023 visant à l'étendre n'a-t-elle pas été
-  fusionnée ?]({{bse}}128027) Revenant sur une question à laquelle il a d'abord été répondu l'année dernière, Murch ajoute une réponse
+- [Pourquoi `-datacarriersize` a-t-il été redéfini en 2022, et pourquoi la proposition de 2023 visant à l'étendre n'a-t-elle pas été fusionnée ?]({{bse}}128027)
+  Revenant sur une question à laquelle il a d'abord été répondu l'année dernière, Murch ajoute une réponse
   complémentaire documentant que les options `datacarrier` et `datacarriersize` n'ont fait référence qu'aux sorties `OP_RETURN` depuis leur
   introduction dans Bitcoin Core 0.10.0, en citant le code d'origine et les notes de version.
 
