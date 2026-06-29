@@ -1,5 +1,5 @@
 ---
-title: 'Bitcoin Optech 周报 #407'
+title: 'Bitcoin Optech Newsletter #407'
 permalink: /zh/newsletters/2026/05/29/
 name: 2026-05-29-newsletter-zh
 slug: 2026-05-29-newsletter-zh
