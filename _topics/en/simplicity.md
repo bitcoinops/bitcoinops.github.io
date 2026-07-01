@@ -54,6 +54,9 @@ optech_mentions:
   - title: "SimplicityHL released to allow compiling Rust-like programs to Simplicity script"
     url: /en/newsletters/2025/08/22/#simplicityhl-released
 
+  - title: "Details about the design of Simplicity"
+    url: /en/newsletters/2025/09/05/#details-about-the-design-of-simplicity
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Simplicity: A New Language for Blockchains"

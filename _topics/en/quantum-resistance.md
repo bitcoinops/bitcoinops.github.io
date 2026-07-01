@@ -151,6 +151,18 @@ optech_mentions:
   - title: "BIPs #2198 makes one-path P2MR outputs unsafe to discourage omitting a post-quantum fallback leaf"
     url: /en/newsletters/2026/06/26/#bips-2198
 
+  - title: "Benchmarking SLH-DSA STARK aggregation"
+    url: /en/newsletters/2026/07/03/#benchmarking-slh-dsa-stark-aggregation
+
+  - title: "Bird of Prey 2 (BoP-2) non-malleable schnorr and PQ signatures"
+    url: /en/newsletters/2026/07/03/#bird-of-prey-2-bop-2-non-malleable-schnorr-and-pq-signatures
+
+  - title: "Lattice-based signatures"
+    url: /en/newsletters/2026/07/03/#lattice-based-signatures
+
+  - title: "Triggering EC disabling with a NUMS point spend or hashrate majority"
+    url: /en/newsletters/2026/07/03/#triggering-ec-disabling-with-a-nums-point-spend-or-hashrate-majority
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

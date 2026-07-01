@@ -94,6 +94,9 @@ optech_mentions:
   - title: "Why doesn't CSFS bind signatures to specific inputs?"
     url: /en/newsletters/2026/03/27/#does-op-checksigfromstack-intentionally-allow-cross-utxo-signature-reuse
 
+  - title: "LNHANCE soft fork"
+    url: /en/newsletters/2025/12/05/#lnhance-soft-fork
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha

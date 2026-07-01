@@ -88,6 +88,24 @@ optech_mentions:
   - title: "Research showing effect of OP_SUCCESSx on covenants using output script introspection"
     url: /en/newsletters/2023/10/25/#op-success-changes-would-be-beneficial
 
+  - title: "Draft BIP for adding elliptic curve operations to tapscript"
+    url: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
+
+  - title: "Draft BIP for OP_TWEAKADD"
+    url: /en/newsletters/2025/09/05/#draft-bip-for-op-tweakadd
+
+  - title: "Draft BIPs for Script Restoration"
+    url: /en/newsletters/2025/10/03/#draft-bips-for-script-restoration
+
+  - title: "Native STARK proof verification in Bitcoin Script"
+    url: /en/newsletters/2025/11/07/#native-stark-proof-verification-in-bitcoin-script
+
+  - title: "Benchmarking the varops budget"
+    url: /en/newsletters/2025/12/05/#benchmarking-the-varops-budget
+
+  - title: "Varops budget and tapscript leaf 0xc2 (aka Script Restoration) are BIPs 440 and 441"
+    url: /en/newsletters/2026/04/03/#varops-budget-and-tapscript-leaf-0xc2-aka-script-restoration-are-bips-440-and-441
+
   - title: "Proposal to embed post-quantum keys in tapscript without consensus changes"
     url: /en/newsletters/2026/05/01/#proposal-to-embed-post-quantum-keys-in-tapscript-without-consensus-changes
 
