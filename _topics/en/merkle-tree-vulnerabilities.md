@@ -62,6 +62,12 @@ optech_mentions:
   - title: "Question about whether 64-byte transactions can be third-party malleated to change their size"
     url: /en/newsletters/2025/03/28/#can-all-consensus-valid-64-byte-transactions-be-third-party-malleated-to-change-their-size
 
+  - title: "BIP54 64-byte transactions and potential legitimate uses"
+    url: /en/newsletters/2026/06/05/#bip54-64-byte-transactions-and-potential-legitimate-uses
+
+  - title: "Prohibit Merkle internal node preimages that encode minimal 64-byte transactions"
+    url: /en/newsletters/2026/07/03/#prohibit-merkle-internal-node-preimages-that-encode-minimal-64-byte-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CVEs

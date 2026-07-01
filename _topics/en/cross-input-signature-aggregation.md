@@ -42,6 +42,9 @@ optech_mentions:
   - title: "DahLIAS interactive aggregate signatures for secp256k1"
     url: /en/newsletters/2025/04/25/#interactive-aggregate-signatures-compatible-with-secp256k1
 
+  - title: "Post-quantum signature aggregation"
+    url: /en/newsletters/2025/11/07/#post-quantum-signature-aggregation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
