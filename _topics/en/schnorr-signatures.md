@@ -122,6 +122,9 @@ optech_mentions:
   - title: "Explanation for why BIP340 uses secp256k1 instead of a different curve"
     url: /en/newsletters/2024/03/27/#why-does-bip-340-use-secp256k1
 
+  - title: "Public key recovery for EC leaves in P2MR (BIP360)"
+    url: /en/newsletters/2026/07/03/#public-key-recovery-for-ec-leaves-in-p2mr-bip360
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?
