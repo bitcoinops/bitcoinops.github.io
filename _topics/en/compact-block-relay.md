@@ -78,6 +78,9 @@ optech_mentions:
   - title: Draft BIP and additional discussion of block template sharing to improve compact block effectiveness
     url: /en/newsletters/2025/08/22/#draft-bip-for-block-template-sharing
 
+  - title: "Bitcoin Core #35550 rejects sendcmpct messages with an out-of-range announcement field"
+    url: /en/newsletters/2026/07/03/#bitcoin-core-35550
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

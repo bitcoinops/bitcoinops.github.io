@@ -175,8 +175,14 @@ optech_mentions:
   - title: "`OP_TEMPLATEHASH` proposal as an alternative to CTV"
     url: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
 
+  - title: "LNHANCE soft fork"
+    url: /en/newsletters/2025/12/05/#lnhance-soft-fork
+
   - title: "Understanding and mitigating a CTV footgun"
     url: /en/newsletters/2026/01/02/#understanding-and-mitigating-a-ctv-footgun
+
+  - title: "CTV activation meeting"
+    url: /en/newsletters/2026/01/02/#ctv-activation-meeting
 
   - title: "CTV-only vault proof of concept"
     url: /en/newsletters/2026/06/05/#ctv-only-vault-proof-of-concept

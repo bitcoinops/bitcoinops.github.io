@@ -98,6 +98,9 @@ optech_mentions:
   - title: "Draft BIP for testnet5 would activate BIP54 from block 1"
     url: /en/newsletters/2026/06/12/#draft-bip-for-testnet5
 
+  - title: "Prohibit Merkle internal node preimages that encode minimal 64-byte transactions"
+    url: /en/newsletters/2026/07/03/#prohibit-merkle-internal-node-preimages-that-encode-minimal-64-byte-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation
