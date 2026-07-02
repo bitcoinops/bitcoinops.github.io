@@ -184,7 +184,46 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Bitcoin Core 31.1rc1][] is a release candidate for a maintenance version of
+  the predominant full-node implementation. It fixes an IP address leak in
+  `-privatebroadcast` that could undermine [transaction origin privacy][topic
+  transaction origin privacy] (see [Newsletter #409][news409 privatebroadcast]),
+  and includes fixes for chainstate compaction,
+  wallet migration, input-size estimation, [MuSig2][topic musig] key
+  aggregation, and proxy handling during [v2 P2P transport][topic v2 p2p
+  transport] reconnections.
+
+- [Bitcoin Core 30.3rc1][] is a release candidate for a maintenance version of
+  the predominant full-node implementation. It fixes a chainstate database issue
+  that could cause excessive disk reads and writes during normal operation,
+  along with wallet, [PSBT][topic psbt], [miniscript][topic miniscript],
+  networking, build, test, and documentation fixes.
+
+- [Bitcoin Core 29.4rc1][] is a release candidate for a maintenance version of
+  the predominant full-node implementation. It fixes the same chainstate
+  database rewrite issue as 30.3rc1 and includes selected validation, wallet,
+  build, test, documentation, CI, and compatibility fixes.
+
+- [Core Lightning v26.06.2][] is a maintenance release that fixes
+  `cln-currencyrate` on minimal OS and Docker setups without installed TLS root
+  certificates.
+
+- [LND v0.20.2-beta.rc1][] is a release candidate for a maintenance release of
+  this popular LN node implementation. It fixes a DNS fallback panic and an
+  onchain forward-interceptor settlement bug, and adds the final-hop
+  [HTLC][topic htlc] CLTV expiry validation described in the notable code
+  section below.
+
+- [LND v0.21.1-beta][] is a maintenance release of this popular LN node
+  implementation. It fixes [Tor][topic anonymity networks] v3 onion service
+  creation for fresh Tor-enabled nodes, a DNS fallback panic, and an onchain
+  forward-interceptor settlement bug, and tightens final-hop HTLC CLTV expiry
+  validation.
+
+- [LDK v0.2.4][] is a maintenance release of this library for building
+  LN-enabled wallets and applications. It fixes a regression in v0.2.3 that
+  raised the minimum supported Rust version for the `lightning` crate; the
+  crate now again compiles with `rustc` 1.63.
 
 ## Notable code and documentation changes
 
@@ -197,10 +236,92 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #35266][] adds a `load_wallet` argument (default true) to the
+  `migratewallet` RPC, allowing a legacy wallet to be migrated to
+  [descriptor][topic descriptors] wallets without immediately loading the
+  migrated wallet. This helps users migrate a legacy wallet on a pruned node
+  whose chain state is pruned below the wallet's birthday, where loading the
+  migrated wallet would require unavailable block data even though migration
+  itself does not.
+
+- [Bitcoin Core #35550][] updates [compact block relay][topic compact block
+  relay] negotiation to reject `sendcmpct` messages whose boolean announcement
+  field is not exactly `0` or `1`, as required by [BIP152][]. Previously,
+  Bitcoin Core decoded the field directly as a C++ `bool`, causing any non-zero
+  value to be accepted as true. The PR now reads the field as an integer and
+  treats values greater than 1 as peer misbehavior, disconnecting the peer.
+
+- [Bitcoin Core #35610][] adds a `netmagic` command to `bitcoin-util` that
+  prints the four-byte network identifier used in Bitcoin P2P messages for the
+  selected chain, including custom [signets][topic signet]. This command is
+  useful for the proposed multi-signet datadir support, in which custom signets
+  would be stored in datadirs that are suffixed by their network identifiers.
+  This allows scripts to select the correct directory before starting
+  `bitcoind`.
+
+- [BIPs #2196][] adds [BIP95][], a draft specification for [testnet5][topic
+  testnet], a new test network intended to replace testnet4 (see [Newsletter
+  #409][news409 testnet5]). Testnet4 has a difficulty exception that allows
+  for minimum-difficulty blocks after long gaps. However, this exception has
+  been persistently exploited, resulting in frequent, small reorgs and rendering
+  the network difficult to use for testing. Testnet5 removes the exception,
+  raises the minimum difficulty to about 1,048,561, and enforces [BIP54][]
+  [consensus cleanup][topic consensus cleanup] rules from block 1. The draft
+  also specifies message start bytes `0x46495645` (`FIVE`) and default P2P port
+  `18335`, although its genesis block values remain placeholders for now.
+
+- [BIPs #2165][] updates [BIP52][], the Optical Proof-of-Work proposal
+  described in [Newsletter #181][news181 bip52], changing its status from Draft
+  to Closed. BIP52 proposed a hard fork that claimed to shift mining costs away
+  from electricity and operations and toward specialized optical mining
+  equipment. After several years without progress and recent unsuccessful
+  attempts to contact the authors, the proposal was closed.
+
+- [BIPs #2201][] advances [BIP110][], the Reduced Data Temporary Softfork
+  proposal, to Complete status (see [Newsletter #392][news392 bip110]). This
+  update emphasizes that UTXOs created before activation are grandfathered and
+  can be spent under the old rules during deployment. It also adds
+  reference-implementation test coverage and
+  transaction-level test vectors. Additionally, it clarifies the impact of the
+  temporary ban on executing `OP_IF` and `OP_NOTIF` in [tapscript][topic
+  tapscript] leaves: existing UTXOs are exempt, but new constructions using
+  these opcodes would require alternatives, such as separate leaves.
+
+- [LND #10900][] adds a `WalletKit.SubmitPackage` RPC and `lncli wallet
+  submitpackage` command for submitting a 1p1c [transaction package][topic package relay]
+  to LND's chain backend. For bitcoind backends, LND forwards the
+  package to Bitcoin Core's `submitpackage` RPC, allowing a zero-fee [v3
+  transaction relay][topic v3 transaction relay] parent with an [ephemeral
+  anchor][topic ephemeral anchors] to be accepted together with a fee-paying
+  [CPFP][topic cpfp] child. Other backends do not provide the same
+  package submission: btcd returns unimplemented, and neutrino broadcasts the
+  transactions individually.
+
+- [LND #10927][] tightens validation of final-hop [HTLC][topic htlc] CLTV
+  expiries. Previously, a final-hop HTLC could specify an expiry much farther
+  in the future than the receiver's policy allowed, tying up liquidity for an
+  excessive amount of time even though forwarding CLTV deltas were already
+  bounded. LND now rejects final HTLCs outside the receiver's CLTV policy with
+  `incorrect_or_unknown_payment_details`, validates related config bounds, and
+  applies the same checks if the channel is force-closed before deciding
+  whether to claim the HTLC on-chain with a preimage.
+
+- [LDK #4748][] and [#4751][ldk #4751] fix two [splicing][topic splicing]
+  state-machine edge cases involving delayed messages. [LDK #4748][] fixes a
+  case in which delayed splice `tx_signatures` could arrive while an unrelated
+  [HTLC][topic htlc]-preimage channel monitor update was pending, causing LDK
+  to incorrectly block completion of the splice flow. LDK now only waits when
+  the pending monitor update is the splice-related update that must be durably
+  persisted first. [#4751][ldk #4751] fixes a case in which a peer's in-flight
+  splice `commitment_signed` could arrive after the local user canceled their
+  funding contribution, causing LDK to validate a signature for a stale splice
+  funding transaction and potentially force-close the still-live channel. LDK
+  now checks the optional `funding_txid` in `commitment_signed` and ignores
+  signatures for stale splice funding transactions.
 
 {% include snippets/recap-ad.md when="2026-07-07 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="2165,2196,2201,35266,35550,35610,10900,10927,4748,4751" %}
 
 [rs ml starkbench]: https://groups.google.com/g/bitcoindev/c/0IdqdnlC4Og
 [eh ml starkagg]: https://groups.google.com/g/bitcoindev/c/wKizvPUfO7w
@@ -219,3 +340,15 @@ FIXME:Gustavojfe
 [news393 p2mr]: /en/newsletters/2026/02/20/#bips-1670
 [news403 pqout]: /en/newsletters/2026/05/01/#discussion-of-a-post-quantum-output-type
 [news408 64byte]: /en/newsletters/2026/06/05/#bip54-64-byte-transactions-and-potential-legitimate-uses
+[Core Lightning v26.06.2]: https://github.com/ElementsProject/lightning/releases/tag/v26.06.2
+[LND v0.20.2-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.2-beta.rc1
+[LND v0.21.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.21.1-beta
+[LDK v0.2.4]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.2.4
+[Bitcoin Core 31.1rc1]: https://bitcoincore.org/bin/bitcoin-core-31.1/test.rc1/
+[Bitcoin Core 30.3rc1]: https://bitcoincore.org/bin/bitcoin-core-30.3/test.rc1/
+[Bitcoin Core 29.4rc1]: https://bitcoincore.org/bin/bitcoin-core-29.4/test.rc1/
+[news181 bip52]: /en/newsletters/2022/01/05/#bips-1126
+[news392 bip110]: /en/newsletters/2026/02/13/#bips-2017
+[news409 testnet5]: /en/newsletters/2026/06/12/#draft-bip-for-testnet5
+[news409 privatebroadcast]: /en/newsletters/2026/06/12/#bitcoin-core-35410
+[sources]: /en/internal/sources/
