@@ -37,7 +37,7 @@ Bitcoin's consensus rules._
   general-purpose zkVM used here), mempool preprocessing, and multi-GPU
   proving could improve this. The benchmarks also
   use standard SPHINCS rather than the more compact Bitcoin-optimized
-  [SPHINCS+][news386 jn hash] variant.
+  [SPHINCS+][news386 jn hash] variant. {% assign timestamp="1:05" %}
 
 - **Bird of Prey 2 (BoP-2) non-malleable schnorr and PQ signatures**: Pieter
   Wuille [posted][pw delving bop2] to Delving Bitcoin about a EuroCrypt 2026
@@ -60,7 +60,7 @@ Bitcoin's consensus rules._
   BoP-2 looks like the stronger unified-hybrid contender, though Wuille and
   Conduition both questioned whether unified hybrid schemes are worth the
   complexity when separate [BIP360][] ([P2MR][news393 p2mr]) leaves, or simple
-  script combinations can achieve similar results.
+  script combinations can achieve similar results. {% assign timestamp="10:21" %}
 
 - **Lattice-based signatures**: Nikita Karetnikov
   [posted][nk delving lattice] to Delving Bitcoin and
@@ -81,7 +81,7 @@ Bitcoin's consensus rules._
   the other hand, Boris Nagaev described space savings from treating hybrid
   signing as a single construction rather than a simple concatenation of
   multiple signature schemes, since they could likely share certain required
-  randomizing parameters, for example.
+  randomizing parameters, for example. {% assign timestamp="19:41" %}
 
 - **Public key recovery for P2MR EC leaves**: starius
   [posted][st delving recover] to Delving Bitcoin a proposal to add a
@@ -105,7 +105,7 @@ Bitcoin's consensus rules._
   depth-zero tree ban (depth-zero recoverable leaves could match [P2TR][topic
   taproot] witness sizes without a post-quantum fallback). starius explained
   that this should be folded into BIP360 before activation because it changes
-  witness parsing rules.
+  witness parsing rules. {% assign timestamp="25:50" %}
 
 - **Aligning privacy incentives in P2MR**: Conduition [posted][c ml p2mrdepth]
   to the Bitcoin-Dev mailing list a proposed [BIP360][] (P2MR) change to
@@ -127,7 +127,7 @@ Bitcoin's consensus rules._
   migration rates for either design and noted an upcoming witness-size
   optimization for common elliptic curve spends (see the next item). Hayashi
   [suggested][h ml p2mrdepth] an additional witness discount on P2MR schnorr
-  leaves to further close the cost gap.
+  leaves to further close the cost gap. {% assign timestamp="30:48" %}
 
 - **Prohibit merkle internal node preimages that encode minimal 64-byte transactions**:
   Jeremy Rubin [posted][jr ml merkle64] to the Bitcoin-Dev mailing list a
@@ -151,7 +151,7 @@ Bitcoin's consensus rules._
   block-building software or risk producing invalid blocks. Murch pointed out
   that occasionally adding a one-byte padding is a smaller burden than making
   every node check thousands of hashes during block validation. Sjors Provoost
-  suggested deferring a cleaner fix to a future block-header format change.
+  suggested deferring a cleaner fix to a future block-header format change. {% assign timestamp="49:38" %}
 
 - **Triggering EC disabling with a NUMS point spend or hashrate majority**: Pieter Wuille
   [wrote][pw ml p2xx] to the Bitcoin-Dev mailing list about codifying the
@@ -176,7 +176,7 @@ Bitcoin's consensus rules._
   fee-incentivized. Wuille clarified that disabling must cover all EC usage
   within the output type (not just key paths) and that hybrid signing should
   use dedicated opcodes rather than arbitrary script combinations to ensure
-  spendability post-EC disabling.
+  spendability post-EC disabling. {% assign timestamp="37:36" %}
 
 ## Releases and release candidates
 
@@ -191,39 +191,39 @@ release candidates._
   and includes fixes for chainstate compaction,
   wallet migration, input-size estimation, [MuSig2][topic musig] key
   aggregation, and proxy handling during [v2 P2P transport][topic v2 p2p
-  transport] reconnections.
+  transport] reconnections. {% assign timestamp="1:32:43" %}
 
 - [Bitcoin Core 30.3rc1][] is a release candidate for a maintenance version of
   the predominant full-node implementation. It fixes a chainstate database issue
   that could cause excessive disk reads and writes during normal operation,
   along with wallet, [PSBT][topic psbt], [miniscript][topic miniscript],
-  networking, build, test, and documentation fixes.
+  networking, build, test, and documentation fixes. {% assign timestamp="1:32:48" %}
 
 - [Bitcoin Core 29.4rc1][] is a release candidate for a maintenance version of
   the predominant full-node implementation. It fixes the same chainstate
   database rewrite issue as 30.3rc1 and includes selected validation, wallet,
-  build, test, documentation, CI, and compatibility fixes.
+  build, test, documentation, CI, and compatibility fixes. {% assign timestamp="1:32:52" %}
 
 - [Core Lightning v26.06.2][] is a maintenance release that fixes
   `cln-currencyrate` on minimal OS and Docker setups without installed TLS root
-  certificates.
+  certificates. {% assign timestamp="1:36:01" %}
 
 - [LND v0.20.2-beta.rc1][] is a release candidate for a maintenance release of
   this popular LN node implementation. It fixes a DNS fallback panic and an
   onchain forward-interceptor settlement bug, and adds the final-hop
   [HTLC][topic htlc] CLTV expiry validation described in the notable code
-  section below.
+  section below. {% assign timestamp="1:36:39" %}
 
 - [LND v0.21.1-beta][] is a maintenance release of this popular LN node
   implementation. It fixes [Tor][topic anonymity networks] v3 onion service
   creation for fresh Tor-enabled nodes, a DNS fallback panic, and an onchain
   forward-interceptor settlement bug, and tightens final-hop HTLC CLTV expiry
-  validation.
+  validation. {% assign timestamp="1:38:10" %}
 
 - [LDK v0.2.4][] is a maintenance release of this library for building
   LN-enabled wallets and applications. It fixes a regression in v0.2.3 that
   raised the minimum supported Rust version for the `lightning` crate; the
-  crate now again compiles with `rustc` 1.63.
+  crate now again compiles with `rustc` 1.63. {% assign timestamp="1:38:57" %}
 
 ## Notable code and documentation changes
 
@@ -242,14 +242,14 @@ repo], and [BINANAs][binana repo]._
   migrated wallet. This helps users migrate a legacy wallet on a pruned node
   whose chain state is pruned below the wallet's birthday, where loading the
   migrated wallet would require unavailable block data even though migration
-  itself does not.
+  itself does not. {% assign timestamp="1:40:00" %}
 
 - [Bitcoin Core #35550][] updates [compact block relay][topic compact block
   relay] negotiation to reject `sendcmpct` messages whose boolean announcement
   field is not exactly `0` or `1`, as required by [BIP152][]. Previously,
   Bitcoin Core decoded the field directly as a C++ `bool`, causing any non-zero
   value to be accepted as true. The PR now reads the field as an integer and
-  treats values greater than 1 as peer misbehavior, disconnecting the peer.
+  treats values greater than 1 as peer misbehavior, disconnecting the peer. {% assign timestamp="1:41:10" %}
 
 - [Bitcoin Core #35610][] adds a `netmagic` command to `bitcoin-util` that
   prints the four-byte network identifier used in Bitcoin P2P messages for the
@@ -257,7 +257,7 @@ repo], and [BINANAs][binana repo]._
   useful for the proposed multi-signet datadir support, in which custom signets
   would be stored in datadirs that are suffixed by their network identifiers.
   This allows scripts to select the correct directory before starting
-  `bitcoind`.
+  `bitcoind`. {% assign timestamp="1:42:15" %}
 
 - [BIPs #2196][] adds [BIP95][], a draft specification for [testnet5][topic
   testnet], a new test network intended to replace testnet4 (see [Newsletter
@@ -268,14 +268,14 @@ repo], and [BINANAs][binana repo]._
   raises the minimum difficulty to about 1,048,561, and enforces [BIP54][]
   [consensus cleanup][topic consensus cleanup] rules from block 1. The draft
   also specifies message start bytes `0x46495645` (`FIVE`) and default P2P port
-  `18335`, although its genesis block values remain placeholders for now.
+  `18335`, although its genesis block values remain placeholders for now. {% assign timestamp="1:43:52" %}
 
 - [BIPs #2165][] updates [BIP52][], the Optical Proof-of-Work proposal
   described in [Newsletter #181][news181 bip52], changing its status from Draft
   to Closed. BIP52 proposed a hard fork that claimed to shift mining costs away
   from electricity and operations and toward specialized optical mining
   equipment. After several years without progress and recent unsuccessful
-  attempts to contact the authors, the proposal was closed.
+  attempts to contact the authors, the proposal was closed. {% assign timestamp="1:47:46" %}
 
 - [BIPs #2201][] advances [BIP110][], the Reduced Data Temporary Softfork
   proposal, to Complete status (see [Newsletter #392][news392 bip110]). This
@@ -285,7 +285,7 @@ repo], and [BINANAs][binana repo]._
   transaction-level test vectors. Additionally, it clarifies the impact of the
   temporary ban on executing `OP_IF` and `OP_NOTIF` in [tapscript][topic
   tapscript] leaves: existing UTXOs are exempt, but new constructions using
-  these opcodes would require alternatives, such as separate leaves.
+  these opcodes would require alternatives, such as separate leaves. {% assign timestamp="1:50:13" %}
 
 - [LND #10900][] adds a `WalletKit.SubmitPackage` RPC and `lncli wallet
   submitpackage` command for submitting a 1p1c [transaction package][topic package relay]
@@ -295,7 +295,7 @@ repo], and [BINANAs][binana repo]._
   anchor][topic ephemeral anchors] to be accepted together with a fee-paying
   [CPFP][topic cpfp] child. Other backends do not provide the same
   package submission: btcd returns unimplemented, and neutrino broadcasts the
-  transactions individually.
+  transactions individually. {% assign timestamp="1:51:20" %}
 
 - [LND #10927][] tightens validation of final-hop [HTLC][topic htlc] CLTV
   expiries. Previously, a final-hop HTLC could specify an expiry much farther
@@ -304,7 +304,7 @@ repo], and [BINANAs][binana repo]._
   bounded. LND now rejects final HTLCs outside the receiver's CLTV policy with
   `incorrect_or_unknown_payment_details`, validates related config bounds, and
   applies the same checks if the channel is force-closed before deciding
-  whether to claim the HTLC on-chain with a preimage.
+  whether to claim the HTLC on-chain with a preimage. {% assign timestamp="1:52:37" %}
 
 - [LDK #4748][] and [#4751][ldk #4751] fix two [splicing][topic splicing]
   state-machine edge cases involving delayed messages. [LDK #4748][] fixes a
@@ -317,7 +317,7 @@ repo], and [BINANAs][binana repo]._
   funding contribution, causing LDK to validate a signature for a stale splice
   funding transaction and potentially force-close the still-live channel. LDK
   now checks the optional `funding_txid` in `commitment_signed` and ignores
-  signatures for stale splice funding transactions.
+  signatures for stale splice funding transactions. {% assign timestamp="1:54:13" %}
 
 {% include snippets/recap-ad.md when="2026-07-07 16:30" %}
 {% include references.md %}
