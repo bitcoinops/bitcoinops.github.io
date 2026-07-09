@@ -14,7 +14,23 @@ notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Using fountain codes for IBD**: Lucas Lima [posted][fount del] to Delving Bitcoin
+  about his latest research on using [fountain codes][fount wiki] to allow pruned nodes
+  to contribute to Initial Block Download (IBD), without significantly increasing their
+  storage requirements.
+
+  Lima provided a dedicated [blog post][fount blog] where he explains how this could be
+  achieved by dividing the entire chain into epochs, fixed-length chunks made of `k` blocks,
+  encoding these epochs using fountain codes, and sending these encodings, called droplets,
+  together with block headers to those nodes that need to reconstruct the chain.
+  The receiving node, referred to as a bucket node, needs to gather and decode enough droplets
+  belonging to a certain epoch in order to reconstruct the `k` blocks. Block headers are then used
+  to verify that the received data is valid, preventing malicious nodes from corrupting the
+  reconstructed chain.
+
+  Some critical points were raised during the discussion. In particular,
+  developers highlighted the need for a high number of connected peers to manage to reconstruct
+  the chain, slower IBD, risk of node fingerprinting, and possible increased DoS attack surface.
 
 ## Releases and release candidates
 
@@ -39,4 +55,6 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-07-14 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[fount del]: https://delvingbitcoin.org/t/fountain-codes-a-way-to-reduce-blockchain-storage-costs/2624
+[fount wiki]: https://en.wikipedia.org/wiki/Fountain_code
+[fount blog]: https://lucasdbr05.com/posts/fountain-codes/
