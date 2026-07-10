@@ -121,6 +121,9 @@ optech_mentions:
   - title: Protocol proposed for upfront and hold fees to address channel jamming
     url: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
 
+  - title: "Eclair #3323 fails incoming HTLCs with a CLTV expiry more than 2016 blocks in the future"
+    url: /en/newsletters/2026/07/10/#eclair-3323
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs

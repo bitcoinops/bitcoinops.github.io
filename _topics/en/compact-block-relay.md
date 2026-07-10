@@ -81,6 +81,9 @@ optech_mentions:
   - title: "Bitcoin Core #35550 rejects sendcmpct messages with an out-of-range announcement field"
     url: /en/newsletters/2026/07/03/#bitcoin-core-35550
 
+  - title: "Bitcoin Core #32606 ignores compact block messages from peers that haven't negotiated support"
+    url: /en/newsletters/2026/07/10/#bitcoin-core-32606
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
