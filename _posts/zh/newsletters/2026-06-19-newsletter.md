@@ -57,11 +57,11 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [news315 fullrbf]: /zh/newsletters/2024/08/09/#bitcoin-core-30493
 [news329 fullrbf]: /zh/newsletters/2024/11/15/#bitcoin-core-30592
 [sparrow 2.5.0]: https://github.com/sparrowwallet/sparrow/releases/tag/2.5.0
-[news377 sparrow]: /zh/newsletters/2025/10/24/#sparrow-2-3-0-released
+[news377 sparrow]: /zh/newsletters/2025/10/24/#sparrow-230-released
 [bark mainnet]: https://blog.second.tech/bark-now-on-bitcoin-mainnet/
 [arke]: https://github.com/GBKS/arke
 [noah]: https://github.com/smolcars/noah
-[news346 bark]: /zh/newsletters/2025/03/21/#bark-launches-on-signet
+[news346 bark]: /zh/newsletters/2025/03/21/#bark-launches-on-signet-bark-signet
 [alby hub v1.23.0]: https://github.com/getAlby/hub/releases/tag/v1.23.0
 [joinmarket 0.32.0]: https://github.com/joinmarket-ng/joinmarket-ng/releases/tag/0.32.0
 [news386 bip434]: /zh/newsletters/2026/01/02/#peer-feature-negotiation
