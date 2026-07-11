@@ -71,7 +71,7 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2198,34411,35070,35182,4684,4713" %}
 
-[news311 block storm]: /zh/newsletters/2024/07/12/#bitcoin-core-pr-review-club
+[news311 block storm]: /zh/newsletters/2024/07/12/#bitcoin-core-pr-审核俱乐部
 [lnd gossip dos delving]: https://delvingbitcoin.org/t/lnd-zero-timestamp-gossip-dos-disclosure/2621
 [news393 lnd 0201]: /zh/newsletters/2026/02/20/#lnd-0-20-1-beta
 [LDK v0.1.10]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.10
