@@ -30,7 +30,7 @@ notable changes to popular Bitcoin infrastructure software.
 
   Some critical points were raised during the discussion. In particular,
   developers highlighted the need for a high number of connected peers to manage to reconstruct
-  the chain, slower IBD, risk of node fingerprinting, and possible increased DoS attack surface.
+  the chain, slower IBD, risk of node fingerprinting, and possible increased DoS attack surface. {% assign timestamp="13:53" %}
 
 ## Releases and release candidates
 
@@ -46,13 +46,13 @@ release candidates._
   wallet migration, input-size estimation, [MuSig2][topic musig] key
   aggregation, and proxy handling during [v2 P2P transport][topic v2 p2p
   transport] reconnections. See the [release notes][bcc31.1 rn] for
-  details.
+  details. {% assign timestamp="22:52" %}
 
 - [LND v0.20.2-beta][] is a maintenance release of this popular LN node
   implementation. It fixes a DNS fallback panic and an onchain
   forward-interceptor settlement bug, and adds the final-hop [HTLC][topic
   htlc] CLTV expiry validation covered last week (see [Newsletter
-  #412][news412 cltv]).
+  #412][news412 cltv]). {% assign timestamp="28:49" %}
 
 ## Notable code and documentation changes
 
@@ -71,7 +71,7 @@ repo], and [BINANAs][binana repo]._
   Newsletter [#366][news366 watchonly]). The exported wallet contains the
   original wallet's public [descriptors][topic descriptors], transactions,
   labels, and other metadata, but not private keys. Previously, users had to
-  manually construct such a wallet by importing public descriptors.
+  manually construct such a wallet by importing public descriptors. {% assign timestamp="31:11" %}
 
 - [Bitcoin Core #32606][] updates [compact block relay][topic compact block
   relay] to ignore compact block messages from peers that have not
@@ -81,7 +81,7 @@ repo], and [BINANAs][binana repo]._
   reconstructed using transactions from the receiver’s mempool, processing
   them can reveal which transactions the receiver is missing or already has.
   This is particularly undesirable for blocks-only nodes because the
-  transactions in their mempools are more likely to have originated locally.
+  transactions in their mempools are more likely to have originated locally. {% assign timestamp="33:59" %}
 
 - [Bitcoin Core #34020][] adds the `getTransactionsByTxID()` and
   `getTransactionsByWitnessID()` methods to the Mining IPC interface (see
@@ -91,7 +91,7 @@ repo], and [BINANAs][binana repo]._
   transactions it doesn't know about. This is useful for [Stratum v2][topic
   pooled mining] custom job declaration, where a pool may want to request
   only those transactions from a miner-proposed block template that it
-  doesn't already have.
+  doesn't already have. {% assign timestamp="0:48" %}
 
 - [Core Lightning #9104][] and [#9292][core lightning #9292] add
   experimental support for the `option_simple_close` cooperative close
@@ -106,7 +106,7 @@ repo], and [BINANAs][binana repo]._
   version pays a higher fee. [#9292][core lightning #9292] fixes an edge
   case where CLN rejected a signed simple-close transaction that replaced
   the closer’s uneconomical output with a permitted zero-value `OP_RETURN`,
-  causing a force close.
+  causing a force close. {% assign timestamp="42:55" %}
 
 - [Eclair #3323][] fails incoming [HTLCs][topic htlc] whose CLTV expiry is
   more than 2016 blocks (approximately two weeks) in the future. This
@@ -114,13 +114,13 @@ repo], and [BINANAs][binana repo]._
   reduces the risk of funds being locked for an extended period and makes
   [channel jamming][topic channel jamming attacks] harder. Eclair
   temporarily accepts an offending HTLC into the channel commitment and then
-  fails it, since rejecting it outright would force close the channel.
+  fails it, since rejecting it outright would force close the channel. {% assign timestamp="45:11" %}
 
 - [LND #10832][] continues LND’s implementation of [BOLT12 offers][topic
   offers] by adding support for `InvoiceRequest` messages (see [Newsletter
   #410][news410 bolt12]). The new code adds TLV encoding, decoding, and
   structural validation, while deferring signature verification and
-  cross-checking against the corresponding offer to subsequent PRs.
+  cross-checking against the corresponding offer to subsequent PRs. {% assign timestamp="46:24" %}
 
 {% include snippets/recap-ad.md when="2026-07-14 16:30" %}
 {% include references.md %}
