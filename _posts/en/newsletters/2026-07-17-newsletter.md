@@ -14,7 +14,29 @@ infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Formal verification of the Bitcoin protocol**: Keagan McClelland [posted][verif ml]
+  to the Bitcoin-Dev mailing list and [Delving Bitcoin][verif del] about his effort to
+  formally verify the Bitcoin protocol. Formal verification is a software development
+  practice that aims to prove the correctness of a system with respect to a
+  specification using the formal methods of mathematics. This could help resolve
+  factual disputes about proposed changes to Bitcoin's consensus rules. Optech
+  previously covered a related project developing a declarative executable
+  specification of Bitcoin's consensus rules (see [Newsletter #402][news402 hornet]).
+
+  McClelland is developing [btc-verified][verif gh], a [Lean4][lean lang]
+  implementation of the verification process. The author provided initial results
+  demonstrating the approach. In particular, he focused on the algorithm Bitcoin uses
+  to compute the merkle root, which contains a known flaw ([CVE-2012-2459][topic cves])
+  that can cause two different transaction lists to produce the same
+  [merkle root][topic merkle tree vulnerabilities]. Bitcoin Core's merkle-root
+  construction includes a check meant to detect this mutation. McClelland used
+  btc-verified to formally prove that the check is correct and that no two distinct
+  transaction lists can pass it and produce the same merkle root under the assumption
+  that SHA256 is collision resistant.
+
+  Finally, the author asked for feedback from others both on the repository and
+  on the general approach. He also provided some disclaimers, such as the heavy use
+  of AI in the repository, and the current immaturity of the project.
 
 ## Releases and release candidates
 
@@ -39,4 +61,9 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-07-21 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+
+[verif ml]: https://groups.google.com/g/bitcoindev/c/OIml9stwbGQ
+[verif del]: https://delvingbitcoin.org/t/btc-verified-formalizing-the-bitcoin-protocol/2684
+[verif gh]: https://github.com/ProofOfKeags/btc-verified
+[lean lang]: https://lean-lang.org/
+[news402 hornet]: /en/newsletters/2026/04/24/#hornet-node-s-declarative-executable-specification-of-bitcoin-consensus-rules
