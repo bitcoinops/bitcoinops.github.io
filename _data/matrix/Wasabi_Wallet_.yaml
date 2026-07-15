@@ -27,7 +27,7 @@ feature:
   payjoin_alternate: ""
   payjoin_alternate_name: ""
   payment_code: ""
-  silent_payments_BIP352: "No Support"
+  silent_payments_BIP352: "Send Support"
   silent_payments_dns: "No Support"
   lightning_11: "No Support"
   lightning_12: "No Support"
