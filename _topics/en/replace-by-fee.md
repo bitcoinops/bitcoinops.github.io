@@ -225,6 +225,9 @@ optech_mentions:
   - title: "Discussion of removing RBF signaling from wallet transactions"
     url: /en/newsletters/2026/06/19/#discussion-of-removing-rbf-signaling-from-wallet-transactions
 
+  - title: "LND #10962 disables the RBF cooperative-close flow for auxiliary channels"
+    url: /en/newsletters/2026/07/17/#lnd-10962
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

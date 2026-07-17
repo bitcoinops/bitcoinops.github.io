@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Prohibit Merkle internal node preimages that encode minimal 64-byte transactions"
     url: /en/newsletters/2026/07/03/#prohibit-merkle-internal-node-preimages-that-encode-minimal-64-byte-transactions
 
+  - title: "Formal verification of Bitcoin Core's merkle root duplicate-detection check"
+    url: /en/newsletters/2026/07/17/#formal-verification-of-the-bitcoin-protocol
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CVEs
