@@ -62,14 +62,14 @@ standardized:
 - Using a commit message similar to `news70: add Japanese translation` helps
   keep translations easily visible in the commit log
 - Testing your translation
-  - Follow the instuctions in the [README.md](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/README.md)
+  - Follow the instructions in the [README.md](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/README.md)
     - `make preview` to view the local website and review
     - `make production` to run additional checks (link checking, linting, etc)
   - For the page you have translated, ensure that the language code link shows
     up on the `en` language variant
   - Check that the page renders properly
 - Create a pull request to the
-  [https://github.com/bitcoinops/bitcoinops.github.io]() repository
+  [https://github.com/bitcoinops/bitcoinops.github.io](https://github.com/bitcoinops/bitcoinops.github.io) repository
   - One newsletter per PR allows for easier review
   - Allowing edits from maintainers permits maintainers to make additional
     commits to your PR branch
