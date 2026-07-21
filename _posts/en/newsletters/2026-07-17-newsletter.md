@@ -36,7 +36,7 @@ infrastructure software.
 
   Finally, the author asked for feedback from others both on the repository and
   on the general approach. He also provided some disclaimers, such as the heavy use
-  of AI in the repository, and the current immaturity of the project.
+  of AI in the repository, and the current immaturity of the project. {% assign timestamp="1:11" %}
 
 ## Releases and release candidates
 
@@ -49,13 +49,13 @@ release candidates._
   cause excessive disk reads and writes during normal operation, along with
   wallet, [PSBT][topic psbt], [miniscript][topic miniscript], networking,
   build, test, and documentation fixes. See the [release notes][bcc30.3 rn]
-  for details.
+  for details. {% assign timestamp="39:42" %}
 
 - [Bitcoin Core 29.4][] is a maintenance release of the predominant
   full-node implementation. It fixes the same chainstate database rewrite
   issue as 30.3 and includes selected validation, wallet, build, test,
   documentation, CI, and compatibility fixes. See the [release
-  notes][bcc29.4 rn] for details.
+  notes][bcc29.4 rn] for details. {% assign timestamp="39:43" %}
 
 ## Notable code and documentation changes
 
@@ -77,7 +77,7 @@ repo], and [BINANAs][binana repo]._
   This change prevents the latency of many disk reads from accumulating
   sequentially. Depending on the hardware and configuration, the author's
   benchmarks show initial block download (IBD) speedups ranging from 1.18 times
-  to over three times faster.
+  to over three times faster. {% assign timestamp="52:43" %}
 
 - [Bitcoin Core #34897][] ensures that optional indexes never persist state
   ahead of the chainstate's last durable UTXO flush by skipping an index commit
@@ -89,7 +89,7 @@ repo], and [BINANAs][binana repo]._
   reverse without reprocessing the corresponding blocks, which would then be
   unavailable in the chainstate. While the index can process newer blocks in
   memory, it now waits for the chainstate to catch up before saving that
-  progress to disk.
+  progress to disk. {% assign timestamp="1:13:54" %}
 
 - [Bitcoin Core #35406][] limits the [private broadcast][topic transaction origin
   privacy] tracking queue to 10,000 transactions (see [Newsletter
@@ -100,7 +100,7 @@ repo], and [BINANAs][binana repo]._
   accumulate indefinitely and consume unlimited memory and CPU. Once the limit
   is reached, Bitcoin Core rejects new submissions without removing existing
   entries. Users can inspect the queue with `getprivatebroadcastinfo` and
-  remove stuck transactions with `abortprivatebroadcast`.
+  remove stuck transactions with `abortprivatebroadcast`. {% assign timestamp="1:16:13" %}
 
 - [Bitcoin Core #35380][] extends the `libbitcoinkernel` API (see [Newsletter
   #380][news380 kernel]) to expose each transaction input's witness stack and
@@ -110,7 +110,7 @@ repo], and [BINANAs][binana repo]._
   public keys stored in segwit witness data or P2PKH `scriptSig`s without
   deserializing the raw transactions separately. These input public keys are
   necessary for silent-payment scanners to determine whether any of the
-  transaction's outputs belong to the wallet.
+  transaction's outputs belong to the wallet. {% assign timestamp="1:21:36" %}
 
 - [Bitcoin Core #35568][] reduces the synchronization time and disk usage of
   the optional `txospenderindex` (see [Newsletter #394][news394 txospender]) by
@@ -121,7 +121,7 @@ repo], and [BINANAs][binana repo]._
   author's benchmark, a full index synchronization decreased from 4 hours 37
   minutes to 3 hours 57 minutes, while disk usage fell from 85.0 GiB to 80.9
   GiB. Existing indexes remain compatible, but reclaiming the space used by
-  previously generated filters requires rebuilding the index.
+  previously generated filters requires rebuilding the index. {% assign timestamp="1:07:36" %}
 
 - [Bitcoin Core #34538][] allows an address explicitly configured with the
   `externalip` option to be eligible for advertisement, even if the `onlynet`
@@ -131,7 +131,7 @@ repo], and [BINANAs][binana repo]._
   via IPv4 only while operating a [Tor][topic anonymity networks] onion service
   that is configured separately. Previously, Bitcoin Core would reject
   manually supplied onion addresses because the `onlynet` option marked Tor as
-  unreachable.
+  unreachable. {% assign timestamp="1:23:43" %}
 
 - [BIPs #2208][] updates the rationale for [BIP54][]'s [consensus
   cleanup][topic consensus cleanup], which proposes invalidating
@@ -143,7 +143,7 @@ repo], and [BINANAs][binana repo]._
   Additionally, it corrects BIP54's previous claim that Merkle-proof verifiers
   would never need updating. Proofs of ordinary, non-64-byte transactions are
   automatically protected, but a verifier that accepts proofs of 64-byte
-  transactions would need to reject them after activation.
+  transactions would need to reject them after activation. {% assign timestamp="1:25:52" %}
 
 - [LND #10962][] prevents the [RBF][topic rbf] cooperative-close flow (see
   [Newsletter #347][news347 rbf]) from being used for auxiliary channels, such
@@ -152,7 +152,7 @@ repo], and [BINANAs][binana repo]._
   closer using peer-level feature bits, but that closer does not invoke the
   auxiliary hooks needed to carry the assets into the closing transaction.
   Therefore, it could broadcast a valid Bitcoin transaction that would destroy
-  the asset commitments and leave the channel stuck in a waiting-close state.
+  the asset commitments and leave the channel stuck in a waiting-close state. {% assign timestamp="1:27:27" %}
 
 - [LND #10897][] fixes a sweeper bug that could have permanently stranded
   inputs from auxiliary channels, such as [Taproot Assets][topic client-side
@@ -163,10 +163,10 @@ repo], and [BINANAs][binana repo]._
   own budget, so after a failed sweep increased the required starting feerate,
   the input could be excluded from every future attempt. Now, the filter
   includes the auxiliary contribution when determining whether an input can
-  afford the minimum relay fee and the starting feerate.
+  afford the minimum relay fee and the starting feerate. {% assign timestamp="1:30:12" %}
 
 - [BINANAs #21][] assigns BIN-2025-0003 to [BIP442][], the draft
-  `OP_PAIRCOMMIT` proposal (see [Newsletter #395][news395 paircommit]).
+  `OP_PAIRCOMMIT` proposal (see [Newsletter #395][news395 paircommit]). {% assign timestamp="1:31:34" %}
 
 {% include snippets/recap-ad.md when="2026-07-21 16:30" %}
 {% include references.md %}
