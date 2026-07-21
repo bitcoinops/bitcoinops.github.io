@@ -69,7 +69,7 @@ standardized:
     up on the `en` language variant
   - Check that the page renders properly
 - Create a pull request to the
-  [https://github.com/bitcoinops/bitcoinops.github.io](https://github.com/bitcoinops/bitcoinops.github.io) repository
+  [bitcoinops/bitcoinops.github.io](https://github.com/bitcoinops/bitcoinops.github.io) repository
   - One newsletter per PR allows for easier review
   - Allowing edits from maintainers permits maintainers to make additional
     commits to your PR branch
