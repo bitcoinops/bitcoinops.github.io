@@ -14,7 +14,34 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Draft BIP for full aggregation of BIP340 signatures**: Fabian Jahr [posted][aggr ml] to
+  the Bitcoin-Dev mailing list about a new draft BIP for full aggregation of
+  [BIP340][] [schnorr signatures][topic schnorr signatures], a standard for the DahLIAS aggregate signature scheme
+  (see [Newsletter #351][news351 dahlias]), which describes a process to
+  combine a collection of signatures into a single aggregate one, with a size
+  of only 64 bytes, regardless of the number of signers. However, the described
+  protocol is interactive and requires cooperation among all the signers and involves
+  the presence of an untrusted coordinator to reduce communication complexity.
+  The coordinator role can be taken by any of the signers participating in the process.
+
+  The process is divided into two rounds:
+
+  1. Each signer starts the signing session by computing a secret nonce
+  (`secnonce`) and a public nonce (`pubnonce`). `pubnonce` is sent to the
+  coordinator, which aggregates them (`aggnonce`) and sends the result back to
+  signers, together with other pieces of information.
+
+  2. Each signer computes a partial signature using the secret key, `secnonce`,
+  the message to sign, and the information provided. Partial signatures are then
+  sent to the coordinator, which aggregates them in a single 64-byte signature.
+
+  According to Jahr, one of the possible applications of the proposal would
+  be [cross-input signature aggregation (CISA)][topic cisa], a change to Bitcoin
+  consensus that would reduce size and thus on-chain fees of multi-input transactions.
+  However, the author specified that the consensus change is outside the scope of this BIP.
+
+  The draft BIP, which is now referred to as BIP459, is currently being discussed in [BIPs #2210][]
+  and the proposal is gathering feedback from the community.
 
 ## Changes to services and client software
 
@@ -46,4 +73,5 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-07-28 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[aggr ml]: https://groups.google.com/g/bitcoindev/c/TF5mPfy58RQ/m/vAk1Mfg2AwAJ
+[news351 dahlias]: /en/newsletters/2025/04/25/#interactive-aggregate-signatures-compatible-with-secp256k1
