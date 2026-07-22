@@ -48,7 +48,44 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Wasabi Wallet 2.8.0 released:**
+  Wasabi Wallet [2.8.0][wasabi 2.8.0] downloads [compact block filters][topic compact
+  block filters] directly from the P2P network, removing the previously
+  required centralized backend server. The release also adds the ability to pay
+  recipients directly within a [coinjoin][topic coinjoin], support for
+  [feerates below 1 sat/vbyte][topic default minimum transaction relay
+  feerates], and [payment batching][topic payment batching], among other
+  features.
+
+- **Coinswap v0.2.2 released:**
+  Coinswap [v0.2.2][coinswap v0.2.2] adds multi-transaction swaps, deniability
+  proofs, and marketplace improvements to its [coinswap][topic coinswap]
+  protocol implementation (see Newsletter [#338][news338 coinswap]). The
+  release also includes fixes for findings from a security audit performed
+  using Loupe, Spiral's open source, AI-powered security scanner.
+
+- **Go secp256k1 library announced:**
+  Allocz [announced][secp256k1 go delving] a [Go library][secp256k1 go] that
+  uses [libsecp256k1][libsecp256k1 repo] bindings when C interoperability is
+  enabled and falls back to a pure-Go implementation otherwise, preserving Go's
+  cross-compilation capability. The author reports ECDSA and [schnorr
+  signature][topic schnorr signatures] verification times drop 70% compared to
+  the pure-Go implementation.
+
+- **ASMap dashboard announced:**
+  Joris Strakeljahn [announced][asmap delving] an [ASMap
+  dashboard][asmap dashboard] that tracks the history of [ASMap
+  data][github asmap-data] releases (see Newsletter [#394][news394 asmap]),
+  including how much address space shifts between operators from release to
+  release and how well each release covers actually observed Bitcoin nodes as
+  the data ages.
+
+- **Wavelength alpha released:**
+  Lightning Labs [announced][wavelength blog] an alpha version of Wavelength,
+  a toolkit for adding self-custodial payments to applications. It pays and
+  receives BOLT11 LN invoices, and batches off-chain transfers using an
+  [Ark][topic ark]-like settlement layer, without requiring users to manage their own
+  channels. The alpha is available on [signet][topic signet] and testnet.
 
 ## Releases and release candidates
 
@@ -75,3 +112,13 @@ FIXME:Gustavojfe
 {% include references.md %}
 [aggr ml]: https://groups.google.com/g/bitcoindev/c/TF5mPfy58RQ/m/vAk1Mfg2AwAJ
 [news351 dahlias]: /en/newsletters/2025/04/25/#interactive-aggregate-signatures-compatible-with-secp256k1
+[wavelength blog]: https://lightning.engineering/posts/2026-07-21-wavelength-launch/
+[wasabi 2.8.0]: https://github.com/WalletWasabi/WalletWasabi/releases/tag/v2.8.0
+[coinswap v0.2.2]: https://github.com/citadel-tech/coinswap/releases/tag/v0.2.2
+[news338 coinswap]: /en/newsletters/2025/01/24/#coinswap-v0-1-0-released
+[secp256k1 go delving]: https://delvingbitcoin.org/t/a-faster-go-golang-secp256k1-library/2658
+[secp256k1 go]: https://github.com/allocz/secp256k1
+[asmap delving]: https://delvingbitcoin.org/t/asmap-dashboard-tracking-the-asmap-data-history-against-the-observed-network/2652
+[asmap dashboard]: https://jorisstrakeljahn.github.io/asmap-dashboard/
+[github asmap-data]: https://github.com/bitcoin/bitcoin/blob/master/doc/asmap-data.md
+[news394 asmap]: /en/newsletters/2026/02/27/#bitcoin-core-28792
