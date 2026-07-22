@@ -71,7 +71,7 @@ of the hidden number.  Alice can just as easily create an invalid
 signature by not committing to the scalar she doesn't know but still
 committing to the EC point she does know.  She does this by creating her
 own nonce pair, using the private form when creating her (invalid)
-signature but commiting to the aggregation of the public form of her
+signature but committing to the aggregation of the public form of her
 nonce and the EC point from the donor's signature adaptor.
 This produces a
 signature adaptor for a transaction that pays Bob.  If Bob learns the
