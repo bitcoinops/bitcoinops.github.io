@@ -91,6 +91,9 @@ optech_mentions:
   - title: "JoinMarket NG 0.32.0 released"
     url: /en/newsletters/2026/06/19/#joinmarket-ng-0-32-0-released
 
+  - title: "Wasabi Wallet 2.8.0 adds the ability to pay recipients directly within a coinjoin"
+    url: /en/newsletters/2026/07/24/#wasabi-wallet-2-8-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

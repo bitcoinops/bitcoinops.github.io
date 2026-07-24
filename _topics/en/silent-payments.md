@@ -107,6 +107,9 @@ optech_mentions:
   - title: "Sparrow Wallet 2.5.0 adds silent payments receiving"
     url: /en/newsletters/2026/06/19/#sparrow-wallet-2-5-0-adds-silent-payments-receiving
 
+  - title: "libsecp256k1 #1765 adds an optional silentpayments module"
+    url: /en/newsletters/2026/07/24/#libsecp256k1-1765
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

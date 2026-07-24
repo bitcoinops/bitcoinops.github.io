@@ -249,6 +249,9 @@ optech_mentions:
   - title: "Bitcoin Core #21283 implements BIP370 PSBTv2 support"
     url: /en/newsletters/2026/05/08/#bitcoin-core-21283
 
+  - title: "BIPs #2075 clarifies BIP174's description of how PSBTs are combined"
+    url: /en/newsletters/2026/07/24/#bips-2075
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

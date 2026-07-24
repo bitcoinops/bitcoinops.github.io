@@ -89,6 +89,9 @@ optech_mentions:
   - title: "Traffic shaping with BIP324"
     url: /en/newsletters/2026/02/27/#is-bitcoin-bip324-v2-p2p-transport-distinguishable-from-random-traffic
 
+  - title: "Bitcoin Core #35766 defaults to v2 transport when connecting to addresses from seeds"
+    url: /en/newsletters/2026/07/24/#bitcoin-core-35766
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
