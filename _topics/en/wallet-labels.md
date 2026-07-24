@@ -54,6 +54,9 @@ optech_mentions:
   - title: "BIPs #1750 updates BIP329 with optional fields associated with addresses, transactions and outputs"
     url: /en/newsletters/2025/03/07/#bips-1750
 
+  - title: "BTCPay Server #7457 adds importing of wallet labels in BIP329 format"
+    url: /en/newsletters/2026/07/24/#btcpay-server-7457
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output script descriptors

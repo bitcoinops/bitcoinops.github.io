@@ -45,6 +45,9 @@ optech_mentions:
   - title: "Post-quantum signature aggregation"
     url: /en/newsletters/2025/11/07/#post-quantum-signature-aggregation
 
+  - title: "Draft BIP for full aggregation of BIP340 signatures"
+    url: /en/newsletters/2026/07/24/#draft-bip-for-full-aggregation-of-bip340-signatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

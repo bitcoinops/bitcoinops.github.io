@@ -125,6 +125,9 @@ optech_mentions:
   - title: "Public key recovery for P2MR EC leaves"
     url: /en/newsletters/2026/07/03/#public-key-recovery-for-p2mr-ec-leaves
 
+  - title: "Draft BIP for full aggregation of BIP340 signatures"
+    url: /en/newsletters/2026/07/24/#draft-bip-for-full-aggregation-of-bip340-signatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?
