@@ -91,7 +91,7 @@ excerpt: >
   currently handle a payment of a certain size or how many bitcoins are
   allocated to each participant in the channel.  Probes use the regular
   payment (HTLC) mechanism but are designed to always fail, preventing
-  any funds from being transfered.  Probing can be useful, but it can
+  any funds from being transferred.  Probing can be useful, but it can
   also reduce user privacy.
 
 ---
