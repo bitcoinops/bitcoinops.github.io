@@ -183,7 +183,7 @@ optech_mentions:
     date: 2025-04-24
 
   - title: "Antoine Poinsot responsibly disclosed a CPU-wasting DoS vulnerability in Bitcoin Core"
-    url: /en/newsletters/2025/10/31//#cpu-dos-from-unconfirmed-transaction-processing
+    url: /en/newsletters/2025/10/31/#cpu-dos-from-unconfirmed-transaction-processing
     date: 2025-04-25
 
   - title: "Cory Fields responsibly disclosed a script interpreter remote crash vulnerability in Bitcoin Core"
