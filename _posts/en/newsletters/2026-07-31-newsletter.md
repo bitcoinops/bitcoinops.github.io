@@ -17,7 +17,34 @@ notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+
+- **Disclosure of two DoS vulnerabilities in Core Lightning**: Chandra Pratap
+  [posted][cln vuln del] to Delving Bitcoin about two denial-of-service (DoS)
+  vulnerabilities he found
+  in Core Lightning during his internship for the [Summer of Bitcoin][sob]
+  program. Specifically, these vulnerabilities would have allowed an attacker to crash
+  a node by exhausting its memory. The bugs are related to the `gossipd` daemon
+  state machine, in particular to its interface with the `connectd` daemon.
+  Pratap was able to find the vulnerabilities thanks to his work on a new fuzz
+  target, `fuzz-gossipd-connectd`, which aims to test the robustness of the
+  communication between the two modules.
+
+  The first vulnerability was related to the inter-daemon message queue,
+  shared between the two daemons, whose goal is to store all the `channel_update`
+  messages arriving from the network. An attacker would have been able to flood
+  the node with messages, causing the internal queue to grow indefinitely and leading
+  to the consumption of all the available RAM. The bug was simply fixed in
+  [Core Lightning #8376][] by allowing the queue to drop messages,
+  adding a cutoff point at 500,000 messages.
+
+  The second vulnerability was found while trying to fix the first one.
+  In particular, this was related to the internal map used to track unknown short
+  channel IDs (SCIDs) to query peers for possible missing channels.
+  An attacker would have been able to flood the node with fake SCIDs, causing an
+  ever-increasing memory consumption. Although the bug had not been previously
+  reported, Rusty Russell was already working on a patch in
+  [Core Lightning #8903][], which introduced an improved garbage collection
+  mechanism for the internal map.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -109,3 +136,5 @@ FIXME:Gustavojfe
 [news412 migratewallet]: /en/newsletters/2026/07/03/#bitcoin-core-35266
 [stale blocks site]: https://bitcoin-data.github.io/stale-blocks/
 [stale blocks repo]: https://github.com/bitcoin-data/stale-blocks
+[cln vuln del]:https://delvingbitcoin.org/t/vulnerability-disclosure-twin-memory-exhaustion-dos-vulnerabilities-in-core-lightning/2731
+[sob]:https://www.summerofbitcoin.org/
