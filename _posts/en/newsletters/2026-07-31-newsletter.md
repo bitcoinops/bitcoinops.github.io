@@ -30,7 +30,57 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What is Bitcoin's objective definition of transaction neutrality?]({{bse}}130849)
+  Ava Chow frames neutrality as whether a change prevents anyone from
+  continuing to use Bitcoin as they already do, such as making previously
+  spendable scripts unspendable or breaking a deployed protocol.
+
+- [Why does BIP110's decentralization benefit not outweigh its impact on transaction neutrality?]({{bse}}130848)
+  Pieter Wuille argues that invalidating data-carrying transaction patterns
+  would not reduce node costs because the block weight limit already bounds
+  resource usage, data storage bytes are among the cheapest to process, and
+  outlawed patterns would simply be replaced by other transactions.
+
+- [Why does BIP110 require a 55% signaling threshold if its nodes reject non-signaling blocks?]({{bse}}130885)
+  Vojtěch Strnad explains that the threshold applies to voluntary miner
+  signaling before the mandatory signaling period begins (see [Newsletter
+  #392][news392 bip110]). An early lock-in indicates wider buy-in and can
+  activate the soft fork sooner, but once mandatory signaling begins, enforcing
+  nodes discard non-signaling blocks.
+
+- [Why use ElligatorSwift encoding in BIP324?]({{bse}}130887)
+  Pieter Wuille explains that encoding the handshake's public keys as
+  uniformly random bytes makes the entire [v2 transport][topic v2 p2p
+  transport] bytestream pseudorandom, preventing identification by pattern
+  matching and forcing a censoring firewall to either mount a full
+  man-in-the-middle attack or operate an allowlist. It can also make it easier
+  to mimic other protocols.
+
+- [Was the OP_SUCCESSx reservation in BIP342 designed with specific opcode families in mind?]({{bse}}130670)
+  Murch describes the `OP_SUCCESS` opcodes as generic upgrade hooks. Since
+  any `OP_SUCCESS` makes a [tapscript][topic tapscript] unconditionally
+  valid, a future soft fork can redefine one with more restrictive
+  behavior, including stack manipulation that redefined `OP_NOP` opcodes
+  could never perform.
+
+- [What is the difference between the long-term feerate and the discard feerate?]({{bse}}130861)
+  Murch clarifies that the two are not interchangeable. The discard feerate
+  sets the dust limits below which a potential change output's value is given
+  to fees, while the long-term feerate sets the wallet's boundary between
+  consolidatory and thrifty [coin selection][topic coin selection].
+
+- [What is the quickest method for migrating a legacy wallet to a descriptor wallet on a pruned node?]({{bse}}130713)
+  Pol Espinasa explains that migration attempts to load the migrated wallet,
+  which fails on a node pruned below the wallet's birthday. [Bitcoin Core
+  #35266][] (see [Newsletter #412][news412 migratewallet]), expected in
+  version 32.0, allows migrating without loading the wallet, although loading
+  the migrated [descriptor][topic descriptors] wallet will still require a
+  node with the relevant blocks.
+
+- [Is there historical data on orphan/stale block rates during high-fee periods?]({{bse}}130889)
+  0xB10C points to the [stale-blocks dataset][stale blocks site] maintained by
+  the bitcoin-data project, which charts the stale block rate over time and
+  provides the [raw data][stale blocks repo] for deriving custom metrics.
 
 ## Releases and release candidates
 
@@ -55,4 +105,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-08-04 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[news392 bip110]: /en/newsletters/2026/02/13/#bips-2017
+[news412 migratewallet]: /en/newsletters/2026/07/03/#bitcoin-core-35266
+[stale blocks site]: https://bitcoin-data.github.io/stale-blocks/
+[stale blocks repo]: https://github.com/bitcoin-data/stale-blocks
