@@ -41,7 +41,7 @@ and summarizing notable changes to popular Bitcoin infrastructure software.
   However, the author specified that the consensus change is outside the scope of this BIP.
 
   The draft BIP, which is now referred to as BIP459, is currently being discussed in [BIPs #2210][]
-  and the proposal is gathering feedback from the community.
+  and the proposal is gathering feedback from the community. {% assign timestamp="1:32" %}
 
 ## Changes to services and client software
 
@@ -55,14 +55,14 @@ wallets and services.*
   recipients directly within a [coinjoin][topic coinjoin], support for
   [feerates below 1 sat/vbyte][topic default minimum transaction relay
   feerates], and [payment batching][topic payment batching], among other
-  features.
+  features. {% assign timestamp="33:11" %}
 
 - **Coinswap v0.2.2 released:**
   Coinswap [v0.2.2][coinswap v0.2.2] adds multi-transaction swaps, deniability
   proofs, and marketplace improvements to its [coinswap][topic coinswap]
   protocol implementation (see Newsletter [#338][news338 coinswap]). The
   release also includes fixes for findings from a security audit performed
-  using Loupe, Spiral's open source, AI-powered security scanner.
+  using Loupe, Spiral's open source, AI-powered security scanner. {% assign timestamp="46:08" %}
 
 - **Go secp256k1 library announced:**
   Allocz [announced][secp256k1 go delving] a [Go library][secp256k1 go] that
@@ -70,7 +70,7 @@ wallets and services.*
   enabled and falls back to a pure-Go implementation otherwise, preserving Go's
   cross-compilation capability. The author reports ECDSA and [schnorr
   signature][topic schnorr signatures] verification times drop 70% compared to
-  the pure-Go implementation.
+  the pure-Go implementation. {% assign timestamp="1:08:38" %}
 
 - **ASMap dashboard announced:**
   Joris Strakeljahn [announced][asmap delving] an [ASMap
@@ -78,14 +78,14 @@ wallets and services.*
   data][github asmap-data] releases (see Newsletter [#394][news394 asmap]),
   including how much address space shifts between operators from release to
   release and how well each release covers actually observed Bitcoin nodes as
-  the data ages.
+  the data ages. {% assign timestamp="21:06" %}
 
 - **Wavelength alpha released:**
   Lightning Labs [announced][wavelength blog] an alpha version of Wavelength,
   a toolkit for adding self-custodial payments to applications. It pays and
   receives BOLT11 LN invoices, and batches off-chain transfers using an
   [Ark][topic ark]-like settlement layer, without requiring users to manage their own
-  channels. The alpha is available on [signet][topic signet] and testnet.
+  channels. The alpha is available on [signet][topic signet] and testnet. {% assign timestamp="1:10:01" %}
 
 ## Releases and release candidates
 
@@ -96,7 +96,7 @@ release candidates._
 - [Core Lightning v26.06.6][] is a maintenance release of this LN node
   implementation. It updates the bundled `pyln-proto` library's `coincurve`
   dependency to fix Python build environments and adds a check that rejects
-  any channel reusing the funding outpoint of an existing channel.
+  any channel reusing the funding outpoint of an existing channel. {% assign timestamp="1:13:06" %}
 
 - [Bitcoin Inquisition 29.4][] is a release of this [signet][topic signet]
   full node designed for experimenting with proposed soft forks and other
@@ -104,7 +104,7 @@ release candidates._
   [BIP446][] (`OP_TEMPLATEHASH`), a proposed [tapscript][topic tapscript]
   opcode that pushes a hash of the spending transaction onto the stack (see
   [Newsletter #365][news365 templatehash]), to its existing set of
-  experimentally-activated soft-fork proposals.
+  experimentally-activated soft-fork proposals. {% assign timestamp="1:16:03" %}
 
 ## Notable code and documentation changes
 
@@ -126,7 +126,7 @@ repo], and [BINANAs][binana repo]._
   so hashing one outpoint runs 14 internal rounds. `SipHasher13UJ` instead
   takes in the whole txid in one 256-bit step and does fewer rounds, cutting
   that to five. The author reports roughly double the hashing throughput in
-  isolated benchmarks and about a 5% reduction in one chainstate-reindex run.
+  isolated benchmarks and about a 5% reduction in one chainstate-reindex run. {% assign timestamp="1:17:11" %}
 
 - [Bitcoin Core #35766][] enables [BIP324][] [v2 p2p transport][topic v2 p2p
   transport] by default when first connecting to addresses from DNS seeds and
@@ -138,7 +138,7 @@ repo], and [BINANAs][binana repo]._
   function now assumes `NODE_P2P_V2` for those addresses. If this assumption
   is incorrect for a given peer, the node simply reconnects using v1.
   Connections made through the `-seednode` option and address fetching
-  already attempt v2 by default.
+  already attempt v2 by default. {% assign timestamp="1:21:16" %}
 
 - [BIPs #2075][] clarifies [BIP174][]'s description of how [PSBTs][topic psbt]
   are combined. The specification had asserted that combining independently
@@ -146,7 +146,7 @@ repo], and [BINANAs][binana repo]._
   the participants add distinct fields. When two PSBTs contain the same key
   with different values, a combiner may pick either value or refuse to combine,
   so the specification now notes that in this case the result is not
-  commutative.
+  commutative. {% assign timestamp="1:22:44" %}
 
 - [BIPs #2204][] updates the draft [BIP440][] and [BIP441][] Great Script
   Restoration specifications (see [Newsletter #400][news400 gsr]). It
@@ -155,7 +155,7 @@ repo], and [BINANAs][binana repo]._
   formulas so that operations that process data in 64-bit words are charged by
   `wordspan` while those that work on the exact bytes stay costed by `length`.
   The update also corrects the definition of `OP_RIGHT` and clarifies costs
-  and range checks for several other opcodes.
+  and range checks for several other opcodes. {% assign timestamp="1:25:46" %}
 
 - [Core Lightning #8935][] fixes a bug that could cause a node to repeatedly
   [RBF][topic rbf] a transaction, even after a replacement had already
@@ -167,7 +167,7 @@ repo], and [BINANAs][binana repo]._
   replacement logic even though the latest transaction had confirmed. Since
   the txid serves as the hash-table key and cannot be updated in place, the
   loop now computes the current transaction's txid with each iteration and
-  uses it for confirmation checks.
+  uses it for confirmation checks. {% assign timestamp="1:28:43" %}
 
 - [Core Lightning #9324][] fixes a `Renepay` regression (see [Newsletter
   #263][news263 renepay]) present since v26.04 that built [HTLCs][topic htlc]
@@ -175,7 +175,7 @@ repo], and [BINANAs][binana repo]._
   route data already incorporated the current block height into each hop's
   CLTV value, but `route_sendpay_request()` added the block height a second
   time when passing the route to `sendpay`, roughly doubling the expiry.
-  Forwarding nodes could then reject the onion with `expiry_too_far`.
+  Forwarding nodes could then reject the onion with `expiry_too_far`. {% assign timestamp="1:33:14" %}
 
 - [libsecp256k1 #1765][] adds an optional `silentpayments` module that
   implements the elliptic-curve operations defined by [BIP352][] [silent
@@ -189,14 +189,14 @@ repo], and [BINANAs][binana repo]._
   private key can stay offline. Separate functions manage labels, an optional
   [BIP352][] feature that lets recipients derive distinguishable variants of
   their address to tell incoming payments apart and flag their own change.
-  Light client scanning support was deferred to a later PR.
+  Light client scanning support was deferred to a later PR. {% assign timestamp="1:35:16" %}
 
 - [Rust Bitcoin #6317][] updates its [compact block relay][topic compact block
   relay] decoding to reject `sendcmpct` messages whose boolean announcement
   field is not exactly `0` or `1`, as required by [BIP152][]. Previously, Rust
   Bitcoin decoded the field with a non-zero test, accepting any non-zero value
   as true (high-bandwidth mode). This PR mirrors the hardening equivalent in
-  Bitcoin Core (see [Newsletter #412][news412 sendcmpct]).
+  Bitcoin Core (see [Newsletter #412][news412 sendcmpct]). {% assign timestamp="1:41:46" %}
 
 - [BTCPay Server #7457][] adds the ability to import [wallet labels][topic
   wallet labels] in [BIP329][] JSON Lines format, complementing the existing
@@ -204,7 +204,7 @@ repo], and [BINANAs][binana repo]._
   another server, and label files produced by BIP329-aware wallets such as
   Sparrow or Envoy could not be loaded at all. The importer reads the format's
   `tx`, `addr`, and `output` records and maps them to BTCPay's transaction,
-  address, and UTXO objects, skipping any records it can't apply.
+  address, and UTXO objects, skipping any records it can't apply. {% assign timestamp="1:44:10" %}
 
 - [BLIPs #71][] adds a `dnssec_error` response to [BLIP32][], the protocol
   that resolves [BIP353][] human-readable payment names by carrying DNSSEC
@@ -215,7 +215,7 @@ repo], and [BINANAs][binana repo]._
   final-hop TLV (type `65550`) echoes the queried `domain_name` and includes a
   `definitely_unresolvable` boolean that a resolver should set for terminal
   failures, such as NXDOMAIN or an unsigned name, and not set for other,
-  possibly transient failures.
+  possibly transient failures. {% assign timestamp="1:46:24" %}
 
 {% include snippets/recap-ad.md when="2026-07-28 16:30" %}
 {% include references.md %}
