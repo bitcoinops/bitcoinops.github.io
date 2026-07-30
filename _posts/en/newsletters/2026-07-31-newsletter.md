@@ -135,7 +135,17 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [BTCPay Server 2.4.1][] is a maintenance release for this self-hosted payment
+  processor. It adds [BIP329][] wallet label imports (see [Newsletter
+  #415][news415 labels]), editable invoice comments, and several other
+  improvements and bug fixes.
+
+- [Eclair 0.14.1][] is a maintenance release for this LN node implementation.
+  It now requires Bitcoin Core 31.x, disables an experimental [BOLT12][topic
+  offers] blinded-path fee discount that did not correctly work with
+  [multipath payments][topic multipath payments], and includes several bug fixes
+  and performance improvements. Operators using custom offer-handler plugins
+  should review the [release notes][eclair 0.14.1 notes].
 
 ## Notable code and documentation changes
 
@@ -148,10 +158,103 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #34628][] replaces independent per-peer transaction relay
+  backlogs with global inbound and outbound backlogs controlled by count and
+  serialized size token buckets. This reduces duplicate storage and sorting
+  across peers, which contributed to a CPU exhaustion problem (see [Newsletter
+  #324][news324 inv]). Relay credit starts at 420 transaction tokens and 12 MB,
+  replenishing at a rate of 14 transactions and 20 kB/s for the inbound peer
+  backlog. The count balance is capped at 420 tokens, while the size balance can
+  accumulate up to 50 MB. The outbound refill rate retains the 2.5-times
+  multiplier described in [Newsletter #373][news373 rate]. When relay demand
+  exceeds available credit, transactions are prioritized by mining score while
+  respecting dependencies. Selected transactions then enter small, randomized,
+  per-peer queues. New `getnetworkinfo` fields expose each backlog and its token
+  balances, and the debug-only `-txsendrate` option allows testing different
+  count rates.
+
+- [Bitcoin Core #28463][] increases the default maximum number of connections
+  from 125 to 200 and adds the `-inboundrelaypercent` option (default 50), which
+  sets the maximum percentage of inbound slots that transaction-relaying peers
+  can occupy. With eleven outbound slots by default, 189 slots remain available
+  for inbound connections, of which at most 94 may be occupied by
+  transaction-relaying peers under the default setting. This limit is enforced
+  after a peer announces its relay preference and is rechecked if the peer later
+  enables transaction relay using [BIP37][] messages. This reserves capacity for
+  low-bandwidth block relay and prepares for the addition of more outbound
+  block-relay-only connections, to improve resistance to [eclipse attacks][topic
+  eclipse attacks].
+
+- [Bitcoin Core #32800][] adds explicit [BIP141][] and policy-adjusted
+  transaction size fields to several RPCs. `vsize_bip141` reports the virtual
+  size calculated from the transaction's weight, while `vsize_adjusted` reports
+  the greater of that value or the size implied by the transaction's sigops cost
+  under the configured `-bytespersigop` policy. The adjusted value is used for
+  mempool policy and block template feerate calculations. `getmempoolentry`,
+  verbose `getrawmempool`, `testmempoolaccept`, and `submitpackage` now report
+  both fields. The existing `vsize` field, which was documented as the BIP141
+  virtual size but actually contained the policy-adjusted value, is retained but
+  marked as deprecated. Additionally, `getrawtransaction` reports
+  `vsize_adjusted` when the transaction is in the mempool, while its existing
+  `vsize` remains the BIP141 value. The verbose output of `getorphantxs` also
+  adds the explicit `vsize_bip141` field.
+
+- [Bitcoin Core #34683][] adds an automatically generated [OpenRPC 1.4.1][]
+  description of the RPC interface. The new `rpc.discover` RPC returns the
+  public interface, while `getopenrpcinfo` can optionally include hidden
+  commands and arguments. The document is generated at runtime from the
+  `RPCHelpMan` metadata for all registered RPCs, and describes method
+  parameters, required and default values, result shapes, and other interface
+  details.
+
+- [Bitcoin Core #33014][] fixes how `descriptorprocesspsbt` (see [Newsletter
+  #253][news253 descriptorpsbt]) handles a [PSBT][topic psbt] whose finalized
+  script fields are populated but contain invalid signatures. Previously, the
+  RPC only checked for the presence of final scripts, marked the PSBT as
+  complete, and returned an internal error when transaction extraction failed.
+  Now, it verifies every input before reporting completion, so a PSBT with an
+  invalid signature returns `complete: false` without a serialized transaction
+  in the `hex` field.
+
+- [Eclair #3325][] accepts [BOLT12][topic offers] invoice [onion messages][topic
+  onion messages] that include a `reply_path`. A payee can attach a
+  [blinded][topic rv routing] reply path to an invoice so that the payer can
+  return an `invoice_error` if it considers the invoice invalid. Eclair
+  previously rejected this combination, causing interoperability problems with
+  LDK, which added reply paths to invoices (see [Newsletter #321][news321
+  replypath]).
+
+- [BOLTs #1346][] specifies [BOLT12][topic offers] payer proofs, a receipt format
+  that allows [a payer to prove][topic proof of payment] they paid an invoice
+  using the payment preimage, the invoicing node's signature, and a payer
+  signature from `invreq_payer_id`, while allowing selected invoice fields to be
+  omitted for privacy. The specification assigns the `lnp` human-readable
+  prefix and adds generation and verification test vectors. Core Lightning
+  experimentally implemented an earlier draft (see [Newsletter #405][news405
+  proof]).
+
+- [BOLTs #1344][] extends the [attributable failures][topic attributable
+  failures] protocol to successful payments by adding an optional
+  `fulfillment_payload` to `update_fulfill_htlc`, the message that returns the
+  payment preimage and settles an [HTLC][topic htlc]. Only a padding field is
+  defined, so the PR establishes transport for future success-related data, such
+  as signed [keysend][topic spontaneous payments] receipts, without yet
+  standardizing any application.
+
+- [BOLTs #1343][] adds the `option_onion_messages_only_channels` feature bit for
+  nodes that only accept [onion messages][topic onion messages] from channel
+  peers. Nodes that do not advertise this feature should accept onion messages
+  from peers without channels, though they may still rate-limit or drop them.
+  This feature allows senders to avoid relay paths that are known to fail while
+  enabling operators to reduce their exposure to denial-of-service attacks. See
+  [Newsletter #409][news409 onion] for an LDK workaround that addresses LND's
+  behavior of receiving but not forwarding onion messages from non-channel
+  peers.
 
 {% include snippets/recap-ad.md when="2026-08-04 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="8376,8903,35266,34628,28463,32800,34683,33014,3325,1346,1344,1343" %}
+
 [news392 bip110]: /en/newsletters/2026/02/13/#bips-2017
 [news412 migratewallet]: /en/newsletters/2026/07/03/#bitcoin-core-35266
 [stale blocks site]: https://bitcoin-data.github.io/stale-blocks/
@@ -161,3 +264,14 @@ FIXME:Gustavojfe
 [zkpoh del]: https://delvingbitcoin.org/t/zkpoh-zero-knowledge-proof-of-hodl/2699
 [noir lang]: https://noir-lang.org/
 [zkpoh gh]: https://github.com/fabohax/zkPoH
+[BTCPay Server 2.4.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.4.1
+[Eclair 0.14.1]: https://github.com/ACINQ/eclair/releases/tag/v0.14.1
+[eclair 0.14.1 notes]: https://github.com/ACINQ/eclair/blob/v0.14.1/docs/release-notes/eclair-v0.14.1.md
+[OpenRPC 1.4.1]: https://spec.open-rpc.org/
+[news415 labels]: /en/newsletters/2026/07/24/#btcpay-server-7457
+[news324 inv]: /en/newsletters/2024/10/11/#dos-from-large-inventory-sets
+[news373 rate]: /en/newsletters/2025/09/26/#bitcoin-core-28592
+[news253 descriptorpsbt]: /en/newsletters/2023/05/31/#bitcoin-core-25796
+[news321 replypath]: /en/newsletters/2024/09/20/#ldk-3163
+[news405 proof]: /en/newsletters/2026/05/15/#core-lightning-9116
+[news409 onion]: /en/newsletters/2026/06/12/#ldk-4647
