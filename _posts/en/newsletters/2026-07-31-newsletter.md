@@ -46,6 +46,26 @@ notable changes to popular Bitcoin infrastructure software.
   [Core Lightning #8903][], which introduced an improved garbage collection
   mechanism for the internal map.
 
+- **Proof of concept for a zero-knowledge proof of reserves**: fabohax [posted][zkpoh del]
+  about zkPoH ("zero-knowledge proof-of-hodl"), a proof of concept for a
+  non-custodial [proof of reserves][topic proof of reserves] system for Bitcoin.
+  The prototype allows a user to prove that they control a set of UTXOs, whose combined
+  value is at least 100,000,000 sats (1 BTC), without revealing any further information.
+
+  The proof of concept takes as input a UTXO snapshot generated off-chain, which is then
+  committed into a merkle tree, whose root becomes the public commitment. The prover
+  selects up to four UTXOs from the snapshot and generates the witness input for the
+  [Noir][noir lang] circuit, which verifies that the chosen UTXOs actually belong to
+  the snapshot, the merkle paths are valid, and the sum of the selected UTXOs is at
+  least the required amount. The verifier only learns that the prover satisfies the
+  100,000,000 sats requirement.
+
+  As of this writing, an explicit ownership binding step is not available in the proof of
+  concept. This means that there is no way to prove that the chosen UTXOs actually
+  belong to the prover. The author is currently working on adding this feature, either
+  through an off-circuit ownership check or directly inside it. The prototype is
+  currently available in a dedicated [repository][zkpoh gh].
+
 ## Selected Q&A from Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
@@ -138,3 +158,6 @@ FIXME:Gustavojfe
 [stale blocks repo]: https://github.com/bitcoin-data/stale-blocks
 [cln vuln del]:https://delvingbitcoin.org/t/vulnerability-disclosure-twin-memory-exhaustion-dos-vulnerabilities-in-core-lightning/2731
 [sob]:https://www.summerofbitcoin.org/
+[zkpoh del]: https://delvingbitcoin.org/t/zkpoh-zero-knowledge-proof-of-hodl/2699
+[noir lang]: https://noir-lang.org/
+[zkpoh gh]: https://github.com/fabohax/zkPoH
