@@ -92,6 +92,9 @@ optech_mentions:
   - title: "Bitcoin Core #35766 defaults to v2 transport when connecting to addresses from seeds"
     url: /en/newsletters/2026/07/24/#bitcoin-core-35766
 
+  - title: "Why use ElligatorSwift encoding in BIP324?"
+    url: /en/newsletters/2026/07/31/#why-use-elligatorswift-encoding-in-bip324
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151

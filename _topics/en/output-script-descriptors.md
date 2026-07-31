@@ -221,6 +221,9 @@ optech_mentions:
   - title: "BIPs #1548 adds BIP391, a closed specification for Binary Output Descriptors superseded by BIP393"
     url: /en/newsletters/2026/05/01/#bips-1548
 
+  - title: "Migrating a legacy wallet to a descriptor wallet on a pruned node"
+    url: /en/newsletters/2026/07/31/#what-is-the-quickest-method-for-migrating-a-legacy-wallet-to-a-descriptor-wallet-on-a-pruned-node
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

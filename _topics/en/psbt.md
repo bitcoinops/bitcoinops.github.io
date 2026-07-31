@@ -252,6 +252,9 @@ optech_mentions:
   - title: "BIPs #2075 clarifies BIP174's description of how PSBTs are combined"
     url: /en/newsletters/2026/07/24/#bips-2075
 
+  - title: "Bitcoin Core #33014 verifies signatures before reporting a PSBT complete"
+    url: /en/newsletters/2026/07/31/#bitcoin-core-33014
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

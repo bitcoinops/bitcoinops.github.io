@@ -107,6 +107,9 @@ optech_mentions:
   - title: "LND #10612 adds graph-based pathfinding for onion messages"
     url: /en/newsletters/2026/05/15/#lnd-10612
 
+  - title: "BOLTs #1343 adds a feature bit for accepting onion messages only from channel peers"
+    url: /en/newsletters/2026/07/31/#bolts-1343
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

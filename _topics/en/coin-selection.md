@@ -93,6 +93,9 @@ optech_mentions:
   - title: "Bitcoin Core #32150 rewrites the branch-and-bound algorithm to search more distinct candidates"
     url: /en/newsletters/2026/06/12/#bitcoin-core-32150
 
+  - title: "Difference between the long-term feerate and the discard feerate"
+    url: /en/newsletters/2026/07/31/#what-is-the-difference-between-the-long-term-feerate-and-the-discard-feerate
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An Evaluation of Coin Selection Strategies

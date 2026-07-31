@@ -52,6 +52,9 @@ optech_mentions:
   - title: "LDK #4685 moves BOLT12 verification nonce into payer metadata for compatibility with  payment proofs"
     url: /en/newsletters/2026/06/19/#ldk-4685
 
+  - title: "BOLTs #1346 specifies BOLT12 payer proofs"
+    url: /en/newsletters/2026/07/31/#bolts-1346
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Pay to contract
