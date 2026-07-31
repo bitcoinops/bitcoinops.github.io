@@ -109,6 +109,9 @@ optech_mentions:
   - title: "Proposal to embed post-quantum keys in tapscript without consensus changes"
     url: /en/newsletters/2026/05/01/#proposal-to-embed-post-quantum-keys-in-tapscript-without-consensus-changes
 
+  - title: "OP_SUCCESSx opcodes as generic tapscript upgrade hooks"
+    url: /en/newsletters/2026/07/31/#was-the-op-successx-reservation-in-bip342-designed-with-specific-opcode-families-in-mind
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

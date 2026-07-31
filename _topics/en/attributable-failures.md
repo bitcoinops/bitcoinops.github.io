@@ -50,6 +50,9 @@ optech_mentions:
   - title: "LDK #3801 extends attributable failures to the payment success path"
     url: /en/newsletters/2025/07/25/#ldk-3801
 
+  - title: "BOLTs #1344 extends attributable failures to successful payments"
+    url: /en/newsletters/2026/07/31/#bolts-1344
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
