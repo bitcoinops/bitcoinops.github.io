@@ -255,6 +255,9 @@ optech_mentions:
   - title: "Bitcoin Core #33014 verifies signatures before reporting a PSBT complete"
     url: /en/newsletters/2026/07/31/#bitcoin-core-33014
 
+  - title: "BTCPay Server #7488 improves PSBT signing compatibility with signing devices"
+    url: /en/newsletters/2026/08/07/#btcpay-server-7488
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

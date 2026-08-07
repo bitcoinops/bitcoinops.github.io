@@ -163,6 +163,15 @@ optech_mentions:
   - title: "Triggering EC disabling with a NUMS point spend or hashrate majority"
     url: /en/newsletters/2026/07/03/#triggering-ec-disabling-with-a-nums-point-spend-or-hashrate-majority
 
+  - title: "Segwit commitment to post-quantum witness data"
+    url: /en/newsletters/2026/08/07/#segwit-commitment-to-post-quantum-witness-data
+
+  - title: "PQC output type discussion"
+    url: /en/newsletters/2026/08/07/#pqc-output-type-discussion
+
+  - title: "Layered quantum recovery of hashed addresses"
+    url: /en/newsletters/2026/08/07/#layered-quantum-recovery-of-hashed-addresses
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

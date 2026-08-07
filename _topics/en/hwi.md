@@ -73,6 +73,9 @@ optech_mentions:
   - title: "HWI #831 adds support for the Ledger Nano Gen5 hardware signing device"
     url: /en/newsletters/2026/05/01/#hwi-831
 
+  - title: "BTCPay Server #7488 improves PSBT signing compatibility with HWI-based signing devices"
+    url: /en/newsletters/2026/08/07/#btcpay-server-7488
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)

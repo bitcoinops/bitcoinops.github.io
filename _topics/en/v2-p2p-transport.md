@@ -95,6 +95,9 @@ optech_mentions:
   - title: "Why use ElligatorSwift encoding in BIP324?"
     url: /en/newsletters/2026/07/31/#why-use-elligatorswift-encoding-in-bip324
 
+  - title: "Rust Bitcoin #6364 adds P2P encoding for BIP434 feature messages"
+    url: /en/newsletters/2026/08/07/#rust-bitcoin-6364
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
