@@ -39,6 +39,9 @@ optech_mentions:
   - title: Calculating the selfish mining danger threshold
     url: /en/newsletters/2025/06/13/#calculating-the-selfish-mining-danger-threshold
 
+  - title: "Draft BIP for stale tip relay"
+    url: /en/newsletters/2026/08/07/#draft-bip-for-stale-tip-relay
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

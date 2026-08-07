@@ -110,6 +110,9 @@ optech_mentions:
   - title: "libsecp256k1 #1765 adds an optional silentpayments module"
     url: /en/newsletters/2026/07/24/#libsecp256k1-1765
 
+  - title: "Libsecp256k1 0.8.0 released with silent payments module"
+    url: /en/newsletters/2026/08/07/#libsecp256k1-0-8-0
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

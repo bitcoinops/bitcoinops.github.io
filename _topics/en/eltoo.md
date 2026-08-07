@@ -96,6 +96,9 @@ optech_mentions:
   - title: "LN-Symmetry update"
     url: /en/newsletters/2026/01/30/#ln-symmetry-update
 
+  - title: "Input-triggered transaction expiry"
+    url: /en/newsletters/2026/08/07/#input-triggered-transaction-expiry
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT
