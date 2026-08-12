@@ -50,6 +50,37 @@ describing notable changes to popular Bitcoin infrastructure software.
   whether this approach, or an expansion of it, could solve other types of
   problems in Bitcoin.
 
+- **Static Bitcoin Core binaries available for testing**: Michael Ford
+  (fanquake) [posted][fanquake static ml] to the Bitcoin-Dev mailing list
+  announcing test builds of static Bitcoin Core release binaries produced
+  using the project's existing [Guix][topic reproducible builds]
+  infrastructure. Test binaries are available for `bitcoind` and the other
+  command-line utilities on x86_64 and aarch64 Linux, with more platforms
+  planned. The `bitcoin-qt` GUI binary is unchanged.
+
+  Bitcoin Core's current Linux release binaries are dynamically linked, meaning
+  that they contain most of the code they need but depend on the C library
+  (glibc) and a few related libraries provided by the user's operating system.
+  Those libraries are located and loaded each time the program starts, a
+  dependency that carries some risks. The binaries only run on systems that
+  provide a compatible glibc (currently version 2.31 or newer), their behavior
+  can vary with the host's libraries, and some of the code the node actually
+  executes falls outside the binary that reproducible builds allow users to
+  verify. A static binary instead includes all of the code it needs, so the same
+  verified executable runs the same way on nearly any Linux system, including
+  older releases, distributions built on a different C library such as Alpine
+  Linux, and minimal container images that ship no system libraries at all. The
+  new binaries remain position-independent executables, preserving the ASLR
+  exploit mitigation of current releases, and are only about 1 MB larger.
+
+  The mailing list post continues years of work in [Bitcoin Core #25573][],
+  which Ford opened in 2022. Progress required changes to the GCC compiler and
+  to glibc itself, including fixes to glibc's name resolution code, historically
+  the main hazard of statically linking glibc. Some preparatory changes to the
+  Guix build process (see [Bitcoin Core #35537][]) have been merged, but the
+  main PR remains open and under review. Readers who run Bitcoin Core on Linux
+  are encouraged to try the [test binaries][static test bins] and report any
+  problems, or successes, to the mailing list or the PR.
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -74,3 +105,5 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2026-08-18 16:30" %}
 {% include references.md %}
 [chan jam del]: https://delvingbitcoin.org/t/conditional-message-transfer-contract-to-solve-jamming/2772
+[fanquake static ml]: https://groups.google.com/g/bitcoindev/c/UgGHs-_YGvw
+[static test bins]: https://github.com/fanquake/bitcoin/releases/tag/static_bitcoind_ff01e5af948d
