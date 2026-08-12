@@ -16,7 +16,39 @@ describing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-FIXME:bitschmidty
+- **Conditional message transfer contract to solve jamming**: Antoine Riard
+  [posted][chan jam del] to Delving Bitcoin a new approach to mitigate
+  [channel jamming][topic channel jamming attacks] on the Lightning Network.
+  Jamming is a denial-of-service attack in which the attacker sends
+  [HTLCs][topic htlc] or [PTLCs][topic PTLC] and then holds them unresolved,
+  tying up the channel liquidity along a route at no cost to itself. Riard's
+  proposal makes holding expensive by charging a withhold fee proportional to
+  how long a payment is held, converting a currently free attack into a costly
+  one.
+
+  The mechanism is a conditional message transfer contract (CMTC) which is a
+  Bitcoin Script construction that lets two channel counterparties later prove
+  whether a specific message (such as a payment preimage) was exchanged between
+  them by a given block height, which Riard treats as a universal clock. The
+  parties agree on a temporal window and assign an adaptor point to each point
+  in time within it, so the withhold fee can be settled according to when the
+  message was delivered. The contract offers three settlement paths:
+
+  - **Message transfer success:** the preimage is delivered from Bob to Alice
+    and cryptographically acknowledged, and the two split the withhold fee based
+    on delivery time.
+
+  - **Liveness challenge:** if Alice is offline and cannot counter-sign, Bob can
+    exit the contract and recover the locked funds minus an equilibrium penalty
+    fee.
+
+  - **Message transfer failure:** if Bob is offline or otherwise fails to
+    transfer the message, Alice can exit and recover the withhold fee.
+
+  Riard notes that the proposed solution needs further analysis, both of its
+  cryptographic correctness and of its incentives, and that it remains open
+  whether this approach, or an expansion of it, could solve other types of
+  problems in Bitcoin.
 
 ## Releases and release candidates
 
@@ -41,4 +73,4 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-08-18 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+[chan jam del]: https://delvingbitcoin.org/t/conditional-message-transfer-contract-to-solve-jamming/2772
