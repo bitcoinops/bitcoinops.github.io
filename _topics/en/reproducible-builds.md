@@ -65,6 +65,9 @@ optech_mentions:
   - title: "New website to monitor the current status of various Bitcoin project's reproducible builds"
     url: /en/newsletters/2022/12/14/#coinkite-launches-binarywatch-org
 
+  - title: "Static Bitcoin Core binaries available for testing"
+    url: /en/newsletters/2026/08/14/#static-bitcoin-core-binaries-available-for-testing
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Presentation: Bitcoin Build System Security"
