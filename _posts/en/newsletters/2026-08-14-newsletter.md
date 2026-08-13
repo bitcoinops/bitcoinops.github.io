@@ -81,6 +81,33 @@ describing notable changes to popular Bitcoin infrastructure software.
   main PR remains open and under review. Readers who run Bitcoin Core on Linux
   are encouraged to try the [test binaries][static test bins] and report any
   problems, or successes, to the mailing list or the PR.
+
+- **Replacing per-peer transaction rate-limiting with global rate limits**:
+  Anthony Towns [posted][peer queue del] to Delving Bitcoin announcing the merge of
+  [Bitcoin Core #34628][], which replaces the per-peer transaction rate-limiting
+  with a global approach.
+
+  For each of its peers, a node keeps a queue of the transaction announcements
+  it intends to send to that peer, called `m_tx_inventory_to_send`, sorts those
+  announcements by ancestor feerate, and sends the best of them first. To limit
+  bandwidth and to make it harder to probe the relay topology, a node announces
+  no more than about 7 transactions per second to each peer. In normal times
+  this rate is enough to drain the queue, but a sudden burst of transactions can
+  fill it faster than the limit lets it drain. Because the node re-sorts the
+  growing queue on every announcement, this can consume an excessive amount of
+  CPU, a denial-of-service (DoS) vector previously described in
+  [Newsletter #324][news324 dos].
+
+  Towns' PR replaces the per-peer rate-limiting with a global rate limit, using
+  two token buckets that meter total announcements by count (number of
+  transactions) and by size (serialized witness size). If there is enough
+  capacity, an incoming transaction is relayed immediately, otherwise it is
+  added to a single global backlog sorted by feerate and [cluster
+  mempool][topic cluster mempool] rules. Transactions selected from that backlog
+  are then placed in a small per-peer queue used for privacy batching. Sorting
+  one shared backlog instead of a separate queue per peer avoids the repeated
+  per-peer sorting that made the original design a DoS vector.
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -107,3 +134,5 @@ FIXME:Gustavojfe
 [chan jam del]: https://delvingbitcoin.org/t/conditional-message-transfer-contract-to-solve-jamming/2772
 [fanquake static ml]: https://groups.google.com/g/bitcoindev/c/UgGHs-_YGvw
 [static test bins]: https://github.com/fanquake/bitcoin/releases/tag/static_bitcoind_ff01e5af948d
+[peer queue del]: https://delvingbitcoin.org/t/transaction-rate-limiting/2744
+[news324 dos]: /en/newsletters/2024/10/11/#dos-from-large-inventory-sets
