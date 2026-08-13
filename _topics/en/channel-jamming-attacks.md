@@ -124,6 +124,9 @@ optech_mentions:
   - title: "Eclair #3323 fails incoming HTLCs with a CLTV expiry more than 2016 blocks in the future"
     url: /en/newsletters/2026/07/10/#eclair-3323
 
+  - title: "Conditional message transfer contract to solve channel jamming"
+    url: /en/newsletters/2026/08/14/#conditional-message-transfer-contract-to-solve-jamming
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs
