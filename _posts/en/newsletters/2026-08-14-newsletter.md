@@ -114,7 +114,27 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [BTCPay Server 2.4.2][] is a security release that fixes a critical
+  vulnerability affecting all releases before 2.4.2. An unauthenticated remote
+  attacker could obtain an LND node's `.macaroon` credential files and use them
+  to take control of the node and move funds. The project [reports][btcpay 2.4.2
+  advisory] that the vulnerability was exploited and funds were stolen. BTCPay
+  Server operators using LND should update to 2.4.2 and LND 0.21.1 immediately,
+  audit their node for unauthorized activity, and rotate their macaroon
+  credentials, since an attacker may have already obtained them. BTCPay
+  Server's onchain wallets and deployments using other Lightning
+  implementations are not exposed to this specific risk.
+
+- [LND v0.21.2-beta][] is a maintenance release of this popular LN node
+  implementation. It fixes two database migration failures, bounds memory
+  usage during channel graph synchronization, and fixes bugs affecting onion
+  messages, RBF cooperative closes, invoice updates, [blinded][topic rv
+  routing]-payment forwarding, and [HTLC][topic htlc] resolution.
+
+- [LND v0.20.3-beta][] is a maintenance release of LND's 0.20 release branch.
+  It backports several fixes also included in 0.21.2-beta, including bounds on
+  memory use during channel graph synchronization and fixes for cooperative
+  closes, invoice updates, blinded-payment forwarding, and HTLC resolution.
 
 ## Notable code and documentation changes
 
@@ -127,12 +147,128 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #35493][] fixes a false warning that indicated private keys
+  were missing when importing [MuSig2][topic musig]
+  [descriptors][topic descriptors] (see [Newsletter #366][news366 musig
+  descriptors]) with all the required private keys. Previously, the
+  `importdescriptors` RPC checked for a corresponding private key for every
+  public key produced when expanding the descriptor, including the MuSig
+  aggregate key, which doesn't have a standalone private key. This could cause
+  a descriptor containing all of its participants' private keys to be reported
+  as incomplete. The completeness check now accounts for MuSig participant
+  keys, so complete descriptors import without a warning, while those missing
+  participant private keys still trigger a warning.
+
+- [Core Lightning #9150][] introduces `impressions`, a new type of liquidity
+  information that records successful payments through a channel and allows
+  the `askrene` RPC command (see [Newsletter #316][news316 askrene]) to adjust
+  its liquidity estimates for subsequent routing attempts. Additionally, the
+  `getroutes` RPC command is updated to provide more specific error messages
+  when routing fails, such as when the source has insufficient funds or the
+  destination has insufficient incoming capacity. Also, the PR limits invoices
+  generated from [BOLT12 offers][topic offers] denominated in another currency
+  to a 10-minute expiry by default to account for exchange rate fluctuations.
+
+- [BIPs #2248][] updates [BIP3][] to remove Luke Dashjr from the list of BIP
+  editors, following [discussion][luke removal ml] on the Bitcoin-Dev mailing
+  list. See [Newsletter #299][news299 bip editors] for previous coverage of the
+  editor set.
+
+- [BIPs #2225][] and [#2245][bips #2245] update [BIP110][] (see [Newsletter
+  #412][news412 bip110]) following its unsuccessful activation attempt.
+  [#2245][bips #2245] changes its status to Closed. [#2225][bips #2225]
+  makes [BIP433][]'s policy rule requiring [pay-to-anchor (P2A)][topic ephemeral
+  anchors] spends to carry an empty witness stack into a consensus requirement.
+
+- [Eclair #3346][] fixes a crash and makes several onchain and channel-handling
+  improvements. It now verifies that decrypted payment failures correspond to a
+  valid intermediate position in the payment route before using them as routing
+  information, preventing malformed or maliciously crafted failures from the
+  recipient from triggering an out-of-bounds access that could crash the payment
+  lifecycle actor. It also starts retrying onchain transaction broadcasts when
+  it receives error messages from Bitcoin Core it can't classify, instead of
+  potentially abandoning a time-sensitive transaction. When using
+  [CPFP][topic cpfp] to fee-bump a peer's [zero-fee commitment][topic v3
+  commitments], it now accounts for the full parent-and-child [package][topic
+  package relay] weight instead of only the parent's weight. Finally, Eclair now
+  uses the [MuSig2][topic musig] nonce associated with the funding
+  [RBF][topic rbf] attempt that actually confirmed when sending `channel_ready`,
+  instead of assuming that its latest RBF attempt is the one that confirmed.
+
+- [Eclair #3341][] prepares to relay future `channel_update` [gossip
+  messages][topic channel announcements] that use currently undefined
+  `message_flags` or `channel_flags` in [BOLT7][]. Previously, if Eclair
+  received an update with an unknown flag bit set to one, it would discard that
+  value and encode the bit as zero when forwarding the update. This modified
+  the signed message and invalidated its signature. Now, Eclair preserves
+  unknown flag values when decoding and re-encoding `channel_update` messages,
+  allowing Eclair nodes to relay updates containing flags they don't yet
+  understand.
+
+- [LND #11019][] fixes a data race in the legacy cooperative-close state
+  machine, which could occur when the link goroutine (which tracks the
+  channel's HTLC and commitment state) and the peer goroutine (which processes
+  close messages from the remote peer) advance concurrently. Now, instead of
+  advancing the closer itself, the link reports to the peer's channel manager
+  when a channel has been flushed (pending HTLCs have been drained), ensuring
+  that all close state-machine transitions run on a single goroutine. The PR
+  also ensures that the RBF cooperative-close path (see [Newsletter
+  #347][news347 rbf coop]) checks that the peer's delivery script is present
+  and uses an accepted output type, even when no upfront shutdown script was
+  negotiated (see [Newsletter #76][news76 upfront]).
+
+- [LND #11023][] changes `update_fee` handling to match [BOLT2][]'s
+  replaceable-state model and prevent redundant uncommitted fee updates from
+  growing the update log. If a newer fee update arrives before the previous one
+  has been included in either party's commitment transaction, LND now replaces
+  the previous fee value in place. The PR also limits channel mailboxes to
+  1,000 queued messages and 4 MiB of serialized data. If a message cannot be
+  accepted, LND disconnects the peer instead of dropping the message and
+  processing subsequent messages out of order. This allows the ordered channel
+  state to be recovered upon reconnection.
+
+- [Libsecp256k1 #1904][] strengthens the startup self-test for applications
+  that provide their own SHA256 compression function (see [Newsletter
+  #396][news396 sha256]). Previously, the self-test hashed a single 63-byte
+  message, which could detect general incorrect implementations but not ones
+  that failed when processing multiple blocks, unaligned input, or a SHA256
+  state other than the initial one. The new test uses different message lengths
+  and input alignments. It rejects a supplied compression function if its
+  results differ from the expected SHA256 results, allowing faulty
+  implementations to be detected during initialization rather than producing
+  incorrect results later.
+
+- [HWI #839][] fixes several [PSBT][topic psbt] parsing and transaction
+  reconstruction issues that were revealed when adding the complete [BIP174][]
+  and [BIP370][] test-vector suites. When reconstructing a transaction from
+  PSBTv2, HWI now applies the computed [locktime][topic timelock] instead of
+  leaving it at zero and uses the specified final sequence value (0xffffffff)
+  when an input omits `PSBT_IN_SEQUENCE`. For PSBTv0, [HWI][topic hwi] rejects
+  v2-only input and output fields and strictly parses the global unsigned
+  transaction using non-witness serialization, while correctly recognizing an
+  empty unsigned transaction as present. The PR also validates that required
+  height and time-based locktimes fall within their specified ranges and adds
+  tests for BIP370 locktime determination.
 
 {% include snippets/recap-ad.md when="2026-08-18 16:30" %}
 {% include references.md %}
+{% include linkers/issues.md v=2 issues="25573,35537,34628,35493,9150,2248,2225,2245,3346,3341,11019,11023,1904,839" %}
+
 [chan jam del]: https://delvingbitcoin.org/t/conditional-message-transfer-contract-to-solve-jamming/2772
 [fanquake static ml]: https://groups.google.com/g/bitcoindev/c/UgGHs-_YGvw
 [static test bins]: https://github.com/fanquake/bitcoin/releases/tag/static_bitcoind_ff01e5af948d
 [peer queue del]: https://delvingbitcoin.org/t/transaction-rate-limiting/2744
 [news324 dos]: /en/newsletters/2024/10/11/#dos-from-large-inventory-sets
+[luke removal ml]: https://groups.google.com/g/bitcoindev/c/knbv3MFwlvU
+[topic timelock]: /en/topics/timelocks/
+[BTCPay Server 2.4.2]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.4.2
+[btcpay 2.4.2 advisory]: https://blog.btcpayserver.org/security-advisory-btcpay-server-2-4-2/
+[LND v0.21.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.21.2-beta
+[LND v0.20.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.3-beta
+[news366 musig descriptors]: /en/newsletters/2025/08/08/#bitcoin-core-31244
+[news316 askrene]: /en/newsletters/2024/08/16/#core-lightning-7517
+[news299 bip editors]: /en/newsletters/2024/04/24/#bip-editors-update
+[news412 bip110]: /en/newsletters/2026/07/03/#bips-2201
+[news347 rbf coop]: /en/newsletters/2025/03/28/#lnd-8453
+[news76 upfront]: /en/newsletters/2019/12/11/#lnd-3655
+[news396 sha256]: /en/newsletters/2026/03/13/#libsecp256k1-1777
