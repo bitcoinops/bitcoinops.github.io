@@ -14,7 +14,7 @@ lang: ja
 
 ## ニュース
 
-- **<!--conditional-message-transfer-contract-to-solve-jamming-->ジャミング解決のための条件付きメッセージ転送コントラクト**: 
+- **<!--conditional-message-transfer-contract-to-solve-jamming-->ジャミング解決のための条件付きメッセージ転送コントラクト**:
   Antoine Riardは、ライトニングネットワークにおける[チャネルジャミング][topic channel jamming attacks]を緩和する新しいアプローチを
   Delving Bitcoinに[投稿しました][chan jam del]。ジャミングとは、攻撃者が[HTLC][topic htlc]や[PTLC][topic PTLC]を送信した後、
   それらを未解決のまま保持し、自身は一切コストを負担することなく経路上のチャネル流動性を拘束する一種のサービス拒否（DoS）攻撃です。
