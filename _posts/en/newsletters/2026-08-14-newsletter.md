@@ -34,21 +34,21 @@ describing notable changes to popular Bitcoin infrastructure software.
   in time within it, so the withhold fee can be settled according to when the
   message was delivered. The contract offers three settlement paths:
 
-  - **Message transfer success:** the preimage is delivered from Bob to Alice
+  - Message transfer success: the preimage is delivered from Bob to Alice
     and cryptographically acknowledged, and the two split the withhold fee based
     on delivery time.
 
-  - **Liveness challenge:** if Alice is offline and cannot counter-sign, Bob can
+  - Liveness challenge: if Alice is offline and cannot counter-sign, Bob can
     exit the contract and recover the locked funds minus an equilibrium penalty
     fee.
 
-  - **Message transfer failure:** if Bob is offline or otherwise fails to
+  - Message transfer failure: if Bob is offline or otherwise fails to
     transfer the message, Alice can exit and recover the withhold fee.
 
   Riard notes that the proposed solution needs further analysis, both of its
   cryptographic correctness and of its incentives, and that it remains open
   whether this approach, or an expansion of it, could solve other types of
-  problems in Bitcoin.
+  problems in Bitcoin. {% assign timestamp="33:07" %}
 
 - **Static Bitcoin Core binaries available for testing**: Michael Ford
   (fanquake) [posted][fanquake static ml] to the Bitcoin-Dev mailing list
@@ -81,6 +81,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   main PR remains open and under review. Readers who run Bitcoin Core on Linux
   are encouraged to try the [test binaries][static test bins] and report any
   problems, or successes, to the mailing list or the PR.
+  {% assign timestamp="1:19" %}
 
 - **Replacing per-peer transaction rate-limiting with global rate limits**:
   Anthony Towns [posted][peer queue del] to Delving Bitcoin announcing the merge of
@@ -107,6 +108,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   are then placed in a small per-peer queue used for privacy batching. Sorting
   one shared backlog instead of a separate queue per peer avoids the repeated
   per-peer sorting that made the original design a DoS vector.
+  {% assign timestamp="18:44" %}
 
 ## Releases and release candidates
 
@@ -124,17 +126,20 @@ release candidates._
   credentials, since an attacker may have already obtained them. BTCPay
   Server's onchain wallets and deployments using other Lightning
   implementations are not exposed to this specific risk.
+  {% assign timestamp="43:16" %}
 
 - [LND v0.21.2-beta][] is a maintenance release of this popular LN node
   implementation. It fixes two database migration failures, bounds memory
   usage during channel graph synchronization, and fixes bugs affecting onion
   messages, RBF cooperative closes, invoice updates, [blinded][topic rv
   routing]-payment forwarding, and [HTLC][topic htlc] resolution.
+  {% assign timestamp="45:45" %}
 
 - [LND v0.20.3-beta][] is a maintenance release of LND's 0.20 release branch.
   It backports several fixes also included in 0.21.2-beta, including bounds on
   memory use during channel graph synchronization and fixes for cooperative
   closes, invoice updates, blinded-payment forwarding, and HTLC resolution.
+  {% assign timestamp="45:45" %}
 
 ## Notable code and documentation changes
 
@@ -157,7 +162,7 @@ repo], and [BINANAs][binana repo]._
   a descriptor containing all of its participants' private keys to be reported
   as incomplete. The completeness check now accounts for MuSig participant
   keys, so complete descriptors import without a warning, while those missing
-  participant private keys still trigger a warning.
+  participant private keys still trigger a warning. {% assign timestamp="48:10" %}
 
 - [Core Lightning #9150][] introduces `impressions`, a new type of liquidity
   information that records successful payments through a channel and allows
@@ -168,17 +173,19 @@ repo], and [BINANAs][binana repo]._
   destination has insufficient incoming capacity. Also, the PR limits invoices
   generated from [BOLT12 offers][topic offers] denominated in another currency
   to a 10-minute expiry by default to account for exchange rate fluctuations.
+  {% assign timestamp="50:57" %}
 
 - [BIPs #2248][] updates [BIP3][] to remove Luke Dashjr from the list of BIP
   editors, following [discussion][luke removal ml] on the Bitcoin-Dev mailing
   list. See [Newsletter #299][news299 bip editors] for previous coverage of the
-  editor set.
+  editor set. {% assign timestamp="54:13" %}
 
 - [BIPs #2225][] and [#2245][bips #2245] update [BIP110][] (see [Newsletter
   #412][news412 bip110]) following its unsuccessful activation attempt.
   [#2245][bips #2245] changes its status to Closed. [#2225][bips #2225]
   makes [BIP433][]'s policy rule requiring [pay-to-anchor (P2A)][topic ephemeral
   anchors] spends to carry an empty witness stack into a consensus requirement.
+  {% assign timestamp="56:07" %}
 
 - [Eclair #3346][] fixes a crash and makes several onchain and channel-handling
   improvements. It now verifies that decrypted payment failures correspond to a
@@ -194,6 +201,7 @@ repo], and [BINANAs][binana repo]._
   uses the [MuSig2][topic musig] nonce associated with the funding
   [RBF][topic rbf] attempt that actually confirmed when sending `channel_ready`,
   instead of assuming that its latest RBF attempt is the one that confirmed.
+  {% assign timestamp="58:50" %}
 
 - [Eclair #3341][] prepares to relay future `channel_update` [gossip
   messages][topic channel announcements] that use currently undefined
@@ -203,7 +211,7 @@ repo], and [BINANAs][binana repo]._
   the signed message and invalidated its signature. Now, Eclair preserves
   unknown flag values when decoding and re-encoding `channel_update` messages,
   allowing Eclair nodes to relay updates containing flags they don't yet
-  understand.
+  understand. {% assign timestamp="1:02:22" %}
 
 - [LND #11019][] fixes a data race in the legacy cooperative-close state
   machine, which could occur when the link goroutine (which tracks the
@@ -215,7 +223,7 @@ repo], and [BINANAs][binana repo]._
   also ensures that the RBF cooperative-close path (see [Newsletter
   #347][news347 rbf coop]) checks that the peer's delivery script is present
   and uses an accepted output type, even when no upfront shutdown script was
-  negotiated (see [Newsletter #76][news76 upfront]).
+  negotiated (see [Newsletter #76][news76 upfront]). {% assign timestamp="1:05:18" %}
 
 - [LND #11023][] changes `update_fee` handling to match [BOLT2][]'s
   replaceable-state model and prevent redundant uncommitted fee updates from
@@ -225,7 +233,7 @@ repo], and [BINANAs][binana repo]._
   1,000 queued messages and 4 MiB of serialized data. If a message cannot be
   accepted, LND disconnects the peer instead of dropping the message and
   processing subsequent messages out of order. This allows the ordered channel
-  state to be recovered upon reconnection.
+  state to be recovered upon reconnection. {% assign timestamp="1:09:03" %}
 
 - [Libsecp256k1 #1904][] strengthens the startup self-test for applications
   that provide their own SHA256 compression function (see [Newsletter
@@ -236,7 +244,7 @@ repo], and [BINANAs][binana repo]._
   and input alignments. It rejects a supplied compression function if its
   results differ from the expected SHA256 results, allowing faulty
   implementations to be detected during initialization rather than producing
-  incorrect results later.
+  incorrect results later. {% assign timestamp="1:11:49" %}
 
 - [HWI #839][] fixes several [PSBT][topic psbt] parsing and transaction
   reconstruction issues that were revealed when adding the complete [BIP174][]
@@ -248,7 +256,7 @@ repo], and [BINANAs][binana repo]._
   transaction using non-witness serialization, while correctly recognizing an
   empty unsigned transaction as present. The PR also validates that required
   height and time-based locktimes fall within their specified ranges and adds
-  tests for BIP370 locktime determination.
+  tests for BIP370 locktime determination. {% assign timestamp="1:13:58" %}
 
 {% include snippets/recap-ad.md when="2026-08-18 16:30" %}
 {% include references.md %}
