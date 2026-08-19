@@ -15,6 +15,25 @@ infrastructure software.
 
 ## News
 
+- **Reorg vulnerability in LND channel closes**: Bastien Teinturier [posted][lnd vuln del]
+  to Delving Bitcoin the [responsible disclosure][topic responsible disclosures]
+  of a vulnerability that affected LND versions before [0.20.0][lnd v20.0],
+  which fixed it in February 2026. Operators running an older version should
+  upgrade. To Teinturier's knowledge, no one was affected by the vulnerability.
+
+  Before that version, an LND node would forget about a collaboratively closed
+  channel immediately after the first onchain confirmation, losing the protection
+  against chain reorgs. In case of a reorg, an attacker could publish an old, revoked
+  commitment transaction for the channel and because the node had already
+  forgotten the channel, it would not publish a penalty transaction,
+  letting the attacker drain all of the channel's funds.
+
+  The vulnerability was discovered in February 2025 and fixed in
+  [LND #10331][] (see [Newsletter #389][news389 lnd10331]). The patch makes a node
+  wait for more confirmations before considering a channel close final (at
+  least six, following [BOLT5][]'s reorg-safety handling). Teinturier's post
+  includes a regtest reproduction and a timeline of the disclosure.
+
 FIXME:bitschmidty
 
 ## Changes to services and client software
@@ -100,7 +119,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-08-25 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="10331" %}
 
 [payjoin 1.0.0]: https://github.com/payjoin/rust-payjoin/releases/tag/payjoin-1.0.0
 [sp electrum delving]: https://delvingbitcoin.org/t/silent-payments-sender-bip352-plugin-for-electrum/2743
@@ -114,3 +133,6 @@ FIXME:Gustavojfe
 [templatehash]: https://templatehash.com
 [bark gitlab]: https://gitlab.com/ark-bitcoin/bark
 [libshrincs delving]: https://delvingbitcoin.org/t/libshrincs-a-c-implementation-with-a-machine-checked-security-proof/2795
+[lnd vuln del]: https://delvingbitcoin.org/t/disclosure-lnd-doesnt-wait-for-enough-confirmations-when-closing-channels/2800
+[lnd v20.0]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.0-beta
+[news389 lnd10331]: /en/newsletters/2026/01/23/#lnd-10331
