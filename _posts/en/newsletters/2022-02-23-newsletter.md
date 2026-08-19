@@ -71,9 +71,10 @@ answers posted since our last update.*
   Pieter Wuille lists the reasons why the genesis block's coinbase
   "Chancellor..." text push is valid. First, the [genesis block][bitcoin se 13122] is valid by
   definition. Second is that coinbase input scripts are never executed.
-  Third is that, for non-taproot inputs, the requirement of a single element on the stack
-  after execution is only a policy rule, not a consensus rule. Finally, that policy
-  rule applies only to the final stack after an input script is executed together with the corresponding output script. Since there
+  Third is that, for legacy (non-segwit) inputs, the requirement of a single element on the
+  stack after execution is only a policy rule, not a consensus rule (segwit v0 and tapscript do
+  enforce an equivalent single-element final-stack requirement as consensus). Finally, that
+  policy rule applies only to the final stack after an input script is executed together with the corresponding output script. Since there
   are no corresponding output scripts for the inputs of coinbase transactions, the policy does not
   apply. Wuille also notes the reason for the genesis block's unspendability is
   unrelated to this discussion and involves the original Bitcoin software [not
