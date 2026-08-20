@@ -34,7 +34,21 @@ infrastructure software.
   least six, following [BOLT5][]'s reorg-safety handling). Teinturier's post
   includes a regtest reproduction and a timeline of the disclosure.
 
-FIXME:bitschmidty
+- **Draft BIP for `rawtr()` output script descriptor**: Jean Pablo [posted][rawtr ml]
+  to the Bitcoin-Dev mailing list about a BIP proposal for the `rawtr()`
+  [output script descriptor][topic descriptors].
+
+  A `rawtr()` descriptor can be used to express a P2TR output directly by its output key,
+  without needing an internal key or a script tree. The key is used as the
+  [taproot][topic taproot] output key without applying the [BIP341][] tweak.
+  This is useful, for example, when the internal structure isn't known, or the
+  script tree hasn't been revealed by the owner.
+
+  This descriptor has been available in Bitcoin Core since version 24.0,
+  but had not yet been specified in a BIP. Several implementations route around
+  the problem by either not supporting it, or quoting other BIPs.
+  The proposal aims to close this gap. The BIP draft and test vectors are available
+  and being discussed under [BIPs #2251][].
 
 ## Changes to services and client software
 
@@ -119,7 +133,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-08-25 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="10331" %}
+{% include linkers/issues.md v=2 issues="10331,2251" %}
 
 [payjoin 1.0.0]: https://github.com/payjoin/rust-payjoin/releases/tag/payjoin-1.0.0
 [sp electrum delving]: https://delvingbitcoin.org/t/silent-payments-sender-bip352-plugin-for-electrum/2743
@@ -135,4 +149,5 @@ FIXME:Gustavojfe
 [libshrincs delving]: https://delvingbitcoin.org/t/libshrincs-a-c-implementation-with-a-machine-checked-security-proof/2795
 [lnd vuln del]: https://delvingbitcoin.org/t/disclosure-lnd-doesnt-wait-for-enough-confirmations-when-closing-channels/2800
 [lnd v20.0]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.0-beta
+[rawtr ml]: https://groups.google.com/g/bitcoindev/c/CCZN_qQ5C1s
 [news389 lnd10331]: /en/newsletters/2026/01/23/#lnd-10331
