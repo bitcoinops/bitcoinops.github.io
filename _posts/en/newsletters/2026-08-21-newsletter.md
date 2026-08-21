@@ -129,11 +129,129 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #32784][] adds a `derivehdkey` wallet RPC command that derives
+  an xpub and, optionally, an xprv from an [HD key][topic bip32] known to the
+  wallet at a derivation path specified by the caller that contains at least
+  one hardened step. This is useful for coordinating multisig wallets, in which
+  each participant provides an xpub derived from a different path than the
+  wallet's default single-signature [descriptors][topic descriptors]. Since
+  hardened derivation requires private key material, the RPC is unavailable
+  for watch-only wallets, and encrypted wallets must be unlocked.
+
+- [Bitcoin Core #35797][] allows [PSBT][topic psbt]v2 output metadata to be
+  populated before any inputs are added when using the
+  [`descriptorprocesspsbt`][topic descriptors] RPC (see [Newsletter
+  #253][news253 descriptorpsbt]). Previously, `UpdatePSBTOutput` used the first
+  input of the PSBT's unsigned transaction when traversing an output script,
+  which could fail when a PSBTv2 contained outputs but no inputs. Now, it uses
+  a temporary transaction containing a dummy input for metadata traversal
+  without modifying the PSBT.
+
+- [Bitcoin Core #35531][] reduces the disk space used by `-txindex` option (see
+  [Newsletter #161][news161 txindex]) by changing how transaction identifiers
+  and positions are stored. Instead of storing each 32-byte txid and
+  transaction disk position, the new format uses a five-byte prefix of a salted
+  [SipHash][] of the txid and encodes the block sequence number and transaction
+  offset in a compact six-byte suffix in the database key, with an empty value.
+  Lookups scan all entries that share the prefix, determine each candidate's
+  block location using the block index, and verify the full txid after reading
+  the transaction from disk, safely handling collisions. In the PR author's
+  mainnet tests, a fully rebuilt index shrank from about 66 GB to 26 GB, while
+  indexing time fell from about 1 hour 50 minutes to 1 hour 19 minutes. While
+  existing indexes remain readable, they must be rebuilt to reclaim space.
+  After rebuilding, older Bitcoin Core releases cannot read the new entries
+  and will also need to rebuild the index when downgrading.
+
+- [Bitcoin Core #35889][] improves the performance of the
+  `gettxspendingprevout` RPC when checking large batches of outpoints.
+  Previously, when a transaction that spent an outpoint was found in the
+  mempool, the outpoint was erased from the middle of a vector while the
+  mempool lock was held, forcing the remaining entries to shift. Now, the RPC
+  scans each request once, stores the resolved results at their original
+  indexes, and collects only the unresolved outpoints in a separate worklist
+  for lookup through the optional `txospenderindex` (see [Newsletter
+  #394][news394 txospender]). This makes the mempool pass linear instead of
+  quadratic. According to the PR author's benchmarks, large mempool-only
+  request batches completed about 9 times faster on a Ryzen 7 3700X and 31
+  times faster on a Raspberry Pi 5.
+
+- [Bitcoin Core #35605][] deprecates the `removeprunedfunds` wallet RPC and
+  disables it by default. Users who still require it must use the
+  `-deprecatedrpc=removeprunedfunds` startup option. The RPC is scheduled for
+  removal in the next major release. It is being removed because it exposes
+  dangerous behavior without offering any known useful purpose: it can delete
+  any transaction belonging to the wallet, including transactions that were
+  not added through the related `importprunedfunds` RPC. It is also a
+  maintenance burden; see [Newsletter #391][news391 removeprunedfunds] for
+  coverage of a previous bug involving the RPC.
+
+- [Eclair #3352][] fixes missing [BOLT2][] channel-reserve checks when Eclair is
+  the fundee of a single-funded channel, ensuring that neither party's dust
+  limit exceeds the other party's channel reserve. Without these checks, a peer
+  could spend its balance down to a reserve below the applicable dust limit,
+  causing its output to be omitted from a commitment transaction and leaving
+  it with no onchain funds at risk when publishing a revoked state. The PR also
+  adds a configurable `eclair.channel.max-funding-satoshis` channel size limit,
+  which defaults to 5 billion satoshis (50 BTC). This restores an upper bound
+  after support for [wumbo channels][topic large channels] allowed channels
+  above the previous protocol limit.
+
+- [Eclair #3351][] fixes several bugs in [on-the-fly funding][topic jit
+  channels] (see [Newsletter #323][news323 fly]), a feature currently used by
+  ACINQ's Lightning Service Provider (LSP) node in Phoenix Wallet. Specifically,
+  after a restart, Eclair could fail to recognize that an [HTLC][topic htlc]
+  had already been fully cross-signed because it only checked pending channel
+  changes. This could potentially cause the same payment to be relayed twice.
+  Eclair now also checks the current commitment states before relaying.
+  Additionally, the PR resolves several timeout and on-chain failure paths to
+  prevent Eclair from paying a downstream peer after failing the corresponding
+  upstream HTLC.
+
+- [Eclair #3345][] limits the resources each peer can consume when requesting
+  and synchronizing [channel announcements][topic channel announcements]
+  through [BOLT7][] gossip queries. A configurable rate limit, set to 5 requests
+  per second by default, applies per connection across `query_channel_range`
+  and `query_short_channel_ids`. Eclair waits until a query's replies have been
+  sent before accepting additional work to preserve transport backpressure.
+  Eclair ignores duplicate short channel IDs (SCIDs) to prevent response
+  amplification and rejects malformed or overlapping queries. It also limits
+  memory usage during synchronization by capping each peer to 2,000 queued
+  `query_short_channel_ids` requests. Similar resource management protections
+  were previously added to LND (see Newsletters [#366][news366 lnd gossip] and
+  [#417][news417 lnd gossip]).
+
+- [LND #8754][] implements an experimental outbound connection mode for the
+  remote signer (see [Newsletter #172][news172 remote]), in which private-key
+  operations are delegated to a separate signer server. The signer still does
+  not independently validate the requests it receives, so it will sign any
+  request the watch-only node sends. The new mode changes only how the two
+  connect. Instead of the signer listening for an inbound connection, it
+  initiates an outbound connection to a dedicated RPC listener on the watch-only
+  node, allowing it to operate without accepting inbound connections. This setup
+  was previously discussed in [Newsletter #326][news326 signer] in connection
+  with deterministic macaroon generation.
+
+- [LND #11065][] adds an experimental `XCreateAccount` RPC and a corresponding
+  `lncli wallet accounts create` command, to create a named, fully spendable
+  account whose keys are derived from LND's wallet master key. This is different
+  from the existing `ImportAccount` RPC (see [Newsletter #144][news144 lnd
+  xpub]), which imports a watch-only xpub. [Coin selection][topic coin
+  selection], balances, address derivation, and change can be scoped to the
+  account, providing isolated pockets of funds within one wallet. The selected
+  address type is permanent and defaults to [taproot][topic taproot].
+
+- [HWI #842][] adds a `registerdescriptor` command for registering a named
+  [output script descriptor][topic descriptors] with supported hardware signing
+  devices before signing transactions from that wallet. Implementations are
+  added for BitBox02, Coldcard, Jade, and non-legacy Ledger devices. For devices
+  that use [BIP388][] wallet policies (see [Newsletter #302][news302 bip388]),
+  HWI converts the descriptor into a wallet descriptor template and key
+  information vector, it also returns any device-specific registration data
+  needed for later signing.
 
 {% include snippets/recap-ad.md when="2026-08-25 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="10331,2251" %}
+{% include linkers/issues.md v=2 issues="10331,2251,32784,35797,35531,35889,35605,3352,3351,3345,8754,11065,842" %}
 
 [payjoin 1.0.0]: https://github.com/payjoin/rust-payjoin/releases/tag/payjoin-1.0.0
 [sp electrum delving]: https://delvingbitcoin.org/t/silent-payments-sender-bip352-plugin-for-electrum/2743
@@ -150,4 +268,16 @@ FIXME:Gustavojfe
 [lnd vuln del]: https://delvingbitcoin.org/t/disclosure-lnd-doesnt-wait-for-enough-confirmations-when-closing-channels/2800
 [lnd v20.0]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.0-beta
 [rawtr ml]: https://groups.google.com/g/bitcoindev/c/CCZN_qQ5C1s
+[SipHash]: https://en.wikipedia.org/wiki/SipHash
 [news389 lnd10331]: /en/newsletters/2026/01/23/#lnd-10331
+[news253 descriptorpsbt]: /en/newsletters/2023/05/31/#bitcoin-core-25796
+[news161 txindex]: /en/newsletters/2021/08/11/#bitcoin-core-pr-review-club
+[news394 txospender]: /en/newsletters/2026/02/27/#bitcoin-core-24539
+[news391 removeprunedfunds]: /en/newsletters/2026/02/06/#bitcoin-core-34358
+[news323 fly]: /en/newsletters/2024/10/04/#eclair-2861
+[news172 remote]: /en/newsletters/2021/10/27/#lnd-5689
+[news326 signer]: /en/newsletters/2024/10/25/#lnd-9172
+[news366 lnd gossip]: /en/newsletters/2025/08/08/#lnd-10097
+[news417 lnd gossip]: /en/newsletters/2026/08/07/#lnd-10992
+[news302 bip388]: /en/newsletters/2024/05/15/#bips-1389
+[news144 lnd xpub]: /en/newsletters/2021/04/14/#lnd-5047
