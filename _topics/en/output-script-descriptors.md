@@ -224,6 +224,9 @@ optech_mentions:
   - title: "Migrating a legacy wallet to a descriptor wallet on a pruned node"
     url: /en/newsletters/2026/07/31/#what-is-the-quickest-method-for-migrating-a-legacy-wallet-to-a-descriptor-wallet-on-a-pruned-node
 
+  - title: "Draft BIP for the rawtr() output script descriptor"
+    url: /en/newsletters/2026/08/21/#draft-bip-for-rawtr-output-script-descriptor
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

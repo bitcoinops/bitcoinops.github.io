@@ -199,6 +199,9 @@ optech_mentions:
   - title: "Chandra Pratap disclosed two memory-exhaustion DoS vulnerabilities in Core Lightning"
     url: /en/newsletters/2026/07/31/#disclosure-of-two-dos-vulnerabilities-in-core-lightning
 
+  - title: "Bastien Teinturier disclosed a reorg vulnerability in LND channel closes"
+    url: /en/newsletters/2026/08/21/#reorg-vulnerability-in-lnd-channel-closes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

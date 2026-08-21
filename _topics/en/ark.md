@@ -70,6 +70,9 @@ optech_mentions:
   - title: "Wavelength alpha released with an Ark-like settlement layer"
     url: /en/newsletters/2026/07/24/#wavelength-alpha-released
 
+  - title: "Bark 0.5.0 released"
+    url: /en/newsletters/2026/08/21/#bark-0-5-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools

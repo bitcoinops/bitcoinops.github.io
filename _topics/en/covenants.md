@@ -130,6 +130,9 @@ optech_mentions:
   - title: "Using the Bitcoin PIPEs v2 offchain protocol to enforce covenant-like spending conditions"
     url: /en/newsletters/2026/02/20/#bitcoin-pipes-v2
 
+  - title: "OP_TEMPLATEHASH Ark demonstration on signet"
+    url: /en/newsletters/2026/08/21/#op-templatehash-ark-demonstration
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
