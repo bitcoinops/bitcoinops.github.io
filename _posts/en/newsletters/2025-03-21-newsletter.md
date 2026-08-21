@@ -155,9 +155,9 @@ repo], and [BINANAs][binana repo]._
 - [Bitcoin Core #31283][] introduces a new `waitNext()` method to the
   `BlockTemplate` interface, which returns a new template only when the chain
   tip changes or when total fees in a freshly assembled template rise by at
-  least a caller-specified `fee_threshold`. The default `fee_threshold` is
-  `MAX_MONEY`, which skips the expensive fee comparison and effectively waits
-  only for a tip change (or timeout). Previously, miners would receive a new
+  least a caller-specified `fee_threshold`. If no `fee_threshold` is supplied,
+  the expensive fee comparison is skipped and a new template is generated
+  only after a tip change. Previously, miners would receive a new
   template with every request, resulting in unnecessary template generation.
   This change aligns with the [Stratum V2][topic pooled mining] protocol
   specification. {% assign timestamp="37:27" %}
