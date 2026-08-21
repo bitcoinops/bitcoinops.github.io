@@ -172,6 +172,9 @@ optech_mentions:
   - title: "Layered quantum recovery of hashed addresses"
     url: /en/newsletters/2026/08/07/#layered-quantum-recovery-of-hashed-addresses
 
+  - title: "libshrincs, a formally verified hash-based signature implementation"
+    url: /en/newsletters/2026/08/21/#libshrincs-formally-verified-hash-based-signatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

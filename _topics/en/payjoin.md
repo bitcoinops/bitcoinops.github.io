@@ -123,6 +123,9 @@ optech_mentions:
   - title: "BIPs #2186 updates BIP77 to specify how a payjoin v2 receiver replies to a BIP78-compatible sender"
     url: /en/newsletters/2026/06/12/#bips-2186
 
+  - title: "Payjoin Dev Kit (rust-payjoin) 1.0.0 released"
+    url: /en/newsletters/2026/08/21/#payjoin-dev-kit-rust-payjoin-1-0-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
