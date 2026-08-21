@@ -13,19 +13,6 @@ FIXME:bitschmidty
 
 FIXME:bitschmidty
 
-## Selected Q&A from Bitcoin Stack Exchange
-
-*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
-contributors look for answers to their questions---or when we have a
-few spare moments to help curious or confused users.  In
-this monthly feature, we highlight some of the top-voted questions and
-answers posted since our last update.*
-
-{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
-{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
-
-FIXME:bitschmidty
-
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
