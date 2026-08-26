@@ -41,6 +41,23 @@ Bitcoin infrastructure software.
   `nLocktime` to prevent a transaction from being mined before a certain number
   of blocks to account for block reorgs.
 
+- **HWI repository to enter maintenance mode**: Ava Chow (achow101)
+  [announced][hwi future] that the [Hardware Wallet Interface (HWI)][topic hwi]
+  project will scale back to maintenance-only work and eventually be archived.
+  HWI, which lets [Bitcoin Core][bitcoin core repo] and other software
+  communicate with hardware signing devices, has been developed almost entirely
+  by one person and has received little new development for several years. Chow
+  said it achieved most of its original aim of bringing hardware wallet support
+  to Bitcoin Core, but that its Python codebase has held it back from the goal,
+  since it cannot be [reproducibly built][topic reproducible builds] and bundled
+  with Bitcoin Core.
+
+  Before entering maintenance mode, the project will finish its in-progress
+  [MuSig2][topic musig] support and issue what is expected to be its last
+  release. It will stop taking new features and support for additional devices,
+  aside from MuSig2. Chow named [BHWI][bhwi], a work-in-progress Rust
+  implementation from Wizardsardine, as a potential replacement.
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -63,3 +80,5 @@ repo], and [BINANAs][binana repo]._
 {% include linkers/issues.md v=2 issues="" %}
 
 [replay del]: https://delvingbitcoin.org/t/universal-opt-in-replay-protection/2792
+[hwi future]: https://github.com/bitcoin-core/HWI/issues/850
+[bhwi]: https://github.com/wizardsardine/bhwi
