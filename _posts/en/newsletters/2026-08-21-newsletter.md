@@ -33,6 +33,7 @@ infrastructure software.
   wait for more confirmations before considering a channel close final (at
   least six, following [BOLT5][]'s reorg-safety handling). Teinturier's post
   includes a regtest reproduction and a timeline of the disclosure.
+  {% assign timestamp="1:13" %}
 
 - **Draft BIP for `rawtr()` output script descriptor**: Jean Pablo [posted][rawtr ml]
   to the Bitcoin-Dev mailing list about a BIP proposal for the `rawtr()`
@@ -48,7 +49,7 @@ infrastructure software.
   but had not yet been specified in a BIP. Several implementations route around
   the problem by either not supporting it, or quoting other BIPs.
   The proposal aims to close this gap. The BIP draft and test vectors are available
-  and being discussed under [BIPs #2251][].
+  and being discussed under [BIPs #2251][]. {% assign timestamp="1:14:36" %}
 
 ## Changes to services and client software
 
@@ -59,29 +60,33 @@ wallets and services.*
   The Payjoin Dev Kit project [released][payjoin 1.0.0] the first stable version
   of rust-payjoin, supporting both synchronous BIP78 [payjoins][topic payjoin]
   and asynchronous BIP77 payjoins with resumable, persisted sessions.
+  {% assign timestamp="55:33" %}
 
-- **Silent Payments sender plugin for Electrum:**
+- **Silent payments sender plugin for Electrum:**
   Ali Sherief [released][sp electrum delving] a plugin that adds [silent
   payments][topic silent payments] (BIP352) sending (no receiving) to the
   Electrum desktop wallet for single-signature software wallets.
+  {% assign timestamp="1:21:41" %}
 
 - **Superscalar implementation announced:**
   8144225309 [announced][superscalar delving] an implementation of Superscalar,
   ZmnSCPxj's [channel factory][topic channel factories] design that puts many
   self-custodial Lightning clients behind a single onchain UTXO without a soft
   fork (see our [Superscalar deep dive podcast][superscalar deepdive]).
+  {% assign timestamp="1:22:34" %}
 
 - **Cofund multisig wallet announced:**
   Cofund [announced][cofund x] a self-custody [multisig][topic multisignature]
   wallet built on a policy-based [taproot][topic taproot] (P2TR) architecture
   with multi-vendor key registration and hierarchical multisig.
+  {% assign timestamp="1:24:57" %}
 
 - **Lexe adds human-readable addresses and LNURL-withdraw:**
   Lexe, a self-custodial Lightning wallet that runs each user's node in a
   trusted execution environment (TEE) so it stays online without the operator
   taking custody, [announced][lexe x] support for [BIP353][] human-readable
   bitcoin addresses (which also function as Lightning Addresses) and
-  [LNURL-withdraw][topic lnurl].
+  [LNURL-withdraw][topic lnurl]. {% assign timestamp="1:25:55" %}
 
 - **Ledger Bitcoin app 2.5.0 adds human-readable policy descriptions:**
   Salvatore Ingala [announced][salvatoshi x] version 2.5.0 of the Ledger Bitcoin
@@ -90,13 +95,14 @@ wallets and services.*
   wallet policies during registration, instead of only the opaque
   [descriptor][topic descriptors] template. This makes it easier for a user to
   verify a policy and catch a malicious substitution (such as a 3-of-5 replaced
-  with a 1-of-5) before registering it.
+  with a 1-of-5) before registering it. {% assign timestamp="37:17" %}
 
 - **Bark 0.5.0 released:**
   Second [released][second x] version 0.5.0 of Bark, its [Ark][topic ark]
   implementation, adding restoration of a wallet's full off-chain balance
   (VTXOs) from its mnemonic and support for Lightning receives to external Ark
   addresses, which enables non-custodial Lightning-address servers.
+  {% assign timestamp="1:27:34" %}
 
 - **Bitcoin-PIR for private UTXO queries:**
   Weikeng Chen [announced][bitcoinpir] Bitcoin-PIR, a private information
@@ -104,19 +110,20 @@ wallets and services.*
   addresses or scriptPubKeys without revealing to the server which ones it is
   interested in. It offers a choice of four PIR backends: DPF-PIR, HarmonyPIR,
   OnionPIRv2, and an ORAM scheme backed by a trusted execution environment
-  (TEE).
+  (TEE). {% assign timestamp="1:28:16" %}
 
 - **OP_TEMPLATEHASH Ark demonstration:**
   Steven Roose [launched][templatehash] a signet demonstration of Bark, Second's
   [Ark][topic ark] implementation, running against `OP_TEMPLATEHASH`, a
   taproot-native [CTV][topic op_checktemplateverify]-style [covenant][topic
   covenants] opcode. The demo is built from the `templatehash` branch of the
-  Bark [repository][bark gitlab].
+  Bark [repository][bark gitlab]. {% assign timestamp="1:29:44" %}
 
 - **libshrincs formally verified hash-based signatures:**
   Jonas Nick [announced][libshrincs delving] libshrincs, a C implementation of
   [post-quantum][topic quantum resistance] hash-based signatures with a
   machine-checked security proof, written by remix7531.
+  {% assign timestamp="1:34:00" %}
 
 ## Notable code and documentation changes
 
@@ -137,6 +144,7 @@ repo], and [BINANAs][binana repo]._
   wallet's default single-signature [descriptors][topic descriptors]. Since
   hardened derivation requires private key material, the RPC is unavailable
   for watch-only wallets, and encrypted wallets must be unlocked.
+  {% assign timestamp="1:38:08" %}
 
 - [Bitcoin Core #35797][] allows [PSBT][topic psbt]v2 output metadata to be
   populated before any inputs are added when using the
@@ -145,7 +153,7 @@ repo], and [BINANAs][binana repo]._
   input of the PSBT's unsigned transaction when traversing an output script,
   which could fail when a PSBTv2 contained outputs but no inputs. Now, it uses
   a temporary transaction containing a dummy input for metadata traversal
-  without modifying the PSBT.
+  without modifying the PSBT. {% assign timestamp="1:40:45" %}
 
 - [Bitcoin Core #35531][] reduces the disk space used by `-txindex` option (see
   [Newsletter #161][news161 txindex]) by changing how transaction identifiers
@@ -161,6 +169,7 @@ repo], and [BINANAs][binana repo]._
   existing indexes remain readable, they must be rebuilt to reclaim space.
   After rebuilding, older Bitcoin Core releases cannot read the new entries
   and will also need to rebuild the index when downgrading.
+  {% assign timestamp="1:44:14" %}
 
 - [Bitcoin Core #35889][] improves the performance of the
   `gettxspendingprevout` RPC when checking large batches of outpoints.
@@ -173,7 +182,7 @@ repo], and [BINANAs][binana repo]._
   #394][news394 txospender]). This makes the mempool pass linear instead of
   quadratic. According to the PR author's benchmarks, large mempool-only
   request batches completed about 9 times faster on a Ryzen 7 3700X and 31
-  times faster on a Raspberry Pi 5.
+  times faster on a Raspberry Pi 5. {% assign timestamp="1:48:44" %}
 
 - [Bitcoin Core #35605][] deprecates the `removeprunedfunds` wallet RPC and
   disables it by default. Users who still require it must use the
@@ -183,7 +192,7 @@ repo], and [BINANAs][binana repo]._
   any transaction belonging to the wallet, including transactions that were
   not added through the related `importprunedfunds` RPC. It is also a
   maintenance burden; see [Newsletter #391][news391 removeprunedfunds] for
-  coverage of a previous bug involving the RPC.
+  coverage of a previous bug involving the RPC. {% assign timestamp="1:51:06" %}
 
 - [Eclair #3352][] fixes missing [BOLT2][] channel-reserve checks when Eclair is
   the fundee of a single-funded channel, ensuring that neither party's dust
@@ -194,7 +203,7 @@ repo], and [BINANAs][binana repo]._
   adds a configurable `eclair.channel.max-funding-satoshis` channel size limit,
   which defaults to 5 billion satoshis (50 BTC). This restores an upper bound
   after support for [wumbo channels][topic large channels] allowed channels
-  above the previous protocol limit.
+  above the previous protocol limit. {% assign timestamp="12:15" %}
 
 - [Eclair #3351][] fixes several bugs in [on-the-fly funding][topic jit
   channels] (see [Newsletter #323][news323 fly]), a feature currently used by
@@ -205,7 +214,7 @@ repo], and [BINANAs][binana repo]._
   Eclair now also checks the current commitment states before relaying.
   Additionally, the PR resolves several timeout and on-chain failure paths to
   prevent Eclair from paying a downstream peer after failing the corresponding
-  upstream HTLC.
+  upstream HTLC. {% assign timestamp="20:31" %}
 
 - [Eclair #3345][] limits the resources each peer can consume when requesting
   and synchronizing [channel announcements][topic channel announcements]
@@ -218,7 +227,7 @@ repo], and [BINANAs][binana repo]._
   memory usage during synchronization by capping each peer to 2,000 queued
   `query_short_channel_ids` requests. Similar resource management protections
   were previously added to LND (see Newsletters [#366][news366 lnd gossip] and
-  [#417][news417 lnd gossip]).
+  [#417][news417 lnd gossip]). {% assign timestamp="23:16" %}
 
 - [LND #8754][] implements an experimental outbound connection mode for the
   remote signer (see [Newsletter #172][news172 remote]), in which private-key
@@ -229,7 +238,7 @@ repo], and [BINANAs][binana repo]._
   initiates an outbound connection to a dedicated RPC listener on the watch-only
   node, allowing it to operate without accepting inbound connections. This setup
   was previously discussed in [Newsletter #326][news326 signer] in connection
-  with deterministic macaroon generation.
+  with deterministic macaroon generation. {% assign timestamp="1:54:23" %}
 
 - [LND #11065][] adds an experimental `XCreateAccount` RPC and a corresponding
   `lncli wallet accounts create` command, to create a named, fully spendable
@@ -239,6 +248,7 @@ repo], and [BINANAs][binana repo]._
   selection], balances, address derivation, and change can be scoped to the
   account, providing isolated pockets of funds within one wallet. The selected
   address type is permanent and defaults to [taproot][topic taproot].
+  {% assign timestamp="1:55:47" %}
 
 - [HWI #842][] adds a `registerdescriptor` command for registering a named
   [output script descriptor][topic descriptors] with supported hardware signing
@@ -247,7 +257,7 @@ repo], and [BINANAs][binana repo]._
   that use [BIP388][] wallet policies (see [Newsletter #302][news302 bip388]),
   HWI converts the descriptor into a wallet descriptor template and key
   information vector, it also returns any device-specific registration data
-  needed for later signing.
+  needed for later signing. {% assign timestamp="1:57:04" %}
 
 {% include snippets/recap-ad.md when="2026-08-25 16:30" %}
 {% include references.md %}
