@@ -110,6 +110,9 @@ optech_mentions:
   - title: "BOLTs #1343 adds a feature bit for accepting onion messages only from channel peers"
     url: /en/newsletters/2026/07/31/#bolts-1343
 
+  - title: "Eclair #3342 implements the `option_onion_messages_only_channels` feature bit"
+    url: /en/newsletters/2026/08/28/#eclair-3342
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

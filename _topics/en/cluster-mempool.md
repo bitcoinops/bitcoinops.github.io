@@ -106,6 +106,9 @@ optech_mentions:
   - title: "Bitcoin Core #34616 introduces a more accurate cost model for spanning-forest linearization"
     url: /en/newsletters/2026/03/06/#bitcoin-core-34616
 
+  - title: "Bitcoin Core #34075 uses chunk feerates for mempool-based fee estimation"
+    url: /en/newsletters/2026/08/28/#bitcoin-core-34075
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay

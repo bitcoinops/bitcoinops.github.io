@@ -76,6 +76,9 @@ optech_mentions:
   - title: "BTCPay Server #7488 improves PSBT signing compatibility with HWI-based signing devices"
     url: /en/newsletters/2026/08/07/#btcpay-server-7488
 
+  - title: "HWI to enter maintenance mode and eventually be archived, with BHWI as a likely successor"
+    url: /en/newsletters/2026/08/28/#hwi-repository-to-enter-maintenance-mode
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)
