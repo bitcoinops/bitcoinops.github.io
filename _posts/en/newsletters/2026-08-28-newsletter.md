@@ -58,6 +58,24 @@ Bitcoin infrastructure software.
   aside from MuSig2. Chow named [BHWI][bhwi], a work-in-progress Rust
   implementation from Wizardsardine, as a potential replacement.
 
+- **Request for comments on using block-range filters**: Output [posted][rfc del]
+  to Delving Bitcoin a request for comments (RFC) on a proposal to use
+  block-range filters to reduce the total download size
+  when using [compact block filters][topic compact block filters]. Instead of
+  downloading all the individual block filters, filters for ranges of blocks could
+  be created. If a script is found inside one of those ranges, the individual block
+  filters are downloaded and the process works as described in [BIP157][]. Although
+  both range and block filters are downloaded for matching ranges, savings in size
+  are obtained by avoiding downloading all the block filters in the other ranges.
+
+  Preliminary results seem promising. The author ran simulations using different
+  range sizes on simulated data of around 30k blocks. Two different sets of scripts
+  were used, one with a very low transaction count (4-6 transactions) and one with
+  a higher one (20-30 transactions). The total block-range filter size decreases as
+  the range increases. However, most of the savings are canceled when increasing the
+  range too much. According to the author, the best trade-off seems to be found at
+  256-block range which reduced the total download size by about 70–80% for the tested sets of scripts.
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -243,3 +261,4 @@ repo], and [BINANAs][binana repo]._
 [news419 eclair reserves]: /en/newsletters/2026/08/21/#eclair-3352
 [news419 eclair funding]: /en/newsletters/2026/08/21/#eclair-3351
 [news419 eclair gossip]: /en/newsletters/2026/08/21/#eclair-3345
+[rfc del]: https://delvingbitcoin.org/t/rfc-block-range-filters-a-k-a-hierarchical-filters/2735
