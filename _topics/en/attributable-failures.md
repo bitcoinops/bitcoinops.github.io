@@ -53,6 +53,9 @@ optech_mentions:
   - title: "BOLTs #1344 extends attributable failures to successful payments"
     url: /en/newsletters/2026/07/31/#bolts-1344
 
+  - title: "Eclair #3321 implements the `fulfillment_payload` field for successful payments"
+    url: /en/newsletters/2026/08/28/#eclair-3321
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

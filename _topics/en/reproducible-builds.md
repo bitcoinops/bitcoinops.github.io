@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Static Bitcoin Core binaries available for testing"
     url: /en/newsletters/2026/08/14/#static-bitcoin-core-binaries-available-for-testing
 
+  - title: "HWI to be archived, partly because Python prevents reproducible builds"
+    url: /en/newsletters/2026/08/28/#hwi-repository-to-enter-maintenance-mode
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Presentation: Bitcoin Build System Security"
