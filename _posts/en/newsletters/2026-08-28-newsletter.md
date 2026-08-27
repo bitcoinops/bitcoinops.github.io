@@ -17,6 +17,18 @@ Bitcoin infrastructure software.
 
 ## Action items
 
+- **Prepare for an upcoming Core Lightning security release:** Christian Decker
+  [described][cln v26.06.7] a forthcoming CLN v26.06.7 point security release,
+  noting no vulnerability is known to be actively exploited. The project plans
+  an embargoed release within about 24 hours, publishing binaries but
+  withholding the source code for 14 days to slow any attacker from
+  reverse-engineering the fixes. Once the source code is made available, CLN's
+  [reproducible build][topic reproducible builds] system will let users verify
+  that the binaries match the source code. Operators who prefer to wait until
+  the source code is available to update should restart with the `--offline`
+  flag (which stops the node from making or accepting peer connections while
+  retaining onchain enforcement against potential cheating peers).
+
 ## News
 
 - **Discussion on universal opt-in replay protection**: Moonsettler
@@ -241,6 +253,7 @@ repo], and [BINANAs][binana repo]._
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="34075,35730,35580,35665,36025,35516,35933,34697,9374,3342,1343,3321,1344,11008,841,849,6755" %}
 
+[cln v26.06.7]: https://x.com/Snyke/status/2092989040098181170
 [replay del]: https://delvingbitcoin.org/t/universal-opt-in-replay-protection/2792
 [hwi future]: https://github.com/bitcoin-core/HWI/issues/850
 [bhwi]: https://github.com/wizardsardine/bhwi
