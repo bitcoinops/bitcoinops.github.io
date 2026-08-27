@@ -64,6 +64,23 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
+- [BTCPay Server 2.4.3][] is a security release of this self-hosted payment
+  processor. Users are encouraged to upgrade, especially if their servers are
+  shared by multiple users.
+
+- [Eclair 0.14.2][] is a security release for this LN node implementation. It
+  fixes payment failure and channel handling bugs (see [Newsletter
+  #418][news418 eclair fixes]), missing channel reserve checks (see [Newsletter
+  #419][news419 eclair reserves]), and [on-the-fly][topic jit channels] funding
+  issues (see [Newsletter #419][news419 eclair funding]). It also limits
+  resources consumed by [gossip queries][topic channel announcements] (see
+  [Newsletter #419][news419 eclair gossip]) and pending incoming connections,
+  and includes [onion message][topic onion messages] and Tor configuration
+  changes. Upgrading is strongly recommended because malicious nodes could
+  exploit some of the fixed bugs. Operators should run `bitcoind` on the same
+  machine as Eclair or connect through an encrypted, authenticated tunnel, and
+  review the [release notes][eclair 0.14.2 notes] for configuration changes.
+
 ## Notable code and documentation changes
 
 _Notable recent changes in [Bitcoin Core][bitcoin core repo], [Core
@@ -209,6 +226,9 @@ repo], and [BINANAs][binana repo]._
 [replay del]: https://delvingbitcoin.org/t/universal-opt-in-replay-protection/2792
 [hwi future]: https://github.com/bitcoin-core/HWI/issues/850
 [bhwi]: https://github.com/wizardsardine/bhwi
+[BTCPay Server 2.4.3]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.4.3
+[Eclair 0.14.2]: https://github.com/ACINQ/eclair/releases/tag/v0.14.2
+[eclair 0.14.2 notes]: https://github.com/ACINQ/eclair/blob/v0.14.2/docs/release-notes/eclair-v0.14.2.md
 [news295 fee]: /en/newsletters/2024/03/27/#mempool-based-feerate-estimation
 [news349 fee]: /en/newsletters/2025/04/11/#bitcoin-core-pr-review-club
 [news411 http]: /en/newsletters/2026/06/26/#bitcoin-core-35182
@@ -219,3 +239,7 @@ repo], and [BINANAs][binana repo]._
 [news419 hwi]: /en/newsletters/2026/08/21/#hwi-842
 [news364 ldk attribution]: /en/newsletters/2025/07/25/#ldk-3801
 [news138 sighash]: /en/newsletters/2021/03/03/#rust-bitcoin-573
+[news418 eclair fixes]: /en/newsletters/2026/08/14/#eclair-3346
+[news419 eclair reserves]: /en/newsletters/2026/08/21/#eclair-3352
+[news419 eclair funding]: /en/newsletters/2026/08/21/#eclair-3351
+[news419 eclair gossip]: /en/newsletters/2026/08/21/#eclair-3345
