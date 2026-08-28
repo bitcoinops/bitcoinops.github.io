@@ -70,7 +70,7 @@ Bitcoin infrastructure software.
   aside from MuSig2. Chow named [BHWI][bhwi], a work-in-progress Rust
   implementation from Wizardsardine, as a potential replacement.
 
-- **Request for comments on using block-range filters**: Output [posted][rfc del]
+- **Request for comments on using block-range filters**: Optout [posted][rfc del]
   to Delving Bitcoin a request for comments (RFC) on a proposal to use
   block-range filters to reduce the total download size
   when using [compact block filters][topic compact block filters]. Instead of
