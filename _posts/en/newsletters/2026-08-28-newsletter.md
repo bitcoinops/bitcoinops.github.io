@@ -127,7 +127,7 @@ repo], and [BINANAs][binana repo]._
   block-policy estimator. The new estimator uses the [chunk fee rates][topic
   cluster mempool] in the middle and at the last quartile of the next block for
   conservative and economical estimates, respectively. If there are too few
-  transactions waiting for confirmation, it falls back to higher of the minimum
+  transactions waiting for confirmation, it falls back to the higher of the minimum
   relay feerate and the mempool minimum feerate. By default, `estimatesmartfee`
   now returns the lower of the mempool and block-policy estimates, so mempool
   conditions can lower fee rate estimates but not raise them. The new
