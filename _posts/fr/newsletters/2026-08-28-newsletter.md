@@ -183,7 +183,7 @@ BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin
   exacte est également incluse dans le hash de signature segwit v0, cela pouvait conduire Rust Bitcoin à calculer un mauvais sighash et à
   échouer à vérifier les signatures de transactions valides du point de vue du consensus et déjà confirmées. La nouvelle représentation
   préserve la valeur d'origine, tandis que les appelants qui ont besoin de types sighash standard peuvent continuer à utiliser
-  `from_standard` (voir [Bulletin
+  `from_standard` (voir le [Bulletin
   #138][news138 sighash]).
 
 {% include snippets/recap-ad.md when="2026-09-01 16:30" %}
