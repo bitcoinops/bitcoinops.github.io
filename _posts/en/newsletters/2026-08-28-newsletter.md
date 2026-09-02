@@ -28,6 +28,7 @@ Bitcoin infrastructure software.
   the source code is available to update should restart with the `--offline`
   flag (which stops the node from making or accepting peer connections while
   retaining onchain enforcement against potential cheating peers).
+  {% assign timestamp="1:46" %}
 
 ## News
 
@@ -51,7 +52,7 @@ Bitcoin infrastructure software.
   track of the commitment for up to `100` blocks. Moreover, Towns proposed
   to add a mechanism similar to a maturity constraint by setting an explicit
   `nLocktime` to prevent a transaction from being mined before a certain number
-  of blocks to account for block reorgs.
+  of blocks to account for block reorgs. {% assign timestamp="53:54" %}
 
 - **HWI repository to enter maintenance mode**: Ava Chow (achow101)
   [announced][hwi future] that the [Hardware Wallet Interface (HWI)][topic hwi]
@@ -69,6 +70,7 @@ Bitcoin infrastructure software.
   release. It will stop taking new features and support for additional devices,
   aside from MuSig2. Chow named [BHWI][bhwi], a work-in-progress Rust
   implementation from Wizardsardine, as a potential replacement.
+  {% assign timestamp="1:24:05" %}
 
 - **Request for comments on using block-range filters**: Optout [posted][rfc del]
   to Delving Bitcoin a request for comments (RFC) on a proposal to use
@@ -87,6 +89,7 @@ Bitcoin infrastructure software.
   the range increases. However, most of the savings are canceled when increasing the
   range too much. According to the author, the best trade-off seems to be found at
   256-block range which reduced the total download size by about 70–80% for the tested sets of scripts.
+  {% assign timestamp="19:06" %}
 
 ## Releases and release candidates
 
@@ -96,7 +99,7 @@ release candidates._
 
 - [BTCPay Server 2.4.3][] is a security release of this self-hosted payment
   processor. Users are encouraged to upgrade, especially if their servers are
-  shared by multiple users.
+  shared by multiple users. {% assign timestamp="1:28:31" %}
 
 - [Eclair 0.14.2][] is a security release for this LN node implementation. It
   fixes payment failure and channel handling bugs (see [Newsletter
@@ -110,6 +113,7 @@ release candidates._
   exploit some of the fixed bugs. Operators should run `bitcoind` on the same
   machine as Eclair or connect through an encrypted, authenticated tunnel, and
   review the [release notes][eclair 0.14.2 notes] for configuration changes.
+  {% assign timestamp="1:29:09" %}
 
 ## Notable code and documentation changes
 
@@ -132,7 +136,7 @@ repo], and [BINANAs][binana repo]._
   now returns the lower of the mempool and block-policy estimates, so mempool
   conditions can lower fee rate estimates but not raise them. The new
   `fee_rate_estimator` option can be used to get estimates based on just one of
-  the approaches.
+  the approaches. {% assign timestamp="31:21" %}
 
 - [Bitcoin Core #35730][] adds a `-rpcmaxconnections` configuration option
   (default 16), which limits the number of clients that can simultaneously
@@ -144,7 +148,7 @@ repo], and [BINANAs][binana repo]._
   could exhaust the available file descriptors, causing unrelated operations to
   fail. This change also improves connection handling by accepting all queued
   connections up to the limit during each I/O loop iteration, instead of
-  accepting only one connection per iteration.
+  accepting only one connection per iteration. {% assign timestamp="1:32:02" %}
 
 - [Bitcoin Core #35580][] fixes a block template construction bug that
   compared a transaction chunk's sigops-adjusted weight (see [Newsletter
@@ -153,7 +157,7 @@ repo], and [BINANAs][binana repo]._
   feerate, while block validity separately constrains actual weight and sigop
   cost. Therefore, the previous behavior could have incorrectly excluded a
   sigop-dense, high-fee-rate chunk even when it satisfied both limits, thereby
-  reducing mining revenue.
+  reducing mining revenue. {% assign timestamp="1:34:03" %}
 
 - [Bitcoin Core #35665][], [#36025][bitcoin core #36025], and [#35516][bitcoin
   core #35516] fix several issues when combining or joining [PSBTs][topic
@@ -170,6 +174,7 @@ repo], and [BINANAs][binana repo]._
   the `joinpsbts` RPC dropping the global xpub and metadata records by
   shuffling the merged PSBT in place rather than constructing a separate
   shuffled PSBT that omits some global metadata.
+  {% assign timestamp="1:38:36" %}
 
 - [Bitcoin Core #35933][] and [#34697][bitcoin core #34697] fix several
   [MuSig2][topic musig] [PSBT][topic psbt] processing and [descriptor][topic
@@ -185,6 +190,7 @@ repo], and [BINANAs][binana repo]._
   same participants with different derivation paths. It also prevents a reused
   MuSig2 participant's key origin from being prepended twice to [taproot][topic
   taproot] derivation metadata stored in a PSBT.
+  {% assign timestamp="1:43:02" %}
 
 - [Core Lightning #9374][] fixes a channel state error that could occur when
   an earlier [RBF][topic rbf] attempt for a [dual-funded][topic dual funding]
@@ -195,13 +201,14 @@ repo], and [BINANAs][binana repo]._
   lock the channel to an unconfirmed funding transaction. Now, Core Lightning
   records the funding attempt that actually confirmed as soon as its block is
   processed and uses that attempt when reestablishing the channel.
+  {% assign timestamp="1:45:58" %}
 
 - [Eclair #3342][] implements the `option_onion_messages_only_channels`
   feature bit specified in [BOLTs #1343][] (see [Newsletter #416][news416
   onion]). When configured to relay [onion messages][topic onion messages] only
   for peers with channels, Eclair now advertises this feature bit. When
   relaying for all peers, Eclair advertises the `option_onion_messages` feature
-  bit.
+  bit. {% assign timestamp="1:47:15" %}
 
 - [Eclair #3321][] implements support for the optional `fulfillment_payload`
   field added to the `update_fulfill_htlc` message as specified by [BOLTs
@@ -212,6 +219,7 @@ repo], and [BINANAs][binana repo]._
   them when it is the payment recipient. The PR reports interoperability with
   LDK, which previously added attribution data to the successful-payment path
   (see [Newsletter #364][news364 ldk attribution]).
+  {% assign timestamp="1:48:55" %}
 
 - [LND #11008][] fixes a deadlock issue in LND's [PSBT][topic psbt]
   channel-opening flow. Previously, if PSBT funding verification and cleanup
@@ -221,6 +229,7 @@ repo], and [BINANAs][binana repo]._
   accepting channels and leaving newly funded channels stuck until a restart.
   The fix changes the order in which the shared state is accessed, preventing
   the two operations from blocking each other indefinitely.
+  {% assign timestamp="1:50:44" %}
 
 - [HWI #841][] extends the `displayaddress` command to display on a hardware
   device an address for a registered [BIP388][] wallet [descriptor][topic
@@ -228,7 +237,7 @@ repo], and [BINANAs][binana repo]._
   The command accepts the registration information returned by the
   `registerdescriptor` command and adds support for BitBox02, Coldcard, Jade,
   and Ledger devices, building on the descriptor registration support described
-  in [Newsletter #419][news419 hwi].
+  in [Newsletter #419][news419 hwi]. {% assign timestamp="1:52:09" %}
 
 - [HWI #849][] updates Coldcard support to display single-signature
   [taproot][topic taproot] addresses on Coldcard Edge devices. It also
@@ -236,6 +245,7 @@ repo], and [BINANAs][binana repo]._
   instead of always converting the PSBT to version 0. The PR adds Coldcard Edge
   simulator coverage, restores single-signature transaction signing tests, and
   updates the tested Coldcard firmware to version 5.6.0.
+  {% assign timestamp="1:53:48" %}
 
 - [Rust Bitcoin #6755][] fixes segwit v0 signature verification for
   transactions using nonstandard but consensus-valid ECDSA signature hash
@@ -247,7 +257,7 @@ repo], and [BINANAs][binana repo]._
   transactions that are consensus-valid and already confirmed. The new
   representation preserves the original value, while callers that require
   standard sighash types can continue using `from_standard` (see [Newsletter
-  #138][news138 sighash]).
+  #138][news138 sighash]). {% assign timestamp="1:55:12" %}
 
 {% include snippets/recap-ad.md when="2026-09-01 16:30" %}
 {% include references.md %}
