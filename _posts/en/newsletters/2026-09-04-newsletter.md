@@ -39,6 +39,36 @@ infrastructure software.
   The author is looking for feedback and critiques on the proposed idea,
   so that it can be formalized into a real specification.
 
+- **Responsible disclosure of a denial-of-service vulnerability in CLN**:
+  Erick Cestari [posted][cln dos del] to Delving Bitcoin the responsible
+  disclosure of a critical denial-of-service (DoS) vulnerability affecting
+  CLN nodes running versions prior to [25.09][cln v25.09]. An attacker
+  would have been able to flood a node with `ping` messages asking for the
+  largest possible `pong` reply and never read the TCP socket, causing an
+  out-of-memory (OOM) crash, needing only to complete the [BOLT8][] handshake,
+  without a channel.
+
+  The issue was linked to the way CLN manages its connections. Each peer opens a
+  BOLT8 encrypted Noise channel with the node and the connection is managed by
+  a specific daemon, `connectd`. The daemon handles the TCP connection, decrypts
+  the incoming messages, and routes them to the specific subdaemon managing a
+  payment channel with the sending peer. However, there are some messages that
+  are taken care of locally by the daemon. One of them is the `ping` message and
+  the sender gets to pick the size of the `pong` reply.
+
+  While CLN applies a backpressure mechanism to the messages routed to the subdaemons,
+  with `connectd` waiting for them to be ready before reading a new message, that did
+  not apply to the daemon itself, which would continue to read the locally handled
+  messages. An attacker would have been able to repeatedly send `ping` messages
+  requesting a reply of the maximum allowed size of 65531 bytes and never read the
+  answer, thus filling its TCP socket buffer first, then the peer's. This would
+  have prevented the `peer_outq` queue from draining, leading to the OOM crash.
+
+  The issue was fixed by providing the `connectd` daemon with its own backpressure
+  mechanism, activated by the `peer_outq` queue actually draining before reading
+  the next incoming message. The fix was introduced in [Core Lightning #8525][]
+  and published in release 25.09.
+
 ## Changing consensus
 
 _A monthly section summarizing proposals and discussion about changing
@@ -69,5 +99,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-09-08 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="8525" %}
 [spc del]: https://delvingbitcoin.org/t/silent-payments-coinbase/2833
+[cln dos del]: https://delvingbitcoin.org/t/disclosure-crashing-cln-with-a-flood-of-pings/2846
+[cln v25.09]: https://github.com/ElementsProject/lightning/releases/tag/v25.09
