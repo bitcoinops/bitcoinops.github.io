@@ -184,7 +184,38 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Core Lightning 26.06.7][] is a security release for the current major
+  version of this popular LN node implementation. It fixes several responsibly
+  disclosed vulnerabilities, none of which are known to be actively exploited,
+  reported by researchers including Erick Cestari, whose earlier disclosure is
+  described in the news section above. The project strongly encourages all
+  users to upgrade. As described in [Newsletter #420][news420 cln embargo], the
+  source code is being withheld for 14 days after the August 28 binary release
+  to slow attackers from reverse engineering the fixes. After that, CLN's
+  [reproducible builds][topic reproducible builds] will allow users to verify
+  the binaries. Between August 28 and September 1, Docker users who pulled the
+  `v26.06.7` or `latest` tags received images that reported the new version but
+  did not contain the fixes. These users should check their image digest and
+  re-pull.
+
+- [LND v0.21.3-beta][] is a maintenance release of this popular LN node
+  implementation. It includes the peer resource limits, `channel_update`
+  encoding fix, and dust [HTLC][topic htlc] resolution fix described in the
+  notable code section below, as well as the [PSBT][topic psbt] funding
+  deadlock fix from [Newsletter #420][news420 lnd deadlock]. It also fixes a
+  cooperative close fee bug for channels with auxiliary outputs such as
+  [Taproot Assets][topic client-side validation] channels, a native SQL invoice
+  migration failure for legacy [AMP][topic amp] invoices, a REST WebSocket
+  proxy panic, and several gossip query and cooperative close bugs, and adds
+  the experimental `XCreateAccount` RPC (see [Newsletter #419][news419 lnd
+  account]).
+
+- [LND v0.20.4-beta][] is a maintenance release of LND's 0.20 release branch.
+  It backports most of the fixes in 0.21.3-beta, including the peer resource
+  limits, `channel_update` encoding fix, and dust HTLC resolution fix, and
+  additionally rejects fixed-size TLV records such as inbound fees and
+  [MuSig2][topic musig] nonces whose declared length is incorrect, instead of
+  silently accepting and re-encoding them.
 
 ## Notable code and documentation changes
 
@@ -197,11 +228,116 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #36111][] limits the memory used by the `validateaddress` RPC
+  when reporting errors for overly long [bech32][topic bech32] strings.
+  Previously, for strings exceeding the 90-character limit set by [BIP173][],
+  every position past the limit was returned as an error location (see
+  [Newsletter #177][news177 bech32]) and converted into a separate JSON value.
+  Now, the RPC returns only position 90, where the length violation begins. In
+  the author's tests, an authenticated request near the maximum HTTP request
+  size used approximately 5.7 GiB of memory before the change and 240 MiB
+  after.
+
+- [Bitcoin Core #36032][] improves the performance of `createrawtransaction`,
+  `createpsbt`, `sendmany`, and other RPCs that build a transaction by making
+  output parsing linear instead of quadratic. Previously, the parser iterated
+  through the output keys and separately looked up each corresponding value
+  individually, rescanning the same internal list each time. In addition,
+  `sendmany` held the wallet lock while parsing. Now, the parser walks through
+  the keys and values together by index, similar to the `gettxspendingprevout`
+  fix in [Newsletter #419][news419 gettxspendingprevout]. The author reports
+  that parsing 10,000 outputs in a debug build now takes 0.5 seconds instead of
+  1.8 seconds.
+
+- [Core Lightning #9435][] updates CLN to force close a channel when a peer
+  sends a `channel_reestablish` message with a `next_commitment_number` of
+  zero, as required by [BOLT2][]. A value of zero indicates that the peer has
+  lost its channel state, and broadcasting the latest commitment transaction
+  lets it recover its balance using a [static channel backup][topic static
+  channel backups]. Previously, CLN only enforced this on a freshly opened
+  channel. For any other channel, CLN first detected the peer's stale
+  `next_revocation_number`, sent a warning, and left the channel open.
+
+- [Eclair #3368][] fixes a bug where a `commitment_signed` message received
+  from a peer on a non-[taproot][topic taproot] channel could carry the
+  `partial_signature_with_nonce` TLV used by [simple taproot channels][topic
+  simple taproot channels] for their [MuSig2][topic musig] partial signatures
+  (see [Newsletter #404][news404 eclair taproot]). Although Eclair correctly
+  verified the message's regular ECDSA signature, it incorrectly stored the
+  unsolicited partial signature as the peer's signature. This prevented Eclair
+  from force closing the channel later on. Now, Eclair selects the signature
+  type that matches the channel's commitment format before verification and
+  only stores the verified signature.
+
+- [Eclair #3366][] hardens [splicing][topic splicing] against peers that don't
+  follow the specification. Eclair now disconnects a peer that sends channel
+  updates after its own `stfu` [quiescence][topic channel commitment upgrades]
+  message, or that sends a `commitment_signed` message while the splice is
+  still being negotiated. Eclair force closes instead of accepting if a peer
+  attempts to advance the channel's existing commitment while the splice is
+  being signed. It also refuses to complete a splice or [dual funding][topic
+  dual funding] [RBF][topic rbf] attempt whose commitment numbers no longer
+  match the channel's. Finally, when a splice in which Eclair sells liquidity
+  through [liquidity advertisements][topic liquidity advertisements] is aborted
+  after signing begins, Eclair now immediately fails the incoming [HTLCs][topic
+  htlc] paying for it (see [Newsletter #379][news379 eclair liquidity] for a
+  related fix).
+
+- [LND #11090][] rate limits inbound `ping` messages and caps each peer's
+  outgoing message queue, preventing the kind of resource exhaustion described
+  for CLN in the news section above. For each peer connection, LND now
+  maintains two token buckets. The inbound `ping` request bucket starts with
+  200 tokens and replenishes at a rate of 10 per second. Exhausting this bucket
+  results in the peer getting disconnected. The outbound `pong` reply bucket
+  starts with 20 tokens and replenishes at a rate of one per second. Exhausting
+  this bucket causes LND to stop replying, which is a deliberate deviation from
+  [BOLT1][]. Each peer's outgoing queue is also capped at 10,000 messages or
+  approximately 16 MiB. Additionally, the PR fixes the encoding of
+  `channel_update` [gossip messages][topic channel announcements] so that LND's
+  own updates advertising [inbound fees][topic inbound forwarding fees] are
+  signed over exactly the bytes it broadcasts. Previously, these bytes could
+  differ, causing peers to reject the update. Updates that LND forwards from
+  other nodes now also keep any TLV records it doesn't recognize, rather than
+  dropping them and invalidating the originator's signature (see [Newsletter
+  #418][news418 eclair flags] for a similar Eclair fix).
+
+- [LND #11140][] fixes how LND handles a forwarded [HTLC][topic htlc] when the
+  outgoing channel force closes and the HTLC is [trimmed][topic trimmed htlc]
+  as [dust][topic uneconomical outputs] on one party's commitment transaction
+  but not the other's. Previously, if the HTLC had an output on LND's
+  commitment but the peer's commitment confirmed without one, LND never failed
+  the incoming HTLC back, because it had judged the HTLC based on its own
+  commitment. The incoming HTLC would then stay pending until the upstream
+  channel force closed near its expiry. Now, LND decides based on the
+  commitment that actually confirmed. LND also no longer fails an incoming HTLC
+  early when the outgoing HTLC is dust on its commitment but has an output on
+  the peer's commitment, since the peer could still claim the output with the
+  preimage.
+
+- [HWI #792][] adds a `--registration` option to the `signtx` command for
+  signing [PSBTs][topic psbt] using [BIP388][] wallet policies that were
+  previously registered on a hardware signing device with the
+  `registerdescriptor` command (see Newsletters [#419][news419 hwi] and
+  [#420][news420 hwi]). The option accepts the serialized registration returned
+  by `registerdescriptor`, including the policy name, [descriptor][topic
+  descriptors], device type, and any device-specific registration data such as
+  Ledger's HMAC. Support is implemented for BitBox02, Coldcard Edge, Jade, and
+  non-legacy Ledger devices.
+
+- [BDK #2262][] fixes a bug where reindexing a wallet's transaction graph could
+  miss some of the wallet's own outputs. BDK's `KeychainTxOutIndex` watches a
+  look-ahead [window of addresses][topic gap limits] beyond the highest
+  [BIP32][] derivation index it has seen, extending the window each time an
+  output at a higher index is found. Previously, reindexing examined each
+  output only once, so an output beyond the current window was deemed not to
+  belong to the wallet and was never reexamined, even after a later output
+  extended the window. Since outputs were examined in a random order, the same
+  wallet could show different balances on different runs. Reindexing now
+  repeats the process until the window stops extending.
 
 {% include snippets/recap-ad.md when="2026-09-08 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="8525" %}
+{% include linkers/issues.md v=2 issues="8525,36111,36032,9435,3368,3366,11090,11140,792,2262" %}
 [spc del]: https://delvingbitcoin.org/t/silent-payments-coinbase/2833
 [cln dos del]: https://delvingbitcoin.org/t/disclosure-crashing-cln-with-a-flood-of-pings/2846
 [cln v25.09]: https://github.com/ElementsProject/lightning/releases/tag/v25.09
@@ -228,3 +364,16 @@ FIXME:Gustavojfe
 [askii delving cvd]: https://delvingbitcoin.org/t/covenants-diy-a-node-editor-for-covenant-scripts/2826
 [cofund atlas]: https://getcofund.com/research/covenants-use-case-atlas
 [ademan delving lark]: https://delvingbitcoin.org/t/improving-the-security-of-lark-oor-channels-with-equivocation-bonds/2816
+[news177 bech32]: /en/newsletters/2021/12/01/#bitcoin-core-16807
+[news419 gettxspendingprevout]: /en/newsletters/2026/08/21/#bitcoin-core-35889
+[news379 eclair liquidity]: /en/newsletters/2025/11/07/#eclair-3206
+[news418 eclair flags]: /en/newsletters/2026/08/14/#eclair-3341
+[news419 hwi]: /en/newsletters/2026/08/21/#hwi-842
+[news404 eclair taproot]: /en/newsletters/2026/05/08/#eclair-3144
+[news420 hwi]: /en/newsletters/2026/08/28/#hwi-841
+[Core Lightning 26.06.7]: https://github.com/ElementsProject/lightning/releases/tag/v26.06.7
+[LND v0.21.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.21.3-beta
+[LND v0.20.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.4-beta
+[news420 cln embargo]: /en/newsletters/2026/08/28/#prepare-for-an-upcoming-core-lightning-security-release
+[news420 lnd deadlock]: /en/newsletters/2026/08/28/#lnd-11008
+[news419 lnd account]: /en/newsletters/2026/08/21/#lnd-11065
