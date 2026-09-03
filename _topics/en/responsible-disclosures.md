@@ -202,6 +202,9 @@ optech_mentions:
   - title: "Bastien Teinturier disclosed a reorg vulnerability in LND channel closes"
     url: /en/newsletters/2026/08/21/#reorg-vulnerability-in-lnd-channel-closes
 
+  - title: "Erick Cestari disclosed a ping-flood memory-exhaustion DoS vulnerability in Core Lightning"
+    url: /en/newsletters/2026/09/04/#responsible-disclosure-of-a-denial-of-service-vulnerability-in-cln
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

@@ -79,6 +79,9 @@ optech_mentions:
   - title: "HWI to enter maintenance mode and eventually be archived, with BHWI as a likely successor"
     url: /en/newsletters/2026/08/28/#hwi-repository-to-enter-maintenance-mode
 
+  - title: "HWI #792 adds a --registration option to signtx for signing with registered BIP388 wallet policies"
+    url: /en/newsletters/2026/09/04/#hwi-792
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)
