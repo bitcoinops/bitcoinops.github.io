@@ -78,13 +78,13 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [news349 fee]: /zh/newsletters/2025/04/11/#bitcoin-core-pr-review-club
 [news411 http]: /zh/newsletters/2026/06/26/#bitcoin-core-35182
 [news416 sigops]: /zh/newsletters/2026/07/31/#bitcoin-core-32800
-[news418 eclair]: /en/newsletters/2026/08/14/#eclair-3346
+[news418 eclair]: /zh/newsletters/2026/08/14/#eclair-3346
 [news416 onion]: /zh/newsletters/2026/07/31/#bolts-1343
 [news416 fulfillment]: /zh/newsletters/2026/07/31/#bolts-1344
 [news419 hwi]: /en/newsletters/2026/08/21/#hwi-842
 [news364 ldk attribution]: /zh/newsletters/2025/07/25/#ldk-3801
 [news138 sighash]: /zh/newsletters/2021/03/03/#rust-bitcoin-573
-[news418 eclair fixes]: /en/newsletters/2026/08/14/#eclair-3346
+[news418 eclair fixes]: /zh/newsletters/2026/08/14/#eclair-3346
 [news419 eclair reserves]: /en/newsletters/2026/08/21/#eclair-3352
 [news419 eclair funding]: /en/newsletters/2026/08/21/#eclair-3351
 [news419 eclair gossip]: /en/newsletters/2026/08/21/#eclair-3345
