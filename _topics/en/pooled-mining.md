@@ -95,6 +95,9 @@ optech_mentions:
   - title: "Stratum v2 STARK proof demo for private block template fee reporting"
     url: /en/newsletters/2025/06/20/#stratum-v2-stark-proof-demo
 
+  - title: "Using silent payments for miner payouts in the coinbase transaction"
+    url: /en/newsletters/2026/09/04/#using-silent-payments-for-miner-payouts-in-coinbase-transaction
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:

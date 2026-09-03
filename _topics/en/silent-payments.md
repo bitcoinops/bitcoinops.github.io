@@ -116,6 +116,9 @@ optech_mentions:
   - title: "Silent payments sender plugin for Electrum"
     url: /en/newsletters/2026/08/21/#silent-payments-sender-plugin-for-electrum
 
+  - title: "Using silent payments for miner payouts in the coinbase transaction"
+    url: /en/newsletters/2026/09/04/#using-silent-payments-for-miner-payouts-in-coinbase-transaction
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
