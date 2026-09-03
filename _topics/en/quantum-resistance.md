@@ -175,6 +175,15 @@ optech_mentions:
   - title: "libshrincs, a formally verified hash-based signature implementation"
     url: /en/newsletters/2026/08/21/#libshrincs-formally-verified-hash-based-signatures
 
+  - title: "Continued discussion of PQC output types"
+    url: /en/newsletters/2026/09/04/#continued-discussion-of-pqc-output-types
+
+  - title: "DropKick commit/reveal PQC rescue"
+    url: /en/newsletters/2026/09/04/#dropkick-commit-reveal-pqc-rescue
+
+  - title: "SHRINCS draft BIP"
+    url: /en/newsletters/2026/09/04/#shrincs-draft-bip
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

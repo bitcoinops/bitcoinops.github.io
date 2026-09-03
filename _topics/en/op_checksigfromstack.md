@@ -97,6 +97,9 @@ optech_mentions:
   - title: "LNHANCE soft fork"
     url: /en/newsletters/2025/12/05/#lnhance-soft-fork
 
+  - title: "BIP448 and CSFS/CTV demos and applications"
+    url: /en/newsletters/2026/09/04/#bip448-and-csfs-ctv-demos-and-applications
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
