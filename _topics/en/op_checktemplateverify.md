@@ -187,6 +187,9 @@ optech_mentions:
   - title: "CTV-only vault proof of concept"
     url: /en/newsletters/2026/06/05/#ctv-only-vault-proof-of-concept
 
+  - title: "BIP448 and CSFS/CTV demos and applications"
+    url: /en/newsletters/2026/09/04/#bip448-and-csfs-ctv-demos-and-applications
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
