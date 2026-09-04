@@ -51,7 +51,7 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 
 - [Core Lightning #9374][] 修复了一个通道状态错误：当[双向注资][topic dual funding]通道最终确认的是较早一次 [RBF][topic rbf] 尝试、而不是最新那次时，就可能出现这个错误（Eclair 上的类似 bug 见[周报 #418][news418 eclair]）。此前，如果对等节点在 Core Lightning 还没追上区块链进度时就重新连了上来，它可能会以为确认的是最新那次 RBF 尝试，于是把通道锁定到一笔并未确认的注资交易上。现在，Core Lightning 会在相应区块被处理时就立刻记下真正确认的那次注资尝试，并在重建通道时使用这一次。
 
-- [Eclair #3342][] 实现了 [BOLTs #1343][] 所规定的 `option_onion_messages_only_channels` 特性比特（见[周报 #416][news416 onion]）。当配置为只为有通道的对等节点中继[洋葱消息][topic onion messages]时，Eclair 现在会通告这个特性比特。当为所有对等节点中继时，Eclair 通告的则是 `option_onion_messages` 特性比特。
+- [Eclair #3342][] 实现了 [BOLTs #1343][] 所规定的 `option_onion_messages_only_channels` 功能位（见[周报 #416][news416 onion]）。当配置为只为有通道的对等节点中继[洋葱消息][topic onion messages]时，Eclair 现在会通告这个功能位。当为所有对等节点中继时，Eclair 通告的则是 `option_onion_messages` 功能位。
 
 - [Eclair #3321][] 实现了对 `update_fulfill_htlc` 消息中新增的可选 `fulfillment_payload` 字段的支持；该字段由 [BOLTs #1344][] 规定，把[可归因失败][topic attributable failures]扩展到了成功支付的场景（见[周报 #416][news416 fulfillment]）。Eclair 可以中继 fulfillment payload，并把它作为归因数据的一部分加以验证；在自己是付款方时也能解密它，但当自己是收款方时还不会主动生成这样的载荷。该 PR 报告了与 LDK 的互操作性；LDK 此前已经为成功支付的路径加上了归因数据（见[周报 #364][news364 ldk attribution]）。
 
