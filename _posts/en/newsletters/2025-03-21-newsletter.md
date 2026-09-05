@@ -153,10 +153,11 @@ repo], and [BINANAs][binana repo]._
   centralized element. {% assign timestamp="1:03:19" %}
 
 - [Bitcoin Core #31283][] introduces a new `waitNext()` method to the
-  `BlockTemplate` interface, which will only return a new template if the chain
-  tip changes or the mempool fees increase above the `MAX_MONEY` threshold.
-  Previously, miners would receive a new template with every request, resulting
-  in unnecessary template generation. This change aligns with the [Stratum
+  `BlockTemplate` interface, which returns a new template once the chain
+  tip changes or the fees in the latest block template rise by at least a caller-specified `fee_threshold`.
+  If no `fee_threshold` is supplied, a new template is generated only after a tip change.
+  Previously, miners would receive a new template on every request.
+  This change aligns with the [Stratum
   V2][topic pooled mining] protocol specification. {% assign timestamp="37:27" %}
 
 - [Eclair #3037][] enhances the `listoffers` command (See Newsletter
