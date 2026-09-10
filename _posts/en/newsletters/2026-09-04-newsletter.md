@@ -37,7 +37,7 @@ infrastructure software.
   the so-called pool tag, so that the miner can scan the chain for the funds.
 
   The author is looking for feedback and critiques on the proposed idea,
-  so that it can be formalized into a real specification.
+  so that it can be formalized into a real specification. {% assign timestamp="2:19" %}
 
 - **Responsible disclosure of a denial-of-service vulnerability in CLN**:
   Erick Cestari [posted][cln dos del] to Delving Bitcoin the responsible
@@ -67,7 +67,7 @@ infrastructure software.
   The issue was fixed by providing the `connectd` daemon with its own backpressure
   mechanism, activated by the `peer_outq` queue actually draining before reading
   the next incoming message. The fix was introduced in [Core Lightning #8525][]
-  and published in release 25.09.
+  and published in release 25.09. {% assign timestamp="27:42" %}
 
 ## Changing consensus
 
@@ -98,7 +98,7 @@ Bitcoin's consensus rules._
   would push archival storage into terabytes per year unless block-wide SNARK
   aggregation can prune witnesses. Adam Gibson [agreed][ag delving pqout] with
   Wuille that bundling CISA into P2TRv2 is a poor fit for P2TRv2's
-  adoption-first goal.
+  adoption-first goal. {% assign timestamp="54:03" %}
 
 - **DropKick commit/reveal PQC rescue**: Conduition [posted][c ml dropkick] to
   the Bitcoin-Dev mailing list a sketch of DropKick, a commit/reveal
@@ -124,7 +124,7 @@ Bitcoin's consensus rules._
   (about 100 blocks if users will pay 1% of the UTXO to honest miners) plus a
   value-proportional fee can make censorship unprofitable, assuming that the
   censors are not capable or unwilling to reorganize out blocks that undermine
-  the censorship attempt.
+  the censorship attempt. {% assign timestamp="1:14:08" %}
 
 - **SHRINCS draft BIP**: Conduition [posted][c ml shrincs] to the Bitcoin-Dev
   mailing list, on behalf of the SHRINCS working group, a first [draft][shrincs
@@ -146,7 +146,7 @@ Bitcoin's consensus rules._
   today's transactions unless those fields are discounted. Jonas Nick and
   remix7531's [libshrincs][news419 libshrincs] C library with machine-checked
   WOTS+C proofs was also separately released to provide implementation support
-  for those wishing to integrate SHRINCS.
+  for those wishing to integrate SHRINCS. {% assign timestamp="1:35:48" %}
 
 - **BIP448 and CSFS/CTV demos and applications**: Work around [BIP448][] (the
   [tapscript][topic tapscript] bundle of `OP_TEMPLATEHASH`,
@@ -176,7 +176,7 @@ Bitcoin's consensus rules._
   distinct [BIP341][] sighashes. The bond and the preallocated transaction tree
   need a next-transaction [covenant][topic covenants], which can be either
   [`OP_CHECKTEMPLATEVERIFY`][topic op_checktemplateverify] (CTV) or
-  `OP_TEMPLATEHASH`.
+  `OP_TEMPLATEHASH`. {% assign timestamp="37:55" %}
 
 ## Releases and release candidates
 
@@ -196,7 +196,7 @@ release candidates._
   the binaries. Between August 28 and September 1, Docker users who pulled the
   `v26.06.7` or `latest` tags received images that reported the new version but
   did not contain the fixes. These users should check their image digest and
-  re-pull.
+  re-pull. {% assign timestamp="1:51:35" %}
 
 - [LND v0.21.3-beta][] is a maintenance release of this popular LN node
   implementation. It includes the peer resource limits, `channel_update`
@@ -208,14 +208,14 @@ release candidates._
   migration failure for legacy [AMP][topic amp] invoices, a REST WebSocket
   proxy panic, and several gossip query and cooperative close bugs, and adds
   the experimental `XCreateAccount` RPC (see [Newsletter #419][news419 lnd
-  account]).
+  account]). {% assign timestamp="1:55:32" %}
 
 - [LND v0.20.4-beta][] is a maintenance release of LND's 0.20 release branch.
   It backports most of the fixes in 0.21.3-beta, including the peer resource
   limits, `channel_update` encoding fix, and dust HTLC resolution fix, and
   additionally rejects fixed-size TLV records such as inbound fees and
   [MuSig2][topic musig] nonces whose declared length is incorrect, instead of
-  silently accepting and re-encoding them.
+  silently accepting and re-encoding them. {% assign timestamp="1:55:37" %}
 
 ## Notable code and documentation changes
 
@@ -236,7 +236,7 @@ repo], and [BINANAs][binana repo]._
   Now, the RPC returns only position 90, where the length violation begins. In
   the author's tests, an authenticated request near the maximum HTTP request
   size used approximately 5.7 GiB of memory before the change and 240 MiB
-  after.
+  after. {% assign timestamp="1:58:21" %}
 
 - [Bitcoin Core #36032][] improves the performance of `createrawtransaction`,
   `createpsbt`, `sendmany`, and other RPCs that build a transaction by making
@@ -247,7 +247,7 @@ repo], and [BINANAs][binana repo]._
   the keys and values together by index, similar to the `gettxspendingprevout`
   fix in [Newsletter #419][news419 gettxspendingprevout]. The author reports
   that parsing 10,000 outputs in a debug build now takes 0.5 seconds instead of
-  1.8 seconds.
+  1.8 seconds. {% assign timestamp="2:01:17" %}
 
 - [Core Lightning #9435][] updates CLN to force close a channel when a peer
   sends a `channel_reestablish` message with a `next_commitment_number` of
@@ -256,7 +256,7 @@ repo], and [BINANAs][binana repo]._
   lets it recover its balance using a [static channel backup][topic static
   channel backups]. Previously, CLN only enforced this on a freshly opened
   channel. For any other channel, CLN first detected the peer's stale
-  `next_revocation_number`, sent a warning, and left the channel open.
+  `next_revocation_number`, sent a warning, and left the channel open. {% assign timestamp="2:04:52" %}
 
 - [Eclair #3368][] fixes a bug where a `commitment_signed` message received
   from a peer on a non-[taproot][topic taproot] channel could carry the
@@ -267,7 +267,7 @@ repo], and [BINANAs][binana repo]._
   unsolicited partial signature as the peer's signature. This prevented Eclair
   from force closing the channel later on. Now, Eclair selects the signature
   type that matches the channel's commitment format before verification and
-  only stores the verified signature.
+  only stores the verified signature. {% assign timestamp="2:08:10" %}
 
 - [Eclair #3366][] hardens [splicing][topic splicing] against peers that don't
   follow the specification. Eclair now disconnects a peer that sends channel
@@ -281,7 +281,7 @@ repo], and [BINANAs][binana repo]._
   through [liquidity advertisements][topic liquidity advertisements] is aborted
   after signing begins, Eclair now immediately fails the incoming [HTLCs][topic
   htlc] paying for it (see [Newsletter #379][news379 eclair liquidity] for a
-  related fix).
+  related fix). {% assign timestamp="2:10:54" %}
 
 - [LND #11090][] rate limits inbound `ping` messages and caps each peer's
   outgoing message queue, preventing the kind of resource exhaustion described
@@ -299,7 +299,7 @@ repo], and [BINANAs][binana repo]._
   differ, causing peers to reject the update. Updates that LND forwards from
   other nodes now also keep any TLV records it doesn't recognize, rather than
   dropping them and invalidating the originator's signature (see [Newsletter
-  #418][news418 eclair flags] for a similar Eclair fix).
+  #418][news418 eclair flags] for a similar Eclair fix). {% assign timestamp="2:14:55" %}
 
 - [LND #11140][] fixes how LND handles a forwarded [HTLC][topic htlc] when the
   outgoing channel force closes and the HTLC is [trimmed][topic trimmed htlc]
@@ -312,7 +312,7 @@ repo], and [BINANAs][binana repo]._
   commitment that actually confirmed. LND also no longer fails an incoming HTLC
   early when the outgoing HTLC is dust on its commitment but has an output on
   the peer's commitment, since the peer could still claim the output with the
-  preimage.
+  preimage. {% assign timestamp="2:20:33" %}
 
 - [HWI #792][] adds a `--registration` option to the `signtx` command for
   signing [PSBTs][topic psbt] using [BIP388][] wallet policies that were
@@ -322,7 +322,7 @@ repo], and [BINANAs][binana repo]._
   by `registerdescriptor`, including the policy name, [descriptor][topic
   descriptors], device type, and any device-specific registration data such as
   Ledger's HMAC. Support is implemented for BitBox02, Coldcard Edge, Jade, and
-  non-legacy Ledger devices.
+  non-legacy Ledger devices. {% assign timestamp="2:23:55" %}
 
 - [BDK #2262][] fixes a bug where reindexing a wallet's transaction graph could
   miss some of the wallet's own outputs. BDK's `KeychainTxOutIndex` watches a
@@ -333,7 +333,7 @@ repo], and [BINANAs][binana repo]._
   belong to the wallet and was never reexamined, even after a later output
   extended the window. Since outputs were examined in a random order, the same
   wallet could show different balances on different runs. Reindexing now
-  repeats the process until the window stops extending.
+  repeats the process until the window stops extending. {% assign timestamp="2:25:48" %}
 
 {% include snippets/recap-ad.md when="2026-09-08 16:30" %}
 {% include references.md %}
