@@ -53,7 +53,33 @@ software.
   contribution to the pot, and released a second version of the paper that
   splits each bet into several unequal sub-bets.
 
-FIXME:bitschmidty
+- **Update on silent payments light clients**: Rob Segers [posted][sp light ml]
+  to the Bitcoin-Dev mailing list about updates to an older discussion on Delving
+  Bitcoin (see [Newsletter #305][news305 sp light]). That discussion, that stalled
+  in June 2024, was focused on providing specifications for
+  [silent payments][topic silent payments] light clients and measuring performance
+  of different ways to retrieve data from blocks.
+
+  Segers ran an instance of [BlindBit Oracle v2][blindbit gh], an implementation of
+  the [BIP352][] indexing server which drops filters completely and instead streams
+  per-output data (txid, tweak, and 8-byte output prefix), and compared its performance
+  against [BIP158 compact block filters][topic compact block filters] and
+  [taproot][topic taproot]-only filters. The comparison was done on unsampled block data
+  from taproot activation until block 965,089 (a total of 255,434 blocks).
+  [Results][results gh] show that the BlindBit Oracle approach downloads about 2.1x
+  as many bytes as a taproot-only filter plus the raw tweak data a filter client still
+  needs, not counting the full block a filter client must fetch on each match,
+  in exchange for no false positives and no per-match block fetches.
+
+  Segers also noted that a light client currently cannot tell whether a server
+  omitted a tweak for a block, which would silently lose the receiver money. His
+  server publishes per-block commitments over the sorted tweak set and
+  checkpoints them to nostr every six hours, making omissions attributable after
+  the fact, although clients should still fetch the full block on a match.
+
+  Finally, Segers noted that the new version of the BlindBit Oracle had drifted severely from
+  the original specifications. Thus, the author provided a [convergence draft][sp light draft]
+  which is up for discussion.
 
 ## Releases and release candidates
 
@@ -82,3 +108,8 @@ FIXME:Gustavojfe
 
 [bab del]: https://delvingbitcoin.org/t/babilonia-probabilistic-coinjoin-and-covert-betting/2704
 [bab paper]: https://github.com/AdamISZ/babilonia-paper
+[sp light ml]: https://groups.google.com/g/bitcoindev/c/qqDYHnnoM7k
+[news305 sp light]: /en/newsletters/2024/05/31/#light-client-protocol-for-silent-payments
+[blindbit gh]: https://github.com/setavenger/blindbit-oracle
+[results gh]: https://github.com/bitsagarob/silentpayments-measurements
+[sp light draft]: https://github.com/bitsagarob/silentpayments-measurements/blob/master/LIGHT-CLIENT-PROTOCOL-DRAFT.md
