@@ -102,8 +102,8 @@ see_also:
     link: https://en.bitcoin.it/Privacy#CoinJoin
   - title: "Privacy Wiki"
     link: https://en.bitcoin.it/wiki/Privacy
-  - title: "Coinjoins.org - Learn about collaborative bitcoin transactions"
-    link: https://coinjoins.org/
+  - title: "CoinJoin (LearnBitcoin glossary)"
+    link: https://www.learnbitcoin.com/glossary/coinjoin
 
 ---
 
