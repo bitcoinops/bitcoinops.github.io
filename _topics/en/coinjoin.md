@@ -94,6 +94,9 @@ optech_mentions:
   - title: "Wasabi Wallet 2.8.0 adds the ability to pay recipients directly within a coinjoin"
     url: /en/newsletters/2026/07/24/#wasabi-wallet-2-8-0-released
 
+  - title: "Babilonia: a proposed probabilistic coinjoin and covert betting protocol"
+    url: /en/newsletters/2026/09/11/#a-protocol-for-probabilistic-coinjoin-and-covert-betting
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

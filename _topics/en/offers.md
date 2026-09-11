@@ -147,6 +147,9 @@ optech_mentions:
   - title: "Eclair #3325 accepts BOLT12 invoices with attached reply paths"
     url: /en/newsletters/2026/07/31/#eclair-3325
 
+  - title: "LND #11061 adds signing and verification of BOLT12 invoice requests and invoices"
+    url: /en/newsletters/2026/09/11/#lnd-11061
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

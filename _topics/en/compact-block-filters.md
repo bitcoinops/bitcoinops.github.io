@@ -104,6 +104,9 @@ optech_mentions:
   - title: "Discussion of block-range filters to reduce compact block filter download size"
     url: /en/newsletters/2026/08/28/#request-for-comments-on-using-block-range-filters
 
+  - title: "Benchmarks comparing a silent payments indexing server against BIP158 and taproot-only filters"
+    url: /en/newsletters/2026/09/11/#update-on-silent-payments-light-clients
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
