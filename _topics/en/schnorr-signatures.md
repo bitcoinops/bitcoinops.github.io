@@ -128,6 +128,9 @@ optech_mentions:
   - title: "Draft BIP for full aggregation of BIP340 signatures"
     url: /en/newsletters/2026/07/24/#draft-bip-for-full-aggregation-of-bip340-signatures
 
+  - title: "LND #11061 signs BOLT12 messages with BIP340 signatures over a TLV Merkle root"
+    url: /en/newsletters/2026/09/11/#lnd-11061
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?

@@ -115,6 +115,9 @@ optech_mentions:
   - title: "LN developer discussion of variations of signature adaptors for adding PTLC support"
     url: /en/newsletters/2024/10/18/#ptlcs
 
+  - title: "Babilonia uses adaptor signatures to settle covert onchain bets that double as coinjoins"
+    url: /en/newsletters/2026/09/11/#a-protocol-for-probabilistic-coinjoin-and-covert-betting
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

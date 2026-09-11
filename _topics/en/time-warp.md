@@ -63,6 +63,9 @@ optech_mentions:
   - title: "Discussion of BIP54's timewarp fix and its impact on the 2106 block timestamp overflow issue"
     url: /en/newsletters/2026/01/02/#relax-bip54-timestamp-restriction-for-2106-soft-fork
 
+  - title: "Bitcoin Core #35949 updates block template creation to follow BIP54's timewarp mitigation"
+    url: /en/newsletters/2026/09/11/#bitcoin-core-35949
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal
