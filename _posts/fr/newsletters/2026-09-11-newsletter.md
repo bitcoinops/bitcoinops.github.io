@@ -201,7 +201,6 @@ BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin
 [blindbit gh]: https://github.com/setavenger/blindbit-oracle
 [results gh]: https://github.com/bitsagarob/silentpayments-measurements
 [sp light draft]: https://github.com/bitsagarob/silentpayments-measurements/blob/master/LIGHT-CLIENT-PROTOCOL-DRAFT.md
-
 [LDK v0.3-rc1]: https://github.com/lightningdevkit/rust-lightning/tree/v0.3-rc1
 [ldk 0.3 notes]: https://github.com/lightningdevkit/rust-lightning/blob/v0.3-rc1/CHANGELOG.md
 [LDK v0.2.6]: https://github.com/lightningdevkit/rust-lightning/blob/v0.2.6/CHANGELOG.md
