@@ -2,10 +2,10 @@
 
 ## Newsletter
 
-The newsletter is published weekly, on Wednesdays, around 15:00 UTC. Typically a
-pull request for the newsletter is opened the Saturday before publishing. Any
+The newsletter is published weekly, on Fridays, around 13:00 UTC. Typically a
+pull request for the newsletter is opened about a week before publishing. Any
 review of the newsletter PRs is appreciated. However, feedback received after
-Tuesday UTC may not be incorporated due to time constraints.
+Thursday UTC may not be incorporated due to time constraints.
 
 ## Topics pages
 
