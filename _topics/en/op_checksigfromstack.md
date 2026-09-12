@@ -211,6 +211,14 @@ features for Bitcoin users:
   it may not be possible to disable their use (even if they become
   unpopular) without risking someone losing money.
 
+Note that `OP_CSFS` alone does not provide a way to place the spending
+transaction onto the stack for inspection.  The transaction must already
+be on the stack as the message to be verified, which typically requires
+combining `OP_CSFS` with `OP_CAT` or another mechanism that can serialize
+the transaction into the message.  In other words, `OP_CSFS` provides the
+verification primitive for introspection, but it is not the sole opcode
+needed to enable it.
+
 ### Relationship to OP_CAT
 
 Proposals to add `OP_CSFS` to Bitcoin are often combined with
