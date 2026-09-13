@@ -36,7 +36,7 @@ optech_mentions:
   - title: Concern about forced expiration spam in very large channel factories
     url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
 
-  - title: Mitigating expiration floods with fee-depedent timelocks
+  - title: Mitigating expiration floods with fee-dependent timelocks
     url: /en/newsletters/2024/01/03/#fee-dependent-timelocks
 
 ## Optional.  Same format as "primary_sources" above

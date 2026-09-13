@@ -177,7 +177,7 @@ infrastructure software.
   stolen---but if you used a variation on the process, you might still
   have a chance to move your bitcoins to safety.  If you use a wallet
   or other software that you think might use Libbitcoin, please
-  advise the developers about the vulnernability and ask them to
+  advise the developers about the vulnerability and ask them to
   investigate.
 
   We thank the researchers for their significant efforts in making a
