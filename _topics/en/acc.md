@@ -67,7 +67,7 @@ optech_mentions:
   - title: Discussion about transaction weight limit in response to large BitVM transactions
     url: /en/newsletters/2025/06/06/#transaction-weight-limit-with-exception-to-prevent-confiscation
 
-  - title: "Improvments to BitVM-style contracts allowing disprove transactions to be just 200 bytes"
+  - title: "Improvements to BitVM-style contracts allowing disprove transactions to be just 200 bytes"
     url: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
 
   - title: "Continued discussion about CTV+CSFS advantages for BitVM"

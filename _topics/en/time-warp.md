@@ -45,7 +45,7 @@ optech_mentions:
   - title: "Question: how many blocks per second can sustainably be created using a time warp attack?"
     url: /en/newsletters/2024/07/26/#how-many-blocks-per-second-can-sustainably-be-created-using-a-time-warp-attack
 
-  - title: "New time warp vulnernability affecting testnet4 despite previous time warp fixes"
+  - title: "New time warp vulnerability affecting testnet4 despite previous time warp fixes"
     url: /en/newsletters/2024/08/16/#new-time-warp-vulnerability-in-testnet4
 
   - title: "Discussion about fixing Murch-Zawy time warp in consensus cleanup"

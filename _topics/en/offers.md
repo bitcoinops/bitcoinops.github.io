@@ -105,7 +105,7 @@ optech_mentions:
   - title: "LDK #3082 adds an interface for building static reusable offers"
     url: /en/newsletters/2024/06/21/#ldk-3082
 
-  - title: "Discussion of fully implementing offers versus incremently adding features from it"
+  - title: "Discussion of fully implementing offers versus incrementally adding features from it"
     url: /en/newsletters/2024/07/05/#adding-a-bolt11-invoice-field-for-blinded-paths
 
   - title: "Core Lightning #7461 adds support for nodes to self-fetch and self-pay BOLT12 offers and invoices"

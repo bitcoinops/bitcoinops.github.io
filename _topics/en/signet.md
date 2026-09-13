@@ -90,7 +90,7 @@ optech_mentions:
   - title: "Bitcoin Core #19937 adds utilities for mining signet blocks"
     url: /en/newsletters/2021/01/20/#bitcoin-core-19937
 
-  - title: "Discussion about multiple signet compatibilty with soft fork activation"
+  - title: "Discussion about multiple signet compatibility with soft fork activation"
     url: /en/newsletters/2021/04/14/#taproot-activation-discussion
 
   - title: "LND #5025 adds basic support for using signet"
