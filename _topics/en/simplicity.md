@@ -45,7 +45,7 @@ optech_mentions:
   - title: "BTC-Script (based on Chia Lisp) as an alternative to Simplicity"
     url: /en/newsletters/2022/03/16/#using-chia-lisp
 
-  - title: "Comparisons betwen Simplicity and BTC Lisp"
+  - title: "Comparisons between Simplicity and BTC Lisp"
     url: /en/newsletters/2024/03/20/#overview-of-btc-lisp
 
   - title: "Flexible coin earmarks probably compatible with Simplicity"

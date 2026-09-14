@@ -43,7 +43,7 @@ optech_mentions:
   - title: Question about Wasabi coinjoin mixing and exchange blacklisting
     url: /en/newsletters/2018/09/25/#how-likely-are-you-to-get-blacklisted-by-an-exchange-if-you-use-wasabi-wallet-s-coinjoin-mixing
 
-  - title: Fidelity bonds for imporoved sybil resistance in distributed coinjoin
+  - title: Fidelity bonds for improved sybil resistance in distributed coinjoin
     url: /en/newsletters/2019/07/31/#fidelity-bonds-for-improved-sybil-resistance
 
   - title: "Simple Non-Interactive Coinjoin with Keys for Encryption Reused (SNICKER)"
