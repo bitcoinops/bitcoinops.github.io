@@ -57,7 +57,7 @@ lang: zh
 [function decorators]: https://www.thecodeship.com/patterns/guide-to-python-function-decorators/
 [flask]: http://flask.pocoo.org/
 [ln minisketch]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001741.html
-[optimized transaction relay]: http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-efficient-p2p-transaction-relay/
+[optimized transaction relay]: https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki
 [naumenko relay simulator]: https://github.com/naumenkogs/Bitcoin-Simulator
 [newsletter #9]: /zh/newsletters/2018/08/21/#bandwidth-efficient-set-reconciliation-protocol-for-transactions
 [newsletter #10]: /zh/newsletters/2018/08/28/#c-lightning-1854
