@@ -51,7 +51,7 @@ software.
   efficacy of the protocol. In a follow-up post, Gibson noted that a single bet
   leaks its size, since the winner's payout is an integer multiple of their
   contribution to the pot, and released a second version of the paper that
-  splits each bet into several unequal sub-bets.
+  splits each bet into several unequal sub-bets. {% assign timestamp="1:14" %}
 
 - **Update on silent payments light clients**: Rob Segers [posted][sp light ml]
   to the Bitcoin-Dev mailing list about updates to an older discussion on Delving
@@ -79,7 +79,7 @@ software.
 
   Finally, Segers noted that the new version of the BlindBit Oracle had drifted severely from
   the original specifications. Thus, the author provided a [convergence draft][sp light draft]
-  which is up for discussion.
+  which is up for discussion. {% assign timestamp="43:26" %}
 
 ## Releases and release candidates
 
@@ -94,7 +94,7 @@ release candidates._
   channels][topic anchor outputs] by default and requires applications to
   explicitly accept incoming channels. Upgrading invalidates previously issued
   [BOLT11][] invoices containing payment metadata. Developers should review the
-  [API and backwards-compatibility changes][ldk 0.3 notes] before testing.
+  [API and backwards-compatibility changes][ldk 0.3 notes] before testing. {% assign timestamp="1:04:06" %}
 
 - [LDK v0.2.6][] is a security release of this library for building LN-enabled
   wallets and applications. It fixes a denial-of-service vulnerability in which
@@ -103,7 +103,7 @@ release candidates._
   fails to deserialize. It also fixes a fee-inflation vulnerability that
   allowed a malicious counterparty to make a node over-allocate fees when
   contributing to a splice it initiated, with the excess going to the
-  counterparty's output.
+  counterparty's output. {% assign timestamp="1:05:58" %}
 
 - [BTCPay Server 2.4.4][] is a security release of this self-hosted payment
   processor. It deletes legacy BitPay Basic-auth API keys and removes that
@@ -122,7 +122,7 @@ release candidates._
   encouraged to upgrade and review the [breaking changes][btcpay 2.4.4
   announcement]. For the web-hosting billing plugin, migration requires
   upgrading to version 4.0.0 and replacing the legacy API key with a new
-  Greenfield API key; see its [migration guide][btcpay billing migration].
+  Greenfield API key; see its [migration guide][btcpay billing migration]. {% assign timestamp="1:07:44" %}
 
 ## Notable code and documentation changes
 
@@ -146,7 +146,7 @@ repo], and [BINANAs][binana repo]._
   when necessary, including when the node's clock is behind this minimum. This
   applies to all networks in preparation for the possible activation of the
   [consensus cleanup][topic consensus cleanup] soft fork, without changing
-  consensus validation.
+  consensus validation. {% assign timestamp="1:13:04" %}
 
 - [Bitcoin Core #34931][] fixes a bug where a UTXO database entry that could
   not be deserialized was treated as a missing coin. Consequently, a valid
@@ -155,7 +155,7 @@ repo], and [BINANAs][binana repo]._
   chain. Bitcoin Core now distinguishes between these outcomes and aborts with
   a database error when deserialization fails. An additional coin serialization
   bug or memory corruption before storage would be required for this bug to
-  occur, since LevelDB's checksums already detect ordinary disk corruption.
+  occur, since LevelDB's checksums already detect ordinary disk corruption. {% assign timestamp="1:15:11" %}
 
 - [Bitcoin Core #36048][] fixes command injection through the `-walletnotify`
   configuration option (see [Newsletter #86][news86 walletnotify]) on
@@ -167,7 +167,7 @@ repo], and [BINANAs][binana repo]._
   shell escaped, the substitution function interpreted the regular expression
   replacement characters within it, breaking the shell quoting. Placeholder
   substitution now treats wallet names literally, preserving the shell
-  escaping. This behavior was introduced in Bitcoin Core 24.0.
+  escaping. This behavior was introduced in Bitcoin Core 24.0. {% assign timestamp="1:18:14" %}
 
 - [Bitcoin Core #36123][] and [#36169][bitcoin core #36169] fix unbounded
   memory growth and Windows port sharing in the replacement HTTP server (see
@@ -180,7 +180,7 @@ repo], and [BINANAs][binana repo]._
   listening sockets. Previously, another local process could bind the same
   endpoint and potentially receive connections containing RPC credentials. In
   one reviewer's test, sixteen REST connections increased memory usage by 3.2
-  GB before the buffering fix and only 3 MB afterward over 90 seconds.
+  GB before the buffering fix and only 3 MB afterward over 90 seconds. {% assign timestamp="1:21:12" %}
 
 - [Bitcoin Core #36176][] fixes an error that occurs when a wallet operation
   attempts to save its load-on-startup preference while the dynamic settings
@@ -190,7 +190,7 @@ repo], and [BINANAs][binana repo]._
   Previously, attempting to save this preference with settings disabled
   produced an RPC error or caused Bitcoin-Qt to crash with an uncaught
   exception after the wallet state had already changed. Now, the operation
-  completes with a warning that the preference could not be saved.
+  completes with a warning that the preference could not be saved. {% assign timestamp="1:22:32" %}
 
 - [Core Lightning #9434][] and [#9473][core lightning #9473] fix crashes
   involving persistent routing preferences in `askrene` (see [Newsletter
@@ -205,7 +205,7 @@ repo], and [BINANAs][binana repo]._
   Previously, the zero-valued bias record was removed from memory before being
   saved, causing a null pointer dereference. Now, the zero value is saved
   before the record is removed from memory, preventing the previous bias from
-  being restored after a restart.
+  being restored after a restart. {% assign timestamp="1:24:49" %}
 
 - [LND #11061][] continues the implementation of [BOLT12 offers][topic offers]
   by adding support for signing and verifying invoice requests and invoices
@@ -213,7 +213,7 @@ repo], and [BINANAs][binana repo]._
   signatures commit to a Merkle root constructed from the messages' signed TLV
   records. Read validators now reject invalid signatures rather than only
   checking that a signature is present. This builds on the invoice request
-  codec described in [Newsletter #413][news413 bolt12].
+  codec described in [Newsletter #413][news413 bolt12]. {% assign timestamp="1:26:29" %}
 
 - [LND #11125][] allows callers to reserve wallet UTXOs until the transaction
   spending them reaches a chosen number of confirmations. Previously,
@@ -224,13 +224,13 @@ repo], and [BINANAs][binana repo]._
   leaseoutput]) and `FundPsbt` RPCs accept a confirmation count, allowing
   reservations to remain active across reorgs and ignore time-based expiration.
   Callers can still release reservations explicitly, which is required if a
-  transaction is abandoned. Existing timed reservations remain the default.
+  transaction is abandoned. Existing timed reservations remain the default. {% assign timestamp="1:27:23" %}
 
 - [LND #11064][] makes channel opening messages explicitly specify the channel
   type, as required by [BOLT2][]. LND now includes `channel_type` in
   `open_channel`, echoes it in `accept_channel`, and rejects incoming
   `open_channel` messages that omit it. RPC callers can still omit a type, in
-  which case LND chooses one based on both peers' supported channel types.
+  which case LND chooses one based on both peers' supported channel types. {% assign timestamp="1:28:33" %}
 
 - [BTCPay Server #7561][] and [#7542][btcpay server #7542] update how API keys
   are stored and handled. The first PR stores hashes and derived key IDs
@@ -243,7 +243,7 @@ repo], and [BINANAs][binana repo]._
   instead of its secret and key responses include an `id` field. The second PR
   removes the newly generated API key from the redirect URL to the API key
   management page, preventing the URL from exposing credentials through browser
-  history or request logs.
+  history or request logs. {% assign timestamp="1:29:31" %}
 
 - [BTCPay Server #7559][] extends Lightning payment monitoring beyond a BTCPay
   invoice's payment deadline, through its configured monitoring period.
@@ -251,7 +251,7 @@ repo], and [BINANAs][binana repo]._
   expired, but BTCPay would not record the payment. Now, the listener uses the
   existing monitoring period, allowing late payments received during that
   period to be recorded. This does not change the payment deadline for either
-  invoice or detect payments indefinitely.
+  invoice or detect payments indefinitely. {% assign timestamp="1:31:03" %}
 
 {% include snippets/recap-ad.md when="2026-09-15 16:30" %}
 {% include references.md %}
