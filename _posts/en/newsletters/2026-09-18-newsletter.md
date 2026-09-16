@@ -45,6 +45,39 @@ Bitcoin infrastructure software.
   agreed and argued in a [separate thread][price frontier] that per-miner
   control must sit at the last hop that still sees each miner's shares.
 
+- **Improvements in Utreexo initial block download**: Davidson Souza
+  [posted][utreexo ibd del] to Delving Bitcoin about a way to improve the
+  performance of [Utreexo][topic utreexo] during initial block download (IBD).
+  Utreexo is a dynamic accumulator that represents the UTXO set as a forest of
+  perfect merkle trees, allowing nodes to store only the roots. The goal is to
+  reduce the storage requirements for a validating node at the cost of increased
+  bandwidth, since each transaction verification requires an inclusion proof
+  appended to it. Each inclusion proof has a size similar to that of its related
+  block, for a total data requirement of around 1.3TB. Even with extensive caching
+  of recently spent UTXOs, proof data for explicit deletion weighs around 200GB.
+  The proposal would eliminate the need for deletion proofs during IBD,
+  resulting in a near-zero proof overhead.
+
+  According to BIP181, currently being discussed in [BIPs #1923], Utreexo has a
+  `modify` operation that performs both addition and deletion of an output from
+  the tree. The former follows a multi-step process which leverages a destroy-and-move
+  cycle, while the latter works by deleting a node of the tree and pushing the sibling
+  to the position where their parent was. Souza and other developers proposed to
+  modify the addition operation to include an implicit deletion. If you know beforehand
+  that a UTXO has been spent, you can avoid adding it to the tree and just push
+  the root directly up in the tree, as expected by the deletion operation.
+
+  One of the critical points is how to know which UTXOs have already been spent.
+  Souza's proposal leverages the [SwiftSync][topic swiftsync]
+  hintsfile, a file whose goal is exactly that of
+  keeping track of spent outputs, while also keeping a hash aggregate to check
+  whether the provided file is correct. This means that the implicit deletion
+  operation can only be leveraged during IBD. After that, a Utreexo client
+  will go back to normal addition and deletion operations.
+  An `assumevalid` SwiftSync implementation is under development in
+  [Floresta #1115][flor PR115], while a non-`assumevalid` version is actively
+  being developed.
+
 FIXME:bitschmidty
 
 ## Changes to services and client software
@@ -77,10 +110,12 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-09-22 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="1923" %}
 
 [price vardiff]: https://delvingbitcoin.org/t/research-a-clockless-vardiff-strands-a-slowing-miner/2718
 [shape proxy]: https://github.com/marafoundation/sv2-apps/tree/shape-proxy-v0.1.0/test-tools/shape-proxy
 [towns vardiff]: https://delvingbitcoin.org/t/research-a-clockless-vardiff-strands-a-slowing-miner/2718/4
 [news325 datum]: /en/newsletters/2024/10/18/#datum-protocol-announced
 [price frontier]: https://delvingbitcoin.org/t/vardiff-belongs-at-the-frontier/2734
+[utreexo ibd del]: https://delvingbitcoin.org/t/implicit-deletions-and-improvements-in-utreexo-ibd/2881
+[flor PR115]: https://github.com/getfloresta/Floresta/pull/1115
