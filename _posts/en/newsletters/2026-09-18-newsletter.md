@@ -85,7 +85,25 @@ FIXME:bitschmidty
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **BitBoxApp adds Spark-based Lightning payments:**
+  BitBox [announced][bitbox ln blog] a public beta hot wallet in the mobile
+  BitBoxApp [4.52.0][bitboxapp 4.52.0] built on the Breez SDK and the Spark
+  [statechain][topic statechains].
+
+- **Covenants.diy script editor:**
+  [covenants.diy][covenants diy] is an editor for constructing [covenant][topic
+  covenants] scripts and stepping through their execution in the browser. It supports
+  capabilities including [`OP_CTV`][topic op_checktemplateverify],
+  [`OP_CSFS`][topic op_checksigfromstack], [`OP_CAT`][topic op_cat],
+  [ANYPREVOUT][topic sighash_anyprevout], `OP_TEMPLATEHASH`, `OP_INTERNALKEY`,
+  `OP_PAIRCOMMIT`, and `OP_TXHASH` and is meant to be used on test networks.
+
+- **EntropyLab offline key calculator:**
+  [EntropyLab][entropylab gh] is a self-contained HTML file for air-gapped use
+  that converts user-supplied entropy or existing key material into [BIP39][]
+  seeds, extended keys, [descriptors][topic descriptors], addresses, [BIP85][]
+  child entropy, and [BIP352][] [silent payment][topic silent payments]
+  addresses, among other features.
 
 ## Releases and release candidates
 
@@ -119,3 +137,7 @@ FIXME:Gustavojfe
 [price frontier]: https://delvingbitcoin.org/t/vardiff-belongs-at-the-frontier/2734
 [utreexo ibd del]: https://delvingbitcoin.org/t/implicit-deletions-and-improvements-in-utreexo-ibd/2881
 [flor PR115]: https://github.com/getfloresta/Floresta/pull/1115
+[bitbox ln blog]: https://blog.bitbox.swiss/en/introducing-lightning-in-the-bitboxapp/
+[bitboxapp 4.52.0]: https://github.com/BitBoxSwiss/bitbox-wallet-app/releases/tag/v4.52.0
+[covenants diy]: https://covenants.diy/
+[entropylab gh]: https://github.com/OogaBoogaX/entropylab
