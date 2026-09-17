@@ -258,6 +258,9 @@ optech_mentions:
   - title: "BTCPay Server #7488 improves PSBT signing compatibility with signing devices"
     url: /en/newsletters/2026/08/07/#btcpay-server-7488
 
+  - title: "Bitcoin Core #36076 preserves sighash type when combining PSBTs"
+    url: /en/newsletters/2026/09/18/#bitcoin-core-36076
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

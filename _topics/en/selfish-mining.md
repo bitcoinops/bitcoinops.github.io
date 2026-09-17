@@ -42,6 +42,9 @@ optech_mentions:
   - title: "Draft BIP for stale tip relay"
     url: /en/newsletters/2026/08/07/#draft-bip-for-stale-tip-relay
 
+  - title: "BIPs #2241 adds BIP332 for opt-in stale tip relay"
+    url: /en/newsletters/2026/09/18/#bips-2241
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

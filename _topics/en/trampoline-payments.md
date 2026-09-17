@@ -67,6 +67,9 @@ optech_mentions:
   - title: "Eclair #3109 extends its attributable failures support to trampoline payments"
     url: /en/newsletters/2025/06/27/#eclair-3109
 
+  - title: "Eclair #3372 lets trampoline nodes retain lower fees to improve payment success"
+    url: /en/newsletters/2026/09/18/#eclair-3372
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "BOLTs PR #654: Trampoline Routing"

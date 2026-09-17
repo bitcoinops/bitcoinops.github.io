@@ -58,6 +58,9 @@ optech_mentions:
   - title: "Draft BIPs published with specifications for Utreexo accumulator, validation, and P2P protocol"
     url: /en/newsletters/2025/08/08/#draft-bips-proposed-for-utreexo
 
+  - title: "Proposal to use SwiftSync hints and implicit deletions to improve Utreexo initial block download"
+    url: /en/newsletters/2026/09/18/#improvements-in-utreexo-initial-block-download
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs
