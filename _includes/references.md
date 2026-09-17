@@ -272,3 +272,4 @@ version of BitcoinCore.org's RPC docs-->{% endcomment %}
 [rpc listtransactions]: {{rpc_prefix}}/wallet/listtransactions/
 [rpc scantxoutset]:   {{rpc_prefix}}/blockchain/scantxoutset/
 [rpc verifytxoutproof]:   {{rpc_prefix}}/blockchain/verifytxoutproof/
+[BIP332]: https://github.com/bitcoin/bips/blob/master/bip-0332.md
