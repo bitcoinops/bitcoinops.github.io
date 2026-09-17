@@ -227,6 +227,9 @@ optech_mentions:
   - title: "Draft BIP for the rawtr() output script descriptor"
     url: /en/newsletters/2026/08/21/#draft-bip-for-rawtr-output-script-descriptor
 
+  - title: "Draft BIP for specifying unspendable taproot internal keys in wallet policies"
+    url: /en/newsletters/2026/09/18/#new-bip-draft-for-unspendable-internal-keys
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

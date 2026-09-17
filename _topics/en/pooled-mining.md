@@ -98,6 +98,9 @@ optech_mentions:
   - title: "Using silent payments for miner payouts in the coinbase transaction"
     url: /en/newsletters/2026/09/04/#using-silent-payments-for-miner-payouts-in-coinbase-transaction
 
+  - title: "Analysis of vardiff controllers that strand slowing miners"
+    url: /en/newsletters/2026/09/18/#vardiff-controllers-that-strand-slowing-miners
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:

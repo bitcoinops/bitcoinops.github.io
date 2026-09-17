@@ -136,6 +136,9 @@ optech_mentions:
   - title: "BIP448 and CSFS/CTV demos and applications"
     url: /en/newsletters/2026/09/04/#bip448-and-csfs-ctv-demos-and-applications
 
+  - title: "Covenants.diy browser editor for constructing and stepping through covenant scripts"
+    url: /en/newsletters/2026/09/18/#covenants-diy-script-editor
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
