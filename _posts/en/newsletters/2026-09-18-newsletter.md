@@ -78,7 +78,25 @@ Bitcoin infrastructure software.
   [Floresta #1115][flor PR115], while a non-`assumevalid` version is actively
   being developed.
 
-FIXME:bitschmidty
+- **New BIP draft for unspendable internal keys**: NTL [posted][unspendable ml] to
+  the Bitcoin-Dev mailing list about his proposal for a new BIP draft to specify how
+  to make the [taproot][topic taproot] key path unspendable. The new specification
+  builds on a prior discussion on Delving Bitcoin between Salvatore Ingala, Pieter Wuille,
+  Josie Baker and other developers (see [Newsletter #283][news283 unspendable])
+  and on a previous attempt by Andrew Toth to define a dedicated BIP in [BIPs #1746][]
+  (see [Newsletter #338][news338 unspendable]).
+
+  The proposal, already available as a [draft][unspendable gh], specifies `_` as
+  a placeholder for the internal key with no known signing key. It also states that
+  the internal key must be derived from a synthetic [BIP32][] extended public key
+  using the [BIP341][] Nothing Up My Sleeve (NUMS) point, which is a point with unknown
+  discrete logarithm, and a chaincode, which is a tagged hash of the normalized policy,
+  which allows different implementations to independently reproduce the same address.
+
+  According to the author, the new proposal follows three guiding principles: It does
+  not police adherence to other BIPs except when they directly affect this specific issue,
+  it does not propose new cryptography or structures but uses only what is already
+  available, and it does not claim semantic canonicalization of the script.
 
 ## Changes to services and client software
 
@@ -128,7 +146,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-09-22 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="1923" %}
+{% include linkers/issues.md v=2 issues="1923,1746" %}
 
 [price vardiff]: https://delvingbitcoin.org/t/research-a-clockless-vardiff-strands-a-slowing-miner/2718
 [shape proxy]: https://github.com/marafoundation/sv2-apps/tree/shape-proxy-v0.1.0/test-tools/shape-proxy
@@ -141,3 +159,7 @@ FIXME:Gustavojfe
 [bitboxapp 4.52.0]: https://github.com/BitBoxSwiss/bitbox-wallet-app/releases/tag/v4.52.0
 [covenants diy]: https://covenants.diy/
 [entropylab gh]: https://github.com/OogaBoogaX/entropylab
+[unspendable ml]: https://groups.google.com/g/bitcoindev/c/se3TkNnbno4
+[news283 unspendable]: /en/newsletters/2024/01/03/#how-to-specify-unspendable-keys-in-descriptors
+[news338 unspendable]: /en/newsletters/2025/01/24/#draft-bip-for-unspendable-keys-in-descriptors
+[unspendable gh]: https://github.com/bitryonix/bips/blob/bip-xxxx-unspendable-internal-keys/bip-xxxx-unspendable-internal-keys.mediawiki
