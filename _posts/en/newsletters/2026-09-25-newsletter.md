@@ -28,7 +28,29 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What would be a drawback if sum instead of SHA256 of amounts was used in the taproot signature message?]({{bse}}130977)
+  User 1uba explains that committing to only the sum of input amounts in a
+  [taproot][topic taproot] signature hash (sighash) would still prevent the
+  fee-overpayment attack [BIP341][] cites, but the software preparing a
+  transaction for a signing device could then swap the amounts between inputs
+  as long as the total stayed the same. This impacts offline signers and
+  for collaborative transactions, where a signer needs to verify its own
+  input's amount.
+
+- [Post-BIP110 fork is it necessary to resync from block 0?]({{bse}}131037)
+  Murch expects that a pruned Bitcoin Knots node that enforced BIP110
+  rules (see [Newsletter #418][news418 bip110]) still holds the last block
+  common to both chains, because few blocks were added to the BIP110 chain
+  before the node was last run. Installing Bitcoin Core in its place
+  should work, but if the node does not reorganize on its own, he suggests
+  trying `reconsiderblock` on the first block the BIP110 node rejected.
+
+- [Can a Bitcoin node build a partial UTXO set from only the most recent blocks and use it to validate new transactions?]({{bse}}131051)
+  Pieter Wuille explains that such a node cannot tell whether a missing input
+  was already spent or was created in a block it skipped. Because it cannot
+  reject any transaction as invalid, the scheme performs no useful validation
+  and is equivalent in security to SPV, which relies entirely on proof of
+  work.
 
 ## Releases and release candidates
 
@@ -54,3 +76,5 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2026-09-29 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
+
+[news418 bip110]: /en/newsletters/2026/08/14/#bips-2225
