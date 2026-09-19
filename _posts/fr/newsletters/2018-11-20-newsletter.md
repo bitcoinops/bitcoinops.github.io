@@ -232,7 +232,7 @@ contenu de ce bulletin. Toute erreur restante est entièrement de la faute de l'
 [ln1.1 outline]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [input consolidations]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [lnrfc rz]: https://github.com/lightningnetwork/lightning-rfc/wiki/Rendez-vous-mechanism-on-top-of-Sphinx
-[le bulletin #21]: /en/newsletters/2018/11/13/#advertising-node-liquidity
-[le bulletin #17]: /fr/newsletters/2018/10/16/#proposition-de-splice-pour-les-canaux-de-paiement-du-lightning-network
-[le bulletin #12]: /fr/newsletters/2018/09/11/#atelier
-[le bulletin #19]: /fr/newsletters/2018/10/30/#lnd-1535-1512
+[bulletin #21]: /en/newsletters/2018/11/13/#advertising-node-liquidity
+[bulletin #17]: /fr/newsletters/2018/10/16/#proposition-de-splice-pour-les-canaux-de-paiement-du-lightning-network
+[bulletin #12]: /fr/newsletters/2018/09/11/#atelier
+[bulletin #19]: /fr/newsletters/2018/10/30/#lnd-1535-1512
