@@ -113,8 +113,7 @@ repo], et [libsecp256k1][libsecp256k1 repo].*
   en n’acceptant toujours que les connexions des adresses IP autorisées) ; désormais, l’option de configuration `-rpcbind` doit également
   être passée afin de spécifier les adresses d’écoute. De nouveaux avertissements sont affichés pour des configurations improbables et pour
   avertir les utilisateurs du danger d’écouter sur des réseaux non fiables. On espère que ce changement contribuera à réduire le nombre de
-  nœuds à l’écoute de connexions RPC sur des interfaces publiques, dont le danger a été décrit dans la section *Nouvelles* du [bulletin
-  #18][].
+  nœuds à l’écoute de connexions RPC sur des interfaces publiques, dont le danger a été décrit dans la section *Nouvelles* du [bulletin #18][].
 
 - [C-Lightning #2095][] applique les montants maximaux de [BOLT2][] pour la valeur des canaux et des paiements après qu’il a été découvert
   que C-Lightning ne respectait pas ces limites. Un changement futur prendra probablement en charge un bit wumbo optionnel (bit jumbo) qui
@@ -133,4 +132,4 @@ repo], et [libsecp256k1][libsecp256k1 repo].*
 [simple commit PR]: https://github.com/lightningnetwork/lightning-rfc/pull/513
 [simple commit thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001643.html
 [corallo simple commit]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001666.html
-[le bulletin #18]: /fr/newsletters/2018/10/23/#plus-de-1-100-noeuds-a-l-ecoute-ont-des-ports-rpc-ouverts
+[bulletin #18]: /fr/newsletters/2018/10/23/#plus-de-1-100-noeuds-a-l-ecoute-ont-des-ports-rpc-ouverts
