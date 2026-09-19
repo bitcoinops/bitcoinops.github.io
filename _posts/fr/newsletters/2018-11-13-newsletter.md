@@ -112,7 +112,7 @@ repo], et [libsecp256k1][libsecp256k1 repo].*
 [core dev log]: http://www.erisian.com.au/bitcoin-core-dev/log-2018-11-08.html#l-668
 [zeromq]: http://zeromq.org/
 [programme de residence]: https://lightningresidency.com
-[presentations]: https://lightningresidency.com/#videos
+[présentations]: https://lightningresidency.com/#videos
 [demos des residents]: https://www.youtube.com/playlist?list=PLpLH33TRghT2jmuP9YQRo-e8gk969Q2F_
 [bosworth video]: https://www.youtube.com/watch?v=1R5DNUcCYRg&list=PLpLH33TRghT1SbxinAsNDS6L7RkAjC8ME&index=6&t=0s
 [bosworth]: https://twitter.com/alexbosworth
