@@ -43,7 +43,7 @@ Bitcoin infrastructure software.
   gateway used in Stratum v2 and [DATUM][news325 datum] deployments, for example
   by halving a connection's difficulty after 30 seconds without a share. Price
   agreed and argued in a [separate thread][price frontier] that per-miner
-  control must sit at the last hop that still sees each miner's shares.
+  control must sit at the last hop that still sees each miner's shares. {% assign timestamp="23:06" %}
 
 - **Improvements in Utreexo initial block download**: Davidson Souza
   [posted][utreexo ibd del] to Delving Bitcoin about a way to improve the
@@ -76,7 +76,7 @@ Bitcoin infrastructure software.
   will go back to normal addition and deletion operations.
   An `assumevalid` SwiftSync implementation is under development in
   [Floresta #1115][flor PR115], while a non-`assumevalid` version is actively
-  being developed.
+  being developed. {% assign timestamp="1:18" %}
 
 - **New BIP draft for unspendable internal keys**: NTL [posted][unspendable ml] to
   the Bitcoin-Dev mailing list about his proposal for a new BIP draft to specify how
@@ -96,7 +96,7 @@ Bitcoin infrastructure software.
   According to the author, the new proposal follows three guiding principles: It does
   not police adherence to other BIPs except when they directly affect this specific issue,
   it does not propose new cryptography or structures but uses only what is already
-  available, and it does not claim semantic canonicalization of the script.
+  available, and it does not claim semantic canonicalization of the script. {% assign timestamp="1:17:51" %}
 
 ## Changes to services and client software
 
@@ -106,7 +106,7 @@ wallets and services.*
 - **BitBoxApp adds Spark-based Lightning payments:**
   BitBox [announced][bitbox ln blog] a public beta hot wallet in the mobile
   BitBoxApp [4.52.0][bitboxapp 4.52.0] built on the Breez SDK and the Spark
-  [statechain][topic statechains].
+  [statechain][topic statechains]. {% assign timestamp="1:24:09" %}
 
 - **Covenants.diy script editor:**
   [covenants.diy][covenants diy] is an editor for constructing [covenant][topic
@@ -114,14 +114,14 @@ wallets and services.*
   capabilities including [`OP_CTV`][topic op_checktemplateverify],
   [`OP_CSFS`][topic op_checksigfromstack], [`OP_CAT`][topic op_cat],
   [ANYPREVOUT][topic sighash_anyprevout], `OP_TEMPLATEHASH`, `OP_INTERNALKEY`,
-  `OP_PAIRCOMMIT`, and `OP_TXHASH` and is meant to be used on test networks.
+  `OP_PAIRCOMMIT`, and `OP_TXHASH` and is meant to be used on test networks. {% assign timestamp="1:28:40" %}
 
 - **EntropyLab offline key calculator:**
   [EntropyLab][entropylab gh] is a self-contained HTML file for air-gapped use
   that converts user-supplied entropy or existing key material into [BIP39][]
   seeds, extended keys, [descriptors][topic descriptors], addresses, [BIP85][]
   child entropy, and [BIP352][] [silent payment][topic silent payments]
-  addresses, among other features.
+  addresses, among other features. {% assign timestamp="59:46" %}
 
 ## Releases and release candidates
 
@@ -135,7 +135,7 @@ release candidates._
   and [on-the-fly funding][topic jit channels]. It also adds configurable limits on
   funding feerates and allows [trampoline nodes][topic trampoline payments] to
   retain lower fees to improve payment success, as described in the notable
-  changes below.
+  changes below. {% assign timestamp="1:31:10" %}
 
 ## Notable code and documentation changes
 
@@ -158,7 +158,7 @@ repo], and [BINANAs][binana repo]._
   are now treated as links between related wallet records rather than as values
   to recompute and validate. The `importdescriptors` and
   `createwalletdescriptor` RPCs now compare canonical descriptor strings when
-  checking whether a descriptor is already present.
+  checking whether a descriptor is already present. {% assign timestamp="1:33:34" %}
 
 - [Bitcoin Core #36076][] fixes a bug where `combinepsbt` could discard an
   input's requested signature hash (sighash) type when combining [PSBTs][topic
@@ -166,7 +166,7 @@ repo], and [BINANAs][binana repo]._
   another PSBT were copied without that field, potentially causing finalization
   to reject valid signatures using a non-default sighash type, such as
   `ALL|ANYONECANPAY`. The field is now copied when absent from the first PSBT,
-  allowing finalization regardless of argument order.
+  allowing finalization regardless of argument order. {% assign timestamp="1:38:51" %}
 
 - [Bitcoin Core #36150][] fixes a bug where enabling pruning together with a
   new [compact block filter index][topic compact block filters]
@@ -175,7 +175,7 @@ repo], and [BINANAs][binana repo]._
   synchronizing. When an unpruned node was restarted with both settings
   enabled, the block files could be pruned before the new index determined
   which blocks were needed. Now, the index installs a pruning lock at height
-  zero, even before processing its first block.
+  zero, even before processing its first block. {% assign timestamp="1:42:18" %}
 
 - [Bitcoin Core #36174][] adds send-side backpressure to the replacement HTTP
   server (see [Newsletter #411][news411 http]), complementing the receive-side
@@ -184,7 +184,7 @@ repo], and [BINANAs][binana repo]._
   response data to grow indefinitely. Now, the server pauses processing of
   further requests for a connection when its send buffer exceeds 32 MiB,
   resuming when the client drains the responses. The earlier fix prevented
-  incoming requests from accumulating faster than they could be processed.
+  incoming requests from accumulating faster than they could be processed. {% assign timestamp="1:44:37" %}
 
 - [Bitcoin Core #34743][] changes how manually selected peers are handled when
   they stall block downloading during IBD (see [Newsletter #237][news237
@@ -193,7 +193,7 @@ repo], and [BINANAs][binana repo]._
   peers selected using `-addnode`, `-connect`, or the `addnode` RPC, the node
   makes their outstanding blocks available to be requested from other peers and
   pauses new block requests to the stalling peer for two minutes. Manual peers
-  remain subject to separate block download and header sync timeouts.
+  remain subject to separate block download and header sync timeouts. {% assign timestamp="1:46:13" %}
 
 - [Bitcoin Core #36081][] adds a `bestblockhash` field to the `getmininginfo`
   RPC response. Together with the existing `next` object (see [Newsletter
@@ -201,7 +201,7 @@ repo], and [BINANAs][binana repo]._
   hash and the next block's difficulty target from a single RPC call.
   Previously, obtaining the hash and mining information through separate RPC
   calls could race with a tip change, producing values referring to different
-  tips.
+  tips. {% assign timestamp="1:48:07" %}
 
 - [Bitcoin Core #35975][] fixes a wallet crash that occurred when calling
   `bumpfee` on two malleated versions of the same transaction. Previously,
@@ -212,7 +212,7 @@ repo], and [BINANAs][binana repo]._
   replaced results in an error. The PR also ensures that comments and
   [replacement][topic rbf] metadata are copied to malleated transactions,
   including malleated fee-bump replacements, and persist after reloading the
-  wallet.
+  wallet. {% assign timestamp="1:48:59" %}
 
 - [BIPs #2241][] adds [BIP332][], which specifies opt-in relay of recent stale
   chain tips, previously discussed in [Newsletter #417][news417 staletip]. The
@@ -221,7 +221,7 @@ repo], and [BINANAs][binana repo]._
   stale tip's block data. Peers negotiate support using [BIP434][], implemented
   in Bitcoin Core as described in [Newsletter #410][news410 bip434].
   Recommended resource limits include 20 headers per announcement and a
-  1,000-block recency window.
+  1,000-block recency window. {% assign timestamp="1:50:04" %}
 
 - [BIPs #2258][] updates [BIP93][] [codex32][topic codex32] to include the
   prefix's contribution when checking checksum length limits. Previously, these
@@ -232,14 +232,14 @@ repo], and [BINANAs][binana repo]._
   master-seed encodings to 16-, 20-, 24-, 28-, 32-, or 64-byte seeds, reducing
   ambiguity when correcting accidentally inserted or deleted characters.
   Existing encodings at these sizes remain unchanged, but encodings of other
-  sizes that were previously permitted no longer conform.
+  sizes that were previously permitted no longer conform. {% assign timestamp="1:53:09" %}
 
 - [Eclair #3380][] rejects API requests containing an `Origin` header,
   including WebSocket connections, to prevent cross-site request forgery using
   cached HTTP Basic authentication credentials. Browser-based frontends must
   now use their own backend instead of calling Eclair directly. Command-line
   clients such as `curl` and `eclair-cli` remain unaffected when they do not
-  set this header.
+  set this header. {% assign timestamp="1:56:33" %}
 
 - [Eclair #3376][] fixes several issues with channel closing, [splicing][topic
   splicing], and [on-the-fly funding][topic jit channels]. When Eclair pays the
@@ -256,7 +256,7 @@ repo], and [BINANAs][binana repo]._
   paths][topic rv routing], preventing unsafe forwarding that could result in a
   loss of funds. The PR adds a new `on-chain-fees.max-funding-feerate` setting,
   defaulting to 50 sat/vB, that caps [automatically estimated feerates][topic
-  fee estimation] for channel opens and splices.
+  fee estimation] for channel opens and splices. {% assign timestamp="1:57:37" %}
 
 - [Eclair #3372][] allows Eclair nodes acting as [trampoline nodes][topic
   trampoline payments] to retain lower fees, making more of the sender's fee
@@ -269,7 +269,7 @@ repo], and [BINANAs][binana repo]._
   without those hints continue to include the usual local channel cost.
   Additionally, the PR increases the default minimum total fee budget required
   by `relay.fees.min-trampoline` from 1 sat plus 0.01% of the forwarded amount
-  to 2 sats plus 0.04%.
+  to 2 sats plus 0.04%. {% assign timestamp="2:04:34" %}
 
 - [LND #11163][] fixes the handling of replayed [HTLCs][topic htlc] when using
   the forward interceptor (see [Newsletter #104][news104 intercept]), which
@@ -281,7 +281,7 @@ repo], and [BINANAs][binana repo]._
   the replay to continue through the original payment's resolution. For
   payments still awaiting the interceptor's decision, LND instead keeps the
   HTLC on hold with its original automatic failure deadline (see [Newsletter
-  #224][news224 intercept]), avoiding a second expiry check on the replay.
+  #224][news224 intercept]), avoiding a second expiry check on the replay. {% assign timestamp="2:05:57" %}
 
 - [BDK #2246][] and [#2263][bdk #2263] improve wallet balance classification
   (see [Newsletter #213][news213 balance]) by checking an output's unsettled
@@ -296,7 +296,7 @@ repo], and [BINANAs][binana repo]._
   settlement rules such as requiring six confirmations. It returns a
   conservative confirmation count, including the confirming block, and returns
   zero for unconfirmed transactions or confirmation heights above the supplied
-  tip.
+  tip. {% assign timestamp="2:07:44" %}
 
 {% include snippets/recap-ad.md when="2026-09-22 16:30" %}
 {% include references.md %}
