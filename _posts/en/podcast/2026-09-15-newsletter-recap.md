@@ -939,7 +939,7 @@ have this notion of these Greenfield API keys, but also these old API-style
 keys, and it removes the old-style keys.  Existing Greenfield keys still work,
 but if you have integrated using the BitPay-style keys, you have to move those
 to the new Greenfield API keys that have been around for a while.  So, no more
-BitPay-style API keys.  Also, in BTCPay Server, changing an invoices state now
+BitPay-style API keys.  Also, in BTCPay Server, changing an invoice's state now
 requires, I guess, proper authentication or authorization, and a restricted
 API key cannot create unrestricted one anymore.  API keys are now stored in
 hash instead of plain text.  There's more on that in the code section that
@@ -948,7 +948,7 @@ access and enforces a little bit more permissions, I guess, when you're
 setting LND up in Docker.
 
 So, why are all these LND changes there, because we're talking about BTCPay?
-Well, BTCPay says attackers are actively hitting LNDs password-change
+Well, BTCPay says attackers are actively hitting LND's password-change
 endpoints on servers.  There's been some chatter about this.  And the idea
 here is that people ended up reopening LND API access after the 2.4.2 fix for
 BTCPay Server, and that was causing issues.  So, if you did do that, close
@@ -1188,7 +1188,7 @@ we link to.  Good to see more progress on BOLT12 offers from the LND folks.
 
 _LND #11125_
 
-LND 11125 lets you lock up wallet UTXOs in LND until the transaction spending
+LND #11125 lets you lock up wallet UTXOs in LND until the transaction spending
 them gets a certain number of confirmations you pick.  So, LND now lets you do
 that.  But before this, you had two options and both of them had issues.  You
 could do time-based locks that could expire before your transaction was
