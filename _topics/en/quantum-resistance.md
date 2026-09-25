@@ -184,6 +184,9 @@ optech_mentions:
   - title: "SHRINCS draft BIP"
     url: /en/newsletters/2026/09/04/#shrincs-draft-bip
 
+  - title: "PQLN proposal for post-quantum security of Lightning Network offchain protocols"
+    url: /en/newsletters/2026/09/25/#proposal-for-a-post-quantum-lightning-network
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

@@ -129,6 +129,9 @@ optech_mentions:
   - title: "BIP54 demonstration of slow blocks on signet"
     url: /en/newsletters/2026/05/01/#bip54-demonstration-of-slow-blocks-on-signet
 
+  - title: "Bitcoin Core #34566 adds per-signet data directories for custom signets"
+    url: /en/newsletters/2026/09/25/#bitcoin-core-34566
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

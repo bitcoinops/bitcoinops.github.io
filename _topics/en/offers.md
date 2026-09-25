@@ -150,6 +150,9 @@ optech_mentions:
   - title: "LND #11061 adds signing and verification of BOLT12 invoice requests and invoices"
     url: /en/newsletters/2026/09/11/#lnd-11061
 
+  - title: "LND #11146 adds validated encoders and decoders for BOLT12 offers, invoice requests, and invoices"
+    url: /en/newsletters/2026/09/25/#lnd-11146
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

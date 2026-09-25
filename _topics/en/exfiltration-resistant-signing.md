@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Discussion of a simple (but imperfect) anti-exfiltration protocol"
     url: /en/newsletters/2024/08/23/#simple-but-imperfect-anti-exfiltration-protocol
 
+  - title: "BIPs #2224 adds BIP461 deterministic ECDSA signing to detect nonce-based key exfiltration"
+    url: /en/newsletters/2026/09/25/#bips-2224
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
