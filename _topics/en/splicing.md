@@ -122,6 +122,9 @@ optech_mentions:
   - title: "Eclair #2887 adds support for the official splicing protocol"
     url: /en/newsletters/2026/05/08/#eclair-2887
 
+  - title: "Core Lightning #9508 monitors pending splice funding outputs, force-closes on tx_abort after signing"
+    url: /en/newsletters/2026/09/25/#core-lightning-9508
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

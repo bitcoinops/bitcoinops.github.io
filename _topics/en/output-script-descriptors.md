@@ -230,6 +230,9 @@ optech_mentions:
   - title: "Draft BIP for specifying unspendable taproot internal keys in wallet policies"
     url: /en/newsletters/2026/09/18/#new-bip-draft-for-unspendable-internal-keys
 
+  - title: "BIPs #1951 adds BIP138 compact encryption scheme for descriptor and wallet policy backups"
+    url: /en/newsletters/2026/09/25/#bips-1951
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

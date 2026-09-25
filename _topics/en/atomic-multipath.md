@@ -55,6 +55,9 @@ optech_mentions:
   - title: "2021 year-in-review: atomic multipath payments"
     url: /en/newsletters/2021/12/22/#amp
 
+  - title: "LND #11198 stops a failed AMP payment set from canceling the whole invoice"
+    url: /en/newsletters/2026/09/25/#lnd-11198
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simplified Multipath Payments (SMP)
