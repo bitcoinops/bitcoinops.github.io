@@ -118,7 +118,7 @@ repo], et [libsecp256k1][libsecp256k1 repo].*
 {% include linkers/issues.md issues="1937,14477,2081" %}
 
 [maintenance release]: https://bitcoincore.org/en/lifecycle/#maintenance-releases
-[bulletin de la semaine dernière]: /en/newsletters/2018/11/27/#simplified-fee-bumping-for-ln
+[bulletin de la semaine dernière]: /fr/newsletters/2018/11/27/#augmentation-simplifiee-des-frais-pour-ln
 [carve out thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 [ln1.1 accepted proposals]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [ln spec meetings]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001673.html
