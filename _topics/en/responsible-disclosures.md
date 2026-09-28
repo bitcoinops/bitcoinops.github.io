@@ -205,6 +205,9 @@ optech_mentions:
   - title: "Erick Cestari disclosed a ping-flood memory-exhaustion DoS vulnerability in Core Lightning"
     url: /en/newsletters/2026/09/04/#responsible-disclosure-of-a-denial-of-service-vulnerability-in-cln
 
+  - title: "Matt Morehouse disclosed two DoS vulnerabilities in Eclair"
+    url: /en/newsletters/2026/10/02/#disclosure-of-two-dos-vulnerabilities-in-eclair
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
