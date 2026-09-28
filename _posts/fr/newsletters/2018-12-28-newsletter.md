@@ -7,8 +7,8 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine est une édition spéciale de fin d'année résumant les développements notables de Bitcoin pendant toute l'année
-2018. Malgré la longueur étendue de ce bulletin, nous regrettons qu'il ne couvre qu'une infime fraction du travail réalisé dans des dizaines
+Le bulletin de cette semaine est une édition spéciale de fin d'année résumant les développements notables de Bitcoin pendant toute l'année 2018.
+Malgré la longueur étendue de ce bulletin, nous regrettons qu'il ne couvre qu'une infime fraction du travail réalisé dans des dizaines
 de projets open source par des centaines de contributeurs. Sans ces contributions de bas niveau, les idées de haut niveau décrites dans ce
 bulletin ne seraient que des mots vides, et nous adressons donc nos plus sincères remerciements à tous ceux d'entre vous qui ont contribué
 au développement de Bitcoin cette année.
