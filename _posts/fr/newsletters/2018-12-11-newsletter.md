@@ -79,4 +79,4 @@ projets d'infrastructure populaires sont également décrits.
 [explorer announce]: https://blockstream.com/2018/11/06/explorer-launch/
 [explorer code announce]: https://blockstream.com/2018/12/06/esplora-source-announcement/
 [weight sighash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016534.html
-[bulletin #23]: /en/newsletters/2018/11/27/#sighash-updates
+[bulletin #23]: /fr/newsletters/2018/11/27/#mises-a-jour-de-sighash
