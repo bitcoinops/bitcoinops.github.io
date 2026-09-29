@@ -46,6 +46,40 @@ Bitcoin infrastructure software.
   Eclair codebase for other places where a peer could impose far more work on
   the node than it spends itself. The fix is [Eclair #3263][].
 
+- **Proposal for wallet label synchronization**: Jakub [posted][label sync ml]
+  to the Bitcoin-Dev mailing list to gauge interest in standardizing
+  synchronization of [wallet labels][topic wallet labels] between wallets
+  through a shared, untrusted store before writing a specification. Although
+  [BIP329][] standardized a label export format (see [Newsletter #215][news215
+  label]), moving labels between wallets that use the same
+  [descriptor][topic descriptors], such as a coordinator and a watch-only
+  wallet, remains a manual export and import cycle, so coin selection decisions
+  are made without the associated labels.
+
+  Under the proposal, wallets derive a storage location and encryption keys
+  from a canonical form of the descriptor, without any private keys, so
+  wallets sharing a descriptor find the same data with no configuration.
+  Unmodified BIP329 records travel inside an authenticated encryption
+  envelope. Each record is stored with the time it was written, so when two
+  wallets change the same label, the most recent change takes precedence.
+  Because BIP329 has no way to delete a label, a deletion is recorded as a
+  marker that removes the label from other wallets. Jakub proposes Nostr as
+  the reference transport, but the protocol only requires a service that can
+  store and return data. The Bitcoin Safe wallet already synchronizes labels
+  this way over Nostr. Jakub asked whether encryption keys should derive from
+  the descriptor, which lets a wallet restore its labels from the descriptor
+  alone but exposes them to anyone who has held the xpubs, or from a separate
+  secret. He also asked whether to use one shared keypair across devices or
+  per-device pairing, and how to define the canonical descriptor form.
+
+  Craig Raw replied that label synchronization should be part of a broader
+  inter-wallet communication specification, which should include other use cases
+  such as [PSBTs][topic psbt], multisig setups, and payment confirmations.
+  He also pushed back on the use of Nostr as the reference transport protocol,
+  since exchange of financial data should optimize for privacy, rather than
+  censorship resistance, and noted that he is working on a BIP for canonical
+  output descriptors.
+
 ## Changing consensus
 
 _A monthly section summarizing proposals and discussion about changing
@@ -81,3 +115,5 @@ FIXME:Gustavojfe
 [mm eclair dos]: https://delvingbitcoin.org/t/disclosure-dos-vulnerabilities-fixed-in-eclair-v0-14-0/2914
 [news407 eclair]: /en/newsletters/2026/05/29/#eclair-v0-14-0
 [smite repo]: https://github.com/lnfuzz/smite
+[label sync ml]: https://groups.google.com/g/bitcoindev/c/p6UUOdGi9YI
+[news215 label]: /en/newsletters/2022/08/31/#wallet-label-export-format
