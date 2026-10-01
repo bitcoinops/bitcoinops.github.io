@@ -259,7 +259,7 @@ fur et à mesure de l'avancement des recherches sur le développement du protoco
 ### sommaire 2018<br>Bitcoin Optech
 
 Après avoir lancé [Optech][] en mai, nous avons inscrit 15 entreprises comme membres, organisé deux [ateliers][optech workshops], produit 28
-bulletins hebdomadaires, construit un tableau de bord, et pris un bon départ sur un livre consacré aux techniques de passage à l'échelle
+[bulletins hebdomadaires][optech les bulletins], construit un tableau de bord, et pris un bon départ sur un livre consacré aux techniques de passage à l'échelle
 déployables individuellement. Pour en savoir plus sur ce que nous avons accompli en 2018 et ce que nous avons prévu pour 2019, veuillez
 consulter notre court [rapport annuel][optech annual report].
 
