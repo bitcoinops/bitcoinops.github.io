@@ -21,7 +21,7 @@ descriptions of notable changes to popular Bitcoin infrastructure software.
   called PQLN, building on the layer-by-layer analysis covered in [Newsletter #408][news408 pq ln].
   The author and his collaborators also published a [paper][pqln paper]
   on the topic and a working [implementation][pqln repo] based on rust-lightning
-  is available for testing.
+  is available for testing. {% assign timestamp="1:10" %}
 
   Kurt explained how the different layers of the Lightning Network have been
   modified to reach post-quantum (PQ) security. However, he highlighted
@@ -83,7 +83,7 @@ answers posted since our last update.*
   transaction for a signing device could then swap the amounts between inputs
   as long as the total stayed the same. This impacts offline signers and
   for collaborative transactions, where a signer needs to verify its own
-  input's amount.
+  input's amount. {% assign timestamp="36:18" %}
 
 - [Post-BIP110 fork is it necessary to resync from block 0?]({{bse}}131037)
   Murch expects that a pruned Bitcoin Knots node that enforced BIP110
@@ -91,14 +91,14 @@ answers posted since our last update.*
   common to both chains, because few blocks were added to the BIP110 chain
   before the node was last run. Installing Bitcoin Core in its place
   should work, but if the node does not reorganize on its own, he suggests
-  trying `reconsiderblock` on the first block the BIP110 node rejected.
+  trying `reconsiderblock` on the first block the BIP110 node rejected. {% assign timestamp="39:32" %}
 
 - [Can a Bitcoin node build a partial UTXO set from only the most recent blocks and use it to validate new transactions?]({{bse}}131051)
   Pieter Wuille explains that such a node cannot tell whether a missing input
   was already spent or was created in a block it skipped. Because it cannot
   reject any transaction as invalid, the scheme performs no useful validation
   and is equivalent in security to SPV, which relies entirely on proof of
-  work.
+  work. {% assign timestamp="42:16" %}
 
 ## Releases and release candidates
 
@@ -108,7 +108,7 @@ release candidates._
 
 - [Bitcoin Core 32.0rc2][] is a release candidate for the next major version of
   the predominant full node implementation. A [testing guide][bcc32 testing] is
-  available.
+  available. {% assign timestamp="21:13" %}
 
 - [Core Lightning 26.06.8][] is a security release of this popular LN node
   implementation. It includes bug fixes for responsibly reported
@@ -116,7 +116,7 @@ release candidates._
   tests are temporarily withheld to give users more time to upgrade before
   attackers can easily identify the vulnerabilities. Nodes that have run
   development builds cannot downgrade to this release because their database
-  schema is newer. The project strongly recommends upgrading.
+  schema is newer. The project strongly recommends upgrading. {% assign timestamp="45:36" %}
 
 - [LDK v0.3-rc2][] is a second release candidate for the next major version of
   this library for building LN-enabled wallets and applications. It adds
@@ -126,7 +126,7 @@ release candidates._
   to explicitly accept incoming channels. Upgrading invalidates previously
   issued [BOLT11][] invoices containing payment metadata. Developers should
   review the [API and backwards-compatibility changes][ldk 0.3 notes] before
-  testing.
+  testing. {% assign timestamp="47:15" %}
 
 ## Notable code and documentation changes
 
@@ -145,7 +145,7 @@ repo], and [BINANAs][binana repo]._
   custom signet uses a `signet_XXXXXXXX` subdirectory, suffixed by its
   four-byte network identifier derived from the signet challenge. To avoid
   resynchronizing after upgrading, existing custom signet users should manually
-  rename their directory to the new format.
+  rename their directory to the new format. {% assign timestamp="51:31" %}
 
 - [BIPs #1951][] adds [BIP138][], a specification for a Compact Encryption
   Scheme for Non-seed Wallet Data such as backups of [descriptors][topic
@@ -160,7 +160,7 @@ repo], and [BINANAs][binana repo]._
   account xpub to a server, such as the Ledger and Trezor desktop apps, would
   let that server decrypt every backup of a multisig reusing that xpub, so the
   BIP recommends building multisigs from accounts, such as BIP48 or BIP87,
-  whose xpubs were never shared.
+  whose xpubs were never shared. {% assign timestamp="54:14" %}
 
 - [BIPs #2224][] adds [BIP461][], which specifies a single deterministic ECDSA
   signing algorithm, ensuring that a given private key and message will always
@@ -172,7 +172,7 @@ repo], and [BINANAs][binana repo]._
   reveals that at least one signer is not following the specification, which
   could indicate an attempt to [leak key material][topic exfiltration-resistant
   signing] through nonce selection, as in
-  the Dark Skippy attack (see [Newsletter #315][news315 dark skippy]).
+  the Dark Skippy attack (see [Newsletter #315][news315 dark skippy]). {% assign timestamp="57:45" %}
 
 - [Core Lightning #9507][] adds missing feerate bounds and fixes overflows that
   could turn very large fee estimates into near-zero rates or cause the node to
@@ -186,7 +186,7 @@ repo], and [BINANAs][binana repo]._
   backend [fee estimates][topic fee estimation], even with
   `--ignore-fee-limits` enabled. It also caps the feerates that CLN proposes
   for its own opens, splices, commitment updates, and RBFs at 400 sat/vB, and
-  repairs out-of-range stored feerates on upgrade.
+  repairs out-of-range stored feerates on upgrade. {% assign timestamp="1:02:00" %}
 
 - [Core Lightning #9508][] fixes several [splice][topic splicing] and
   channel-opening issues. Previously, before CLN received the peer's
@@ -200,7 +200,7 @@ repo], and [BINANAs][binana repo]._
   force-closing. The PR also rejects a new [dual-funded][topic dual funding]
   open from a peer that already has three ongoing channel-opening negotiations,
   including single-funded ones. Peers that exceed this limit or keep a channel
-  quiescent for more than ten minutes are disconnected.
+  quiescent for more than ten minutes are disconnected. {% assign timestamp="1:07:35" %}
 
 - [Core Lightning #9509][] fixes several issues with onchain channel
   resolution. Previously, CLN could treat a force-close as a cooperative close
@@ -216,7 +216,7 @@ repo], and [BINANAs][binana repo]._
   corresponding unresolved incoming [HTLC][topic htlc] when its preimage is
   learned onchain, even if failure of the outgoing HTLC was pending. Additional
   fixes prevent crashes involving reorged close outputs and onchain payments to
-  amountless invoices' fallback addresses.
+  amountless invoices' fallback addresses. {% assign timestamp="1:12:02" %}
 
 - [Core Lightning #9510][] and [#9511][core lightning #9511] harden input
   parsing and logging. The first fixes a buffer overflow that could crash
@@ -229,7 +229,7 @@ repo], and [BINANAs][binana repo]._
   overflow that allowed an unauthenticated REST request with a very large
   parameter to crash the node. It also removes I/O logs from `getlog`, because
   raw RPC and plugin traffic can contain runes (authentication tokens that
-  grant restricted RPC access) and other secrets.
+  grant restricted RPC access) and other secrets. {% assign timestamp="1:16:03" %}
 
 - [Core Lightning #9513][] fixes amount validation when `xpay` fetches an
   invoice for a [BOLT12 offer][topic offers]. Previously, it used the fetched
@@ -239,7 +239,7 @@ repo], and [BINANAs][binana repo]._
   offer amount. The PR also prevents an [onion message][topic onion messages]
   containing a reply path with no hops, which any node could send, from
   stopping the node. CLN now treats such a path as absent and logs other
-  unparsable reply paths instead of terminating the `offers` plugin.
+  unparsable reply paths instead of terminating the `offers` plugin. {% assign timestamp="1:20:01" %}
 
 - [LND #11198][] fixes a bug where an entire invoice was canceled due to a
   failed [AMP][topic amp] payment preimage reconstruction. A reusable AMP
@@ -249,7 +249,7 @@ repo], and [BINANAs][binana repo]._
   reconstruction failure only affected that set. Now, LND fails the arriving
   HTLC and cancels the previously accepted HTLCs belonging to the failing set.
   The invoice remains payable, and other accepted sets can still complete and
-  settle.
+  settle. {% assign timestamp="1:21:47" %}
 
 - [LND #11146][] continues its implementation of [BOLT12 offers][topic offers]
   by adding validated string encoders and decoders for offers, invoice
@@ -259,7 +259,7 @@ repo], and [BINANAs][binana repo]._
   `ValidateInvoiceForPayment` function also checks an invoice against the
   originating request and the node the payer expected to sign it. A valid
   signature alone is insufficient: a node along a [blinded path][topic rv
-  routing] could otherwise return an invoice signed with its own key.
+  routing] could otherwise return an invoice signed with its own key. {% assign timestamp="1:24:15" %}
 
 - [LND #11132][] restores [BOLT1][] compliance by replying to every valid
   `ping` admitted by its flood policy. Previously, a separate `pong` limiter
@@ -267,7 +267,7 @@ repo], and [BINANAs][binana repo]._
   ping]). LND now uses a single per-peer bucket containing 200 tokens,
   replenished at a rate of 10 per second. Larger requested replies cost more
   tokens; a maximum-size reply costs ten tokens, which preserves the previous
-  bandwidth limit. Exhausting the budget disconnects the peer.
+  bandwidth limit. Exhausting the budget disconnects the peer. {% assign timestamp="1:27:20" %}
 
 {% include snippets/recap-ad.md when="2026-09-29 16:30" %}
 {% include references.md %}
