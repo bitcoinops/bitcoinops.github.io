@@ -248,7 +248,20 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [LND v0.21.4-beta.rc1][] is a release candidate for a maintenance release of
+  this popular LN node implementation. It includes the [channel
+  announcement][topic channel announcements] synchronization fix and
+  restriction on new legacy channels described in the notable code section
+  below. Other fixes address pending [HTLCs][topic htlc], unintended
+  cancellation of [AMP][topic amp] invoices, and SQL graph migration failures.
+  `WalletKit` can now reserve outputs until their spending transaction reaches
+  a specified confirmation depth. The release also requires explicit channel
+  types when opening channels.
+
+- [LND v0.20.5-beta.rc1][] is a release candidate for a maintenance release of
+  LND's 0.20 release branch. It backports several fixes also included in
+  0.21.4-beta.rc1, including those for pending HTLCs, AMP invoice cancellation,
+  and channel synchronization, and adds bounds on onion payload parsing.
 
 ## Notable code and documentation changes
 
@@ -261,11 +274,146 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #29278][] adds a `-maxfeerate` config option that caps the
+  feerate of wallet transactions at 0.10 BTC/kvB (10,000 sat/vB) by default.
+  Previously, the `-maxtxfee` option was documented as an absolute fee cap.
+  However, certain checks also interpreted the same amount as a fee per 1,000
+  vB (see [Newsletter #54][news54 maxtxfee]). The new option separates the feerate limit from the total fee limit and
+  applies to transaction creation, [fee bumping][topic rbf], [CPFP][topic cpfp]
+  and regular wallet broadcast.
+
+- [Bitcoin Core #35984][] fixes a bug where [PSBT][topic psbt] signing could
+  produce a `SIGHASH_SINGLE` signature without a corresponding output. This
+  sighash type commits to the output at the same index as the input being
+  signed. If the corresponding output is missing, legacy signing produces a
+  signature over a constant hash (see [Newsletter #207][news207 single]). This
+  signature can be reused to spend other UTXOs controlled by the same key,
+  provided the corresponding output remains missing. Bitcoin Core now leaves
+  such inputs unsigned for legacy and segwit v0, while still signing the PSBT's
+  other inputs, extending a check already present in raw transaction signing.
+
+- [Bitcoin Core #35301][] begins the [BIP352][] [silent payments][topic silent
+  payments] implementation by adding support for encoding and decoding
+  addresses, deriving [taproot][topic taproot] payment outputs from eligible
+  transaction inputs, and scanning transactions for payments to a recipient. It
+  also adds support for labels to distinguish payments to different derived
+  addresses and identify change. The implementation builds on libsecp256k1's
+  silent-payments module (see [Newsletter #415][news415 silent]). However, this
+  PR does not yet enable sending or receiving silent payments through the
+  wallet's RPCs or GUI.
+
+- [Bitcoin Core #36312][] fixes a privacy leak in the experimental, opt-in
+  private transaction broadcasting feature (see [Newsletter #388][news388
+  private broadcast]). Previously, [discouraging a misbehaving peer][news106
+  discouragement] could disconnect both regular and private broadcast
+  connections to the same address. A malicious peer could deliberately trigger
+  these disconnections to link a private broadcast connection to the node's
+  regular connections, weakening [transaction origin privacy][topic transaction
+  origin privacy]. Now, misbehaving private broadcast peers are disconnected
+  without discouraging their addresses, and discouraging regular peers leaves
+  private broadcast connections to the same addresses intact.
+
+- [Bitcoin Core #36284][] fixes a bug where the wallet could reject a payment
+  despite having enough eligible funds when partial-spend avoidance is enabled
+  via the `-avoidpartialspends` option (see [Newsletter #6][news6 avoidpartial])
+  or the wallet's `avoid_reuse` flag (see [Newsletter #52][news52 avoid reuse]). Partial-spend avoidance groups
+  together outputs paid to the same address during [coin selection][topic coin
+  selection] to reduce [output linking][topic output linking]. Previously, if a
+  group failed eligibility checks (e.g. the limit on unconfirmed ancestors),
+  its value was subtracted twice from the amount available for selection. Now,
+  each rejected group's value is subtracted only once.
+
+- [Bitcoin Core #35752][] fixes error handling when encrypting a wallet,
+  changing its encryption passphrase, or adding private keys. Previously, a
+  failed database write could cause a passphrase change to appear successful,
+  but only the old passphrase would work after reloading the wallet. The
+  encryption process could also report success despite missing required key
+  records or leaving plaintext private keys in the database, while a failed
+  database commit could terminate Bitcoin Core. Failed private-key insertions
+  could leave keys only in memory, causing them to disappear from the wallet
+  upon reloading. Now, the wallet checks database operations, rolls back failed
+  encryption updates, and only updates its in-memory keys after the
+  corresponding writes succeed, allowing failed operations to be retried. The
+  PR also prevents a failed passphrase change from leaving a previously locked
+  wallet unlocked and reports database or encryption failures separately from
+  incorrect passphrase errors.
+
+- [Bitcoin Core #35813][] adds a `listrawtransactions` wallet RPC that can list
+  every transaction known to the wallet, returning one entry per transaction
+  with its raw transaction hex. The existing `listtransactions` RPC returns
+  accounting entries: a self-transfer to a receiving address can appear as both
+  a send and a receive, while a transfer entirely to change addresses can be
+  omitted. The `count` and `skip` parameters provide pagination, and `verbose`
+  adds decoded transaction details.
+
+- [BIPs #2276][] and [#2277][bips #2277] correct [PSBT][topic psbt]
+  finalization rules that could discard information needed for later signing or
+  transaction extraction. The first removes [BIP376][]'s requirement to delete
+  `PSBT_IN_WITNESS_UTXO` when finalizing a [silent-payment][topic silent
+  payments] input (see [Newsletter #401][news401 bip376]). Other
+  [taproot][topic taproot] inputs in the same transaction may still require
+  that spent output's amount and script to compute their signatures. The second
+  updates [BIP370][] to retain previous output identifiers, sequence numbers,
+  and required [locktimes][topic timelocks] after a PSBTv2 input is finalized.
+  Deleting these fields could invalidate the PSBT or alter the extracted
+  transaction. It also removes an erroneous [BIP371][] instruction to delete
+  output taproot derivation data during input finalization.
+
+- [LDK #4993][] fixes a bug that could cause a wallet to spend reserved inputs
+  in a transaction conflicting with an unconfirmed [splice][topic splicing].
+  Previously, if LDK rejected an [RBF][topic rbf] fee-bump contribution because
+  the channel had already been force-closed, it could instruct the wallet to
+  release inputs still needed by the original splice. Across successive
+  fee-bump attempts, the wallet could also receive duplicate release
+  instructions or keep reservations after they were no longer needed. Now, each
+  funding contribution records which inputs and outputs it inherited from
+  earlier attempts, so failure tells the wallet to release only that
+  contribution's own reservations. The PR also adds error information and
+  reservation queries to help applications retry failed contributions safely.
+
+- [LND #11173][] fixes a bug where an invalid or oversized channel range
+  response could stall the initial sync of [channel announcements][topic
+  channel announcements] until the next scheduled attempt. LND limits responses
+  to a total of 100,000 short channel IDs (SCIDs) per query (see [Newsletter
+  #417][news417 scids]). Now, when another eligible peer is available, LND
+  immediately retries synchronization with it and temporarily excludes the
+  failed peer from selection. The existing connection to the failed peer remains
+  open.
+
+- [LND #11190][] updates LND to reject [BOLT11][] invoices containing multiple
+  payment hash (`p`) fields, even when the hashes are identical. Previously,
+  LND used the first supported payment hash and ignored the rest, as
+  recommended by the BOLT11 spec. However, other invoice parsers may choose a
+  different hash. If a service's invoice parser and Lightning node use
+  different hashes, the service could misinterpret a completed withdrawal as
+  unpaid, which could result in two payments being made. Rejecting duplicates
+  removes that ambiguity. BOLT11 already requires invoice creators to include
+  exactly one `p` field; [BOLTs #1357][] proposes requiring readers to reject
+  duplicates.
+
+- [LND #11212][] removes support for opening or accepting new channels using
+  the legacy commitment format, aligning with [BOLT2][] (see [Newsletter
+  #305][news305 commitments]). Legacy commitments derive the key for the output
+  paying the counterparty (`to_remote`) using a per-commitment point. If a node
+  loses its channel state, recovering funds from its peer's commitment
+  transaction therefore requires that peer to supply the missing point. Static
+  remote key channels keep this output key unchanged across channel updates,
+  avoiding that dependency (see [Newsletter #67][news67 static remote key]).
+  Existing legacy channels remain usable. Eclair made the same change last year (see [Newsletter #378][news378 eclair legacy]).
+
+- [LND #11258][] fixes a bug where forwarded [HTLCs][topic htlc] could remain
+  unresolved if LND restarted after the outgoing channel was closed and its
+  records cleaned up. Previously, channel cleanup could delete a received
+  settlement or failure response before it was locked into the incoming
+  channel. This could leave the incoming HTLC stuck, resulting in an
+  unnecessary force close of the incoming channel and additional onchain fees.
+  Now, LND saves pending responses separately from the closed channel, retains
+  the information needed to match them to incoming HTLCs, and replays them on
+  startup.
 
 {% include snippets/recap-ad.md when="2026-10-06 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="3263,3264,29278,35984,35301,36312,36284,35752,35813,11173,11190,1357,11212,11258,2276,2277,4993" %}
 
 [mm eclair dos]: https://delvingbitcoin.org/t/disclosure-dos-vulnerabilities-fixed-in-eclair-v0-14-0/2914
 [news407 eclair]: /en/newsletters/2026/05/29/#eclair-v0-14-0
@@ -299,3 +447,18 @@ FIXME:Gustavojfe
 [depots paper]: https://github.com/JohnLaw2/ln-depots/blob/main/depots_v1.0.pdf
 [jl delving depots recover]: https://delvingbitcoin.org/t/depots-theft-proof-self-custodial-bitcoin-for-billions-of-users/2892/10
 [news329 opr]: /en/newsletters/2024/11/15/#mad-based-offchain-payment-resolution-opr-protocol
+[LND v0.21.4-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.21.4-beta.rc1
+[LND v0.20.5-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.5-beta.rc1
+[news54 maxtxfee]: /en/newsletters/2019/07/10/#bitcoin-core-16257
+[news207 single]: /en/newsletters/2022/07/06/#rust-bitcoin-1024
+[news388 private broadcast]: /en/newsletters/2026/01/16/#bitcoin-core-29415
+[news106 discouragement]: /en/newsletters/2020/07/15/#bitcoin-core-19219
+[news6 avoidpartial]: /en/newsletters/2018/07/31/#bitcoin-core-12257
+[news52 avoid reuse]: /en/newsletters/2019/06/26/#bitcoin-core-13756
+[news305 commitments]: /en/newsletters/2024/05/31/#bolts-1092
+[news378 eclair legacy]: /en/newsletters/2025/10/31/#eclair-3173
+[news67 static remote key]: /en/newsletters/2019/10/09/#lnd-3365
+[news415 silent]: /en/newsletters/2026/07/24/#libsecp256k1-1765
+[news417 scids]: /en/newsletters/2026/08/07/#lnd-10992
+[LDK #4993]: https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/4993
+[news401 bip376]: /en/newsletters/2026/04/17/#bips-2089
