@@ -107,6 +107,9 @@ optech_mentions:
   - title: "Bitcoin Core #35949 adjusts getblocktemplate timestamps to be compliant with BIP54 rules"
     url: /en/newsletters/2026/09/11/#bitcoin-core-35949
 
+  - title: "Proof that BIP54's two timestamp rules bound chain length for a given amount of work"
+    url: /en/newsletters/2026/10/02/#bounds-on-chain-length-with-bip54-time-warp-fixes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation

@@ -122,6 +122,9 @@ optech_mentions:
   - title: "Update on silent payments light clients with BlindBit Oracle benchmarks and a convergence draft"
     url: /en/newsletters/2026/09/11/#update-on-silent-payments-light-clients
 
+  - title: "Bitcoin Core #35301 adds silent payment address encoding, output derivation, and scanning"
+    url: /en/newsletters/2026/10/02/#bitcoin-core-35301
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

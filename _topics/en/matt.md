@@ -50,6 +50,9 @@ optech_mentions:
   - title: "BINANAs #20 assigns BIN-2026-0002 to OP_CHECKCONTRACTVERIFY proposal"
     url: /en/newsletters/2026/05/15/#binanas-20
 
+  - title: "Report finds CCV best supports partial vault withdrawals and trigger-time address selection"
+    url: /en/newsletters/2026/10/02/#comparing-covenant-proposals-for-vaults
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

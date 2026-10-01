@@ -228,6 +228,9 @@ optech_mentions:
   - title: "LND #10962 disables the RBF cooperative-close flow for auxiliary channels"
     url: /en/newsletters/2026/07/17/#lnd-10962
 
+  - title: "Bitcoin Core #29278 adds -maxfeerate to cap wallet transaction feerates, including fee bumps"
+    url: /en/newsletters/2026/10/02/#bitcoin-core-29278
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

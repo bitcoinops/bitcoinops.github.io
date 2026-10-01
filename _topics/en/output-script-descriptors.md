@@ -233,6 +233,9 @@ optech_mentions:
   - title: "BIPs #1951 adds BIP138 compact encryption scheme for descriptor and wallet policy backups"
     url: /en/newsletters/2026/09/25/#bips-1951
 
+  - title: "Proposal to derive wallet label sync storage locations and encryption keys from descriptors"
+    url: /en/newsletters/2026/10/02/#proposal-for-wallet-label-synchronization
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

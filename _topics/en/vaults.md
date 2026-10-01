@@ -116,6 +116,9 @@ optech_mentions:
   - title: "CTV-only vault proof of concept"
     url: /en/newsletters/2026/06/05/#ctv-only-vault-proof-of-concept
 
+  - title: "Report comparing vault constructions using presigned transactions, CTV, APO, TXHASH, CCV, and CAT"
+    url: /en/newsletters/2026/10/02/#comparing-covenant-proposals-for-vaults
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults
