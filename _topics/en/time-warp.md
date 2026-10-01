@@ -66,6 +66,9 @@ optech_mentions:
   - title: "Bitcoin Core #35949 updates block template creation to follow BIP54's timewarp mitigation"
     url: /en/newsletters/2026/09/11/#bitcoin-core-35949
 
+  - title: "Bounds on chain length with the BIP54 time warp fixes"
+    url: /en/newsletters/2026/10/02/#bounds-on-chain-length-with-bip54-time-warp-fixes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal

@@ -60,6 +60,9 @@ optech_mentions:
   - title: "BTCPay Server 2.4.1 ships BIP329 wallet label imports"
     url: /en/newsletters/2026/07/31/#btcpay-server-2-4-1
 
+  - title: "Proposal for synchronizing wallet labels through an untrusted store"
+    url: /en/newsletters/2026/10/02/#proposal-for-wallet-label-synchronization
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output script descriptors

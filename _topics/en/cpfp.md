@@ -83,6 +83,9 @@ optech_mentions:
   - title: "Making anyone-can-spend outputs for CPFP with non-malleable txids"
     url: /en/newsletters/2023/11/15/#eliminating-malleability-from-ephemeral-anchor-spends
 
+  - title: "Bitcoin Core #29278 adds -maxfeerate, which also applies to CPFP fee bumps"
+    url: /en/newsletters/2026/10/02/#bitcoin-core-29278
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

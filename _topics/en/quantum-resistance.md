@@ -187,6 +187,12 @@ optech_mentions:
   - title: "PQLN proposal for post-quantum security of Lightning Network offchain protocols"
     url: /en/newsletters/2026/09/25/#proposal-for-a-post-quantum-lightning-network
 
+  - title: "Continued discussion of PQC output types"
+    url: /en/newsletters/2026/10/02/#continued-discussion-of-pqc-output-types
+
+  - title: "Block-wide aggregation of hash-based post-quantum signatures via SNARKs"
+    url: /en/newsletters/2026/10/02/#block-wide-signature-aggregation-via-snarks
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

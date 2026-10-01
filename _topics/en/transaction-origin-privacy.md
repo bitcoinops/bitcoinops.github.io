@@ -43,6 +43,9 @@ optech_mentions:
   - title: "Replacement cycle mitigation of frequent transaction rebroadcasting with potential privacy reduction"
     url: /en/newsletters/2023/10/25/#frequent-rebroadcasting
 
+  - title: "Bitcoin Core #36312 stops peer discouragement from linking private broadcast and regular connections"
+    url: /en/newsletters/2026/10/02/#bitcoin-core-36312
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anonymity networks

@@ -261,6 +261,9 @@ optech_mentions:
   - title: "Bitcoin Core #36076 preserves sighash type when combining PSBTs"
     url: /en/newsletters/2026/09/18/#bitcoin-core-36076
 
+  - title: "Discussion of broader inter-wallet communication spec covering PSBTs"
+    url: /en/newsletters/2026/10/02/#proposal-for-wallet-label-synchronization
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
