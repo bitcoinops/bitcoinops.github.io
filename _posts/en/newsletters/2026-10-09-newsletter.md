@@ -24,6 +24,17 @@ FIXME:bitschmidty
   about 5% on a typical connection, and is zero until new messages without an
   existing one-byte ID are deployed.
 
+- **Discussion of conventions for tagged hash tags in BIPs:** Fabian Jahr
+  [posted][jahr tagged hash] to the Bitcoin-Dev mailing list asking whether
+  BIPs that use [BIP340][] tagged hashes should include the BIP number in the
+  tag. BIPs 324, 340, 352, 374, and 445 do, while BIP327 and BIP341 use
+  descriptive names such as "TapLeaf". A number guarantees uniqueness, but
+  changing a draft's tags when a number is assigned breaks existing
+  implementations and test vectors, which Jahr found after switching his
+  [DahLIAS][news415 dahlias] draft (BIP459) to the numbered form. Sjors
+  Provoost [replied][provoost tagged hash] that BIP138 included its number
+  and regenerating its test vectors was a minor cost.
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -52,3 +63,6 @@ FIXME:Gustavojfe
 [towns set324alias]: https://groups.google.com/g/bitcoindev/c/YjrkzS_Sjes
 [news392 bip324 ids]: /en/newsletters/2026/02/13/#bips-2092
 [towns set324alias savings]: https://groups.google.com/g/bitcoindev/c/YjrkzS_Sjes/m/JHCPpVWaBAAJ
+[jahr tagged hash]: https://groups.google.com/g/bitcoindev/c/VQVNZOR3-kg
+[news415 dahlias]: /en/newsletters/2026/07/24/#draft-bip-for-full-aggregation-of-bip340-signatures
+[provoost tagged hash]: https://groups.google.com/g/bitcoindev/c/VQVNZOR3-kg/m/OHPZw92DCQAJ
