@@ -49,7 +49,16 @@ optech_mentions:
   - title: "BTCPay Server #4782 adds proof of payment on the receipt page for each payment"
     url: /en/newsletters/2023/04/05/#btcpay-server-4782
 
-  - title: "LDK #4685 moves BOLT12 verification nonce into payer metadata for compatibility with  payment proofs"
+  - title: "BIP321 payment URI scheme includes an extension for providing a proof of payment to the spender"
+    url: /en/newsletters/2025/05/02/#bips-1555
+
+  - title: "Core Lightning #9116 adds experimental support for BOLT12 payer proofs"
+    url: /en/newsletters/2026/05/15/#core-lightning-9116
+
+  - title: "Core Lightning 26.06 adds experimental BOLT12 payment proof support"
+    url: /en/newsletters/2026/06/05/#core-lightning-26-06
+
+  - title: "LDK #4685 moves BOLT12 verification nonce into payer metadata for compatibility with payment proofs"
     url: /en/newsletters/2026/06/19/#ldk-4685
 
   - title: "BOLTs #1346 specifies BOLT12 payer proofs"
