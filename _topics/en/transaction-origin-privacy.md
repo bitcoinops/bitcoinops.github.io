@@ -43,6 +43,18 @@ optech_mentions:
   - title: "Replacement cycle mitigation of frequent transaction rebroadcasting with potential privacy reduction"
     url: /en/newsletters/2023/10/25/#frequent-rebroadcasting
 
+  - title: "Bitcoin Core #29415 adds a privatebroadcast option to send transactions over Tor or I2P"
+    url: /en/newsletters/2026/01/16/#bitcoin-core-29415
+
+  - title: "Bitcoin Core #34329 adds RPCs to inspect and abort pending private broadcasts"
+    url: /en/newsletters/2026/02/27/#bitcoin-core-34329
+
+  - title: "Bitcoin Core #35410 keeps private broadcast retries on the Tor or I2P proxy"
+    url: /en/newsletters/2026/06/12/#bitcoin-core-35410
+
+  - title: "Bitcoin Core #35406 limits the private broadcast tracking queue to 10,000 transactions"
+    url: /en/newsletters/2026/07/17/#bitcoin-core-35406
+
   - title: "Bitcoin Core #36312 stops peer discouragement from linking private broadcast and regular connections"
     url: /en/newsletters/2026/10/02/#bitcoin-core-36312
 
