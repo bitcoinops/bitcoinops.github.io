@@ -225,5 +225,5 @@ fournies par les organisateurs ([jour 1][], [jour 2][], [jour 3][]).
 [utreexo]: https://dci.mit.edu/research/2018/11/28/utreexo-a-dynamic-accumulator-for-bitcoin-state-a-description-of-research-by-thaddeus-dryja
 [btcpay utxo]: https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync
 [bulletin #21]: /fr/newsletters/2018/11/13/#vidéos-de-la-résidence-sur-les-applications-lightning
-[le bulletin #31]: /en/newsletters/2019/01/29/#c-lightning-2283
+[le bulletin #31]: /fr/newsletters/2019/01/29/#c-lightning-2283
 [descripteurs de script de sortie]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
