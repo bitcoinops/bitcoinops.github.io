@@ -137,6 +137,8 @@ see_also:
     link: https://web.archive.org/web/20210802002747/https://joinmarket.me/blog/blog/payjoin/
   - title: Payjoin (Bitcoin Wiki)
     link: https://en.bitcoin.it/wiki/PayJoin
+  - title: "Payjoin (LearnBitcoin glossary)"
+    link: https://www.learnbitcoin.com/glossary/payjoin
 ---
 By including inputs from both the spender and the receiver, payjoin
 makes it difficult for block chain analysis companies to determine
