@@ -134,7 +134,7 @@ see_also:
   - title: Pay To EndPoint
     link: https://medium.com/@nopara73/pay-to-endpoint-56eb05d3cac6
   - title: Payjoin
-    link: https://joinmarket.me/blog/blog/payjoin/
+    link: https://web.archive.org/web/20210802002747/https://joinmarket.me/blog/blog/payjoin/
   - title: Payjoin (Bitcoin Wiki)
     link: https://en.bitcoin.it/wiki/PayJoin
 ---
