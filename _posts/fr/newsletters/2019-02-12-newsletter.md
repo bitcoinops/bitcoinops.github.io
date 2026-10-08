@@ -11,7 +11,7 @@ Le bulletin de cette semaine annonce la toute dernière version de LND, décrit 
 bitcoins, et renvoie vers une étude d'Optech sur l'utilisabilité de Replace-by-Fee. Sont également inclus des résumés de changements de code
 notables dans des projets populaires de l'infrastructure Bitcoin.
 
-## Action items
+## Éléments d'action
 
 - **Mettez à niveau vers LND 0.5.2 :** cette [version][lnd release] mineure corrige des bogues liés à la stabilité et améliore la
   compatibilité avec d'autres logiciels LN.
