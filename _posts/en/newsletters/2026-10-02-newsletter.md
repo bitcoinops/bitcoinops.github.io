@@ -44,7 +44,7 @@ Bitcoin infrastructure software.
   million objects, and a flood of such messages took a node offline within
   seconds. Morehouse found it after the first bug by using an LLM to search the
   Eclair codebase for other places where a peer could impose far more work on
-  the node than it spends itself. The fix is [Eclair #3263][].
+  the node than it spends itself. The fix is [Eclair #3263][]. {% assign timestamp="1:01" %}
 
 - **Proposal for wallet label synchronization**: Jakub [posted][label sync ml]
   to the Bitcoin-Dev mailing list to gauge interest in standardizing
@@ -78,7 +78,7 @@ Bitcoin infrastructure software.
   He also pushed back on the use of Nostr as the reference transport protocol,
   since exchange of financial data should optimize for privacy, rather than
   censorship resistance, and noted that he is working on a BIP for canonical
-  output descriptors.
+  output descriptors. {% assign timestamp="15:25" %}
 
 ## Changing consensus
 
@@ -116,7 +116,7 @@ Bitcoin's consensus rules._
   distinguishable footprints if both become widely used. Conduition and Wuille
   continued to discuss whether P2MR's protection is achievable in
   practice, and Conduition [proposed][c delving pqout both] deploying both
-  output types and letting users choose.
+  output types and letting users choose. {% assign timestamp="21:36" %}
 
 - **Block-wide signature aggregation via SNARKs**: Conduition
   [posted][c delving snark] to Delving Bitcoin a design sketch for
@@ -152,7 +152,7 @@ Bitcoin's consensus rules._
   random-oracle proof does not automatically cover recursive use of
   the same SNARK. ZmnSCPxj [warned][zmn delving snark] that a DoS in
   prover code used by miners could stall block production, and
-  suggested shipping the prover in Bitcoin Core so it gets review.
+  suggested shipping the prover in Bitcoin Core so it gets review. {% assign timestamp="27:17" %}
 
 - **Bounds on chain length with BIP54 time warp fixes**: Pieter Wuille
   [posted][pw delving timewarp] to Delving Bitcoin a proof that the two
@@ -176,7 +176,7 @@ Bitcoin's consensus rules._
   motivation was Bitcoin Core's headers presync [DoS protection][news216 presync],
   which could rely on the bound once BIP54 is buried. Zawy discussed alternative
   formulations. Wuille later proved a complementary lower bound on the
-  work required to produce a chain of a given length in a given time.
+  work required to produce a chain of a given length in a given time. {% assign timestamp="35:19" %}
 
 - **Comparing covenant proposals for vaults**: Lillian Wang
   [posted][lw delving vaults] to Delving Bitcoin and [cross-posted][lw
@@ -200,7 +200,7 @@ Bitcoin's consensus rules._
   same vault address in a single transaction that creates the expected
   output only once, with the second deposit's value going to fees (a half-spend), because APOAS commits to neither the input
   count nor the input index, so never reusing a vault address is a
-  requirement rather than a recommendation.
+  requirement rather than a recommendation. {% assign timestamp="39:23" %}
 
 - **Depots for probabilistic Lightning channels**: John Law
   [posted][jl delving depots] to Delving Bitcoin a [protocol][depots paper]
@@ -240,7 +240,7 @@ Bitcoin's consensus rules._
   delving depots recover] that unlike his [timeout trees][topic timeout
   trees], the operator cannot roll a depot over without a user-provided
   secret, that wallets can automate an early drain, and that recovery needs
-  depot parameters and channel state in addition to a seed.
+  depot parameters and channel state in addition to a seed. {% assign timestamp="43:18" %}
 
 ## Releases and release candidates
 
@@ -256,12 +256,12 @@ release candidates._
   cancellation of [AMP][topic amp] invoices, and SQL graph migration failures.
   `WalletKit` can now reserve outputs until their spending transaction reaches
   a specified confirmation depth. The release also requires explicit channel
-  types when opening channels.
+  types when opening channels. {% assign timestamp="48:40" %}
 
 - [LND v0.20.5-beta.rc1][] is a release candidate for a maintenance release of
   LND's 0.20 release branch. It backports several fixes also included in
   0.21.4-beta.rc1, including those for pending HTLCs, AMP invoice cancellation,
-  and channel synchronization, and adds bounds on onion payload parsing.
+  and channel synchronization, and adds bounds on onion payload parsing. {% assign timestamp="50:29" %}
 
 ## Notable code and documentation changes
 
@@ -280,7 +280,7 @@ repo], and [BINANAs][binana repo]._
   However, certain checks also interpreted the same amount as a fee per 1,000
   vB (see [Newsletter #54][news54 maxtxfee]). The new option separates the feerate limit from the total fee limit and
   applies to transaction creation, [fee bumping][topic rbf], [CPFP][topic cpfp]
-  and regular wallet broadcast.
+  and regular wallet broadcast. {% assign timestamp="51:55" %}
 
 - [Bitcoin Core #35984][] fixes a bug where [PSBT][topic psbt] signing could
   produce a `SIGHASH_SINGLE` signature without a corresponding output. This
@@ -290,7 +290,7 @@ repo], and [BINANAs][binana repo]._
   signature can be reused to spend other UTXOs controlled by the same key,
   provided the corresponding output remains missing. Bitcoin Core now leaves
   such inputs unsigned for legacy and segwit v0, while still signing the PSBT's
-  other inputs, extending a check already present in raw transaction signing.
+  other inputs, extending a check already present in raw transaction signing. {% assign timestamp="53:43" %}
 
 - [Bitcoin Core #35301][] begins the [BIP352][] [silent payments][topic silent
   payments] implementation by adding support for encoding and decoding
@@ -300,7 +300,7 @@ repo], and [BINANAs][binana repo]._
   addresses and identify change. The implementation builds on libsecp256k1's
   silent-payments module (see [Newsletter #415][news415 silent]). However, this
   PR does not yet enable sending or receiving silent payments through the
-  wallet's RPCs or GUI.
+  wallet's RPCs or GUI. {% assign timestamp="56:45" %}
 
 - [Bitcoin Core #36312][] fixes a privacy leak in the experimental, opt-in
   private transaction broadcasting feature (see [Newsletter #388][news388
@@ -311,7 +311,7 @@ repo], and [BINANAs][binana repo]._
   regular connections, weakening [transaction origin privacy][topic transaction
   origin privacy]. Now, misbehaving private broadcast peers are disconnected
   without discouraging their addresses, and discouraging regular peers leaves
-  private broadcast connections to the same addresses intact.
+  private broadcast connections to the same addresses intact. {% assign timestamp="58:51" %}
 
 - [Bitcoin Core #36284][] fixes a bug where the wallet could reject a payment
   despite having enough eligible funds when partial-spend avoidance is enabled
@@ -321,7 +321,7 @@ repo], and [BINANAs][binana repo]._
   selection] to reduce [output linking][topic output linking]. Previously, if a
   group failed eligibility checks (e.g. the limit on unconfirmed ancestors),
   its value was subtracted twice from the amount available for selection. Now,
-  each rejected group's value is subtracted only once.
+  each rejected group's value is subtracted only once. {% assign timestamp="1:01:59" %}
 
 - [Bitcoin Core #35752][] fixes error handling when encrypting a wallet,
   changing its encryption passphrase, or adding private keys. Previously, a
@@ -336,7 +336,7 @@ repo], and [BINANAs][binana repo]._
   corresponding writes succeed, allowing failed operations to be retried. The
   PR also prevents a failed passphrase change from leaving a previously locked
   wallet unlocked and reports database or encryption failures separately from
-  incorrect passphrase errors.
+  incorrect passphrase errors. {% assign timestamp="1:07:47" %}
 
 - [Bitcoin Core #35813][] adds a `listrawtransactions` wallet RPC that can list
   every transaction known to the wallet, returning one entry per transaction
@@ -344,7 +344,7 @@ repo], and [BINANAs][binana repo]._
   accounting entries: a self-transfer to a receiving address can appear as both
   a send and a receive, while a transfer entirely to change addresses can be
   omitted. The `count` and `skip` parameters provide pagination, and `verbose`
-  adds decoded transaction details.
+  adds decoded transaction details. {% assign timestamp="1:11:46" %}
 
 - [BIPs #2276][] and [#2277][bips #2277] correct [PSBT][topic psbt]
   finalization rules that could discard information needed for later signing or
@@ -357,7 +357,7 @@ repo], and [BINANAs][binana repo]._
   and required [locktimes][topic timelocks] after a PSBTv2 input is finalized.
   Deleting these fields could invalidate the PSBT or alter the extracted
   transaction. It also removes an erroneous [BIP371][] instruction to delete
-  output taproot derivation data during input finalization.
+  output taproot derivation data during input finalization. {% assign timestamp="1:13:07" %}
 
 - [LDK #4993][] fixes a bug that could cause a wallet to spend reserved inputs
   in a transaction conflicting with an unconfirmed [splice][topic splicing].
@@ -369,7 +369,7 @@ repo], and [BINANAs][binana repo]._
   funding contribution records which inputs and outputs it inherited from
   earlier attempts, so failure tells the wallet to release only that
   contribution's own reservations. The PR also adds error information and
-  reservation queries to help applications retry failed contributions safely.
+  reservation queries to help applications retry failed contributions safely. {% assign timestamp="1:16:39" %}
 
 - [LND #11173][] fixes a bug where an invalid or oversized channel range
   response could stall the initial sync of [channel announcements][topic
@@ -378,7 +378,7 @@ repo], and [BINANAs][binana repo]._
   #417][news417 scids]). Now, when another eligible peer is available, LND
   immediately retries synchronization with it and temporarily excludes the
   failed peer from selection. The existing connection to the failed peer remains
-  open.
+  open. {% assign timestamp="1:19:40" %}
 
 - [LND #11190][] updates LND to reject [BOLT11][] invoices containing multiple
   payment hash (`p`) fields, even when the hashes are identical. Previously,
@@ -389,7 +389,7 @@ repo], and [BINANAs][binana repo]._
   unpaid, which could result in two payments being made. Rejecting duplicates
   removes that ambiguity. BOLT11 already requires invoice creators to include
   exactly one `p` field; [BOLTs #1357][] proposes requiring readers to reject
-  duplicates.
+  duplicates. {% assign timestamp="1:22:12" %}
 
 - [LND #11212][] removes support for opening or accepting new channels using
   the legacy commitment format, aligning with [BOLT2][] (see [Newsletter
@@ -399,7 +399,7 @@ repo], and [BINANAs][binana repo]._
   transaction therefore requires that peer to supply the missing point. Static
   remote key channels keep this output key unchanged across channel updates,
   avoiding that dependency (see [Newsletter #67][news67 static remote key]).
-  Existing legacy channels remain usable. Eclair made the same change last year (see [Newsletter #378][news378 eclair legacy]).
+  Existing legacy channels remain usable. Eclair made the same change last year (see [Newsletter #378][news378 eclair legacy]). {% assign timestamp="1:27:37" %}
 
 - [LND #11258][] fixes a bug where forwarded [HTLCs][topic htlc] could remain
   unresolved if LND restarted after the outgoing channel was closed and its
@@ -409,7 +409,7 @@ repo], and [BINANAs][binana repo]._
   unnecessary force close of the incoming channel and additional onchain fees.
   Now, LND saves pending responses separately from the closed channel, retains
   the information needed to match them to incoming HTLCs, and replays them on
-  startup.
+  startup. {% assign timestamp="1:29:58" %}
 
 {% include snippets/recap-ad.md when="2026-10-06 16:30" %}
 {% include references.md %}
