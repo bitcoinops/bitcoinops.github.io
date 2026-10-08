@@ -10,7 +10,7 @@ lang: fr
 Le bulletin de cette semaine comprend une annonce du programme Chaincode Residency 2019, résume quelques présentations de la Stanford
 Blockchain Conference, et fournit la liste habituelle des changements notables dans le code de projets populaires d'infrastructure Bitcoin.
 
-## Action items
+## Éléments d'action
 
 - **Postulez à la Chaincode Residency :** Bitcoin Optech encourage tout ingénieur intéressé par le fait de passer l'été à contribuer à des
   projets open source Bitcoin et Lightning à postuler à la Chaincode Residency. Tous les détails de la résidence se trouvent dans la section
