@@ -12,7 +12,7 @@ permettront d’associer le portefeuille intégré de Bitcoin Core en mode obser
 du gel des fonctionnalités pour la prochaine version de Bitcoin Core. Sont également résumés de nombreux changements de code et de
 documentation dans des projets populaires d’infrastructure Bitcoin.
 
-## Action items
+## Éléments d'action
 
 Aucun cette semaine.
 
@@ -136,7 +136,7 @@ Aucun cette semaine.
 - [BIPs #760][] met à jour les filtres de blocs compacts [BIP158][] pour ajouter des vecteurs de test supplémentaires pour le traitement
   correct des sorties de transport de données (sorties `OP_RETURN`).
 
-## Footnotes
+## Notes de bas de page
 
 [^fn-example]: Un exemple actuel du format de descripteur avec informations d’origine de clé et somme de contrôle détectant les erreurs :
 
