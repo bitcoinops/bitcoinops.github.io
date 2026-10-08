@@ -46,6 +46,9 @@ optech_mentions:
   - title: "Bitcoin Core #36312 stops peer discouragement from linking private broadcast and regular connections"
     url: /en/newsletters/2026/10/02/#bitcoin-core-36312
 
+  - title: "Bitcoin Core #36277 completes private broadcast attempts even after the transaction propagates"
+    url: /en/newsletters/2026/10/09/#bitcoin-core-36277
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anonymity networks

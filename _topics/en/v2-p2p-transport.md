@@ -98,6 +98,9 @@ optech_mentions:
   - title: "Rust Bitcoin #6364 adds P2P encoding for BIP434 feature messages"
     url: /en/newsletters/2026/08/07/#rust-bitcoin-6364
 
+  - title: "Draft BIP for dynamic one-byte message type IDs over BIP324"
+    url: /en/newsletters/2026/10/09/#dynamic-one-byte-message-type-ids-for-bip324
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151

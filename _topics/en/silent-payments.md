@@ -125,6 +125,9 @@ optech_mentions:
   - title: "Bitcoin Core #35301 adds silent payment address encoding, output derivation, and scanning"
     url: /en/newsletters/2026/10/02/#bitcoin-core-35301
 
+  - title: "Bitcoin Core #36338 fixes public key extraction from modified P2PKH inputs"
+    url: /en/newsletters/2026/10/09/#bitcoin-core-36338
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
