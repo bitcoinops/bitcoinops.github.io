@@ -32,7 +32,7 @@ BIPの番号をタグ付きハッシュに含めるべきかどうかに関す�
   この問題に気づきました。Sjors Provoostは、BIP138は番号を含めており、
   そのテストベクターの再生成は小さなコストだったと[返信しました][provoost tagged hash]。
 
-- **コンセンサスの変更なしでオンチェーンでプライベートなBitcoin送金を行う提案**: Misha Komarovは、
+- **コンセンサスの変更なしでオンチェーンでプライベートなBitcoin送金を行う提案:** Misha Komarovは、
   コンセンサスの変更を必要とせずにプライベートな送金を可能にする、
   Shielded Bitcoinと呼ばれるBitcoin上に構築された新しいメタプロトコルの提案について
   Delving Bitcoinに[投稿しました][shield del]。Komarovは、Clara ShikhelmanおよびAleksei Moskvinとともに、
