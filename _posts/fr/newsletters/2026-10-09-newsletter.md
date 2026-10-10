@@ -33,7 +33,7 @@ changements notables dans les logiciels populaires de l'infrastructure Bitcoin.
   Sjors Provoost a [répondu][provoost tagged hash] que BIP138 incluait son numéro et que régénérer ses vecteurs de test avait eu un coût
   mineur.
 
-- **Proposition de transferts privés onchain de bitcoins sans modification du consensus** : Misha Komarov a [publié][shield del] sur Delving
+- **Proposition de transferts privés onchain de bitcoins sans modification du consensus :** Misha Komarov a [publié][shield del] sur Delving
   Bitcoin une proposition pour un nouveau métaprotocole construit au-dessus de Bitcoin, appelé Shielded Bitcoin, qui permettrait des
   transferts privés tout en ne nécessitant aucune modification du consensus. Komarov, avec Clara Shikhelman et Aleksei Moskvin, a récemment
   publié un [article][shield paper] complet décrivant le protocole.
