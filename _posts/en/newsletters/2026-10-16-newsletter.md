@@ -51,6 +51,43 @@ describing notable changes to popular Bitcoin infrastructure software.
   node as their LSP, such as Phoenix, are unaffected because ACINQ patched its
   nodes months ago.
 
+- **Offchain contracts in Lightning channels**: Adam Gibson [posted][lngap ml]
+  to the Bitcoin-Dev mailing list about a proposal for protocol,
+  called LN-GAP, to run complex, multi-round, two-party contracts inside a
+  Lightning channel while settling disputes onchain in a constant number of
+  transactions. In order to showcase the proposal, Gibson implemented a game
+  of chess, which he deems a good example of a game that is difficult to run
+  onchain, in which the winner takes the whole pot. Both a [repository][lngap repo]
+  and a [paper][lngap paper] for the proposal are available.
+
+  Two players, Alice and Bob, agree on a certain set of rules. Each player makes
+  their own moves. In case of a dispute, Alice can enforce the rules onchain.
+  However, Gibson notes that Lightning can enforce rules about a published state,
+  but it cannot do so in case a counterparty stalls or stops responding.
+  To address this issue, Gibson introduces a venue, a committee of members whose
+  role is to attest whether a signed message (a move in a chess game and its
+  signature) was published before a certain deadline or not. The venue only needs
+  to attest the timeliness of the publication, not the content of the message.
+  In case of a dispute, Alice posts a transaction claiming that no event was
+  published by Bob; in turn, Bob can post a second transaction containing a
+  rebuttal (his move and the venue's attestation); finally, Alice can post a
+  disproof, stating that Bob's rebuttal doesn't stand due to the event not being
+  compliant with the rules.
+
+  In Gibson's proposal, the venue never holds users' funds. Moreover, it avoids
+  relying on FROST-style threshold signature in order to make fraud attributable
+  only to malicious members. To do so, attestation is done through per-member
+  "one-bit signatures" checked using `OP_CHECKSIGADD`. Members are incentivized
+  by fees paid atomically over channels using [adaptors][topic adaptor signatures].
+  However, the construction relies on an honest-majority assumption. If more than
+  half of the members of the venue collude with one of the parties involved, funds
+  can be stolen.
+
+  Other than games, possible applications include proof-of-storage
+  contracts, where a provider forfeits a bond for failing to respond to a
+  challenge, and offchain dispute resolution similar to what
+  [BitVMX][topic acc]-style zero-knowledge verifiers do onchain.
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -79,3 +116,6 @@ FIXME:Gustavojfe
 [ec eclair dos]: https://delvingbitcoin.org/t/disclosure-dos-vulnerabilities-fixed-in-eclair-v0-14-1/2928
 [news416 eclair 0.14.1]: /en/newsletters/2026/07/31/#eclair-0-14-1
 [smite repo]: https://github.com/lnfuzz/smite
+[lngap ml]: https://groups.google.com/g/bitcoindev/c/pjv6bL_42kg
+[lngap repo]: https://github.com/AdamISZ/ln-gap
+[lngap paper]: https://github.com/AdamISZ/ln-gap/blob/master/docs/paper/lngap-short.pdf
