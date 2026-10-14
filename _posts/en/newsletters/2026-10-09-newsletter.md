@@ -28,7 +28,7 @@ to popular Bitcoin infrastructure software.
   without that coordination. Towns also [noted][towns set324alias savings] that
   the space saving ranges from up to 66% on a connection carrying only pings to
   about 5% on a typical connection, and is zero until new messages without an
-  existing one-byte ID are deployed.
+  existing one-byte ID are deployed. {% assign timestamp="45:02" %}
 
 - **Discussion of conventions for tagged hash tags in BIPs:** Fabian Jahr
   [posted][jahr tagged hash] to the Bitcoin-Dev mailing list asking whether
@@ -39,7 +39,7 @@ to popular Bitcoin infrastructure software.
   implementations and test vectors, which Jahr found after switching his
   [DahLIAS][news415 dahlias] draft (BIP459) to the numbered form. Sjors
   Provoost [replied][provoost tagged hash] that BIP138 included its number
-  and regenerating its test vectors was a minor cost.
+  and regenerating its test vectors was a minor cost. {% assign timestamp="49:04" %}
 
 - **Proposal for onchain, private bitcoin transfers with no consensus changes**:
   Misha Komarov [posted][shield del] to Delving Bitcoin about a proposal for a
@@ -93,7 +93,7 @@ to popular Bitcoin infrastructure software.
   He also asked whether unilateral peg-outs require an SPV proof expressed as a
   condition of the witness encryption scheme. Co-author Clara Shikhelman replied
   that peg-outs use fixed denominations and that all the information about
-  peg-outs will be detailed in the upcoming paper.
+  peg-outs will be detailed in the upcoming paper. {% assign timestamp="1:15" %}
 
 ## Releases and release candidates
 
@@ -103,7 +103,7 @@ release candidates._
 
 - [Bitcoin Core 32.0rc3][] is a release candidate for the next major version of
   the predominant full node implementation. A [testing guide][bcc32 testing] is
-  available.
+  available. {% assign timestamp="53:34" %}
 
 - [Core Lightning 26.06.9][] is a security release of this popular LN node
   implementation. It fixes vulnerabilities in channel reestablishment,
@@ -113,7 +113,7 @@ release candidates._
   announcements], pings, and [onion messages][topic onion messages]. Although
   tests for the security fixes are temporarily withheld to make it harder to
   turn them into working exploits, the source code is available immediately. The
-  project strongly recommends upgrading.
+  project strongly recommends upgrading. {% assign timestamp="54:38" %}
 
 - [LDK v0.3-rc3][] is the third release candidate for the next major version of
   this library for building LN-enabled wallets and applications. It adds
@@ -123,7 +123,7 @@ release candidates._
   to explicitly accept incoming channels. Upgrading invalidates previously
   issued [BOLT11][] invoices containing payment metadata. Developers should
   review the [API and backwards-compatibility changes][ldk 0.3 notes] before
-  testing.
+  testing. {% assign timestamp="23:38" %}
 
 - [LDK v0.2.7][] and [v0.1.13][ldk v0.1.13] are security releases for the 0.2
   and 0.1 branches of this library for building LN-enabled wallets and
@@ -132,7 +132,7 @@ release candidates._
   0.2.7 additionally includes the [LSPS2][BLIP52] amount validation and stale
   channel state fixes described below. Version 0.1.13 also fixes a channel
   manager deserialization failure triggered by invalid [HTLCs][topic htlc],
-  previously fixed in 0.2.6.
+  previously fixed in 0.2.6. {% assign timestamp="24:33" %}
 
 - [BTCPay Server 2.4.5][] is a security release of this self-hosted payment
   processor. It blocks private-network destinations by default for outbound
@@ -142,7 +142,7 @@ release candidates._
   Accompanying Docker changes make Tor opt-in, including for existing
   deployments, and remove several unmaintained integrations. Administrators are
   encouraged to upgrade and review the [deployment changes][btcpay 2.4.5
-  announcement].
+  announcement]. {% assign timestamp="56:55" %}
 
 ## Notable code and documentation changes
 
@@ -168,7 +168,7 @@ repo], and [BINANAs][binana repo]._
   could infer that the node had originated the transaction. Bitcoin Core now
   completes all three initial private broadcast attempts over Tor or I2P even
   if the transaction has already propagated, while allowing subsequent retries
-  to stop as appropriate.
+  to stop as appropriate. {% assign timestamp="59:51" %}
 
 - [Bitcoin Core #36365][] fixes two issues with the [mempool-based fee
   estimator][topic fee estimation] (see [Newsletter #420][news420 fee
@@ -181,7 +181,7 @@ repo], and [BINANAs][binana repo]._
   could cause an empty mempool to be considered healthy, resulting in
   artificially low fee estimates. It also renames the `estimatesmartfee` RPC's
   default `fee_rate_estimator` value from `none` to `auto` and rejects
-  unrecognized values.
+  unrecognized values. {% assign timestamp="1:05:09" %}
 
 - [Bitcoin Core #36338][] fixes a bug in its [BIP352][] [silent payments][topic
   silent payments] implementation that could cause a wallet to miss payments
@@ -194,7 +194,7 @@ repo], and [BINANAs][binana repo]._
   extracted the wrong public key, potentially causing the scanner to miss a
   payment. The fix now searches `scriptSig` for a valid compressed public key
   whose HASH160 matches the hash committed to in the spent output. This
-  implementation is not yet integrated into the wallet.
+  implementation is not yet integrated into the wallet. {% assign timestamp="1:07:53" %}
 
 - [Bitcoin Core #32895][] prepares the wallet for future automatic upgrades by
   recording the version and supported features of the last client that opened
@@ -206,7 +206,7 @@ repo], and [BINANAs][binana repo]._
   metadata will enable future versions to identify these
   upgrade-downgrade-upgrade scenarios and perform the necessary migrations. It
   separately records the features of the last client to decrypt the wallet,
-  since some upgrades require access to private keys.
+  since some upgrades require access to private keys. {% assign timestamp="1:10:38" %}
 
 - [Core Lightning #9582][] ports 77 commits containing security and reliability
   fixes from v26.06.8 (see [Newsletter #424][news424 cln release]) to the
@@ -226,7 +226,7 @@ repo], and [BINANAs][binana repo]._
   and splice-[RBF][topic rbf] handling, [anchor][topic anchor outputs] fee
   calculations, [multipart-payment][topic multipath payments] processing, rune
   validation and blacklisting, [BOLT11][] and [BOLT12][topic offers] message
-  handling, onion routing, and REST API resource-exhaustion vulnerabilities.
+  handling, onion routing, and REST API resource-exhaustion vulnerabilities. {% assign timestamp="1:12:38" %}
 
 - [Eclair #3390][] and [#3388][eclair #3388] close gaps in the protections
   against excessive mining fees during [dual funding][topic dual funding] and
@@ -240,7 +240,7 @@ repo], and [BINANAs][binana repo]._
   [RBF][topic rbf] feerate when Eclair contributes funds to a replacement
   dual-funding or splice transaction. Eclair now rejects proposals above its
   locally calculated maximum, except when the peer pays the fees through a
-  [liquidity purchase][topic liquidity advertisements].
+  [liquidity purchase][topic liquidity advertisements]. {% assign timestamp="1:18:03" %}
 
 - [LDK #5057][] fixes a vulnerability that could allow a malicious channel peer
   to steal the value of a forwarded [HTLC][topic htlc]. During reconnection, a
@@ -253,7 +253,7 @@ repo], and [BINANAs][binana repo]._
   it knew the preimage. This would allow the malicious peer to reclaim those
   funds after the HTLC expired. LDK now only permits commitment retransmission
   when the peer's acknowledgment is still outstanding; otherwise, it
-  force-closes the channel.
+  force-closes the channel. {% assign timestamp="33:00" %}
 
 - [LDK #5042][] fixes a bug that could cause an LSP to lose funds when handling
   an [LSPS2][BLIP52] [just-in-time channel][topic jit channels] payment.
@@ -263,7 +263,7 @@ repo], and [BINANAs][binana repo]._
   LSP to cover the difference with its own funds. Now, the LSPS2
   `htlc_intercepted` handlers verify that the requested outgoing amount does
   not exceed the actual incoming HTLC amount. If this condition isn't met, LDK
-  fails back the HTLC before opening a channel or forwarding funds.
+  fails back the HTLC before opening a channel or forwarding funds. {% assign timestamp="35:55" %}
 
 - [LDK #5046][] fixes a bug that could cause a forwarding node to lose funds
   when restarting with an older `ChannelManager` state than its
@@ -274,7 +274,7 @@ repo], and [BINANAs][binana repo]._
   onchain, leaving LDK to cover the loss. LDK now checks which previously
   blocked monitor updates have already been applied before force-closing,
   ensuring that HTLCs committed downstream are left for the monitor to resolve
-  instead of being incorrectly failed upstream.
+  instead of being incorrectly failed upstream. {% assign timestamp="38:25" %}
 
 - [LDK #5028][] makes SCID alias-only forwarding the default when opening new
   [unannounced channels][topic unannounced channels] with peers that support
@@ -282,7 +282,7 @@ repo], and [BINANAs][binana repo]._
   forwarding probes using its real SCID. Previously, applications had to enable
   the `negotiate_scid_privacy` setting, which is now removed. Negotiation still
   falls back to a channel without this protection if the peer does not support
-  or accept it. Existing channels keep their negotiated behavior.
+  or accept it. Existing channels keep their negotiated behavior. {% assign timestamp="41:43" %}
 
 - [LND #11290][] fixes an overflow bug when constructing [BOLT11][] invoices
   containing [blinded payment paths][topic rv routing] (see [Newsletter
@@ -293,7 +293,7 @@ repo], and [BINANAs][binana repo]._
   causing payments to fail because the receiver would receive less than the
   invoiced amount. LND now uses 64-bit checked arithmetic to calculate the
   aggregate fees and excludes paths whose fees exceed the invoice format's
-  limits.
+  limits. {% assign timestamp="1:20:41" %}
 
 {% include snippets/recap-ad.md when="2026-10-13 16:30" %}
 {% include references.md %}
