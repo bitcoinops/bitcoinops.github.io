@@ -208,6 +208,9 @@ optech_mentions:
   - title: "Matt Morehouse disclosed two DoS vulnerabilities in Eclair"
     url: /en/newsletters/2026/10/02/#disclosure-of-two-dos-vulnerabilities-in-eclair
 
+  - title: "Erick Cestari and Matt Morehouse disclosed two DoS vulnerabilities in Eclair's channel opening"
+    url: /en/newsletters/2026/10/16/#disclosure-of-two-dos-vulnerabilities-fixed-in-eclair-v0-14-1
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
