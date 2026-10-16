@@ -51,6 +51,9 @@ optech_mentions:
   - title: "Discussion of `OP_CODESEPARATOR` design for proposed tapscript soft fork"
     url: /en/newsletters/2019/12/04/#continued-schnorr-taproot-discussion
 
+  - title: "Rust Bitcoin #6956 adds a `ScriptCode` type for `OP_CODESEPARATOR`-aware segwit v0 signature hashing"
+    url: /en/newsletters/2026/10/16/#rust-bitcoin-6956
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Tapscript soft fork proposal

@@ -118,6 +118,9 @@ optech_mentions:
   - title: "Babilonia uses adaptor signatures to settle covert onchain bets that double as coinjoins"
     url: /en/newsletters/2026/09/11/#a-protocol-for-probabilistic-coinjoin-and-covert-betting
 
+  - title: "LN-GAP pays venue members atomically over channels using adaptor signatures"
+    url: /en/newsletters/2026/10/16/#offchain-contracts-in-lightning-channels
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
