@@ -36,7 +36,7 @@ dans les branches de développement des projets Bitcoin Core, Lightning Network 
 
 ## Rapport de terrain : Consolidation de 4 millions d'UTXO chez Xapo
 
-*par [Anthony Towns](https://twitter.com/ajtowns), développeur sur Bitcoin Core chez [Xapo][]*
+*par [Anthony Towns](https://twitter.com/ajtowns), développeur sur Bitcoin Core chez [Xapo](https://www.xapo.com/)*
 
 <span id="additional-resources"></span>
 Lire [l’article sur la consolidation de quatre millions d’UTXO chez Xapo (en anglais)](/en/xapo-utxo-consolidation/).
