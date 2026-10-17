@@ -24,7 +24,22 @@ FIXME:bitschmidty
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Ibis Wallet v5.0-beta released:** [Ibis Wallet v5.0-beta][ibis v5.0] (see
+  [Newsletter #406][news406 ibis]) adds [Ark][topic ark] support built on Bark,
+  unilateral exits from the Spark [statechain][topic statechains], and receiving
+  to [silent payment][topic silent payments] addresses.
+
+- **Landfall wallet for Lightning mining payouts:** [Landfall][landfall gh] is a
+  proof-of-concept wallet, showing UX achievable today, that derives from a single seed the payout address,
+  [BOLT12 offer][topic offers], and [BIP322][topic generic signmessage]
+  signature that the OCEAN mining pool requires to pay rewards over LN, using a
+  Lexe-hosted node (see [Newsletter #419][news419 lexe]). It is not intended for
+  production use.
+
+- **rbitcoin 0.8.0 released:** [rbitcoin 0.8.0][rbitcoin 0.8.0] is a Bitcoin
+  full node written in Rust and built on rust-bitcoin, described as entirely AI-written, for wallet and Lightning
+  backends that replaces the UTXO set with a relational archive, serves Electrum
+  and Esplora-style APIs, and uses [BIP324][topic v2 p2p transport] exclusively.
 
 ## Releases and release candidates
 
@@ -50,3 +65,9 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2026-10-27 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
+
+[ibis v5.0]: https://github.com/aeonBTC/IbisWallet/releases/tag/v5.0.1-beta
+[news406 ibis]: /en/newsletters/2026/05/22/#ibis-wallet-announced
+[landfall gh]: https://github.com/vincenzopalazzo/landfall
+[news419 lexe]: /en/newsletters/2026/08/21/#lexe-adds-human-readable-addresses-and-lnurl-withdraw
+[rbitcoin 0.8.0]: https://github.com/reardencode/rbitcoin/releases/tag/v0.8.0
