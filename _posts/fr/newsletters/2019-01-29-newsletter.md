@@ -88,7 +88,8 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
 Optech félicite également et remercie Pieter Wuille, qui ce mois-ci est devenu le [contributeur le mieux noté de tous les temps][top bse]
 sur Bitcoin Stack Exchange.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-Lightning][c-lightning repo],
 [Eclair][eclair repo], et [libsecp256k1][libsecp256k1 repo].*

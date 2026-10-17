@@ -61,7 +61,8 @@ Bitcoin-Dev, et des commits notables de projets d'infrastructure Bitcoin.
   pour des contreparties et des tierces parties à des contrats intelligents sophistiqués de gonfler la taille des transactions multipartites
   dans le cadre d'une attaque DoS qui réduit la priorité des frais d'une transaction.<!--#8-->
 
-## Commits notables
+## Changements notables dans le code et la documentation
+{: id="commits-notables"}
 
 *Commits notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], et [C-lightning][core lightning repo]. Rappel : les
 nouvelles fusions dans Bitcoin Core sont effectuées sur sa branche de développement master et ont peu de chances de faire partie de la

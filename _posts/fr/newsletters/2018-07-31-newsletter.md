@@ -38,7 +38,8 @@ dans les branches de développement des projets Bitcoin Core, Lightning Network 
 
 *par [Anthony Towns](https://twitter.com/ajtowns), développeur sur Bitcoin Core chez [Xapo][]*
 
-{% include articles/fr/towns-xapo-consolidation.md hlevel='###' %}
+<span id="additional-resources"></span>
+Lire [l’article sur la consolidation de quatre millions d’UTXO chez Xapo (en anglais)](/en/xapo-utxo-consolidation/).
 
 ## Nouvelles
 
@@ -94,7 +95,7 @@ mensuelle, nous mettons en lumière certaines des questions et réponses les mie
   être envoyées aux "transactions standards" et pourquoi la plupart de ces restrictions sont toujours en place même si presque tous les
   opcodes sont désormais disponibles pour un usage standard via P2SH et segwit P2WSH.
 
-## Commits notables
+## Changements notables dans le code et la documentation
 {: id="changements-notables-dans-le-code-et-la-documentation"}
 
 *Un bref aperçu des fusions et commits récents réalisés dans divers projets Bitcoin open source.*

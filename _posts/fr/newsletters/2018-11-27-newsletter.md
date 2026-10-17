@@ -77,7 +77,8 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
   significativement plus rapide que d’effectuer une seule multiplication en série, permettant de vérifier plusieurs signatures ensemble plus
   rapidement qu’elles ne pourraient l’être individuellement.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning
 repo], et [libsecp256k1][libsecp256k1 repo].*

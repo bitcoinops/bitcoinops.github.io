@@ -66,7 +66,8 @@ une nouvelle version de LND ainsi que les travaux vers une version de maintenanc
 
 [LND 0.5.1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.5.1-beta
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning
 repo], et [libsecp256k1][libsecp256k1 repo].*

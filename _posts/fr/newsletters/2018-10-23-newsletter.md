@@ -80,7 +80,8 @@ Bitcoin.
 [mpecdsa goldfeder]: http://stevengoldfeder.com/papers/GG18.pdf
 [mpecdsa lindell]: https://eprint.iacr.org/2018/987.pdf
 
-## Fusions notables
+## Changements notables dans le code et la documentation
+{: id="fusions-notables"}
 
 *Changements de code notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning repo], et
 [libsecp256k1][libsecp256k1 repo].*

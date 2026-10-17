@@ -59,7 +59,8 @@ la scalabilité, ainsi que quelques commits notables des projets Bitcoin Core, L
   Malgré cela, cette bibliothèque open source offre aux développeurs un moyen pratique de commencer à expérimenter les signatures BLS et
   même de commencer à les utiliser dans des applications qui n'ont pas besoin d'être aussi sûres que le réseau Bitcoin.
 
-## Commits notables
+## Changements notables dans le code et la documentation
+{: id="commits-notables"}
 
 *Commits notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo].*
 

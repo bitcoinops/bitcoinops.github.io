@@ -51,7 +51,8 @@ renvoie vers un e-mail au sujet des plans Schnorr/Taproot, et mentionne une proc
   développement de la spécification LN, d'un Google Hangout en une réunion IRC, après avoir reçu des demandes de plusieurs développeurs. La
   [prochaine réunion][ln irc meeting] aura lieu le mardi 8 janvier, à 19:00 (UTC).
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning repo]
 et [libsecp256k1][libsecp256k1 repo].*

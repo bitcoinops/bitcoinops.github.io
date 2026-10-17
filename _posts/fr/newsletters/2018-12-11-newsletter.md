@@ -44,7 +44,8 @@ projets d'infrastructure populaires sont également décrits.
   perçu avec certains scripts avancés où il pourrait être possible pour une contrepartie ou un tiers d'ajouter des données supplémentaires à
   une transaction, réduisant son taux de frais et la rendant probablement plus longue à confirmer.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements de code notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning repo] et
 [libsecp256k1][libsecp256k1 repo].*

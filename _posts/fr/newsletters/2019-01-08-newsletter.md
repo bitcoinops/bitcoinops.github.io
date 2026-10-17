@@ -52,7 +52,8 @@ monnaies. Des descriptions de changements notables dans le code de projets popul
   si une solution acceptable n'est pas trouvée, il se peut que les réseaux de canaux de paiement pour différentes monnaies soient isolés les
   uns des autres.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning
 repo], et [libsecp256k1][libsecp256k1 repo].*

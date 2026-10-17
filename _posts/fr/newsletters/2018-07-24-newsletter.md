@@ -69,7 +69,8 @@ notables dans Bitcoin Core.
   que des CoinJoins. Plusieurs RPC sont ajoutées avec cette fusion : `walletprocesspsbt`, `walletcreatefundedpsbt`, `decodepsbt`,
   `combinepsbt`, `finalizepsbt`, `createpsbt`, et `convertpsbt`. Pour une description complète, voir la PR [#13557][Bitcoin Core #13557].
 
-## Fusions notables dans Bitcoin Core
+## Changements notables dans le code et la documentation
+{: id="fusions-notables-dans-bitcoin-core"}
 
 *Sans inclure celles précédemment discutées dans la section Nouvelles.*
 

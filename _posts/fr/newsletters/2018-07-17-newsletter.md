@@ -59,7 +59,8 @@ plusieurs fusions récentes notables dans Bitcoin Core.
   drapeau sighash afin que les développeurs ne l'utilisent pas accidentellement sans se rendre compte de ses dangers. Un consensus
   approximatif semble s'être formé autour du nom `SIGHASH_NOINPUT_UNSAFE`.
 
-## Fusions notables dans Bitcoin Core
+## Changements notables dans le code et la documentation
+{: id="fusions-notables-dans-bitcoin-core"}
 
 - **<!--n-->[#13072][] :** le RPC `createmultisig` peut désormais créer des adresses segwit encapsulées dans P2SH et des adresses segwit
   natives.

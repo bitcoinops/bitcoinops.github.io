@@ -67,7 +67,8 @@ parties de Bitcoin Core. Voici un résumé des projets discutés :
 
 Pour des détails supplémentaires, veuillez consulter le [journal de conversation][2018-08-16 meeting log].
 
-## Commits notables
+## Changements notables dans le code et la documentation
+{: id="commits-notables"}
 
 *Commits notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo].*
 

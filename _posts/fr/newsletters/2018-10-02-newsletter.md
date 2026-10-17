@@ -41,7 +41,8 @@ d'infrastructure Bitcoin.
   problème. Cependant, de nombreux explorateurs de blocs avec un mode testnet ont bien accepté le bloc vulnérable, rappelant aux
   utilisateurs qu'ils doivent être prudents lorsqu'ils utilisent des tiers pour déterminer si des transactions sont valides ou non.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], et [C-lightning][core lightning
 repo].*

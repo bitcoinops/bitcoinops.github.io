@@ -165,7 +165,8 @@ fournies par les organisateurs ([jour 1][], [jour 2][], [jour 3][]).
   À la conclusion de sa présentation, cet intervenant a également annoncé que la prochaine conférence Scaling Bitcoin et les sessions de
   formation EdgeDev++ auront lieu plus tard en 2019 à Tel Aviv, en Israël.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-Lightning][c-lightning repo],
 [Eclair][eclair repo], et [libsecp256k1][libsecp256k1 repo].*

@@ -539,6 +539,6 @@ les bulletins] ou suivre notre [flux RSS][RSS feed].*
 [bitcoin core 0.6]: https://bitcoin.org/en/release/v0.6.0
 [techniques de réduction des frais de transaction]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees
 [payment batching]: https://bitcointechtalk.com/saving-up-to-80-on-bitcoin-transaction-fees-by-batching-payments-4147ab7009fb
-[towns consolidation]: /fr/newsletters/2018/07/31/#rapport-de-terrain--consolidation-de-4-millions-dutxo-chez-xapo
+[towns consolidation]: /en/xapo-utxo-consolidation/
 [cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144

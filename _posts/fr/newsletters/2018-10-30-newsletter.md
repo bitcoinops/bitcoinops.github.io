@@ -86,7 +86,7 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
   actuelle d'environ 80 000 $---mais en utilisant [l'estimation récente d'AJ Towns][towns mining estimate] de 0,16 $/kWh qui inclut des
   coûts au-delà de l'électricité et tente de prendre en compte des primes de risque, le coût estimé d'un bloc est d'environ 135 000 $.
 
-## Fusions notables
+## Changements notables dans le code et la documentation
 {: id="notable-merges"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning

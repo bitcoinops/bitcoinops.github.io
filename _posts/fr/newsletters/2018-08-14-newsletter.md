@@ -123,7 +123,7 @@ quelques commits notables des projets Bitcoin Core, LND et C-Lightning.
   Schnorr la semaine dernière sur la liste de diffusion bitcoin-dev s'est résolue sans aucun besoin de modifier le BIP proposé. Cela
   pourrait accroître la confiance dans le fait que les paramètres du BIP proposé ont été judicieusement choisis.
 
-## Commits notables
+## Changements notables dans le code et la documentation
 {: id="notable-commits"}
 
 *Commits notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo]. N'inclut pas

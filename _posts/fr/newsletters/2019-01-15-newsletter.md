@@ -42,7 +42,8 @@ populaires d'infrastructure Bitcoin.
   faible. Cela peut se produire soit en utilisant la même méthode pour des clés qui ont été utilisées plusieurs fois (p. ex. pour
   Replace-By-Fee), soit simplement par force brute en utilisant les méthodes [baby-step giant-step][] ou [Pollard's Rho][].
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-Lightning][c-lightning repo],
 [Eclair][eclair repo], et [libsecp256k1][libsecp256k1 repo].*

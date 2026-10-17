@@ -42,7 +42,7 @@ notables dans des projets populaires d'infrastructure Bitcoin.
   les paiements vers des adresses Bitcoin et les paiements Lightning Network. Le projet attribue même explicitement le code de devise XBT à
   Bitcoin.
 
-## Commits notables
+## Changements notables dans le code et la documentation
 {: id="fusions-notables"}
 
 *Fusions notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo]. Rappel : les

@@ -178,7 +178,8 @@ independent events is the square of the average.
   site, les dates, le format, les sujets, ou toute autre chose), veuillez [nous contacter][optech email]. Nous sommes là pour aider nos
   entreprises membres !
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning
 repo], et [libsecp256k1][libsecp256k1 repo].*

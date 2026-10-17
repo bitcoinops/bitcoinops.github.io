@@ -71,7 +71,7 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
   davantage d'attention ce mois-ci après que certains utilisateurs ont tenté de convertir les adresses d'autres personnes en segwit et ont
   perdu de l'argent en conséquence.
 
-## Commits notables
+## Changements notables dans le code et la documentation
 {: id="changements-notables-dans-le-code-et-la-documentation"}
 
 *Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo]. Rappel :

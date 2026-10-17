@@ -79,7 +79,7 @@ projets populaires d'infrastructure Bitcoin.
   utile de consacrer du temps d'ingénierie au suivi des propositions et des implémentations de preuve de concept afin de garantir que votre
   organisation puisse facilement les adopter si cela est souhaitable.
 
-## Commits notables
+## Changements notables dans le code et la documentation
 {: id="notable-commits"}
 
 *Fusions notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], et [C-lightning][core lightning repo]. Rappel : les
