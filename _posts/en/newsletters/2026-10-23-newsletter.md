@@ -17,7 +17,37 @@ software.
 
 ## News
 
-FIXME:bitschmidty
+- **Trust-minimized exits from a single-issuer layer 2:** Adam Gibson
+  [posted][lichen ml] to the Bitcoin-Dev mailing list a [paper][lichen paper]
+  and proof-of-concept [code][lichen repo] for Lichen, a design in which a
+  single issuer, which Gibson calls a hub, mints tokens redeemable one-to-one
+  for bitcoin on a layer 2 ledger run by a server called the sequencer. Each
+  user holds a 2-of-2 contract with the hub that lets them redeem their tokens
+  even if the hub refuses or is offline, so users trust the sequencer to run the
+  ledger honestly but not the hub to return their bitcoin. The design builds on
+  LN-GAP (see [Newsletter #427][news427 lngap]) but replaces its honest-majority
+  attestation committee with a dispute settled entirely onchain.
+
+  Each user locks bitcoin in their own 2-of-2 output with the hub and receives
+  the same amount of tokens on the layer 2 ledger, where users pay each other
+  without touching the chain. To exit, a user hands tokens back to the hub and
+  collects bitcoin from their own output. Because that output is the only one a
+  user can draw on, the hub also locks some of its own bitcoin in each output up
+  to a negotiated cap, like LN inbound liquidity, so that the user can redeem
+  tokens received from others. Tokens received beyond the cap are redeemable
+  only at the hub's discretion.
+
+  In the cooperative case, the hub simply signs a settlement of the output
+  paying the user. If it refuses or does not respond, the user generates a
+  Groth16 proof that the sequencer signed a state recording the returned tokens.
+  Since Script cannot verify such a proof, the user instead claims onchain that
+  a fixed verifier program accepts it, and if the hub disputes that, presigned
+  [BitVMX][topic acc] transactions narrow the disagreement to a single execution
+  step that Script can check. Each side locks a reserve that it forfeits by
+  losing a dispute, deterring false claims and refusals. Gibson acknowledges
+  that a sequencer that omits a user's return, or signs a state it never validly
+  reached, can still cost the user or the hub funds, and lists validity proofs
+  and a committee of sequencers as future work.
 
 ## Changes to services and client software
 
@@ -66,6 +96,10 @@ FIXME:Gustavojfe
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
 
+[lichen ml]: https://groups.google.com/g/bitcoindev/c/yZEZ5P1lj5E
+[lichen paper]: https://github.com/AdamISZ/lichen/blob/master/papers/lichen-v0.1.pdf
+[lichen repo]: https://github.com/AdamISZ/lichen
+[news427 lngap]: /en/newsletters/2026/10/16/#offchain-contracts-in-lightning-channels
 [ibis v5.0]: https://github.com/aeonBTC/IbisWallet/releases/tag/v5.0.1-beta
 [news406 ibis]: /en/newsletters/2026/05/22/#ibis-wallet-announced
 [landfall gh]: https://github.com/vincenzopalazzo/landfall
