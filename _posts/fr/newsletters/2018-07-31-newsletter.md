@@ -15,7 +15,7 @@ dans les branches de développement des projets Bitcoin Core, Lightning Network 
 ## Mesures à prendre
 {: id="action-items"}
 
-- **Bitcoin Core 0.16.2 publié :** <a id="bitcoin-core-0-16-2-released"></a>
+- **Bitcoin Core 0.16.2 publié :** <span id="bitcoin-core-0-16-2-released"></span>
   une version mineure qui apporte des corrections de bugs et de petites améliorations. Si vous utilisez
   les RPC [abandontransaction][rpc abandontransaction] ou [verifytxoutproof][rpc verifytxoutproof], vous devriez tout particulièrement
   envisager une mise à niveau. Sinon, nous vous recommandons d'examiner les [notes de version][bitcoin core 0.16.2] pour les autres
@@ -78,18 +78,18 @@ mensuelle, nous mettons en lumière certaines des questions et réponses les mie
   avantages du schéma de signature Schnorr par rapport au schéma actuel de signature ECDSA de Bitcoin.
 
 - [Pourquoi la dérivation des clés HD cesse-t-elle de fonctionner après un certain indice dans les portefeuilles BIP44 ?][bse 76998] :
-  <a id="why-does-hd-key-derivation-stop-working-after-a-certain-index-in-bip44-wallets"></a> un développeur testant son portefeuille
+  <span id="why-does-hd-key-derivation-stop-working-after-a-certain-index-in-bip44-wallets"></span> un développeur testant son portefeuille
   constate qu'un paiement envoyé à des indices de clé peu élevés fonctionne comme prévu, mais que les paiements envoyés à des indices plus
   élevés n'apparaissent jamais dans ses portefeuilles. Une réponse de Viktor T. révèle pourquoi.
 
 - [Quelle est la taille maximale d'une signature Bitcoin encodée en DER ?][bse 77191] :
-  <a id="the-maximum-size-of-a-bitcoin-der-encoded-signature-is"></a> dans cette réponse, Pieter Wuille fournit les calculs pour
+  <span id="the-maximum-size-of-a-bitcoin-der-encoded-signature-is"></span> dans cette réponse, Pieter Wuille fournit les calculs pour
   déterminer la taille d'une signature Bitcoin. Comme mentionné dans le [Bulletin #3][], la taille maximale avec un portefeuille ordinaire
   est de 72 octets---mais Wuille explique comment vous pouvez créer une transaction non standard avec une signature de 73 octets et pourquoi
   vous pourriez penser avoir vu une signature de 74 voire 75 octets.
 
 - [Si presque tous les opcodes sont utilisables dans P2SH, pourquoi ne le sont-ils pas dans les scriptPubKeys ?][bse 76541] :
-  <a id="if-you-can-use-almost-any-opcode-in-p2sh-why-can-t-you-use-them-in-scriptpubkeys"></a> dans cette réponse, le rédacteur
+  <span id="if-you-can-use-almost-any-opcode-in-p2sh-why-can-t-you-use-them-in-scriptpubkeys"></span> dans cette réponse, le rédacteur
   technique Bitcoin David A. Harding explique pourquoi les premières versions de Bitcoin restreignaient les types de transactions pouvant
   être envoyées aux "transactions standards" et pourquoi la plupart de ces restrictions sont toujours en place même si presque tous les
   opcodes sont désormais disponibles pour un usage standard via P2SH et segwit P2WSH.

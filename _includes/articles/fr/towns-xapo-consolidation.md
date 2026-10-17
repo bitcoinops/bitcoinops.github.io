@@ -76,7 +76,7 @@ pour l'ensemble du réseau a été minime, tout comme le coût pour nous.
 [redditors1]: https://www.reddit.com/r/BitcoinDiscussion/comments/8ocyc9/massive_consolidation_currently_underway/
 [redditors2]: https://www.reddit.com/r/Bitcoin/comments/8p3y5b/does_xapo_spamming_the_blockchain/
 
-<a id="additional-resources"></a>
+<span id="additional-resources"></span>
 
 {{include.hlevel | default: '##'}} Ressources complémentaires
 

@@ -59,7 +59,7 @@ actions pertinentes à entreprendre, des éléments de tableau de bord et des no
 
 [alert announcement]: https://bitcoin.org/en/alert/2016-11-01-alert-retirement
 
-- **Bitcoin Core [0.16.1 publié][0.16.1 released] :** <a id="bitcoin-core-0-16-1-released"></a>
+- **Bitcoin Core [0.16.1 publié][0.16.1 released] :** <span id="bitcoin-core-0-16-1-released"></span>
   contient un correctif pour un cas pouvant entraîner une perte monétaire pour les mineurs dans des
   situations supposées assez rares. Corrige également une attaque DoS qui affectait principalement les nouveaux nœuds et inclut un
   changement de politique de relais en prévision d’un éventuel futur soft fork dans plus d’un an. La mise à niveau est recommandée pour tous
