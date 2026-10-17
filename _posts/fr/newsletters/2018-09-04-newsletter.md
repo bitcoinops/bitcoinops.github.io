@@ -11,7 +11,8 @@ Le bulletin de cette semaine comprend un rappel vous invitant à aider à tester
 des informations sur le développement du nouveau tableau de bord public d'Optech, des résumés de deux discussions sur la liste de diffusion
 Bitcoin-Dev, et des commits notables de projets d'infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - **Consacrez du temps à tester Bitcoin Core 0.17RC2 :** Bitcoin Core a téléversé les [binaires][bcc 0.17] pour la Release Candidate (RC) 2
   de la version 0.17. Les tests sont grandement appréciés et peuvent aider à assurer la qualité de la version finale.
@@ -60,7 +61,8 @@ Bitcoin-Dev, et des commits notables de projets d'infrastructure Bitcoin.
   pour des contreparties et des tierces parties à des contrats intelligents sophistiqués de gonfler la taille des transactions multipartites
   dans le cadre d'une attaque DoS qui réduit la priorité des frais d'une transaction.<!--#8-->
 
-## Commits notables
+## Changements notables dans le code et la documentation
+{: id="commits-notables"}
 
 *Commits notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], et [C-lightning][core lightning repo]. Rappel : les
 nouvelles fusions dans Bitcoin Core sont effectuées sur sa branche de développement master et ont peu de chances de faire partie de la

@@ -11,7 +11,8 @@ Le bulletin de cette semaine décrit la nouvelle bibliothèque libminisketch pou
 renvoie vers un e-mail au sujet des plans Schnorr/Taproot, et mentionne une prochaine réunion de spécification du protocole LN. Sont
 également inclus une liste de changements de code notables survenus la semaine passée dans des projets populaires d'infrastructure Bitcoin.
 
-## Actions à entreprendre
+## Mesures à prendre
+{: id="actions-à-entreprendre"}
 
 - **Aidez à tester Bitcoin Core 0.17.1RC1 :** la première version candidate de cette [version de maintenance][maintenance release] a été
   [téléversée][V0.17.1rc1]. Les tests par les entreprises et les utilisateurs individuels, à la fois du daemon et de l'interface graphique,
@@ -50,7 +51,8 @@ renvoie vers un e-mail au sujet des plans Schnorr/Taproot, et mentionne une proc
   développement de la spécification LN, d'un Google Hangout en une réunion IRC, après avoir reçu des demandes de plusieurs développeurs. La
   [prochaine réunion][ln irc meeting] aura lieu le mardi 8 janvier, à 19:00 (UTC).
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning repo]
 et [libsecp256k1][libsecp256k1 repo].*

@@ -12,7 +12,8 @@ Le bulletin de cette semaine comprend des éléments d'action liés à la public
 d'informations sur BIP322, et quelques détails sur la proposition Bustapay ; ainsi que de brèves descriptions de fusions notables dans des
 projets populaires d'infrastructure Bitcoin.
 
-## Action items
+## Mesures à prendre
+{: id="action-items"}
 
 - **Mettez à niveau vers Bitcoin Core 0.16.3 pour corriger une vulnérabilité de déni de service :** un bogue introduit dans Bitcoin Core
   0.14.0 et affectant toutes les versions suivantes jusqu'à 0.16.2 provoquera le plantage de Bitcoin Core lorsqu'il tente de valider un bloc
@@ -78,7 +79,8 @@ projets populaires d'infrastructure Bitcoin.
   utile de consacrer du temps d'ingénierie au suivi des propositions et des implémentations de preuve de concept afin de garantir que votre
   organisation puisse facilement les adopter si cela est souhaitable.
 
-## Notable commits
+## Changements notables dans le code et la documentation
+{: id="notable-commits"}
 
 *Fusions notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], et [C-lightning][core lightning repo]. Rappel : les
 nouvelles fusions dans Bitcoin Core sont effectuées sur sa branche de développement master et il est peu probable qu'elles fassent partie de

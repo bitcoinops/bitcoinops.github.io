@@ -12,7 +12,8 @@ sighash pour accompagner BIP118 `SIGHASH_NOINPUT_UNSAFE`, et décrit brièvement
 pour les transactions d’engagement LN. Sont également inclus une sélection récente de questions-réponses de Bitcoin Stack Exchange et des
 descriptions de changements notables de code dans des projets populaires d’infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - **Surveiller les taux de frais :** les récentes réductions du taux de change sont probablement la cause d’une baisse modeste du hashrate
   et d’une possible augmentation du nombre de pièces se déplaçant vers ou depuis les plateformes d’échange, ce qui pourrait entraîner une
@@ -76,7 +77,8 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
   significativement plus rapide que d’effectuer une seule multiplication en série, permettant de vérifier plusieurs signatures ensemble plus
   rapidement qu’elles ne pourraient l’être individuellement.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning
 repo], et [libsecp256k1][libsecp256k1 repo].*

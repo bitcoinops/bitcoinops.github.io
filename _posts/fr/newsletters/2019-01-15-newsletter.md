@@ -11,7 +11,8 @@ Le bulletin de cette semaine annonce une mise à niveau de sécurité pour C-Lig
 des portefeuilles qui ont accidentellement révélé leurs clés privées, et liste certains changements notables de code dans des projets
 populaires d'infrastructure Bitcoin.
 
-## Action requise
+## Mesures à prendre
+{: id="action-requise"}
 
 - **Mettre à niveau vers C-Lightning 0.6.3 :** cette [version][cl 0.6.3] corrige une vulnérabilité de DoS à distance qui pouvait être
   utilisée pour faire planter des nœuds C-Lightning et potentiellement voler de l'argent. Voir la section *changements notables dans le
@@ -41,7 +42,8 @@ populaires d'infrastructure Bitcoin.
   faible. Cela peut se produire soit en utilisant la même méthode pour des clés qui ont été utilisées plusieurs fois (p. ex. pour
   Replace-By-Fee), soit simplement par force brute en utilisant les méthodes [baby-step giant-step][] ou [Pollard's Rho][].
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-Lightning][c-lightning repo],
 [Eclair][eclair repo], et [libsecp256k1][libsecp256k1 repo].*

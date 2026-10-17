@@ -37,7 +37,8 @@ L'audio et la vidéo sont disponibles sur [YouTube][wcn optech playlist], et l'a
 réaliser. Nous encourageons toute personne qui préférerait recevoir le bulletin sous forme vidéo ou audio à suivre Max pour les prochaines
 lectures.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-Lightning][c-lightning repo],
 [Eclair][eclair repo], et [libsecp256k1][libsecp256k1 repo].*

@@ -11,9 +11,10 @@ Le bulletin de cette semaine résume une publication sur la proposition payjoin 
 réponses les mieux notées de Bitcoin Stack Exchange, et décrit une nouvelle semaine bien remplie de commits notables dans des projets
 populaires d'infrastructure Bitcoin.
 
-## Action items
+## Mesures à prendre
+{: id="action-items"}
 
-Aucun cette semaine.
+Aucune cette semaine.
 
 ## Nouvelles
 
@@ -22,7 +23,7 @@ Aucun cette semaine.
   proposition permet à un dépensier onchain d'inclure une entrée de la personne recevant la transaction aux côtés des propres entrées du
   dépensier, empêchant les analystes de la chaîne de blocs de pouvoir raisonnablement supposer que toutes les entrées proviennent de la même
   personne. Cela pourrait rendre l'analyse de la chaîne de blocs significativement moins fiable même si seul un nombre relativement faible
-  de personnes utilise effectivement cette fonctionnalité. Voir Le [Bulletin #27][payjoin summary] pour plus de détails.
+  de personnes utilise effectivement cette fonctionnalité. Voir le [Bulletin #27][payjoin summary] pour plus de détails.
 
   Les suggestions de Gibson se concentraient sur la modification de la proposition en se basant sur son expérience d'implémentation d'un
   protocole semblable à P2EP dans la version de développement de Joinmarket, ainsi que sur les retours qu'il a reçus des développeurs de
@@ -87,7 +88,8 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
 Optech félicite également et remercie Pieter Wuille, qui ce mois-ci est devenu le [contributeur le mieux noté de tous les temps][top bse]
 sur Bitcoin Stack Exchange.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-Lightning][c-lightning repo],
 [Eclair][eclair repo], et [libsecp256k1][libsecp256k1 repo].*
@@ -142,7 +144,8 @@ sur Bitcoin Stack Exchange.
   (En fin de compte, si le réseau adopte les paiements multipath, la nécessité de conserver au moins un canal avec un solde supérieur au
   plus grand paiement que vous souhaitez envoyer devrait disparaître.)
 
-## Footnotes
+## Notes de bas de page
+{: id="footnotes"}
 
 [^fn-data-loss-protect]: Le paragraphe final de [BOLT2][] décrit l'option `option_data_loss_protect`. L'idée de base est qu'un nœud ayant
 potentiellement perdu une partie de son état peut encourager son pair à initier une fermeture de canal. Puisque le pair possède encore

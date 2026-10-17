@@ -24,7 +24,8 @@ Merkle jusqu'à environ 7x plus vite.
 
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
 
-## Points d'action clés
+## Principales mesures à prendre
+{: id="points-daction-clés"}
 
 - **Vérifier l'utilisation de l'opcode `CodeSeparator` :** Bitcoin Core 0.16.1, dont la sortie est attendue d'ici environ la semaine
   prochaine, ne [relaiera plus][standardness_rules] les transactions legacy (non-segwit) utilisant cet opcode. Autant que les contributeurs

@@ -11,7 +11,8 @@ Le bulletin de cette semaine décrit brièvement une proposition de splice pour 
 vers les vidéos et transcriptions des présentations des sessions de formation Edge Dev++, et résume certaines transcriptions réalisées lors
 de l'événement CoreDev.tech de la semaine dernière.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 Aucun cette semaine.
 
@@ -72,7 +73,8 @@ des transcriptions de l'événement de la semaine dernière à Tokyo :
   avons défini." Par exemple, cela pourrait vous permettre "de faire quelque chose comme un multisig qui après un certain temps se dégrade
   en un multisig plus faible --- comme un 2-sur-3 mais après un an je peux le dépenser avec seulement une de ces clés."
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning
 repo].*

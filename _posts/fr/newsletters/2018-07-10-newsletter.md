@@ -12,7 +12,8 @@ Le bulletin de cette semaine comprend des nouvelles et des points d'action à pr
 Core, un article spécial sur une proposition de signature Schnorr, et un compte-rendu de la récente conférence Building on Bitcoin à
 Lisbonne.
 
-## Points d'action
+## Mesures à prendre
+{: id="points-daction"}
 
 - Les frais minimums de relais de Bitcoin Core pourraient être réduits dans la prochaine version majeure. Assurez-vous que votre logiciel ne
   fait pas d'hypothèses dangereuses sur 1 satoshi par vbyte comme étant le plancher le plus bas possible. Voir la section *Nouvelles*

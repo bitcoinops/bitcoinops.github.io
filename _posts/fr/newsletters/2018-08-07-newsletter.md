@@ -11,7 +11,8 @@ Le bulletin de cette semaine comprend le tableau de bord habituel et les éléme
 Bitcoin généralisés sur le Lightning Network, une brève description d'une bibliothèque récemment annoncée pour des signatures BLS améliorant
 la scalabilité, ainsi que quelques commits notables des projets Bitcoin Core, LND et C-Lightning.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - Optech a commencé à planifier son premier atelier européen, qui devrait avoir lieu à Paris courant novembre. Si des entreprises membres
   qui pensent pouvoir y assister ont des sujets qu'elles souhaitent discuter, veuillez [envoyer un email à Optech][optech email]. Plus
@@ -58,7 +59,8 @@ la scalabilité, ainsi que quelques commits notables des projets Bitcoin Core, L
   Malgré cela, cette bibliothèque open source offre aux développeurs un moyen pratique de commencer à expérimenter les signatures BLS et
   même de commencer à les utiliser dans des applications qui n'ont pas besoin d'être aussi sûres que le réseau Bitcoin.
 
-## Commits notables
+## Changements notables dans le code et la documentation
+{: id="commits-notables"}
 
 *Commits notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo].*
 
