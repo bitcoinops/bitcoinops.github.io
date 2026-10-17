@@ -10,7 +10,8 @@ lang: fr
 Le bulletin de cette semaine comprend une demande d'aide pour tester la prochaine version de Bitcoin Core, de brèves descriptions de projets
 sur lesquels travaillent les contributeurs de Bitcoin Core, et une liste des fusions notables de la semaine passée.
 
-## Action items
+## Mesures à prendre
+{: id="action-items"}
 
 - **Consacrez du temps à tester les versions candidates de Bitcoin Core 0.17 :** dans les prochains jours, Bitcoin Core commencera à publier
   des Release Candidates (RCs) pour la version 0.17.0. Les organisations et les utilisateurs individuels prévoyant d'utiliser la 0.17 sont

@@ -12,14 +12,17 @@ Towns sur la consolidation de quatre millions d'UTXO chez Xapo, des nouvelles à
 Bitcoin, des liens vers quelques questions et réponses très plébiscitées sur Bitcoin Stack Exchange, ainsi que quelques commits notables
 dans les branches de développement des projets Bitcoin Core, Lightning Network Daemon (LND) et C-lightning.
 
-## Action items
+## Mesures à prendre
+{: id="action-items"}
 
-- **Bitcoin Core 0.16.2 released:** une version mineure qui apporte des corrections de bugs et de petites améliorations. Si vous utilisez
+- **Bitcoin Core 0.16.2 publié :** <a id="bitcoin-core-0-16-2-released"></a>
+  une version mineure qui apporte des corrections de bugs et de petites améliorations. Si vous utilisez
   les RPC [abandontransaction][rpc abandontransaction] ou [verifytxoutproof][rpc verifytxoutproof], vous devriez tout particulièrement
   envisager une mise à niveau. Sinon, nous vous recommandons d'examiner les [notes de version][bitcoin core 0.16.2] pour les autres
   changements qui pourraient affecter votre activité et de mettre à niveau lorsque cela vous convient.
 
-## Dashboard items
+## Éléments du tableau de bord
+{: id="dashboard-items"}
 
 - **Frais toujours bas :** le taux de hachage a augmenté la difficulté de plus de 14 % durant la période de réajustement de 2 016 blocs qui
   s'est terminée dimanche, donnant un temps moyen entre les blocs de 8 minutes et 41 secondes. Cela a aidé à absorber la charge
@@ -35,7 +38,7 @@ dans les branches de développement des projets Bitcoin Core, Lightning Network 
 
 *par [Anthony Towns](https://twitter.com/ajtowns), développeur sur Bitcoin Core chez [Xapo][]*
 
-{% include articles/towns-xapo-consolidation.md hlevel='###' %}
+{% include articles/fr/towns-xapo-consolidation.md hlevel='###' %}
 
 ## Nouvelles
 
@@ -74,21 +77,25 @@ mensuelle, nous mettons en lumière certaines des questions et réponses les mie
 - [Schnorr versus ECDSA][bse 77235] : dans cette réponse, le développeur du protocole Bitcoin Pieter Wuille explique certains des principaux
   avantages du schéma de signature Schnorr par rapport au schéma actuel de signature ECDSA de Bitcoin.
 
-- [Why does HD key derivation stop working after a certain index in BIP44 wallets?][bse 76998] : un développeur testant son portefeuille
+- [Pourquoi la dérivation des clés HD cesse-t-elle de fonctionner après un certain indice dans les portefeuilles BIP44 ?][bse 76998] :
+  <a id="why-does-hd-key-derivation-stop-working-after-a-certain-index-in-bip44-wallets"></a> un développeur testant son portefeuille
   constate qu'un paiement envoyé à des indices de clé peu élevés fonctionne comme prévu, mais que les paiements envoyés à des indices plus
   élevés n'apparaissent jamais dans ses portefeuilles. Une réponse de Viktor T. révèle pourquoi.
 
-- [The maximum size of a Bitcoin DER-encoded signature is...][bse 77191] : dans cette réponse, Pieter Wuille fournit les calculs pour
+- [Quelle est la taille maximale d'une signature Bitcoin encodée en DER ?][bse 77191] :
+  <a id="the-maximum-size-of-a-bitcoin-der-encoded-signature-is"></a> dans cette réponse, Pieter Wuille fournit les calculs pour
   déterminer la taille d'une signature Bitcoin. Comme mentionné dans le [Bulletin #3][], la taille maximale avec un portefeuille ordinaire
   est de 72 octets---mais Wuille explique comment vous pouvez créer une transaction non standard avec une signature de 73 octets et pourquoi
   vous pourriez penser avoir vu une signature de 74 voire 75 octets.
 
-- [If you can use almost any opcode in P2SH, why can't you use them in scriptPubKeys?][bse 76541] : dans cette réponse, le rédacteur
+- [Si presque tous les opcodes sont utilisables dans P2SH, pourquoi ne le sont-ils pas dans les scriptPubKeys ?][bse 76541] :
+  <a id="if-you-can-use-almost-any-opcode-in-p2sh-why-can-t-you-use-them-in-scriptpubkeys"></a> dans cette réponse, le rédacteur
   technique Bitcoin David A. Harding explique pourquoi les premières versions de Bitcoin restreignaient les types de transactions pouvant
   être envoyées aux "transactions standards" et pourquoi la plupart de ces restrictions sont toujours en place même si presque tous les
   opcodes sont désormais disponibles pour un usage standard via P2SH et segwit P2WSH.
 
-## Changements notables dans le code et la documentation
+## Commits notables
+{: id="changements-notables-dans-le-code-et-la-documentation"}
 
 *Un bref aperçu des fusions et commits récents réalisés dans divers projets Bitcoin open source.*
 

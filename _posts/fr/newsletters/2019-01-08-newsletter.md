@@ -11,7 +11,8 @@ Le bulletin de cette semaine annonce une nouvelle version de maintenance de Bitc
 nouveaux hachages de signature, et renvoie à une publication sur de possibles barrières économiques aux paiements LN traversant différentes
 monnaies. Des descriptions de changements notables dans le code de projets populaires d'infrastructure Bitcoin sont également fournies.
 
-## Actions à entreprendre
+## Mesures à prendre
+{: id="actions-à-entreprendre"}
 
 - **Mettre à niveau vers Bitcoin Core 0.17.1 :** cette nouvelle version [mineure][maintenance] publiée le 25 décembre rétablit certaines
   fonctionnalités précédemment dépréciées du RPC `listtransactions` et inclut des corrections de bugs ainsi que d'autres améliorations.

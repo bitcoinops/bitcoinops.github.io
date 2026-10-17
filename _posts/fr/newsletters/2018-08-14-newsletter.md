@@ -13,7 +13,8 @@ confidentialité sur Bitcoin sans aucun changement des règles de consensus, la 
 transaction, une nouvelle restriction du protocole réseau P2P, et l'abaissement des frais minimums de relais des transactions---ainsi que
 quelques commits notables des projets Bitcoin Core, LND et C-Lightning.
 
-## Action items
+## Mesures à prendre
+{: id="action-items"}
 
 - **Vérifiez votre processus de divulgation responsable :** il est particulièrement important que les chercheurs puissent signaler des
   bogues de manière sécurisée (par ex. en utilisant PGP) et anonyme (par ex. en utilisant Tor). Voir la section Nouvelles ci-dessous pour
@@ -26,9 +27,10 @@ quelques commits notables des projets Bitcoin Core, LND et C-Lightning.
   localisateurs. Tous les logiciels open source populaires ont déjà été testés, mais si vous avez un logiciel interne qui parle le protocole
   P2P, vous devrez peut-être le tester. Voir la section Nouvelles pour plus de détails.
 
-## Dashboard items
+## Éléments du tableau de bord
+{: id="dashboard-items"}
 
-{% assign img1_label = "Transactions per block, 25-block moving average, July 14, 2018 - August 13, 2018" %}
+{% assign img1_label = "Transactions par bloc, moyenne mobile sur 25 blocs, du 14 juillet au 13 août 2018" %}
 
 - Les [frais de transaction restent très bas][fee metrics] : toute personne pouvant attendre 10 blocs ou plus pour une confirmation peut
   raisonnablement payer le taux de frais minimum par défaut. C'est un bon moment pour [consolider des UTXOs][consolidate info].
@@ -121,7 +123,8 @@ quelques commits notables des projets Bitcoin Core, LND et C-Lightning.
   Schnorr la semaine dernière sur la liste de diffusion bitcoin-dev s'est résolue sans aucun besoin de modifier le BIP proposé. Cela
   pourrait accroître la confiance dans le fait que les paramètres du BIP proposé ont été judicieusement choisis.
 
-## Notable commits
+## Commits notables
+{: id="notable-commits"}
 
 *Commits notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo]. N'inclut pas
 Bitcoin Core

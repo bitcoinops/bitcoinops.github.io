@@ -12,7 +12,8 @@ chiffrées, des liens vers deux nouveaux articles sur la création rapide de cl�
 les frais de transaction pour les utilisateurs de multisig, et répertorie quelques fusions notables de projets populaires d'infrastructure
 Bitcoin.
 
-## Actions requises
+## Mesures à prendre
+{: id="actions-requises"}
 
 - **Fermez les ports RPC ouverts sur les nœuds :** environ 13 % des nœuds Bitcoin semblent avoir leurs ports RPC ouverts sur des connexions
   publiques non chiffrées, mettant les utilisateurs de ces nœuds en danger. Voir l’élément d’actualité complet ci-dessous pour plus de

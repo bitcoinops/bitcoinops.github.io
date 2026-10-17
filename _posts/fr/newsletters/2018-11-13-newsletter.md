@@ -12,7 +12,8 @@ nouvel outil que certains utilisateurs trouveraient utile, et fournit des résum
 récente résidence Chaincode sur les applications Lightning. Plusieurs changements notables dans le code de projets populaires
 d'infrastructure Bitcoin sont également décrits.
 
-## Action items
+## Mesures à prendre
+{: id="action-items"}
 
 Aucun cette semaine.
 

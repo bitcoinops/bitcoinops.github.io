@@ -12,7 +12,8 @@ sighash pour accompagner BIP118 `SIGHASH_NOINPUT_UNSAFE`, et décrit brièvement
 pour les transactions d’engagement LN. Sont également inclus une sélection récente de questions-réponses de Bitcoin Stack Exchange et des
 descriptions de changements notables de code dans des projets populaires d’infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - **Surveiller les taux de frais :** les récentes réductions du taux de change sont probablement la cause d’une baisse modeste du hashrate
   et d’une possible augmentation du nombre de pièces se déplaçant vers ou depuis les plateformes d’échange, ce qui pourrait entraîner une

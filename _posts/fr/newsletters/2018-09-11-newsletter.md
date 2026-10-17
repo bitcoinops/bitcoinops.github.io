@@ -11,7 +11,8 @@ Le bulletin de cette semaine fait référence à une discussion sur le chiffreme
 mise à jour sur la compatibilité entre Bitcoin et le projet de spécification W3C Web Payments, et décrit brièvement quelques fusions
 notables dans des projets populaires d'infrastructure Bitcoin.
 
-## Actions requises
+## Mesures à prendre
+{: id="actions-requises"}
 
 - **Allouer du temps pour tester Bitcoin Core 0.17RC3 :** Bitcoin Core a téléversé des [binaires][bcc 0.17] pour la version candidate (RC) 3
   de 0.17. Les tests sont grandement appréciés et peuvent aider à assurer la qualité de la version finale.
@@ -41,7 +42,8 @@ notables dans des projets populaires d'infrastructure Bitcoin.
   les paiements vers des adresses Bitcoin et les paiements Lightning Network. Le projet attribue même explicitement le code de devise XBT à
   Bitcoin.
 
-## Fusions notables
+## Commits notables
+{: id="fusions-notables"}
 
 *Fusions notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo]. Rappel : les
 nouvelles fusions dans Bitcoin Core sont faites sur sa branche de développement master et ont peu de chance de faire partie de la prochaine

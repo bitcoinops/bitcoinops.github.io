@@ -12,7 +12,8 @@ explorateur de blocs moderne dont le code a été publié en open source, et dé
 signature couvrent optionnellement la taille des transactions. Les changements de code notables apportés au cours de la semaine passée à des
 projets d'infrastructure populaires sont également décrits.
 
-## Actions requises
+## Mesures à prendre
+{: id="actions-requises"}
 
 - **Aidez à tester Bitcoin Core 0.17.1RC1 :** la première version candidate de cette [version de maintenance][maintenance release] a été [mise en
   ligne][V0.17.1rc1]. Les tests par les entreprises et les utilisateurs individuels, à la fois du daemon et de l'interface graphique, sont

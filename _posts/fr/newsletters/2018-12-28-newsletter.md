@@ -28,13 +28,16 @@ transactions à signature unique.
 
 <div markdown="1" class="xoverflow shrink80">
 
-| | Script de réception | Données de dépense | |-|-|-| | **Signature unique, Script actuel (P2PK)** | `<pubkey> OP_CHECKSIG` | `<signature>`
-| | **Multisig nu, Script actuel** | `2 <pubkey> <pubkey> <pubkey> 3 OP_CHECKMULTISIG` | `OP_0 <signature> <signature>` | | **Multisig,
-muSig[^fn-opcodes]** | `<pubkey> OP_CHECKSIG` | `<signature>` |
+| | Script de réception | Données de dépense |
+|-|-|-|
+| **Signature unique, Script actuel (P2PK)** | `<pubkey> OP_CHECKSIG` | `<signature>` |
+| **Multisig nu, Script actuel** | `2 <pubkey> <pubkey> <pubkey> 3 OP_CHECKMULTISIG` | `OP_0 <signature> <signature>` |
+| **Multisig, muSig[^fn-opcodes]** | `<pubkey> OP_CHECKSIG` | `<signature>` |
 
 </div>
 
-{:#taproot} S'appuyant sur l'idée que muSig, ou quelque chose de similaire, pourrait devenir possible dans Bitcoin, Maxwell a ensuite décrit
+{:#taproot}
+S'appuyant sur l'idée que muSig, ou quelque chose de similaire, pourrait devenir possible dans Bitcoin, Maxwell a ensuite décrit
 [Taproot][]---une puissante optimisation pour les Merklized Alternative Script Trees[^fn-mast] ([MAST][]). Tout comme muSig permet au
 multisig de base de ressembler à une signature unique, Taproot permet même au script Bitcoin le plus complexe possible de ressembler à une
 signature unique si ses participants coopèrent entre eux (mais s'ils ne le font pas, ils reçoivent tout de même la sécurité complète de leur
@@ -43,8 +46,11 @@ accrue.
 
 <div markdown="1" class="xoverflow shrink80">
 
-| | Script de réception | Données de dépense | |-|-|-| | **Utilisateur unique, Script actuel (P2PK)** | `<pubkey> OP_CHECKSIG` |
-`<signature>` | | **Utilisateurs coopérants, propositions MAST antérieures[^fn-harding-mast]** | `<hash> OP_MAST` | `<signature> <<pubkey> OP_CHECKSIG> <hash> <flags>` | | **Utilisateurs coopérants, Taproot[^fn-opcodes]** | `<pubkey> OP_CHECKSIG` | `<signature>` |
+| | Script de réception | Données de dépense |
+|-|-|-|
+| **Utilisateur unique, Script actuel (P2PK)** | `<pubkey> OP_CHECKSIG` | `<signature>` |
+| **Utilisateurs coopérants, propositions MAST antérieures[^fn-harding-mast]** | `<hash> OP_MAST` | `<signature> <<pubkey> OP_CHECKSIG> <hash> <flags>` |
+| **Utilisateurs coopérants, Taproot[^fn-opcodes]** | `<pubkey> OP_CHECKSIG` | `<signature>` |
 
 </div>
 
@@ -59,14 +65,17 @@ ou leur avocat Charlie (multisig 2-sur-3)---et ils pourraient faire ce choix des
 créer de nouvelle transaction. Cela pourrait encore accroître l'efficacité et la confidentialité, en particulier pour certains protocoles de
 contrats hors chaîne.
 
-{:#multipath-payments} Pendant ce temps, les développeurs du protocole LN Olaoluwa Osuntokun et Conner Fromknecht ont décrit une [nouvelle
+{:#multipath-payments}
+Pendant ce temps, les développeurs du protocole LN Olaoluwa Osuntokun et Conner Fromknecht ont décrit une [nouvelle
 façon d'effectuer des paiements multipath sur LN][ln multipath]. Les paiements multipath sont des paiements dont les parties sont réparties
 sur plusieurs canaux---par exemple, Alice peut envoyer une partie d'un paiement à Zed via son canal avec Bob et une partie via son canal
 avec Charlie.
 
 <div markdown="1" class="xoverflow shrink80">
 
-| Chemin unique | Multipath | |-|-| | Alice → Bob → Zed | Alice → {Bob, Charlie} → Zed |
+| Chemin unique | Multipath |
+|-|-|
+| Alice → Bob → Zed | Alice → {Bob, Charlie} → Zed |
 
 </div>
 
@@ -92,7 +101,7 @@ Bitcoin dépensable.
 
 <div markdown="1" class="callout">
 
-### sommaire 2018<br>Principales versions de projets d'infrastructure populaires
+### Sommaire 2018<br>Principales versions de projets d'infrastructure populaires
 
 - [Bitcoin Core 0.16][] publié en février incluait un support par défaut dans le portefeuille pour recevoir vers des adresses segwit, le
   support de [BIP159][] pour permettre aux nœuds élagués de signaler leur volonté de servir des blocs récents, et un certain nombre
@@ -107,7 +116,7 @@ Bitcoin dépensable.
   également supprimé l'exigence pour les backends de nœuds complets de conserver un index des transactions, améliorant les performances et
   réduisant les besoins en espace disque.
 
-- [Bitcoin Core 0.17][] publié en octobre incluait l'évitement partiel facultatif de dépenses, la capacité de créer et charger dynamiquement
+- [Bitcoin Core 0.17][] publié en octobre incluait une option permettant d'éviter les dépenses partielles, la capacité de créer et charger dynamiquement
   des portefeuilles, et le support de transactions Bitcoin partiellement signées [BIP174][] pour la communication entre programmes Bitcoin.
 
 </div>
@@ -128,7 +137,8 @@ rend beaucoup plus facile et plus efficace sur le plan computationnel l'ouvertur
 une seule transaction onchain. Cela pose les bases d'autres propositions telles que les [Channel Factories][] qui pourraient rendre les
 canaux LN 10x ou plus efficaces dans leurs opérations onchain.
 
-{:#sighash_noinput} Eltoo nécessite un soft fork pour ajouter un nouveau hash de signature optionnel, [BIP118][]
+{:#sighash_noinput}
+Eltoo nécessite un soft fork pour ajouter un nouveau hash de signature optionnel, [BIP118][]
 SIGHASH_NOINPUT_UNSAFE.[^fn-unsafe] Cela permettrait à une signature autorisant la dépense d'un UTXO d'indiquer que la signature ne
 s'applique pas seulement à cet UTXO mais à n'importe quel UTXO qui pourrait être dépensé par une signature provenant de la même clé privée.
 De plus, le mécanisme de publication d'Eltoo [pourrait ne pas être fiable et sûr][eltoo pinning] parce que les politiques actuelles de
@@ -179,7 +189,8 @@ puissance de hachage Bitcoin pour travailler sur une altcoin---ce à quoi les mi
 automatiquement. Corallo a fourni BetterHash avec à la fois un [brouillon de BIP][betterhash] et une [implémentation fonctionnelle][betterhash
 implementation] qui inclut une compatibilité rétroactive avec le protocole de communication de minage prédominant Stratum.
 
-{:#cve-2017-12842} Au même moment, une [vulnérabilité][sdl fake spv proof] connue depuis longtemps de certains développeurs du protocole
+{:#cve-2017-12842}
+Au même moment, une [vulnérabilité][sdl fake spv proof] connue depuis longtemps de certains développeurs du protocole
 Bitcoin a été divulguée publiquement sans le vouloir. [CVE-2017-12842][] permet de créer une preuve SPV pour une transaction qui n'existe
 pas en fabriquant spécialement une vraie transaction de 64 octets qui est confirmée dans un bloc. De nombreux portefeuilles légers qui
 dépendent de preuves SPV restent vulnérables encore aujourd'hui, mais le coût estimé de l'attaque est plus élevé que l'attaque originale
@@ -225,17 +236,19 @@ observateur extérieur de pouvoir supposer automatiquement que toutes les entré
 y a de personnes qui utilisent cette technique, moins l'hypothèse d'association des entrées devient fiable---améliorant la confidentialité
 pour tous les utilisateurs de Bitcoin, pas seulement pour les personnes qui utilisent P2EP.
 
-{% capture today-private %}Entrées:<br> Alice (2 BTC)<br> Alice (2 BTC)<br><br>Sorties:<br> Monnaie d'Alice (1 BTC)<br> Revenu de Bob (3 BTC){% endcapture %}
+{% capture today-private %}Entrées:<br> Alice (2 BTC)<br> Alice (2 BTC)<br><br>Sorties:<br> Rendu de monnaie d'Alice (1 BTC)<br> Paiement reçu par Bob (3 BTC){% endcapture %}
 {% capture today-public %}Entrées:<br> Dépensier (2 BTC)<br> Dépensier (2 BTC)<br><br>Sorties:<br> Dépensier ou Récepteur (1 BTC)<br>Dépensier ou Récepteur (3 BTC){% endcapture %}
-{% capture p2ep-private %}Entrées:<br> Alice (2 BTC)<br> Alice (2 BTC)<br> Bob (3 BTC)<br><br>Sorties:<br> Monnaie d'Alice (1 BTC)<br> Revenu & monnaie de Bob (6 BTC){% endcapture %}
-{% capture p2ep-public %}Entrées:<br> Dépensier ou Récepteur (2 BTC)<br> Dépensier ou Récepteur (2 BTC)<br> Dépensier ou Récepteur (3 BTC)<br><br>Sorties:<br> Dépensier ou Récepteur (1 BTC)<br>& Dépensier ou Récepteur (6 BTC){% endcapture %}
+{% capture p2ep-private %}Entrées:<br> Alice (2 BTC)<br> Alice (2 BTC)<br> Bob (3 BTC)<br><br>Sorties:<br> Rendu de monnaie d'Alice (1 BTC)<br> Paiement reçu & rendu de monnaie de Bob (6 BTC){% endcapture %}
+{% capture p2ep-public %}Entrées:<br> Dépensier ou Récepteur (2 BTC)<br> Dépensier ou Récepteur (2 BTC)<br> Dépensier ou Récepteur (3 BTC)<br><br>Sorties:<br> Dépensier ou Récepteur (1 BTC)<br> Dépensier ou Récepteur (6 BTC){% endcapture %}
 
 </div>
 
 <div markdown="1" class="xoverflow shrink80">
 
-| | Ce qu'Alice et Bob savent | Ce que le réseau voit | |-|-|-| | **Norme actuelle** | {{today-private}} | {{today-public}} | | **Avec
-P2EP** | {{p2ep-private}} | {{p2ep-public}} |
+| | Ce qu'Alice et Bob savent | Ce que le réseau voit |
+|-|-|-|
+| **Norme actuelle** | {{today-private}} | {{today-public}} |
+| **Avec P2EP** | {{p2ep-private}} | {{p2ep-public}} |
 
 </div>
 
@@ -246,7 +259,8 @@ l'ouverture d'une [PR][bitcoin core #14032] vers Bitcoin Core et la publication 
 communications est déjà possible (et recommandé) via Tor---qui peut fournir d'autres avantages---mais activer le chiffrement par défaut
 pourrait aider à protéger un plus grand nombre d'utilisateurs contre l'écoute de leurs FAI.
 
-{:#countersign} Séparément, Pieter Wuille travaille sur un [document en brouillon][untrackable auth] depuis février, basé sur un protocole
+{:#countersign}
+Séparément, Pieter Wuille travaille sur un [document en brouillon][untrackable auth] depuis février, basé sur un protocole
 qu'il, Gregory Maxwell, et d'autres développent afin de permettre une authentification optionnelle au-dessus du chiffrement. Similaire à
 [BIP150][], cela faciliterait l'établissement sécurisé de nœuds sur liste blanche à travers Internet ou de portefeuilles légers liés à des
 nœuds de confiance. Il est notable que l'idée actuelle pour cela est de permettre l'authentification sans révéler l'identité à des tiers
@@ -256,7 +270,7 @@ fur et à mesure de l'avancement des recherches sur le développement du protoco
 
 <div markdown="1" class="callout">
 
-### sommaire 2018<br>Bitcoin Optech
+### Sommaire 2018<br>Bitcoin Optech
 
 Après avoir lancé [Optech][] en mai, nous avons inscrit 15 entreprises comme membres, organisé deux [ateliers][optech workshops], produit 28
 [bulletins hebdomadaires][optech les bulletins], construit un tableau de bord, et pris un bon départ sur un livre consacré aux techniques de passage à l'échelle
@@ -286,7 +300,8 @@ sécurité des plateformes d'échange, la sécurité des portefeuilles, et la ge
 blocs. Les développeurs de Bitcoin Core ont aussi [tenu des réunions][coredevtech tokyo] pour donner à chaque développeur l'occasion de
 discuter de ses initiatives en cours avec d'autres développeurs.
 
-{:#splicing} Séparément, le développeur du protocole LN Rusty Russell a proposé une méthode pour le [splicing][], qui permet aux
+{:#splicing}
+Séparément, le développeur du protocole LN Rusty Russell a proposé une méthode pour le [splicing][], qui permet aux
 utilisateurs d'ajouter ou de soustraire des fonds d'un canal sans interrompre les paiements dans ce canal. Cela aide particulièrement les
 portefeuilles à cacher à leurs utilisateurs les détails techniques de la gestion des soldes. Par exemple, le portefeuille d'Alice peut
 automatiquement payer Bob hors chaîne ou onchain depuis le même canal de paiement---hors chaîne en utilisant LN via ce canal de paiement ou
@@ -294,7 +309,7 @@ onchain en utilisant un splice out (retrait) depuis ce canal de paiement.
 
 <div markdown="1" class="callout">
 
-### sommaire 2018<br>Nouvelles solutions d'infrastructure open source
+### Sommaire 2018<br>Nouvelles solutions d'infrastructure open source
 
 - [Electrs][] publié en juillet fournit une réimplémentation efficace d'un serveur de recherche de transactions de type Electrum écrit dans
   le langage de programmation Rust. Les besoins en ressources sont significativement plus faibles que pour les alternatives. Les serveurs de
@@ -332,7 +347,8 @@ nouvelle règle qui pourrait permettre en toute sécurité l'augmentation des fr
 
 ## Décembre
 
-{:#libminisketch} Pieter Wuille, Gregory Maxwell, et Gleb Naumenko ont étudié comment réduire la quantité de données utilisée pour relayer
+{:#libminisketch}
+Pieter Wuille, Gregory Maxwell, et Gleb Naumenko ont étudié comment réduire la quantité de données utilisée pour relayer
 les transactions Bitcoin. Leur résultat initial est [libminisketch][], une bibliothèque qui permet à un utilisateur disposant d'un ensemble
 d'éléments (par ex. {1, 2, 3}) d'envoyer efficacement les éléments manquants à un autre utilisateur qui ne possède qu'une partie de cet
 ensemble (par ex. {1, 3}). Aucun changement au consensus Bitcoin n'est requis pour cela---c'est simplement une manière différente de
@@ -348,7 +364,7 @@ publiée aujourd'hui.
 
 <div markdown="1" class="callout">
 
-### sommaire 2018<br>Utilisation des techniques de réduction des frais
+### Sommaire 2018<br>Utilisation des techniques de réduction des frais
 
 ![Graphique de l'utilisation des clés publiques compressées, segwit, du regroupement de paiements et du RBF opt-in en
 2018](/img/posts/2018-12-overall.png)
@@ -360,7 +376,7 @@ les transactions confirmées.
   nombre d'entrées utilisant des clés publiques compressées est passé d'environ 96 % en janvier à 98 % en décembre.
 
 - **Dépenses segwit** réduisent l'effet de la taille du témoin sur les frais jusqu'à 75 %, selon la manière dont segwit est utilisé (voir le
-  graphique suivant). Le nombre d' entrées utilisant segwit est passé d'environ 10 % en janv. à 38 % en déc.
+  graphique suivant). Le nombre d'entrées utilisant segwit est passé d'environ 10 % en janv. à 38 % en déc.
 
 - **Paiements groupés** répartissent la taille et la surcharge en frais de la dépense d'une entrée ou d'un ensemble d'entrées sur un plus
   grand nombre de sorties, ce qui en fait un excellent moyen pour les dépensiers à haute fréquence comme les plateformes d'échange
@@ -380,12 +396,12 @@ Il existe deux classes de dépenses segwit :
   d'environ 10 % en janv. à 33 % en déc.
 
 - **Natif** segwit est plus efficace mais n'est compatible qu'avec les portefeuilles qui prennent en charge l'envoi vers des adresses
-  segwit. Le nombre d' entrées segwit natives est passé de presque 0 % en janv. à environ 5 % en déc.
+  segwit. Le nombre d'entrées segwit natives est passé de presque 0 % en janv. à environ 5 % en déc.
 
 ![Graphique des changements de l'ensemble UTXO par bloc en 2018](/img/posts/2018-12-utxo.png)
 
-Une dernière technique de réduction des frais que nous avons étudiée était la variation par bloc de la taille de l'ensemble des Unconfirmed
-Transaction Outputs (UTXOs). Les diminutions indiquent la [consolidation][towns consolidation] de bitcoins en pièces plus grosses qui
+Une dernière technique de réduction des frais que nous avons étudiée était la variation par bloc de la taille de l'ensemble des sorties de
+transaction non dépensées (UTXO). Les diminutions indiquent la [consolidation][towns consolidation] de bitcoins en pièces plus grosses qui
 pourront être dépensées plus efficacement plus tard. Au total, la taille de l'ensemble UTXO a diminué d'environ 12 millions d'entrées cette
 année.
 
@@ -401,7 +417,9 @@ concurrents qui n'ont pas optimisé.
 d'une moyenne mobile simple sur 1 000 blocs. Les blocs vides (ceux avec seulement une transaction de génération) ont été exclus de
 l'analyse. La plupart des statistiques ci-dessus peuvent être obtenues depuis le tableau de bord Optech, qui est mis à jour après chaque
 bloc. Remarque : après le 1er janvier 2019, nous mettrons à jour les graphiques de cet article afin de refléter l'ensemble de 2018, à quel
-point cette phrase sera supprimée.* </div>
+point cette phrase sera supprimée.*
+
+</div>
 
 ## Conclusion
 
@@ -414,38 +432,44 @@ découvrir.
 *Le bulletin Optech reviendra à son calendrier habituel de publication le mardi, le 8 janvier. Vous pouvez [vous abonner par e-mail][optech
 les bulletins] ou suivre notre [flux RSS][RSS feed].*
 
-## Footnotes
+## Notes de bas de page
+{: id="footnotes"}
 
-[^fn-dandelion-lite]: Les clients légers utilisant le réseau P2P de Bitcoin ne relaient pas les transactions pour d'autres
-utilisateurs---ils n'envoient que leurs propres transactions. Cela signifie que toute transaction envoyée depuis un client léger P2P peut
-être associée à l'identité réseau du client (par ex. adresse IP). Dandelion n'est qu'un protocole de routage et ne peut donc pas éliminer
-cette fuite de confidentialité. À la place, les clients légers P2P devraient toujours envoyer les transactions en utilisant un réseau
-d'anonymat tel que Tor (et devraient utiliser une identité réseau jetable différente pour chaque transaction de dépense).
+[^fn-dandelion-lite]:
+    Les clients légers utilisant le réseau P2P de Bitcoin ne relaient pas les transactions pour d'autres
+    utilisateurs---ils n'envoient que leurs propres transactions. Cela signifie que toute transaction envoyée depuis un client léger P2P peut
+    être associée à l'identité réseau du client (par ex. adresse IP). Dandelion n'est qu'un protocole de routage et ne peut donc pas éliminer
+    cette fuite de confidentialité. À la place, les clients légers P2P devraient toujours envoyer les transactions en utilisant un réseau
+    d'anonymat tel que Tor (et devraient utiliser une identité réseau jetable différente pour chaque transaction de dépense).
 
-[^fn-opcodes]: Une proposition de signature Schnorr pourrait ne pas utiliser les mêmes opcodes que le Script actuel, mais la signature
-unique, le multisig utilisant quelque chose comme muSig, et le MAST coopératif utilisant quelque chose comme Taproot pourraient tous
-utiliser le même format.
+[^fn-opcodes]:
+    Une proposition de signature Schnorr pourrait ne pas utiliser les mêmes opcodes que le Script actuel, mais la signature
+    unique, le multisig utilisant quelque chose comme muSig, et le MAST coopératif utilisant quelque chose comme Taproot pourraient tous
+    utiliser le même format.
 
-[^fn-mast]: Aussi appelés *Merklized Abstract Syntax Trees* car l'idée originale de Russell O'Connor combinait la structure d'engagement
-cryptographique des arbres de Merkle avec la technique d'analyse de langage de programmation des arbres syntaxiques abstraits afin de
-fournir une méthode pour s'engager de manière compacte sur un script complexe dont les éléments et résultats provenant de différentes
-branches pouvaient être combinés. Des simplifications ultérieures de cette idée ont supprimé ce potentiel de combinaison et donc les
-propositions récentes sont différentes des arbres syntaxiques abstraits, amenant O'Connor et d'autres à déconseiller l'utilisation du terme
-original pour la nouvelle idée. Pourtant l'abréviation "MAST" a été utilisée pour désigner la technique de base depuis [au moins 2013][todd
-mast], et nous avons donc choisi d'adopter le rétroacronyme [proposé][mast backronym] par Anthony Towns, *Merklized Alternative Script
-Trees*.
+[^fn-mast]:
+    Aussi appelés *Merklized Abstract Syntax Trees* car l'idée originale de Russell O'Connor combinait la structure d'engagement
+    cryptographique des arbres de Merkle avec la technique d'analyse de langage de programmation des arbres syntaxiques abstraits afin de
+    fournir une méthode pour s'engager de manière compacte sur un script complexe dont les éléments et résultats provenant de différentes
+    branches pouvaient être combinés. Des simplifications ultérieures de cette idée ont supprimé ce potentiel de combinaison et donc les
+    propositions récentes sont différentes des arbres syntaxiques abstraits, amenant O'Connor et d'autres à déconseiller l'utilisation du terme
+    original pour la nouvelle idée. Pourtant l'abréviation "MAST" a été utilisée pour désigner la technique de base depuis [au moins 2013][todd
+    mast], et nous avons donc choisi d'adopter le rétroacronyme [proposé][mast backronym] par Anthony Towns, *Merklized Alternative Script
+    Trees*.
 
-[^fn-unsafe]: [BIP118][] SIGHASH_NOINPUT_UNSAFE reçoit l'appellation unsafe parce qu'une utilisation naïve de celui-ci pourrait permettre la
-perte de fonds. Par exemple, Alice reçoit 1 BTC sur l'une de ses adresses. Elle utilise ensuite noinput lorsqu'elle signe une dépense de ces
-fonds à Bob. Plus tard, Alice reçoit encore 1 BTC à la même adresse. Cela permet à la signature de la transaction précédente d'être
-réutilisée pour envoyer les nouveaux 1 BTC d'Alice à Bob. Le co-auteur du BIP118 Christian Decker a [accepté][decker unsafe] d'étiqueter
-l'opcode comme *unsafe* afin d'encourager les développeurs à se renseigner sur ce problème de sécurité avant d'utiliser l'indicateur. Un
-programme bien conçu peut utiliser noinput en toute sécurité en faisant attention à ce qu'il signe et aux adresses qu'il expose aux
-utilisateurs pour recevoir des paiements.
+[^fn-unsafe]:
+    [BIP118][] SIGHASH_NOINPUT_UNSAFE reçoit l'appellation unsafe parce qu'une utilisation naïve de celui-ci pourrait permettre la
+    perte de fonds. Par exemple, Alice reçoit 1 BTC sur l'une de ses adresses. Elle utilise ensuite noinput lorsqu'elle signe une dépense de ces
+    fonds à Bob. Plus tard, Alice reçoit encore 1 BTC à la même adresse. Cela permet à la signature de la transaction précédente d'être
+    réutilisée pour envoyer les nouveaux 1 BTC d'Alice à Bob. Le co-auteur du BIP118 Christian Decker a [accepté][decker unsafe] d'étiqueter
+    l'opcode comme *unsafe* afin d'encourager les développeurs à se renseigner sur ce problème de sécurité avant d'utiliser l'indicateur. Un
+    programme bien conçu peut utiliser noinput en toute sécurité en faisant attention à ce qu'il signe et aux adresses qu'il expose aux
+    utilisateurs pour recevoir des paiements.
 
-[^fn-harding-mast]: Cet exemple ne correspond à aucune proposition MAST spécifique mais fournit plutôt une vue simple des données minimales
-nécessaires pour que MAST fonctionne. Pour les propositions réelles, veuillez consulter les BIPs [114][BIP114], [116][BIP116], et
-[117][BIP117].
+[^fn-harding-mast]:
+    Cet exemple ne correspond à aucune proposition MAST spécifique mais fournit plutôt une vue simple des données minimales
+    nécessaires pour que MAST fonctionne. Pour les propositions réelles, veuillez consulter les BIPs [114][BIP114], [116][BIP116], et
+    [117][BIP117].
 
 {% include linkers/issues.md issues="13451,13452,14032" %}
 {% include references.md %}
@@ -515,6 +539,6 @@ nécessaires pour que MAST fonctionne. Pour les propositions réelles, veuillez 
 [bitcoin core 0.6]: https://bitcoin.org/en/release/v0.6.0
 [techniques de réduction des frais de transaction]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees
 [payment batching]: https://bitcointechtalk.com/saving-up-to-80-on-bitcoin-transaction-fees-by-batching-payments-4147ab7009fb
-[towns consolidation]: /en/xapo-utxo-consolidation/
+[towns consolidation]: /fr/newsletters/2018/07/31/#rapport-de-terrain--consolidation-de-4-millions-dutxo-chez-xapo
 [cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144

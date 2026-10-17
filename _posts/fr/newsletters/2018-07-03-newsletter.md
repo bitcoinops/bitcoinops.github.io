@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 version: 1
-excerpt: Continued discussion over graftroot safety, BIP174 Partially Signed Bitcoin Transactions (PSBT) officially marked as proposed, and discussion of Dandelion transaction relay.
+excerpt: Poursuite des discussions sur la sécurité de graftroot, demande de passage du BIP174 sur les transactions Bitcoin partiellement signées (PSBT) au statut de proposition et discussion sur le relais de transactions Dandelion.
 
 ---
 ### Désabonnement
@@ -48,7 +48,8 @@ Veuillez nous contacter si vous souhaitez participer à cet atelier ou à de fut
 
 Un résumé des actions pertinentes, des éléments du tableau de bord et des nouvelles de l'ensemble de la communauté open source Bitcoin.
 
-### Actions
+### Mesures à prendre
+{: id="actions"}
 
 Pas de nouvelles actions, mais il est toujours recommandé d'assurer le suivi des éléments suivants précédemment publiés.
 

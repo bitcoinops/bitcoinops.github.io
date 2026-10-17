@@ -11,7 +11,8 @@ Le bulletin de cette semaine décrit brièvement une proposition de splice pour 
 vers les vidéos et transcriptions des présentations des sessions de formation Edge Dev++, et résume certaines transcriptions réalisées lors
 de l'événement CoreDev.tech de la semaine dernière.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 Aucun cette semaine.
 

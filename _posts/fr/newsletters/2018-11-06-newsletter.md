@@ -11,7 +11,8 @@ Le bulletin de cette semaine contient un avis de sécurité concernant l'implém
 réduction temporaire du nombre de blocs segwit, un lien vers une discussion intéressante sur de futures fonctionnalités pour les paiements
 LN, ainsi que quelques changements de code notables dans des projets populaires d'infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - **Mise à jour de sécurité Bech32 pour l'implémentation C :** si vous utilisez l'[implémentation de référence][bech32 c] du décodage
   d'adresses bech32 pour le langage de programmation C, vous devez la [mettre à jour][bech32 patch] pour corriger un bug potentiel de

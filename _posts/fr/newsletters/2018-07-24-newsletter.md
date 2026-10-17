@@ -12,7 +12,8 @@ Le bulletin de cette semaine comprend des informations sur un nouveau langage po
 prise en charge par Bitcoin Core des transactions Bitcoin partiellement signées, ainsi que des nouvelles sur plusieurs autres fusions
 notables dans Bitcoin Core.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - [Bitcoin Core 0.16.2RC2][] publié pour tests en préparation d'une version de maintenance qui fournira des corrections de bogues et des
   rétroportages. Les tests par la communauté sont grandement appréciés. Notez qu'il n'y a pas eu de RC1 en raison d'un problème de

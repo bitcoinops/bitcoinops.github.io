@@ -12,7 +12,8 @@ de Bitcoin Core 0.15 et 0.14 pour corriger le bug d'entrées dupliquées CVE-201
 versions plus récentes, une brève description d'une scission de chaîne sur testnet, et des liens vers des fusions notables dans des projets
 d'infrastructure Bitcoin.
 
-## Action à mener
+## Mesures à prendre
+{: id="action-à-mener"}
 
 - **Mettez à niveau vers Bitcoin Core 0.17 :** la nouvelle version a été taguée et plusieurs personnes ont commencé à reproduire des builds
   du logiciel, donc les binaires et l'annonce officielle de sortie devraient vraisemblablement devenir disponibles mardi ou mercredi sur

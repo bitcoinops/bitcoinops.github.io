@@ -14,7 +14,8 @@ multisig basée sur HSM Subzero publiée en open source par Square et de la réc
 également inclus une sélection récente de questions-réponses de Bitcoin Stack Exchange et des descriptions de changements notables dans le
 code de projets populaires d'infrastructure Bitcoin.
 
-## Action items
+## Mesures à prendre
+{: id="action-items"}
 
 - **Mettez à jour vers [C-Lightning 0.6.2][] :** corrige un bug où le nœud envoyait à ses pairs un nombre excessif d'annonces de mise à jour
   à propos de canaux morts.
@@ -85,7 +86,8 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
   actuelle d'environ 80 000 $---mais en utilisant [l'estimation récente d'AJ Towns][towns mining estimate] de 0,16 $/kWh qui inclut des
   coûts au-delà de l'électricité et tente de prendre en compte des primes de risque, le coût estimé d'un bloc est d'environ 135 000 $.
 
-## Notable merges
+## Fusions notables
+{: id="notable-merges"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning
 repo], et [libsecp256k1][libsecp256k1 repo].*

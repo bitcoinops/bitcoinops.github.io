@@ -11,7 +11,8 @@ Le bulletin « de taille wumbo » de cette semaine fournit une note à propos du
 cryptomonnaies, résume plusieurs objectifs acceptés pour la version 1.1 de la spécification du protocole Lightning Network, et liste
 plusieurs commits notables dans des projets populaires d'infrastructure Bitcoin.
 
-## Actions recommandées
+## Mesures à prendre
+{: id="actions-recommandées"}
 
 - **Surveiller les taux de frais :** en raison d'une activité associée à Bitcoin Cash, qui peut utiliser le même équipement de minage que
   Bitcoin, les blocs de Bitcoin peuvent apparaître moins fréquemment que prévu, ce qui augmente les taux de frais et provoque d'autres
