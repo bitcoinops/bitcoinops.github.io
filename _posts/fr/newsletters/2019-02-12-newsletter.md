@@ -11,7 +11,8 @@ Le bulletin de cette semaine annonce la toute dernière version de LND, décrit 
 bitcoins, et renvoie vers une étude d'Optech sur l'utilisabilité de Replace-by-Fee. Sont également inclus des résumés de changements de code
 notables dans des projets populaires de l'infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - **Mettez à niveau vers LND 0.5.2 :** cette [version][lnd release] mineure corrige des bogues liés à la stabilité et améliore la
   compatibilité avec d'autres logiciels LN.
@@ -35,7 +36,8 @@ notables dans des projets populaires de l'infrastructure Bitcoin.
   capacité de gestion des frais que fournit RBF. Sur la base des exemples recueillis, le rapport se conclut par un résumé de recommandations
   pour les développeurs.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements de code notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-Lightning][c-lightning repo],
 [Eclair][eclair repo], et [libsecp256k1][libsecp256k1 repo].*

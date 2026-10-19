@@ -12,7 +12,8 @@ nouvel outil que certains utilisateurs trouveraient utile, et fournit des résum
 récente résidence Chaincode sur les applications Lightning. Plusieurs changements notables dans le code de projets populaires
 d'infrastructure Bitcoin sont également décrits.
 
-## Action items
+## Mesures à prendre
+{: id="action-items"}
 
 Aucun cette semaine.
 
@@ -78,7 +79,8 @@ experts. Les présentations suivantes peuvent présenter un intérêt particulie
   explique comment il réfléchit à l'expérience utilisateur dans Zap, les défis UX auxquels il a été confronté en construisant le produit et
   comment il les a résolus.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning
 repo], et [libsecp256k1][libsecp256k1 repo].*

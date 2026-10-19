@@ -11,7 +11,8 @@ Le bulletin de cette semaine décrit la disponibilité d'un fork de libsecp256k1
 des questions et réponses populaires de février sur Bitcoin Stack Exchange, et décrit des fusions notables dans des projets populaires
 d'infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 Aucun cette semaine.
 

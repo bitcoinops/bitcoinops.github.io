@@ -12,7 +12,8 @@ Le bulletin de cette semaine inclut des nouvelles et des points d'action à prop
 majeure de Bitcoin Core, de l'augmentation des frais de transaction, d'un probable renommage du drapeau proposé `SIGHASH_NOINPUT`, et de
 plusieurs fusions récentes notables dans Bitcoin Core.
 
-## Points d'action
+## Mesures à prendre
+{: id="points-daction"}
 
 - Dernière chance de plaider en faveur de toute nouvelle fonctionnalité presque prête afin qu'elle soit incluse dans Bitcoin Core 0.17, dont
   la sortie est attendue en août ou en septembre. La date de gel des fonctionnalités mentionnée dans le [bulletin #3][] a été repoussée
@@ -58,7 +59,8 @@ plusieurs fusions récentes notables dans Bitcoin Core.
   drapeau sighash afin que les développeurs ne l'utilisent pas accidentellement sans se rendre compte de ses dangers. Un consensus
   approximatif semble s'être formé autour du nom `SIGHASH_NOINPUT_UNSAFE`.
 
-## Fusions notables dans Bitcoin Core
+## Changements notables dans le code et la documentation
+{: id="fusions-notables-dans-bitcoin-core"}
 
 - **<!--n-->[#13072][] :** le RPC `createmultisig` peut désormais créer des adresses segwit encapsulées dans P2SH et des adresses segwit
   natives.

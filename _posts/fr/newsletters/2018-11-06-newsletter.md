@@ -11,7 +11,8 @@ Le bulletin de cette semaine contient un avis de sécurité concernant l'implém
 réduction temporaire du nombre de blocs segwit, un lien vers une discussion intéressante sur de futures fonctionnalités pour les paiements
 LN, ainsi que quelques changements de code notables dans des projets populaires d'infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - **Mise à jour de sécurité Bech32 pour l'implémentation C :** si vous utilisez l'[implémentation de référence][bech32 c] du décodage
   d'adresses bech32 pour le langage de programmation C, vous devez la [mettre à jour][bech32 patch] pour corriger un bug potentiel de
@@ -81,7 +82,8 @@ Si vous cherchez davantage de nouvelles sur Lightning, consultez la nouvelle col
 sur LN et de ce que les gens construisent avec lui. Suivez [@renepickhardt][] sur Twitter pour obtenir les dernières nouvelles et consultez
 les numéros déjà publiés : [1][lwil41], [2][lwil42], et [3][lwil43].
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements de code notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning repo], et
 [libsecp256k1][libsecp256k1 repo].*

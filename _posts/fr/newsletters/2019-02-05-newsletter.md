@@ -10,7 +10,8 @@ lang: fr
 Le bulletin de cette semaine comprend une annonce du programme Chaincode Residency 2019, résume quelques présentations de la Stanford
 Blockchain Conference, et fournit la liste habituelle des changements notables dans le code de projets populaires d'infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - **Postulez à la Chaincode Residency :** Bitcoin Optech encourage tout ingénieur intéressé par le fait de passer l'été à contribuer à des
   projets open source Bitcoin et Lightning à postuler à la Chaincode Residency. Tous les détails de la résidence se trouvent dans la section
@@ -164,7 +165,8 @@ fournies par les organisateurs ([jour 1][], [jour 2][], [jour 3][]).
   À la conclusion de sa présentation, cet intervenant a également annoncé que la prochaine conférence Scaling Bitcoin et les sessions de
   formation EdgeDev++ auront lieu plus tard en 2019 à Tel Aviv, en Israël.
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-Lightning][c-lightning repo],
 [Eclair][eclair repo], et [libsecp256k1][libsecp256k1 repo].*

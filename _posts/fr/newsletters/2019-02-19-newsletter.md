@@ -12,7 +12,8 @@ permettront d’associer le portefeuille intégré de Bitcoin Core en mode obser
 du gel des fonctionnalités pour la prochaine version de Bitcoin Core. Sont également résumés de nombreux changements de code et de
 documentation dans des projets populaires d’infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 Aucun cette semaine.
 

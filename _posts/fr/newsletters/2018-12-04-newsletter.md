@@ -11,7 +11,8 @@ Le bulletin de cette semaine décrit une proposition pour ajuster la politique d
 d'aider à simplifier les frais onchain pour les paiements LN, mentionne des réunions à venir à propos du protocole LN, et décrit brièvement
 une nouvelle version de LND ainsi que les travaux vers une version de maintenance de Bitcoin Core.
 
-## Action à entreprendre
+## Mesures à prendre
+{: id="action-à-entreprendre"}
 
 - Bitcoin Core se prépare pour la prochaine [version de maintenance][maintenance release] 0.17.1. Les versions de maintenance incluent des corrections de bugs
   et des rétroportages de fonctionnalités mineures. Toute personne prévoyant d'adopter cette version est encouragée à examiner la liste des
@@ -65,7 +66,8 @@ une nouvelle version de LND ainsi que les travaux vers une version de maintenanc
 
 [LND 0.5.1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.5.1-beta
 
-## Changements notables dans le code
+## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code"}
 
 *Changements notables dans le code cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning
 repo], et [libsecp256k1][libsecp256k1 repo].*

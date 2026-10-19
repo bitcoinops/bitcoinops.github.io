@@ -12,7 +12,8 @@ chiffrées, des liens vers deux nouveaux articles sur la création rapide de cl�
 les frais de transaction pour les utilisateurs de multisig, et répertorie quelques fusions notables de projets populaires d'infrastructure
 Bitcoin.
 
-## Actions requises
+## Mesures à prendre
+{: id="actions-requises"}
 
 - **Fermez les ports RPC ouverts sur les nœuds :** environ 13 % des nœuds Bitcoin semblent avoir leurs ports RPC ouverts sur des connexions
   publiques non chiffrées, mettant les utilisateurs de ces nœuds en danger. Voir l’élément d’actualité complet ci-dessous pour plus de
@@ -79,7 +80,8 @@ Bitcoin.
 [mpecdsa goldfeder]: http://stevengoldfeder.com/papers/GG18.pdf
 [mpecdsa lindell]: https://eprint.iacr.org/2018/987.pdf
 
-## Fusions notables
+## Changements notables dans le code et la documentation
+{: id="fusions-notables"}
 
 *Changements de code notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo], [C-lightning][core lightning repo], et
 [libsecp256k1][libsecp256k1 repo].*
