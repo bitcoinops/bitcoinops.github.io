@@ -77,7 +77,6 @@ seems worth publicizing the decision to use this value -->
 
 - [BOLTs #894][] 在规范中添加了一些建议的检查。各实现可以采纳这些检查，以避免在路由链上不经济的支付时把多余的比特币当作矿工手续费捐出去。若缺少这些检查会出现哪些问题，详见[上周 Newsletter][news170 ln cve]。
 
-
 {% include references.md %}
 {% include linkers/issues.md issues="22863,23093,22539,4567,1985,1124,894,22779,9519" %}
 [corallo mobile]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003307.html
