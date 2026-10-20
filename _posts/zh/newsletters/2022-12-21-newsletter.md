@@ -342,7 +342,7 @@ Russell O'Connor [提议][news185 txhash]了 CTV 和 APO 的替代方案——�
 [news208 scid cln]: /zh/newsletters/2022/07/13/#core-lightning-5275
 [news208 scid lnd]: /zh/newsletters/2022/07/13/#lnd-5955
 [news209 miniscript]: /zh/newsletters/2022/07/20/#bitcoin-core-24148
-[news213 bls]: /zh/newsletters/2022/08/17/#using-bitcoincompatible-bls-signatures-for-dlcs
+[news213 bls]: /zh/newsletters/2022/08/17/#using-bitcoin-compatible-bls-signatures-for-dlcs
 [news213 dual funding]: /zh/newsletters/2022/08/17/#eclair-2273
 [news213 rb]: /zh/newsletters/2022/08/17/#rust-bitcoin-0-29
 [news214 cln]: /zh/newsletters/2022/08/24/#core-lightning-0-12-0
