@@ -63,6 +63,8 @@ lang: zh
 
 *本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo]的值得注意的变更。*
 
+<!-- we wouldn't normally cover a small code comment like this, but it
+seems worth publicizing the decision to use this value -->
 - [Bitcoin Core #22863][] 记录了一项决定：P2TR 输出与 P2WPKH 输出采用相同的最小输出金额（“粉尘金额”）294 sat。之所以在花费 P2TR 输出比花费 P2WPKH 输出更省的情况下仍这样做，是因为一些开发者[反对][bitcoin core #22779]此时降低粉尘限额。
 
 - [Bitcoin Core #23093][] 新增 `newkeypool` RPC 方法，会把钱包中所有预生成的地址都标记为已使用，从而生成一组新地址。多数用户永远用不到它，但当用户从较旧的非 [BIP32][] 钱包升级到使用 [HD 密钥生成][topic bip32] 时，这一行为会在后台被用到。

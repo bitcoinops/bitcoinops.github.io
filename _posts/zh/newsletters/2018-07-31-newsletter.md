@@ -55,8 +55,6 @@ https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswe
 
 - **<!--if-you-can-use-almost-any-opcode-in-p2sh-why-can-t-you-use-them-in-scriptpubkeys-->**[如果你可以在 P2SH 中使用几乎任何操作码，为什么不能在 scriptPubKeys 中使用它们？][bse 76541]：在这个回答中，比特币技术作家 David A. Harding 解释了比特币早期版本为什么将可以发送的交易类型限制为“标准交易”，以及为什么即使现在通过 P2SH 和 segwit P2WSH 几乎所有操作码都可用于标准使用，大多数这些限制仍然存在。
 
-[Newsletter #3]: /zh/newsletters/2018/07/10/
-
 ## 值得注意的提交
 
 *快速查看在各种开源比特币项目中最近合并和提交的情况。*
@@ -81,3 +79,4 @@ https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswe
 [bse 76541]: {{bse}}76541
 
 [lnd ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c]: https://github.com/lightningnetwork/lnd/commit/ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c
+[Newsletter #3]: /zh/newsletters/2018/07/10/

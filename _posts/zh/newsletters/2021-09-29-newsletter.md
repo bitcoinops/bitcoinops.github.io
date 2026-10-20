@@ -13,6 +13,8 @@ lang: zh
 
 - **<!--discussion-about-dlc-specification-breaking-changes-->****关于 DLC 规范破坏性变更的讨论：** Nadav Kohen 在 DLC-dev 邮件列表中[发布][kohen post]了关于更新 [DLC][topic dlc] 规范的提案，其中包含多个可能破坏现有应用兼容性的变更。他提出了两种方案：按需更新规范并让应用声明其实现的版本；或将多个破坏性变更集中处理以最小化中断次数。邀请正在开发 DLC 软件的技术人员提供反馈。
 
+<!-- confirmed on IRC that "ghost43" (all lowercase) is how they'd like to be attributed -->
+
 - **<!--challenges-recovering-ln-close-transactions-using-only-a-seed-->****仅用种子恢复 LN 关闭交易的挑战：** Electrum Wallet 开发者 ghost43 在 Lightning-Dev 邮件列表中[发帖][ghost43 post]，讨论为钱包的通道关闭交易扫描区块链时的一些挑战。一个具体问题在于：只用 [BIP32][] 风格的[分层确定性密钥生成][topic bip32]恢复钱包时，该如何应对新的[锚定输出][topic anchor outputs]协议。ghost43 分析了若干可能的方案，并推荐 Eclair 目前使用的方案，认为它是当前可行的最佳方案。如果各实现愿意略微修改通道开通协议，文中还提出了进一步的改进思路。
 
 - **<!--stateless-ln-invoice-generation-->****无状态 LN 发票生成：** Joost Jager 在 Lightning-Dev 邮件列表中[发帖][jager post]，讨论为未认证用户生成 LN 发票的应用可能遭受的拒绝服务攻击。具体来说，攻击者可以请求数量不受限制的发票，而生成服务需要一直保存这些发票直到它们过期。Jager 建议换个做法：对于不需要太多数据的小额发票，服务可以在生成后立即将其忘掉，转而把发票参数交给发起请求的用户。用户支付时会提交这些参数，服务端据此重建发票、接受支付并完成订单。
