@@ -378,7 +378,7 @@ LN 开发者在十月和十一月取得重大进展，着手解决一个由来�
 [mpp implementation]: /zh/newsletters/2019/12/18/#ln-implementations-add-multipath-payment-support
 [news33 reserves]: /zh/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
 [news37 cleanup discussion]: /zh/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
-[news37 merkle tree attacks]: /zh/newsletters/2019/03/05/#merkle-树攻击
+[news37 merkle tree attacks]: /zh/newsletters/2019/03/05/#默克尔树攻击
 [news61 miniscript feedback]: /zh/newsletters/2019/08/28/#miniscript-request-for-comments
 [news67 bolts676]: /zh/newsletters/2019/10/09/#bolts-676
 [newsletters]: /zh/newsletters/
@@ -391,7 +391,7 @@ LN 开发者在十月和十一月取得重大进展，着手解决一个由来�
 [scaling bitcoin]: /zh/newsletters/2019/09/18/#scaling-bitcoin
 [schnorr/taproot workshops]: /zh/schnorr-taproot-workshop/
 [snicker]: /zh/newsletters/2019/09/04/#snicker-proposed
-[stanford blockchain conference]: /zh/newsletters/2019/02/05/#斯坦福区块链会议上的值得注意的演讲
+[stanford blockchain conference]: /zh/newsletters/2019/02/05/#斯坦福区块链会议上值得注意的演讲
 [sybil attacks]: https://en.wikipedia.org/wiki/Sybil_attack
 [taproot review]: /zh/newsletters/2019/10/23/#taproot-review
 [time warp attack]: /zh/newsletters/2019/03/05/#时间扭曲攻击

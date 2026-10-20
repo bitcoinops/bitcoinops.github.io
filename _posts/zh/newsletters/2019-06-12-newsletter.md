@@ -55,7 +55,7 @@ lang: zh
 
 - **<!--proposal-to-override-some-bip125-rbf-conditions-->****建议覆盖某些 BIP125 RBF 条件：** [BIP125][] 的自愿启用手续费替换（RBF）只有在替代交易提高了整个内存池中支付的手续费总额时，才允许用费率更高的交易替换原有交易。这挡住了一种针对全节点、成本很低却白白浪费带宽的拒绝服务（DoS）攻击，但也让针对某些 RBF 用法的[交易钉住][transaction pinning] DoS 攻击变得相对廉价，例如在 LN 这类时间敏感的协议中。
 
-  此前已有好几位开发者试图解开这个两难，去年年底 Matt Corallo 提出的一个方案用子为父付（CPFP）追加手续费（[CPFP 豁免（carve-out）][]，见 [Newsletter #24][]），同时建议了一种调整 RBF 的替代变通办法。Rusty Russell 早先与 Corallo [讨论][russell-corallo rbf]过这处 RBF 改动，此后又做了进一步完善，如今已把它作为给 BIP125 规则集新增的一条规则[提交][rbf rule 6]到 Bitcoin-Dev 邮件列表。这条新规则允许内存池里任何 BIP125 可替换交易在满足以下两个条件时追加手续费：
+  此前已有好几位开发者试图解开这个两难，去年年底 Matt Corallo 提出的一个方案用子为父付（CPFP）追加手续费（[CPFP 豁免（carve-out）][CPFP carve out]，见 [Newsletter #24][]），同时建议了一种调整 RBF 的替代变通办法。Rusty Russell 早先与 Corallo [讨论][russell-corallo rbf]过这处 RBF 改动，此后又做了进一步完善，如今已把它作为给 BIP125 规则集新增的一条规则[提交][rbf rule 6]到 Bitcoin-Dev 邮件列表。这条新规则允许内存池里任何 BIP125 可替换交易在满足以下两个条件时追加手续费：
 
   1. 当前在内存池中的版本，排在最有利可图的前 1,000,000 vbytes 之外（即不在“下一个区块”的范围内）
 

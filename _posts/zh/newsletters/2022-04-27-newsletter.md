@@ -74,7 +74,7 @@ lang: zh
 
 - [Core Lightning 0.11.0][] 是这一热门 LN 节点软件下一主要版本的发布。除了其他功能与缺陷修复外，新版本还支持与同一对等节点建立多条活动通道，并支持支付[无状态发票][topic stateless invoices]。
 
-- [Rust Bitcoin 0.28][] 是该比特币库的最新版本。最显著的变化是增加了对 taproot 的支持，并改进了相关 API（例如 [PSBT][topic psbt]）。其他改进与缺陷修复详见[发布说明][rb28 rn]。
+- [Rust Bitcoin 0.28][Rust-Bitcoin 0.28] 是该比特币库的最新版本。最显著的变化是增加了对 taproot 的支持，并改进了相关 API（例如 [PSBT][topic psbt]）。其他改进与缺陷修复详见[发布说明][rb28 rn]。
 
 ## 值得注意的代码与文档变更
 
@@ -90,7 +90,7 @@ lang: zh
 [bitcoin core 23.0]: https://bitcoincore.org/bin/bitcoin-core-23.0/
 [bcc23 rn]: https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-23.0.md
 [core lightning 0.11.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.11.0.1
-[rust-bitcoin 0.28]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/0.28.0
+[Rust-Bitcoin 0.28]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/0.28.0
 [rb28 rn]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/CHANGELOG.md#028---2022-04-20-the-taproot-release
 [rubin ctv-st]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020233.html
 [towns ctv signet]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020234.html

@@ -19,7 +19,7 @@ lang: zh
 
 ## Bitcoin Core PR 审查俱乐部
 
-*在这个每月栏目中，我们总结最近一次 [Bitcoin Core PR 审查俱乐部][]会议，重点介绍其中的一些重要问题和答案。点击下面的问题，即可查看会议中答案的摘要。*
+*在这个每月栏目中，我们总结最近一次 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club]会议，重点介绍其中的一些重要问题和答案。点击下面的问题，即可查看会议中答案的摘要。*
 
 [只支持带见证的紧凑区块][review club #20799]是 John Newbery 提出的一个 PR（[#20799][Bitcoin Core #20799]），建议[移除对非 segwit 版本][nonsegwit]的 [BIP152][] 紧凑区块的支持。
 

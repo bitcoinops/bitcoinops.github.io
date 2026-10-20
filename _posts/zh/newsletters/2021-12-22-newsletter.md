@@ -91,33 +91,33 @@ C-Lightning 0.9.3 的另一项[首次发布][cl 0.9.3]带来了一项新协议�
 
 {% comment %}<!-- comments in bold text below tweak auto-anchors to prevent ID conflicts -->{% endcomment %}
 
-- **1 月<!--taproot-->**：Bitcoin Core 0.21.0 [发布][bcc21]，这是首个支持 [signet][topic signet] 的版本，其中包括已激活 taproot 的默认 signet——为用户和开发者提供了一个便于开始测试的环境。
+- <span id="1"></span>**1 月**：Bitcoin Core 0.21.0 [发布][bcc21]，这是首个支持 [signet][topic signet] 的版本，其中包括已激活 taproot 的默认 signet——为用户和开发者提供了一个便于开始测试的环境。
 
-- **2 月<!--taproot-->**：`##taproot-activation` IRC 频道召开了[首次][tapa1]及后续[多次][tapa2]预定[会议][tapa3]。该频道随后成为开发者、用户和矿工讨论如何激活 taproot 的主要枢纽。
+- <span id="2"></span>**2 月**：`##taproot-activation` IRC 频道召开了[首次][tapa1]及后续[多次][tapa2]预定[会议][tapa3]。该频道随后成为开发者、用户和矿工讨论如何激活 taproot 的主要枢纽。
 
-- **3 月<!--taproot-->**：月初，许多讨论参与者初步同意[尝试][speedy trial]一种名为 *speedy trial* 的激活方案。该方案旨在快速收集矿工反馈，同时给用户留出足够时间升级软件以执行 taproot 规则。speedy trial 后来成为实际用于激活 taproot 的[机制][topic soft fork activation]。
+- <span id="3"></span>**3 月**：月初，许多讨论参与者初步同意[尝试][speedy trial]一种名为 *speedy trial* 的激活方案。该方案旨在快速收集矿工反馈，同时给用户留出足够时间升级软件以执行 taproot 规则。speedy trial 后来成为实际用于激活 taproot 的[机制][topic soft fork activation]。
 
   在激活讨论进行期间，围绕一项设计决定——使用裸公钥——展开了最后一轮[讨论][quant]。有人认为这可能让用户资金更容易被未来的量子计算机盗取；许多开发者则认为这种担忧没有依据，至少被夸大了。
 
   同样在 3 月，Bitcoin Core 合并了对 [BIP350][] 的支持，使其可以支付到 [bech32m][topic bech32] 地址。这是对用于支付原始 segwit 版本地址的 bech32 地址的小幅修改，修复了一个在极少数情况下可能让 taproot 用户损失资金的 bug。（由 bech32 地址创建的原始 segwit 输出是安全的，不受该 bug 影响。）
 
-- **4 月<!--taproot-->**：激活进程几乎脱轨，协议开发者和部分用户就两个略有差异的 speedy trial 版本[展开辩论][tapa4]。不过，两个不同版本的实现作者最终达成[妥协][bcc#21377]，使一个带有激活机制和参数的 Bitcoin Core [版本][bcctap]得以发布。
+- <span id="4"></span>**4 月**：激活进程几乎脱轨，协议开发者和部分用户就两个略有差异的 speedy trial 版本[展开辩论][tapa4]。不过，两个不同版本的实现作者最终达成[妥协][bcc#21377]，使一个带有激活机制和参数的 Bitcoin Core [版本][bcctap]得以发布。
 
-- **5 月<!--taproot-->**：矿工[得以][signal able][开始][signal began]发出准备执行 taproot 的信号，一个追踪信号进度的网站 [taproot.watch][taproot.watch] 也流行起来。
+- <span id="5"></span>**5 月**：矿工[得以][signal able][开始][signal began]发出准备执行 taproot 的信号，一个追踪信号进度的网站 [taproot.watch][taproot.watch] 也流行起来。
 
-- **6 月<!--taproot-->**：矿工[锁定 taproot][lockin]，承诺在约六个月后的区块高度 {{site.trb}} 执行激活。这意味着[是时候][rb#589]让[钱包开发者][bcc#22051]和[其他基础设施开发者][bolts#672]更加[关注][bcc#21365]、并[着手][cl#4591]让[自己的软件][p2trhd][适配][rb#601] taproot 了——[许多人][bcc#22154]确实[这样做了][bcc#22166]。此外，有人[提议][nsequence default]让链上 taproot 钱包能够方便地为使用 LN、[coinswap][topic coinswap] 等合约协议的钱包贡献隐私。Optech 也[启动][p4tr begins]了[《为 Taproot 做准备》][p4tr]系列。
+- <span id="6"></span>**6 月**：矿工[锁定 taproot][lockin]，承诺在约六个月后的区块高度 {{site.trb}} 执行激活。这意味着[是时候][rb#589]让[钱包开发者][bcc#22051]和[其他基础设施开发者][bolts#672]更加[关注][bcc#21365]、并[着手][cl#4591]让[自己的软件][p2trhd][适配][rb#601] taproot 了——[许多人][bcc#22154]确实[这样做了][bcc#22166]。此外，有人[提议][nsequence default]让链上 taproot 钱包能够方便地为使用 LN、[coinswap][topic coinswap] 等合约协议的钱包贡献隐私。Optech 也[启动][p4tr begins]了[《为 Taproot 做准备》][p4tr]系列。
 
-- **7 月<!--taproot-->**：Bitcoin Wiki 上出现了一个[页面][bech32m page]，专门追踪各钱包在 taproot 激活后使用所需的 bech32m 地址格式的支持情况。许多钱包和服务开发者积极响应，确保用户在激活后即可使用 taproot。其他[软分叉提案][bip118 update]也做了更新，以利用 taproot 或[吸取其激活过程中的经验][bip119 update]。
+- <span id="7"></span>**7 月**：Bitcoin Wiki 上出现了一个[页面][bech32m page]，专门追踪各钱包在 taproot 激活后使用所需的 bech32m 地址格式的支持情况。许多钱包和服务开发者积极响应，确保用户在激活后即可使用 taproot。其他[软分叉提案][bip118 update]也做了更新，以利用 taproot 或[吸取其激活过程中的经验][bip119 update]。
 
-- **8 月<!--taproot-->**：taproot 开发相对平静，不过一些与 taproot 相关的[文档][reuse risks]已经写出。
+- <span id="8"></span>**8 月**：taproot 开发相对平静，不过一些与 taproot 相关的[文档][reuse risks]已经写出。
 
-- **9 月<!--taproot-->**：比特币最受欢迎的开源商户软件在计划激活之前就[加入][btcpay taproot]了对 taproot 的支持。同月还出现了新操作码 [OP_TLUV][op_tluv] 的提案，它利用 taproot 的特性实现基于脚本的[契约][topic covenants]。
+- <span id="9"></span>**9 月**：比特币最受欢迎的开源商户软件在计划激活之前就[加入][btcpay taproot]了对 taproot 的支持。同月还出现了新操作码 [OP_TLUV][op_tluv] 的提案，它利用 taproot 的特性实现基于脚本的[契约][topic covenants]。
 
-- **10 月<!--taproot-->**：随着 taproot 激活[临近][testing taproot]，开发[活动][rb#563][重新活跃][rb#644]。taproot 的 BIP 扩充了[测试向量][expanded test vectors]，帮助钱包和基础设施开发者验证各自实现。
+- <span id="10"></span>**10 月**：随着 taproot 激活[临近][testing taproot]，开发[活动][rb#563][重新活跃][rb#644]。taproot 的 BIP 扩充了[测试向量][expanded test vectors]，帮助钱包和基础设施开发者验证各自实现。
 
-- **11 月<!--taproot-->**：人们庆祝 [taproot 激活][taproot activation]。最初出现了一些困惑：区块 {{site.trb}} 及其后几个区块的矿工没有打包任何 taproot 花费交易。但在多位开发者和矿池管理员的努力下，随后几天挖出的大多数区块都已准备好包含 taproot 花费交易。对 [taproot-ready][dec cs] 软件的[开发][nov cs]与[测试][cbf verification]仍在[继续][rb#691]。
+- <span id="11"></span>**11 月**：人们庆祝 [taproot 激活][taproot activation]。最初出现了一些困惑：区块 {{site.trb}} 及其后几个区块的矿工没有打包任何 taproot 花费交易。但在多位开发者和矿池管理员的努力下，随后几天挖出的大多数区块都已准备好包含 taproot 花费交易。对 [taproot-ready][dec cs] 软件的[开发][nov cs]与[测试][cbf verification]仍在[继续][rb#691]。
 
-- **12 月<!--taproot-->**：Bitcoin Core 合并了一个 PR，允许[描述符钱包][topic descriptors]生成 [bech32m][topic bech32] 地址以接收 taproot 支付。LN 开发者还进一步讨论了[如何利用][ln ptlcs] taproot 的特性。
+- <span id="12"></span>**12 月**：Bitcoin Core 合并了一个 PR，允许[描述符钱包][topic descriptors]生成 [bech32m][topic bech32] 地址以接收 taproot 支付。LN 开发者还进一步讨论了[如何利用][ln ptlcs] taproot 的特性。
 
 尽管在 taproot 激活机制的选择上遇到波折，激活后也出现过短暂困惑，但为比特币整体加入 taproot 软分叉支持的最后几步看来进展顺利。这远不是 taproot 故事的终点。随着钱包和基础设施开发者开始利用它的众多特性，Optech 预计未来几年仍会花大量篇幅报道 taproot。
 
@@ -290,7 +290,7 @@ LN 开发者举行了[2018 年以来][2018 ln summit]的首次全体 LN 峰会�
 [p2trhd]: /zh/newsletters/2021/06/30/#key-derivation-path-for-single-sig-p2tr
 [bcc#22154]: /zh/newsletters/2021/06/30/#bitcoin-core-22154
 [bcc#22166]: /zh/newsletters/2021/06/30/#bitcoin-core-22166
-[p4tr begins]: /zh/newsletters/2021/06/23/#preparing-for-taproot-1-bech32m-sending-support
+[p4tr begins]: /zh/newsletters/2021/06/23/#准备-taproot-1bech32m-发送支持
 [bech32m page]: /zh/newsletters/2021/07/14/#tracking-bech32m-support
 [bip118 update]: /zh/newsletters/2021/07/14/#bips-943
 [bip119 update]: /zh/newsletters/2021/11/10/#bips-1215
