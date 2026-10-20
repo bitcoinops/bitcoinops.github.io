@@ -49,7 +49,7 @@ describing notable changes to popular Bitcoin infrastructure software.
 
   Replying to a question, Morehouse noted that mobile wallets that use an Eclair
   node as their LSP, such as Phoenix, are unaffected because ACINQ patched its
-  nodes months ago.
+  nodes months ago. {% assign timestamp="0:53" %}
 
 - **Offchain contracts in Lightning channels**: Adam Gibson [posted][lngap ml]
   to the Bitcoin-Dev mailing list about a proposal for protocol,
@@ -86,7 +86,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   Other than games, possible applications include proof-of-storage
   contracts, where a provider forfeits a bond for failing to respond to a
   challenge, and offchain dispute resolution similar to what
-  [BitVMX][topic acc]-style zero-knowledge verifiers do onchain.
+  [BitVMX][topic acc]-style zero-knowledge verifiers do onchain. {% assign timestamp="12:57" %}
 
 ## Releases and release candidates
 
@@ -96,7 +96,7 @@ release candidates._
 
 - [Bitcoin Core 32.0rc4][] is a release candidate for the next major version of
   the predominant full node implementation. A [testing guide][bcc32 testing] is
-  available.
+  available. {% assign timestamp="43:15" %}
 
 ## Notable code and documentation changes
 
@@ -127,7 +127,7 @@ repo], and [BINANAs][binana repo]._
   splice confirms after Eclair force-closes using a commitment for a sibling
   attempt, Eclair now recognizes that the funding transaction has changed and
   broadcasts a commitment transaction that spends the confirmed splice output.
-  Previously, funds could remain locked and HTLCs unenforced.
+  Previously, funds could remain locked and HTLCs unenforced. {% assign timestamp="49:25" %}
 
 - [Eclair #3399][] and [#3394][eclair #3394] fix two ways [on-the-fly
   funding][topic jit channels] could leave Eclair paying a downstream peer
@@ -144,7 +144,7 @@ repo], and [BINANAs][binana repo]._
   channel where liquidity was purchased. Previously, Eclair could forward over
   another channel with the same peer, but would only check the funded channel
   before failing upstream at expiry, even though the outgoing HTLC on the other
-  channel remained claimable.
+  channel remained claimable. {% assign timestamp="53:23" %}
 
 - [Eclair #3395][] fixes a bug where a spender could construct a malformed
   payment onion packet with a valid HMAC that left an incoming [HTLC][topic
@@ -155,7 +155,7 @@ repo], and [BINANAs][binana repo]._
   failing the HTLC, and the malformed packet could also prevent HTLC cleanup
   from initializing after a restart. Now, Eclair checks that the per-hop
   payload, including its HMAC, fits within the packet. If it does not, Eclair
-  returns `InvalidOnionVersion`, allowing normal failure handling.
+  returns `InvalidOnionVersion`, allowing normal failure handling. {% assign timestamp="57:23" %}
 
 - [Eclair #3401][] fixes a bug that could cause a forwarding node to lose funds
   after a disconnection. Eclair stores instructions to fulfill or fail
@@ -167,7 +167,7 @@ repo], and [BINANAs][binana repo]._
   was discarded, leaving no instruction to replay the fulfillment. The incoming
   HTLC could then time out even though the outgoing HTLC had already been
   fulfilled. Eclair now retains the original instruction until the settlement
-  is signed.
+  is signed. {% assign timestamp="59:09" %}
 
 - [LDK #5080][] fixes a bug where restarting during cooperative channel close
   could prevent pending [HTLCs][topic htlc] from being failed back to their
@@ -179,7 +179,7 @@ repo], and [BINANAs][binana repo]._
   incoming HTLCs awaiting onion decoding. This could leave HTLCs unresolved
   until the upstream peer force-closed the channel at expiry. LDK now includes
   channels undergoing shutdown when restoring the information needed to resolve
-  existing HTLCs.
+  existing HTLCs. {% assign timestamp="1:01:03" %}
 
 - [LDK #5087][] fixes a potential privacy leak in [onion messages][topic onion
   messages] sent over [blinded paths][topic rv routing] that use dummy hops
@@ -190,7 +190,7 @@ repo], and [BINANAs][binana repo]._
   malicious sender could insert these records at different, nonfinal layers and
   observe whether the final message produced a response, potentially revealing
   where the actual forwarding ended and the dummy hops began. LDK now rejects
-  message-content records at dummy hops as well.
+  message-content records at dummy hops as well. {% assign timestamp="1:02:46" %}
 
 - [LND #11068][] fixes a missing check for auxiliary [HTLC][topic htlc]
   signatures on experimental taproot overlay channels used for [Taproot
@@ -204,7 +204,7 @@ repo], and [BINANAs][binana repo]._
   signatures could prevent the affected asset HTLCs from being resolved
   onchain. LND now verifies that the number of received auxiliary signature
   entries matches the number of non-dust HTLCs. If they differ, LND rejects the
-  commitment and force-closes the channel.
+  commitment and force-closes the channel. {% assign timestamp="1:05:04" %}
 
 - [Rust Bitcoin #6956][] introduces a `ScriptCode` type for the script data
   used in legacy and segwit v0 signature hashing, which may differ from the
@@ -217,7 +217,7 @@ repo], and [BINANAs][binana repo]._
   accepts `ScriptCode`, but callers must still identify the last executed
   separator and shorten the script themselves. The PR also adds
   `P2wpkhScriptCode`, a fixed-size, allocation-free representation of the
-  standard script used to sign P2WPKH inputs.
+  standard script used to sign P2WPKH inputs. {% assign timestamp="1:07:44" %}
 
 - [BDK #2319][] fixes a bug where an Electrum-backed wallet could lose track of
   a transaction's confirmation after a reorg if the same transaction was mined
@@ -225,7 +225,7 @@ repo], and [BINANAs][binana repo]._
   its cache and fail to recognize the transaction's confirmation in the
   replacement block, incorrectly showing it as unconfirmed. The fix refreshes
   the header cache with newly fetched block headers during synchronization,
-  including after a one-block reorg.
+  including after a one-block reorg. {% assign timestamp="1:10:22" %}
 
 {% include snippets/recap-ad.md when="2026-10-20 16:30" %}
 {% include references.md %}
