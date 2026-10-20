@@ -113,6 +113,12 @@ optech_mentions:
   - title: "LND #9620 adds testnet4 support"
     url: /en/newsletters/2025/04/04/#lnd-9620
 
+  - title: "Draft BIP to replace testnet4 with testnet5"
+    url: /en/newsletters/2026/06/12/#draft-bip-for-testnet5
+
+  - title: "BIPs #2196 adds BIP95, a draft specification for testnet5"
+    url: /en/newsletters/2026/07/03/#bips-2196
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signet

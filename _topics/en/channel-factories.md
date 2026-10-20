@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Using Ark as a channel factory"
     url: /en/newsletters/2026/01/09/#using-ark-as-a-channel-factory
 
+  - title: "Superscalar implementation announced"
+    url: /en/newsletters/2026/08/21/#superscalar-implementation-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "LN-Symmetry (Eltoo)"

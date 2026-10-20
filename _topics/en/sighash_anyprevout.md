@@ -113,6 +113,9 @@ optech_mentions:
   - title: "Post and website examining `SIGHASH_ANYPREVOUT` testing on the default signet"
     url: /en/newsletters/2024/11/22/#signet-activity-report
 
+  - title: "APOAS vault signatures can be combined across two deposits to the same address in a half-spend"
+    url: /en/newsletters/2026/10/02/#comparing-covenant-proposals-for-vaults
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

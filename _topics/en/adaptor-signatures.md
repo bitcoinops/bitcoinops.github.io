@@ -115,6 +115,12 @@ optech_mentions:
   - title: "LN developer discussion of variations of signature adaptors for adding PTLC support"
     url: /en/newsletters/2024/10/18/#ptlcs
 
+  - title: "Babilonia uses adaptor signatures to settle covert onchain bets that double as coinjoins"
+    url: /en/newsletters/2026/09/11/#a-protocol-for-probabilistic-coinjoin-and-covert-betting
+
+  - title: "LN-GAP pays venue members atomically over channels using adaptor signatures"
+    url: /en/newsletters/2026/10/16/#offchain-contracts-in-lightning-channels
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
@@ -124,7 +130,7 @@ see_also:
     link: topic musig
 
   - title: Using schnorr subtraction to create more private coinswaps
-    link: https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/
+    link: https://web.archive.org/web/20220524195432/https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/
 
   - title: Adaptor signatures for discreet log contracts
     link: https://lists.launchpad.net/mimblewimble/msg00485.html

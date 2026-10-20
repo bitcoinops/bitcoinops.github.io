@@ -23,8 +23,8 @@ primary_sources:
   - title: "Shielded CSV: Private and Efficient Client-Side Validation"
     link: https://github.com/ShieldedCSV/ShieldedCSV/releases/latest/download/shieldedcsv.pdf
 
-  - title: "RGB I.0: Scalable Consensus for Client-Side Validated Smart Contracts"
-    link: https://yellowpaper.rgb.tech/
+  - title: "RGB v0.11.1 technical documentation"
+    link: https://docs.rgb.info/commitment-layer/deterministic-bitcoin-commitments-dbc/tapret
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -97,9 +97,10 @@ created by Alice is correctly formatted to assign the token to a UTXO
 that Bob controls.
 
 **[RGB][]** is a client-side validation protocol for working with arbitrary
-reachable state and Turing-complete state evolution rules. It uses
-taproot-embedded OP_RETURN commitments (named **tapret**) to allow
-transactions to commit to smart contract state.
+reachable state and Turing-complete state evolution rules. It supports
+two commitment schemes: **tapret**, which embeds the commitment as an
+unspendable script leaf in taproot's script tree, and **opret**, which
+embeds the commitment in a standalone on-chain OP_RETURN output.
 
 **[Taproot Assets][]**, formerly called **Taro**, is a protocol heavily
 inspired by RGB that uses [taproot][topic taproot]'s commitment
@@ -126,5 +127,6 @@ with RGB and Taproot Assets look like regular Bitcoin transactions.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
-[rgb]: https://rgb.tech/
+[rgb]: https://rgb.info/
+[docs.rgb.info]: https://docs.rgb.info/
 [taproot assets]: https://docs.lightning.engineering/the-lightning-network/taproot-assets/

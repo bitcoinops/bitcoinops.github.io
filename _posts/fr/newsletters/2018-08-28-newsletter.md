@@ -11,7 +11,8 @@ Le bulletin de cette semaine comprend des informations sur la première version 
 chiffrement du protocole P2P BIP151 et un potentiel futur soft fork, les principales questions et réponses de Bitcoin Stack Exchange, ainsi
 que quelques fusions notables dans des projets populaires d'infrastructure Bitcoin.
 
-## Éléments d'action
+## Mesures à prendre
+{: id="éléments-daction"}
 
 - **Prévoyez du temps pour tester Bitcoin Core 0.17RC2 :** Bitcoin Core a téléversé les [binaires][bcc 0.17] de la version candidate (RC) 2
   de 0.17. Les tests sont grandement appréciés et peuvent aider à assurer la qualité de la version finale.
@@ -71,6 +72,7 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
   perdu de l'argent en conséquence.
 
 ## Changements notables dans le code et la documentation
+{: id="changements-notables-dans-le-code-et-la-documentation"}
 
 *Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo]. Rappel :
 les nouvelles fusions dans Bitcoin Core sont effectuées sur sa branche de développement master et il est peu probable qu'elles fassent

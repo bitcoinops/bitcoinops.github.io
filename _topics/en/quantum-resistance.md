@@ -124,6 +124,75 @@ optech_mentions:
   - title: "SHRIMPS: 2.5 KB post-quantum signatures across multiple stateful devices"
     url: /en/newsletters/2026/04/03/#shrimps-2-5-kb-post-quantum-signatures-across-multiple-stateful-devices
 
+  - title: "BIPs #1895 publishes BIP361, a post-quantum migration and legacy signature deprecation proposal"
+    url: /en/newsletters/2026/04/24/#bips-1895
+
+  - title: "Post-quantum HD wallets with fallback SPHINCS keys"
+    url: /en/newsletters/2026/05/01/#post-quantum-hd-wallets-with-fallback-sphincs-keys
+
+  - title: "Discussion of a post-quantum output type"
+    url: /en/newsletters/2026/05/01/#discussion-of-a-post-quantum-output-type
+
+  - title: "Proposal to embed post-quantum keys in tapscript without consensus changes"
+    url: /en/newsletters/2026/05/01/#proposal-to-embed-post-quantum-keys-in-tapscript-without-consensus-changes
+
+  - title: "Post-quantum BIP86 recovery using zk-STARK proofs of BIP32 seeds"
+    url: /en/newsletters/2026/05/01/#post-quantum-bip86-recovery-using-zk-stark-proofs-of-bip32-seeds
+
+  - title: "A post-quantum path for BIP324"
+    url: /en/newsletters/2026/06/05/#a-post-quantum-path-for-bip324
+
+  - title: "Post-quantum Lightning discussion"
+    url: /en/newsletters/2026/06/05/#post-quantum-lightning-discussion
+
+  - title: "Quantum attack game theory"
+    url: /en/newsletters/2026/06/05/#quantum-attack-game-theory
+
+  - title: "BIPs #2198 makes one-path P2MR outputs unsafe to discourage omitting a post-quantum fallback leaf"
+    url: /en/newsletters/2026/06/26/#bips-2198
+
+  - title: "Benchmarking SLH-DSA STARK aggregation"
+    url: /en/newsletters/2026/07/03/#benchmarking-slh-dsa-stark-aggregation
+
+  - title: "Bird of Prey 2 (BoP-2) non-malleable schnorr and PQ signatures"
+    url: /en/newsletters/2026/07/03/#bird-of-prey-2-bop-2-non-malleable-schnorr-and-pq-signatures
+
+  - title: "Lattice-based signatures"
+    url: /en/newsletters/2026/07/03/#lattice-based-signatures
+
+  - title: "Triggering EC disabling with a NUMS point spend or hashrate majority"
+    url: /en/newsletters/2026/07/03/#triggering-ec-disabling-with-a-nums-point-spend-or-hashrate-majority
+
+  - title: "Segwit commitment to post-quantum witness data"
+    url: /en/newsletters/2026/08/07/#segwit-commitment-to-post-quantum-witness-data
+
+  - title: "PQC output type discussion"
+    url: /en/newsletters/2026/08/07/#pqc-output-type-discussion
+
+  - title: "Layered quantum recovery of hashed addresses"
+    url: /en/newsletters/2026/08/07/#layered-quantum-recovery-of-hashed-addresses
+
+  - title: "libshrincs, a formally verified hash-based signature implementation"
+    url: /en/newsletters/2026/08/21/#libshrincs-formally-verified-hash-based-signatures
+
+  - title: "Continued discussion of PQC output types"
+    url: /en/newsletters/2026/09/04/#continued-discussion-of-pqc-output-types
+
+  - title: "DropKick commit/reveal PQC rescue"
+    url: /en/newsletters/2026/09/04/#dropkick-commit-reveal-pqc-rescue
+
+  - title: "SHRINCS draft BIP"
+    url: /en/newsletters/2026/09/04/#shrincs-draft-bip
+
+  - title: "PQLN proposal for post-quantum security of Lightning Network offchain protocols"
+    url: /en/newsletters/2026/09/25/#proposal-for-a-post-quantum-lightning-network
+
+  - title: "Continued discussion of PQC output types"
+    url: /en/newsletters/2026/10/02/#continued-discussion-of-pqc-output-types
+
+  - title: "Block-wide aggregation of hash-based post-quantum signatures via SNARKs"
+    url: /en/newsletters/2026/10/02/#block-wide-signature-aggregation-via-snarks
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

@@ -81,6 +81,9 @@ optech_mentions:
   - title: "Prototype implementation of Winternitz signatures for Bitcoin using `OP_CAT`"
     url: /en/newsletters/2025/07/04/#op-cat-enables-winternitz-signatures
 
+  - title: "OP_CAT-based Purrfect Vault compared with other covenant vault constructions"
+    url: /en/newsletters/2026/10/02/#comparing-covenant-proposals-for-vaults
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKSIGFROMSTACK

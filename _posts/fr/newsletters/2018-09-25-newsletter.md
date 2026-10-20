@@ -85,7 +85,8 @@ mettons en lumière certaines des questions et réponses les mieux votées post�
   minute d'intervalle, mais une reformulation humoristique de la réponse de Maxwell par Nate Eldredge a plus de votes positifs que l'une ou
   l'autre réponse au moment de la rédaction.
 
-## Commits notables
+## Changements notables dans le code et la documentation
+{: id="commits-notables"}
 
 *Commits notables cette semaine dans [Bitcoin Core][bitcoin core repo], [LND][lnd repo] et [C-lightning][core lightning repo]. Rappel : les
 nouvelles fusions dans Bitcoin Core sont effectuées sur sa branche de développement master et il est peu probable qu'elles fassent partie de

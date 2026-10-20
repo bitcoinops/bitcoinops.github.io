@@ -105,7 +105,7 @@ optech_mentions:
   - title: "LDK #3082 adds an interface for building static reusable offers"
     url: /en/newsletters/2024/06/21/#ldk-3082
 
-  - title: "Discussion of fully implementing offers versus incremently adding features from it"
+  - title: "Discussion of fully implementing offers versus incrementally adding features from it"
     url: /en/newsletters/2024/07/05/#adding-a-bolt11-invoice-field-for-blinded-paths
 
   - title: "Core Lightning #7461 adds support for nodes to self-fetch and self-pay BOLT12 offers and invoices"
@@ -140,6 +140,18 @@ optech_mentions:
 
   - title: "BOLTs #1316 clarifies that offer_amount in BOLT12 offers must be greater than zero when present"
     url: /en/newsletters/2026/03/13/#bolts-1316
+
+  - title: "BLIPs #42 adds BLIP42, a specification for BOLT12 contacts"
+    url: /en/newsletters/2026/05/22/#blips-42
+
+  - title: "Eclair #3325 accepts BOLT12 invoices with attached reply paths"
+    url: /en/newsletters/2026/07/31/#eclair-3325
+
+  - title: "LND #11061 adds signing and verification of BOLT12 invoice requests and invoices"
+    url: /en/newsletters/2026/09/11/#lnd-11061
+
+  - title: "LND #11146 adds validated encoders and decoders for BOLT12 offers, invoice requests, and invoices"
+    url: /en/newsletters/2026/09/25/#lnd-11146
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

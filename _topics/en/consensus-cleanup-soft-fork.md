@@ -89,6 +89,27 @@ optech_mentions:
   - title: "Bitcoin Inquisition adds an implementation of the BIP54 consensus cleanup soft fork rules"
     url: /en/newsletters/2026/02/13/#bitcoin-inquisition-99
 
+  - title: "BIP54 demonstration of slow blocks on signet"
+    url: /en/newsletters/2026/05/01/#bip54-demonstration-of-slow-blocks-on-signet
+
+  - title: "BIP54 64-byte transactions and potential legitimate uses"
+    url: /en/newsletters/2026/06/05/#bip54-64-byte-transactions-and-potential-legitimate-uses
+
+  - title: "Draft BIP for testnet5 would activate BIP54 from block 1"
+    url: /en/newsletters/2026/06/12/#draft-bip-for-testnet5
+
+  - title: "Prohibit Merkle internal node preimages that encode minimal 64-byte transactions"
+    url: /en/newsletters/2026/07/03/#prohibit-merkle-internal-node-preimages-that-encode-minimal-64-byte-transactions
+
+  - title: "BIPs #2208 updates BIP54's rationale with an alternative to invalidating 64-byte transactions"
+    url: /en/newsletters/2026/07/17/#bips-2208
+
+  - title: "Bitcoin Core #35949 adjusts getblocktemplate timestamps to be compliant with BIP54 rules"
+    url: /en/newsletters/2026/09/11/#bitcoin-core-35949
+
+  - title: "Proof that BIP54's two timestamp rules bound chain length for a given amount of work"
+    url: /en/newsletters/2026/10/02/#bounds-on-chain-length-with-bip54-time-warp-fixes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation

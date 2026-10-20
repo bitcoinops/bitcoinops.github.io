@@ -67,7 +67,7 @@ optech_mentions:
   - title: Discussion about transaction weight limit in response to large BitVM transactions
     url: /en/newsletters/2025/06/06/#transaction-weight-limit-with-exception-to-prevent-confiscation
 
-  - title: "Improvments to BitVM-style contracts allowing disprove transactions to be just 200 bytes"
+  - title: "Improvements to BitVM-style contracts allowing disprove transactions to be just 200 bytes"
     url: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
 
   - title: "Continued discussion about CTV+CSFS advantages for BitVM"
@@ -78,6 +78,9 @@ optech_mentions:
 
   - title: "Argo: a garbled-circuits scheme with more efficient off-chain computation"
     url: /en/newsletters/2026/01/30/#argo-a-garbled-circuits-scheme-with-more-efficient-off-chain-computation
+
+  - title: "LN-GAP runs multi-round two-party contracts in LN channels with onchain disputes"
+    url: /en/newsletters/2026/10/16/#offchain-contracts-in-lightning-channels
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

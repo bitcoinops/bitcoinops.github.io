@@ -38,6 +38,9 @@ optech_mentions:
   - title: "Proposed `OP_TEMPLATEHASH` would commit to transaction details, including annex"
     url: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
 
+  - title: "Proposal to use the annex for opt-in replay protection against forks"
+    url: /en/newsletters/2026/08/28/#discussion-on-universal-opt-in-replay-protection
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

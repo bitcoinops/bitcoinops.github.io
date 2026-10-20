@@ -35,6 +35,9 @@ optech_mentions:
   - title: "BDK #1351 makes several changes to how BDK interprets the stop_gap parameter"
     url: /en/newsletters/2024/04/03/#bdk-1351
 
+  - title: "BDK #2262 fixes nondeterministic reindexing that could miss outputs beyond the look-ahead window"
+    url: /en/newsletters/2026/09/04/#bdk-2262
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HD wallets

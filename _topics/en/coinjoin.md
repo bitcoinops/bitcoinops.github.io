@@ -43,7 +43,7 @@ optech_mentions:
   - title: Question about Wasabi coinjoin mixing and exchange blacklisting
     url: /en/newsletters/2018/09/25/#how-likely-are-you-to-get-blacklisted-by-an-exchange-if-you-use-wasabi-wallet-s-coinjoin-mixing
 
-  - title: Fidelity bonds for imporoved sybil resistance in distributed coinjoin
+  - title: Fidelity bonds for improved sybil resistance in distributed coinjoin
     url: /en/newsletters/2019/07/31/#fidelity-bonds-for-improved-sybil-resistance
 
   - title: "Simple Non-Interactive Coinjoin with Keys for Encryption Reused (SNICKER)"
@@ -88,6 +88,15 @@ optech_mentions:
   - title: "Deanonymization attacks against centralized coinjoin"
     url: /en/newsletters/2025/01/03/#deanonymization-attacks-against-centralized-coinjoin
 
+  - title: "JoinMarket NG 0.32.0 released"
+    url: /en/newsletters/2026/06/19/#joinmarket-ng-0-32-0-released
+
+  - title: "Wasabi Wallet 2.8.0 adds the ability to pay recipients directly within a coinjoin"
+    url: /en/newsletters/2026/07/24/#wasabi-wallet-2-8-0-released
+
+  - title: "Babilonia: a proposed probabilistic coinjoin and covert betting protocol"
+    url: /en/newsletters/2026/09/11/#a-protocol-for-probabilistic-coinjoin-and-covert-betting
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin
@@ -96,8 +105,8 @@ see_also:
     link: https://en.bitcoin.it/Privacy#CoinJoin
   - title: "Privacy Wiki"
     link: https://en.bitcoin.it/wiki/Privacy
-  - title: "Coinjoins.org - Learn about collaborative bitcoin transactions"
-    link: https://coinjoins.org/
+  - title: "CoinJoin (LearnBitcoin glossary)"
+    link: https://www.learnbitcoin.com/glossary/coinjoin
 
 ---
 

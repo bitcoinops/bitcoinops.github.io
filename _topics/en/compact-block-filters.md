@@ -92,6 +92,21 @@ optech_mentions:
   - title: "LND v0.17.0-beta released with improved compact block filter speed through batched downloading"
     url: /en/newsletters/2023/10/04/#lnd-v0-17-0-beta
 
+  - title: "Binary fuse filters as an alternative to BIP158's GCS"
+    url: /en/newsletters/2026/05/01/#binary-fuse-filters-as-an-alternative-to-bip158-s-gcs
+
+  - title: "LND #10552 adds fast sync for Neutrino nodes using prebuilt block headers and compact filters"
+    url: /en/newsletters/2026/05/29/#lnd-10552
+
+  - title: "JoinMarket NG 0.32.0 adds watched mempool support for the Neutrino backend"
+    url: /en/newsletters/2026/06/19/#joinmarket-ng-0-32-0-released
+
+  - title: "Discussion of block-range filters to reduce compact block filter download size"
+    url: /en/newsletters/2026/08/28/#request-for-comments-on-using-block-range-filters
+
+  - title: "Benchmarks comparing a silent payments indexing server against BIP158 and taproot-only filters"
+    url: /en/newsletters/2026/09/11/#update-on-silent-payments-light-clients
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering

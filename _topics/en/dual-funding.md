@@ -141,6 +141,9 @@ optech_mentions:
   - title: "Eclair #3103 adds support for dual funding and splicing in simple taproot channels"
     url: /en/newsletters/2025/08/22/#eclair-3103
 
+  - title: "Eclair #3390 and #3388 add fee protections for dual funding and splicing"
+    url: /en/newsletters/2026/10/09/#eclair-3390
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Liquidity advertisements

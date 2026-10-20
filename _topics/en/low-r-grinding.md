@@ -40,6 +40,9 @@ optech_mentions:
   - title: "BOLTs #1243 updates BOLT11 to specify handling of low-r signatures on invoices"
     url: /en/newsletters/2025/06/13/#bolts-1243
 
+  - title: "BIPs #2224 adds BIP461 deterministic ECDSA signing with low-r grinding"
+    url: /en/newsletters/2026/09/25/#bips-2224
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: What is signature grinding?

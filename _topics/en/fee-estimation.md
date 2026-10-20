@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Publication of a mempool-based fee estimation library"
     url: /en/newsletters/2025/08/01/#mempool-based-fee-estimation-library
 
+  - title: "Bitcoin Core #34075 adds a mempool-based fee estimator to `estimatesmartfee`"
+    url: /en/newsletters/2026/08/28/#bitcoin-core-34075
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coin selection

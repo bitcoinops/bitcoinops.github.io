@@ -84,7 +84,7 @@ optech_mentions:
   - title: Proposal of initial RBF rules for mempool package acceptance before implementing package relay
     url: /en/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
 
-  - title: "2021 year-in-review: BIP125 opt-in replace-by-fee discrepency"
+  - title: "2021 year-in-review: BIP125 opt-in replace-by-fee discrepancy"
     url: /en/newsletters/2021/12/22/#bip125
 
   - title: "2021 year-in-review: default transaction replacement by fee"
@@ -209,6 +209,27 @@ optech_mentions:
 
   - title: "LDK #4427 adds RBF of negotiated splice funding transactions that are not yet locked"
     url: /en/newsletters/2026/03/20/#ldk-4427
+
+  - title: "Bitcoin Core #34911 removes deprecated RBF-related boolean fields from mempool RPCs"
+    url: /en/newsletters/2026/05/01/#bitcoin-core-34911
+
+  - title: "BOLTs #1327 updates the RBF feerate bump rule to ensure compliance at low feerates"
+    url: /en/newsletters/2026/05/08/#bolts-1327
+
+  - title: "LDK #4494 updates RBF logic to follow the new BOLT2 feerate bump rule"
+    url: /en/newsletters/2026/04/10/#ldk-4494
+
+  - title: "Eclair #3298 updates RBF logic to follow the new BOLT2 feerate bump rule"
+    url: /en/newsletters/2026/05/22/#eclair-3298
+
+  - title: "Discussion of removing RBF signaling from wallet transactions"
+    url: /en/newsletters/2026/06/19/#discussion-of-removing-rbf-signaling-from-wallet-transactions
+
+  - title: "LND #10962 disables the RBF cooperative-close flow for auxiliary channels"
+    url: /en/newsletters/2026/07/17/#lnd-10962
+
+  - title: "Bitcoin Core #29278 adds -maxfeerate to cap wallet transaction feerates, including fee bumps"
+    url: /en/newsletters/2026/10/02/#bitcoin-core-29278
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

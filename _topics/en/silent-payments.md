@@ -101,6 +101,33 @@ optech_mentions:
   - title: "BIPs #2089 publishes BIP376, defining new PSBTv2 fields for BIP352 tweak data"
     url: /en/newsletters/2026/04/17/#bips-2089
 
+  - title: "BIPs #2142 adds a send/receive test vector to the BIP352 silent payments specification"
+    url: /en/newsletters/2026/04/24/#bips-2142
+
+  - title: "Sparrow Wallet 2.5.0 adds silent payments receiving"
+    url: /en/newsletters/2026/06/19/#sparrow-wallet-2-5-0-adds-silent-payments-receiving
+
+  - title: "libsecp256k1 #1765 adds an optional silentpayments module"
+    url: /en/newsletters/2026/07/24/#libsecp256k1-1765
+
+  - title: "Libsecp256k1 0.8.0 released with silent payments module"
+    url: /en/newsletters/2026/08/07/#libsecp256k1-0-8-0
+
+  - title: "Silent payments sender plugin for Electrum"
+    url: /en/newsletters/2026/08/21/#silent-payments-sender-plugin-for-electrum
+
+  - title: "Using silent payments for miner payouts in the coinbase transaction"
+    url: /en/newsletters/2026/09/04/#using-silent-payments-for-miner-payouts-in-coinbase-transaction
+
+  - title: "Update on silent payments light clients with BlindBit Oracle benchmarks and a convergence draft"
+    url: /en/newsletters/2026/09/11/#update-on-silent-payments-light-clients
+
+  - title: "Bitcoin Core #35301 adds silent payment address encoding, output derivation, and scanning"
+    url: /en/newsletters/2026/10/02/#bitcoin-core-35301
+
+  - title: "Bitcoin Core #36338 fixes public key extraction from modified P2PKH inputs"
+    url: /en/newsletters/2026/10/09/#bitcoin-core-36338
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

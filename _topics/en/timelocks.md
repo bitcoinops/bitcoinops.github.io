@@ -79,6 +79,12 @@ optech_mentions:
   - title: "Proposal to allow longer relative timelocks"
     url: /en/newsletters/2025/08/01/#proposal-to-allow-longer-relative-timelocks
 
+  - title: "Input-triggered transaction expiry"
+    url: /en/newsletters/2026/08/07/#input-triggered-transaction-expiry
+
+  - title: "BIPs #2277 retains required locktimes and sequence numbers after PSBTv2 input finalization"
+    url: /en/newsletters/2026/10/02/#bips-2276
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs

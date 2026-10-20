@@ -82,7 +82,7 @@ optech_mentions:
   - title: "Proposal to use covenants and merkle trees to enable generalized smart contracts"
     url: /en/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
 
-  - title: "Proposal for `OP_VAULT` and `OP_UNVAULT` opcodes to enable convenant-based valuts"
+  - title: "Proposal for `OP_VAULT` and `OP_UNVAULT` opcodes to enable covenant-based vaults"
     url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
 
   - title: "Proposal for alternative design for `OP_VAULT` inspired by `OP_TLUV`"
@@ -129,6 +129,15 @@ optech_mentions:
 
   - title: "Using the Bitcoin PIPEs v2 offchain protocol to enforce covenant-like spending conditions"
     url: /en/newsletters/2026/02/20/#bitcoin-pipes-v2
+
+  - title: "OP_TEMPLATEHASH Ark demonstration on signet"
+    url: /en/newsletters/2026/08/21/#op-templatehash-ark-demonstration
+
+  - title: "BIP448 and CSFS/CTV demos and applications"
+    url: /en/newsletters/2026/09/04/#bip448-and-csfs-ctv-demos-and-applications
+
+  - title: "Covenants.diy browser editor for constructing and stepping through covenant scripts"
+    url: /en/newsletters/2026/09/18/#covenants-diy-script-editor
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

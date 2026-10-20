@@ -104,6 +104,9 @@ optech_mentions:
   - title: "Eclair #2993 allows the recipient to pay fees associated with the blinded portion of a path"
     url: /en/newsletters/2025/02/28/#eclair-2993
 
+  - title: "LND #10942 adds support for blinded path HTLC forwarding using next_node_id"
+    url: /en/newsletters/2026/08/07/#lnd-10942
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

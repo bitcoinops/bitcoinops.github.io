@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 version: 1
-excerpt: Announces a pending vulnerability disclosure for older Bitcoin Core releases, links to a PR about improved coin selection, and discusses dynamic wallet loading and unloading in Bitcoin Core multiwallet mode.
+excerpt: Annonce une prochaine divulgation de vulnérabilité dans les anciennes versions de Bitcoin Core, renvoie vers une PR améliorant la sélection des pièces et présente le chargement et le déchargement dynamiques des portefeuilles en mode multiwallet.
 ---
 ## Bienvenue
 
@@ -40,7 +40,8 @@ Un thème récurrent que nous avons entendu lors de notre premier travail de sen
 d’améliorer la communication avec la communauté open source. À cette fin, dans chaque bulletin, nous prévoyons de fournir un résumé des
 actions pertinentes à entreprendre, des éléments de tableau de bord et des nouvelles de la communauté open source Bitcoin au sens large.
 
-### Actions à entreprendre
+### Mesures à prendre
+{: id="actions-à-entreprendre"}
 
 - **Divulgation en attente d’une vulnérabilité DoS pour Bitcoin Core 0.12.0 et versions antérieures. Les altcoins peuvent être affectés.**
   Comme [annoncé][alert announcement] en novembre 2016, les développeurs de Bitcoin Core prévoient de publier la clé privée que Satoshi
@@ -58,7 +59,8 @@ actions pertinentes à entreprendre, des éléments de tableau de bord et des no
 
 [alert announcement]: https://bitcoin.org/en/alert/2016-11-01-alert-retirement
 
-- **Bitcoin Core [0.16.1 released][] :** contient un correctif pour un cas pouvant entraîner une perte monétaire pour les mineurs dans des
+- **Bitcoin Core [0.16.1 publié][0.16.1 released] :** <span id="bitcoin-core-0-16-1-released"></span>
+  contient un correctif pour un cas pouvant entraîner une perte monétaire pour les mineurs dans des
   situations supposées assez rares. Corrige également une attaque DoS qui affectait principalement les nouveaux nœuds et inclut un
   changement de politique de relais en prévision d’un éventuel futur soft fork dans plus d’un an. La mise à niveau est recommandée pour tous
   les utilisateurs et fortement recommandée pour les mineurs.

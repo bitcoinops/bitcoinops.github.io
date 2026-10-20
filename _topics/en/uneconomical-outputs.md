@@ -78,6 +78,9 @@ optech_mentions:
   - title: "BOLTs #1301 recommends a higher dust_limit_satoshis for anchor channels"
     url: /en/newsletters/2026/03/06/#bolts-1301
 
+  - title: "BIPs #2150 adds BIP451 specifying a Dust UTXO Disposal Protocol"
+    url: /en/newsletters/2026/05/08/#bips-2150
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)

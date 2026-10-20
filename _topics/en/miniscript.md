@@ -106,6 +106,9 @@ optech_mentions:
   - title: "Extensions to tooling, including miniscript, for TEMPLATEHASH-CSFS-IK support"
     url: /en/newsletters/2026/03/06/#extensions-to-standard-tooling-for-templatehash-csfs-ik-support
 
+  - title: "Discussion of QR signing payloads for miniscript wallets"
+    url: /en/newsletters/2026/06/05/#discussion-of-qr-signing-payloads-for-miniscript-wallets
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

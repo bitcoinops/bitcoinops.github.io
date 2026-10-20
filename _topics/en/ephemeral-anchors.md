@@ -91,6 +91,9 @@ optech_mentions:
   - title: "Rust Bitcoin #4111 adds support for the new P2A standard output type"
     url: /en/newsletters/2025/03/07/#rust-bitcoin-4111
 
+  - title: "BOLTs #1228 specifies zero-fee commitment channels using a shared P2A output for fee bumping"
+    url: /en/newsletters/2026/05/08/#bolts-1228
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay

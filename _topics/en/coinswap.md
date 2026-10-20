@@ -70,6 +70,9 @@ optech_mentions:
   - title: "Coinswap v0.1.0 released with support for testnet4"
     url: /en/newsletters/2025/01/24/#coinswap-v0-1-0-released
 
+  - title: "Coinswap v0.2.2 released with multi-transaction swaps and deniability proofs"
+    url: /en/newsletters/2026/07/24/#coinswap-v0-2-2-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coinjoin

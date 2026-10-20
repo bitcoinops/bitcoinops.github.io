@@ -41,6 +41,9 @@ optech_mentions:
   - title: "Penlock proposed as an alternative to codex32 that provides BIP39 seed phrase splitting"
     url: /en/newsletters/2024/05/17/#bip39-seed-phrase-splitting
 
+  - title: "BIPs #2258 fixes BIP93 checksum length bounds and restricts codex32 master seed sizes"
+    url: /en/newsletters/2026/09/18/#bips-2258
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP32 hierarchical derivation from seeds
