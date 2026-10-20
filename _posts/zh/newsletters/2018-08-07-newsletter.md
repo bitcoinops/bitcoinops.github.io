@@ -14,6 +14,7 @@ lang: zh
 - **<!--optech-has-begun-->**Optech 已开始筹划首次欧洲工作坊，预计于 11 月在巴黎举行。如果有会员公司认为自己能够参加，并且有感兴趣讨论的议题，请[给 Optech 发邮件][optech email]。关于工作坊的更多信息将在几周内公布。
 
 ## 仪表盘项
+
 {% assign img1_label = "Transactions signaling opt-in RBF, August 2017 - August 2018" %}
 - **<!--fees-remain-very-low-->**交易[手续费仍然非常低][fee metrics]：只要能接受等待 10 个或更多区块确认，就完全可以按默认的最低费率支付。现在是[合并 UTXO][consolidate info]的好时机。
 
