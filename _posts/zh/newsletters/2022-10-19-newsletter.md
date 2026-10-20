@@ -127,7 +127,7 @@ the "full RBF" term.  -->
 [light ru]: https://bitcoinrollups.org/
 [nick musig2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021000.html
 [sanders min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020995.html
-[cve-2017-12842]: /zh/topics/cve/#CVE-2017-12842
+[cve-2017-12842]: /en/topics/cve/#CVE-2017-12842
 [news99 min]: /zh/newsletters/2020/05/27/#minimum-transaction-size-discussion
 [dhruv 324]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020985.html
 [bip324.com]: https://bip324.com
