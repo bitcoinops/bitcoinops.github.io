@@ -13,7 +13,7 @@ lang: zh
 
 - **<!--replicating-op-checksigfromstack-with-bip340-and-op-cat-->****使用 BIP340 和 `OP_CAT` 复制 `OP_CHECKSIGFROMSTACK`：** Andrew Poelstra 撰写了一篇[博客文章][poelstra 340cat]，讲解如何在 Bitcoin 上实现 [ElementsProject.org][] 中 [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack]（`OP_CSFS`）操作码的功能。该方案结合了提议中的 [BIP340][] 规范所定义的 [schnorr 签名][topic schnorr signatures]，以及 [OP_CAT][] 操作码——后者直到 2010 年中期一直是 Bitcoin 的一部分，且常被视为重新引入的候选。在 Bitcoin 上启用类似 CSFS 的行为，就能创建[契约][topic covenants]和其他高级合约，而无需预先签名支出交易，或许还能降低复杂性、减少需要存储的数据量。文章最后预告了本系列的后续文章（链接由我们添加）：
 
-> “在我们接下来的文章中，我们将讨论如何使用辅助输入来模拟 [SIGHASH_NOINPUT][topic sighash_anyprevout] 并为闪电网络通道启用恒定大小的备份，以及如何使用“价值切换”来构建[保险库][topic vaults]。在我们的最后一篇文章中，我们将讨论 [Miniscript][topic miniscript] 的临时扩展，以及如何以可维护的方式为这些构造开发软件。”
+  > “在我们接下来的文章中，我们将讨论如何使用辅助输入来模拟 [SIGHASH_NOINPUT][topic sighash_anyprevout] 并为闪电网络通道启用恒定大小的备份，以及如何使用“价值切换”来构建[保险库][topic vaults]。在我们的最后一篇文章中，我们将讨论 [Miniscript][topic miniscript] 的临时扩展，以及如何以可维护的方式为这些构造开发软件。”
 
 ## 值得注意的代码与文档变更
 
