@@ -139,12 +139,12 @@ lang: zh
 [rust bitcoin 0.28.2]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/0.28.2
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
 [news222 rbf]: /zh/newsletters/2022/10/19/#transaction-replacement-option
-[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf-rbf
+[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf
 [news224 rbf]: /zh/newsletters/2022/11/02/#mempool-consistency
 [daftuar rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021135.html
 [riard funny games]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
-[news220 v3tx]: /zh/newsletters/2022/10/05/#ln-penalty
-[news222 bug]: /zh/newsletters/2022/10/19/#btcd-lnd
+[news220 v3tx]: /zh/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
+[news222 bug]: /zh/newsletters/2022/10/19/#block-parsing-bug-affecting-btcd-and-lnd
 [liquid and rust bitcoin vulns]: https://twitter.com/Liquid_BTC/status/1587499305664913413
 [spoof payment attack]: /en/topics/cve/#CVE-2017-12842
 [towns find]: https://twitter.com/roasbeef/status/1587481219981508608

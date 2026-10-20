@@ -128,4 +128,4 @@ lang: zh
 [ctv payment pool github]: https://github.com/stutxo/op_ctv_payment_pool
 [rust joinstr github]: https://github.com/pythcoiner/joinstr
 [strata blog]: https://www.alpenlabs.io/blog/introducing-the-strata-bridge
-[news222 validity rollups]: /zh/newsletters/2022/10/19/#rollup
+[news222 validity rollups]: /zh/newsletters/2022/10/19/#validity-rollups-research

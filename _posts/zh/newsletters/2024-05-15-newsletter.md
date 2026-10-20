@@ -68,7 +68,7 @@ Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (
 [mb3e byte order]: https://github.com/bitcoinbook/bitcoinbook/blob/6d1c26e1640ae32b28389d5ae4caf1214c2be7db/ch06_transactions.adoc#internal_and_display_order
 [news200 policies]: /zh/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
 [news191 multi_a]: /zh/newsletters/2022/03/16/#bitcoin-core-24043
-[news227 multi_a]: /zh/newsletters/2022/11/23/#how-do-i-create-a-taproot-multisig-address-taproot
+[news227 multi_a]: /zh/newsletters/2022/11/23/#how-do-i-create-a-taproot-multisig-address
 [news273 multi_a]: /zh/newsletters/2023/10/18/#bitcoin-core-27255
 [news274 op_cat]: /zh/newsletters/2023/10/25/#proposed-bip-for-op-cat-op-cat-bip
 [news275 op_cat]: /zh/newsletters/2023/11/01/#op-cat

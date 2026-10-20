@@ -11,7 +11,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--n1-->****关于静默支付的实验：** 根据 [Newsletter #194][news194 silent] 的描述，静默支付使得可以向某个公共标识符（“地址”）付款，而不会在公共记录中暴露该地址被付款的事实。本周，开发者 w0xlt 在 Bitcoin-Dev 邮件列表上[发布][w0xlt post]了一篇针对默认 [signet][topic signet] 生成静默支付地址的[教程][sp tutorial]，该教程基于 Bitcoin Core 的一个[概念验证实现][bitcoin core #24897]。包括流行钱包作者在内的多位开发者正在讨论该提案的其他细节，其中包括[为其创建地址格式][sp address]。
+- **<!--experimentation-with-silent-payments-->****关于静默支付的实验：** 根据 [Newsletter #194][news194 silent] 的描述，静默支付使得可以向某个公共标识符（“地址”）付款，而不会在公共记录中暴露该地址被付款的事实。本周，开发者 w0xlt 在 Bitcoin-Dev 邮件列表上[发布][w0xlt post]了一篇针对默认 [signet][topic signet] 生成静默支付地址的[教程][sp tutorial]，该教程基于 Bitcoin Core 的一个[概念验证实现][bitcoin core #24897]。包括流行钱包作者在内的多位开发者正在讨论该提案的其他细节，其中包括[为其创建地址格式][sp address]。
 
 ## 发布与候选发布
 

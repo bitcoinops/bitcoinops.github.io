@@ -342,35 +342,35 @@ Russell O'Connor [提议][news185 txhash]了 CTV 和 APO 的替代方案——�
 [news208 scid cln]: /zh/newsletters/2022/07/13/#core-lightning-5275
 [news208 scid lnd]: /zh/newsletters/2022/07/13/#lnd-5955
 [news209 miniscript]: /zh/newsletters/2022/07/20/#bitcoin-core-24148
-[news213 bls]: /zh/newsletters/2022/08/17/#using-bitcoincompatible-bls-signatures-for-dlcs-bls-dlc
+[news213 bls]: /zh/newsletters/2022/08/17/#using-bitcoincompatible-bls-signatures-for-dlcs
 [news213 dual funding]: /zh/newsletters/2022/08/17/#eclair-2273
 [news213 rb]: /zh/newsletters/2022/08/17/#rust-bitcoin-0-29
 [news214 cln]: /zh/newsletters/2022/08/24/#core-lightning-0-12-0
 [news214 jam]: /zh/newsletters/2022/08/24/#overview-of-channel-jamming-attacks-and-mitigations
-[news214 sp]: /zh/newsletters/2022/08/24/#pr
+[news214 sp]: /zh/newsletters/2022/08/24/#updated-silent-payments-pr
 [news215 dual funding]: /zh/newsletters/2022/08/31/#eclair-2275
 [news215 lnd]: /zh/newsletters/2022/08/31/#lnd-0-15-1-beta
 [news217 ldk]: /zh/newsletters/2022/09/14/#ldk-0-0-111
-[news218 apo]: /zh/newsletters/2022/09/21/#apo-drivechains
-[news219 inquisition]: /zh/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet-signet
+[news218 apo]: /zh/newsletters/2022/09/21/#creating-drivechains-with-apo-and-a-trusted-setup
+[news219 inquisition]: /zh/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
 [news219 ratecards]: /zh/newsletters/2022/09/28/#ln-fee-ratecards
 [news220 async]: /zh/newsletters/2022/10/05/#eclair-2435
 [news220 flow control]: /zh/newsletters/2022/10/05/#ln-flow-control
-[news220 v3]: /zh/newsletters/2022/10/05/#ln-penalty
+[news220 v3]: /zh/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
 [news221 ln-mod]: /zh/newsletters/2022/10/12/#ln-with-long-timeouts-proposal
-[news222 bug]: /zh/newsletters/2022/10/19/#btcd-lnd
-[news222 musig2]: /zh/newsletters/2022/10/19/#musig2
+[news222 bug]: /zh/newsletters/2022/10/19/#block-parsing-bug-affecting-btcd-and-lnd
+[news222 musig2]: /zh/newsletters/2022/10/19/#musig2-security-vulnerability
 [news222 rbf]: /zh/newsletters/2022/10/19/#transaction-replacement-option
-[news222 rollups]: /zh/newsletters/2022/10/19/#rollup
-[news222 v2trans]: /zh/newsletters/2022/10/19/#bip324
+[news222 rollups]: /zh/newsletters/2022/10/19/#validity-rollups-research
+[news222 v2trans]: /zh/newsletters/2022/10/19/#bip324-update
 [news223 ephemeral]: /zh/newsletters/2022/10/26/#ephemeral-anchors
-[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf-rbf
-[news223 xscribe]: /zh/newsletters/2022/10/26/#coredevtech-transcripts-coredev-tech
+[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf
+[news223 xscribe]: /zh/newsletters/2022/10/26/#coredev-tech-transcripts
 [news224 fat]: /zh/newsletters/2022/11/02/#ln-routing-failure-attribution
 [news224 rbf]: /zh/newsletters/2022/11/02/#mempool-consistency
-[news225 bug]: /zh/newsletters/2022/11/09/#block-parsing-bug-affecting-multiple-software-bug
+[news225 bug]: /zh/newsletters/2022/11/09/#block-parsing-bug-affecting-multiple-software
 [news225 fat]: /zh/newsletters/2022/11/09/#eclair-2441
-[news225 rbf]: /zh/newsletters/2022/11/09/#continued-discussion-about-enabling-fullrbf-rbf
+[news225 rbf]: /zh/newsletters/2022/11/09/#continued-discussion-about-enabling-full-rbf
 [news226 fat]: /zh/newsletters/2022/11/16/#core-lightning-5698
 [news226 jam]: /zh/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
 [news226 matt]: /zh/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants

@@ -56,7 +56,7 @@ lang: zh
 [bitcoin core 24.0]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bcc 24.0 rn]: https://github.com/bitcoin/bitcoin/blob/0ee1cfe94a1b735edc2581a05c4b12f8340ff609/doc/release-notes.md
 [news222 rbf]: /zh/newsletters/2022/10/19/#transaction-replacement-option
-[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf-rbf
+[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf
 [news224 rbf]: /zh/newsletters/2022/11/02/#mempool-consistency
 [lnd 0.15.5-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.5-beta.rc2
 [core lightning 22.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v22.11rc2

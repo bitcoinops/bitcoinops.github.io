@@ -86,7 +86,7 @@ lang: zh
 [news205 rbf]: /zh/newsletters/2022/06/22/#full-replace-by-fee
 [news208 rbf]: /zh/newsletters/2022/07/13/#bitcoin-core-25353
 [news222 rbf]: /zh/newsletters/2022/10/19/#transaction-replacement-option
-[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf-rbf
+[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf
 [wuille bip324]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021115.html
 [news72 xonly]: /zh/newsletters/2019/11/13/#x-only-pubkeys
 [compressed pubkeys]: https://developer.bitcoin.org/devguide/wallets.html#public-key-formats
@@ -97,7 +97,7 @@ lang: zh
 [russell attrib]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003727.html
 [teinturier fees]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003729.html
 [news222 rbf]: /zh/newsletters/2022/10/19/#transaction-replacement-option
-[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf-rbf
+[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf
 [lnd 0.15.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.4-beta
 [lnd 0.14.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.5-beta
 [news207 bc22558]: /zh/newsletters/2022/07/06/#bitcoin-core-22558

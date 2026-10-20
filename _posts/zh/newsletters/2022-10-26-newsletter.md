@@ -122,7 +122,7 @@ lang: zh
 [zumsande option]: https://www.erisian.com.au/bitcoin-core-dev/log-2022-10-20.html#l-493
 [coredev xs]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/
 [p2p encryption]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2022-10-10-p2p-encryption/
-[news222 bip324]: /zh/newsletters/2022/10/19/#bip324
+[news222 bip324]: /zh/newsletters/2022/10/19/#bip324-update
 [fee chat]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2022-10-11-fee-market/
 [frost]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2022-10-11-frost/
 [roast]: https://diyhpl.us/wiki/transcripts/tabconf/2022/roast/

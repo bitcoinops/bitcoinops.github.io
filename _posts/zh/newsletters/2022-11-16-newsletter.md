@@ -81,12 +81,12 @@ lang: zh
 [lnd 0.15.5-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.5-beta.rc1
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
 [news222 rbf]: /zh/newsletters/2022/10/19/#transaction-replacement-option
-[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf-rbf
+[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf
 [news224 rbf]: /zh/newsletters/2022/11/02/#mempool-consistency
 [cln filter doc]: https://github.com/rustyrussell/lightning/blob/a6f38a2c1a47c5497178c199691047320f2c55bc/doc/lightningd-rpc.7.md#field-filtering
 [ingala matt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021182.html
 [merkle trees]: https://en.wikipedia.org/wiki/Merkle_tree
-[news222 rollup]: /zh/newsletters/2022/10/19/#rollup
+[news222 rollup]: /zh/newsletters/2022/10/19/#validity-rollups-research
 [st unjam post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003740.html
 [st unjam paper]: https://raw.githubusercontent.com/s-tikhomirov/ln-jamming-simulator/master/unjamming-lightning.pdf
 [sparrow 1.7.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.7.0

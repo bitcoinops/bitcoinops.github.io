@@ -99,7 +99,7 @@ lang: zh
 [news263 renepay]: /zh/newsletters/2023/08/09/#core-lightning-6376
 [news330 cs]: /zh/newsletters/2024/11/22/#covenants-based-on-grinding-rather-than-consensus-changes
 [pod330 cs]: /en/podcast/2024/11/26/#covenants-based-on-grinding-rather-than-consensus-changes
-[news222 validity rollups]: /zh/newsletters/2022/10/19/#rollup
+[news222 validity rollups]: /zh/newsletters/2022/10/19/#validity-rollups-research
 [policy series]: /zh/blog/waiting-for-confirmation/
 [news326 p2a]: /zh/newsletters/2024/10/25/#how-was-the-structure-of-pay-to-anchor-decided-p2a
 [news330 ed]: /zh/newsletters/2024/11/22/#bitcoin-core-30239

@@ -102,7 +102,7 @@ lang: zh
 [daftuar cluster]: https://delvingbitcoin.org/t/an-overview-of-the-cluster-mempool-proposal/393/
 [sanders mev]: https://delvingbitcoin.org/t/ephemeral-anchors-and-mev/383/
 [bip 64]: https://github.com/bitcoin/bips/pull/1538
-[taproot internal key]: /zh/newsletters/2019/05/14/#complex-spending-with-taproot
+[taproot internal key]: /zh/newsletters/2019/05/14/#使用-taproot-的复杂支出
 [news56 carveout]: /zh/newsletters/2019/07/24/#bitcoin-core-15681
 [news269 rpc]: /zh/newsletters/2023/09/20/#bitcoin-core-28448
 [news85 stuck]: /zh/newsletters/2020/02/19/#c-lightning-3500

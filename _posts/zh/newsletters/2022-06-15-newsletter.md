@@ -89,7 +89,7 @@ lang: zh
 [zhao sids]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020539.html
 [daftuar repeat]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020542.html
 [osuntokun summary]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003600.html
-[news164 taproot ln]: /zh/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
+[news164 taproot ln]: /zh/newsletters/2021/09/01/#准备-taproot-11使用-taproot-的闪电网络
 [news188 gossip]: /zh/newsletters/2022/02/23/#updated-ln-gossip-proposal
 [news55 tlv]: /zh/newsletters/2019/07/17/#bolts-607
 [news198 minisketch]: /zh/newsletters/2022/05/04/#ln-gossip-rate-limiting

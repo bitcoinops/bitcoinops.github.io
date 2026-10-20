@@ -96,7 +96,7 @@ Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo]。*
 [news234 vault]: /zh/newsletters/2023/01/18/#vault
 [news166 tluv]: /zh/newsletters/2021/09/15/#covenant-opcode-proposal
 [news238 peer storage]: /zh/newsletters/2023/02/15/#core-lightning-5361
-[newsletter #219 bi]: /zh/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet-signet
+[newsletter #219 bi]: /zh/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
 [review club bi-16]: https://bitcoincore.reviews/bitcoin-inquisition-16
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin
 [heretical deployments]: https://github.com/bitcoin-inquisition/bitcoin/wiki/Heretical-Deployments

@@ -104,7 +104,7 @@ Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (
 [ark github]: https://github.com/ark-network/ark/
 [ark developer hub]: https://arkdev.info/docs/
 [volt github]: https://github.com/Zero-1729/volt
-[news214 joinstr]: /zh/newsletters/2022/08/24/#coinjoin-joinstr
+[news214 joinstr]: /zh/newsletters/2022/08/24/#proof-of-concept-coinjoin-implementation-joinstr
 [joinstr blog]: https://uncensoredtech.substack.com/p/tutorial-electrum-plugin-for-joinstr
 [bitkit blog]: https://blog.bitkit.to/synonym-officially-launches-the-bitkit-wallet-on-app-stores-9de547708d4e
 [civkit tweet]: https://x.com/gregory_nico/status/1800818359946154471
