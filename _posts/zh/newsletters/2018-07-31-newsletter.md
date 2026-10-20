@@ -7,17 +7,17 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 包括常规的仪表盘和行动项，开发人员 Anthony Towns 关于 Xapo 合并 400 万个 UTXO 的特写文章，有关比特币脚本系统可能升级的新闻，一些在比特币堆栈交换上高票问题和回答的链接，以及 Bitcoin Core、Lightning Network Daemon (LND) 和 C-lightning 项目的开发分支中的一些值得注意的提交。
+本周的 Newsletter 包括常规的仪表盘和行动项，开发人员 Anthony Towns 关于 Xapo 合并 400 万个 UTXO 的特写文章，有关比特币脚本系统可能升级的新闻，一些 Bitcoin Stack Exchange 上高票问题和回答的链接，以及 Bitcoin Core、Lightning Network Daemon (LND) 和 C-lightning 项目开发分支中的一些值得注意的提交。
 
 ## 行动项
 
-- **<!--bitcoin-core-0-16-2-released-->****发布 Bitcoin Core 0.16.2**：一个小版本，带来了错误修复和小改进。如果您使用 [abandontransaction][rpc abandontransaction] 或 [verifytxoutproof][rpc verifytxoutproof] RPC，您应该特别考虑升级。否则，我们建议您查看[发布说明][bitcoin core 0.16.2]了解可能影响您操作的其他变化，并在方便时升级。
+- **<!--bitcoin-core-0-16-2-released-->****发布 Bitcoin Core 0.16.2**：这是一个小版本，包含错误修复和小幅改进。如果你使用 [abandontransaction][rpc abandontransaction] 或 [verifytxoutproof][rpc verifytxoutproof] RPC，应特别考虑升级。否则，我们建议你查看[发布说明][bitcoin core 0.16.2]，了解可能影响你运营的其他变更，并在方便时升级。
 
 ## 仪表盘项
 
-- **<!--fees-still-low-->****费用仍然低**：在周日结束的 2016 区块重新目标周期中，哈希率增加了超过14%，使区块间平均时间为 8 分 41 秒。这有助于吸收过去一周价格投机带来的交易量增加。紧随难度重新目标之后，区块间平均时间恢复为 10 分钟。
+- **<!--fees-still-low-->****手续费仍然较低**：在周日结束的 2,016 个区块难度调整周期内，哈希率的增长使难度提高了 14% 以上，区块平均间隔为 8 分 41 秒。这有助于吸收过去一周价格投机带来的交易量增长。每次难度调整之后，区块平均间隔都会立即恢复为 10 分钟。
 
-  随着我们从正常的周末交易低迷过渡到新的一周，估计的交易费用可能会迅速增加。我们建议在靠近周末时再发送大量低费用交易（如合并），那时交易量开始再次下降。
+  随着我们从正常的周末交易低迷期进入新的一周，预估手续费有可能快速上涨。我们建议等到临近周末、交易量开始再次回落时，再发送合并之类体积较大的低费率交易。
 
 ## 实地报告：Xapo 合并 400 万个 UTXO
 
@@ -27,13 +27,13 @@ lang: zh
 
 ## 新闻
 
-- **<!--improvements-in-the-bitcoin-scripting-language-by-pieter-wuille-->****Pieter Wuille 的“比特币脚本语言改进”**：上周的一次演讲，概述了比特币可能的几项近期改进。我们强烈建议观看[视频][sfdev video]，查看[幻灯片][sipa slides]，或阅读 Bryan Bishop 的[字幕][kanzure transcript]（附有参考文献）——但如果您太忙了，这里是 Wuille 的结论：“我的初步重点是 Schnorr 签名和 taproot。之所以关注这一点，是因为能够使合作情况下的任何输入和输出看起来都相同，对于脚本执行的工作方式来说是一个巨大的胜利。
+- **<!--improvements-in-the-bitcoin-scripting-language-by-pieter-wuille-->****Pieter Wuille 的“比特币脚本语言改进”**：这是上周的一场演讲，从较高层面概述了比特币近期可能实现的几项改进。我们强烈建议观看[视频][sfdev video]、查看[幻灯片][sipa slides]，或阅读 Bryan Bishop 整理的[文字记录][kanzure transcript]（附有参考文献）——但如果你太忙，这里是 Wuille 的结论：“我最初的重点是 schnorr 签名和 taproot。之所以关注这一点，是因为在合作场景下能让任意输入与输出看起来完全相同，这对脚本执行的工作方式来说是巨大的收益。
 
-    “Schnorr 对此是必需的，因为没有它，我们无法将多方编码为单个密钥。在其中包含多个分支是一个相对简单的更改。
+    “为此需要 schnorr，因为没有它，我们就无法把多方编码进单个密钥。而在其中设置多个分支是相对简单的改动。
 
-    “如果您看一下这些事情对共识规则的影响所必需的共识变化，它实际上非常小，代码仅数十行。看起来很多复杂性在于解释这些东西为何有用以及如何使用它们，而不是在于对共识规则的影响。
+    “如果你看看实现这些功能所需的共识变更，其实非常小，只有几十行代码。看起来大部分复杂性在于解释这些东西为何有用、该如何使用，而不在对共识规则的影响上。
 
-    “像聚合这样的事情，我认为，在我们探索脚本语言结构改进的各种选项之后，一旦明确了结构应该是什么，就可以实施，因为我们可能会从部署中了解到这些东西在实践中是如何使用的。这就是我和许多合作者正在研究的内容，我们希望不久就能提出一些建议，这就是我的演讲结束。”
+    “至于聚合这类技术，我认为可以在我们探索了脚本语言结构改进的多种方案、明确了结构应当是什么之后再着手，因为我们很可能会从实际部署中了解到这些东西在实践中如何使用。这正是我和多位合作者正在研究的内容，希望不久后能提出一些方案。我的演讲到此结束。”
 
 [sfdev video]: https://www.youtube.com/watch?v=YSUVRj8iznU
 [sipa slides]: https://prezi.com/view/YkJwE7LYJzAzJw9g1bWV/
@@ -45,7 +45,7 @@ lang: zh
 https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer
 -->{% endcomment %}
 
-*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选之一——或者当我们有一些空闲时间帮助回答其他人的问题时。在这个新的月度特色栏目中，我们突出展示了过去一个月中一些得票最多的问题和答案。*
+*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选之地之一——也是我们有空时帮忙回答他人问题的地方。在这个新的月度栏目中，我们精选了过去一个月里得票最高的一些问题和回答。*
 
 - **<!--schnorr-versus-ecdsa-->**[Schnorr 与 ECDSA 的对比][bse 77235]：在这个回答中，比特币协议开发者 Pieter Wuille 解释了 Schnorr 签名方案相对于比特币当前的 ECDSA 签名方案的一些主要优势。
 
@@ -61,15 +61,15 @@ https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswe
 
 *快速查看在各种开源比特币项目中最近合并和提交的情况。*
 
-- **<!--bitcoin-core-12257-->**[Bitcoin Core #12257][]：如果你用可选标志 `-avoidpartialspends` 启动 Bitcoin Core，每当其中任何一个被花费时，钱包将默认花费接收到同一地址的所有输出。这可以防止同一地址的两个输出在不同的交易中被花费，这是地址重用降低隐私的常见方式。缺点是它可能使交易比最小需要的要大。使用 Bitcoin Core 内置钱包的比特币业务，如果不需要额外的隐私，可能仍然希望在低费用时切换此标志以自动合并相关输入。
+- **<!--bitcoin-core-12257-->**[Bitcoin Core #12257][]：如果你用可选标志 `-avoidpartialspends` 启动 Bitcoin Core，每当其中任何一个被花费时，钱包将默认花费接收到同一地址的所有输出。这可以防止同一地址的两个输出在不同的交易中被花费，这是地址重用降低隐私的常见方式。缺点是它可能使交易体积大于实际所需的最小尺寸。使用 Bitcoin Core 内置钱包的比特币企业，如果并不需要额外的隐私，可能仍希望在手续费较低时开启此标志，以自动合并相关输入。
 
-- **<!--lnd-1617-->**[LND #1617][]：更新链上交易的大小估计，以防止交易意外支付过低的费用并卡住。[此提交][lnd ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c] 对任何想知道当前协议产生的交易（和交易的部分）大小的人可能都很有趣。
+- **<!--lnd-1617-->**[LND #1617][]：更新链上交易的体积估算，以免交易意外支付过低的手续费而卡住。[此提交][lnd ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c] 对任何想了解当前协议下交易（以及交易的各个部分）有多大的人来说，可能都值得一读。
 
-- **<!--lnd-1531-->**[LND #1531][]：守护进程不再在内存池中寻找花费——它等待它们首先被确认为区块的一部分。这允许相同的代码在像 Bitcoin Core 和 btcd 这样的完整节点以及没有访问未确认交易的 [BIP157][] 基础轻量级客户端上工作。这是正在进行的努力的一部分，以帮助没有完整节点的人使用 LN。
+- **<!--lnd-1531-->**[LND #1531][]：守护进程不再在内存池中查找花费，而是等待这些花费先被确认为区块的一部分。这样一来，同一份代码既能运行在 Bitcoin Core 和 btcd 这样的完整节点上，也能运行在无法访问未确认交易的、基于 [BIP157][] 的轻量级客户端上。这是持续努力的一部分，旨在帮助没有完整节点的人也能使用 LN。
 
-- **<!--c-lightning-->**在几次提交中，[C-lightning][core lightning repo] 开发人员几乎完成了从在 `gossipd` 中处理与对等方相关的功能到在 `channeld` 或 `connectd` 中处理它们的过渡。
+- **<!--c-lightning-->**在若干次提交中，[C-lightning][core lightning repo] 开发人员已基本完成过渡：把与对等节点相关的功能从 `gossipd` 移出，改由 `channeld` 或 `connectd` 视情况处理。
 
-- **<!--c-lightning-has-improved-->**C-lightning 改进了其秘密处理，以便秘密和签名始终由与网络直接连接的系统部分之外的单独守护进程生成和存储。
+- **<!--c-lightning-has-improved-->**C-lightning 改进了密钥材料（secret）的处理方式：秘密和签名始终由一个独立的守护进程生成和存储，而不是由系统中直接连接网络的那部分生成和存储。
 
 {% include references.md %}
 {% include linkers/issues.md issues="1617,1531,12257" %}

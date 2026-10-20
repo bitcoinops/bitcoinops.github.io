@@ -7,43 +7,43 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 描述了用于带宽高效集和解的新 libminisketch 库，链接到关于 Schnorr/Taproot 计划的电子邮件，并提到即将召开的 LN 协议规范会议。还包括过去一周来自流行的比特币基础设施项目的几个值得注意的代码更改。
+本周的 Newsletter 介绍了用于带宽高效集合协调（set reconciliation）的新库 libminisketch，给出了关于 Schnorr/Taproot 计划的一封电子邮件的链接，并提到即将召开的 LN 协议规范会议。文中还包括一份过去一周热门比特币基础设施项目中值得注意的代码变更清单。
 
 ## 行动项
 
-- **<!--help-test-bitcoin-core-0-17-1rc1-->****帮助测试 Bitcoin Core 0.17.1RC1：** 该[维护版本][maintenance release]的第一个候选版本已被[上传][V0.17.1rc1]。企业和个人用户对守护程序和 GUI 的测试非常受欢迎，并有助于确保高质量的发布。
+- **<!--help-test-bitcoin-core-0-17-1rc1-->****帮助测试 Bitcoin Core 0.17.1RC1：** 这个[维护版本][maintenance release]的第一个候选发布已经[上传][V0.17.1rc1]。我们非常欢迎企业和个人用户测试守护进程和 GUI，这有助于确保发布质量达到最高。
 
 ## 新闻
 
-- **<!--minisketch-library-released-->****Minisketch 库发布：** 比特币开发人员 Pieter Wuille、Gregory Maxwell 和 Gleb Naumenko 一直在研究[优化的交易中继][optimized transaction relay]，如 [Newsletter #9][] 的新闻部分所述。这项研究的一个结果是他们发布了一个新的独立库，[libminisketch][]，它允许在大约预期差异本身的字节大小内传输两个信息集之间的差异。这可能听起来不令人兴奋——`rsync` 工具已经这样做了超过二十年——但 libminisketch 允许在不知道差异是什么的情况下传输它们。
+- **<!--minisketch-library-released-->****Minisketch 库发布：** 比特币开发者 Pieter Wuille、Gregory Maxwell 和 Gleb Naumenko 一直在研究[优化的交易中继][optimized transaction relay]，如 [Newsletter #9][] 的新闻部分所述。这项研究的一个成果，是他们发布了一个新的独立库 [libminisketch][]：它能在两组信息之间传输差异，而传输量约为这些差异本身预期的字节数。这听起来也许不算令人兴奋——`rsync` 工具已经这样做了二十多年——但 libminisketch 传输差异时*无需事先知道差异是什么*。
 
-  例如，Alice 有元素 1、2 和 3。Bob 有元素 1 和 3。尽管双方都不知道对方有哪些元素，Alice 可以发送一个大小为单个元素的*草图*给 Bob，该草图包含足够的信息让他重建元素 2。如果 Bob 拥有元素 1 和 2（没有 3），相同的草图可以让他重建元素 3。或者，如果 Bob 向 Alice 发送一个基于他两个元素集的草图，而 Alice 有她的三个元素集，她可以确定 Bob 缺少哪个元素并直接发送给他。
+  举例来说，Alice 有元素 1、2 和 3，Bob 有元素 1 和 3。尽管双方都不知道对方有哪些元素，Alice 仍可以给 Bob 发送一个大小相当于单个元素的*草图*（sketch），其中包含足够的信息，让他重建出元素 2。如果 Bob 的元素换成 1 和 2（没有 3），完全相同的草图又能让他重建出元素 3。或者，Bob 用自己的两个元素发送一个草图给 Alice，而 Alice 拥有三个元素的集合，她就能确定 Bob 缺的是哪个元素，并直接发给他。
 
-  这些草图可以为比特币 P2P 网络的未确认交易中继提供一种强大的新优化方式。当前的 gossip 机制让每个节点为其每个对等节点接收或发送每个交易的 32 字节标识符。例如，如果你有 100 个对等节点，你会发送或接收 3200 字节的公告，加上开销，对于一个平均仅 400 字节的交易。使用[模拟器][naumenko relay simulator]进行的早期估算表明，结合仅用于中继的缩短交易标识符的草图可以将总交易传播带宽减少 44 倍。草图还具有提供其他期望特性的潜力——例如，LN 协议开发人员 Rusty Russell 在 Lightning-Dev 邮件列表上发起了一个[线程][ln minisketch]，讨论使用它们发送 LN 路由表更新。
+  这些草图可以为比特币 P2P 网络的未确认交易中继提供一种强大的新优化方式。当前的流言（gossip）机制下，每个节点要为它的每个对等节点接收或发送每笔交易的 32 字节标识符。例如你有 100 个对等节点，那么你收发的公告就是 3200 字节，还要加上额外开销，而对应的交易平均只有 400 字节。用[模拟器][naumenko relay simulator]做出的早期估算表明，把草图与缩短的交易标识符（仅用于中继）结合起来，可将交易传播的总带宽缩减到原来的 1/44。草图还有望带来其他有用的特性——例如 LN 协议开发者 Rusty Russell 在 Lightning-Dev 邮件列表上开了一个[讨论帖][ln minisketch]，讨论用草图来发送 LN 路由表更新。
 
-- **<!--description-about-what-might-be-included-in-a-schnorr-taproot-soft-fork-->****关于 Schnorr/Taproot 软分叉可能包含内容的描述：** 比特币协议开发人员 Anthony Towns 发布[发布][towns schnorr taproot]了一封电子邮件，详细描述了他认为应该包含在一个增加 Schnorr 签名方案和 Taproot 风格 MAST 的软分叉中的内容。这不是正式提案，但它类似于我们从其他开发人员那里听到的意见，因此应该提供当前思路的良好概述。
+- **<!--description-about-what-might-be-included-in-a-schnorr-taproot-soft-fork-->****关于 Schnorr/Taproot 软分叉可能包含哪些内容的描述：** 比特币协议开发者 Anthony Towns [发表][towns schnorr taproot]了一封写得很好的电子邮件，描述了他认为为比特币增加 Schnorr 签名方案和 Taproot 风格 MAST 的软分叉中应当包含哪些内容。这不是正式提案，但与其他开发者表达的意见相近，因此应该能很好地概括当前的思路。
 
-- **<!--ln-protocol-irc-meeting-->****LN 协议 IRC 会议：** LN 的协议开发人员同意在收到一些开发人员的请求后，将他们定期举行的 LN 规范开发会议从 Google Hangout 转为 IRC 会议。[下次会议][ln irc meeting]将于 1 月 8 日星期二 19:00（UTC）举行。
+- **<!--ln-protocol-irc-meeting-->****LN 协议 IRC 会议：** 在收到多位开发者的请求后，LN 协议开发者同意把他们定期举行的 LN 规范制定会议从 Google Hangout 改为 IRC 会议。[下次会议][ln irc meeting]将于 1 月 8 日星期二 19:00（UTC）举行。
 
-## 值得注意的代码更改
+## 值得注意的代码变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-lightning][core lightning repo] 和 [libsecp256k1][libsecp256k1 repo] 中值得注意的代码更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-lightning][core lightning repo] 和 [libsecp256k1][libsecp256k1 repo] 中值得注意的代码变更。*
 
-- [Bitcoin Core #14573][] 将 Bitcoin-Qt GUI 中打开单独对话框的各种杂项选项移动到一个新的顶级菜单项*窗口*，希望使这些选项更容易找到和使用。
+- [Bitcoin Core #14573][] 把 Bitcoin-Qt GUI 中会打开独立对话框的各种杂项选项，移到一个名为*窗口*（Window）的新顶级菜单项下，希望让这些选项更容易找到和使用。
 
-- [LND #1984][] 添加了一个新的 `listunspent` RPC，列出钱包的每个未花费输出。它可以接受两个参数：（1）未花费输出必须具有的最小确认次数或（2）它可以具有的最大确认次数。最小值可以设置为 `0` 以打印未确认的输出。
+- [LND #1984][] 新增 `listunspent` RPC，列出钱包的每个未花费输出。它可以接受两个参数：（1）未花费输出必须具有的最小确认次数，或（2）它可以具有的最大确认次数。把最小值设为 `0` 可以列出未确认的输出。
 
-- [LND #2039][] 增加了获取自动驾驶仪功能状态的能力，并允许在程序运行时启用或禁用它。自动驾驶仪是软件在用户首次连接到 LN 或需要额外支出能力时自动建议新通道打开的能力。
+- [LND #2039][] 增加了获取自动巡航（autopilot）功能状态的能力，并允许在程序运行期间启用或禁用它。自动巡航是指软件在用户首次接入 LN 或需要更多支付能力时，自动建议打开新通道的功能。
 
-- [C-Lightning #2155][] 默认禁用[Newsletter #10][] 值得注意的提交中描述的 `option_data_loss_protect` 功能。该功能无法可靠工作，因此它将仅为选择加入实验功能的用户启用。
+- [C-Lightning #2155][] 默认禁用[Newsletter #10][] 值得注意的提交中描述的 `option_data_loss_protect` 功能。该功能无法可靠工作，因此只会对自愿启用实验功能的用户开启。
 
 - [C-Lightning #2154][] 现在允许插件发送将被写入 lightningd 日志文件的日志通知。
 
-- [C-Lightning #2161][] 添加了一个小型 Python 库和框架，可用于编写插件。它提供了类似于流行的 [flask][] 库的[功能装饰器][function decorators]，可用于将函数标记为提供特定插件接口，并且此信息会自动用于生成插件清单。示例 `helloworld.py` 插件已更新以使用该库，其大小减少了 75%（从 111 行到 28 行）。
+- [C-Lightning #2161][] 新增了一个小型 Python 库和框架，可用于编写插件。它提供的[函数装饰器][function decorators]与流行的 [flask][] 库类似，可用来把函数标记为提供某个特定的插件接口，这些信息会自动用于生成插件清单（manifest）。示例插件 `helloworld.py` 已改为使用该库，体积缩小了 75%（从 111 行减到 28 行）。
 
-## 假期出版安排
+## 假期发布安排
 
-由于假期原因，Optech Newsletter 将不会在 12 月 25 日或 1 月 1 日发布 Newsletter。相反，我们将在 12 月 28 日星期五发布一份特别的年度回顾 Newsletter，并将于 1 月 8 日星期二恢复常规的周二发布计划。
+由于假期原因，Optech Newsletter 将不会在 12 月 25 日或 1 月 1 日发布 Newsletter。取而代之的是，我们将在 12 月 28 日星期五发布一份特别的年度回顾 Newsletter，并从 1 月 8 日起恢复常规的周二发布计划。
 
 
 {% include references.md %}

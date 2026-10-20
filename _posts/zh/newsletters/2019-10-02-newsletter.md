@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 提到了一项提议中的 BIP，它将允许节点实现 Erlay 交易转发协议，宣布了此前影响闪电网络实现的漏洞的全部披露，链接到了最近一次 Optech 关于 Schnorr 和 Taproot 研讨会的记录，并包含了一份关于比特币交易所 BTSE 使用的一些技术的实地报告，这些技术旨在节省区块链空间的同时确保用户存款的安全。我们还描述了多个流行的比特币基础设施项目的一些值得注意的变更。
+本周的 Newsletter 提到一份拟议的 BIP，它允许节点实现 Erlay 交易中继协议；宣布全面披露曾影响旧版 LN 实现的若干漏洞；给出最近一次 Optech schnorr 与 taproot 工作坊的文字记录链接；并附上一篇实地报告，介绍比特币交易所 BTSE 为节省区块链空间、同时保障用户存款安全所采用的若干技术。我们还会介绍热门比特币基础设施项目的多项值得注意的变更。
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
@@ -18,13 +18,13 @@ lang: zh
 
 ## 新闻
 
-- **<!--draft-bip-for-enabling-erlay-compatibility-->****支持 Erlay 兼容性的草案 BIP：**Gleb Naumenko（Erlay 的联合作者）在 Bitcoin-Dev 邮件列表上[发布][reconcil post]一份关于通过集合对账实现交易转发的草案 [BIP][bip-reconcil]。目前，比特币节点向每个对等节点发送所有新看到的交易 ID（txid），导致每个节点接收到大量重复的 txid 通知。这对于拥有数万个节点和每天数十万笔交易的比特币网络来说，带来了较低的带宽效率。另一种方式是，如之前[描述][erlay paper]的那样，基于 minisketch 的集合对账允许节点发送一组短 txid 的 *sketch*，接收节点可以将其与已经知道的短 txid 结合起来，恢复那些尚未看到的 txid。sketch 的大小大致等于需要恢复的短 txid 的预期大小，从而减少了 txid 通知的带宽。Erlay 是一个建议如何使用这种机制，以实现带宽效率和网络健壮性最佳平衡的提案。该草案 BIP 描述了基于 minisketch 的集合对账在节点之间的提议实现，为 Erlay 的实施奠定了基础。我们鼓励有反馈的任何人通过私人渠道或邮件列表与 BIP 作者联系。
+- **<!--draft-bip-for-enabling-erlay-compatibility-->****支持 Erlay 兼容性的 BIP 草案：**Erlay 的共同作者 Gleb Naumenko 在 Bitcoin-Dev 邮件列表上[发布][reconcil post]了一份[关于通过集合对账实现交易中继的 BIP 草案][bip-reconcil]。目前，比特币节点会把所有新看到的交易 txid 发给每一个对等节点，结果每个节点都会收到大量重复的 txid 通告。对比特币网络数以万计的节点和每天几十万笔交易来说，这种做法在带宽上相当不划算。另一种做法如之前[介绍][erlay paper]的那样：基于 minisketch 的集合对账让节点发送一组短 txid 的 *sketch*，接收方将其与自己已知的短 txid 组合，就能还原出尚未见过的那些短 txid。sketch 的大小大致等于预期需要还原的短 txid 的大小，从而减少通告 txid 占用的带宽。Erlay 就是这样一项提案：它提出如何利用该机制，在带宽效率和网络健壮性之间取得最佳平衡。这份 BIP 草案描述了节点之间基于 minisketch 的集合对账的拟议实现，为 Erlay 的落地打下基础。欢迎任何有意见的人私下或通过邮件列表联系 BIP 作者。
 
-- **<!--full-disclosure-of-fixed-vulnerabilities-affecting-multiple-ln-implementations-->****多种 LN 实现的已修复漏洞的全面披露：**几周前，C-Lightning、Eclair 和 LND 的开发者宣布了他们各自实现中之前发现的一个未公开问题，该问题已在最近的发布中得到修复。当时，他们强烈建议用户进行升级（Optech [转达][optech ln warning]这一信息），并承诺将在未来进行全面披露。现在，漏洞发现者和 C-Lightning 开发者 Rusty Russell 通过一封[电子邮件][russell disclosure]，以及 LND 开发者 Olaoluwa Osuntokun 和 Conner Fromknecht 在一篇[博客文章][lnd stay safe]中，完成了这项披露。
+- **<!--full-disclosure-of-fixed-vulnerabilities-affecting-multiple-ln-implementations-->****影响多个 LN 实现的已修复漏洞全面披露：**几周前，C-Lightning、Eclair 和 LND 的开发者分别宣布，他们在各自的实现中此前发现了一个未公开的问题，并已在最近的版本中修复。当时他们强烈建议用户升级（Optech [转达][optech ln warning]了这一信息），并承诺日后全面披露。现在这项工作已经完成：漏洞发现者、C-Lightning 开发者 Rusty Russell 发出一封[邮件][russell disclosure]，LND 开发者 Olaoluwa Osuntokun 与 Conner Fromknecht 则发表了一篇[博客文章][lnd stay safe]。
 
-  简而言之，该问题似乎是这些实现没有确认通道打开交易是否支付了正确的脚本、金额或两者。因此，这些实现会在通道内接受支付，但之后无法在链上确认这些支付，从而导致可能被欺诈。截至撰写本文时，Optech 尚未收到任何报告表明该问题在上个月警告之前被利用。现在该问题已披露，已提交了一个[拉取请求][BOLTS #676]来更新规范，以说明需要进行此检查。
+  简而言之，问题似乎是这些实现没有检查通道开启交易是否付给了正确的脚本、正确的金额，还是两者都正确。因此，这些实现会在通道内接受付款，事后却无法让这笔付款在链上得到确认，从而可能被欺诈。截至本文写作时，Optech 尚未听说任何报告表明该问题在上个月的警告之前被利用过。既然问题已经披露，已有一份 [PR][BOLTS #676] 提出更新规范，说明需要做这项检查。
 
-- **<!--optech-taproot-and-schnorr-workshop-->****Optech Taproot 和 Schnorr 研讨会：**上周，Optech 在旧金山和纽约市举办了研讨会，向开发者讲授了 Schnorr 签名方案及其他拟议中的 [Taproot][bip-taproot] 软分叉部分。我们感谢 Bryan Bishop 提供了纽约市研讨会的优秀[记录][workshop transcript]。我们正在准备视频及其他教育材料，并将在不久的将来通过博客文章发布。
+- **<!--optech-taproot-and-schnorr-workshop-->****Optech taproot 与 schnorr 工作坊：**上周，Optech 在旧金山和纽约分别举办工作坊，向开发者讲解 schnorr 签名方案以及拟议中 [taproot][bip-taproot] 软分叉的其他内容。我们感谢 Bryan Bishop 为纽约工作坊整理了出色的[文字记录][workshop transcript]。我们正在准备视频和其他教学材料，不久后将通过一篇博客文章发布。
 
 ## 实地报告：BTSE 交易所使用的比特币技术
 
@@ -34,19 +34,19 @@ lang: zh
 
 *本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo] 的值得注意的变更。*
 
-- [Bitcoin Core #15558][] 更改了 Bitcoin Core 通常查询的 DNS 种子数量。DNS 种子是由知名贡献者托管的服务器，它们返回正在监听的对等节点的 IP 地址（接受传入连接的节点）。新启动的节点查询 DNS 种子以找到一组初始的对等节点；然后这些对等节点告诉该节点其他可能的对等节点，节点将此信息保存到磁盘以备后用（包括重启后）。理想情况下，节点只会在首次启动时查询 DNS 种子。但实际上，如果节点在随后的启动中没有迅速得到保存的对等节点的响应，它们也可能再次查询。
+- [Bitcoin Core #15558][] 更改了 Bitcoin Core 通常查询的 DNS 种子数量。DNS 种子是由知名贡献者托管的服务器，会返回正在监听的对等节点（接受传入连接的对等节点）的 IP 地址。新启动的节点查询 DNS 种子，以获得一批初始对等节点；随后这些对等节点再告诉它其他可能的对等节点，节点会把这些信息存到磁盘上供日后使用（包括重启之后）。理想情况下，节点一辈子只会查询一次 DNS 种子——即首次启动时。但实际上，如果后续启动时它从已保存的对等节点中挑出的那些都没有及时响应，它也可能再次查询。
 
-  此合并导致 Bitcoin Core 每次只查询三个 DNS 种子，而不是全部查询。三个种子应该足以确保节点连接到至少一个诚实的对等节点（比特币安全的一个要求），但查询的种子数量少到可以防止每个种子通过直接 DNS 解析获知查询节点。要查询的种子是从硬编码到 Bitcoin Core 中的列表中随机选择的。
+  这次合并使 Bitcoin Core 每次只查询三个 DNS 种子，而不是全部。三个种子的来源多样性足以确保节点至少连接到一个诚实的对等节点（这是比特币安全性的要求），而数量又足够少：如果节点采用直接 DNS 解析，并非每个种子都会因此知道是哪个节点在查询。要查询哪几个种子，从硬编码在 Bitcoin Core 中的列表里随机选取。
 
-- [LND #3523][] 允许用户更新他们将在特定打开通道或所有打开通道中接受的 HTLC 的最大 millisat 值。
+- [LND #3523][] 允许用户更新自己在某个已开通通道中、或在全部已开通通道中所能接受的 HTLC 最大 millisat 值。
 
-- [LND #3505][] 将发票限制为 7,092 字节，这是可以适应单个二维码的最大大小。更大的发票可能会导致分配大量内存。例如，补丁作者测试的 1.7 MB 发票导致大约 38.0 MB 的内存分配。
+- [LND #3505][] 把发票大小限制在 7,092 字节，也就是能放进单个二维码的最大尺寸。更大的发票可能导致分配大量内存。例如补丁作者测试的一张 1.7 MB 发票，就带来了约 38.0 MB 的内存分配。
 
-- [Eclair #1097][] 开始从资金公钥派生通道密钥，使 Eclair 能够使用 [Newsletter #31][dlp footnote] 中描述的数据丢失保护（DLP）方案，即使所有数据都丢失。这确实需要用户回忆起他们打开通道的节点并找到通道 ID（对于公共通道，这些是公开信息）。这仅适用于更新到实现此更改版本的软件后打开的新通道；旧通道不受影响。*(注意：该条目之前错误地声称此合并 PR 使 Eclair 能够增加 DLP 支持。实际上，Eclair 已经有了 DLP 支持，此 PR 改变了通道密钥的派生方式，使即使所有数据丢失时该支持也有用。Optech 感谢 Fabrice Drouin 报告我们的错误。)*
+- [Eclair #1097][] 开始从资金公钥派生通道密钥，使得即便所有数据都已丢失，Eclair 也能使用 [Newsletter #31][dlp footnote] 中描述的数据丢失保护（DLP）方案。不过这确实要求用户记得自己当初是与哪个节点开的通道，并找到通道 ID（对公开通道而言，通道 ID 是公开信息）。该改动只适用于升级到包含此项改动的软件版本之后新开的通道，旧通道不受影响。*(注意：本条目的上一版错误地声称这个已合并的 PR 能为 Eclair 加上 DLP 支持。实际上 Eclair 早已支持 DLP，这个 PR 改变的是通道密钥的派生方式，从而让该支持在所有数据丢失时也能派上用场。Optech 感谢 Fabrice Drouin 指出我们的错误。)*
 
-- [C-Lightning #3057][] 使得 C-Lightning 可以使用 postgres 作为其数据库管理器。
+- [C-Lightning #3057][] 让 C-Lightning 可以使用 postgres 作为其数据库管理器。
 
-- [C-Lightning #3064][] 实现了 [Newsletter #63][ln daily updates] 中描述的更改，减少了 C-Lightning 节点转发其他节点的通道更新公告的频率。这样可以减少节点使用的 gossip 带宽。
+- [C-Lightning #3064][] 实现了 [Newsletter #63][ln daily updates] 中所述的改动，降低了 C-Lightning 节点中继其他节点通道更新通告的频率。这能减少节点消耗的 gossip 带宽。
 
 {% include linkers/issues.md issues="15558,3523,3505,1097,3057,3064,676" %}
 [lnd stay safe]: https://blog.lightning.engineering/security/2019/09/27/cve-2019-12999.html
