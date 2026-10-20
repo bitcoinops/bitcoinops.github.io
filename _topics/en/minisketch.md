@@ -41,8 +41,11 @@ optech_mentions:
   - title: "Relay censorship resistance using cluster mempool and efficient set reconciliation"
     url: /en/newsletters/2025/06/13/#relay-censorship-resistance-through-top-mempool-set-reconciliation
 
-  - title: "New library for encrypting descriptors and miniscript to the included public keys"
-    url: /en/newsletters/2025/06/13/#descriptor-encryption-library
+  - title: Discussion about using minisketch to improve efficiency of block template sharing
+    url: /en/newsletters/2025/08/22/#draft-bip-for-block-template-sharing
+
+  - title: Gossip analysis to inform minisketch-like set reconciliation protocol for LN
+    url: /en/newsletters/2025/11/21/#ln-gossip-traffic-analysis-tool-announced
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

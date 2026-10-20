@@ -110,6 +110,12 @@ optech_mentions:
   - title: "Rust Bitcoin #3450 adds the ability to opt-in to TRUC transactions"
     url: /en/newsletters/2024/10/18/#rust-bitcoin-3450
 
+  - title: "Bitcoin Core #32896 extends several RPCs to support creating and spending TRUC transactions"
+    url: /en/newsletters/2025/08/22/#bitcoin-core-32896
+
+  - title: "BOLTs #1228 specifies zero-fee channels requiring TRUC for commitment and HTLC transactions"
+    url: /en/newsletters/2026/05/08/#bolts-1228
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

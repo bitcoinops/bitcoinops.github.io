@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Erlay may save 100 MB a day of node bandwidth, 20% of total bandwidth for some nodes"
     url: /en/newsletters/2025/03/14/#high-inv-traffic-as-a-non-archival-listener
 
+  - title: "Rust Bitcoin #6191 adds support for encoding and decoding the `sendtxrcncl` message"
+    url: /en/newsletters/2026/05/22/#rust-bitcoin-6191
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch

@@ -69,6 +69,21 @@ optech_mentions:
   - title: "Bitcoin Core #32582 adds logging to measure performance of compact block reconstruction"
     url: /en/newsletters/2025/06/06/#bitcoin-core-32582
 
+  - title: "Results from testing compact block relay prefilling"
+    url: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
+
+  - title: Peer block template sharing proposed to improve compact block performance with divergent mempools
+    url: /en/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
+
+  - title: Draft BIP and additional discussion of block template sharing to improve compact block effectiveness
+    url: /en/newsletters/2025/08/22/#draft-bip-for-block-template-sharing
+
+  - title: "Bitcoin Core #35550 rejects sendcmpct messages with an out-of-range announcement field"
+    url: /en/newsletters/2026/07/03/#bitcoin-core-35550
+
+  - title: "Bitcoin Core #32606 ignores compact block messages from peers that haven't negotiated support"
+    url: /en/newsletters/2026/07/10/#bitcoin-core-32606
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

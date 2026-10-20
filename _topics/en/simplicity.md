@@ -45,11 +45,17 @@ optech_mentions:
   - title: "BTC-Script (based on Chia Lisp) as an alternative to Simplicity"
     url: /en/newsletters/2022/03/16/#using-chia-lisp
 
-  - title: "Comparisons betwen Simplicity and BTC Lisp"
+  - title: "Comparisons between Simplicity and BTC Lisp"
     url: /en/newsletters/2024/03/20/#overview-of-btc-lisp
 
   - title: "Flexible coin earmarks probably compatible with Simplicity"
     url: /en/newsletters/2024/11/29/#flexible-coin-earmarks
+
+  - title: "SimplicityHL released to allow compiling Rust-like programs to Simplicity script"
+    url: /en/newsletters/2025/08/22/#simplicityhl-released
+
+  - title: "Details about the design of Simplicity"
+    url: /en/newsletters/2025/09/05/#details-about-the-design-of-simplicity
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

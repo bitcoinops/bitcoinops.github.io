@@ -45,7 +45,7 @@ optech_mentions:
   - title: "Question: how many blocks per second can sustainably be created using a time warp attack?"
     url: /en/newsletters/2024/07/26/#how-many-blocks-per-second-can-sustainably-be-created-using-a-time-warp-attack
 
-  - title: "New time warp vulnernability affecting testnet4 despite previous time warp fixes"
+  - title: "New time warp vulnerability affecting testnet4 despite previous time warp fixes"
     url: /en/newsletters/2024/08/16/#new-time-warp-vulnerability-in-testnet4
 
   - title: "Discussion about fixing Murch-Zawy time warp in consensus cleanup"
@@ -59,6 +59,15 @@ optech_mentions:
 
   - title: "Consensus cleanup proposal updates time warp grace period to 2 hours"
     url: /en/newsletters/2025/02/07/#increase-timewarp-grace-period-to-2-hours
+
+  - title: "Discussion of BIP54's timewarp fix and its impact on the 2106 block timestamp overflow issue"
+    url: /en/newsletters/2026/01/02/#relax-bip54-timestamp-restriction-for-2106-soft-fork
+
+  - title: "Bitcoin Core #35949 updates block template creation to follow BIP54's timewarp mitigation"
+    url: /en/newsletters/2026/09/11/#bitcoin-core-35949
+
+  - title: "Bounds on chain length with the BIP54 time warp fixes"
+    url: /en/newsletters/2026/10/02/#bounds-on-chain-length-with-bip54-time-warp-fixes
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

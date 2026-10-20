@@ -76,6 +76,123 @@ optech_mentions:
   - title: Report about quantum computing and Bitcoin
     url: /en/newsletters/2025/06/06/#quantum-computing-report
 
+  - title: "Prototype implementation of Winternitz signatures for Bitcoin using `OP_CAT`"
+    url: /en/newsletters/2025/07/04/#op-cat-enables-winternitz-signatures
+
+  - title: "Commit/reveal function for post-quantum recovery of insecure bitcoins"
+    url: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
+
+  - title: "Research indicates many Bitcoin primitives are compatible with quantum-resistant signatures"
+    url: /en/newsletters/2025/07/25/#research-indicates-common-bitcoin-primitives-are-compatible-with-quantum-resistant-signature-algorithms
+
+  - title: "Discussion about forcing migration from quantum-vulnerable outputs"
+    url: /en/newsletters/2025/08/01/#migration-from-quantum-vulnerable-outputs
+
+  - title: "Paper analyzes the security of taproot commitments against quantum computers"
+    url: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
+
+  - title: "SLH-DSA (SPHINCS) post-quantum signature optimizations"
+    url: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
+
+  - title: "Technical report of hash-based post-quantum signature schemes"
+    url: /en/newsletters/2026/01/02/#hash-based-signatures-for-bitcoin-s-post-quantum-future
+
+  - title: "Brassard-Høyer-Tapp (BHT) algorithm and Bitcoin"
+    url: /en/newsletters/2026/01/30/#brassard-hoyer-tapp-bht-algorithm-and-bitcoin-bip360
+
+  - title: "SHRINCS: 324-byte stateful post-quantum signatures with static backups"
+    url: /en/newsletters/2026/02/06/#shrincs-324-byte-stateful-post-quantum-signatures-with-static-backups
+
+  - title: "Falcon post-quantum signature scheme proposal"
+    url: /en/newsletters/2026/02/06/#falcon-post-quantum-signature-scheme-proposal
+
+  - title: "SLH-DSA verification can compete with ECC"
+    url: /en/newsletters/2026/02/06/#slh-dsa-verification-can-compete-with-ecc
+
+  - title: "Hourglass V2 proposal to limit P2PK spends"
+    url: /en/newsletters/2026/03/06/#hourglass-v2-update
+
+  - title: "Discussion of cryptographic algorithm agility in Bitcoin"
+    url: /en/newsletters/2026/03/06/#algorithm-agility-for-bitcoin
+
+  - title: "Discussion of the limits of cryptographic algorithm agility in Bitcoin"
+    url: /en/newsletters/2026/03/06/#the-limitations-of-cryptographic-agility-in-bitcoin
+
+  - title: "Compact Isogeny PQC can replace HD wallets, key-tweaking, silent payments"
+    url: /en/newsletters/2026/04/03/#compact-isogeny-pqc-can-replace-hd-wallets-key-tweaking-silent-payments
+
+  - title: "SHRIMPS: 2.5 KB post-quantum signatures across multiple stateful devices"
+    url: /en/newsletters/2026/04/03/#shrimps-2-5-kb-post-quantum-signatures-across-multiple-stateful-devices
+
+  - title: "BIPs #1895 publishes BIP361, a post-quantum migration and legacy signature deprecation proposal"
+    url: /en/newsletters/2026/04/24/#bips-1895
+
+  - title: "Post-quantum HD wallets with fallback SPHINCS keys"
+    url: /en/newsletters/2026/05/01/#post-quantum-hd-wallets-with-fallback-sphincs-keys
+
+  - title: "Discussion of a post-quantum output type"
+    url: /en/newsletters/2026/05/01/#discussion-of-a-post-quantum-output-type
+
+  - title: "Proposal to embed post-quantum keys in tapscript without consensus changes"
+    url: /en/newsletters/2026/05/01/#proposal-to-embed-post-quantum-keys-in-tapscript-without-consensus-changes
+
+  - title: "Post-quantum BIP86 recovery using zk-STARK proofs of BIP32 seeds"
+    url: /en/newsletters/2026/05/01/#post-quantum-bip86-recovery-using-zk-stark-proofs-of-bip32-seeds
+
+  - title: "A post-quantum path for BIP324"
+    url: /en/newsletters/2026/06/05/#a-post-quantum-path-for-bip324
+
+  - title: "Post-quantum Lightning discussion"
+    url: /en/newsletters/2026/06/05/#post-quantum-lightning-discussion
+
+  - title: "Quantum attack game theory"
+    url: /en/newsletters/2026/06/05/#quantum-attack-game-theory
+
+  - title: "BIPs #2198 makes one-path P2MR outputs unsafe to discourage omitting a post-quantum fallback leaf"
+    url: /en/newsletters/2026/06/26/#bips-2198
+
+  - title: "Benchmarking SLH-DSA STARK aggregation"
+    url: /en/newsletters/2026/07/03/#benchmarking-slh-dsa-stark-aggregation
+
+  - title: "Bird of Prey 2 (BoP-2) non-malleable schnorr and PQ signatures"
+    url: /en/newsletters/2026/07/03/#bird-of-prey-2-bop-2-non-malleable-schnorr-and-pq-signatures
+
+  - title: "Lattice-based signatures"
+    url: /en/newsletters/2026/07/03/#lattice-based-signatures
+
+  - title: "Triggering EC disabling with a NUMS point spend or hashrate majority"
+    url: /en/newsletters/2026/07/03/#triggering-ec-disabling-with-a-nums-point-spend-or-hashrate-majority
+
+  - title: "Segwit commitment to post-quantum witness data"
+    url: /en/newsletters/2026/08/07/#segwit-commitment-to-post-quantum-witness-data
+
+  - title: "PQC output type discussion"
+    url: /en/newsletters/2026/08/07/#pqc-output-type-discussion
+
+  - title: "Layered quantum recovery of hashed addresses"
+    url: /en/newsletters/2026/08/07/#layered-quantum-recovery-of-hashed-addresses
+
+  - title: "libshrincs, a formally verified hash-based signature implementation"
+    url: /en/newsletters/2026/08/21/#libshrincs-formally-verified-hash-based-signatures
+
+  - title: "Continued discussion of PQC output types"
+    url: /en/newsletters/2026/09/04/#continued-discussion-of-pqc-output-types
+
+  - title: "DropKick commit/reveal PQC rescue"
+    url: /en/newsletters/2026/09/04/#dropkick-commit-reveal-pqc-rescue
+
+  - title: "SHRINCS draft BIP"
+    url: /en/newsletters/2026/09/04/#shrincs-draft-bip
+
+  - title: "PQLN proposal for post-quantum security of Lightning Network offchain protocols"
+    url: /en/newsletters/2026/09/25/#proposal-for-a-post-quantum-lightning-network
+
+  - title: "Continued discussion of PQC output types"
+    url: /en/newsletters/2026/10/02/#continued-discussion-of-pqc-output-types
+
+  - title: "Block-wide aggregation of hash-based post-quantum signatures via SNARKs"
+    url: /en/newsletters/2026/10/02/#block-wide-signature-aggregation-via-snarks
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

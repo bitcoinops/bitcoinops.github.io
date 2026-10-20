@@ -90,7 +90,7 @@ optech_mentions:
   - title: "Bitcoin Core #19937 adds utilities for mining signet blocks"
     url: /en/newsletters/2021/01/20/#bitcoin-core-19937
 
-  - title: "Discussion about multiple signet compatibilty with soft fork activation"
+  - title: "Discussion about multiple signet compatibility with soft fork activation"
     url: /en/newsletters/2021/04/14/#taproot-activation-discussion
 
   - title: "LND #5025 adds basic support for using signet"
@@ -125,6 +125,12 @@ optech_mentions:
 
   - title: "Post and website examining soft fork testing on the default signet"
     url: /en/newsletters/2024/11/22/#signet-activity-report
+
+  - title: "BIP54 demonstration of slow blocks on signet"
+    url: /en/newsletters/2026/05/01/#bip54-demonstration-of-slow-blocks-on-signet
+
+  - title: "Bitcoin Core #34566 adds per-signet data directories for custom signets"
+    url: /en/newsletters/2026/09/25/#bitcoin-core-34566
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

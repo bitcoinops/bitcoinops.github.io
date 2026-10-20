@@ -52,10 +52,10 @@ disponible sur notre page de [podcasts][podcast].
 
 ## もっと知りたいですか？
 
-このニュースレターで言及されたトピックについてもっと議論したい方は、 （ニュース
-レターが公開された翌日の）木曜日の{{recap_formatted_time_utc}} UTCから
-[Riverside.fm][]で毎週開催されているBitcoin Optech Recapにご参加ください。この議
-論は録画もされ、[ポッドキャスト][podcast]ページからご覧いただけます。
+このニュースレターで言及されたトピックについてもっと議論したい方は、
+{{recap_formatted_time_utc}} UTCに
+[Riverside.fm][]で毎週配信されているBitcoin Optech Recapにご参加ください。
+この議論は録画もされ、[ポッドキャスト][podcast]ページからご覧いただけます。
 
 {% when "zh" %}
 

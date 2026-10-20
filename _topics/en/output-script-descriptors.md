@@ -200,6 +200,42 @@ optech_mentions:
   - title: "New library for encrypting descriptors and miniscript to the included public keys"
     url: /en/newsletters/2025/06/13/#descriptor-encryption-library
 
+  - title: "New library for compressing descriptors and miniscript"
+    url: /en/newsletters/2025/07/11/#compressed-descriptors
+
+  - title: "Brainstorming how to use output script descriptors for CTV-style vaults"
+    url: /en/newsletters/2025/07/04/#vault-output-script-descriptor
+
+  - title: "Draft BIP for silent payment descriptors"
+    url: /en/newsletters/2026/01/09/#draft-bip-for-silent-payment-descriptors
+
+  - title: "Draft BIP for output script descriptor annotations"
+    url: /en/newsletters/2026/02/27/#draft-bip-for-output-script-descriptor-annotations
+
+  - title: "BIPs #2047 publishes BIP392, defining a descriptor format for silent payments"
+    url: /en/newsletters/2026/03/13/#bips-2047
+
+  - title: "BIPs #2099 publishes BIP393, an optional annotation syntax for output script descriptors"
+    url: /en/newsletters/2026/04/10/#bips-2099
+
+  - title: "BIPs #1548 adds BIP391, a closed specification for Binary Output Descriptors superseded by BIP393"
+    url: /en/newsletters/2026/05/01/#bips-1548
+
+  - title: "Migrating a legacy wallet to a descriptor wallet on a pruned node"
+    url: /en/newsletters/2026/07/31/#what-is-the-quickest-method-for-migrating-a-legacy-wallet-to-a-descriptor-wallet-on-a-pruned-node
+
+  - title: "Draft BIP for the rawtr() output script descriptor"
+    url: /en/newsletters/2026/08/21/#draft-bip-for-rawtr-output-script-descriptor
+
+  - title: "Draft BIP for specifying unspendable taproot internal keys in wallet policies"
+    url: /en/newsletters/2026/09/18/#new-bip-draft-for-unspendable-internal-keys
+
+  - title: "BIPs #1951 adds BIP138 compact encryption scheme for descriptor and wallet policy backups"
+    url: /en/newsletters/2026/09/25/#bips-1951
+
+  - title: "Proposal to derive wallet label sync storage locations and encryption keys from descriptors"
+    url: /en/newsletters/2026/10/02/#proposal-for-wallet-label-synchronization
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

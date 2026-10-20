@@ -86,6 +86,9 @@ optech_mentions:
   - title: "Bitcoin Core #29850 limits the max number of IP addresses accepted from an individual DNS seed"
     url: /en/newsletters/2024/04/24/#bitcoin-core-29850
 
+  - title: "Bitcoin Core #28463 raises default connection limit, reserves inbound slots for block-relay peers"
+    url: /en/newsletters/2026/07/31/#bitcoin-core-28463
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anonymity networks

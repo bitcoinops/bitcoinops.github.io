@@ -65,6 +65,9 @@ optech_mentions:
   - title: "LND #8390 introduces support for setting and relaying an experimental HTLC endorsement"
     url: /en/newsletters/2024/12/06/#lnd-8390
 
+  - title: "Eclair #2716 implements a reputation system for HTLC endorsement that tracks per-peer routing fees"
+    url: /en/newsletters/2025/07/18/#eclair-2716
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel jamming attacks

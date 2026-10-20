@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Kraken announces proof of reserves scheme"
     url: /en/newsletters/2022/02/16/#kraken-announces-proof-of-reserves-scheme
 
+  - title: "Proof of concept for a zero-knowledge proof of reserves"
+    url: /en/newsletters/2026/07/31/#proof-of-concept-for-a-zero-knowledge-proof-of-reserves
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP322 signature proofs

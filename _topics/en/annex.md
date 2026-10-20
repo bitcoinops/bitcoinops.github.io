@@ -35,6 +35,12 @@ optech_mentions:
   - title: Plan to begin relaying transactions with certain taproot annexes in Libre Relay
     url: /en/newsletters/2025/03/28/#plan-to-relay-certain-taproot-annexes
 
+  - title: "Proposed `OP_TEMPLATEHASH` would commit to transaction details, including annex"
+    url: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
+
+  - title: "Proposal to use the annex for opt-in replay protection against forks"
+    url: /en/newsletters/2026/08/28/#discussion-on-universal-opt-in-replay-protection
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

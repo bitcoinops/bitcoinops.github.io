@@ -41,7 +41,7 @@ optech_mentions:
   - title: "2021 year-in-review: onion messages"
     url: /en/newsletters/2021/12/22/#offers
 
-  - title: "Eclair #2099 adds onion message configuration option for controling when to relay messages"
+  - title: "Eclair #2099 adds onion message configuration option for controlling when to relay messages"
     url: /en/newsletters/2022/01/05/#eclair-2099
 
   - title: "Eclair #2117 adds onion message replies in preparation for supporting offers"
@@ -97,6 +97,21 @@ optech_mentions:
 
   - title: "Eclair #2865 enables waking up a disconnected mobile peer for async payments or onion messages"
     url: /en/newsletters/2024/09/06/#eclair-2865
+
+  - title: "Discussion about separating onion message relay from HTLC relay"
+    url: /en/newsletters/2025/07/04/#separating-onion-message-relay-from-htlc-relay
+
+  - title: "Discussion of onion message jamming and mitigation techniques"
+    url: /en/newsletters/2026/04/24/#onion-message-jamming-in-the-lightning-network
+
+  - title: "LND #10612 adds graph-based pathfinding for onion messages"
+    url: /en/newsletters/2026/05/15/#lnd-10612
+
+  - title: "BOLTs #1343 adds a feature bit for accepting onion messages only from channel peers"
+    url: /en/newsletters/2026/07/31/#bolts-1343
+
+  - title: "Eclair #3342 implements the `option_onion_messages_only_channels` feature bit"
+    url: /en/newsletters/2026/08/28/#eclair-3342
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

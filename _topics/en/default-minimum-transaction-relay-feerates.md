@@ -29,7 +29,7 @@ optech_mentions:
   - title: Discussion about lowering the default minimum relay feerate
     url: /en/newsletters/2018/07/10/#discussion-min-fee-discussion-about-minimum-relay-fee
 
-  - title: Accidentially creating transaction below the default min relay feerate
+  - title: Accidentally creating transaction below the default min relay feerate
     url: /en/newsletters/2018/07/10/#unrelayable-transactions
 
   - title: "Bitcoin Core #16507 fixes a rounding issue related to the minimum relay feerate"
@@ -43,6 +43,12 @@ optech_mentions:
 
   - title: Renewed discussion about lowering the default minimum transaction relay feerate
     url: /en/newsletters/2025/02/07/#discussion-about-lowering-the-minimum-transaction-relay-feerate
+
+  - title: Continued discussion about lowering the default minimum transaction relay feerate
+    url: /en/newsletters/2025/08/08/#continued-discussion-about-lowering-the-minimum-relay-feerate
+
+  - title: "Bitcoin Core #33106 lowers the default minimum relay fee from 1 sat/vbyte to 0.1 sat/vbyte"
+    url: /en/newsletters/2025/08/22/#bitcoin-core-33106
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -62,6 +62,9 @@ optech_mentions:
   - title: "Core Lightning #6869 updates the listchannels RPC to no longer list unannounced channels"
     url: /en/newsletters/2024/01/03/#core-lightning-6869
 
+  - title: "LDK #5028 makes SCID alias-only forwarding the default for unannounced channels"
+    url: /en/newsletters/2026/10/09/#ldk-5028
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

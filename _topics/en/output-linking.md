@@ -81,6 +81,9 @@ optech_mentions:
   - title: "Proposed scheme to prevent BIP32 path reuse to avoid output linking and other problems"
     url: /en/newsletters/2025/05/09/#avoiding-bip32-path-reuse
 
+  - title: "Discussion of dust attack mitigations"
+    url: /en/newsletters/2026/02/06/#discussion-of-dust-attack-mitigations
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs (dust)

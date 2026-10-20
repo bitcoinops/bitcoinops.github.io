@@ -117,6 +117,15 @@ optech_mentions:
   - title: "BIPs #1483 merges BIP77 which proposes payjoin v2, an asynchronous serverless variant"
     url: /en/newsletters/2025/06/06/#bips-1483
 
+  - title: "Wallet fingerprinting risks for payjoin privacy"
+    url: /en/newsletters/2026/04/03/#wallet-fingerprinting-risks-for-payjoin-privacy
+
+  - title: "BIPs #2186 updates BIP77 to specify how a payjoin v2 receiver replies to a BIP78-compatible sender"
+    url: /en/newsletters/2026/06/12/#bips-2186
+
+  - title: "Payjoin Dev Kit (rust-payjoin) 1.0.0 released"
+    url: /en/newsletters/2026/08/21/#payjoin-dev-kit-rust-payjoin-1-0-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
@@ -125,9 +134,11 @@ see_also:
   - title: Pay To EndPoint
     link: https://medium.com/@nopara73/pay-to-endpoint-56eb05d3cac6
   - title: Payjoin
-    link: https://joinmarket.me/blog/blog/payjoin/
+    link: https://web.archive.org/web/20210802002747/https://joinmarket.me/blog/blog/payjoin/
   - title: Payjoin (Bitcoin Wiki)
     link: https://en.bitcoin.it/wiki/PayJoin
+  - title: "Payjoin (LearnBitcoin glossary)"
+    link: https://www.learnbitcoin.com/glossary/payjoin
 ---
 By including inputs from both the spender and the receiver, payjoin
 makes it difficult for block chain analysis companies to determine

@@ -86,6 +86,21 @@ optech_mentions:
   - title: "Rust Bitcoin #3792 adds support for encoding and decoding BIP324 messages"
     url: /en/newsletters/2025/01/17/#rust-bitcoin-3792
 
+  - title: "Traffic shaping with BIP324"
+    url: /en/newsletters/2026/02/27/#is-bitcoin-bip324-v2-p2p-transport-distinguishable-from-random-traffic
+
+  - title: "Bitcoin Core #35766 defaults to v2 transport when connecting to addresses from seeds"
+    url: /en/newsletters/2026/07/24/#bitcoin-core-35766
+
+  - title: "Why use ElligatorSwift encoding in BIP324?"
+    url: /en/newsletters/2026/07/31/#why-use-elligatorswift-encoding-in-bip324
+
+  - title: "Rust Bitcoin #6364 adds P2P encoding for BIP434 feature messages"
+    url: /en/newsletters/2026/08/07/#rust-bitcoin-6364
+
+  - title: "Draft BIP for dynamic one-byte message type IDs over BIP324"
+    url: /en/newsletters/2026/10/09/#dynamic-one-byte-message-type-ids-for-bip324
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151

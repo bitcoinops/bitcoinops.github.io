@@ -97,6 +97,18 @@ optech_mentions:
   - title: "Relay censorship resistance using cluster mempool and efficient set reconciliation"
     url: /en/newsletters/2025/06/13/#relay-censorship-resistance-through-top-mempool-set-reconciliation
 
+  - title: "Bitcoin Core #31553 adds block reorg handling to the cluster mempool project"
+    url: /en/newsletters/2025/07/18/#bitcoin-core-31553
+
+  - title: "Bitcoin Core #32545 updates cluster mempool to use a spanning-forest linearization algorithm"
+    url: /en/newsletters/2026/01/02/#bitcoin-core-32545
+
+  - title: "Bitcoin Core #34616 introduces a more accurate cost model for spanning-forest linearization"
+    url: /en/newsletters/2026/03/06/#bitcoin-core-34616
+
+  - title: "Bitcoin Core #34075 uses chunk feerates for mempool-based fee estimation"
+    url: /en/newsletters/2026/08/28/#bitcoin-core-34075
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay

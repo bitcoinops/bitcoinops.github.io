@@ -40,6 +40,9 @@ optech_mentions:
   - title: "Discussion of free relay related to replace-by-feerate proposals"
     url: /en/newsletters/2024/07/26/#free-relay-and-replace-by-feerate
 
+  - title: "Input-triggered transaction expiry"
+    url: /en/newsletters/2026/08/07/#input-triggered-transaction-expiry
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

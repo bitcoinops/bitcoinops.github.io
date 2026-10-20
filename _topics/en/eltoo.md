@@ -60,7 +60,7 @@ optech_mentions:
   - title: Eltoo demo implementation with new blog post overview
     url: /en/newsletters/2021/09/01/#eltoo-example-channel
 
-  - title: "Inherited identifiers proposal with an alternative channel commiment mechanism to eltoo"
+  - title: Inherited identifiers proposal with an alternative channel commitment mechanism to eltoo
     url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
 
   - title: "LN PTLC proposal providing some of the same benefits of eltoo without a soft fork"
@@ -92,6 +92,12 @@ optech_mentions:
 
   - title: "Summary and criticism of CTV + CSFS benefits for LN-Symmetry"
     url: /en/newsletters/2025/04/04/#ln-symmetry
+
+  - title: "LN-Symmetry update"
+    url: /en/newsletters/2026/01/30/#ln-symmetry-update
+
+  - title: "Input-triggered transaction expiry"
+    url: /en/newsletters/2026/08/07/#input-triggered-transaction-expiry
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

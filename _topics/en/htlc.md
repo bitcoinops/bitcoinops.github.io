@@ -102,6 +102,9 @@ optech_mentions:
   - title: "BOLTs #1233 adds recommendation to never fail an HTLC upstream if the node knows the preimage"
     url: /en/newsletters/2025/03/21/#bolts-1233
 
+  - title: "Input-triggered transaction expiry"
+    url: /en/newsletters/2026/08/07/#input-triggered-transaction-expiry
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contracts from Bitcoin Wiki

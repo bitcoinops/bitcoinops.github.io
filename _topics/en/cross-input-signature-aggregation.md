@@ -42,6 +42,18 @@ optech_mentions:
   - title: "DahLIAS interactive aggregate signatures for secp256k1"
     url: /en/newsletters/2025/04/25/#interactive-aggregate-signatures-compatible-with-secp256k1
 
+  - title: "Post-quantum signature aggregation"
+    url: /en/newsletters/2025/11/07/#post-quantum-signature-aggregation
+
+  - title: "Draft BIP for full aggregation of BIP340 signatures"
+    url: /en/newsletters/2026/07/24/#draft-bip-for-full-aggregation-of-bip340-signatures
+
+  - title: "CISA for taproot keypath spends (BIP460)"
+    url: /en/newsletters/2026/08/07/#cisa-for-taproot-keypath-spends-bip460
+
+  - title: "Discussion of whether to bundle CISA with a post-quantum P2TRv2 output type"
+    url: /en/newsletters/2026/10/02/#continued-discussion-of-pqc-output-types
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

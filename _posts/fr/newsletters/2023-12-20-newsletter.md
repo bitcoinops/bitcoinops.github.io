@@ -787,7 +787,7 @@ mercredi 3 janvier.*
 [oct pss]: /fr/newsletters/2023/10/04/#division-et-commutation-des-paiements
 [oct sidepool]: /fr/newsletters/2023/10/04/#liquidite-mutualisee-pour-ln
 [oct txhash]: /fr/newsletters/2023/10/11/#specification-pour-op-txhash-proposee
-[policy series]: /fr/blog//waiting-for-confirmation/
+[policy series]: /fr/blog/waiting-for-confirmation/
 [sep lnscale]: /fr/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
 [sep secp]: /fr/newsletters/2023/09/06/#libsecp256k1-0-4-0
 [sept compress]: /fr/newsletters/2023/09/06/#compression-des-transactions-bitcoin

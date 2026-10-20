@@ -107,6 +107,18 @@ optech_mentions:
   - title: "Proposed CTV enhancement opcodes for more flexible vaults and accountable computing"
     url: /en/newsletters/2025/01/03/#ctv-enhancement-opcodes
 
+  - title: "Brainstorming how to use output script descriptors for CTV-style vaults"
+    url: /en/newsletters/2025/07/04/#vault-output-script-descriptor
+
+  - title: "Comparison of vaults created with presigned transactinos, CTV, or other methods"
+    url: /en/newsletters/2025/07/04/#limits-of-ctv-only-vault-support
+
+  - title: "CTV-only vault proof of concept"
+    url: /en/newsletters/2026/06/05/#ctv-only-vault-proof-of-concept
+
+  - title: "Report comparing vault constructions using presigned transactions, CTV, APO, TXHASH, CCV, and CAT"
+    url: /en/newsletters/2026/10/02/#comparing-covenant-proposals-for-vaults
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

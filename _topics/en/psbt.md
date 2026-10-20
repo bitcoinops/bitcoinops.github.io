@@ -240,6 +240,30 @@ optech_mentions:
   - title: "PSBTv2 integration testing, merklized PSBTv2, and silent payments PSBTv2"
     url: /en/newsletters/2025/01/24/#psbtv2-integration-testing
 
+  - title: "Extensions to tooling, including PSBTs, for TEMPLATEHASH-CSFS-IK support"
+    url: /en/newsletters/2026/03/06/#extensions-to-standard-tooling-for-templatehash-csfs-ik-support
+
+  - title: "BIPs #2089 publishes BIP376, defining new PSBTv2 fields for BIP352 tweak data"
+    url: /en/newsletters/2026/04/17/#bips-2089
+
+  - title: "Bitcoin Core #21283 implements BIP370 PSBTv2 support"
+    url: /en/newsletters/2026/05/08/#bitcoin-core-21283
+
+  - title: "BIPs #2075 clarifies BIP174's description of how PSBTs are combined"
+    url: /en/newsletters/2026/07/24/#bips-2075
+
+  - title: "Bitcoin Core #33014 verifies signatures before reporting a PSBT complete"
+    url: /en/newsletters/2026/07/31/#bitcoin-core-33014
+
+  - title: "BTCPay Server #7488 improves PSBT signing compatibility with signing devices"
+    url: /en/newsletters/2026/08/07/#btcpay-server-7488
+
+  - title: "Bitcoin Core #36076 preserves sighash type when combining PSBTs"
+    url: /en/newsletters/2026/09/18/#bitcoin-core-36076
+
+  - title: "Discussion of broader inter-wallet communication spec covering PSBTs"
+    url: /en/newsletters/2026/10/02/#proposal-for-wallet-label-synchronization
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

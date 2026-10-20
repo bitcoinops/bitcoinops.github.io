@@ -82,6 +82,9 @@ optech_mentions:
   - title: "LN developer discussion of upgrade paths to using PTLCs"
     url: /en/newsletters/2024/10/18/#ptlcs
 
+  - title: "Claim that `OP_CTV` and `OP_CSFS` would provide advantages for using PTLCs"
+    url: /en/newsletters/2025/07/04/#ctv-csfs-advantages-for-ptlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)

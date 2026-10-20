@@ -248,6 +248,15 @@ optech_mentions:
   - title: "Core Lightning #7800 sets P2TR as the default script for anchor output spends and unilateral closes"
     url: /en/newsletters/2024/11/22/#core-lightning-7800
 
+  - title: "Paper analyzes the security of taproot commitments against quantum computers"
+    url: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
+
+  - title: "Rust Bitcoin #6642 applies 4 MB size limit to each transaction witness element"
+    url: /en/newsletters/2026/08/07/#rust-bitcoin-6642
+
+  - title: "BIPs #2277 removes an erroneous BIP371 instruction to delete derivation data during finalization"
+    url: /en/newsletters/2026/10/02/#bips-2276
+
 ## Optional
 see_also:
   - title: MAST

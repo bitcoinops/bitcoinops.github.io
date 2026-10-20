@@ -115,6 +115,9 @@ optech_mentions:
   - title: "DNS seeding for nodes on anonymity networks"
     url: /en/newsletters/2024/09/20/#dns-seeding-for-non-ip-addresses
 
+  - title: "Fingerprinting nodes on anonymity networks using P2P addr messages"
+    url: /en/newsletters/2025/06/27/#fingerprinting-nodes-using-addr-messages
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion

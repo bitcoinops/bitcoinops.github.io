@@ -115,11 +115,14 @@ for details --> {% endcomment %}
 [BIP86]: https://github.com/bitcoin/bips/blob/master/bip-0086.mediawiki
 [BIP87]: https://github.com/bitcoin/bips/blob/master/bip-0087.mediawiki
 [BIP88]: https://github.com/bitcoin/bips/blob/master/bip-0088.mediawiki
+[bip89]: https://github.com/bitcoin/bips/blob/master/bip-0089.mediawiki
 [BIP90]: https://github.com/bitcoin/bips/blob/master/bip-0090.mediawiki
 [BIP91]: https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki
 [BIP93]: https://github.com/bitcoin/bips/blob/master/bip-0093.mediawiki
 [BIP94]: https://github.com/bitcoin/bips/blob/master/bip-0094.mediawiki
+[BIP95]: https://github.com/bitcoin/bips/blob/master/bip-0095.md
 [BIP103]: https://github.com/bitcoin/bips/blob/master/bip-0103.mediawiki
+[BIP110]: https://github.com/bitcoin/bips/blob/master/bip-0110.mediawiki
 [BIP111]: https://github.com/bitcoin/bips/blob/master/bip-0111.mediawiki
 [BIP112]: https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki
 [BIP113]: https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki
@@ -130,11 +133,13 @@ for details --> {% endcomment %}
 [BIP119]: https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki
 [BIP125]: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki
 [BIP127]: https://github.com/bitcoin/bips/blob/master/bip-0127.mediawiki
+[BIP128]: https://github.com/bitcoin/bips/blob/master/bip-0128.mediawiki
 [BIP129]: https://github.com/bitcoin/bips/blob/master/bip-0129.mediawiki
 [BIP130]: https://github.com/bitcoin/bips/blob/master/bip-0130.mediawiki
 [BIP133]: https://github.com/bitcoin/bips/blob/master/bip-0133.mediawiki
 [BIP136]: https://github.com/bitcoin/bips/blob/master/bip-0136.mediawiki
 [BIP137]: https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki
+[BIP138]: https://github.com/bitcoin/bips/blob/master/bip-0138.md
 [BIP140]: https://github.com/bitcoin/bips/blob/master/bip-0140.mediawiki
 [BIP141]: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki
 [BIP143]: https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki
@@ -163,6 +168,7 @@ for details --> {% endcomment %}
 [BIP320]: https://github.com/bitcoin/bips/blob/master/bip-0320.mediawiki
 [BIP321]: https://github.com/bitcoin/bips/blob/master/bip-0321.mediawiki
 [BIP322]: https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki
+[BIP323]: https://github.com/bitcoin/bips/blob/master/bip-0323.mediawiki
 [BIP324]: https://github.com/bitcoin/bips/blob/master/bip-0324.mediawiki
 [BIP325]: https://github.com/bitcoin/bips/blob/master/bip-0325.mediawiki
 [BIP326]: https://github.com/bitcoin/bips/blob/master/bip-0326.mediawiki
@@ -178,6 +184,7 @@ for details --> {% endcomment %}
 [BIP341]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki
 [BIP342]: https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki
 [BIP345]: https://github.com/bitcoin/bips/blob/master/bip-0345.mediawiki
+[BIP346]: https://github.com/bitcoin/bips/blob/master/bip-0346.md
 [BIP347]: https://github.com/bitcoin/bips/blob/master/bip-0347.mediawiki
 [BIP348]: https://github.com/bitcoin/bips/blob/master/bip-0348.md
 [BIP349]: https://github.com/bitcoin/bips/blob/master/bip-0349.md
@@ -185,12 +192,14 @@ for details --> {% endcomment %}
 [BIP351]: https://github.com/bitcoin/bips/blob/master/bip-0351.mediawiki
 [BIP352]: https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki
 [BIP353]: https://github.com/bitcoin/bips/blob/master/bip-0353.mediawiki
+[BIP361]: https://github.com/bitcoin/bips/blob/master/bip-0361.mediawiki
 [BIP370]: https://github.com/bitcoin/bips/blob/master/bip-0370.mediawiki
 [BIP371]: https://github.com/bitcoin/bips/blob/master/bip-0371.mediawiki
 [BIP372]: https://github.com/bitcoin/bips/blob/master/bip-0372.mediawiki
 [BIP373]: https://github.com/bitcoin/bips/blob/master/bip-0373.mediawiki
 [BIP374]: https://github.com/bitcoin/bips/blob/master/bip-0374.mediawiki
 [BIP375]: https://github.com/bitcoin/bips/blob/master/bip-0375.mediawiki
+[BIP376]: https://github.com/bitcoin/bips/blob/master/bip-0376.mediawiki
 [BIP379]: https://github.com/bitcoin/bips/blob/master/bip-0379.md
 [BIP380]: https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki
 [BIP381]: https://github.com/bitcoin/bips/blob/master/bip-0381.mediawiki
@@ -203,8 +212,22 @@ for details --> {% endcomment %}
 [BIP388]: https://github.com/bitcoin/bips/blob/master/bip-0388.mediawiki
 [BIP389]: https://github.com/bitcoin/bips/blob/master/bip-0389.mediawiki
 [BIP390]: https://github.com/bitcoin/bips/blob/master/bip-0390.mediawiki
+[BIP391]: https://github.com/bitcoin/bips/blob/master/bip-0391.mediawiki
+[BIP392]: https://github.com/bitcoin/bips/blob/master/bip-0392.mediawiki
+[BIP393]: https://github.com/bitcoin/bips/blob/master/bip-0393.mediawiki
 [BIP431]: https://github.com/bitcoin/bips/blob/master/bip-0431.mediawiki
+[BIP434]: https://github.com/bitcoin/bips/blob/master/bip-0434.md
+[BIP433]: https://github.com/bitcoin/bips/blob/master/bip-0433.mediawiki
+[BIP440]: https://github.com/bitcoin/bips/blob/master/bip-0440.mediawiki
+[BIP441]: https://github.com/bitcoin/bips/blob/master/bip-0441.mediawiki
+[BIP442]: https://github.com/bitcoin/bips/blob/master/bip-0442.md
 [BIP443]: https://github.com/bitcoin/bips/blob/master/bip-0443.mediawiki
+[BIP446]: https://github.com/bitcoin/bips/blob/master/bip-0446.md
+[BIP448]: https://github.com/bitcoin/bips/blob/master/bip-0448.md
+[BIP449]: https://github.com/bitcoin/bips/blob/master/bip-0449.md
+[BIP450]: https://github.com/bitcoin/bips/blob/master/bip-0450.mediawiki
+[BIP451]: https://github.com/bitcoin/bips/blob/master/bip-0451.md
+[BIP461]: https://github.com/bitcoin/bips/blob/master/bip-0461.md
 
 {% for i in (1..10) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}
@@ -251,3 +274,4 @@ version of BitcoinCore.org's RPC docs-->{% endcomment %}
 [rpc listtransactions]: {{rpc_prefix}}/wallet/listtransactions/
 [rpc scantxoutset]:   {{rpc_prefix}}/blockchain/scantxoutset/
 [rpc verifytxoutproof]:   {{rpc_prefix}}/blockchain/verifytxoutproof/
+[BIP332]: https://github.com/bitcoin/bips/blob/master/bip-0332.md

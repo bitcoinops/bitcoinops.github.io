@@ -70,6 +70,12 @@ optech_mentions:
   - title: "Channel factories may make more payments feasible and reduce the rate of channel depletion"
     url: /en/newsletters/2024/12/13/#insights-into-channel-depletion
 
+  - title: "Using Ark as a channel factory"
+    url: /en/newsletters/2026/01/09/#using-ark-as-a-channel-factory
+
+  - title: "Superscalar implementation announced"
+    url: /en/newsletters/2026/08/21/#superscalar-implementation-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "LN-Symmetry (Eltoo)"

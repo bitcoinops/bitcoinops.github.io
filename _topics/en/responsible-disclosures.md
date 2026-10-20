@@ -167,6 +167,50 @@ optech_mentions:
   - title: "Ruben Somsen responsibly disclosed a theoretical BIP30 consensus failure vulnerability"
     url: /en/newsletters/2025/05/09/#bip30-consensus-failure-vulnerability
 
+  - title: "Matt Morehouse responsibly disclosed a DoS vulnerability affecting LND"
+    url: /en/newsletters/2025/07/25/#lnd-gossip-filter-dos-vulnerability
+
+  - title: "Niklas Gögge responsibly disclosed a disk filling vulnerability in Bitcoin Core"
+    url: /en/newsletters/2025/10/31/#disk-filling-from-spoofed-self-connections
+    date: 2022-03-16
+
+  - title: "Niklas Gögge responsibly disclosed an invalid block disk filling vulnerability in Bitcoin Core"
+    url: /en/newsletters/2025/10/31/#disk-filling-from-invalid-blocks
+    date: 2022-05-16
+
+  - title: "Pieter Wuille responsibly disclosed an unlikely 32-bit crash vulnerability in Bitcoin Core"
+    url: /en/newsletters/2025/10/31/#highly-unlikely-remote-crash-on-32-bit-systems
+    date: 2025-04-24
+
+  - title: "Antoine Poinsot responsibly disclosed a CPU-wasting DoS vulnerability in Bitcoin Core"
+    url: /en/newsletters/2025/10/31/#cpu-dos-from-unconfirmed-transaction-processing
+    date: 2025-04-25
+
+  - title: "Cory Fields responsibly disclosed a script interpreter remote crash vulnerability in Bitcoin Core"
+    url: /en/newsletters/2026/05/15/#bitcoin-core-script-interpreter-remote-crash-disclosure
+    date: 2025-11-02
+
+  - title: "Chandra Pratap responsibly disclosed an assertion DoS vulnerability affecting Core Lightning"
+    url: /en/newsletters/2026/05/29/#core-lightning-assertion-dos-disclosure
+
+  - title: "Nishant Bansal responsibly disclosed a gossip DoS vulnerability affecting LND"
+    url: /en/newsletters/2026/06/26/#lnd-zero-timestamp-gossip-dos-disclosure
+
+  - title: "Chandra Pratap disclosed two memory-exhaustion DoS vulnerabilities in Core Lightning"
+    url: /en/newsletters/2026/07/31/#disclosure-of-two-dos-vulnerabilities-in-core-lightning
+
+  - title: "Bastien Teinturier disclosed a reorg vulnerability in LND channel closes"
+    url: /en/newsletters/2026/08/21/#reorg-vulnerability-in-lnd-channel-closes
+
+  - title: "Erick Cestari disclosed a ping-flood memory-exhaustion DoS vulnerability in Core Lightning"
+    url: /en/newsletters/2026/09/04/#responsible-disclosure-of-a-denial-of-service-vulnerability-in-cln
+
+  - title: "Matt Morehouse disclosed two DoS vulnerabilities in Eclair"
+    url: /en/newsletters/2026/10/02/#disclosure-of-two-dos-vulnerabilities-in-eclair
+
+  - title: "Erick Cestari and Matt Morehouse disclosed two DoS vulnerabilities in Eclair's channel opening"
+    url: /en/newsletters/2026/10/16/#disclosure-of-two-dos-vulnerabilities-fixed-in-eclair-v0-14-1
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
