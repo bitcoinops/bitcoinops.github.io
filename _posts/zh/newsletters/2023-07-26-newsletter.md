@@ -76,11 +76,11 @@ lang: zh
 {% include linkers/issues.md v=2 issues="740,1096" %}
 [russell closing]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004013.html
 [kc notes]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004014.html
-[news193 gossip]: /en/newsletters/2022/03/30/#continued-discussion-about-updated-ln-gossip-protocol
+[news193 gossip]: /zh/newsletters/2022/03/30/#continued-discussion-about-updated-ln-gossip-protocol
 [news204 gossip]: /zh/newsletters/2022/06/15/#gossip-network-updates
-[news86 boomerang]: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
+[news86 boomerang]: /zh/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
 [news226 jamming]: /zh/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
-[news120 commitments]: /en/newsletters/2020/10/21/#simplified-htlc-negotiation
+[news120 commitments]: /zh/newsletters/2020/10/21/#simplified-htlc-negotiation
 [hwi 2.3.0]: https://github.com/bitcoin-core/HWI/releases/tag/2.3.0
 [ldk 0.0.116]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.116
 [news239 codex32]: /zh/newsletters/2023/02/22/#codex32-bip

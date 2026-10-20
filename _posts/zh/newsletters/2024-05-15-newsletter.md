@@ -66,8 +66,8 @@ Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (
 {% include linkers/issues.md v=2 issues="1525,1567,1389,2707,1518,7111,29845" %}
 [lnd v0.18.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.0-beta.rc2
 [mb3e byte order]: https://github.com/bitcoinbook/bitcoinbook/blob/6d1c26e1640ae32b28389d5ae4caf1214c2be7db/ch06_transactions.adoc#internal_and_display_order
-[news200 policies]: /en/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
-[news191 multi_a]: /en/newsletters/2022/03/16/#bitcoin-core-24043
+[news200 policies]: /zh/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
+[news191 multi_a]: /zh/newsletters/2022/03/16/#bitcoin-core-24043
 [news227 multi_a]: /zh/newsletters/2022/11/23/#how-do-i-create-a-taproot-multisig-address-taproot
 [news273 multi_a]: /zh/newsletters/2023/10/18/#bitcoin-core-27255
 [news274 op_cat]: /zh/newsletters/2023/10/25/#proposed-bip-for-op-cat-op-cat-bip
@@ -82,5 +82,5 @@ Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (
 [collision attack]: https://en.wikipedia.org/wiki/Collision_attack
 [rss feed]: /feed.xml
 [ldk v0.0.123]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.123
-[news25 cln check]: /en/newsletters/2018/12/11/#c-lightning-2123
-[news47 cln check]: /en/newsletters/2019/05/21/#c-lightning-2631
+[news25 cln check]: /zh/newsletters/2018/12/11/#c-lightning-2123
+[news47 cln check]: /zh/newsletters/2019/05/21/#c-lightning-2631

@@ -90,7 +90,7 @@ lang: zh
 [towns wots]: https://delvingbitcoin.org/t/winternitz-one-time-signatures-contrasting-between-lisp-and-script/1255
 [nick wots]: https://x.com/n1ckler/status/1854552545084977320
 [towns earmarks]: https://delvingbitcoin.org/t/flexible-coin-earmarks/1275
-[news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
+[news166 tluv]: /zh/newsletters/2021/09/15/#covenant-opcode-proposal
 [towns badcov]: https://gnusha.org/pi/bitcoindev/20220719044458.GA26986@erisian.com.au/
 [core lightning 24.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v24.11rc2
 [bdk 0.30.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.30.0

@@ -90,7 +90,7 @@ Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2867,8730,3098,3078,3082,3103,3037,29325" %}
 [news304 sp-psbt]: /zh/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments-psbt
-[news58 variable onions]: /en/newsletters/2019/08/07/#bolts-619
+[news58 variable onions]: /zh/newsletters/2019/08/07/#bolts-619
 [morehouse onion]: https://delvingbitcoin.org/t/dos-disclosure-lnd-onion-bomb/979
 [bcc 27.1]: /zh/newsletters/2024/06/14/#bitcoin-core-27-1
 [bitcoin core 26.2rc1]: https://bitcoincore.org/bin/bitcoin-core-26.2/

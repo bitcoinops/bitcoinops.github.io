@@ -100,7 +100,7 @@ lang: zh
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2002,4541,4600" %}
-[news147 backups]: /en/newsletters/2021/05/05/#closing-lost-channels-with-only-a-bip32-seed
+[news147 backups]: /zh/newsletters/2021/05/05/#closing-lost-channels-with-only-a-bip32-seed
 [cln security.md]: https://github.com/ElementsProject/lightning/blob/master/SECURITY.md
 [news222 musig2]: /zh/newsletters/2022/10/19/#musig2
 [musig draft bip]: https://github.com/jonasnick/bips/blob/musig2/bip-musig2.mediawiki

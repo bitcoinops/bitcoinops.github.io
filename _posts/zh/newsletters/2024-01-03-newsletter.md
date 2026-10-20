@@ -112,7 +112,7 @@ lang: zh
 [ingala exit]: https://delvingbitcoin.org/t/aggregate-delegated-exit-for-l2-pools/297
 [erhardt coin]: https://delvingbitcoin.org/t/gutterguard-and-coingrinder-simulation-results/279/1
 [logback-classic]: https://logback.qos.ch/
-[news123 headers]: /en/newsletters/2020/11/11/#eclair-1545
+[news123 headers]: /zh/newsletters/2020/11/11/#eclair-1545
 [bip388]: https://github.com/bitcoin/bips/pull/1389
 [core lightning 23.11.2]: https://github.com/ElementsProject/lightning/releases/tag/v23.11.2
 [libsecp256k1 0.4.1]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.4.1

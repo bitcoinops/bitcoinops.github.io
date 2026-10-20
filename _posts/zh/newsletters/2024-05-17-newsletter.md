@@ -59,7 +59,7 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 [gibson autct]: https://delvingbitcoin.org/t/anonymous-usage-tokens-from-curve-trees-or-autct/862/
 [news261 lngossip]: /zh/newsletters/2023/07/26/#updated-channel-announcements
 [news205 riddle]: /zh/newsletters/2022/06/22/#riddle
-[news85 podle]: /en/newsletters/2020/02/19/#using-podle-in-ln
+[news85 podle]: /zh/newsletters/2020/02/19/#using-podle-in-ln
 [curve trees]: https://eprint.iacr.org/2022/756
 [autct repo]: https://github.com/AdamISZ/aut-ct
 [hodlboard]: https://hodlboard.org/

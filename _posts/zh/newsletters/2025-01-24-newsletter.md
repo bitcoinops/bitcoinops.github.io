@@ -94,7 +94,7 @@ lang: zh
 [news337 dlc]: /zh/newsletters/2025/01/17/#offchain-dlcs
 [conduition factories]: https://conduition.io/scriptless/dlc-factory/
 [conduition reply]: https://mailmanlists.org/pipermail/dlc-dev/2025-January/000193.html
-[news174 channels]: /en/newsletters/2021/11/10/#dlcs-over-ln
+[news174 channels]: /zh/newsletters/2021/11/10/#dlcs-over-ln
 [news260 channels]: /zh/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs-10101-beta-ln-dlc
 [condution reply]: https://mailmanlists.org/pipermail/dlc-dev/2025-January/000193.html
 [news283 unspendable]: /zh/newsletters/2024/01/03/#how-to-specify-unspendable-keys-in-descriptors

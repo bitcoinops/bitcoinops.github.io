@@ -151,9 +151,9 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
 [law stranded paper]: https://github.com/JohnLaw2/ln-hierarchical-channels
 [obeirne selfish]: https://twitter.com/jamesob/status/1637198454899220485
 [sanders requests]: https://twitter.com/theinstagibbs/status/1637235436849442817
-[news133 usdt]: /en/newsletters/2021/01/27/#bitcoin-core-19866
+[news133 usdt]: /zh/newsletters/2021/01/27/#bitcoin-core-19866
 [libwally]: https://github.com/ElementsProject/libwally-core
-[news128 psbt2]: /en/newsletters/2020/12/16/#new-psbt-version-proposed
+[news128 psbt2]: /zh/newsletters/2020/12/16/#new-psbt-version-proposed
 [tunable penalties]: https://github.com/JohnLaw2/ln-tunable-penalties
 [news238 libwally]: /zh/newsletters/2023/02/15/#libwally-0-8-8
 [rust-bitcoin.org]: https://rust-bitcoin.org/
