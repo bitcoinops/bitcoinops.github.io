@@ -110,6 +110,19 @@ test-after-build: build
 	  | sed "s|.*|Duplicate anchor in $$file: #&|" ; \
 	done | grep .
 
+	## Check that every newsletter has a numeric alias, see issue #2723
+	test $$(ls _site/*/newsletters/[0-9]*.html | wc -l) \
+	     -eq $$(grep -rl '^type: newsletter' _posts | wc -l)
+
+	## Check that each numeric alias redirects to a page that was built.
+	## _site/404.html is the site's own 404 page, not an alias.
+	! for alias in _site/[0-9]*.html _site/*/newsletters/[0-9]*.html ; do \
+	    case "$$alias" in */404.html) continue ;; esac ; \
+	    target=$$(sed -n 's|.*<link rel="canonical" href="[^:]*://[^/]*\(.*\)">|\1|p' $$alias) ; \
+	    test -z "$$target" && continue ; \
+	    test -f "_site$${target}index.html" || echo "Newsletter alias $$alias points to missing page $$target" ; \
+	  done | grep .
+
 	## Check for broken links
 	bundle exec htmlproofer --disable-external --no-enforce-https --ignore-urls '/^\/bin/.*/' ./_site
 
