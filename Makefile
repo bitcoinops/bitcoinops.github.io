@@ -111,11 +111,11 @@ test-after-build: build
 	done | grep .
 
 	## Check that every newsletter has a numeric alias, see issue #2723
-	test $$(ls _site/en/newsletters/[0-9]*.html | wc -l) \
-	     -eq $$(ls _posts/en/newsletters/*.md | wc -l)
+	test $$(ls _site/*/newsletters/[0-9]*.html | wc -l) \
+	     -eq $$(grep -rl '^type: newsletter' _posts | wc -l)
 
 	## Check that each numeric alias redirects to a page that was built
-	! for alias in _site/[0-9]*.html _site/en/newsletters/[0-9]*.html ; do \
+	! for alias in _site/*/newsletters/[0-9]*.html ; do \
 	    target=$$(sed -n 's|.*<link rel="canonical" href="[^:]*://[^/]*\(.*\)">|\1|p' $$alias) ; \
 	    test -z "$$target" && continue ; \
 	    test -f "_site$${target}index.html" || echo "Newsletter alias $$alias points to missing page $$target" ; \
