@@ -49,6 +49,33 @@ software.
   reached, can still cost the user or the hub funds, and lists validity proofs
   and a committee of sequencers as future work.
 
+- **Descriptor syntax for hash preimages:** João Dias [posted][desc del] to
+  Delving Bitcoin a proposal for extending [BIP379][] to add a private form
+  for hash fragments to [miniscript][topic miniscript]. As of today, there is
+  no way to directly give a preimage to Bitcoin Core's wallet to spend funds
+  that need one to satisfy a spending condition. It is only possible to
+  provide it through external tools in one of the [PSBT][topic psbt] hash
+  fields (e.g. `PSBT_IN_SHA256`). The author noted that this proposal only
+  covers the preimages already known when a descriptor is created, not
+  those learned at spend time, such as in a [HTLC][topic htlc].
+
+  Dias explained that the preimage should be treated more like a key
+  than a signature, highlighting an inconsistency in the
+  [descriptor][topic descriptors] model. His idea aims to let a wallet import
+  a secret from a descriptor and build and sign a transaction directly.
+  To do so, the author proposed a specific syntax for the descriptor (e.g.
+  `sha256(preimage(HEX))`) and a set of boundaries, such as the need for
+  a specific marker instead of raw hex, a fixed size of 32 bytes for all the
+  hash fragments, and the requirement to handle the preimage like any other secret,
+  with backups, encryption, and never shown in the public descriptor string.
+
+  Before proceeding to formalize the proposal, Dias highlighted some open
+  points that need to be addressed, such as what the marker syntax should be , whether
+  to amend BIP379 or draft a new BIP, if it is necessary to add an RPC call for
+  Bitcoin Core to manage preimages, whether hardware signing devices should handle
+  preimage secrets or this should remain software-wallet-only, and if there is any
+  interest in deterministically deriving preimages from key material.
+
 ## Changes to services and client software
 
 *In this monthly feature, we highlight interesting updates to Bitcoin
@@ -105,3 +132,4 @@ FIXME:Gustavojfe
 [landfall gh]: https://github.com/vincenzopalazzo/landfall
 [news419 lexe]: /en/newsletters/2026/08/21/#lexe-adds-human-readable-addresses-and-lnurl-withdraw
 [rbitcoin 0.8.0]: https://github.com/reardencode/rbitcoin/releases/tag/v0.8.0
+[desc del]: https://delvingbitcoin.org/t/descriptor-syntax-for-hash-preimages/2935
