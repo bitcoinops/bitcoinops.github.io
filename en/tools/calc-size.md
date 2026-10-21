@@ -42,26 +42,26 @@ size:
   script_hash_p2sh: 20
   script_hash_p2wsh: 32
 ---
+<style>
+  .io-row { margin: 0.4em 0; }
+  .io-row input[type="number"] { width: 5em; }
+</style>
+
 <form action="" id="vbytescalc" onsubmit="return false;">
-   <fieldset>
-
-    Transaction type:
-    <select id="type" onchange="updateTotal()">
-    <option value="p2pkh">P2PKH</option>
-    <option value="p2wpkh">P2WPKH</option>
-    <option value="p2sh2_3">P2SH 2-of-3 multisig</option>
-    <option value="p2wsh2_3">P2WSH 2-of-3 multisig</option>
-    <option value="p2tr">P2TR (taproot)</option>
-   </select>
-
-  <br>
-  Number of inputs: <input type="number" id="inputs" min="1" value="2" onchange="updateTotal()"/><br>
-  Number of outputs: <input type="number" id="outputs" min="1" value="2" onchange="updateTotal()"/>
-
-  <br><br><hr>
-  <div id="result"></div>
+  <fieldset>
+    <legend>Inputs</legend>
+    <div id="input-rows"></div>
+    <button type="button" onclick="addRow('input-rows')">Add another input type</button>
   </fieldset>
 
+  <fieldset>
+    <legend>Outputs</legend>
+    <div id="output-rows"></div>
+    <button type="button" onclick="addRow('output-rows')">Add another output type</button>
+  </fieldset>
+
+  <hr>
+  <div id="result"></div>
 </form>
 
 ## Legend: data field sizes
@@ -298,50 +298,144 @@ function calculateTotal(type, inputs, outputs) {
     "inputs": inputs,
     "input_size": input_size,
     "outputs": outputs,
-    "output_size": output_size
+    "output_size": output_size,
+    "segwit": types[type].segwit
   }
 }
 
-// Retrieve form and update results
-function updateTotal() {
-  var types = new Array();
-  // Get the form
-  var form = document.forms["vbytescalc"];
+// Human-readable names, used in the form and in the result table
+var TYPE_LABELS = {
+  "p2pkh": "P2PKH",
+  "p2wpkh": "P2WPKH",
+  "p2sh2_3": "P2SH 2-of-3 multisig",
+  "p2wsh2_3": "P2WSH 2-of-3 multisig",
+  "p2tr": "P2TR (taproot)"
+};
 
-  // The input/output type
-  // TODO: maybe allow the input type to be different from the output
-  //       type, or multiple inputs of different types (or multiple
-  //       outputs of different types)
-  var type = form.elements["type"].value;
-  // The number of inputs and outputs
-  var inputs = form.elements["inputs"].value;
-  if (inputs != "") {
-    inputs = parseInt(inputs);
-  } else {
-    inputs = 0;
-  }
-  var outputs = form.elements["outputs"].value;
-  if (outputs != "") {
-    outputs = parseInt(outputs);
-  } else {
-    outputs = 0;
-  }
+var SEGWIT_FLAG = {{page.size.marker_and_flag}};
 
-  var results = calculateTotal(type, inputs, outputs);
-  document.getElementById('result').innerHTML = (
-    "<b>Total size:</b> " + results.size + " vbytes<br><br>"
-    +  "<table>"
-    + "  <tr>"
-    + "    <th>Part</th>"
-    + "    <th>Count</th>"
-    + "    <th>Size (vbytes)</th>"
-    + "    <th>Total vbytes</th>"
-    + "  </tr>"
-    + "<tr><td>Overhead</td><td>1</td><td>" + results.overhead + "</td><td>" + results.overhead + "</td></tr>"
-    + "<tr><td>Inputs</td><td>" + results.inputs + "</td><td>" + results.input_size + "</td><td>" + results.inputs * results.input_size + "</td></tr>"
-    + "<tr><td>Outputs</td><td>" + results.outputs + "</td><td>" + results.output_size + "</td><td>" + results.outputs * results.output_size + "</td></tr>"
-    + "</table>"
+// Size in vbytes of one input or one output of a type.  These reuse
+// calculateTotal() so the field sizes are only defined in one place.
+function inputSize(type) {
+  return calculateTotal(type, 1, 0).input_size;
+}
+
+function outputSize(type) {
+  return calculateTotal(type, 0, 1).output_size;
+}
+
+// Size of a transaction with inputs and outputs of different types, e.g.
+// [{type: "p2pkh", count: 1}, {type: "p2wpkh", count: 1}]
+function calculateMixed(inputs, outputs) {
+  var rows = [];
+  var payload = 0;
+  var segwit = false;
+
+  inputs.forEach(function (item) {
+    var count = parseInt(item.count, 10) || 0;
+    if (count > 0) {
+      var size = inputSize(item.type);
+      if (calculateTotal(item.type, 1, 0).segwit) {
+        segwit = true;
+      }
+      rows.push({"part": "Input", "label": TYPE_LABELS[item.type], "count": count, "size": size});
+      payload += size * count;
+    }
+  });
+
+  outputs.forEach(function (item) {
+    var count = parseInt(item.count, 10) || 0;
+    if (count > 0) {
+      var size = outputSize(item.type);
+      rows.push({"part": "Output", "label": TYPE_LABELS[item.type], "count": count, "size": size});
+      payload += size * count;
+    }
+  });
+
+  // The segwit marker and flag are present if at least one input is segwit
+  var overhead = calculateTotal("p2pkh", 0, 0).overhead + (segwit ? SEGWIT_FLAG : 0);
+
+  return {
+    "size": overhead + payload,
+    "overhead": overhead,
+    "rows": rows
+  };
+}
+
+function readRows(containerId) {
+  return Array.prototype.map.call(
+    document.querySelectorAll("#" + containerId + " .io-row"),
+    function (row) {
+      return {
+        "type": row.querySelector("select").value,
+        "count": row.querySelector("input").value
+      };
+    }
   );
+}
+
+function addRow(containerId, type, count) {
+  type = type || "p2wpkh";
+  count = (count === undefined) ? 1 : count;
+
+  var row = document.createElement("div");
+  row.className = "io-row";
+
+  var kind = (containerId === "input-rows") ? "Input" : "Output";
+
+  var select = document.createElement("select");
+  select.setAttribute("aria-label", kind + " type");
+  Object.keys(TYPE_LABELS).forEach(function (key) {
+    var option = document.createElement("option");
+    option.value = key;
+    option.textContent = TYPE_LABELS[key];
+    option.selected = (key === type);
+    select.appendChild(option);
+  });
+
+  var input = document.createElement("input");
+  input.type = "number";
+  input.min = "0";
+  input.value = count;
+  input.setAttribute("aria-label", kind + " count");
+
+  var remove = document.createElement("button");
+  remove.type = "button";
+  remove.textContent = "×";
+  remove.setAttribute("aria-label", "Remove this " + kind.toLowerCase() + " row");
+  remove.addEventListener("click", function () {
+    row.parentNode.removeChild(row);
+    updateTotal();
+  });
+
+  row.appendChild(select);
+  row.appendChild(document.createTextNode(" "));
+  row.appendChild(input);
+  row.appendChild(document.createTextNode(" "));
+  row.appendChild(remove);
+  document.getElementById(containerId).appendChild(row);
+
+  select.addEventListener("change", updateTotal);
+  input.addEventListener("input", updateTotal);
+  updateTotal();
+}
+
+// Read the form rows, calculate, and show the result
+function updateTotal() {
+  var results = calculateMixed(readRows("input-rows"), readRows("output-rows"));
+
+  var html = "<b>Total size:</b> " + results.size + " vbytes<br><br>"
+    + "<table>"
+    + "<tr><th>Part</th><th>Count</th><th>Size (vbytes)</th><th>Total vbytes</th></tr>"
+    + "<tr><td>Overhead</td><td>1</td><td>" + results.overhead + "</td><td>" + results.overhead + "</td></tr>";
+
+  results.rows.forEach(function (row) {
+    html += "<tr><td>" + row.part + ": " + row.label + "</td><td>" + row.count + "</td><td>"
+      + row.size + "</td><td>" + row.size * row.count + "</td></tr>";
+  });
+
+  html += "</table>";
+  document.getElementById("result").innerHTML = html;
 }
 
 // For now, call this option manually from a console in your browser
@@ -362,11 +456,20 @@ function testSizes() {
   // txid: 13eba154725924a83f95a00abb716fd9587ca6e099f289e3578596c78c831338
   console.assert(804/4 == calculateTotal("p2wsh2_3", 1, 2).size, "1-in, 2-out P2WSH 2-of-3 unexpected size");
 
+  // Mixed input types: one P2PKH and one P2WPKH input, two P2WPKH outputs.
+  // 10.5 vbytes overhead + 148 + 68 + 2 * 31 = 288.5 vbytes.
+  console.assert(288.5 == calculateMixed(
+    [{"type": "p2pkh", "count": 1}, {"type": "p2wpkh", "count": 1}],
+    [{"type": "p2wpkh", "count": 2}]
+  ).size, "mixed input types unexpected size");
+
   console.log("All tests run");
   return true;
 }
 
-// Calculate the result for the default form parameters
+// Start with the same defaults as before: two P2PKH inputs and outputs
+addRow("input-rows", "p2pkh", 2);
+addRow("output-rows", "p2pkh", 2);
 updateTotal();
 </script>
 
