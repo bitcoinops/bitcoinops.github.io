@@ -327,8 +327,9 @@ function outputSize(type) {
 // Size of a transaction with inputs and outputs of different types, e.g.
 // [{type: "p2pkh", count: 1}, {type: "p2wpkh", count: 1}]
 function calculateMixed(inputs, outputs) {
-  // An array literal would put "[]" into the built HTML, which the
-  // "broken Markdown reference links" check in the Makefile flags.
+  // Use new Array() rather than an array literal: a literal pair of square
+  // brackets in the built HTML trips the "broken Markdown reference links"
+  // check in the Makefile.
   var rows = new Array();
   var payload = 0;
   var segwit = false;
