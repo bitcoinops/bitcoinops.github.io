@@ -4,7 +4,8 @@
 ## https://bitcoinops.org/en/newsletters/371 resolves to
 ## https://bitcoinops.org/en/newsletters/2025/09/12/, and likewise in every
 ## language a newsletter has been translated into, e.g.
-## https://bitcoinops.org/zh/newsletters/371.
+## https://bitcoinops.org/zh/newsletters/371.  English newsletters also keep
+## the short root form, https://bitcoinops.org/371.
 ##
 ## The aliases are added to each newsletter's "redirect_from" front matter,
 ## which jekyll-redirect-from turns into small redirect pages.
@@ -47,11 +48,19 @@ class NewsletterNumberAliases < Jekyll::Generator
       number = numbers[post.date.strftime("%Y-%m-%d")]
       next unless number
 
-      path = "/#{post.data["lang"]}/newsletters/#{number}"
-      next if taken.include?("#{path}.html")
+      paths = ["/#{post.data["lang"]}/newsletters/#{number}"]
+      ## English newsletters also keep the short root form.  It was part of
+      ## the original request and a bare /371 is quicker to type than the
+      ## full path.
+      paths << "/#{number}" if post.data["lang"] == "en"
 
       aliases = Array(post.data["redirect_from"])
-      post.data["redirect_from"] = (aliases << path).uniq
+      paths.each do |path|
+        next if taken.include?("#{path}.html")
+
+        aliases << path
+      end
+      post.data["redirect_from"] = aliases.uniq
     end
   end
 end

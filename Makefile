@@ -114,8 +114,10 @@ test-after-build: build
 	test $$(ls _site/*/newsletters/[0-9]*.html | wc -l) \
 	     -eq $$(grep -rl '^type: newsletter' _posts | wc -l)
 
-	## Check that each numeric alias redirects to a page that was built
-	! for alias in _site/*/newsletters/[0-9]*.html ; do \
+	## Check that each numeric alias redirects to a page that was built.
+	## _site/404.html is the site's own 404 page, not an alias.
+	! for alias in _site/[0-9]*.html _site/*/newsletters/[0-9]*.html ; do \
+	    case "$$alias" in */404.html) continue ;; esac ; \
 	    target=$$(sed -n 's|.*<link rel="canonical" href="[^:]*://[^/]*\(.*\)">|\1|p' $$alias) ; \
 	    test -z "$$target" && continue ; \
 	    test -f "_site$${target}index.html" || echo "Newsletter alias $$alias points to missing page $$target" ; \
