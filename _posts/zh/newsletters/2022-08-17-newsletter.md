@@ -12,7 +12,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--using-bitcoincompatible-bls-signatures-for-dlcs-->使用兼容比特币的 BLS 签名来优化 DLC**：谨慎日志合约允许使用一个已知的受信任第三方作为断言机来见证一些数据。信任这个断言机的个体可以在合约中使用这些见证消息（attestation），既不必告知这个断言机存在这个合约，也不必公开合约的内容。[使用 DLC 还有别的一些好处][topic dlc]。DLC 构想最初提议的是使用 [Schnorr 签名][topic schnorr signatures] 签名的一个特性，但后来被开发成使用更通用的[适配器签名][topic adaptor signatures]。
+- **<!--using-bitcoin-compatible-bls-signatures-for-dlcs-->****使用兼容比特币的 BLS 签名来优化 DLC**：谨慎日志合约允许使用一个已知的受信任第三方作为断言机来见证一些数据。信任这个断言机的个体可以在合约中使用这些见证消息（attestation），既不必告知这个断言机存在这个合约，也不必公开合约的内容。[使用 DLC 还有别的一些好处][topic dlc]。DLC 构想最初提议的是使用 [Schnorr 签名][topic schnorr signatures]签名的一个特性，但后来被开发成使用更通用的[适配器签名][topic adaptor signatures]。
 
   本周，Lloyd Fournier 在 DLC-Dev 邮件组中[发帖][fournier dlc-dev]讨论了让断言机使用 Boneh-Lynn-Shacham（[BLS][]）签名来制作见证消息的好处。比特币本身不支持 BLS 签名，所以要加入 BLS 签名还需要一次软分叉，但 Fournier 链接了一篇由他联合撰写的[论文][fournier et al]，描述了如何从一个 BLS 签名中安全地抽取出信息并在兼容比特币的适配器签名中使用，这样就无需改变比特币的共识。
 
@@ -54,7 +54,7 @@ lang: zh
 [fournier et al]: https://eprint.iacr.org/2022/499.pdf
 [bip341 internal]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#constructing-and-spending-taproot-outputs
 [news211 bolts996]: /zh/newsletters/2022/08/03/#ldk-1519
-[news151 any_segwit]: /en/newsletters/2021/06/02/#bolts-672
+[news151 any_segwit]: /zh/newsletters/2021/06/02/#bolts-672
 [lnd 0conf]: https://github.com/lightningnetwork/lnd/blob/6c915484ba056870f9ed8b57f043d51f26137507/docs/zero_conf_channels.md
 [vanity addresses]: https://en.bitcoin.it/wiki/Vanitygen
 [reusable taproot addresses]: https://gist.github.com/Kixunil/0ddb3a9cdec33342b97431e438252c0a

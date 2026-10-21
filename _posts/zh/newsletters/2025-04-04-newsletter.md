@@ -203,7 +203,7 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 [back crsig]: https://bitcointalk.org/index.php?topic=206303.msg2162962#msg2162962
 [bip119 prechange]: https://github.com/bitcoin/bips/blob/9573e060e32f10446b6a2064a38bdc2047171d9c/bip-0119.mediawiki
 [news75 ctv]: /zh/newsletters/2019/12/04/#op-checktemplateverify-ctv
-[news190 recursive]: /en/newsletters/2022/03/09/#limiting-script-language-expressiveness
+[news190 recursive]: /zh/newsletters/2022/03/09/#limiting-script-language-expressiveness
 [modern ctv]: /zh/newsletters/2019/12/18/#proposed-changes-to-bip-ctv
 [rubin enumeration]: https://gnusha.org/pi/bitcoindev/CAD5xwhjj3JAXwnrgVe_7RKx0AVDDy4X-L9oOnwhswXAQFoJ7Bw@mail.gmail.com/
 [towns ctvmot]: https://mailing-list.bitcoindevs.xyz/bitcoindev/Z8eUQCfCWjdivIzn@erisian.com.au/

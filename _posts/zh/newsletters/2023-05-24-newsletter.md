@@ -92,20 +92,20 @@ _这是一个关于交易转发、交易池纳入以及挖矿选择的限定周�
 [bitcoin core 25.0rc2]: https://bitcoincore.org/bin/bitcoin-core-25.0/
 [linus post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021679.html
 [lg paper]: https://zerosync.org/zerosync.pdf
-[news128 bolts803]: /en/newsletters/2020/12/16/#bolts-803
+[news128 bolts803]: /zh/newsletters/2020/12/16/#bolts-803
 [news247 rgb]: /zh/newsletters/2023/04/19/#rgb
-[news195 taro]: /en/newsletters/2022/04/13/#transferable-token-scheme
+[news195 taro]: /zh/newsletters/2022/04/13/#transferable-token-scheme
 [coinwitness]: https://bitcointalk.org/index.php?topic=277389.0
 [assumevalid]: https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks
 [passport 2.1.1]: https://foundationdevices.com/2023/05/passport-version-2-1-0-is-now-live/
 [munstr github]: https://github.com/0xBEEFCAF3/munstr
 [nostr protocol]: https://github.com/nostr-protocol/nostr
 [coffee github]: https://github.com/coffee-tools/coffee
-[news22 plugins]: /en/newsletters/2018/11/20/#c-lightning-2075
+[news22 plugins]: /zh/newsletters/2018/11/20/#c-lightning-2075
 [electrum release notes]: https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES
 [trezor blog]: https://blog.trezor.io/coinjoin-privacy-for-bitcoin-11aaf291f23
 [mutinynet blog]: https://blog.mutinywallet.com/mutinynet/
-[news53 loop]: /en/newsletters/2019/07/03/#lightning-loop-supports-user-loop-ins
+[news53 loop]: /zh/newsletters/2019/07/03/#lightning-loop-supports-user-loop-ins
 [nunchuk blog]: https://nunchuk.io/blog/coin-control
 [mycitadel v1.3.0]: https://github.com/mycitadel/mycitadel-desktop/releases/tag/v1.3.0
 [coinkite blog]: https://blog.coinkite.com/edge-firmware/

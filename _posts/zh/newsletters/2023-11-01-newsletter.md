@@ -56,12 +56,12 @@ _注意：_ 在我们上一期的周报中提到的 Bitcoin Core 26.0rc1 已经�
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086,27511" %}
-[news164 pong]: /en/newsletters/2021/09/01/#lnd-5621
+[news164 pong]: /zh/newsletters/2021/09/01/#lnd-5621
 [towns cov]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022099.html
 [russell cov]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022031.html
 [news274 cov]: /zh/newsletters/2023/10/25/#research-into-generic-covenants-with-minimal-script-language-changes
 [russell cov2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022103.html
-[news191 lisp]: /en/newsletters/2022/03/16/#using-chia-lisp
+[news191 lisp]: /zh/newsletters/2022/03/16/#using-chia-lisp
 [heilman cat]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022049.html
 [news274 cat]: /zh/newsletters/2023/10/25/#proposed-bip-for-op-cat-op-cat-bip
 [todd 520]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022094.html

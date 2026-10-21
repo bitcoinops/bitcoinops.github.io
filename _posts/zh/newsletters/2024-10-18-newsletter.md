@@ -85,7 +85,7 @@ _本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Ligh
 [osuntokun summary]: https://delvingbitcoin.org/t/ln-summit-2024-notes-summary-commentary/1198
 [osuntokun notes]: https://docs.google.com/document/d/1erQfnZjjfRBSSwo_QWiKiCZP5UQ-MR53ZWs4zIAVcqs/edit?tab=t.0#heading=h.chk08ds793ll
 [news268 ptlc]: /zh/newsletters/2023/09/13/#ptlc-ln
-[news120 simcom]: /en/newsletters/2020/10/21/#simplified-htlc-negotiation
+[news120 simcom]: /zh/newsletters/2020/10/21/#simplified-htlc-negotiation
 [news261 simcom]: /zh/newsletters/2023/07/26/#simplified-commitments
 [zmnscpxj superscalar]: https://delvingbitcoin.org/t/superscalar-laddered-timeout-tree-structured-decker-wattenhofer-factories/1143
 [news309 feasible]: /zh/newsletters/2024/06/28/#estimating-the-likelihood-that-an-ln-payment-is-feasible-ln

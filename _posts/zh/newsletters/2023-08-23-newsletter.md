@@ -103,10 +103,10 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
 {% include linkers/issues.md v=2 issues="27460,27981,919,1990,1962,1485,881" %}
 [core lightning 23.08rc3]: https://github.com/ElementsProject/lightning/releases/tag/v23.08rc3
 [news238 peer storage]: /zh/newsletters/2023/02/15/#core-lightning-5361
-[news162 trim]: /en/newsletters/2021/08/18/#rust-lightning-1009
-[news171 trim]: /en/newsletters/2021/10/20/#eclair-1985
-[news173 trim]: /en/newsletters/2021/11/03/#c-lightning-4837
-[news170 trim]: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
+[news162 trim]: /zh/newsletters/2021/08/18/#rust-lightning-1009
+[news171 trim]: /zh/newsletters/2021/10/20/#eclair-1985
+[news173 trim]: /zh/newsletters/2021/11/03/#c-lightning-4837
+[news170 trim]: /zh/newsletters/2021/10/13/#ln-spend-to-fees-cve
 [elements project]: https://elementsproject.org/
 [voegtlin backups]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004043.html
 [todd backups1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004046.html

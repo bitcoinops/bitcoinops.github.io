@@ -80,7 +80,7 @@ _本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Ligh
 [pt post tx]: https://gnusha.org/pi/bitcoindev/aP6gYSnte7J86g0p@petertodd.org/
 [td post civ]: https://gnusha.org/pi/bitcoindev/05195086-ee52-472c-962d-0df2e0b9dca2n@googlegroups.com/
 [abdel delving]: https://delvingbitcoin.org/t/proposal-op-stark-verify-native-stark-proof-verification-in-bitcoin-script/2056
-[news222 validity rollups]: /zh/newsletters/2022/10/19/#rollup
+[news222 validity rollups]: /zh/newsletters/2022/10/19/#validity-rollups-research
 [ap bip54 post]: https://groups.google.com/g/bitcoindev/c/1XEtmIS_XRc
 [news348 bip54]: /zh/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
 [binq bip54 pr]: https://github.com/bitcoin-inquisition/bitcoin/pull/99

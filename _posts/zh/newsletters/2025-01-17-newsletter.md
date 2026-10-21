@@ -46,7 +46,7 @@ _以下是 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning r
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="3792,1789,1687,1396,2936" %}
 [ldk v0.1]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1
-[news174 dlc-ln]: /en/newsletters/2021/11/10/#dlcs-over-ln
+[news174 dlc-ln]: /zh/newsletters/2021/11/10/#dlcs-over-ln
 [news260 dlc]: /zh/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs-10101-beta-ln-dlc
 [ecash tides]: https://delvingbitcoin.org/t/ecash-tides-using-cashu-and-stratum-v2/870
 [news304 ecashtides]: /zh/newsletters/2024/05/24/#challenges-in-rewarding-pool-miners

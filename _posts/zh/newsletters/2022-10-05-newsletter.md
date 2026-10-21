@@ -11,7 +11,7 @@ lang: zh
 
 ## 新闻
 
-- **为 LN-penalty 设计的新交易中继策略的提议：**Gloria Zhao 在比特币开发邮件列表中[发表][zhao tx3]了一个提议，允许交易选择一组修改后的交易中继策略。任何将其版本参数设置为 `3` 的交易将会：
+- **<!--proposed-new-transaction-relay-policies-designed-for-ln-penalty-->****为 LN-penalty 设计的新交易中继策略的提议：**Gloria Zhao 在比特币开发邮件列表中[发表][zhao tx3]了一个提议，允许交易选择一组修改后的交易中继策略。任何将其版本参数设置为 `3` 的交易将会：
 
     * 在未被支付更高费率和更高总费用的交易所确认时可替换（当前主要的 [RBF][topic rbf] 规则）
 
@@ -21,19 +21,19 @@ lang: zh
 
     * 如果其任何 v3 先前交易是未被确认的，则要求该交易大小为 1,000 vbytes 或更小
 
-    随该提议中继规则而来的是对之前提议的包中继规则的简化（参见[周报 #167][news167 packages]）。
+    随该提议中继规则而来的是对之前提议的包中继规则的简化（参见 [Newsletter #167][news167 packages]）。
 
     v3 中继和更新的包中继规则一起旨在允许闪电网络承诺交易仅包含最低费用（甚至可能为零费用），并由子交易支付其实际费用，同时防止[钉死][topic transaction pinning]。几乎所有闪电网络节点都已经使用了这样的机制，[锚点输出][topic anchor outputs]，但提议的升级应该使确认承诺交易更简单、更健壮。
 
     Greg Sanders [回复][sanders tx3]了两点建议：
 
-    - *<!--ephemeral-dust-->短暂粉尘：* 如果任何支付零价值（或其他*不经济*）输出的交易是花费该粉尘输出的包的一部分，则该交易应当豁免[粉尘策略][topic uneconomical outputs]。
+    - **<!--ephemeral-dust-->***短暂粉尘：* 如果任何支付零价值（或其他*不经济*）输出的交易是花费该粉尘输出的包的一部分，则该交易应当豁免[粉尘策略][topic uneconomical outputs]。
 
-    - *标准 OP_TRUE：* 形成一个完全由 `OP_TRUE` 组成的输出的交易应该被默认转发。这样的输出可以被任何人使用——它没有安全性。这使得闪电网络通道的任何一方（甚至第三方）都可以轻松地对花费 `OP_TRUE` 输出的交易提高手续费。无需将数据放入堆栈即可使用 `OP_TRUE` 输出，使得这种花费十分节省成本。
+    - **<!--standard-op-true-->***标准 OP_TRUE：* 形成一个完全由 `OP_TRUE` 组成的输出的交易应该被默认转发。这样的输出可以被任何人使用——它没有安全性。这使得闪电网络通道的任何一方（甚至第三方）都可以轻松地对花费 `OP_TRUE` 输出的交易提高手续费。无需将数据放入堆栈即可使用 `OP_TRUE` 输出，使得这种花费十分节省成本。
 
     这些都不需要与实现 v3 交易的中继同时完成，但该讨论的一些回复者似乎倾向于支持所有提议的变更。
 
-- **<!--ln-flow-control-->闪电网络流量控制：** Rene Pickhardt 在 Lightning-Dev 邮件列表中[发布][pickhardt ml valve]了一份他使用 `htlc_maximum_msat` 参数作为流量控制阀执行的[近期研究][pickhardt bitmex valve]的摘要。正如先前在 BOLT7 中的[定义][bolt7 htlc_max]，`htlc_maximum_msat` 是节点为单个支付部分在特定通道中可转发到下一跳的最大值（[HTLC][topic htlc]）。Pickhardt 解决了通道流经一个方向上的价值比在另一个方向上更多的问题——在最终离开通道时在过度使用的那个方向上没有足够的资金来转账。他建议可以通过限制过度使用方向的最大值来保持通道平衡。例如，如果一个通道开始时允许在任一方向转发 1,000 聪，但在通道变得不平衡时，则尝试将过度使用的方向上的单次转发支付的最大金额降低到 800。Pickhardt 的研究提供了几个代码片段，可用于计算实际适当的 `htlc_maximum_msat` 值。
+- **<!--ln-flow-control-->****闪电网络流量控制：** Rene Pickhardt 在 Lightning-Dev 邮件列表中[发布][pickhardt ml valve]了一份他使用 `htlc_maximum_msat` 参数作为流量控制阀执行的[近期研究][pickhardt bitmex valve]的摘要。正如先前在 BOLT7 中的[定义][bolt7 htlc_max]，`htlc_maximum_msat` 是节点为单个支付部分在特定通道中可转发到下一跳的最大值（[HTLC][topic htlc]）。Pickhardt 解决了通道流经一个方向上的价值比在另一个方向上更多的问题——在最终离开通道时在过度使用的那个方向上没有足够的资金来转账。他建议可以通过限制过度使用方向的最大值来保持通道平衡。例如，如果一个通道开始时允许在任一方向转发 1,000 聪，但在通道变得不平衡时，则尝试将过度使用的方向上的单次转发支付的最大金额降低到 800。Pickhardt 的研究提供了几个代码片段，可用于计算实际适当的 `htlc_maximum_msat` 值。
 
     在一封[单独的电子邮件][pickhardt ratecards]中，Pickhardt 还建议，此前*手续费费率卡*的想法（参见 [上周的周报][news219 ratecards]）可以改为*单次转发最大金额的费率卡*，即支付者在发送小额付款时收取较低费率、发送大额付款时则收取较高费率。与最初的费率卡提议不同，它们将是绝对金额，而不是通道当前余额的相对金额。Anthony Towns [描述][towns ratecards]了最初的费率卡想法将面临的几个挑战对于基于可调整 `htlc_maximum_msat` 的流量控制来说不会再是问题。
 
@@ -77,7 +77,7 @@ lang: zh
 [bolt7 htlc_max]: https://github.com/lightning/bolts/blob/48fed66e26b80031d898c6492434fa9926237d64/07-routing-gossip.md#requirements-3
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
 [zhao tx3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html
-[news167 packages]: /en/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
+[news167 packages]: /zh/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
 [sanders tx3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020938.html
 [pickhardt ml valve]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003686.html
 [pickhardt bitmex valve]: https://blog.bitmex.com/the-power-of-htlc_maximum_msat-as-a-control-valve-for-better-flow-control-improved-reliability-and-lower-expected-payment-failure-rates-on-the-lightning-network/
@@ -85,5 +85,5 @@ lang: zh
 [news219 ratecards]: /zh/newsletters/2022/09/28/#ln-fee-ratecards
 [towns ratecards]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003695.html
 [zmnscpxj valve]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003703.html
-[news171 async]: /en/newsletters/2021/10/20/#paying-offline-ln-nodes
-[news184 psbt]: /en/newsletters/2022/01/26/#psbt-extension-for-p2c-fields
+[news171 async]: /zh/newsletters/2021/10/20/#paying-offline-ln-nodes
+[news184 psbt]: /zh/newsletters/2022/01/26/#psbt-extension-for-p2c-fields

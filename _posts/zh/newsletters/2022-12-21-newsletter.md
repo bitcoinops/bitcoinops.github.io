@@ -283,51 +283,51 @@ Russell O'Connor [提议][news185 txhash]了 CTV 和 APO 的替代方案——�
 [bls]: https://en.wikipedia.org/wiki/BLS_digital_signature
 [cjdns]: https://github.com/cjdelisle/cjdns
 [law tunable]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003732.html
-[news181 ldk1177]: /en/newsletters/2022/01/05/#rust-lightning-1177
-[news181 rbf]: /en/newsletters/2022/01/05/#brief-full-rbf-then-opt-in-rbf
-[news182 accounts]: /en/newsletters/2022/01/12/#fee-accounts
-[news182 bolts912]: /en/newsletters/2022/01/12/#bolts-912
-[news183a ctv]: /en/newsletters/2022/01/19/#irc-meeting
-[news183b ctv]: /en/newsletters/2022/01/19/#mailing-list-discussion
-[news183 defense fund]: /en/newsletters/2022/01/19/#bitcoin-and-ln-legal-defense-fund
-[news183 stateless]: /en/newsletters/2022/01/19/#eclair-2063
-[news185 ctv]: /en/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
-[news185 eclair]: /en/newsletters/2022/02/02/#eclair-0-7-0
-[news185 txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
-[news186 rbf]: /en/newsletters/2022/02/09/#discussion-about-rbf-policy
-[news187 optx]: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
-[news188 ctv]: /en/newsletters/2022/02/23/#ctv-signet
-[news188 ldk1199]: /en/newsletters/2022/02/23/#ldk-1199
-[news188 sponsorship]: /en/newsletters/2022/02/23/#fee-bumping-and-transaction-fee-sponsorship
-[news189 btcpay]: /en/newsletters/2022/03/02/#btcpay-server-1-4-6
-[news189 evict]: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
-[news190 ldk]: /en/newsletters/2022/03/09/#ldk-0-0-105
-[news190 onion]: /en/newsletters/2022/03/09/#paying-for-onion-messages
-[news190 recov]: /en/newsletters/2022/03/09/#limiting-script-language-expressiveness
-[news191 btc-script]: /en/newsletters/2022/03/16/#using-chia-lisp
-[news191 fold]: /en/newsletters/2022/03/16/#looping-folding
-[news191 rbf]: /en/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
-[news192 ldk1311]: /en/newsletters/2022/03/23/#ldk-1311
-[news192 pp]: /en/newsletters/2022/03/23/#payment-delivery-algorithm-update
-[news193 bdk]: /en/newsletters/2022/03/30/#bdk-0-17-0
-[news193 witrep]: /en/newsletters/2022/03/30/#transaction-witness-replacement
-[news194 sp]: /en/newsletters/2022/04/06/#delinked-reusable-addresses
-[news195 musig2]: /en/newsletters/2022/04/13/#musig2-proposed-bip
-[news195 stateless]: /en/newsletters/2022/04/13/#core-lightning-5086
-[news195 taro]: /en/newsletters/2022/04/13/#transferable-token-scheme
-[news196 qc]: /en/newsletters/2022/04/20/#quantum-safe-key-exchange
-[news196 stateless]: /en/newsletters/2022/04/20/#lnd-5810
-[news197 bcc]: /en/newsletters/2022/04/27/#bitcoin-core-23-0
-[news197 cln]: /en/newsletters/2022/04/27/#core-lightning-0-11-0
-[news197 ctv]: /en/newsletters/2022/04/27/#discussion-about-activating-ctv
-[news197 rb]: /en/newsletters/2022/04/27/#rust-bitcoin-0-28
-[news198 btcpay]: /en/newsletters/2022/05/04/#btcpay-server-1-5-1
-[news198 lbk]: /en/newsletters/2022/05/04/#bitcoin-core-24322
-[news198 musig2]: /en/newsletters/2022/05/04/#musig2-implementation-notes
-[news200 cat]: /en/newsletters/2022/05/18/#when-would-enabling-op-cat-allow-recursive-covenants
-[news200 ctv]: /en/newsletters/2022/05/18/#updated-op-tx-proposal
-[news201 package relay]: /en/newsletters/2022/05/25/#package-relay-proposal
-[news202 sp]: /en/newsletters/2022/06/01/#experimentation-with-silent-payments
+[news181 ldk1177]: /zh/newsletters/2022/01/05/#rust-lightning-1177
+[news181 rbf]: /zh/newsletters/2022/01/05/#brief-full-rbf-then-opt-in-rbf
+[news182 accounts]: /zh/newsletters/2022/01/12/#fee-accounts
+[news182 bolts912]: /zh/newsletters/2022/01/12/#bolts-912
+[news183a ctv]: /zh/newsletters/2022/01/19/#irc-meeting
+[news183b ctv]: /zh/newsletters/2022/01/19/#mailing-list-discussion
+[news183 defense fund]: /zh/newsletters/2022/01/19/#bitcoin-and-ln-legal-defense-fund
+[news183 stateless]: /zh/newsletters/2022/01/19/#eclair-2063
+[news185 ctv]: /zh/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
+[news185 eclair]: /zh/newsletters/2022/02/02/#eclair-0-7-0
+[news185 txhash]: /zh/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
+[news186 rbf]: /zh/newsletters/2022/02/09/#discussion-about-rbf-policy
+[news187 optx]: /zh/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
+[news188 ctv]: /zh/newsletters/2022/02/23/#ctv-signet
+[news188 ldk1199]: /zh/newsletters/2022/02/23/#ldk-1199
+[news188 sponsorship]: /zh/newsletters/2022/02/23/#fee-bumping-and-transaction-fee-sponsorship
+[news189 btcpay]: /zh/newsletters/2022/03/02/#btcpay-server-1-4-6
+[news189 evict]: /zh/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
+[news190 ldk]: /zh/newsletters/2022/03/09/#ldk-0-0-105
+[news190 onion]: /zh/newsletters/2022/03/09/#paying-for-onion-messages
+[news190 recov]: /zh/newsletters/2022/03/09/#limiting-script-language-expressiveness
+[news191 btc-script]: /zh/newsletters/2022/03/16/#using-chia-lisp
+[news191 fold]: /zh/newsletters/2022/03/16/#looping-folding
+[news191 rbf]: /zh/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
+[news192 ldk1311]: /zh/newsletters/2022/03/23/#ldk-1311
+[news192 pp]: /zh/newsletters/2022/03/23/#payment-delivery-algorithm-update
+[news193 bdk]: /zh/newsletters/2022/03/30/#bdk-0-17-0
+[news193 witrep]: /zh/newsletters/2022/03/30/#transaction-witness-replacement
+[news194 sp]: /zh/newsletters/2022/04/06/#delinked-reusable-addresses
+[news195 musig2]: /zh/newsletters/2022/04/13/#musig2-proposed-bip
+[news195 stateless]: /zh/newsletters/2022/04/13/#core-lightning-5086
+[news195 taro]: /zh/newsletters/2022/04/13/#transferable-token-scheme
+[news196 qc]: /zh/newsletters/2022/04/20/#quantum-safe-key-exchange
+[news196 stateless]: /zh/newsletters/2022/04/20/#lnd-5810
+[news197 bcc]: /zh/newsletters/2022/04/27/#bitcoin-core-23-0
+[news197 cln]: /zh/newsletters/2022/04/27/#core-lightning-0-11-0
+[news197 ctv]: /zh/newsletters/2022/04/27/#discussion-about-activating-ctv
+[news197 rb]: /zh/newsletters/2022/04/27/#rust-bitcoin-0-28
+[news198 btcpay]: /zh/newsletters/2022/05/04/#btcpay-server-1-5-1
+[news198 lbk]: /zh/newsletters/2022/05/04/#bitcoin-core-24322
+[news198 musig2]: /zh/newsletters/2022/05/04/#musig2-implementation-notes
+[news200 cat]: /zh/newsletters/2022/05/18/#when-would-enabling-op-cat-allow-recursive-covenants
+[news200 ctv]: /zh/newsletters/2022/05/18/#updated-op-tx-proposal
+[news201 package relay]: /zh/newsletters/2022/05/25/#package-relay-proposal
+[news202 sp]: /zh/newsletters/2022/06/01/#experimentation-with-silent-payments
 [news203 zero-conf]: /zh/newsletters/2022/06/08/#bolts-910
 [news204 ln]: /zh/newsletters/2022/06/15/#summary-of-ln-developer-meeting
 [news204 lnfees]: /zh/newsletters/2022/06/15/#using-routing-fees-to-signal-liquidity
@@ -342,35 +342,35 @@ Russell O'Connor [提议][news185 txhash]了 CTV 和 APO 的替代方案——�
 [news208 scid cln]: /zh/newsletters/2022/07/13/#core-lightning-5275
 [news208 scid lnd]: /zh/newsletters/2022/07/13/#lnd-5955
 [news209 miniscript]: /zh/newsletters/2022/07/20/#bitcoin-core-24148
-[news213 bls]: /zh/newsletters/2022/08/17/#using-bitcoincompatible-bls-signatures-for-dlcs-bls-dlc
+[news213 bls]: /zh/newsletters/2022/08/17/#using-bitcoin-compatible-bls-signatures-for-dlcs
 [news213 dual funding]: /zh/newsletters/2022/08/17/#eclair-2273
 [news213 rb]: /zh/newsletters/2022/08/17/#rust-bitcoin-0-29
 [news214 cln]: /zh/newsletters/2022/08/24/#core-lightning-0-12-0
 [news214 jam]: /zh/newsletters/2022/08/24/#overview-of-channel-jamming-attacks-and-mitigations
-[news214 sp]: /zh/newsletters/2022/08/24/#pr
+[news214 sp]: /zh/newsletters/2022/08/24/#updated-silent-payments-pr
 [news215 dual funding]: /zh/newsletters/2022/08/31/#eclair-2275
 [news215 lnd]: /zh/newsletters/2022/08/31/#lnd-0-15-1-beta
 [news217 ldk]: /zh/newsletters/2022/09/14/#ldk-0-0-111
-[news218 apo]: /zh/newsletters/2022/09/21/#apo-drivechains
-[news219 inquisition]: /zh/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet-signet
+[news218 apo]: /zh/newsletters/2022/09/21/#creating-drivechains-with-apo-and-a-trusted-setup
+[news219 inquisition]: /zh/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
 [news219 ratecards]: /zh/newsletters/2022/09/28/#ln-fee-ratecards
 [news220 async]: /zh/newsletters/2022/10/05/#eclair-2435
 [news220 flow control]: /zh/newsletters/2022/10/05/#ln-flow-control
-[news220 v3]: /zh/newsletters/2022/10/05/#ln-penalty
+[news220 v3]: /zh/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
 [news221 ln-mod]: /zh/newsletters/2022/10/12/#ln-with-long-timeouts-proposal
-[news222 bug]: /zh/newsletters/2022/10/19/#btcd-lnd
-[news222 musig2]: /zh/newsletters/2022/10/19/#musig2
+[news222 bug]: /zh/newsletters/2022/10/19/#block-parsing-bug-affecting-btcd-and-lnd
+[news222 musig2]: /zh/newsletters/2022/10/19/#musig2-security-vulnerability
 [news222 rbf]: /zh/newsletters/2022/10/19/#transaction-replacement-option
-[news222 rollups]: /zh/newsletters/2022/10/19/#rollup
-[news222 v2trans]: /zh/newsletters/2022/10/19/#bip324
+[news222 rollups]: /zh/newsletters/2022/10/19/#validity-rollups-research
+[news222 v2trans]: /zh/newsletters/2022/10/19/#bip324-update
 [news223 ephemeral]: /zh/newsletters/2022/10/26/#ephemeral-anchors
-[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf-rbf
-[news223 xscribe]: /zh/newsletters/2022/10/26/#coredevtech-transcripts-coredev-tech
+[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf
+[news223 xscribe]: /zh/newsletters/2022/10/26/#coredev-tech-transcripts
 [news224 fat]: /zh/newsletters/2022/11/02/#ln-routing-failure-attribution
 [news224 rbf]: /zh/newsletters/2022/11/02/#mempool-consistency
-[news225 bug]: /zh/newsletters/2022/11/09/#block-parsing-bug-affecting-multiple-software-bug
+[news225 bug]: /zh/newsletters/2022/11/09/#block-parsing-bug-affecting-multiple-software
 [news225 fat]: /zh/newsletters/2022/11/09/#eclair-2441
-[news225 rbf]: /zh/newsletters/2022/11/09/#continued-discussion-about-enabling-fullrbf-rbf
+[news225 rbf]: /zh/newsletters/2022/11/09/#continued-discussion-about-enabling-full-rbf
 [news226 fat]: /zh/newsletters/2022/11/16/#core-lightning-5698
 [news226 jam]: /zh/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
 [news226 matt]: /zh/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
@@ -384,7 +384,7 @@ Russell O'Connor [提议][news185 txhash]了 CTV 和 APO 的替代方案——�
 [news231 v3relay]: /zh/newsletters/2022/12/21/#v3-tx-relay
 [newsletters]: /zh/newsletters/
 [topics index]: /en/topics/
-[yirs 2018]: /en/newsletters/2018/12/28/
-[yirs 2019]: /en/newsletters/2019/12/28/
-[yirs 2020]: /en/newsletters/2020/12/23/
-[yirs 2021]: /en/newsletters/2021/12/22/
+[yirs 2018]: /zh/newsletters/2018/12/28/
+[yirs 2019]: /zh/newsletters/2019/12/28/
+[yirs 2020]: /zh/newsletters/2020/12/23/
+[yirs 2021]: /zh/newsletters/2021/12/22/

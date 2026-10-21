@@ -121,9 +121,9 @@ _这是一个关于交易转发、交易池纳入以及挖矿选择的[限定周
 [jk_14]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021717.html
 [jager nostr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021700.html
 [jager video]: https://twitter.com/joostjgr/status/1658487013237211155
-[news85 stuck funds]: /en/newsletters/2020/02/19/#c-lightning-3500
+[news85 stuck funds]: /zh/newsletters/2020/02/19/#c-lightning-3500
 [btcpay server 97e7e]: https://github.com/btcpayserver/btcpayserver/commit/97e7e60ceae2b73d63054ee38ea54ed265cc5b8e
-[news157 libsecp]: /en/newsletters/2021/07/14/#libsecp256k1-844
+[news157 libsecp]: /zh/newsletters/2021/07/14/#libsecp256k1-844
 [bcc rn]: https://bitcoincore.org/en/releases/25.0/
 [news252 incentives]: /zh/newsletters/2023/05/24/#等待确认-2激励
 [morcos limits]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011401.html

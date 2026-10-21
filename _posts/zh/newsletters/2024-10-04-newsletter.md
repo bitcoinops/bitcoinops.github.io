@@ -60,6 +60,6 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 [bcc 28.0 rn]: https://github.com/bitcoin/bitcoin/blob/5de225f5c145368f70cb5f870933bcf9df6b92c8/doc/release-notes.md
 [rfcpcp]: https://datatracker.ietf.org/doc/html/rfc6887
 [rfcnatpmp]: https://datatracker.ietf.org/doc/html/rfc6886
-[news131 natpmp]: /en/newsletters/2021/01/13/#bitcoin-core-18077
+[news131 natpmp]: /zh/newsletters/2021/01/13/#bitcoin-core-18077
 [news310 stratumv2]: /zh/newsletters/2024/07/05/#bitcoin-core-30200
 [news320 stratumv2]: /zh/newsletters/2024/09/13/#bitcoin-core-30509
