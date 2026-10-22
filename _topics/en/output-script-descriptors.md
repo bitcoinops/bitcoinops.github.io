@@ -236,6 +236,9 @@ optech_mentions:
   - title: "Proposal to derive wallet label sync storage locations and encryption keys from descriptors"
     url: /en/newsletters/2026/10/02/#proposal-for-wallet-label-synchronization
 
+  - title: "Proposed descriptor syntax for importing hash preimages as wallet secrets"
+    url: /en/newsletters/2026/10/23/#descriptor-syntax-for-hash-preimages
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

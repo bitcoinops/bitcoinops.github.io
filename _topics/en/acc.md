@@ -82,6 +82,9 @@ optech_mentions:
   - title: "LN-GAP runs multi-round two-party contracts in LN channels with onchain disputes"
     url: /en/newsletters/2026/10/16/#offchain-contracts-in-lightning-channels
 
+  - title: "Lichen: single-issuer layer 2 with exits settled by BitVMX disputes"
+    url: /en/newsletters/2026/10/23/#trust-minimized-exits-from-a-single-issuer-layer-2
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"

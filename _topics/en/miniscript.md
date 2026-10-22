@@ -109,6 +109,9 @@ optech_mentions:
   - title: "Discussion of QR signing payloads for miniscript wallets"
     url: /en/newsletters/2026/06/05/#discussion-of-qr-signing-payloads-for-miniscript-wallets
 
+  - title: "Proposal for a private form of miniscript hash fragments holding the preimage"
+    url: /en/newsletters/2026/10/23/#descriptor-syntax-for-hash-preimages
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"
