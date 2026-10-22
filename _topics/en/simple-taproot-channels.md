@@ -71,6 +71,9 @@ optech_mentions:
   - title: "BOLTs #995 adds an extension BOLT for simple taproot channels"
     url: /en/newsletters/2026/05/08/#bolts-995
 
+  - title: "BOLTs #1352 corrects simple taproot channel key derivation, control blocks, and test vectors"
+    url: /en/newsletters/2026/10/23/#bolts-1352
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

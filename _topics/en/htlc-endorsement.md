@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Eclair #2716 implements a reputation system for HTLC endorsement that tracks per-peer routing fees"
     url: /en/newsletters/2025/07/18/#eclair-2716
 
+  - title: "LND #10919 replaces HTLC endorsement with an accountability-based local reputation system"
+    url: /en/newsletters/2026/10/23/#lnd-10919
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel jamming attacks

@@ -128,6 +128,9 @@ optech_mentions:
   - title: "Bitcoin Core #36338 fixes public key extraction from modified P2PKH inputs"
     url: /en/newsletters/2026/10/09/#bitcoin-core-36338
 
+  - title: "Ibis Wallet adds silent payments receiving"
+    url: /en/newsletters/2026/10/23/#ibis-wallet-v5-0-beta-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

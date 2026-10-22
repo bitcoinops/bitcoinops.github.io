@@ -127,6 +127,9 @@ optech_mentions:
   - title: "Conditional message transfer contract to solve channel jamming"
     url: /en/newsletters/2026/08/14/#conditional-message-transfer-contract-to-solve-jamming
 
+  - title: "LND #10919 adds experimental local reputation scoring based on HTLC accountability"
+    url: /en/newsletters/2026/10/23/#lnd-10919
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs

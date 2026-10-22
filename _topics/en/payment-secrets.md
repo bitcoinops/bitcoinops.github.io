@@ -63,6 +63,9 @@ optech_mentions:
   - title: "BOLTs #1242 makes payment secrets mandatory (and assumed to be enabled) for all BOLT11 invoices"
     url: /en/newsletters/2025/04/18/#bolts-1242
 
+  - title: "BOLTs #1357 requires exactly one payment hash and one payment secret field in BOLT11 invoices"
+    url: /en/newsletters/2026/10/23/#bolts-1357
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simplified multipath payments
