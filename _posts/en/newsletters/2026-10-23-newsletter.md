@@ -104,7 +104,37 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Eclair 0.14.4][] and [0.14.5][Eclair 0.14.5] are security releases for this
+  LN node implementation. Version 0.14.4 fixes several issues related to
+  [splicing][topic splicing], [HTLC][topic htlc] settlement, [on-the-fly
+  funding][topic jit channels], and onion parsing, as described in [Newsletter
+  #427][news427 eclair fixes]. It also rejects API requests with an `Origin`
+  header to prevent cross-site request forgery using cached HTTP Basic
+  authentication credentials (see [Newsletter #423][news423 eclair api]).
+  Browser-based integrations must now use their own backend to call Eclair.
+  Version 0.14.5 fixes the trampoline routing and taproot splicing
+  vulnerabilities described below, and closes an integer-overflow bypass of the
+  onion payload length validation covered in [Newsletter #427][news427 eclair
+  onion]. The project strongly recommends upgrading.
+
+- [BDK chain 0.23.4][] is a maintenance release of BDK's libraries for building
+  Bitcoin wallets. It fixes issues with transaction tracking and full scans
+  that stop before checking all previously revealed addresses. Accompanying
+  updates fix Bitcoin Core RPC synchronization after reorgs and include
+  previously covered Electrum fixes for [txid verification][news403 bdk txid],
+  [confirmation detection for transactions with an `OP_RETURN` first
+  output][news405 bdk opreturn], and [confirmation tracking after
+  reorgs][news427 bdk reorg].
+
+- [LND v0.21.5-beta.rc1][] and [v0.20.6-beta.rc1][LND v0.20.6-beta.rc1] are
+  release candidates for maintenance versions of this popular LN node
+  implementation. Both include the fee-update handling and channel-message
+  limits described in [Newsletter #418][news418 lnd fees], along with fixes for
+  commitment feerates, excessive memory allocation when parsing TLV records,
+  and SQL database deadlocks. Version 0.21.5 also includes the auxiliary
+  [HTLC][topic htlc] signature validation fix for [Taproot Assets][topic
+  client-side validation] channels described in [Newsletter #427][news427 lnd
+  aux], and fixes wallet synchronization during blockchain reorganizations.
 
 ## Notable code and documentation changes
 
@@ -117,11 +147,114 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Eclair #3409][] fixes a vulnerability that could allow a malicious payer to
+  steal funds from a node forwarding [trampoline payments][topic trampoline
+  payments]. Eclair now limits the total [CLTV expiry delta][topic cltv expiry
+  delta] of a downstream route to ensure that the outgoing HTLC expires before
+  the incoming HTLC (see [Newsletter #423][news423 eclair cltv] for a related
+  fix). Previously, when pathfinding failed, Eclair would retry with relaxed
+  limits on route length and expiry, allowing a payer to provide routing hints
+  or [blinded paths][topic rv routing] with excessive expiry deltas. The payer
+  could then reclaim the incoming HTLC onchain after it expired, while the
+  receiver could still claim the outgoing HTLC. Eclair now only relaxes the
+  route-length limit, preserving the required expiry ordering.
+
+- [Eclair #3411][] fixes a vulnerability that could allow a malicious channel
+  peer to steal funds by making Eclair sign an invalid [splice][topic splicing]
+  transaction (see [Newsletter #427][news427 eclair splice] for related fixes).
+  When splicing [simple taproot channels][topic simple taproot channels], a
+  peer can only provide the amount and script of an input's previous output
+  instead of the full transaction. Previously, Eclair trusted these values
+  without verifying them. A peer could lie about either field, causing Eclair
+  to sign a splice transaction that could never confirm because taproot
+  signatures commit to the actual amounts and scripts of the spent inputs.
+  Nevertheless, Eclair would treat the invalid splice as its latest channel
+  funding state. The peer could then publish a previously signed commitment
+  spending the previous funding output and claim an outgoing [HTLC][topic htlc]
+  using its payment preimage after Eclair's corresponding incoming HTLC had
+  timed out and been refunded, leaving Eclair unable to collect the forwarded
+  payment. Eclair now verifies the claimed outputs against its Bitcoin backend
+  before signing.
+
+- [LDK #5126][] fixes a bug where [BOLT12][topic offers] payments using one-hop
+  [blinded paths][topic rv routing] could be rejected because their HTLC expiry
+  was too short. Previously, LDK ignored the path's `cltv_expiry_delta` because
+  the introduction node was also the receiver. This overlooked the fact that it
+  includes the receiver's required [final CLTV delta][topic cltv expiry delta].
+  Consequently, payments only met the receiver's minimum requirement when LDK's
+  random CLTV offset was large enough. This caused intermittent payment
+  failures when testing against Core Lightning. LDK now includes the advertised
+  delta when constructing the route and checking its maximum permitted total
+  CLTV delta.
+
+- [LND #10919][] adds an experimental local reputation system to mitigate
+  [channel jamming attacks][topic channel jamming attacks], based on the
+  proposed HTLC accountability scheme (see Newsletters [#377][news377 jamming]
+  and [#387][news387 accountability]), which replaces the earlier [HTLC
+  endorsement][topic htlc endorsement] approach. The system scores outgoing
+  channels based on past forwarding activity and the node's advertised fees,
+  penalizing accountable [HTLCs][topic htlc] that take too long to resolve. The
+  system is enabled by default and logs whether HTLCs would qualify for
+  protected resources, without affecting forwarding decisions. Reputation
+  resets on restart.
+
+- [BTCPay Server #7679][] fixes a bug that could lead to duplicate Lightning
+  payouts. Previously, if a payout was initiated and a subsequent payment
+  lookup returned no results, BTCPay Server would cancel the payout and discard
+  its saved payment hash. This occurred even if the payment had succeeded.
+  Consequently, an operator could issue another payout for a payment that had
+  already succeeded. BTCPay Server now retains payouts in progress and their
+  payment hashes for subsequent checks.
+
+- [BTCPay Server #7684][] fixes a privilege escalation in its Greenfield API
+  key authorization. Previously, an API key restricted to a particular store
+  could exercise server-wide or account-wide permissions despite its limited
+  scope. Additionally, a key authorized to create API keys for other users
+  could also grant permissions broader than its own. BTCPay Server now enforces
+  permission scopes when authorizing requests and prevents API keys from
+  granting permissions they do not possess. Existing unrestricted administrator
+  keys retain their intended capabilities.
+
+- [BDK #2325][] and [#2360][bdk #2360] fix two bugs that could cause the wallet
+  to report successful synchronization without retrieving the requested
+  transaction data. The first affects Electrum synchronization of individual
+  outpoints. Previously, BDK ignored all errors encountered when fetching their
+  transactions, including connection failures and timeouts. This could cause a
+  spent output to remain classified as unspent. BDK now ignores Electrum
+  protocol errors on this path while propagating other failures. The second PR
+  fixes `sync` and `full_scan` in the Electrum and Esplora clients. Previously,
+  setting Electrum's `batch_size` or Esplora's `parallel_requests` to zero
+  could silently skip requested scans or transaction fetches while reporting
+  success. Both clients now treat zero as one for these parameters.
+
+- [BOLTs #1357][] updates [BOLT11][] to require invoice readers to reject
+  invoices unless they contain exactly one payment hash (`p`) and one payment
+  secret (`s`) field. Previously, the specification recommended that payers use
+  the first `p` field, while some invoice parsers used the last. This
+  discrepancy was [exploited against LNP2PBot][lnp2p incident], whose invoice
+  parser and Lightning node selected different payment hashes. Consequently,
+  the bot treated completed payouts as unpaid, allowing attackers to obtain
+  duplicate payouts (see [Newsletter #425][news425 lnd]).
+
+- [BOLTs #1352][] corrects several errors in the [simple taproot
+  channels][topic simple taproot channels] specification and test vectors (see
+  [Newsletter #404][news404 taproot]). Errors in taproot output-key derivation
+  and control-block construction could produce invalid spends if implemented as
+  previously specified. The PR also clarifies that [HTLC][topic htlc]
+  signatures exchanged in `commitment_signed` use
+  `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY`: the receiving peer appends `0x83` to
+  the 64-byte signature when constructing the witness. When combining
+  second-level transactions for fee bumping, each HTLC input and its
+  corresponding output must occupy matching indices in the combined
+  transaction. Additional corrections cover [anchor spending paths][topic
+  anchor outputs], [MuSig2][topic musig] nonce encoding and derivation, and
+  local and remote commitment test vectors. These changes align the
+  specification with existing LND and Eclair implementations without changing
+  protocol behavior.
 
 {% include snippets/recap-ad.md when="2026-10-27 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="3409,3411,5126,10919,7679,7684,2325,2360,1357,1352" %}
 
 [lichen ml]: https://groups.google.com/g/bitcoindev/c/yZEZ5P1lj5E
 [lichen paper]: https://github.com/AdamISZ/lichen/blob/master/papers/lichen-v0.1.pdf
@@ -133,3 +266,24 @@ FIXME:Gustavojfe
 [news419 lexe]: /en/newsletters/2026/08/21/#lexe-adds-human-readable-addresses-and-lnurl-withdraw
 [rbitcoin 0.8.0]: https://github.com/reardencode/rbitcoin/releases/tag/v0.8.0
 [desc del]: https://delvingbitcoin.org/t/descriptor-syntax-for-hash-preimages/2935
+[Eclair 0.14.4]: https://github.com/ACINQ/eclair/releases/tag/v0.14.4
+[Eclair 0.14.5]: https://github.com/ACINQ/eclair/releases/tag/v0.14.5
+[BDK chain 0.23.4]: https://github.com/bitcoindevkit/bdk/releases/tag/chain-0.23.4
+[LDK #5126]: https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5126
+[lnp2p incident]: https://x.com/negrunch/status/2097763741123166576
+[news423 eclair api]: /en/newsletters/2026/09/18/#eclair-3380
+[news427 eclair fixes]: /en/newsletters/2026/10/16/#notable-code-and-documentation-changes
+[news427 eclair onion]: /en/newsletters/2026/10/16/#eclair-3395
+[news403 bdk txid]: /en/newsletters/2026/05/01/#bdk-2188
+[news405 bdk opreturn]: /en/newsletters/2026/05/15/#bdk-2195
+[news427 bdk reorg]: /en/newsletters/2026/10/16/#bdk-2319
+[news423 eclair cltv]: /en/newsletters/2026/09/18/#eclair-3376
+[news427 eclair splice]: /en/newsletters/2026/10/16/#eclair-3396
+[news377 jamming]: /en/newsletters/2025/10/24/#channel-jamming-mitigation-simulation-results-and-updates
+[news387 accountability]: /en/newsletters/2026/01/09/#lnd-10367
+[news425 lnd]: /en/newsletters/2026/10/02/#lnd-11190
+[news404 taproot]: /en/newsletters/2026/05/08/#bolts-995
+[LND v0.21.5-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.21.5-beta.rc1
+[LND v0.20.6-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.6-beta.rc1
+[news418 lnd fees]: /en/newsletters/2026/08/14/#lnd-11023
+[news427 lnd aux]: /en/newsletters/2026/10/16/#lnd-11068
