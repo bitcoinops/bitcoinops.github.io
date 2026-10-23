@@ -7,63 +7,63 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 概述了关于实现 MuSig2 的一篇帖子，传达了对部分旧版 LN 实现影响的安全问题的负责任披露，讨论了通过交易信号来衡量对共识变更支持度的提案，并考察了速率限制对更高带宽效率的 LN gossip 的影响。文末照例总结了新的软件发布与候选发布，以及值得注意的比特币基础设施项目变更。
+本周的 Newsletter 概述了一篇关于实现 MuSig2 的帖子，转述了一项安全问题的负责任披露——该问题影响部分旧版 LN 实现，讨论了通过交易信号来衡量对共识变更支持程度的提案，并考察了速率限制对带宽效率更高的 LN gossip 有何影响。此外还包括本刊的固定栏目：总结新的软件发布与候选发布，以及热门比特币基础设施项目的值得注意的变更。
 
 ## 新闻
 
-- **<!--musig2-implementation-notes-->****MuSig2 实现说明：** Olaoluwa Osuntokun 在 [MuSig2][topic musig] 草案 BIP（见 [Newsletter #195][news195 musig2]）下[回复][osuntokun musig2]了他与他人在 btcd 与 LND 中实现 MuSig2 时得到的经验：
+- **<!--musig2-implementation-notes-->****MuSig2 实现说明：** Olaoluwa Osuntokun [回复][osuntokun musig2]了 [Newsletter #195][news195 musig2] 中提到的 [MuSig2][topic musig] 草案 BIP，附上了他和其他人为 btcd 与 LND 所做实现中的笔记：
 
-  - **<!--interaction-with-bip86-->***与 BIP86 的交互：* 由 [BIP32 HD 钱包][topic bip32]且实现了 [BIP86][] 的密钥，遵循 [BIP341][] 的建议，通过对自身哈希进行微调来创建仅限密钥路径的密钥。这样可以防止该密钥被用于[多签][topic multisignature]，从而阻止参与者暗中嵌入自己控制的脚本路径支出选项并窃取全部资金。然而，如果多签参与者确实希望包含脚本路径支出选项，他们需要彼此共享未微调版本的密钥。
+  - **<!--interaction-with-bip86-->***与 BIP86 的交互：* 实现了 [BIP86][] 的 [BIP32 HD 钱包][topic bip32] 所创建的密钥，会遵循 [BIP341][] 的建议，用密钥自身的哈希对它进行微调，从而生成只使用密钥路径的密钥。这有助于防止该密钥被用于[多重签名][topic multisignature]——否则某个参与者可能暗中加入一个自己控制的脚本路径支出选项，从而窃取全部资金。然而，如果多重签名参与者确实希望包含脚本路径支出选项，他们需要彼此共享未经微调的密钥。
 
     Osuntokun 建议 BIP86 的实现同时返回原始密钥（内部密钥）和微调后的密钥（输出密钥），以便调用函数根据上下文选择合适的密钥。
 
-  - **<!--interaction-with-scriptpath-spends-->***与脚本路径支出的交互：* 用于脚本路径支出的密钥有类似问题：要使用脚本路径，支出者必须知道内部密钥。因此实现应返回内部密钥，以便其他需要它的代码可以调用。
+  - **<!--interaction-with-scriptpath-spends-->***与脚本路径支出的交互：* 用于脚本路径支出的密钥有类似问题：要使用脚本路径，支出者必须知道内部密钥。因此实现也应返回内部密钥，以便其他需要它的代码可以使用。
 
-  - **<!--shortcut-for-final-signer-->***最终签名者的快捷方式：* Osuntokun 还请求澄清 BIP 中的一段描述：只有最终签名者可以使用确定性随机数或质量较低的随机源来生成其签名随机值。Brandon Black [回复][black musig2]解释了该段落的动机——他们有一个签名者难以安全地管理常规 MuSig2 会话，但可以始终被用作最终签名者。
+  - **<!--shortcut-for-final-signer-->***最终签名者的快捷方式：* Osuntokun 还就 BIP 中一段描述请求澄清，该段说明最终签名者（且只有最终签名者）可以使用确定性随机数或质量较低的随机源来生成签名随机数。Brandon Black [回复][black musig2]解释了该段落的动机——他们有一个签名者很难安全管理常规的 MuSig2 签名会话，但他们总能把它当作最终签名者使用。
 
-- **<!--measuring-user-support-for-consensus-changes-->****衡量用户对共识变更支持度：** Keagan McClelland 在 Bitcoin-Dev 邮件列表[发帖][mcclelland measure]，提出与[之前的提案][bishop signal]类似的方案，旨在让交易通过信号表示其是否[支持][topic soft fork activation]某项共识规则变更。邮件线程中还讨论了若干相关的情感测量思路，但都存在问题，例如[技术上的挑战][aronesty signal parse scripts]、显著[降低][grant signal chainalysis]用户隐私、[偏向][tetrud signal favor]比特币经济的某些部分，或是使先投票者[处于不利地位][ivgi signal hodl voting]。
+- **<!--measuring-user-support-for-consensus-changes-->****衡量用户对共识变更的支持：** Keagan McClelland 在 Bitcoin-Dev 邮件列表[发帖][mcclelland measure]，提出了一项与[之前的提案][bishop signal]类似的方案，让交易通过信号表示自己是否[支持][topic soft fork activation]某项共识规则变更。帖子讨论中还提出了若干相关的意见测量思路，但似乎都有问题，例如[技术上的挑战][aronesty signal parse scripts]、显著[降低][grant signal chainalysis]用户隐私、[偏向][tetrud signal favor]比特币经济的某些部分而损害其他部分，或是让早投票者相对于等待参与共识形成的人[处于劣势][ivgi signal hodl voting]。
 
-  与以往讨论该主题时一样，参与者普遍认为目前尚无足够能被大多数人接受的方法，来为改变比特币共识规则提供有效参考。
+  与以往讨论该主题时一样，似乎没有任何一种建议的方法能得出一个结果，足以让大多数讨论参与者在决定是否改变比特币共识规则时予以重视。
 
-- **<!--ln-anchor-outputs-security-issue-->****LN 锚定输出安全问题：** Bastien Teinturier 在 Lightning-Dev 邮件列表[发布][teinturier security]了一则其此前已向 LN 实现维护者负责任披露的安全公告。该问题影响旧版 Core Lightning（开启实验特性时）和 LND。仍在使用 Teinturier 帖子中提到版本的用户强烈建议立即升级。
+- **<!--ln-anchor-outputs-security-issue-->****LN 锚定输出安全问题：** Bastien Teinturier 在 Lightning-Dev 邮件列表[发布][teinturier security]了一则公告，内容是他此前已向 LN 实现维护者负责任披露的一个安全问题。该问题影响旧版 Core Lightning（开启实验特性时）和 LND。仍在使用 Teinturier 帖子中所提版本的用户，强烈建议升级。
 
-  在引入[锚定输出][topic anchor outputs]之前，被撤销的 [HTLC][topic HTLC] 交易仅包含一个输出，因此大多数实现只尝试领取那一个输出。LN 的锚定输出新设计允许将多个已撤销的 HTLC 输出合并到一笔交易中，但前提是实现必须领取该交易中的所有相关输出。若在 HTLC 的时间锁到期前未能领取全部输出，广播被撤销 HTLC 的一方可窃取剩余资金。Teinturier 在为 Eclair 实现锚定输出时测试了其他 LN 实现并发现了此漏洞。
+  在实现[锚定输出][topic anchor outputs]之前，被撤销的 [HTLC][topic HTLC] 交易只包含一个输出，因此许多实现也只尝试领取那一个输出。LN 锚定输出的新设计允许把多个已撤销的 HTLC 输出合并进一笔交易，但只有在实现领取了该交易中所有相关输出时，这样做才安全。任何在 HTLC 时间锁到期时仍未被领取的资金，都可能被广播那笔已撤销 HTLC 的一方窃走。Teinturier 为 Eclair 实现锚定输出的工作，让他得以测试其他 LN 实现并发现了这个漏洞。
 
-  与之前一项锚定输出相关攻击（见 [Newsletter #115][news115 fee stealing]）类似，问题似乎与在保留对 `SIGHASH_ALL` 的兼容支持的同时，新增 `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` 签名方式有关。
+  与之前一项与锚定输出有关的攻击（见 [Newsletter #115][news115 fee stealing]）类似，该问题似乎与在新增对用 `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` 签名的支持的同时，仍保留对用 `SIGHASH_ALL` 签名的旧有支持有关。
 
-- **<!--ln-gossip-rate-limiting-->****LN gossip 速率限制：** Alex Myers 在 Lightning-Dev 邮件列表[发帖][myers recon]，介绍了他使用 [minisketch][topic minisketch] 集合对账来减少节点获取 LN 通道图更新时带宽消耗的研究。其方法假设所有节点对几乎全部公共通道拥有几乎相同的信息。某节点可从其完整的公共网络图生成一个 minisketch 并发送给所有对等方，对等方可用此 minisketch 找到自上次对账以来的网络更新。这与 [erlay][topic erlay] 协议在比特币 P2P 网络中仅发送最近几秒钟内（新的未确认交易）更新的拟议用法不同。
+- **<!--ln-gossip-rate-limiting-->****LN gossip 速率限制：** Alex Myers 在 Lightning-Dev 邮件列表[发帖][myers recon]，介绍了他关于用基于 [minisketch][topic minisketch] 的集合对账来减少节点获知 LN 通道图更新所消耗带宽的研究。他的方法假设所有对等方对几乎全部相同的公共通道拥有几乎相同的信息。某个对等方可以从其完整的公共网络图生成一个 minisketch，发送给它的所有对等方，这些对等方就能用该 minisketch 找到自上次对账以来网络上的任何更新。这与通过 [erlay][topic erlay] 协议把 minisketch 用于比特币 P2P 网络的拟议用法不同：后者只发送最近几秒内的更新（新的未确认交易）。
 
-  在所有公共通道上进行对账的挑战在于要求所有 LN 节点拥有相同信息。任何会导致节点之间通道图长期不一致的过滤，都会造成带宽开销或协议失败。Matt Corallo [建议][corallo recon]可以将 erlay 模式应用到 LN——若仅同步新信息，就无需担心持久差异，尽管过滤规则差异过大仍可能导致带宽浪费或对账失败。Myers 担心仅发送更新需要维护大量状态——Bitcoin Core 节点需为每个对等方维护独立状态以避免重复发送更新。而在全部通道上对账可以免除逐节点状态，大幅简化 gossip 管理实现。
+  在全部公共通道上进行对账的挑战之一是，它要求所有 LN 节点保持相同的信息。任何会让节点之间的通道图视图长期存在差异的过滤，都会带来带宽开销或导致协议失败。Matt Corallo [建议][corallo recon]把 erlay 模式应用到 LN——如果只同步新信息，就不必担心持久差异，不过过滤规则差异过大仍可能造成带宽浪费或对账失败。Myers 则担心只发送更新需要维护的状态量——Bitcoin Core 节点会为每个对等方维护独立的状态，以避免重复发送此前已发给该节点的更新。而在全部通道上进行对账就无需针对每个对等方保存状态，大幅简化了 gossip 管理的实现。
 
-  截至本文撰写时，关于这些方案权衡的讨论仍在继续。
+  截至撰写本摘要时，关于这些方案各自权衡的讨论仍在进行。
 
 ## 发布与候选发布
 
-*面向热门比特币基础设施项目的新发布与候选发布。请考虑升级到新版本，或帮助测试候选版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
 - **<!--n8-->**[BTCPay Server 1.5.1][] 发布，这是一款流行的自托管支付处理软件的新版本，新增主页仪表盘、新的 [transfer processors][btcpay server #3476] 功能，并支持自动批准拉取付款和退款。
 
-- **<!--n9-->**[BDK 0.18.0][] 发布，这是该钱包库的新版本，包含其依赖 rust-miniscript 的[关键安全修复][minimalif bug]，并带来若干改进和小幅错误修复。
+- **<!--n9-->**[BDK 0.18.0][] 发布，这是该钱包库的新版本，包含来自其依赖项 rust-miniscript 库的[关键安全修复][minimalif bug]，并带来若干改进和小幅错误修复。
 
 ## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]上值得注意的变更。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]上值得注意的变更。*
 
-- [Bitcoin Core #18554][] 默认阻止同一 Bitcoin Core 钱包文件被用于多个完全独立的区块链。当 Bitcoin Core 在扫描新区块以查找其钱包相关交易时，会在钱包中记录该区块头的哈希。此 PR 检查最近一次记录的扫描区块是否与当前使用的区块链具有相同的[创世区块][genesis block]。若否，则返回错误，除非设置了新的 `-walletcrosschain` 配置选项。该变更可防止专用于某网络（例如 mainnet）的钱包被用于另一网络（如 testnet），从而降低意外资金损失或隐私泄露风险。此变更仅影响 Bitcoin Core 内部钱包的用户，其他比特币钱包软件不受影响。
+- [Bitcoin Core #18554][] 默认阻止同一 Bitcoin Core 钱包文件被用于多个完全独立的区块链。当 Bitcoin Core 在扫描新区块以查找其钱包相关交易时，会在钱包中记录该区块头的哈希。此 PR 检查最近一次记录的扫描区块与当前使用的区块链是否源自同一个[创世区块][genesis block]。若否，则返回错误，除非设置了新的 `-walletcrosschain` 配置选项。该变更可防止专用于某网络（例如 mainnet）的钱包被用于另一网络（如 testnet），从而降低意外资金损失或隐私泄露风险。此变更仅影响 Bitcoin Core 内部钱包的用户，其他比特币钱包软件不受影响。
 
-- [Bitcoin Core #24322][] 是将共识引擎抽离为独立库的更大工作的一部分。此 PR 新增了 `libbitcoinkernel` 库，列出了 `bitcoin-chainstate` 可执行文件（首次出现在 [Bitcoin Core #24304][] 中）需要链接的所有源文件。其中包括一些乍看与共识无关的文件，揭示了当前 Bitcoin Core 共识引擎的依赖关系。后续工作将继续把共识逻辑模块化，并逐步将这些文件移出 `libbitcoinkernel`。
+- [Bitcoin Core #24322][] 属于一项更大工作的一部分：抽离出共识引擎。做法是先创建一个原样使用 Bitcoin Core 共识代码的库，再逐步裁剪模块，让该库更加精简。具体来说，此 PR 引入了 `libbitcoinkernel` 库，划出 `bitcoin-chainstate` 可执行文件（在 [Bitcoin Core #24304][] 中引入）链接时需要引用的所有源文件。这份清单包含一些逻辑上似乎与共识无关的文件，恰好说明了 Bitcoin Core 共识引擎目前的依赖关系。后续工作会把共识与代码库的其余部分模块化分离，将这些文件从 `libbitcoinkernel` 的源文件清单中移除。
 
-- [Bitcoin Core #21726][] 允许即便在修剪模式下也能维护 coinstats 索引。Coinstats 在每个区块记录 UTXO 状态的 MuHash 摘要，从而可验证 [assumeUTXO][topic assumeutxo] 状态。此前该功能仅保证在存储完整区块链的归档全节点可用。此合并的 PR 使启用 `-coinstatsindex` 配置选项的修剪全节点也能提供该信息。
+- [Bitcoin Core #21726][] 新增了在修剪节点上也能维护 coinstats 索引的能力。Coinstats 包含每个区块处 UTXO 状态的 MuHash 摘要，可用来验证 [assumeUTXO][topic assumeutxo] 状态。此前只保证归档全节点（即存储区块链上每个区块的节点）能提供该信息。这个已合并的 PR 还让修剪过的全节点（即在验证区块后过一段时间将其删除的节点）在启用 `-coinstatsindex` 配置选项时也能获得该信息。
 
-- [BDK #557][] 新增 “最旧优先” 找零选择算法。目前共有四种算法：Branch and Bound（BnB）、Single Random Draw（SRD）、最旧优先和最大优先。默认情况下 BDK 先使用 BnB，若无解则回退到 SRD。
+- [BDK #557][] 新增“最旧优先”选币算法。目前共有四种选币算法：Branch and Bound（BnB）、Single Random Draw（SRD）、最旧优先和最大优先。默认情况下 BDK 使用 BnB，若 BnB 找不到解则回退到 SRD。
 
-- [LDK #1425][] 增加对[大额通道][topic large channels]（“wumbo 通道”）的支持，可用于高价值支付。
+- [LDK #1425][] 增加对[大额通道][topic large channels]（“wumbo 通道”）的支持，也就是支持高价值支付的通道。
 
 - [LND #6064][] 新增 `bitcoind.config` 与 `bitcoind.rpccookie` 配置选项，用于指定非默认的配置文件与 RPC cookie 路径。
 
-- [LND #6361][] 更新 `signrpc` 方法，可使用 [MuSig2][topic musig] 算法创建签名。详细信息见该合并 PR 中的[文档][lnd6361 doc]。请注意，MuSig2 支持仍属实验性质，若 MuSig2 拟议 BIP 有重大调整（见 [Newsletter #195][news195 musig2]），实现也可能随之变更。
+- [LND #6361][] 更新 `signrpc` 方法，使其能够使用 [MuSig2][topic musig] 算法创建签名。详细信息见该合并 PR 中的[文档][lnd6361 doc]。请注意，对 MuSig2 的支持仍属实验性质，可能发生变化，尤其是 MuSig2 拟议 BIP 出现重大调整时（见 [Newsletter #195][news195 musig2]）。
 
-- [BOLTs #981][] 从规范中移除了对 LN 网络图查询及结果进行压缩的能力。由于压缩功能几乎未被使用，移除它可降低 LN 实现的复杂度和依赖数量。
+- [BOLTs #981][] 从规范中移除了对 LN 网络图查询及结果进行压缩的能力。据信该压缩并未被使用，去掉这项支持可降低 LN 实现的复杂度和依赖数量。
 
 
 {% include references.md %}

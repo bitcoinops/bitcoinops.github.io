@@ -7,18 +7,18 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周 Newsletter 介绍了一项扩展 PSBT 以支持 Pay-to-Contract 协议输出消费字段的提案，并包含常规栏目——Bitcoin Stack Exchange 热门问答精选和主流比特币基础设施项目的显著变更。"
+本周 Newsletter 介绍了一项提案：为 PSBT 扩展字段，以便花费通过支付到合约（Pay-to-Contract）协议构建的输出。此外还包含常规栏目——Bitcoin Stack Exchange 的热门问答摘要，以及主流比特币基础设施项目的值得注意的变更。
 
 
 ## 新闻
 
-- ​**​<!--psbt-extension-for-p2c-fields-->​**​**​PSBT 的 P2C 字段扩展提案：​** Maxim Orlovsky [提议][orlovsky p2c] 新增一个比特币改进提案（BIP），为 [PSBTs][topic psbt] 添加可选字段以支持消费通过 [Pay-to-Contract][topic p2c]（P2C）协议创建的输出，如 [Newsletter #37][news37 psbt p2c] 所述。P2C 允许支付方与接收方就合约文本（或其他内容）达成一致，并生成一个对该文本进行承诺的公钥。支付方随后可证明该支付确实承诺了特定文本，且该承诺的生成在计算上不可行于接收方未配合的情况。简而言之，支付方可向法庭或公众证明其支付用途。
+- ​**​<!--psbt-extension-for-p2c-fields-->​**​**​PSBT 的 P2C 字段扩展提案：​** Maxim Orlovsky [提议][orlovsky p2c] 新增一个比特币改进提案（BIP），为 [PSBT][topic psbt] 添加可选字段，以支持花费通过 [Pay-to-Contract][topic p2c]（P2C）协议创建的输出，如 [Newsletter #37][news37 psbt p2c] 所述。P2C 允许付款方与收款方就合约文本（或其他内容）达成一致，并生成一个对该文本进行承诺的公钥。付款方随后可以证明，这笔支付确实承诺了该文本；而且如果没有接收方的配合，要做出这样的承诺在计算上是不可行的。简而言之，付款方可以向法院或公众证明自己为何付费。
 
-  然而，接收方后续在构建消费资金的签名时，除了使用其密钥（通常为 [HD 密钥链][topic bip32] 的一部分）外，还需要合约的哈希值。Orlovsky 的提案允许在 PSBT 中添加该哈希值，从而使签名钱包或硬件设备能够生成有效签名。
+  然而，接收方后续在构建花费资金的签名时，除了使用其密钥（通常为 [HD 密钥链][topic bip32] 的一部分）外，还需要合约的哈希值。Orlovsky 的提案允许在 PSBT 中添加该哈希值，从而使签名钱包或硬件设备能够生成有效签名。
 
 ## Bitcoin Stack Exchange 精选问答
 
-*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找答案的首选之地——也是我们在空闲时帮助好奇或困惑用户的去处。在本栏目中，我们将重点介绍自上期更新以来获得高票的问题与答案。*
+*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选去处之一，也是我们有点空闲时帮助好奇或困惑用户的地方。在本月栏目中，我们精选自上次更新以来得票最高的一些问题和回答。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
@@ -26,28 +26,28 @@ lang: zh
 - ​**​<!--is-it-possible-to-convert-a-taproot-address-into-a-v0-native-segwit-address-->​**[是否可以将 Taproot 地址转换为 v0 原生隔离见证地址？]({{bse}}111440)
   某交易所因不支持 Taproot，将用户的 P2TR（原生隔离见证 v1）提现地址更改为 P2WSH（原生隔离见证 v0）地址。用户询问是否可提取该 v0 输出中的比特币。Pieter Wuille 指出，由于用户需找到哈希值与 P2TR 地址公钥匹配的脚本（这在计算上不可行），这些比特币无法被提取。
 
-- ​**​<!--was-bitcoin-0-3-7-actually-a-hard-fork-->​**[Bitcoin 0.3.7 版本是否实际导致了硬分叉？]({{bse}}111673)
+- ​**​<!--was-bitcoin-0-3-7-actually-a-hard-fork-->​**[Bitcoin 0.3.7 真的是一次硬分叉吗？]({{bse}}111673)
   BA20D731B5806B1D 用户询问为何 Bitcoin 0.3.7 版本被归类为硬分叉。Antoine Poinsot 通过示例 `scriptPubKey` 和 `scriptSig` 值说明，在修复 [0.3.7][bitcoin 0.3.7 github] 版本中分离 `scriptSig` 与 `scriptPubKey` 验证的漏洞后，原本无效的签名可能变为有效。
 
 - ​**​<!--what-is-signature-grinding-->​**[什么是签名研磨（signature grinding）？]({{bse}}111660)
-  Murch 解释称，ECDSA 签名研磨是指反复签名直至获得 r 值处于范围下半部分的签名，基于比特币的 ECDSA 序列化格式，此类签名的长度可减少 1 字节（32 字节 vs 33 字节）。较小的签名可降低手续费，且已知的 32 字节长度有助于更精确的费用估算。
+  Murch 解释称，ECDSA 签名研磨是指反复签名直至获得 r 值处于范围下半部分的签名，基于比特币的 ECDSA 序列化格式，此类签名的长度可减少 1 字节（32 字节 vs 33 字节）。较小的签名可降低手续费，而且签名长度已知为 32 字节，这有助于更精确地估算手续费。
 
 - ​**​<!--how-is-network-conflict-avoided-between-chains-->​**[如何避免链间网络冲突？]({{bse}}111967)
   Murch 说明节点如何通过 P2P [消息结构][wiki message structure] 中定义的魔数（magic numbers）识别对等节点是否处于同一网络（主网、测试网、signet）。
 
 - ​**​<!--how-many-bips-were-adopted-in-the-standard-client-in-2021-->​**[2021 年有多少 BIP 被标准客户端采纳？]({{bse}}111901)
-  Pieter Wuille 提供了比特币核心的 [BIPs 文档][bitcoin bips doc] 链接，该文档记录了比特币核心已实现的 BIP。
+  Pieter Wuille 给出了 Bitcoin Core 的 [BIPs 文档][bitcoin bips doc] 链接，该文档记录了 Bitcoin Core 中已实现的 BIP。
 
 
 ## 值得注意的代码与文档变更
 
-*以下为 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo] 的显著变更。*
+*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo] 的值得注意的变更。*
 
-- [Eclair #2134][] 默认启用[锚定输出][topic anchor outputs]，允许在广播时若手续费率过低，可通过 [CPFP][topic cpfp] 对承诺交易进行手续费追加。由于锚定输出式手续费追加依赖 CPFP，用户需在 `bitcoind` 钱包中预留 UTXO。
+- [Eclair #2134][] 默认启用[锚定输出][topic anchor outputs]，允许在广播时费率过低的情况下对承诺交易进行手续费追加。由于锚定输出式的手续费追加依赖[子为父付（CPFP）][topic cpfp]，用户需要在 `bitcoind` 钱包中留有可用的 UTXO。
 
-- [Eclair #2113][] 新增手续费自动追加管理功能。包括按交易确认时效性分级、逐区块重新评估交易以决定是否追加手续费、根据网络手续费率调整交易手续费率，以及在必要时添加输入以提升手续费率。该拉取请求还呼吁改进 [Bitcoin Core #23201][] 的钱包 API，以减少如 Eclair 等外部程序所需的额外钱包管理操作。
+- [Eclair #2113][] 新增手续费追加的自动管理。这包括按准时确认的重要性对交易分级、在每个区块之后重新评估交易以判断是否适合追加手续费、同时重新评估当前网络费率以应对需要提高交易费率的情况，以及在必要时为交易添加额外输入以提高费率。该 PR 描述还呼吁改进 [Bitcoin Core #23201][] 的钱包 API，以减少 Eclair 等外部程序所需的附加钱包管理工作。
 
-- [Eclair #2133][] 开始默认转发 [洋葱消息][topic onion messages]。通过 [Newsletter #181][news181 onion] 提及的速率限制机制，防止对闪电网络协议该实验性功能的滥用。
+- [Eclair #2133][] 开始默认中继[洋葱消息][topic onion messages]。它会使用 [Newsletter #181][news181 onion] 中提到的速率限制，防止因滥用闪电网络的这一实验性功能而引发问题。
 
 - [BTCPay Server #3083][] 允许管理员通过 [LNURL 认证][LNURL authentication]（也可在非闪电网络软件中实现）登录 BTCPay 实例。
 

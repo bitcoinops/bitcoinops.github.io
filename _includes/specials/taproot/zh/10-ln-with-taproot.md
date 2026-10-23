@@ -61,5 +61,5 @@ P2TR 通道虽仅需两节点支持，但其收益较低，故开发优先级受
 [first dual funded tx]: https://blockstream.info/tx/91538cbc4aca767cb77aa0690c2a6e710e095c8eb6d8f73d53a3a29682cb7581
 [russell deployable ln]: https://github.com/ElementsProject/lightning/blob/master/doc/deployable-lightning.pdf
 [p4tr ptlcs]: /zh/newsletters/2021/08/25/#准备-taproot-10ptlcs
-[p4tr multisignatures]: /zh/newsletters/2021/08/04/#准备-taproot-7多签
+[p4tr multisignatures]: /zh/newsletters/2021/08/04/#准备-taproot-7多重签名
 [news163 htlc problems]: /zh/newsletters/2021/08/25/#htlc-的隐私问题
