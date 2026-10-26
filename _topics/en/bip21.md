@@ -6,8 +6,9 @@ title: BIP21 bitcoin URI scheme
 shortname: bip21
 
 ## Optional.  An entry will be added to the topics index for each alias
-#title-aliases:
-#  - Foo
+title-aliases:
+  - BIP21
+  - BIP321
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
