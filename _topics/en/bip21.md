@@ -1,5 +1,5 @@
 ---
-title: BIP21 bitcoin URI scheme
+title: Bitcoin URI scheme
 
 ## Optional.  Shorter name to use for reference style links e.g., "foo"
 ## will allow using the link [topic foo][].  Not case sensitive
