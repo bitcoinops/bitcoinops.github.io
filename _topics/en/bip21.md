@@ -61,12 +61,12 @@ optech_mentions:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **BIP21 bitcoin URI scheme** encodes a payment instruction in one string:
-  the `bitcoin:` scheme, an address, and optional parameters such as an
-  amount or a label.  The specification requires a legacy P2PKH address as
-  the body, but wallets commonly put other address formats there, and the
-  scheme is increasingly used to carry persistent identifiers for silent
-  payments and offers.  BIP321 has been proposed as its replacement.
+  **Bitcoin URI scheme** encodes a payment instruction in one string: the
+  `bitcoin:` scheme, an address, and optional parameters such as an amount
+  or a label.  BIP21 requires a legacy P2PKH address as the body, but
+  wallets commonly put other address formats there, and the scheme is
+  increasingly used to carry persistent identifiers for silent payments
+  and offers.  BIP321 replaced BIP21 in 2025 and is now the recommendation.
 ---
 BIP21 defines `bitcoin:` URIs: the scheme, a Bitcoin address, and optional
 parameters encoded like an HTTP query string, for example
@@ -87,6 +87,7 @@ In 2024, Josie Baker reopened the question of how the scheme is specified and
 how it is actually used.  BIP321, merged in 2025, proposes a modern URI
 scheme that describes payment instructions as a set of parameters rather
 than a single address, and BIP21 has since been marked as replaced by it.
+BIP21 itself was based on BIP20, which it replaced.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
