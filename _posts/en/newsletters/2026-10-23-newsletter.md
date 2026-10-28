@@ -47,7 +47,7 @@ software.
   losing a dispute, deterring false claims and refusals. Gibson acknowledges
   that a sequencer that omits a user's return, or signs a state it never validly
   reached, can still cost the user or the hub funds, and lists validity proofs
-  and a committee of sequencers as future work.
+  and a committee of sequencers as future work. {% assign timestamp="1:32" %}
 
 - **Descriptor syntax for hash preimages:** João Dias [posted][desc del] to
   Delving Bitcoin a proposal for extending [BIP379][] to add a private form
@@ -74,7 +74,7 @@ software.
   to amend BIP379 or draft a new BIP, if it is necessary to add an RPC call for
   Bitcoin Core to manage preimages, whether hardware signing devices should handle
   preimage secrets or this should remain software-wallet-only, and if there is any
-  interest in deterministically deriving preimages from key material.
+  interest in deterministically deriving preimages from key material. {% assign timestamp="18:03" %}
 
 ## Changes to services and client software
 
@@ -84,19 +84,19 @@ wallets and services.*
 - **Ibis Wallet v5.0-beta released:** [Ibis Wallet v5.0-beta][ibis v5.0] (see
   [Newsletter #406][news406 ibis]) adds [Ark][topic ark] support built on Bark,
   unilateral exits from the Spark [statechain][topic statechains], and receiving
-  to [silent payment][topic silent payments] addresses.
+  to [silent payment][topic silent payments] addresses. {% assign timestamp="26:31" %}
 
 - **Landfall wallet for Lightning mining payouts:** [Landfall][landfall gh] is a
   proof-of-concept wallet, showing UX achievable today, that derives from a single seed the payout address,
   [BOLT12 offer][topic offers], and [BIP322][topic generic signmessage]
   signature that the OCEAN mining pool requires to pay rewards over LN, using a
   Lexe-hosted node (see [Newsletter #419][news419 lexe]). It is not intended for
-  production use.
+  production use. {% assign timestamp="28:57" %}
 
 - **rbitcoin 0.8.0 released:** [rbitcoin 0.8.0][rbitcoin 0.8.0] is a Bitcoin
   full node written in Rust and built on rust-bitcoin, described as entirely AI-written, for wallet and Lightning
   backends that replaces the UTXO set with a relational archive, serves Electrum
-  and Esplora-style APIs, and uses [BIP324][topic v2 p2p transport] exclusively.
+  and Esplora-style APIs, and uses [BIP324][topic v2 p2p transport] exclusively. {% assign timestamp="38:44" %}
 
 ## Releases and release candidates
 
@@ -115,7 +115,7 @@ release candidates._
   Version 0.14.5 fixes the trampoline routing and taproot splicing
   vulnerabilities described below, and closes an integer-overflow bypass of the
   onion payload length validation covered in [Newsletter #427][news427 eclair
-  onion]. The project strongly recommends upgrading.
+  onion]. The project strongly recommends upgrading. {% assign timestamp="43:18" %}
 
 - [BDK chain 0.23.4][] is a maintenance release of BDK's libraries for building
   Bitcoin wallets. It fixes issues with transaction tracking and full scans
@@ -124,7 +124,7 @@ release candidates._
   previously covered Electrum fixes for [txid verification][news403 bdk txid],
   [confirmation detection for transactions with an `OP_RETURN` first
   output][news405 bdk opreturn], and [confirmation tracking after
-  reorgs][news427 bdk reorg].
+  reorgs][news427 bdk reorg]. {% assign timestamp="45:37" %}
 
 - [LND v0.21.5-beta.rc1][] and [v0.20.6-beta.rc1][LND v0.20.6-beta.rc1] are
   release candidates for maintenance versions of this popular LN node
@@ -134,7 +134,7 @@ release candidates._
   and SQL database deadlocks. Version 0.21.5 also includes the auxiliary
   [HTLC][topic htlc] signature validation fix for [Taproot Assets][topic
   client-side validation] channels described in [Newsletter #427][news427 lnd
-  aux], and fixes wallet synchronization during blockchain reorganizations.
+  aux], and fixes wallet synchronization during blockchain reorganizations. {% assign timestamp="47:09" %}
 
 ## Notable code and documentation changes
 
@@ -157,7 +157,7 @@ repo], and [BINANAs][binana repo]._
   or [blinded paths][topic rv routing] with excessive expiry deltas. The payer
   could then reclaim the incoming HTLC onchain after it expired, while the
   receiver could still claim the outgoing HTLC. Eclair now only relaxes the
-  route-length limit, preserving the required expiry ordering.
+  route-length limit, preserving the required expiry ordering. {% assign timestamp="50:16" %}
 
 - [Eclair #3411][] fixes a vulnerability that could allow a malicious channel
   peer to steal funds by making Eclair sign an invalid [splice][topic splicing]
@@ -174,7 +174,7 @@ repo], and [BINANAs][binana repo]._
   using its payment preimage after Eclair's corresponding incoming HTLC had
   timed out and been refunded, leaving Eclair unable to collect the forwarded
   payment. Eclair now verifies the claimed outputs against its Bitcoin backend
-  before signing.
+  before signing. {% assign timestamp="52:20" %}
 
 - [LDK #5126][] fixes a bug where [BOLT12][topic offers] payments using one-hop
   [blinded paths][topic rv routing] could be rejected because their HTLC expiry
@@ -185,7 +185,7 @@ repo], and [BINANAs][binana repo]._
   random CLTV offset was large enough. This caused intermittent payment
   failures when testing against Core Lightning. LDK now includes the advertised
   delta when constructing the route and checking its maximum permitted total
-  CLTV delta.
+  CLTV delta. {% assign timestamp="55:03" %}
 
 - [LND #10919][] adds an experimental local reputation system to mitigate
   [channel jamming attacks][topic channel jamming attacks], based on the
@@ -196,7 +196,7 @@ repo], and [BINANAs][binana repo]._
   penalizing accountable [HTLCs][topic htlc] that take too long to resolve. The
   system is enabled by default and logs whether HTLCs would qualify for
   protected resources, without affecting forwarding decisions. Reputation
-  resets on restart.
+  resets on restart. {% assign timestamp="56:19" %}
 
 - [BTCPay Server #7679][] fixes a bug that could lead to duplicate Lightning
   payouts. Previously, if a payout was initiated and a subsequent payment
@@ -204,7 +204,7 @@ repo], and [BINANAs][binana repo]._
   its saved payment hash. This occurred even if the payment had succeeded.
   Consequently, an operator could issue another payout for a payment that had
   already succeeded. BTCPay Server now retains payouts in progress and their
-  payment hashes for subsequent checks.
+  payment hashes for subsequent checks. {% assign timestamp="1:01:06" %}
 
 - [BTCPay Server #7684][] fixes a privilege escalation in its Greenfield API
   key authorization. Previously, an API key restricted to a particular store
@@ -213,7 +213,7 @@ repo], and [BINANAs][binana repo]._
   could also grant permissions broader than its own. BTCPay Server now enforces
   permission scopes when authorizing requests and prevents API keys from
   granting permissions they do not possess. Existing unrestricted administrator
-  keys retain their intended capabilities.
+  keys retain their intended capabilities. {% assign timestamp="1:02:39" %}
 
 - [BDK #2325][] and [#2360][bdk #2360] fix two bugs that could cause the wallet
   to report successful synchronization without retrieving the requested
@@ -225,7 +225,7 @@ repo], and [BINANAs][binana repo]._
   fixes `sync` and `full_scan` in the Electrum and Esplora clients. Previously,
   setting Electrum's `batch_size` or Esplora's `parallel_requests` to zero
   could silently skip requested scans or transaction fetches while reporting
-  success. Both clients now treat zero as one for these parameters.
+  success. Both clients now treat zero as one for these parameters. {% assign timestamp="1:04:18" %}
 
 - [BOLTs #1357][] updates [BOLT11][] to require invoice readers to reject
   invoices unless they contain exactly one payment hash (`p`) and one payment
@@ -234,7 +234,7 @@ repo], and [BINANAs][binana repo]._
   discrepancy was [exploited against LNP2PBot][lnp2p incident], whose invoice
   parser and Lightning node selected different payment hashes. Consequently,
   the bot treated completed payouts as unpaid, allowing attackers to obtain
-  duplicate payouts (see [Newsletter #425][news425 lnd]).
+  duplicate payouts (see [Newsletter #425][news425 lnd]). {% assign timestamp="1:07:13" %}
 
 - [BOLTs #1352][] corrects several errors in the [simple taproot
   channels][topic simple taproot channels] specification and test vectors (see
@@ -250,7 +250,7 @@ repo], and [BINANAs][binana repo]._
   anchor outputs], [MuSig2][topic musig] nonce encoding and derivation, and
   local and remote commitment test vectors. These changes align the
   specification with existing LND and Eclair implementations without changing
-  protocol behavior.
+  protocol behavior. {% assign timestamp="1:10:03" %}
 
 {% include snippets/recap-ad.md when="2026-10-27 16:30" %}
 {% include references.md %}
