@@ -18,6 +18,38 @@ popular Bitcoin infrastructure software.
 
 ## News
 
+- **Silent payments for multiparty wallets**: Oleksandr Kurbatov
+  [posted][sp multi del] to Delving Bitcoin to describe a protocol
+  to use multiparty inputs in [silent payment][topic silent payments]
+  transactions. [BIP352][] does not recommend using that kind of
+  input due to lack of a security proof. The protocol allows
+  a multiparty sender to compute the ECDH share as a weighted sum of
+  the signers' contributions, while providing an aggregated
+  [DLEQ][topic dleq] proof, called AggDLEQ, to prove that the ECDH
+  share is correctly derived from the input key. The proposal works
+  with several multiparty protocols, such as [FROST][BIPs #2070]
+  and [MuSig2][topic musig].
+
+  The proposed protocol relies on two rounds. A coordinator provides
+  context, containing signer set, signing protocol coefficients and
+  tweak, key material, the transaction, and a session ID. During the
+  first round, each signer generates two random nonces and sends messages
+  needed for AggDLEQ back to the coordinator, such as the ECDH
+  share computed from their own key fragment and nonce commitments.
+  Those messages are used by the coordinator to compute the combined
+  ECDH share and a challenge. During the second round, each signer
+  produces a contribution to the proof based on the provided challenge.
+  If the responses are correct, the coordinator aggregates all the
+  responses into a single proof compatible with [BIP374][].
+
+  Kurbatov stated that the protocol needs no changes to BIP352, BIP374,
+  BIP375, or the MuSig2 and FROST signing protocols, and no new PSBT
+  fields, because the AggDLEQ messages are exchanged only between the
+  signers over the wallet's coordinator channel. He said a paper with
+  security proofs is under internal review, but noted that its claim that
+  corrupted signers and the coordinator cannot forge a proof or a
+  signature relies on an assumption whose hardness is an open question.
+
 FIXME:bitschmidty
 
 ## Selected Q&A from Bitcoin Stack Exchange
@@ -56,4 +88,6 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-11-03 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="2070" %}
+
+[sp multi del]: https://delvingbitcoin.org/t/silent-payments-for-multiparty-wallets/2960
