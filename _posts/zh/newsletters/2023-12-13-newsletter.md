@@ -96,9 +96,9 @@ nswer -->{% endcomment %}
 [teinturier liqad]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004227.html
 [ms fee api]: https://mempool.space/docs/api/rest#get-recommended-fees
 [mempool.space]: https://mempool.space/
-[news136 bip129]: /en/newsletters/2021/02/17/#securely-setting-up-multisig-wallets
+[news136 bip129]: /zh/newsletters/2021/02/17/#securely-setting-up-multisig-wallets
 [recap279 liqad]: /en/podcast/2023/11/30/#update-to-the-liquidity-ads-specification-transcript
-[news182 block1983702]: /en/newsletters/2022/01/12/#bitcoin-core-23882
+[news182 block1983702]: /zh/newsletters/2022/01/12/#bitcoin-core-23882
 [demand website]: https://dmnd.work/
 [news247 sri]: /zh/newsletters/2023/04/19/#stratum-v2
 [warnet github]: https://github.com/bitcoin-dev-project/warnet

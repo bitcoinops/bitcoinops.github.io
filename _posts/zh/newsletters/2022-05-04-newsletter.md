@@ -41,7 +41,7 @@ lang: zh
 
 *面向热门比特币基础设施项目的新发布与候选发布。请考虑升级到新版本，或帮助测试候选版本。*
 
-- **<!--n8-->**[BTCPay Server 1.5.1][] 发布，这是一款流行的自托管支付处理软件的新版本，新增主页仪表盘、新的 [transfer processors][btcpay server #3476] 功能，并支持自动批准拉取付款和退款。
+- **<!--btcpay-server-1-5-1-->**[BTCPay Server 1.5.1][] 发布，这是一款流行的自托管支付处理软件的新版本，新增主页仪表盘、新的 [transfer processors][btcpay server #3476] 功能，并支持自动批准拉取付款和退款。
 
 - **<!--n9-->**[BDK 0.18.0][] 发布，这是该钱包库的新版本，包含其依赖 rust-miniscript 的[关键安全修复][minimalif bug]，并带来若干改进和小幅错误修复。
 

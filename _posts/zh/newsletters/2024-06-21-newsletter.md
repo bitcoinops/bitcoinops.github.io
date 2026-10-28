@@ -90,7 +90,7 @@ Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2867,8730,3098,3078,3082,3103,3037,29325" %}
 [news304 sp-psbt]: /zh/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments-psbt
-[news58 variable onions]: /en/newsletters/2019/08/07/#bolts-619
+[news58 variable onions]: /zh/newsletters/2019/08/07/#bolts-619
 [morehouse onion]: https://delvingbitcoin.org/t/dos-disclosure-lnd-onion-bomb/979
 [bcc 27.1]: /zh/newsletters/2024/06/14/#bitcoin-core-27-1
 [bitcoin core 26.2rc1]: https://bitcoincore.org/bin/bitcoin-core-26.2/
@@ -104,7 +104,7 @@ Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (
 [ark github]: https://github.com/ark-network/ark/
 [ark developer hub]: https://arkdev.info/docs/
 [volt github]: https://github.com/Zero-1729/volt
-[news214 joinstr]: /zh/newsletters/2022/08/24/#coinjoin-joinstr
+[news214 joinstr]: /zh/newsletters/2022/08/24/#proof-of-concept-coinjoin-implementation-joinstr
 [joinstr blog]: https://uncensoredtech.substack.com/p/tutorial-electrum-plugin-for-joinstr
 [bitkit blog]: https://blog.bitkit.to/synonym-officially-launches-the-bitkit-wallet-on-app-stores-9de547708d4e
 [civkit tweet]: https://x.com/gregory_nico/status/1800818359946154471

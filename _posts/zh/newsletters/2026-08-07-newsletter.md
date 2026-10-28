@@ -78,7 +78,7 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [fj ml cisa conduition]: https://groups.google.com/g/bitcoindev/c/1XH6sBLWZuA/m/kF-RpqEgBAAJ
 [ag ml cisa]: https://groups.google.com/g/bitcoindev/c/1XH6sBLWZuA/m/-zRSmrFZGQAJ
 [fj ml cisa waxwing]: https://groups.google.com/g/bitcoindev/c/1XH6sBLWZuA/m/oOQ7TIEVAgAJ
-[news208 halfagg]: /zh/newsletters/2022/07/13/#bip340
+[news208 halfagg]: /zh/newsletters/2022/07/13/#half-aggregation-of-bip340-signatures
 [news415 dahlias]: /zh/newsletters/2026/07/24/#draft-bip-for-full-aggregation-of-bip340-signatures
 [news403 pqout]: /zh/newsletters/2026/05/01/#discussion-of-a-postquantum-output-type
 [pw delving pqwit]: https://delvingbitcoin.org/t/segwit-commitment-to-post-quantum-witness-data/2702

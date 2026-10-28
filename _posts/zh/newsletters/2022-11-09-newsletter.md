@@ -12,17 +12,17 @@ lang: zh
 
 ## 新闻
 
-- **<!--continued-discussion-about-enabling-fullrbf-->关于支持全面 RBF 的持续争论**：前面几期已经提到 —— 用户、服务供应商和 Bitcoin Core 开发者，一直在评估为 Bitcoin Core 开发分支和 24.0 版本的候选版本加入  ` mempoollfullrbf ` 配置选项的影响。前几期周报已经总结了赞成和反对这个[全面 RBF][topic rbf]选项的许多意见（[1][news222 rbf]、[2][news223 rbf]、[3][news224 rbf]）。本周，Suhas Daftuar 在 Bitcoin-Dev 邮件组中[发帖][daftuar rbf]，“主张我们应该继续维护一种转发策略 —— 拒绝不使用（由 BIP125 定义） RBF 信号的交易的替换版本，而且，还应该从 Bitcoin Core 的最新候选版本中移除 `mempoolfullrbf` 标签，并且不再计划发行带有这个标签的软件，除非（或者说直到）网络的环境改变。”他写道：
+- **<!--continued-discussion-about-enabling-full-rbf-->****关于支持全面 RBF 的持续争论**：前面几期已经提到 —— 用户、服务供应商和 Bitcoin Core 开发者，一直在评估为 Bitcoin Core 开发分支和 24.0 版本的候选版本加入  ` mempoollfullrbf ` 配置选项的影响。前几期周报已经总结了赞成和反对这个[全面 RBF][topic rbf]选项的许多意见（[1][news222 rbf]、[2][news223 rbf]、[3][news224 rbf]）。本周，Suhas Daftuar 在 Bitcoin-Dev 邮件组中[发帖][daftuar rbf]，“主张我们应该继续维护一种转发策略 —— 拒绝不使用（由 BIP125 定义） RBF 信号的交易的替换版本，而且，还应该从 Bitcoin Core 的最新候选版本中移除 `mempoolfullrbf` 标签，并且不再计划发行带有这个标签的软件，除非（或者说直到）网络的环境改变。”他写道：
 
-  - *<!--optin-rbf-already-available-->选择性 RBF 已经可用了*：任何希望享受到 RBF 好处的人，都可以使用 [BIP125][] 所描述的机制有选择地启用。只有出于某些理由无法使用选择性 RBF 的用户，才应该获得全面 RBF 的服务。
+  - **<!--opt-in-rbf-already-available-->***选择性 RBF 已经可用了*：任何希望享受到 RBF 好处的人，都可以使用 [BIP125][] 所描述的机制有选择地启用。只有出于某些理由无法使用选择性 RBF 的用户，才应该获得全面 RBF 的服务。
 
-  - *<!--full-rbf-doesnt-fix-anything-that-isnt-broken-in-other-ways-->全面 RBF 所修复的东西也可以用别的方式打破*：已经有人[指出][riard funny games]了一种情形：多方协议的某一些用户可以拒绝其他用户使用选择性 RBF。但 Daftuar 指出，这样的协议应对其它便宜甚至免费的攻击也很脆弱，全面 RBF 实际上无能为力。
+  - **<!--full-rbf-doesn-t-fix-anything-that-isn-t-broken-in-other-ways-->***全面 RBF 所修复的东西也可以用别的方式打破*：已经有人[指出][riard funny games]了一种情形：多方协议的某一些用户可以拒绝其他用户使用选择性 RBF。但 Daftuar 指出，这样的协议应对其它便宜甚至免费的攻击也很脆弱，全面 RBF 实际上无能为力。
 
-  - *<!--full-rbf-takes-away-options-->全面 RBF 剥夺了选择*：“缺乏其它【全面 RBF 可以修复的问题】的例子，对我来说，全面 RBF 没有为 RBF 的用户解决任何问题，他们本来可以自由选择是否给自己的交易使用 BIP125 的 RBF 策略。从这个角度来说，‘启用全面 RBF’ 才是从用户手中剥夺选择，因为他们本可以让自己的交易进入一个不可替换的策略中。”
+  - **<!--full-rbf-takes-away-options-->***全面 RBF 剥夺了选择*：“缺乏其它【全面 RBF 可以修复的问题】的例子，对我来说，全面 RBF 没有为 RBF 的用户解决任何问题，他们本来可以自由选择是否给自己的交易使用 BIP125 的 RBF 策略。从这个角度来说，‘启用全面 RBF’ 才是从用户手中剥夺选择，因为他们本可以让自己的交易进入一个不可替换的策略中。”
 
-  - *<!--offering-nonreplacement-doesn’t-introduce-any-issues-for-full-nodes-->提供不可替换的特性并没有为全节点带来任何问题*：实际上，这简化了对一长串的交易的处理。
+  - **<!--offering-non-replacement-doesn-t-introduce-any-issues-for-full-nodes-->***提供不可替换的特性并没有为全节点带来任何问题*：实际上，这简化了对一长串的交易的处理。
 
-  - *<!--determining-incentive-compatibility-isn’t-always-straightforward-->有时候并不容易确定激励兼容性*：Daftuar 使用了 v3 交易转发提议（详见[周报 #220][news220 v3tx]）作为一个例子：
+  - **<!--determining-incentive-compatibility-isn-t-always-straightforward-->***有时候并不容易确定激励兼容性*：Daftuar 使用了 v3 交易转发提议（详见 [Newsletter #220][news220 v3tx]）作为一个例子：
 
     > 设想几年后有人提议给软件加入一个 “disable_v3_transaction_enforcement” 的标签，让用户可以决定关闭这些限制性的策略，并对 v3 交易和 v2 交易一视同仁，而且使用的理由可以跟今天为全面 RBF 辩护的理由完全相同 【……】
     >
@@ -38,7 +38,7 @@ lang: zh
 
   截至本文撰写之时，邮件组中还没有人回答 Daftuar 的问题，虽然在 Daftuar 对 Bitcoin Core 提交的移除  `mempoolfullrbf` 配置选项的 [PR][bitcoin core #26438] 中出现了两个回复。后来 Daftuar [关闭][26438 close]了这个 PR。
 
-- **<!--block-parsing-bug-affecting-multiple-software-->区块解析的 bug 影响了多个软件**：[周报 #222][news222 bug] 报道过，似乎一个会影响 BTCD 全节点和 LND 闪电节点的严重 bug 被意外触发了，导致这些软件的用户处在风险之中。不过升级版软件很快就发布了。在 bug 触发之后，很快 Anthony Towns 就[发现][towns find]了第二个相关的 bug，是只能由矿工触发的 bug。Towns 把这个 bug 报告给了 BTCD 和 LND 的带头维护者  Olaoluwa Osuntokun，后者准备了一个补丁，准备在软件的下一次常规升级中加入。在安全修复中加入其它变更，可以隐藏漏洞被修复的事情，并减少用户被爆破的可能。Towns 和 Osuntokun 都负责任地保守了这个漏洞的秘密，等待这个修复可以部署的时机。
+- **<!--block-parsing-bug-affecting-multiple-software-->****区块解析的 bug 影响了多个软件：**[Newsletter #222][news222 bug] 报道过，似乎一个会影响 BTCD 全节点和 LND 闪电节点的严重 bug 被意外触发了，导致这些软件的用户处在风险之中。不过升级版软件很快就发布了。在 bug 触发之后，很快 Anthony Towns 就[发现][towns find]了第二个相关的 bug，是只能由矿工触发的 bug。Towns 把这个 bug 报告给了 BTCD 和 LND 的带头维护者  Olaoluwa Osuntokun，后者准备了一个补丁，准备在软件的下一次常规升级中加入。在安全修复中加入其它变更，可以隐藏漏洞被修复的事情，并减少用户被爆破的可能。Towns 和 Osuntokun 都负责任地保守了这个漏洞的秘密，等待这个修复可以部署的时机。
 
   不幸的是，第二个相关 bug 被人自己重新发现了，TA 找到了一个矿工来触发。这个新 bug 又一次影响了 BTCD 和 LND，但同时也影响了至少[两个其它][liquid and rust bitcoin vulns]项目和服务。所有受影响的系统的用户都应该立即升级。我们重复在周前提出的建议：任何使用比特币软件的人，都应该留心软件的开发团队发出的安全通知。
 
@@ -112,7 +112,7 @@ lang: zh
 
 - [Bitcoin Core #26419][] 为验证接口的日志加入了语境，可以详细说明为什么一笔交易会从交易池中移除。
 
-- [Eclair #2404][] 添加了对 “短通道识别符（Short Channel IDentifirer，SCID）” 昵称和 “[零确认通道][topic zero-conf channels]” 的支持（即使通道状态的承诺没有使用 “[锚点输出][topic anchor outputs]”）。
+- [Eclair #2404][] 添加了对“短通道识别符（Short Channel IDentifirer，SCID）”昵称和“[零确认通道][topic zero-conf channels]”的支持（即使通道状态的承诺没有使用“[锚点输出][topic anchor outputs]”）。
 
 - [Eclair #2468][] 实现了 [BOLTs #1032][]，允许一笔支付（[HTLC][topic HTLC]）的最终接收方接受比自己所请求的更大的数额，而且可以使用比自己所要求的更长的超期时间。以前，使用 Eclair 的接收方遵守 [BOLT4][] 的要求：数额和超期时间都严格等于他们所要求的，但这种精确性意味着一个转发节点可以通过改变稍微改变数值和时间来打探下一跳是否为最终收款方。
 
@@ -139,12 +139,12 @@ lang: zh
 [rust bitcoin 0.28.2]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/0.28.2
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
 [news222 rbf]: /zh/newsletters/2022/10/19/#transaction-replacement-option
-[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf-rbf
+[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf
 [news224 rbf]: /zh/newsletters/2022/11/02/#mempool-consistency
 [daftuar rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021135.html
 [riard funny games]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
-[news220 v3tx]: /zh/newsletters/2022/10/05/#ln-penalty
-[news222 bug]: /zh/newsletters/2022/10/19/#btcd-lnd
+[news220 v3tx]: /zh/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
+[news222 bug]: /zh/newsletters/2022/10/19/#block-parsing-bug-affecting-btcd-and-lnd
 [liquid and rust bitcoin vulns]: https://twitter.com/Liquid_BTC/status/1587499305664913413
 [spoof payment attack]: /en/topics/cve/#CVE-2017-12842
 [towns find]: https://twitter.com/roasbeef/status/1587481219981508608

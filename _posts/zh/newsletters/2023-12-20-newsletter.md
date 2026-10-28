@@ -523,8 +523,8 @@ Optech 还发表了两篇来自业界的田野调查报告：一篇来自 BitGo 
 [tapsim]: /zh/newsletters/2023/06/21/#tapscript-tapsim
 [tldr]: https://tldr.bitcoinsearch.xyz/
 [topics index]: /en/topics/
-[yirs 2018]: /en/newsletters/2018/12/28/
-[yirs 2019]: /en/newsletters/2019/12/28/
-[yirs 2020]: /en/newsletters/2020/12/23/
-[yirs 2021]: /en/newsletters/2021/12/22/
+[yirs 2018]: /zh/newsletters/2018/12/28/
+[yirs 2019]: /zh/newsletters/2019/12/28/
+[yirs 2020]: /zh/newsletters/2020/12/23/
+[yirs 2021]: /zh/newsletters/2021/12/22/
 [yirs 2022]: /zh/newsletters/2022/12/21/

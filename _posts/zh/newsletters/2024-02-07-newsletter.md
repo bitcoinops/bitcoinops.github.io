@@ -106,13 +106,13 @@ repo]。_
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="29189,28956,29347,6985,6904,7022,6936,7022,6936,8345,22144,22147" %}
-[news154 stall]: /en/newsletters/2021/06/23/#bitcoin-core-22144
-[news145 lnproto]: /en/newsletters/2021/04/21/#c-lightning-4444
+[news154 stall]: /zh/newsletters/2021/06/23/#bitcoin-core-22144
+[news145 lnproto]: /zh/newsletters/2021/04/21/#c-lightning-4444
 [siegel stall]: https://delvingbitcoin.org/t/block-stalling-issue-in-core-prior-to-v22-0/499/
 [corallo 0conf]: https://delvingbitcoin.org/t/0conf-ln-channels-and-v3-anchors/494/
 [teinturier splice]: https://delvingbitcoin.org/t/0conf-ln-channels-and-v3-anchors/494/2
 [teinturier segwit]: https://delvingbitcoin.org/t/malleability-issues-when-creating-shared-transactions-with-segwit-v0/497
-[news97 spk]: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
+[news97 spk]: /zh/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
 [todd rbfr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022298.html
 [erhardt rbfr1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022302.html
 [erhardt rbfr2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022316.html
