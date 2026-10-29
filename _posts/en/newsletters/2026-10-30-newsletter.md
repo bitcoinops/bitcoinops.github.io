@@ -88,7 +88,32 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why does Bitcoin use both a transaction ID and a witness transaction ID?]({{bse}}131077)
+  Pieter Wuille explains that [segwit][topic segwit] moved signatures and
+  other malleable data into the witness, which the txid excludes, so that
+  presigned chains of unconfirmed transactions keep working. Inputs therefore
+  still reference txids. Blocks additionally commit to wtxids so that a node
+  handed a block with tampered witness data can reject it permanently rather
+  than reprocess every variant a peer offers. [BIP339][] later extended wtxid
+  use to transaction relay for similar denial-of-service reasons.
+
+- [How to sign a MuSig with Bitcoin Core]({{bse}}131086) Ava Chow explains
+  that [MuSig2][topic musig] signing takes two rounds, so each wallet must
+  process the [PSBT][topic psbt] twice. The first pass adds the wallet's public
+  nonce and the second, run on the combined PSBT once every nonce is present,
+  adds its partial signature, after which `finalizepsbt` produces the
+  transaction. The asker published an [example][bc musig2] of creating and
+  spending from a MuSig2 address with Bitcoin Core.
+
+- [What changed in Bitcoin P2P protocol version 70017 compared to 70016?]({{bse}}131080)
+  Ava Chow explains that [BIP434][] assigns the new version number because it
+  introduces a new `feature` message exchanged during the `version` handshake.
+  The message itself lets peers announce and negotiate optional features for
+  the life of a connection, replacing the historical practice of bumping the
+  protocol version or defining a dedicated message for each new feature (see
+  [Newsletter #386][news386 bip434]). Bitcoin Core implemented the message and
+  the version bump earlier this year (see [Newsletter #410][news410 bip434]),
+  and both ship in [Bitcoin Core 32.1][], described below.
 
 ## Releases and release candidates
 
@@ -319,3 +344,6 @@ repo], and [BINANAs][binana repo]._
 [cln selfref dos]: https://delvingbitcoin.org/t/cln-self-referential-channel-announcement-dos-disclosure/2974
 [cln 26.04.1]: https://github.com/ElementsProject/lightning/releases/tag/v26.04.1
 [news398 cln 26041]: /en/newsletters/2026/05/01/#core-lightning-26-04-1
+[bc musig2]: https://learningbitcoin.blockchaincommons.com/18_3_Using_Bitcoin_With_MuSig2/
+[news386 bip434]: /en/newsletters/2026/01/02/#peer-feature-negotiation
+[news410 bip434]: /en/newsletters/2026/06/19/#bitcoin-core-35221
