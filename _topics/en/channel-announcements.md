@@ -113,6 +113,9 @@ optech_mentions:
   - title: "Eclair #2983 only synchronizes channel announcements with the node's top peers on reconnection"
     url: /en/newsletters/2025/02/07/#eclair-2983
 
+  - title: "Nishant Bansal disclosed a CLN crash on announcements naming one node as both endpoints"
+    url: /en/newsletters/2026/10/30/#cln-self-referential-channel-announcement-dos-disclosure
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

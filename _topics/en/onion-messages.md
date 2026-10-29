@@ -113,6 +113,9 @@ optech_mentions:
   - title: "Eclair #3342 implements the `option_onion_messages_only_channels` feature bit"
     url: /en/newsletters/2026/08/28/#eclair-3342
 
+  - title: "LDK #5314 stops onion messages from linking unannounced channels to their funding outputs"
+    url: /en/newsletters/2026/10/30/#ldk-5314
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

@@ -65,6 +65,9 @@ optech_mentions:
   - title: "LDK #5028 makes SCID alias-only forwarding the default for unannounced channels"
     url: /en/newsletters/2026/10/09/#ldk-5028
 
+  - title: "LDK #5314 stops onion messages from linking unannounced channels to their funding outputs"
+    url: /en/newsletters/2026/10/30/#ldk-5314
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

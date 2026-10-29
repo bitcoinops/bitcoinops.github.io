@@ -214,6 +214,15 @@ optech_mentions:
   - title: "Nishant Bansal responsibly disclosed a channel announcement DoS vulnerability in Core Lightning"
     url: /en/newsletters/2026/10/30/#cln-self-referential-channel-announcement-dos-disclosure
 
+  - title: "Project Loupe's LLM scan found a TCP urgent data memory exhaustion crash in Bitcoin Core"
+    url: /en/newsletters/2026/10/30/#bitcoin-core-36665
+
+  - title: "Project Loupe's LLM scan found unbounded memory growth on paused pre-BIP31 peers in Bitcoin Core"
+    url: /en/newsletters/2026/10/30/#bitcoin-core-36667
+
+  - title: "Project Loupe's LLM scan found an undo-file offset overflow in Bitcoin Core"
+    url: /en/newsletters/2026/10/30/#bitcoin-core-36669
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

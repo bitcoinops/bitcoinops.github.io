@@ -63,6 +63,9 @@ optech_mentions:
   - title: "Proposal for synchronizing wallet labels through an untrusted store"
     url: /en/newsletters/2026/10/02/#proposal-for-wallet-label-synchronization
 
+  - title: "Draft BIP139 defines a JSON wallet metadata export format"
+    url: /en/newsletters/2026/10/30/#bips-2130
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output script descriptors

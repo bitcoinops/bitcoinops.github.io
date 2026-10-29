@@ -131,6 +131,9 @@ optech_mentions:
   - title: "Ibis Wallet adds silent payments receiving"
     url: /en/newsletters/2026/10/23/#ibis-wallet-v5-0-beta-released
 
+  - title: "Proposed AggDLEQ protocol for silent payments from multiparty wallets"
+    url: /en/newsletters/2026/10/30/#silent-payments-for-multiparty-wallets
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
