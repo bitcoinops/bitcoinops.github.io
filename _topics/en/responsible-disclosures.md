@@ -211,6 +211,9 @@ optech_mentions:
   - title: "Erick Cestari and Matt Morehouse disclosed two DoS vulnerabilities in Eclair's channel opening"
     url: /en/newsletters/2026/10/16/#disclosure-of-two-dos-vulnerabilities-fixed-in-eclair-v0-14-1
 
+  - title: "Nishant Bansal responsibly disclosed a channel announcement DoS vulnerability in Core Lightning"
+    url: /en/newsletters/2026/10/30/#cln-self-referential-channel-announcement-dos-disclosure
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
