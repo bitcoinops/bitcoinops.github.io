@@ -50,7 +50,32 @@ popular Bitcoin infrastructure software.
   corrupted signers and the coordinator cannot forge a proof or a
   signature relies on an assumption whose hardness is an open question.
 
-FIXME:bitschmidty
+- **CLN self-referential channel announcement DoS disclosure:** Nishant
+  Bansal [posted][cln selfref dos] to Delving Bitcoin disclosing a
+  denial-of-service vulnerability affecting Core Lightning (CLN) versions
+  25.02 through 26.04. CLN never checked that the two node IDs in a
+  [channel announcement][topic channel announcements] differ, so an
+  announcement naming the same node as both endpoints passed validation and
+  was written to the on-disk gossip store before being loaded into the
+  in-memory channel graph. Loading it added the unknown node twice, which
+  tripped a no-duplicates assertion in `gossipd` and crashed the node. The
+  stored message then crashed the node again on every restart until the
+  operator removed it by hand, which upgrading alone did not do.
+
+  An attacker only needed to fund a 2-of-2 output it controlled and sign the
+  announcement with those keys and a fresh node key, so the cost was limited
+  to onchain fees. Older CLN releases accept and relay such an announcement
+  without crashing, so they could carry it to vulnerable nodes the attacker
+  could not reach directly.
+
+  Bansal found the bug with a gossip fuzz target later proposed in [Core
+  Lightning #9115][]. It was [responsibly disclosed][topic responsible
+  disclosures] in April and fixed in [CLN 26.04.1][cln 26.04.1] (see
+  [Newsletter #398][news398 cln 26041]) by [Core Lightning #9082][], which
+  rejects any announcement whose `node_id_1` is not strictly less than
+  `node_id_2`. [BOLTs #1333][] added the same receiver requirement to
+  [BOLT7][], which had only required senders to order the IDs. Operators
+  still on an affected version should upgrade to the latest release.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -264,7 +289,7 @@ repo], and [BINANAs][binana repo]._
 
 {% include snippets/recap-ad.md when="2026-11-03 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="2070,36665,36667,36669,2130,9627,3417,3419,3416,5314,5412,11164,1059,11373,11380,7744,7748" %}
+{% include linkers/issues.md v=2 issues="2070,36665,36667,36669,2130,9627,3417,3419,3416,5314,5412,11164,1059,11373,11380,7744,7748,9082,9115,1333" %}
 
 [sp multi del]: https://delvingbitcoin.org/t/silent-payments-for-multiparty-wallets/2960
 [Bitcoin Core 32.1]: https://bitcoincore.org/bin/bitcoin-core-32.1/
@@ -291,3 +316,6 @@ repo], and [BINANAs][binana repo]._
 [news426 ldk5028]: /en/newsletters/2026/10/09/#ldk-5028
 [news428 btcpay7684]: /en/newsletters/2026/10/23/#btcpay-server-7684
 [news427 eclair splicing]: /en/newsletters/2026/10/16/#eclair-3396
+[cln selfref dos]: https://delvingbitcoin.org/t/cln-self-referential-channel-announcement-dos-disclosure/2974
+[cln 26.04.1]: https://github.com/ElementsProject/lightning/releases/tag/v26.04.1
+[news398 cln 26041]: /en/newsletters/2026/05/01/#core-lightning-26-04-1
