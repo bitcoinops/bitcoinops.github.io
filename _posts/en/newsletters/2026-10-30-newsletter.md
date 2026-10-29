@@ -77,6 +77,23 @@ popular Bitcoin infrastructure software.
   [BOLT7][], which had only required senders to order the IDs. Operators
   still on an affected version should upgrade to the latest release.
 
+- **Bitcoin Core security policy update:** Antoine Poinsot [posted][poinsot
+  policy ml] to the Bitcoin-Dev mailing list that Bitcoin Core has amended its
+  [security policy][core security policy] (see [Newsletter #306][news306
+  disclosure]) for vulnerabilities it classifies as easily discoverable, such
+  as those found with a simple prompt to a large language model. The
+  project has seen an increase in reports of such bugs, which can be
+  rediscovered or inferred from covert fixes. Rather than wait for the next
+  major release and the severity-based embargo the policy otherwise applies,
+  Bitcoin Core now backports a fix to every maintained release, cuts point
+  releases as soon as possible, and publishes an advisory alongside them. The
+  three vulnerabilities described in this week's notable code section ([Bitcoin
+  Core #36665][], [#36667][bitcoin core #36667], and [#36669][bitcoin core
+  #36669]) were disclosed under the new classification. Their fixes were merged
+  after 32.0 had been tagged, so 32.0 was never released and [Bitcoin Core
+  32.1][] (described below), along with 31.2, 30.4, and 29.5, ships them
+  instead.
+
 ## Selected Q&A from Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
@@ -344,6 +361,9 @@ repo], and [BINANAs][binana repo]._
 [cln selfref dos]: https://delvingbitcoin.org/t/cln-self-referential-channel-announcement-dos-disclosure/2974
 [cln 26.04.1]: https://github.com/ElementsProject/lightning/releases/tag/v26.04.1
 [news398 cln 26041]: /en/newsletters/2026/05/01/#core-lightning-26-04-1
+[poinsot policy ml]: https://groups.google.com/g/bitcoindev/c/70VSp_ARD5Q
+[core security policy]: https://bitcoincore.org/en/security-advisories/
+[news306 disclosure]: /en/newsletters/2024/06/07/#upcoming-disclosure-of-vulnerabilities-affecting-old-versions-of-bitcoin-core
 [bc musig2]: https://learningbitcoin.blockchaincommons.com/18_3_Using_Bitcoin_With_MuSig2/
 [news386 bip434]: /en/newsletters/2026/01/02/#peer-feature-negotiation
 [news410 bip434]: /en/newsletters/2026/06/19/#bitcoin-core-35221
