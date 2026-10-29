@@ -169,6 +169,9 @@ optech_mentions:
   - title: "Using a blinded version of MuSig2 to build a vault with blinded co-signers"
     url: /en/newsletters/2026/01/02/#building-a-vault-using-blinded-co-signers
 
+  - title: "Protocol for silent payments from MuSig2 and FROST wallets"
+    url: /en/newsletters/2026/10/30/#silent-payments-for-multiparty-wallets
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures

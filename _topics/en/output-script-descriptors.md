@@ -239,6 +239,9 @@ optech_mentions:
   - title: "Proposed descriptor syntax for importing hash preimages as wallet secrets"
     url: /en/newsletters/2026/10/23/#descriptor-syntax-for-hash-preimages
 
+  - title: "Draft BIP139 defines a JSON wallet metadata export format"
+    url: /en/newsletters/2026/10/30/#bips-2130
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

@@ -53,6 +53,9 @@ optech_mentions:
   - title: "BIPs #1758 updates BIP374 to prevent potential leakage of the private key"
     url: /en/newsletters/2025/03/07/#bips-1758
 
+  - title: "AggDLEQ aggregates signers' DLEQ contributions into one BIP374 proof"
+    url: /en/newsletters/2026/10/30/#silent-payments-for-multiparty-wallets
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
