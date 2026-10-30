@@ -7,35 +7,37 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 描述了一个提案，允许闪电网络（LN）节点无需始终在线保管其私钥就能接收付款。此外，还包含我们常规的 Bitcoin Core PR 审查俱乐部会议摘要，以及关于新软件版本与候选发布的公告，以及对常用比特币基础设施软件中值得注意的变更描述。
+本周的 Newsletter 描述了一个提案，让闪电网络（LN）节点无需始终把私钥保持在线就能接收付款。此外，还包含我们常规的 Bitcoin Core PR 审查俱乐部会议摘要，以及关于新软件版本与候选发布的公告，以及对热门比特币基础设施软件值得注意的变更的描述。
 
-## News
+## 新闻
 
-- **<!--receiving-ln-payments-with-a-mostly-offline-private-key-->****使用大部分离线私钥接收闪电网络支付：**2019 年，开发者 ZmnSCPxj [提出][zmn ff]了一种替代方案，用来打包等待中的 LN 支付（[HTLCs][topic htlc]），从而减少接收支付所需的网络带宽和延迟。最近，Lloyd Fournier 进一步指出，这个想法或许也能让节点在无需上线其私钥的情况下接收多笔闪电网络付款。该方案存在一些局限：
+- **<!--receiving-ln-payments-with-a-mostly-offline-private-key-->****使用大部分离线私钥接收闪电网络支付：**2019 年，开发者 ZmnSCPxj [提出][zmn ff]了一种替代方案，用来封装待处理的 LN 支付（[HTLC][topic htlc]），从而减少接收一笔支付所需的网络带宽和延迟。最近，Lloyd Fournier 提出，这个想法或许也能让节点无需私钥保持在线，就能接受多笔传入的 LN 付款。该方案确实有一些缺点：
 
-  - 如果需要发起惩罚交易（penalty transaction），节点依然需要使用其私钥。
-  - 节点在未使用私钥的情况下接收的付款越多，当通道被单方面关闭时就需要支付更多的链上费用。
-  - 接收节点会失去隐私——它的直接对等节点能够确定它是最终的收款方，而不仅仅是一个路由节点。然而，对于某些不路由付款的终端用户节点而言，这一点本就可能十分明显。
+  - 如果需要发送惩罚交易（penalty transaction），节点依然需要使用其私钥。
 
-  在上述限制下，这一想法看起来仍然可行，其变体也在本周的邮件列表上引发了[讨论][zmn revive]；ZmnSCPxj 提供了一份清晰的[展示材料][zmn preso]。随后 Fournier [提出][fournier asym]了改进方案。
+  - 节点在未使用私钥的情况下接收的付款越多，当通道被单方面关闭时就需要支付越多的链上手续费。
 
-  若要实现该想法，需要在 LN 协议层面进行多处重大修改，因此短期或中期内用户不太可能用上。但任何想要尽量减少 LN 接收节点在线保管密钥需求的人都可以考虑研究该方案。
+  - 接收节点会失去隐私——它的直接对等节点能够确定它是最终的收款方，而不仅仅是一个路由节点。不过，对于某些不路由付款的终端用户节点而言，这一点本就可能十分明显。
+
+  在这些限制范围内，这一想法看起来仍然可行，其变体也在本周的邮件列表上引发了[讨论][zmn revive]；ZmnSCPxj 准备了一份清晰的[演示文稿][zmn preso]。随后 Fournier [提出][fournier asym]了对该想法的改进。
+
+  实现该想法需要在 LN 协议层面进行多处重大修改，因此无论短期还是中期，用户都不太可能用上它。不过，任何想要尽量减少 LN 接收节点在线保管密钥需求的人，都不妨研究一下这个想法。
 
 ## Bitcoin Core PR 审查俱乐部
 
 *在本月度栏目中，我们总结了近期一次 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club] 会议的主要内容，并突出其中一些重要问答。点击下方某个问题，可查看该会议对答案的概要。*
 
-[修剪 g_chainman 在辅助模块中的使用][review club #21767] 是一个由 Carl Dong 提出的重构拉取请求（[#21767][Bitcoin Core #21767]），其目标是为去全局化 `g_chainman` 迈出第一步，以实现共识引擎的模块化。这将分离各组件，并实现更加针对性的测试。更长期的目标是将共识引擎与非共识代码彻底分离。
+[精简 g_chainman 在辅助模块中的使用][review club #21767] 是由 Carl Dong 提出的一个重构 PR（[#21767][Bitcoin Core #21767]），它属于一个更大项目的一部分，该项目要把 `g_chainman` 去全局化，作为实现共识引擎模块化的第一步。这将解耦各组件，并使测试更有针对性。更长期的目标是把共识引擎与非共识代码彻底分离。
 
 本次审查俱乐部在深入探讨代码改动前，首先讨论了以下一些通用问题：
 
 {% include functions/details-list.md
-  q0="**<!--q0-->**这个拉取请求是一次重构，不应改变任何功能行为。我们可以通过哪些方式来验证这一点？"
+  q0="**<!--q0-->**这个 PR 是一次重构，不应改变任何功能行为。我们可以通过哪些方式来验证这一点？"
   a0="仔细审阅代码、运行测试、增加测试覆盖率、插入断言或自定义日志记录、使用 `--enable-debug` 编译、在应用更改后运行 bitcoind 并使用 GDB 或 LLDB 等调试器单步跟踪代码。"
   a0link="https://bitcoincore.reviews/21767#l-53"
 
-  q1="**<!--q1-->**该拉取请求属于更大项目的一部分，旨在将 Bitcoin Core 的共识引擎模块化并进行分离。这样做有哪些好处？"
-  a1="这能让我们更容易理解、维护、配置和测试代码，并通过提供一个最小化的 API 来增强安全性与可维护性，还可以通过配置选项来传递非全局化数据。我们能够为不同组件构造可变的参数，从而在不同配置下更好地掌控对它们的测试。"
+  q1="**<!--q1-->**该 PR 属于一个更大项目的一部分，旨在把 Bitcoin Core 的共识引擎模块化并分离出去。这样做有哪些好处？"
+  a1="这能让我们更容易理解、维护、配置和测试代码。它可以对外提供一个最小化的 API，以兼顾安全性与可维护性，并通过配置选项传入非全局数据。我们还可以用不同的参数来构造组件，从而更好地控制在不同配置下对这些对象的测试。"
   a1link="https://bitcoincore.reviews/21767#l-63"
 
   q2="**<!--q2-->**`ChainstateManager` 的职责是什么？"
@@ -47,15 +49,15 @@ lang: zh
   a3link="https://bitcoincore.reviews/21767#l-174"
 
   q4="**<!--q4-->**`CChain` 类是什么？"
-  a4="[`CChain`][CChain] 类是一个内存中索引的区块链结构，包含一个 [区块索引指针的向量][cchain vectors]。"
+  a4="[`CChain`][CChain] 类是一个在内存中建立索引的区块序列，内部包含一个[区块索引指针的向量][cchain vectors]。"
   a4link="https://bitcoincore.reviews/21767#l-120"
 
   q5="**<!--q5-->**`BlockManager` 的职责是什么？"
-  a5="[`BlockManager`][BlockManager] 类维护了存储在 `m_block_index` 中的区块树，用于查找工作量最高的链尖端。"
+  a5="[`BlockManager`][BlockManager] 类维护 `m_block_index` 中存储的区块树，并借助它定位工作量最大的链尖。"
   a5link="https://bitcoincore.reviews/21767#l-121"
 
   q6="**<!--q6-->**`cs_main` 是什么？"
-  a6="`cs_main` 是一个互斥锁，用于保护与验证相关的数据（当然，目前也保护很多其他内容）。名字来自 [*critical section main*][csmain1]，因为它保护 `main.cpp` 中的数据，而现在位于 `validation.cpp` 和 `net_processing.cpp` 的代码[以前都在名为 `main.cpp` 的单个文件里][csmain2]。"
+  a6="`cs_main` 是一个互斥锁，用于保护与验证相关的数据（目前也保护很多其他内容）。这个名字来自 [*critical section main*][csmain1]，因为它保护的是 `main.cpp` 中的数据；而现在位于 `validation.cpp` 和 `net_processing.cpp` 的代码[以前都放在名为 `main.cpp` 的同一个文件里][csmain2]。"
   a6link="https://bitcoincore.reviews/21767#l-202"
 
   q7="**<!--q7-->**从概念上讲，当我们提到代码库中的“validation”部分时，包含哪些内容？"
@@ -65,32 +67,32 @@ lang: zh
 
 ## 发布与候选发布
 
-*适用于常用比特币基础设施项目的新版本与候选发布版本。请考虑升级到新版本，或协助测试候选发布版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
 - [LND 0.13.0-beta.rc5][LND 0.13.0-beta]
-  这是一个候选发布版本，允许使用修剪过的比特币完整节点，以及使用原子多路径支付（Atomic MultiPath，简称 [AMP][topic multipath payments]）接收和发送付款，并增强了其 [PSBT][topic psbt] 功能，还包含其他改进及错误修复。
+  这是一个候选发布版本，增加了对使用修剪过的比特币全节点的支持，允许使用原子多路径支付（Atomic MultiPath，简称 [AMP][topic multipath payments]）接收和发送付款，并增强了其[部分签名比特币交易（PSBT）][topic psbt]功能，还包含其他改进及错误修复。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*以下是本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的更改：*
+*以下是本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]的值得注意的变更：*
 
 - [Bitcoin Core #22051][]
-  为 Bitcoin Core 钱包导入 [taproot][topic taproot] 输出的[描述符][topic descriptors]提供了支持。通过该改动，钱包用户可以接收发送至 taproot 输出的资金，这是另一个[开放中的拉取请求][Bitcoin Core #21365]的前置条件，该拉取请求将实现从生成到支出 taproot 输出的完整功能。
+  为 Bitcoin Core 钱包导入 [taproot][topic taproot] 输出的[描述符][topic descriptors]提供了支持。有了这个 PR，钱包用户就能接收发送到 taproot 输出的资金；它也是另一个[开放中的 PR][Bitcoin Core #21365] 的前置条件，那个 PR 将完整支持用户向 taproot 输出收款、以及从 taproot 输出花费。
 
 - [Bitcoin Core #22050][]
-  移除了对第 2 版 Tor 洋葱服务（隐藏服务）的支持。第 2 版服务已被弃用，Tor 项目方宣布它们将在今年 9 月起无法再访问。Bitcoin Core 已支持第 3 版洋葱服务（具体内容参见 [Newsletter #132][news132 v3onion]）。
+  移除了对第 2 版 Tor 洋葱服务（隐藏服务）的支持。第 2 版服务已被弃用，Tor 项目已宣布它们将在 9 月变得无法访问。Bitcoin Core 已支持第 3 版洋葱服务（参见 [Newsletter #132][news132 v3onion]）。
 
 - [Bitcoin Core #22095][]
-  添加了一个测试，用于检查 Bitcoin Core 派生 [BIP32][] 私钥的过程。虽然 Bitcoin Core 始终正确派生这些密钥，但最近[发现][btcd issue]有部分其他钱包在处理长度不足 32 字节的扩展私钥（xpriv）时未做填充，从而在派生少量（大约 1/128）密钥时会出现偏差。该问题并不会直接导致资金丢失或安全性下降，但会给以下场景带来隐患：用户在一个钱包中创建 HD 钱包种子并导入到另一个钱包，或构建多重签名钱包。本次 PR 中实现的测试向量也[添加][bips #1030]到了 BIP32 中，旨在帮助未来的钱包作者避免此问题。
+  添加了一个测试，用于检查 Bitcoin Core 派生 [BIP32][] 私钥的过程。Bitcoin Core 一直都能正确派生这些密钥，但最近[发现][btcd issue]，其他一些钱包因为未对长度不足 32 字节的扩展私钥（xpriv）做填充，导致每 128 个密钥中略多于 1 个被错误派生。这不会直接造成资金损失或安全性下降，但会给两类用户带来麻烦：在一个钱包中创建 HD 钱包种子、再导入另一个钱包的用户，以及创建多重签名钱包的用户。本 PR 中实现的测试向量也[添加][bips #1030]到了 BIP32 中，以帮助未来的钱包作者避开这一问题。
 
 - [C-Lightning #4532][]
-  添加了实验性功能，支持[升级某个通道][bolts #868]——也就是重建最新承诺交易（commitment transaction）以整合新的功能或结构变动，例如改用 [taproot][topic taproot]。该过程从请求 [quiescence][bolts #869] 开始，也就是双方同意在暂停期间不发送任何新的状态更新，然后在此阶段里协商并应用各自想实现的更改，最后恢复通道的完整运行。当前 C-Lightning 在连接重新建立期间（当通道已被迫暂停时）执行这一过程。社区对通道升级方案也有过多次讨论（参见 [Newsletter #108][news108 channel upgrades]），本次 PR 的作者想借此特性继续推进 “[简化 HTLC 协商][news109 simplified htlc]” 中所述的工作。该 PR 允许把旧通道升级为支持 `option_static_remotekey`，这是 C-Lightning 在 2019 年加入的功能，详见 [Newsletter #64][news64 static remotekey]。
+  添加了实验性支持，可以[升级某个通道][bolts #868]——也就是重建最新的承诺交易（commitment transaction），使其能纳入新功能或结构变动，例如改用 [taproot][topic taproot]。该协议先请求进入[静止期][bolts #869]，也就是约定在静止期结束前双方都不再发送任何新的状态更新。在这段时间里，节点协商并实施它们想要的改动。最后，通道恢复到完整运行状态。C-Lightning 目前放在连接重建期间执行这一过程，此时通道已经处于被迫停摆的状态。各种通道升级提案曾在 [Newsletter #108][news108 channel upgrades] 中讨论过，而这个 PR 的作者想要这一特性，部分原因是为了推进 [Newsletter #109][news109 simplified htlc] 中所述的“简化 HTLC 协商”。这个 PR 允许把旧通道升级到支持 `option_static_remotekey`，C-Lightning 早在 2019 年就加入了对它的支持，参见 [Newsletter #64][news64 static remotekey]。
 
 - [LND #5336][]
-  用户现在可以通过指定新的支付 secret（payment secret），在无需额外交互的情况下重新使用 [AMP][topic multipath payments] 发票。为了支持此类重复使用机制，LND 为 AMP 发票设置的默认过期时间也提升至 30 天。
+  用户现在可以通过指定新的 payment secret，以非交互的方式重复使用 [AMP][topic multipath payments] 发票。为便于上述重复使用机制，LND 创建的 AMP 发票默认过期时间也提高到了 30 天。
 
 - [BTCPay Server #2474][]
-  新增了用于测试 Webhooks 的功能，会发送包含所有常规字段但填充虚拟数据的测试事件。该功能与部分中心化比特币支付处理平台（例如 Stripe、Coinbase Commerce 等）的测试功能类似。
+  新增了通过发送假事件来测试 webhook 的功能：这些事件包含全部常规字段，但数据是虚构的。这与 Stripe、Coinbase Commerce 等中心化托管的比特币支付处理平台所提供的测试功能类似。
 
 {% include references.md %}
 {% include linkers/issues.md issues="22051,22050,22095,4532,869,5336,2474,1030,868,21767,21365" %}

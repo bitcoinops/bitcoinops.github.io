@@ -289,13 +289,13 @@ praise:
     text: "[...] it's almost a full time job trying to summarise what's happening everywhere.  That's what guys at @bitcoinoptech does, so just following their news letters will give good enough understandings."
 
 ---
-本周 Newsletter 总结了关于在 Bitcoin 的 Script 语言中加入最小改动以启用递归契约的讨论，考察了经修订的 `OP_TX` 操作码提案，并回顾了将输出脚本描述符适配到硬件签名设备的研究。此外，我们照例提供了服务和客户端软件的最新变更、发布与候选发布，以及流行 Bitcoin 基础设施软件的值得注意的代码与文档更新。
-另外，我们共同庆祝 Optech 发布第 200 期常规 Newsletter。
+本周 Newsletter 总结了这样一场讨论：Bitcoin 的 Script 语言要启用递归契约，最少需要做哪些改动。还考察了新增 `OP_TX` 操作码的修订提案，并回顾了为硬件签名设备适配输出脚本描述符的研究。此外，我们照例提供了服务和客户端软件的最新变更、发布与候选发布，以及热门 Bitcoin 基础设施软件的值得注意的变更。
+另外，我们还庆祝 Optech 第 200 期常规 Newsletter 的发布。
 
 ## 新闻
 
 - **<!--when-would-enabling-op-cat-allow-recursive-covenants-->****启用 `OP_CAT` 何时会允许递归契约？**
-  在 Bitcoin-Dev 邮件列表关于重新加入 2010 年被移除的 [OP_CAT][op_cat] 操作码的讨论中，开发者 ZmnSCPxj [声称][zmnscpxj cat1]，只有当 `OP_CAT` 与提议中的 `OP_TX`（见 [Newsletter #187][news187 op_tx]）、[OP_CHECKSIGFROMSTACK][topic op_checksigfromstack]（CSFS）或类似功能结合使用时，才能实现不可逃避的递归[契约][topic covenants]——即使用 Bitcoin 共识规则保证合同收到的所有比特币只能再次支付给同一合同。
+  在 Bitcoin-Dev 邮件列表关于重新加入 2010 年被移除的 [OP_CAT][op_cat] 操作码的讨论中，开发者 ZmnSCPxj [声称][zmnscpxj cat1]，只有当 `OP_CAT` 与提议中的 `OP_TX`（见 [Newsletter #187][news187 op_tx]）、[OP_CHECKSIGFROMSTACK][topic op_checksigfromstack]（CSFS）或类似功能结合使用时，才能实现不可逃避的递归[契约][topic covenants]——即利用 Bitcoin 共识规则来保证，所有支付给该契约的比特币只能再花费到同一个契约。
 
   递归契约依赖于被称为 *交易内省* 的技术，即操作码可以分析执行该操作码的交易的部分内容。现有操作码 `OP_CHECKSIG`、[BIP65][] `OP_CHECKLOCKTIMEVERIFY` 和 [BIP112][] `OP_CHECKSEQUENCEVERIFY` 提供有限的内省能力。提议中的 TX 和 CSFS 操作码则可以灵活地内省交易的所有部分，包括下一输出（支付金额和地址）以及 *prevout*（上一输出，已接收金额和当前用于授权支出的脚本）。
 
@@ -303,13 +303,13 @@ praise:
 
   在 [taproot][topic taproot] 出现之前，在交易中包含 prevout 副本的最高效方式通常是将其作为类似数字签名的授权数据提供。如果 prevout 的副本与签名一起提供，就可以通过对交易见证进行内省来检查它，这需要像 TX 或 CSFS 这样的灵活内省机制。提议中的 CTV 与 APO 脚本变更也允许内省下一输出，但它们几乎不能内省见证，因此看起来即便与 CAT 结合也无法创建递归契约。
 
-  Nadav Ivgi [回复][ivgi cat]称，也可以把构造 prevout 所需的信息副本直接放入 prevout 本身（即在它还是下一输出时就加入该信息）。在创建递归契约时，这仍然需要 CAT 来绕过哈希问题，但这意味着以输出内省为重点的 CTV 与 APO 与 CAT 结合后同样能够创建递归契约。结合 taproot 的特性，Ivgi 还认为通过下一输出验证 prevout 会让契约脚本更易编写，并提供了两个有趣的递归契约示例链接。
+  Nadav Ivgi [回复][ivgi cat]称，也可以把构造 prevout 所需的信息副本直接放进 prevout 本身（也就是在它还是下一输出时就把该信息加进去）。在创建递归契约时，这仍然需要 CAT 来绕开哈希问题，但这意味着 CTV 和 APO 这类侧重输出内省的特性，与 CAT 结合后同样能创建递归契约。与 taproot 的特性一起使用时，Ivgi 还认为通过下一输出验证 prevout 会让契约脚本更易编写，并给出了两个有趣的递归契约示例链接。
 
-  ZmnSCPxj [同意][zmnscpxj cat2] Ivgi 的分析，并再次表达了他对在 Bitcoin 上启用递归契约风险的担忧（见 [Newsletter #190][news190 recurse]），不过他也在[随后帖子][zmnscpxj cat3]中指出，“【仅供参考】递归契约或许是安全的，因为它们实际上并非[图灵完备][Turing-complete]”。
+  ZmnSCPxj [同意][zmnscpxj cat2] Ivgi 的分析，并再次表达了他对在 Bitcoin 上启用递归契约风险的担忧（见 [Newsletter #190][news190 recurse]），不过他也在[随后帖子][zmnscpxj cat3]中指出，“姑且一说，递归契约或许是安全的，因为它们实际上并非[图灵完备][Turing-complete]”。
 
-  Russell O'Connor 还[引用][oconnor cat]了 Andrew Poelstra 的一篇[帖子][poelstra cat]（见 [Newsletter #134][news134 cat]），其中描述了仅凭 CAT 与已有 Bitcoin 特性即可创建非递归契约的强大能力——并且在理论上，如果 CAT 被重新加入 Bitcoin，也可能仅凭它自身创建递归契约。
+  Russell O'Connor 还[引用][oconnor cat]了 Andrew Poelstra 的一篇[帖子][poelstra cat]（见 [Newsletter #134][news134 cat]），其中描述了 CAT 本身与已有的 Bitcoin 特性结合后，已足以创建非递归契约——而更偏理论地看，如果 CAT 被重新加入 Bitcoin，它或许也能仅凭自身创建递归契约。
 
-  以上讨论均围绕对 Bitcoin 的新增提案展开，因此对当前已部署的 Bitcoin 系统状态没有任何影响。
+  以上讨论都围绕 Bitcoin 的拟议新增内容，因此我们对 Bitcoin 系统当前已部署状态的认识并没有变化。
 
 - **<!--updated-op-tx-proposal-->****OP_TX 提案更新：**
   如 [Newsletter #187][news187 op_tx] 所述，Rusty Russell 提出了 `OP_TX` 操作码（基于先前的提案），允许 [tapscript][topic tapscript] 将执行该脚本的交易的选定部分压栈。例如，Alice 可以将比特币接收至包含 `OP_TX(SELECT_LOCKTIME)` 的脚本，以把支出交易的 locktime 压栈。借助 TX 的通用交易内省功能，Alice 可以复现 `OP_CHECKLOCKTIMEVERIFY`（CLTV）的专用内省能力，例如 `OP_TX(SELECT_LOCKTIME) <height> OP_GREATERTHAN OP_VERIFY`。
@@ -318,19 +318,19 @@ praise:
 
   本周，Russell [提出][russell op_tx] 了受限版本的 TX，仅允许访问 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]（CTV）所使用的字段，且仅采用 CTV 所消耗的同一哈希摘要格式。[BIP119][] CTV 专门设计为无法与任何现有 Script 特性组合创建递归契约，因此受限 TX 应提供同等功能且同样不会启用递归契约。
 
-  此外，受限 TX 设计为未来软分叉可轻松扩展其内省功能，包括在有共识时可选启用递归契约的特性。截至撰写时，已有两位开发者建议通过稍作扩展来使用 TX：
+  此外，受限 TX 的设计让未来的软分叉可以轻松为它扩展更多内省功能，包括在有人支持添加相应能力时，可选地加入能启用递归契约的特性。截至撰写本文时，已有两位开发者建议通过稍作扩展来使用 TX：
 
   - **<!--improved-vault-primitive-->***改进的保险库原语：*
-    Russell 的提案建议扩展，以便将交易每个输出的 satoshi 数量压栈。Brandon Black [建议][black op_tx]再包括每个 prevout（输入）金额，这将简化创建[保险库][topic vaults]。Black 特别提议复制数月前 `OP_TAPLEAF_UPDATE_VERIFY`（TLUV）提案中的 `OP_IN_OUT_AMOUNT` 操作码能力（见 [Newsletter #166][news166 tluv]）。
+    Russell 的提案建议做一项扩展，把交易中支付给每个输出的 satoshi 数量压栈。Brandon Black [建议][black op_tx]把每个 prevout（输入）的金额也包含进来，这样会让创建[保险库][topic vaults]更容易。Black 特别提议复制几个月前 `OP_TAPLEAF_UPDATE_VERIFY`（TLUV）提案中 `OP_IN_OUT_AMOUNT` 操作码的能力（见 [Newsletter #166][news166 tluv]）。
 
-  - **<!--using-transaction-introspection-to-prevent-rbf-pinning-->***利用交易内省防止 RBF（RBF）固定攻击：*
-    Gregory Sanders [指出][sanders op_tx]，基于 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 操作码的 [Eltoo][topic eltoo] 层可能因与 [BIP125][] 规则 #3 交互而易受[交易固定][topic transaction pinning]攻击（见 [Newsletter #27][news27 eltoo]）。Sanders 建议让 TX 能够将交易权重（大小）压栈，参与者即可对 eltoo 通道中的交易设定最大尺寸限制，消除依赖膨胀交易大小的一类固定攻击风险。这与 [Newsletter #191][news191 pinning] 中提到的防止 CPFP（CPFP）固定的想法在概念上相似。
+  - **<!--using-transaction-introspection-to-prevent-rbf-pinning-->***利用交易内省防止 RBF 钉住：*
+    Gregory Sanders [指出][sanders op_tx]，提议中的 LN [Eltoo][topic eltoo] 层使用了 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 操作码，可能因与 [BIP125][] 规则 #3 相互作用而容易遭受[交易钉住][topic transaction pinning]攻击（见 [Newsletter #27][news27 eltoo]）。Sanders 建议让 TX 能够把交易权重（大小）压栈，这样基于 eltoo 的支付通道参与者就能给交易的最大尺寸设个上限，从而消除一类依赖膨胀交易大小的钉住风险。这与 [Newsletter #191][news191 pinning] 中提到的防止 CPFP 钉住的想法在概念上相似。
 
 - **<!--adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices-->****为硬件签名设备适配 miniscript 与输出脚本描述符：**
-  Salvatore Ingala 在 Bitcoin-Dev 邮件列表[发布][ingala desc]了他为硬件签名设备实现[输出脚本描述符][topic descriptors]（描述符）与 [miniscript][topic miniscript] 的工作。他指出，签名设备尤其关注策略验证——用户需要了解批准交易后会发生什么，但又不应被提示过多无关信息，以确保资金安全。由于许多签名设备的屏幕尺寸较小且验证信息困难，如何尽可能紧凑地显示信息也很重要。Ingala 提出若干针对描述符的改进建议来解决这些问题：
+  Salvatore Ingala 在 Bitcoin-Dev 邮件列表[发布][ingala desc]了他为硬件签名设备实现[输出脚本描述符][topic descriptors]（descriptor）与 [miniscript][topic miniscript] 的工作。他指出，签名设备尤其关注策略验证——用户需要明白自己批准交易后会发生什么，但又不应被要求查看超出确保资金安全所必需的信息。签名设备的屏幕往往较小，在上面核对信息也困难，因此尽可能紧凑地显示信息同样重要。Ingala 提出了若干针对描述符的改进建议来解决这些问题：
 
   - **<!--policy-registration-->***策略注册：*
-    在设置签名设备时，用户应使用设备验证其首选策略。对于具有持久存储的设备，应将已注册策略保存至设备；对于无存储的设备，设备应返回加密安全的注册证明，使得每次启动设备时可快速重新加载该证明和策略。提案未详细说明策略应如何在设备上注册，但引用了 [BIP129][] 安全多签设置（见 [Newsletter #136][news136 sms]）。
+    在设置签名设备时，用户应使用设备验证其首选策略。对于具有持久存储的设备，应将已注册的策略保存到设备上；对于没有存储的设备，设备应返回一个加密安全的注册证明，使得每次启动设备时可以连同策略一起快速重新加载。提案没有说明策略具体应如何在设备上注册，但引用了 [BIP129][] 安全多重签名设置（见 [Newsletter #136][news136 sms]）。
 
   - **<!--key-placeholders-->***密钥占位符：*
     Ingala 建议允许策略定义简短占位符来替代在描述符中重复出现的 [BIP32][] 扩展密钥，在解释策略时再用 BIP32 信息替换占位符。这既能显著减小策略字节大小，也能提高人类可读性。Ingala 亦提出了描述符中常用字符串的数个简写。
@@ -340,17 +340,17 @@ praise:
 
   截至目前，该提案已在邮件列表上获得一些讨论。
 
-## 服务和客户端软件的更改
+## 服务和客户端软件的变更
 
-*本月特写：我们关注 Bitcoin 钱包与服务的有趣更新。*
+*在本月栏目中，我们重点介绍 Bitcoin 钱包与服务的一些有趣更新。*
 
 - **<!--mycitadel-wallet-released-->****MyCitadel Wallet 发布：**
-  [MyCitadel Wallet][] 是一款桌面 Bitcoin、闪电网络与 [RGB][] 钱包，支持多签、[PSBTs][topic psbt]、segwit、taproot、[timelocks][topic timelocks]、硬件签名设备、[描述符][topic descriptors]等功能。
+  [MyCitadel Wallet][] 是一款桌面端的 Bitcoin、闪电网络与 [RGB][] 钱包应用，支持多重签名、[PSBTs][topic psbt]、segwit、taproot、[timelocks][topic timelocks]、硬件签名设备、[描述符][topic descriptors]等功能。
 
 - **<!--tauros-exchange-supports-lightning-->****Tauros 交易所支持闪电网络：**
   墨西哥交易所 [Tauros][] 宣布已支持闪电网络充值与提现。
 
-- **<!--lightning-multiplexer-announced-->****Lightning Multiplexer 发布：**
+- **<!--lightning-multiplexer-announced-->****Lightning Multiplexer 宣布：**
   支持 LND 的 Lightning Multiplexer（[lnmux][]）软件通过在入站支付中允许故障转移场景提高闪电网络支付可靠性。更多详情见 [Bottlepay 博文][lnmux blog]。
 
 - **<!--coldcard-adds-taproot-sends-->****Coldcard 新增 taproot 转账：**
@@ -358,17 +358,17 @@ praise:
 
 ## 发布与候选发布
 
-*流行 Bitcoin 基础设施项目的新版本与候选发布。请考虑升级到新版本或协助测试候选发布。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
 - [LND 0.15.0-beta.rc1][]：此流行闪电网络节点的下一主版本候选发布。
 
 ## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的变更。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的变更。*
 
 - [Bitcoin Core #22235][]：新增脚本可直接从源代码中定义的配置选项生成示例 `bitcoin.conf` 文件。此改动使得未来 Bitcoin Core 发行版可以预装 bitcoin.conf 文件，而无需另行维护配置选项状态的“第二来源”。
 
-- [LND #6450][]：新增对支出 [taproot][topic taproot] 输出的 [PSBTs][topic psbt] 签名支持。
+- [LND #6450][]：新增对花费 [taproot][topic taproot] 输出的 [PSBTs][topic psbt] 进行签名的支持。
 
 - [LND #6345][]：允许 LND 通过反复轮询 Bitcoin Core 获取新交易与区块更新，而不是通过 ZMQ 接收推送更新。
 
@@ -376,13 +376,13 @@ praise:
 
 ## 庆祝 Optech Newsletter #200
 
-每当 Newsletter 累积至 50 期，我们都会花一点时间回顾 Optech 的主要成果。我们这样做，一方面是帮助读者了解我们提供的全部资源，另一方面也是吸引捐赠，以支持我们继续产出有用内容。当然，还有一点点原因是：自豪。
+每当 Newsletter 满 50 期，我们都会花点时间回顾 Optech 的一些主要成果。这样做一方面是帮助读者了解我们提供的全部资源，另一方面也是吸引捐赠，让我们能继续产出有用的内容。不过，至少还有一点点原因是：自夸。
 
-我们并非出于个人虚荣而自夸，而是因为 Optech 的每一位贡献者本身都是其他贡献者的忠实粉丝。与优秀的同事一起协作是一种美好体验，而这些特别的 Newsletter 章节正是我们得以公开表达彼此赞赏之处。
+我们并非出于个人虚荣而自夸，而是因为 Optech 的每一位贡献者本身都是其他贡献者的忠实粉丝。与优秀的人一起协作是一种美好的体验，而这些特别的 Newsletter 章节，通常正是我们把对彼此毫无保留的钦佩付诸文字的地方。
 
-今年，我们决定换个方式。我们想给你们——读者——一个机会，让你们分享对 Optech 贡献者的欣赏。在没有进行任何征集的情况下，我们就在 Twitter 上找到了数十、甚至数百条暖心评价。精彩评论多到难以尽数刊登，因此我们仅选取过去四年中点赞数最高的 {{page.praise | size}} 条。
+今年我们不是这样做的。相反，我们想把机会留给你——读者——让你分享自己对 Optech 贡献者的一些赞赏。我们甚至没有征集，就在 Twitter 上找到了数十条、乃至数百条来自读者的美好评价。精彩的评论多到无法合理地全部刊登，因此我们只从过去四年中挑出 {{page.praise | size}} 条。
 
-在下方可以看到这些评论。但首先，我们要感谢过去一年中的主要贡献者——Adam Jonas、Carl Dong、David A. Harding、Gloria Zhao、John Newbery、Mark Erhardt、Mike Schmidt 以及 Shigeyuki Azuchi——同时也感谢[众多支持者][supporters]，包括我们的[创始赞助人][founding sponsors] Wences Casares、John Pfeffer 和 Alex Morcos。
+你可以在下方看到这些评论。但首先，我们要感谢过去一年的主要贡献者——Adam Jonas、Carl Dong、David A. Harding、Gloria Zhao、John Newbery、Mark Erhardt、Mike Schmidt 以及 Shigeyuki Azuchi——同时也要感谢[众多支持者][supporters]，包括我们的[创始赞助人][founding sponsors] Wences Casares、John Pfeffer 和 Alex Morcos。
 
 {% assign sorted_praise = page.praise | sort_natural: "author" %}
 {% for comment in sorted_praise %}

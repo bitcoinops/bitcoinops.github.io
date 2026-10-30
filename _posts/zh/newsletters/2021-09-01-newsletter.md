@@ -7,13 +7,13 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周 Newsletter 介绍了一个基于网络端的 PSBT 解码与修改工具,并链接了一篇关于基于 eltoo 的闪电网络支付通道的博客文章及概念验证实现。同时包含关于准备 Taproot 的常规信息、新软件候选版本公告以及主流比特币基础设施项目的重要变更摘要。
+本周 Newsletter 介绍了一个基于网页的 PSBT 解码与修改工具，并链接了一篇关于基于 eltoo 的闪电网络支付通道的博客文章及概念验证实现。同时还包含关于准备 Taproot 的常规内容、新软件候选版本公告，以及主流比特币基础设施项目值得注意的变更摘要。
 
 ## 新闻
 
-- **<!--bip174-org-->****BIP174.org:** Alekos Filini 在比特币开发邮件列表[发帖][filini bip174.org]介绍了其与 Daniela Brozzoni 共同创建的[网站][bip174.org],该网站可将[部分签名的比特币交易(PSBT)][topic psbt]解码为人类可读的字段列表。字段内容可被编辑并重新编码为序列化的 PSBT,帮助开发者快速测试其 BIP174 实现。Christopher Allen [建议][allen qr174]该工具应支持生成二维码(标准码或用于处理超过 3 KB PSBT 的替代方案,参见 [Newsletter #96][news96 qr codes])。
+- **<!--bip174-org-->****BIP174.org:** Alekos Filini 在 Bitcoin-Dev 邮件列表[发帖][filini bip174.org]，介绍了他与 Daniela Brozzoni 共同创建的[网站][bip174.org]。该网站可把[部分签名比特币交易（PSBT）][topic psbt]解码成人类可读的字段列表，字段内容可以编辑并重新编码为序列化的 PSBT，从而帮助开发者快速为自己的 BIP174 实现编写测试。Christopher Allen [回复][allen qr174]建议该工具还支持生成二维码（标准二维码，或用于处理超过 3 KB 的 PSBT 的替代方案，参见 [Newsletter #96][news96 qr codes]）。
 
-- **<!--eltoo-example-channel-->****Eltoo 示例通道:** Richard Myers 此前已基于 AJ Towns [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]实现(参见 [Newsletter #63][news63 eltoo])在比特币核心集成测试中完成 [eltoo][topic eltoo] 通道的示例版本。其在比特币开发邮件列表[提及][myers list]的[详细博客文章][myers blog]描述了 eltoo 通道可能使用的交易结构,结合集成测试代码,允许任何感兴趣者开始实验 eltoo 协议。文中还描述了多个改进方向供进一步研究。
+- **<!--eltoo-example-channel-->****Eltoo 示例通道：** Richard Myers 此前基于 AJ Towns 的 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 实现（参见 [Newsletter #63][news63 eltoo]），用 Bitcoin Core 的集成测试做出了一个 [eltoo][topic eltoo] 通道的示例。正如他在 Bitcoin-Dev 邮件列表上[提到][myers list]的那样，他现在还写了一篇[详细的博客文章][myers blog]，描述 eltoo 通道可以使用的交易；配合他的集成测试，任何对 eltoo 感兴趣的人都能开始上手实验。文中还描述了若干可能的 eltoo 改进方向，供有意深入研究的人参考。
 
 ## 准备 Taproot #11：使用 Taproot 的闪电网络
 
@@ -23,25 +23,25 @@ lang: zh
 
 ## 发布与候选发布
 
-*主流比特币基础设施项目的新版本与候选发布。请考虑升级至新版本或协助测试候选版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [Bitcoin Core 22.0rc3][bitcoin core 22.0] 是此全节点实现及其关联钱包等软件的下一主要版本候选。该版本主要变更包括支持 [I2P][topic anonymity networks] 连接、移除对 [Tor v2][topic anonymity networks] 的支持,以及增强硬件钱包兼容性。
+- [Bitcoin Core 22.0rc3][bitcoin core 22.0] 是该全节点实现及其配套钱包和其他软件下一个主要版本的候选版本。这个新版本的主要变更包括：支持 [I2P][topic anonymity networks] 连接、移除对 [Tor v2][topic anonymity networks] 的支持，以及加强对硬件钱包的支持。
 
-- [Bitcoin Core 0.21.2rc2][bitcoin core 0.21.2] 是比特币核心维护版本的候选发布。包含多个错误修复与小改进。
+- [Bitcoin Core 0.21.2rc2][bitcoin core 0.21.2] 是 Bitcoin Core 一个维护版本的候选版本，包含多项错误修复和若干小改进。
 
-## 重要代码与文档变更
+## 值得注意的代码与文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口(HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案(BIPs)][bips repo]和[闪电网络规范(BOLTs)][bolts repo]的重要变更。*
+*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo]的值得注意的变更。*
 
-- [Bitcoin Core GUI #384][] 新增在"封禁节点表"中复制 IP/子网掩码的右键菜单选项。该功能让 GUI 用户更方便地分享封禁列表中的地址。
+- [Bitcoin Core GUI #384][] 在“封禁节点表”中新增了复制某个对等节点 IP/子网掩码的右键菜单项。这让 GUI 用户更容易分享封禁列表中的单个地址。
 
   ![GUI 复制 IP/子网掩码的右键菜单选项截图](/img/posts/2021-09-gui-copy-banned-peer.png)
 
-- [C-Lightning #4674][] 新增 `datastore`、`deldatastore` 和 `listdatastore` 命令,供插件在数据库中存储和管理数据。同时更新了各命令语义的手册页。
+- [C-Lightning #4674][] 新增 `datastore`、`deldatastore` 和 `listdatastore` 命令，供插件在 C-Lightning 数据库中存储和管理数据。同时还附上了说明各命令语义的手册页。
 
-- [LND #5410][] 允许节点建立与非 [Tor][topic anonymity networks] 服务的直连,桥接仅限 Tor 和仅限明文网络的网络段。
+- [LND #5410][] 允许节点直接连接那些没有运行在 [Tor][topic anonymity networks] 之后的服务，从而把只能通过 Tor 连通、以及只能通过明文网络连通的两部分网络桥接起来。
 
-- [LND #5621][] 在 [ping 消息][lightning ping]的`ignored`字段中包含最高工作量区块头信息。对端节点可利用此数据进行额外验证,确保其区块链视图处于最新状态且未遭受[日蚀攻击][topic eclipse attacks]。未来工作可将此数据源用于用户提醒或自动恢复机制。
+- [LND #5621][] 把工作量最大区块的区块头放进 [ping 消息][lightning ping]的 `ignored` 字段。对等节点可以用这份信息额外校验：自己对区块链的视图是最新的，并且没有被[日食攻击][topic eclipse attacks]隔离在整个比特币网络之外。未来的工作可以利用这一数据源提醒用户，或自动采取恢复措施。
 
 ## 脚注
 

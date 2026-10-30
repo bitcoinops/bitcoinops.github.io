@@ -7,23 +7,23 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周 Newsletter 介绍了开发者在静默支付上的实验，并照例列出了新版本发布与候选发布的摘要，以及热门比特币基础设施软件的值得注意的更改。
+本周 Newsletter 介绍了开发者在静默支付上的实验，并照例列出了新版本发布与候选发布的摘要，以及热门比特币基础设施软件的值得注意的变更。
 
 ## 新闻
 
-- **<!--n1-->****关于静默支付的实验：** 根据 [Newsletter #194][news194 silent] 的描述，静默支付使得可以向某个公共标识符（“地址”）付款，而不会在公共记录中暴露该地址被付款的事实。本周，开发者 w0xlt 在 Bitcoin-Dev 邮件列表上[发布][w0xlt post]了一篇针对默认 [signet][topic signet] 生成静默支付地址的[教程][sp tutorial]，该教程基于 Bitcoin Core 的一个[概念验证实现][bitcoin core #24897]。包括流行钱包作者在内的多位开发者正在讨论该提案的其他细节，其中包括[为其创建地址格式][sp address]。
+- **<!--n1-->****关于静默支付的实验：** 根据 [Newsletter #194][news194 silent] 的描述，*静默支付*（silent payments）使得可以向某个公共标识符（“地址”）付款，而不会在公共记录中留下该地址被付款的痕迹。本周，开发者 w0xlt 在 Bitcoin-Dev 邮件列表上[发布][w0xlt post]了一篇[教程][sp tutorial]，讲解如何利用 Bitcoin Core 的一个[概念验证实现][bitcoin core #24897]，在默认 [signet][topic signet] 上创建静默支付。包括热门钱包作者在内的多位开发者正在讨论该提案的其他细节，其中包括[为它设计一种地址格式][sp address]。
 
 ## 发布与候选发布
 
-*针对流行比特币基础设施项目的新版本与候选版本。请考虑升级到新版本或协助测试候选版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
 - [HWI 2.1.1][HWI 2.1.1] 修复了影响 Ledger 和 Trezor 设备的两个小问题，并新增对 Ledger Nano S Plus 的支持。
 
 - [LND 0.15.0-beta.rc3][LND 0.15.0-beta.rc3] 是这一流行 LN 节点的下一个主要版本的候选发布。
 
-## 值得注意的代码与文档更改
+## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]上的值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]上值得注意的变更。*
 
 - [BTCPay Server #3772][BTCPay Server #3772] 允许用户在发布前为线上测试启用实验性功能。
 

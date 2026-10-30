@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 描述了一个提议，即 Taproot 签名对已花费的 scriptPubKeys 进行额外承诺，并包含了我们常规部分的内容：Bitcoin Core PR 审查俱乐部会议摘要、发布和候选发布的列表，以及对流行的比特币基础设施软件中值得注意的更改的描述。
+本周的 Newsletter 介绍了一个提议：让 taproot 签名对已花费的 scriptPubKey 额外作出承诺。此外还有我们的常设栏目：Bitcoin Core PR 审查俱乐部会议摘要、发布与候选发布列表，以及热门比特币基础设施软件中值得注意的变更。
 
 ## 行动项
 
@@ -15,25 +15,25 @@ lang: zh
 
 ## 新闻
 
-- **<!--request-for-an-additional-taproot-signature-commitment-->****对 Taproot 签名进行额外的承诺请求：** 之前在比特币专家之间讨论过的一个想法[^increase-quote]是允许硬件钱包自动签署任何可以明确增加用户余额的交易。这可以使硬件钱包轻松自动参与 [coinjoin][topic coinjoin] 交易或闪电网络支付路由。
+- **<!--request-for-an-additional-taproot-signature-commitment-->****请求 taproot 签名作出额外承诺：** 比特币专家之间此前讨论过的一个想法[^increase-quote]，是允许硬件钱包自动签署任何能证明会增加用户余额的交易。这样硬件钱包就能轻松自动参与 [coinjoin][topic coinjoin] 交易或 LN 支付路由。
 
-  然而，几年前，Greg Sanders [描述][sanders safe automation]了一种攻击，可以用来欺骗硬件钱包，使其认为余额在增加，实际上是在减少。攻击者会创建一个未签名的交易，花费硬件钱包的两个输入到两个输出——一个输出向钱包支付比两个输入中较大的一个略多的金额，另一个输出则支付给攻击者。攻击者会请求对第一个输入进行签名（而不透露第二个输入属于钱包）；在验证支付回钱包的输出大于输入后，钱包会签署该输入。然后，攻击者假装这是一个完全不同的交易，再次请求对第二个输入进行签名，使钱包在再次验证输出大于输入后，也签署第二个输入。最后，攻击者将两个签名放入最终交易并广播，从而窃取钱包中的资金。Sanders 在描述该问题时还描述了一种潜在的解决方案，但它要求钱包了解交易中每个之前输出所对应的 scriptPubKeys。
+  然而，几年前 Greg Sanders [描述][sanders safe automation]了一种攻击，可以骗过硬件钱包，让它以为余额在增加，实际却在减少。攻击者会构造一笔未签名交易，花费硬件钱包的两个输入、产生两个输出——一个输出付给钱包，金额比两个输入中较大的那个略多；另一个输出付给攻击者。攻击者先请求对第一个输入签名（但不说明第二个输入也属于该钱包）；钱包在确认付回自己的输出大于该输入后，会签署这个输入。接着，攻击者假称这是完全另一笔交易，请求对第二个输入签名，钱包在再次确认有输出大于输入后，又把第二个输入也签了。最后，攻击者把两个签名放进最终交易并广播，从钱包里偷走资金。Sanders 在描述该问题时也提出了一个可能的解决方案，但它要求钱包知道交易中每个被花费的前序输出的 scriptPubKey。
 
   ![使用假 coinjoin 欺骗硬件钱包导致资金损失的示意图](/img/posts/2020-05-fake-coinjoin-trick-hardware-wallet.dot.png)
 
-  上周，Andrew Kozlik 在 Bitcoin-Dev 邮件列表上[发布][kozlik spk commit]了一个请求，要求 [taproot][topic taproot] 签名直接承诺每个输入之前输出的 scriptPubKey。通过承诺所有交易输入的 outpoint，这种承诺已经间接存在[^outpoint-txid-spk]，但将其直接纳入交易摘要将允许[部分签名比特币交易][topic psbt] (PSBT) 无需信任地向签名者提供交易中所花费的所有 scriptPubKeys 的副本。如果缺少或篡改任何 scriptPubKey，签名者对 scriptPubKey 的承诺将无效，从而使交易无效。这将使硬件钱包能够使用 Sanders 在 2017 年描述的解决方案，而无需信任外部程序来提供正确的 scriptPubKeys 副本。
+  上周，Andrew Kozlik 在 Bitcoin-Dev 邮件列表上[发帖][kozlik spk commit]，请求 [taproot][topic taproot] 签名直接承诺每个输入所花费的前序输出的 scriptPubKey。通过承诺交易全部输入的 outpoint，这种承诺其实已经间接存在[^outpoint-txid-spk]，但若在交易摘要中直接作出，[部分签名比特币交易][topic psbt]（PSBT）就能无需信任地向签名者提供该交易中所有被花费的 scriptPubKey 副本。PSBT 里的这些 scriptPubKey 不需要任何信任，因为只要其中任何一个缺失或被篡改，签名者对 scriptPubKey 的承诺就会失效，整笔交易也随之无效。这样一来，硬件钱包就能采用 Sanders 在 2017 年描述的方案，而无需信任外部程序提供正确的 scriptPubKey 副本。
 
 ## Bitcoin Core PR 审查俱乐部
 
-_在这个每月的部分中，我们总结了一次最近的 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club]会议，重点介绍了一些重要的问题和答案。点击下方的问题以查看会议中答案的摘要。_
+_在这个月度栏目中，我们总结最近一次 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club]会议的内容，挑选其中一些重要的问题与回答。点击下面的问题，可以看到会议中相关回答的摘要。_
 
-[在最后的区块写入后刷新撤销文件][review club #17994] 是由 Karl-Johan Alm 提出的一个 PR ([#17994][Bitcoin Core #17994])，它改变了 _撤销文件_ 刷新到磁盘的方式。当 UTXO 集在新区块的交易反映后更新时，会创建撤销文件；如果在重组过程中该区块被删除，撤销文件包含将 UTXO 集恢复到之前状态的更改，从而撤销最初处理区块的效果。
+[在最后一次区块写入后刷新撤销文件][review club #17994] 是 Karl-Johan Alm 的一个 PR（[#17994][Bitcoin Core #17994]），它改变了 _撤销文件_ 刷入磁盘的方式。当更新 UTXO 集以反映新区块中的交易时，节点会创建撤销文件；如果该区块之后在重组中被移除，撤销文件中的数据可以把 UTXO 集恢复到之前的状态，从而抵消最初处理该区块所产生的影响。
 
-大部分讨论围绕基本概念和错误修复的细节展开：
+大部分讨论围绕基本概念和这个错误修复的细节展开：
 
 {% include functions/details-list.md
   q0="<!--data-loss-->现有的错误是否会导致数据丢失（并可能导致共识失败）？"
-  a0="不会。[该错误][Bitcoin Core #17890] 可能会导致磁盘空间的不必要使用，但不会导致数据丢失。"
+  a0="不会。[该错误][Bitcoin Core #17890] 可能造成磁盘空间浪费，但不会导致数据丢失。"
   a0link="https://bitcoincore.reviews/17994.html#l-33"
 
   q1="<!--undo-data-->在没有所有前置区块的情况下，是否可以创建一个区块的撤销数据？"
@@ -41,7 +41,7 @@ _在这个每月的部分中，我们总结了一次最近的 [Bitcoin Core PR �
   a1link="https://bitcoincore.reviews/17994.html#l-43"
 
   q2="<!--modify-undo-->我们是否会在写入磁盘后修改区块或撤销数据？"
-  a2="通常不会。区块和撤销数据是只写的。一旦它们被写入磁盘，就不会被修改。修剪节点可能会在足够多的新区块埋藏之后删除区块和撤销数据。"
+  a2="通常不会。区块和撤销数据都是只写的。一旦写入磁盘，它们就不会再被修改。修剪节点可能会在足够多的新区块将其掩埋之后删除区块和撤销数据。"
   a2link="https://bitcoincore.reviews/17994.html#l-79"
 
   q3="<!--undo-order-->撤销数据是按照与区块数据相同的顺序写入磁盘的吗？"
@@ -49,45 +49,45 @@ _在这个每月的部分中，我们总结了一次最近的 [Bitcoin Core PR �
   a3link="https://bitcoincore.reviews/17994.html#l-103"
 
   q4="<!--space-allocation-->区块和撤销文件中的空间是如何分配的？为什么？"
-  a4="文件中的空间是以 16MB 的块大小预分配的，而撤销文件的空间则是 1MB。这是为了减少文件系统碎片化。"
+  a4="区块文件按 16 MB 为单位预先分配空间，撤销文件按 1 MB 为单位。这样做是为了减少文件系统碎片。"
   a4link="https://bitcoincore.reviews/17994.html#l-122"
 
   q5="这个 PR 改变了什么？"
-  a5="在这个 PR 中，当文件中最高的区块已连接时，撤销文件将被最终确定并刷新到磁盘，而不是在相应的区块文件被刷新时。"
+  a5="在这个 PR 中，撤销文件会在文件中编号最高的区块被连接时就最终确定并刷入磁盘，而不是等到相应的区块文件被刷新时才刷入。"
   a5link="https://bitcoincore.reviews/17994.html#l-204"
 %}
 
 ## 发布与候选发布
 
-*流行的比特币基础设施项目的新发布和候选发布。请考虑升级到新版本或帮助测试候选版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [Eclair 0.4][] 是一个新的主要版本发布，升级了 Eclair 的主要依赖项，添加了对最新版本 Bitcoin Core 的支持，并弃用了 Eclair Node GUI（鼓励用户运行 [Phoenix][] 或 [Eclair Mobile][]）。
+- [Eclair 0.4][] 是一个新的大版本发布，升级了 Eclair 的主要依赖，增加了对最新版 Bitcoin Core 的支持，并弃用了 Eclair Node GUI（建议用户改用 [Phoenix][] 或 [Eclair Mobile][]）。
 
-- [C-Lightning 0.8.2.1][] 是一个新的维护版本，修复了 C-Lightning 和 Eclair 之间在大通道（“wumbo channels”）方面的不兼容问题。详情请参见链接的发布说明。
+- [C-Lightning 0.8.2.1][] 是一个新的维护版本，修复了 C-Lightning 与 Eclair 之间在大通道（“wumbo channels”）上的不兼容问题。详情请参见所附的发布说明。
 
-- [Bitcoin Core 0.20.0rc1][bitcoin core 0.20.0] 是 Bitcoin Core 下一个主要版本的候选发布。
+- [Bitcoin Core 0.20.0rc1][bitcoin core 0.20.0] 是 Bitcoin Core 下一个大版本的候选发布。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中的值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中值得注意的变更。*
 
-*注意：以下提到的 Bitcoin Core 提交适用于其主开发分支，因此这些更改可能要到即将发布的 0.20 版本后的大约六个月后才会发布到 0.21 版本中。*
+*注意：以下提到的 Bitcoin Core 提交针对其主开发分支，因此这些变更很可能要到 0.21 版才会发布，也就是在即将发布的 0.20 版发布约六个月之后。*
 
-- [Bitcoin Core #16224][] 显示了 GUI 中所有翻译的错误信息，同时显示为本地语言和英语。这可以帮助用户寻求帮助并快速向开发者描述问题。此外，错误信息的英文版本现在会被写入调试日志，以便开发人员更轻松地理解问题并提供帮助。
+- [Bitcoin Core #16224][] 把 GUI 中所有已翻译的错误消息同时以本地语言和英语显示。这有助于用户寻求帮助，并快速向开发者描述问题。此外，写入调试日志的现在也是英文版错误消息，同样是为了让开发者更容易理解问题并提供帮助。
 
-- [C-Lightning #3659][] 让 `channeld` 创建惩罚交易，因为它拥有足够的信息来处理以前的承诺交易。随着这一更改，C-Lightning 现在支持瞭望塔，例如 [Talaia 的 The Eye of Satoshi 瞭望塔][talaia]。未来可能的[扩展][CL future]包括为瞭望塔结算添加 HTLC 交易，并为瞭望塔插件激活前创建的承诺生成惩罚交易。
+- [C-Lightning #3659][] 改为让 `channeld` 创建惩罚交易，因为它掌握着关于此前承诺交易的足够信息。随着这项变更，C-Lightning 现在支持瞭望塔（watchtower），例如 [Talaia 的 The Eye of Satoshi 瞭望塔][talaia]。未来可能的[扩展][CL future]包括：把 HTLC 交易也纳入瞭望塔结算，以及为瞭望塔插件启用之前创建的承诺生成惩罚交易。
 
-- [Rust-Lightning #539][] 添加了对 `option_static_remotekey` 通道的支持，并要求连接的节点支持此功能。在发生数据丢失的情况下，该功能允许通道对方支付在通道打开时约定的未调整密钥，从而关闭通道并允许您的钱包花费资金。详见 Newsletter [#67][news67 static_remotekey] 以获取此功能的更多信息。
+- [Rust-Lightning #539][] 增加了对 `option_static_remotekey` 通道的支持，并要求连接的对等节点也支持该功能。如果你这边发生数据丢失，该功能允许你的通道对手方向一个在通道打开时约定的未调整密钥付款，从而关闭通道，并让你的钱包能够花掉自己的资金。该功能的更多细节参见 Newsletter [#67][news67 static_remotekey]。
 
-- [LND #4139][] 扩展了 `gettransactions` 和 `listsweeps` RPC，允许传递起始和结束区块高度，仅检索在该区块范围内确认的交易。结束高度为 `-1` 的值可用于列出未确认的交易。
+- [LND #4139][] 扩展了 `gettransactions` 和 `listsweeps` RPC，允许传入起始和结束区块高度，从而只取回在该区块范围内确认的交易。结束高度填 `-1` 时，还可以把未确认交易一并列出。
 
 ## 脚注
 
 [^increase-quote]:
-    “你将钱包连接到计算机，然后连接的计算机运行一个只读的闪电网络钱包，然后与硬件钱包通信，对严格增加你通道余额的交易进行签名。” ——摘自 Stephan Snigirev 关于硬件钱包的演讲的粗略[记录][snigirev ref]；记录者：Bryan Bishop
+    “你让钱包一直连着电脑，这台电脑运行一个只读的闪电网络钱包，然后与硬件钱包通信，为那些严格增加你通道余额的交易获取签名。”——摘自 Stephan Snigirev 一场关于硬件钱包的演讲的粗略[转录稿][snigirev ref]，由 Bryan Bishop 转录
 
 [^outpoint-txid-spk]:
-    在现有的 [BIP341][] 规范中，[taproot][topic taproot] 的每个输入都承诺了交易中包含的每个输入的 outpoint。Outpoint 是被花费输出的 txid 和输出索引（vout）。Txid 是包含该输出的大部分交易部分的哈希值。因此，对 outpoint 的承诺即是对 txid 的承诺，而 txid 又是对先前输出（包括输出的 scriptPubKey）的承诺。
+    在现有的 [BIP341][] [taproot][topic taproot] 规范中，每个输入都会承诺该交易中所有输入的 outpoint。outpoint 是被花费输出的 txid 与输出索引（vout）。txid 则是对包含该输出的交易中大部分内容做哈希得到的结果。因此，对 outpoint 的承诺就是对 txid 的承诺，而 txid 又是对前序输出（包括该输出的 scriptPubKey）的承诺。
 
 {% include references.md %}
 {% include linkers/issues.md issues="16224,3659,539,4139,17994,17890" %}
