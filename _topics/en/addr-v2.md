@@ -67,6 +67,9 @@ optech_mentions:
   - title: "BTCD v0.23.2 adds support for addr v2"
     url: /en/newsletters/2022/10/19/#btcd-v0-23-2-released
 
+  - title: "Coordinator-free hole punching via a new addr v2 type"
+    url: /en/newsletters/2026/11/06/#continued-discussion-of-tcp-hole-punching-for-home-nodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: P2P protocol `addr` message
