@@ -118,6 +118,9 @@ optech_mentions:
   - title: "Fingerprinting nodes on anonymity networks using P2P addr messages"
     url: /en/newsletters/2025/06/27/#fingerprinting-nodes-using-addr-messages
 
+  - title: "Hole punching coordinated through a node's own Tor service"
+    url: /en/newsletters/2026/11/06/#continued-discussion-of-tcp-hole-punching-for-home-nodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion
