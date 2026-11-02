@@ -76,10 +76,10 @@ mettons en lumière certaines des questions et réponses les mieux votées publi
   ChaCha20-Poly1305 ?]({{bse}}84953). Les réponses à ces questions peuvent être particulièrement intéressantes dans le contexte du BIP
   proposé pour un protocole de transport chiffré P2P de Bitcoin, dont il est prévu qu'il utilise le même chiffrement.
 
-- Plusieurs questions sur les signatures basées sur Schnorr : Pickhardt a également posé plusieurs questions sur [BIP-Schnorr][],
-  [Taproot][], et les plans visant à rendre ces fonctionnalités disponibles pour les transactions Bitcoin. Voir [est-ce que Schnorr
-  permettra une seule signature par bloc ?]({{bse}}85213) et [est-ce que MuSig a la même sécurité que le multisig Bitcoin actuel
-  ?]({{bse}}85101).
+- Plusieurs questions sur les signatures basées sur Schnorr : Pickhardt a également posé plusieurs questions sur
+  [BIP-Schnorr][], [Taproot][], et les plans visant à rendre ces fonctionnalités disponibles pour les transactions Bitcoin.
+  Voir [est-ce que Schnorr permettra une seule signature par bloc ?]({{bse}}85213) et [est-ce que MuSig a la même sécurité que le
+  multisig Bitcoin actuel ?]({{bse}}85101).
 
 - [Comment les paramètres de la courbe secp256k1 ont-ils été choisis ?]({{bse}}85387) C'est la courbe elliptique utilisée dans Bitcoin.
   Certains paramètres de courbe jouent un rôle important dans la sécurité, il est donc utile de savoir si ces paramètres ont été choisis
