@@ -190,8 +190,8 @@ donc indiqué quelle branche était affectée par chaque fusion de Bitcoin Core.
 [onioncat]: https://web.archive.org/web/20121122003543/http://www.cypherpunk.at/onioncat/wiki/OnionCat
 [batching chapter]: /en/payment-batching/
 [gui 0.18]: https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=is%3Apr+label%3AGUI+milestone%3A0.18.0
-[le bulletin #36 ml]: /en/newsletters/2019/03/05/#bitcoin-dev-mailing-list-outage
-[le bulletin #36 cleanup]: /en/newsletters/2019/03/05/#cleanup-soft-fork-proposal
+[le bulletin #36 ml]: /fr/newsletters/2019/03/05/#panne-de-la-liste-de-diffusion-bitcoin-dev
+[le bulletin #36 cleanup]: /fr/newsletters/2019/03/05/#proposition-de-soft-fork-de-nettoyage
 [le bulletin #13]: /fr/newsletters/2018/09/18/#bitcoin-core-14054
 [cve-2012-2459]: https://bitcointalk.org/?topic=102395
 [miniscript]: /en/topics/miniscript/
