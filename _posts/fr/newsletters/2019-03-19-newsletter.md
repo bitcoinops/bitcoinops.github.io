@@ -146,10 +146,10 @@ bech32 et la liste habituelle des changements notables dans les projets d'infras
 [ldev mv]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001915.html
 [bdev mv]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016785.html
 [groups.io]: https://groups.io/
-[le bulletin #37]: /en/newsletters/2019/03/12/#removal-of-bip61-p2p-reject-messages
-[le bulletin #34]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
+[le bulletin #37]: /fr/newsletters/2019/03/12/#suppression-des-messages-p2p-reject-de-bip61
+[le bulletin #34]: /fr/newsletters/2019/02/19/#discussion-sur-le-marquage-des-sorties-pour-activer-des-fonctionnalites-restreintes-lors-de-la-depense
 [le bulletin #25]: /fr/newsletters/2018/12/11/#explorateur-de-blocs-moderne-publie-en-open-source
 [le bulletin #7]: /fr/newsletters/2018/08/07/#lnd-1543
 [le bulletin #19]: /fr/newsletters/2018/10/30/#lnd-1535-1512
 [le bulletin #22]: /fr/newsletters/2018/11/20/#lnd-2124
-[le bulletin #30]: /en/newsletters/2019/01/22/#lnd-2448
+[le bulletin #30]: /fr/newsletters/2019/01/22/#lnd-2448
