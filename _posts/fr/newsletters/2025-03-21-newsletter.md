@@ -188,7 +188,7 @@ inquisition repo], et [BINANAs][binana repo]._
 [morehouse sweep]: https://delvingbitcoin.org/t/lnds-deadline-aware-budget-sweeper/1512
 [ismail sweep]: https://delvingbitcoin.org/t/lnds-deadline-aware-budget-sweeper/1512/3
 [news216 presync]: /fr/newsletters/2022/09/07/#bitcoin-core-25717
-[news345 offers]: /en/newsletters/2025/03/14/#eclair-2976
+[news345 offers]: /fr/newsletters/2025/03/14/#eclair-2976
 [news201 constrain]: /en/newsletters/2022/05/25/#lnd-6529
 [news344 lnd]: /fr/newsletters/2025/03/07/#divulgation-d-une-vulnerabilite-corrigee-lnd-permettant-le-vol
 [news335 algorithm]: /fr/newsletters/2025/01/03/#bdk-1670

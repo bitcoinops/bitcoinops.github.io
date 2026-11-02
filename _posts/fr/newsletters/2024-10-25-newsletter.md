@@ -154,7 +154,7 @@ repo], et [BINANAs][binana repo]._
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2925,9172,2960,8754" %}
 [mouton chanann]: https://delvingbitcoin.org/t/updates-to-the-gossip-1-75-proposal-post-ln-summit-meeting/1202/
-[news325 chanann]: /en/newsletters/2024/10/18/#gossip-upgrade
+[news325 chanann]: /fr/newsletters/2024/10/18/#mise-a-niveau-du-gossip
 [toth sp-psbt]: https://mailing-list.bitcoindevs.xyz/bitcoindev/cde77c84-b576-4d66-aa80-efaf4e50468fn@googlegroups.com/
 [news304 sp]: /fr/newsletters/2024/05/24/#discussion-sur-les-psbt-pour-les-paiements-silencieux
 [news308 sp]: /fr/newsletters/2024/06/21/#discussion-continue-sur-les-psbt-pour-les-paiements-silencieux

@@ -160,14 +160,14 @@ BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin
 [news392 mining]: /fr/newsletters/2026/02/13/#bitcoin-core-32420
 [news310 ipc]: /fr/newsletters/2024/07/05/#bitcoin-core-30200
 [news388 ipc]: /fr/newsletters/2026/01/16/#bitcoin-core-33819
-[news32 dump]: /en/newsletters/2019/02/05/#bitcoin-core-13926
+[news32 dump]: /fr/newsletters/2019/02/05/#bitcoin-core-13926
 [news400 rbf]: /fr/newsletters/2026/04/10/#ldk-4494
 [news404 rbf]: /fr/newsletters/2026/05/08/#bolts-1327
 [news340 lnd]: /fr/newsletters/2025/02/07/#lnd-9456
-[news33 lnd]: /en/newsletters/2019/02/12/#lnd-2572
+[news33 lnd]: /fr/newsletters/2019/02/12/#lnd-2572
 [news223 erlay]: /fr/newsletters/2022/10/26/#bitcoin-core-23443
 [hole punch del]: https://delvingbitcoin.org/t/tcp-hole-punching-for-bitcoin-nodes-behind-home-nats/2497
 [Bitcoin Core v30.0]: https://bitcoincore.org/en/releases/30.0/
 [guggero bip322 ml]: https://groups.google.com/g/bitcoindev/c/qd6BNz9gxCk/m/k1fHq4RKAQAJ
 [cc 322]: https://blog.coinkite.com/bip322-wif/
-[news405 bip322]: /en/newsletters/2026/05/15/#bips-2141
+[news405 bip322]: /fr/newsletters/2026/05/15/#bips-2141

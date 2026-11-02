@@ -770,7 +770,7 @@ pourrait réduire de manière significative les coûts de l'utilisation du LN su
 [news231 v3relay]: /fr/newsletters/2022/12/21/#v3-tx-relay
 [bulletins]: /fr/newsletters/
 [index des sujets]: /en/topics/
-[yirs 2018]: /en/newsletters/2018/12/28/
+[yirs 2018]: /fr/newsletters/2018/12/28/
 [yirs 2019]: /fr/newsletters/2019/12/28/
 [yirs 2020]: /fr/newsletters/2020/12/23/
 [yirs 2021]: /fr/newsletters/2021/12/22/

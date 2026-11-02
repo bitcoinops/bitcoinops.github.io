@@ -819,7 +819,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 
 {% include references.md %}
 {% include linkers/issues.md issues="8312,524,18038,18861,19109,14582,19743,16152" %}
-[2018 summary]: /en/newsletters/2018/12/28/
+[2018 summary]: /fr/newsletters/2018/12/28/
 [2019 summary]: /fr/newsletters/2019/12/28/
 [`addr` message]: https://btcinformation.org/en/developer-reference#addr
 [atomicity attack discussion]: /en/newsletters/2020/06/24/#continued-discussion-about-ln-atomicity-attack
@@ -838,7 +838,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [belcher coinswap3]: /en/newsletters/2020/09/09/#continued-coinswap-discussion
 [belcher dec8 tweet]: https://twitter.com/chris_belcher_/status/1336322923800322049
 [bfd post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012636.html
-[bip157 spec discussion]: /en/newsletters/2018/06/08/#bip157-bip157-bip158-bip158-lightweight-client-filters
+[bip157 spec discussion]: /fr/newsletters/2018/06/08/#filtres-de-clients-legers-bip157-bip157-bip158-bip158
 [bips900]: /en/newsletters/2020/05/06/#bips-900
 [bips933]: /en/newsletters/2020/07/01/#bips-933
 [bips947]: /en/newsletters/2020/08/05/#bips-947
@@ -911,7 +911,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [news127 bech32m research]: /en/newsletters/2020/12/09/#bech32-addresses-for-taproot-and-beyond
 [news128 fancy static]: /en/newsletters/2020/12/16/#proposed-improvements-to-static-ln-backups
 [news128 offers]: /en/newsletters/2020/12/16/#c-lightning-4255
-[news24 cpfp carve out]: /en/newsletters/2018/12/04/#cpfp-carve-out
+[news24 cpfp carve out]: /fr/newsletters/2018/12/04/#exception-cpfp
 [news59 bishop idea]: /en/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
 [news80 msfa]: /en/newsletters/2020/01/15/#discussion-of-soft-fork-activation-mechanisms
 [news81 dlc]: /en/newsletters/2020/01/22/#protocol-specification-for-discreet-log-contracts-dlcs
@@ -928,7 +928,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [news88 exfiltration]: /en/newsletters/2020/03/11/#exfiltration-resistant-nonce-protocols
 [news88 signmessage rfh]: /en/newsletters/2020/03/11/#bip322-generic-signmessage-progress-or-perish
 [news89 op_if]: /en/newsletters/2020/03/18/#bitcoin-core-16902
-[news8 p2ep]: /en/newsletters/2018/08/14/#pay-to-end-point-p2ep-idea-proposed
+[news8 p2ep]: /fr/newsletters/2018/08/14/#idee-de-pay-to-end-point-p2ep-proposee
 [news91 bip340 powerdiff]: /en/newsletters/2020/04/01/#mitigating-differential-power-analysis-in-schnorr-signatures
 [news91 signmessage simplification]: /en/newsletters/2020/04/01/#proposed-update-to-bip322-generic-signmessage
 [news92 cl3600]: /en/newsletters/2020/04/08/#c-lightning-3600
@@ -948,7 +948,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [optech blog posts]: /en/blog/
 [rubin fee sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
 [russell loop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
-[rv routing]: /en/newsletters/2018/11/20/#hidden-destinations
+[rv routing]: /fr/newsletters/2018/11/20/#destinations-cachees
 [somsen sas post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
 [somsen sas video]: https://www.youtube.com/watch?v=TlCxpdNScCA
 [##taproot-activation]: /en/newsletters/2020/07/22/#taproot-activation-discussions

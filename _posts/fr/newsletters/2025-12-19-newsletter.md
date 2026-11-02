@@ -1048,7 +1048,7 @@ Bitcoin. La bulletin Optech reprendra sa publication régulière le vendredi à 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="1699,1895,1974,2004,27587,33629,1937,32406" %}
 [index des sujets]: /en/topics/
-[yirs 2018]: /en/newsletters/2018/12/28/
+[yirs 2018]: /fr/newsletters/2018/12/28/
 [yirs 2019]: /fr/newsletters/2019/12/28/
 [yirs 2020]: /fr/newsletters/2020/12/23/
 [yirs 2021]: /fr/newsletters/2021/12/22/

@@ -288,7 +288,7 @@ inquisition repo], et [BINANAs][binana repo]._
 [zawy comment]: https://github.com/bitcoin/bitcoin/pull/29775#issuecomment-2276135560
 [temps réel]: https://en.wikipedia.org/wiki/Elapsed_real_time
 [testnet4 rule]: https://github.com/bitcoin/bips/blob/master/bip-0094.mediawiki#time-warp-fix
-[news36 warp rule]: /en/newsletters/2019/03/05/#the-time-warp-attack
+[news36 warp rule]: /fr/newsletters/2019/03/05/#lattaque-time-warp
 [zawy testnet risk]: https://delvingbitcoin.org/t/zawy-s-alternating-timestamp-attack/1062/5
 [vandam onion]: https://delvingbitcoin.org/t/onion-messaging-dos-threat-mitigations/1058
 [bk onion]: https://fc24.ifca.ai/preproceedings/104.pdf

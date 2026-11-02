@@ -201,7 +201,7 @@ nécessaires pour participer à l'initiative du protocole [Pay-to-Contract][topi
 [pickhardt ml valve]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003686.html
 [pickhardt bitmex valve]: https://blog.bitmex.com/the-power-of-htlc_maximum_msat-as-a-control-valve-for-better-flow-control-improved-reliability-and-lower-expected-payment-failure-rates-on-the-lightning-network/
 [pickhardt ratecards]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003696.html
-[news219 ratecards]: /en/newsletters/2022/09/28/#ln-fee-ratecards
+[news219 ratecards]: /fr/newsletters/2022/09/28/#fees-ratecards
 [towns ratecards]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003695.html
 [zmnscpxj valve]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003703.html
 [news171 async]: /en/newsletters/2021/10/20/#paying-offline-ln-nodes

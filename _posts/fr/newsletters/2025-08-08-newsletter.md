@@ -261,7 +261,7 @@ Nous nous excusons pour l'erreur et remercions Tim Ruffing de nous avoir inform√
 [gh achow101]: https://github.com/achow101
 [news363 reputation]: /fr/newsletters/2025/07/18/#eclair-2716
 [news322 sink]: /fr/newsletters/2024/09/27/#tests-et-changements-de-mitigation-du-brouillage-hybride
-[news33 canceled]: /en/newsletters/2019/02/12/#lnd-2457
+[news33 canceled]: /fr/newsletters/2019/02/12/#lnd-2457
 [alerte finale]: https://bitcoin.org/en/release/v0.14.0#final-alert
 [retir√©]: https://bitcoin.org/en/alert/2016-11-01-alert-retirement#updates
 [news365 webhook]: /fr/newsletters/2025/08/01/#ldk-3662

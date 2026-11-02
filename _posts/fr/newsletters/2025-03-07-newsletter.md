@@ -217,7 +217,7 @@ inquisition repo], et [BINANAs][binana repo]._
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="3019,3016,3342,4114,4111,1758,1750,1712,1771,1233,995" %}
 [Core Lightning 25.02]: https://github.com/ElementsProject/lightning/releases/tag/v25.02
-[news39 multiprocess]: /en/newsletters/2019/03/26/#bitcoin-core-10973
+[news39 multiprocess]: /fr/newsletters/2019/03/26/#bitcoin-core-10973
 [news141 p2trh]: /en/newsletters/2021/03/24/#we-could-add-a-hash-style-address-after-taproot-is-activated
 [poinsot pri]: https://delvingbitcoin.org/t/antoine-poinsot-on-bitcoin-cores-priorities/1470/
 [poinsot pri1]: https://antoinep.com/posts/core_project_direction/
@@ -230,7 +230,7 @@ inquisition repo], et [BINANAs][binana repo]._
 [beast p2qrh]: https://mailing-list.bitcoindevs.xyz/bitcoindev/8797807d-e017-44e2-b419-803291779007n@googlegroups.com/
 [c7 mev]: https://delvingbitcoin.org/t/best-worst-case-mevil-response/1465
 [tee]: https://en.wikipedia.org/wiki/Trusted_execution_environment
-[news17 cln2000]: /en/newsletters/2018/10/16/#c-lightning-2000
+[news17 cln2000]: /fr/newsletters/2018/10/16/#c-lightning-2000
 [morehouse failback]: https://delvingbitcoin.org/t/disclosure-lnd-excessive-failback-exploit/1493
 [lnd current]: https://github.com/lightningnetwork/lnd/releases
 [news222 minsize]: /fr/newsletters/2022/10/19/#taille-minimale-des-transactions-relayables
