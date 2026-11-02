@@ -673,7 +673,7 @@ mercredi le 5 janvier.*
 
 {% include references.md %}
 {% include linkers/issues.md issues="878,7600" %}
-[2018 summary]: /en/newsletters/2018/12/28/
+[2018 summary]: /fr/newsletters/2018/12/28/
 [2019 summary]: /fr/newsletters/2019/12/28/
 [2020 summary]: /fr/newsletters/2020/12/23/
 [cl 0.9.3]: /en/newsletters/2021/01/27/#c-lightning-0-9-3
@@ -751,7 +751,7 @@ mercredi le 5 janvier.*
 [sighash combo]: /en/newsletters/2021/07/14/#bips-943
 [fi bonds]: /en/newsletters/2021/08/11/#implementation-of-fidelity-bonds
 [0base]: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion
-[bulletins]: /en/newsletters/
+[bulletins]: /fr/newsletters/
 [index des sujets]: /en/topics/
 [additive batching]: /en/cardcoins-rbf-batching/
 [zmn guest]: /en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
@@ -759,7 +759,7 @@ mercredi le 5 janvier.*
 [heritage identifiers]: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
 [ptlcs extreme]: /en/newsletters/2021/10/13/#multiple-proposed-ln-improvements
 [lnd#5709]: /en/newsletters/2021/10/27/#lnd-5709
-[2018 ln summit]: /en/newsletters/2018/11/20/#feature-news-lightning-network-protocol-11-goals
+[2018 ln summit]: /fr/newsletters/2018/11/20/#nouvelles-des-fonctionnalités--objectifs-du-protocole-lightning-network-11
 [2021 ln summit]: /en/newsletters/2021/11/10/#ln-summit-2021-notes
 [paiements sans blocage]: /en/newsletters/2019/07/03/#stuckless-payments
 [bcc#19953]: /en/newsletters/2020/10/21/#bitcoin-core-19953

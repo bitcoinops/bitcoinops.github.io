@@ -142,7 +142,7 @@ _Changements notables récents dans [Bitcoin Core][bitcoin core repo], [Core Lig
 [lamport wiki]: https://fr.wikipedia.org/wiki/Signature_de_Lamport
 [news146 addrinfo]: /en/newsletters/2021/04/28/#bitcoin-core-21595
 [news275 addrmaninfo]: /fr/newsletters/2023/11/01/#bitcoin-core-28565
-[news14 rpc]: /en/newsletters/2018/09/25/#bitcoin-core-13152
+[news14 rpc]: /fr/newsletters/2018/09/25/#bitcoin-core-13152
 [news377 onion]: /fr/newsletters/2025/10/24/#lnd-9868
 [news387 sp]: /fr/newsletters/2026/01/09/#projet-de-bip-pour-descripteurs-de-paiement-silencieux
 [news390 bech32]: /fr/newsletters/2026/01/30/#ldk-4349

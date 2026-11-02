@@ -216,7 +216,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [bytecoin selfish]: https://bitcointalk.org/index.php?topic=2227.msg30083#msg30083
 [darosior/miningsimulation]: https://github.com/darosior/miningsimulation
 [todd feerec]: https://mailing-list.bitcoindevs.xyz/bitcoindev/aDWfDI03I-Rakopb@petertodd.org/
-[news9 reconcile]: /en/newsletters/2018/08/21/#bandwidth-efficient-set-reconciliation-protocol-for-transactions
+[news9 reconcile]: /fr/newsletters/2018/08/21/#protocole-de-reconciliation-d-ensembles-efficace-en-bande-passante-pour-les-transactions
 [chow dupsig]: https://mailing-list.bitcoindevs.xyz/bitcoindev/08dbeffd-64ec-4ade-b297-6d2cbeb5401c@achow101.com/
 [doman descrypt]: https://delvingbitcoin.org/t/rust-descriptor-encrypt-encrypt-any-descriptor-such-that-only-authorized-spenders-can-decrypt/1750/
 [news351 salvacrypt]: /fr/newsletters/2025/04/25/#sauvegarde-standardisee-pour-les-descripteurs-de-portefeuille

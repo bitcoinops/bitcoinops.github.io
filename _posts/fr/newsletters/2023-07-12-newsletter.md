@@ -157,7 +157,7 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][
 {% include linkers/issues.md v=2 issues="1092,392,240,20160,27869" %}
 [news58 bolts619]: /en/newsletters/2019/08/07/#bolts-619
 [policy series]: /fr/blog/waiting-for-confirmation/
-[news31 data loss]: /en/newsletters/2019/01/29/#fn:fn-data-loss-protect
+[news31 data loss]: /fr/newsletters/2019/01/29/#fn:fn-data-loss-protect
 [news67 bolts642]: /en/newsletters/2019/10/09/#bolts-642
 [lnd v0.16.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.4-beta
 [russell clean up]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/004001.html

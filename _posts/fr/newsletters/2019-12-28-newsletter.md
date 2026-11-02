@@ -557,7 +557,7 @@ d'acceptation finale avant de voir le déploiement sur le réseau.
   Partiellement Signées ([PSBTs][topic psbt]) et les [descripteurs de scripts de sortie][topic
   descriptors].
 
-- <a href="/en/newsletters/2019/03/26/#loop-announced">Lightning Loop</a> publié en mars (avec le
+- <a href="/fr/newsletters/2019/03/26/#annonce-de-loop">Lightning Loop</a> publié en mars (avec le
   support de loop-in ajouté en juin) fournit un service non-custodial qui permet aux utilisateurs
   d'ajouter ou de retirer des fonds de leurs canaux LN sans fermer les canaux existants
   ou en ouvrir de nouveaux.
@@ -649,8 +649,8 @@ rendent chacun le système meilleur sans le casser pour ceux qui sont déjà sat
 
 {% include references.md %}
 {% include linkers/issues.md issues="16800,16411,17268,17292" %}
-[#14897]: /en/newsletters/2019/02/12/#bitcoin-core-14897
-[résumé de 2018]: /en/newsletters/2018/12/28/
+[#14897]: /fr/newsletters/2019/02/12/#bitcoin-core-14897
+[résumé de 2018]: /fr/newsletters/2018/12/28/
 [altruist watchtowers]: /en/newsletters/2019/06/19/#lnd-3133
 [anchor miniscript]: https://github.com/lightningnetwork/lightning-rfc/pull/688#pullrequestreview-326862133
 [anchor outputs]: /en/newsletters/2019/10/30/#ln-simplified-commitments
@@ -663,9 +663,9 @@ rendent chacun le système meilleur sans le casser pour ceux qui sont déjà sat
 [breaking bitcoin]: /en/newsletters/2019/06/19/#breaking-bitcoin
 [btcpayserver.vault]: https://github.com/btcpayserver/BTCPayServer.Vault
 [btse]: /en/btse-exchange-operation/
-[carve-out proposed]: /en/newsletters/2018/12/04/#cpfp-carve-out
-[ceo bitpay]: /en/newsletters/2018/10/30/#bitcoin-core-14451
-[c-lightning 0.7]: /en/newsletters/2019/03/05/#upgrade-to-c-lightning-0-7
+[carve-out proposed]: /fr/newsletters/2018/12/04/#exception-cpfp
+[ceo bitpay]: /fr/newsletters/2018/10/30/#bitcoin-core-14451
+[c-lightning 0.7]: /fr/newsletters/2019/03/05/#mettre-a-niveau-vers-c-lightning-0-7
 [c-lightning 0.8]: https://github.com/ElementsProject/lightning/releases/tag/v0.8.0
 [cl repro]: https://github.com/ElementsProject/lightning/blob/master/doc/REPRODUCIBLE.md
 [cl signet]: /en/newsletters/2019/07/24/#c-lightning-2816
@@ -685,8 +685,8 @@ rendent chacun le système meilleur sans le casser pour ceux qui sont déjà sat
 [heartbleed]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
 [notebooks jupyter]: https://github.com/bitcoinops/taproot-workshop#readme
 [libsecp256k1 sig speedup]: https://bitcoincore.org/en/2016/02/23/release-0.12.0/#x-faster-signature-validation
-[lightning loop]: /en/newsletters/2019/03/26/#loop-announced
-[ln1.1]: /en/newsletters/2018/11/20/#feature-news-lightning-network-protocol-11-goals
+[lightning loop]: /fr/newsletters/2019/03/26/#annonce-de-loop
+[ln1.1]: /fr/newsletters/2018/11/20/#nouvelles-des-fonctionnalités--objectifs-du-protocole-lightning-network-11
 [lnd 0.6-beta]: /en/newsletters/2019/04/23/#lnd-0-6-beta-released
 [lnd 0.7-beta]: /en/newsletters/2019/07/03/#lnd-0-7-0-beta-released
 [lnd 0.8-beta]: /en/newsletters/2019/10/16/#upgrade-lnd-to-version-0-8-0-beta
@@ -695,28 +695,28 @@ rendent chacun le système meilleur sans le casser pour ceux qui sont déjà sat
 [ln missed validation]: /en/newsletters/2019/10/02/#full-disclosure-of-fixed-vulnerabilities-affecting-multiple-ln-implementations
 [loop-in]: /en/newsletters/2019/07/03/#lightning-loop-supports-user-loop-ins
 [mcf]: /en/newsletters/2019/05/21/#talks-of-technical-interest-at-magical-crypto-friends-conference
-[mit bitcoin expo]: /en/newsletters/2019/03/19/#mit-bitcoin-club-2019-expo-videos-available
+[mit bitcoin expo]: /fr/newsletters/2019/03/19/#videos-de-la-mit-bitcoin-club-2019-expo-disponibles-nbsp
 [mpp implementation]: /en/newsletters/2019/12/18/#ln-implementations-add-multipath-payment-support
-[news33 reserves]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
-[news37 cleanup discussion]: /en/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
-[news37 merkle tree attacks]: /en/newsletters/2019/03/05/#merkle-tree-attacks
+[news33 reserves]: /fr/newsletters/2019/02/12/#publication-d-un-outil-pour-generer-et-verifier-des-preuves-de-possession-de-bitcoins
+[news37 cleanup discussion]: /fr/newsletters/2019/03/12/#discussion-sur-la-proposition-de-soft-fork-de-nettoyage
+[news37 merkle tree attacks]: /fr/newsletters/2019/03/05/#attaques-sur-larbre-de-merkle
 [news61 miniscript feedback]: /en/newsletters/2019/08/28/#miniscript-request-for-comments
 [news67 bolts676]: /en/newsletters/2019/10/09/#bolts-676
-[bulletin d'information hebdomadaire]: /en/newsletters/
-[bulletins d'information hebdomadaire]: /en/newsletters/
+[bulletin d'information hebdomadaire]: /fr/newsletters/
+[bulletins d'information hebdomadaire]: /fr/newsletters/
 [non-strict der]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
 [optech executive briefing]: /en/2019-exec-briefing/
-[outil de preuve de réserves]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
+[outil de preuve de réserves]: /fr/newsletters/2019/02/12/#publication-d-un-outil-pour-generer-et-verifier-des-preuves-de-possession-de-bitcoins
 [rm openssl]: /en/newsletters/2019/11/27/#bitcoin-core-17265
 [roose reserves]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016633.html
 [Workbook sur la scalabilité]: https://github.com/bitcoinops/scaling-book
 [scaling bitcoin]: /en/newsletters/2019/09/18/#scaling-bitcoin
 [ateliers schnorr/taproot]: /en/schnorr-taproot-workshop/
 [snicker]: /en/newsletters/2019/09/04/#snicker-proposed
-[stanford blockchain conference]: /en/newsletters/2019/02/05/#notable-talks-from-the-stanford-blockchain-conference
+[stanford blockchain conference]: /fr/newsletters/2019/02/05/#présentations-notables-de-la-stanford-blockchain-conference
 [sybil attacks]: https://en.wikipedia.org/wiki/Sybil_attack
 [taproot review]: /en/newsletters/2019/10/23/#taproot-review
-[attaque de décalage temporel]: /en/newsletters/2019/03/05/#the-time-warp-attack
+[attaque de décalage temporel]: /fr/newsletters/2019/03/05/#lattaque-time-warp
 [index des sujets]: /en/topics/
 [trampoline proposed]: /en/newsletters/2019/04/02/#trampoline-payments-for-ln
 [trampolines pr]: /en/newsletters/2019/08/07/#trampoline-payments
@@ -727,10 +727,10 @@ rendent chacun le système meilleur sans le casser pour ceux qui sont déjà sat
 [coffres-forts sur Bitcoin sans utiliser de covenants]: /en/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
 [wasabi hwi]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v1.1.4
 [watchtower spec]: /en/newsletters/2019/12/04/#proposed-watchtower-bolt
-[weekly newsletter]: /en/newsletters/
-[weekly newsletters]: /en/newsletters/
-[utilisation CPU maximale]: /en/newsletters/2019/03/05/#legacy-transaction-verification
-[wuille sbc miniscript]: /en/newsletters/2019/02/05/#miniscript
+[weekly newsletter]: /fr/newsletters/
+[weekly newsletters]: /fr/newsletters/
+[utilisation CPU maximale]: /fr/newsletters/2019/03/05/#vérification-des-transactions-legacy
+[wuille sbc miniscript]: /fr/newsletters/2019/02/05/#miniscript
 [xlation es]: /es/publications/
 [xlation ja]: /ja/publications/
 [eltoo]: https://blockstream.com/eltoo.pdf

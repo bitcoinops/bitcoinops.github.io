@@ -120,7 +120,7 @@ Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][bli
 [sources]: /en/internal/sources/
 [transaction intéressante]: https://stacker.news/items/600187
 [LND v0.18.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.2-beta
-[news19 bip69]: /en/newsletters/2018/10/30/#bip69-discussion
+[news19 bip69]: /fr/newsletters/2018/10/30/#discussion-sur-bip69
 [news151 bip69]: /en/newsletters/2021/06/02/#bolts-872
 [gh fjahr]: https://github.com/fjahr
 [review club 29775]: https://bitcoincore.reviews/29775

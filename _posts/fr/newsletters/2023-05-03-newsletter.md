@@ -197,5 +197,5 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [halseth matt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021593.html
 [gibson adaptors]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021594.html
 [lee hiring]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021589.html
-[news34 psbt]: /en/newsletters/2019/02/19/#bitcoin-core-13932
+[news34 psbt]: /fr/newsletters/2019/02/19/#bitcoin-core-13932
 [abandontransaction rpc]: https://developer.bitcoin.org/reference/rpc/abandontransaction.html

@@ -485,7 +485,7 @@ Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [wuille prior]: https://delvingbitcoin.org/t/fastest-possible-pow-via-simple-dag/1331/6
 [provoost dag]: https://delvingbitcoin.org/t/fastest-possible-pow-via-simple-dag/1331/13
 [ccbip]: https://github.com/TheBlueMatt/bips/blob/7f9670b643b7c943a0cc6d2197d3eabe661050c2/bip-XXXX.mediawiki#specification
-[news36 cc]: /en/newsletters/2019/03/05/#prevent-use-of-op-codeseparator-and-findanddelete-in-legacy-transactions
+[news36 cc]: /fr/newsletters/2019/03/05/#empecher-l-utilisation-de-op-codeseparator-et-findanddelete-dans-les-transactions-legacy
 [news335 cc]: /fr/newsletters/2025/01/03/#periode-de-grace-de-nettoyage-de-consensus-timewarp
 [wuille erlang]: https://delvingbitcoin.org/t/timewarp-attack-600-second-grace-period/1326/28?u=harding
 [erlang]: https://en.wikipedia.org/wiki/Erlang_distribution

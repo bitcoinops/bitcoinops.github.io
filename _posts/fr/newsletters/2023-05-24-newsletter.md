@@ -214,7 +214,7 @@ caractères pour les étiquettes.
 [munstr github]: https://github.com/0xBEEFCAF3/munstr
 [protocole nostr]: https://github.com/nostr-protocol/nostr
 [coffee github]: https://github.com/coffee-tools/coffee
-[news22 plugins]: /en/newsletters/2018/11/20/#c-lightning-2075
+[news22 plugins]: /fr/newsletters/2018/11/20/#c-lightning-2075
 [electrum release notes]: https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES
 [trezor blog]: https://blog.trezor.io/coinjoin-privacy-for-bitcoin-11aaf291f23
 [mutinynet blog]: https://blog.mutinywallet.com/mutinynet/

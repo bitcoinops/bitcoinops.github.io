@@ -245,7 +245,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 {% include linkers/issues.md v=2
 issues="31223,2888,3495,3436,3435,3365,3340,1670,1689,1697,54,52,1110" %}
 [news315 withholding]: /fr/newsletters/2024/08/09/#attaques-de-retention-de-blocs-et-solutions-potentielles
-[news16 forward]: /en/newsletters/2018/10/09/#forward-blocks-on-chain-capacity-increases-without-a-hard-fork
+[news16 forward]: /fr/newsletters/2018/10/09/#forward-blocks--augmentations-de-capacité-on-chain-sans-hard-fork
 [moonsettler ctvppml]: https://groups.google.com/g/bitcoindev/c/1P1aqkfwE7E
 [moonsettler ctvppdelv]: https://delvingbitcoin.org/t/ctv-op-templatehash-and-op-inputamounts/1344/
 [anders diff]: https://groups.google.com/g/bitcoindev/c/JhEyfW7YKhY/m/qR4ucBeMCAAJ

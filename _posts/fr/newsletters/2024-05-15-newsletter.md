@@ -177,5 +177,5 @@ confidentialité, nous vous recommandons de vous abonner à notre [flux RSS][] v
 [attaque par collision]: https://en.wikipedia.org/wiki/Collision_attack
 [flux rss]: /feed.xml
 [ldk v0.0.123]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.123
-[news25 cln check]: /en/newsletters/2018/12/11/#c-lightning-2123
+[news25 cln check]: /fr/newsletters/2018/12/11/#c-lightning-2123
 [news47 cln check]: /en/newsletters/2019/05/21/#c-lightning-2631

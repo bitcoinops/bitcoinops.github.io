@@ -226,8 +226,8 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [teinturier splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003895.html
 [erhardt terms]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021550.html
 [terms bip]: https://github.com/Xekyo/bips/pull/1
-[news26 pyln-client]: /en/newsletters/2018/12/18/#c-lightning-2161
-[news17 splice]: /en/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing
+[news26 pyln-client]: /fr/newsletters/2018/12/18/#c-lightning-2161
+[news17 splice]: /fr/newsletters/2018/10/16/#proposition-de-splice-pour-les-canaux-de-paiement-du-lightning-network
 [news146 splice]: /en/newsletters/2021/04/28/#draft-specification-for-ln-splicing
 [libsecp256k1 0.3.1]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.3.1
 [review club 27050]: https://bitcoincore.reviews/27050

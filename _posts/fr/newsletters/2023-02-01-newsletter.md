@@ -212,7 +212,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [protocole turn]: https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT
 [nat]: https://en.wikipedia.org/wiki/Network_address_translation
 [protocole nostr]: https://github.com/nostr-protocol/nostr
-[news235 async]: /en/newsletters/2023/01/25/#request-for-proof-that-an-async-payment-was-accepted
+[news235 async]: /fr/newsletters/2023/01/25/#demande-de-preuve-qu-un-paiement-asynchrone-a-ete-accepte
 [towns async]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003831.html
 [towns sa1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001034.html
 [towns sa2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001490.html
