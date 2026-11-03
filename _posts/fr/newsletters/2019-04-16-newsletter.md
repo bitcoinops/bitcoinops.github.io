@@ -47,7 +47,7 @@ vous-même, mais cela permet aux personnes que vous payez de bénéficier de tou
 fusions décrites pour Bitcoin Core et LND concernent leurs branches de développement master ; certaines peuvent aussi être rétroportées vers
 leurs versions en attente de publication.*
 
-- [Bitcoin Core #15711][] génère par défaut des adresses bech32 dans l' interface graphique. L'utilisateur peut toujours générer une adresse
+- [Bitcoin Core #15711][] génère par défaut des adresses bech32 dans l'interface graphique. L'utilisateur peut toujours générer une adresse
   segwit encapsulée dans P2SH en décochant une case sur l'écran de demande de paiement au cas où il aurait besoin de recevoir de l'argent
   d'un service qui ne fournit pas encore la prise en charge de l'envoi vers bech32. Le comportement par défaut de bitcoind consistant à
   générer des adresses segwit encapsulées dans P2SH n'est pas modifié.
