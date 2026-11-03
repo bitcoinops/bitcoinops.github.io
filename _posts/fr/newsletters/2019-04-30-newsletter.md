@@ -92,7 +92,7 @@ rétroportées vers sa version en attente de publication.*
   sur ces champs, donc l'ajout de ces champs à une transaction produit un (petit) gaspillage de bande passante dans une transaction composée
   entièrement d'entrées legacy. Pour cette raison, [BIP144][] spécifiait que les transactions qui n'ont pas besoin du format étendu
   devraient utiliser le format legacy. Auparavant, Bitcoin Core acceptait les transactions mal formatées et les normalisait en retirant les
-  parties inutiles spécifiques à segwit avant de calculer leur taille (poids) ou de les relayer à d'autres pairs ; désormais il refusera
+  parties inutiles spécifiques à segwit avant de calculer leur taille (poids) ou de les relayer à d'autres pairs; désormais il refusera
   d'accepter les transactions qui n'utilisent pas le format approprié.
 
 - [Bitcoin Core #15846][] met à jour le nœud pour accepter des transactions dans son mempool pour relais et minage si des sorties de la
