@@ -31,7 +31,7 @@ publication sur différentes plateformes telles que [BitcoinCore.org][].
 *Semaine 7 sur 24. Jusqu'au deuxième anniversaire du verrouillage du soft fork segwit le 24 août 2019, le bulletin Optech contiendra cette
 section hebdomadaire qui fournit des informations pour aider les développeurs et les organisations à mettre en œuvre la prise en charge de
 l'envoi vers bech32---la capacité de payer des adresses segwit natives. Cela [ne nécessite pas d'implémenter segwit][bech32 series]
-vous-même, mais permet bien aux personnes que vous payez d' accéder à l'ensemble des multiples avantages de segwit.*
+vous-même, mais permet bien aux personnes que vous payez d'accéder à l'ensemble des multiples avantages de segwit.*
 
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
