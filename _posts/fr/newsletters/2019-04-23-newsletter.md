@@ -58,12 +58,13 @@ populaires d'infrastructure Bitcoin.
   affectant le portefeuille. Avec les filtres, le portefeuille peut simplement vérifier d'abord les filtres, plus petits et plus rapides,
   puis n'examiner en détail que les blocs pour lesquels le filtre indique une correspondance possible avec des transactions du portefeuille.
 
-## Bech32 sending support
+## Prise en charge de l'envoi vers Bech32
 
-*Week 6 of 24. Until the second anniversary of the segwit soft fork lock-in on 24 August 2019, the Optech le bulletin will contain this
-weekly section that provides information to help developers and organizations implement bech32 sending support---the ability to pay native
-segwit addresses. This [doesn't require implementing segwit][bech32 series] yourself, but it does allow the people you pay to access all of
-segwit's multiple benefits.*
+*Semaine 6 sur 24. Jusqu'au deuxième anniversaire de la mise en place définitive du soft fork SegWit, le 24 août 2019,
+le bulletin Optech comportera cette rubrique hebdomadaire destinée à fournir aux développeurs et aux organisations des informations utiles
+pour mettre en œuvre la prise en charge des envois Bech32, c'est-à-dire la possibilité d'effectuer des paiements vers des adresses
+SegWit natives. Cela [ne nécessite pas de mettre en œuvre SegWit][bech32 series] vous-même, mais cela permet aux personnes que vous payez
+de bénéficier de tous les avantages de SegWit.
 
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
@@ -99,8 +100,7 @@ contraire, toutes les fusions décrites pour Bitcoin Core concernent sa branche 
   d'utilisabilité RBF][rbf usability study] d'Optech et permet ainsi aux augmentations de frais effectuées par les utilisateurs de Bitcoin
   Core de réussir plus souvent.
 
-- [C-Lightning #2541][], [#2545][c-lightning
-  #2545], et [#2546][c-lightning #2546] implémentent de multiples changements du
+- [C-Lightning #2541][], [#2545][c-lightning #2545], et [#2546][c-lightning #2546] implémentent de multiples changements du
   sous-système de gossip utilisé pour suivre quels canaux sont disponibles et calculer des routes à travers eux. Ce travail a été motivé par
   le [projet d'un million de canaux][million channels project] et les résultats de performance de ce projet sont inclus dans de nombreux
   messages de commit. Si Optech interprète correctement les résultats, la différence entre le [premier commit][417e1ba] de la série et le
@@ -127,7 +127,8 @@ contraire, toutes les fusions décrites pour Bitcoin Core concernent sa branche 
   implémentations de l'[interface de plugin][eclair plugin interface]. Voir la [documentation][eclair plugin doc] nouvellement ajoutée pour
   plus de détails.
 
-## Footnotes
+## Notes de bas de page
+{: id="footnotes"}
 
 [^fn-bip157-bip158]:
     [BIP158][] introduit les _filtres de blocs compacts_, qui reposent sur une méthode efficace pour encoder une liste
