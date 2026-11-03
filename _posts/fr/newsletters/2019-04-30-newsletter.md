@@ -26,7 +26,7 @@ publication sur différentes plateformes telles que [BitcoinCore.org][].
 
 *Aucune cette semaine. Nous espérons que tout le monde profite d'un beau printemps, automne, ou d'une saison sèche agréable.*
 
-## Bech32 sending support
+## Prise en charge de l'envoi vers Bech32
 
 *Semaine 7 sur 24. Jusqu'au deuxième anniversaire du verrouillage du soft fork segwit le 24 août 2019, le bulletin Optech contiendra cette
 section hebdomadaire qui fournit des informations pour aider les développeurs et les organisations à mettre en œuvre la prise en charge de
