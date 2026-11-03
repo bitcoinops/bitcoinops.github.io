@@ -58,7 +58,7 @@ fusions notables dans les projets d'infrastructure Bitcoin populaires.
   devenir impossible pour quiconque disposant de moyens modestes de jamais vérifier sans confiance l'état UTXO de Bitcoin, forçant les
   nouveaux utilisateurs à faire confiance aux utilisateurs existants.
 
-## Bech32 sending support
+## Prise en charge de l'envoi vers Bech32
 
 *Semaine 4 sur 24. Jusqu'au deuxième anniversaire du verrouillage du soft fork segwit le 24 août 2019, le bulletin Optech contiendra cette
 section hebdomadaire qui fournit des informations pour aider les développeurs et les organisations à mettre en œuvre le support d'envoi
@@ -116,7 +116,8 @@ versions en attente de publication.*
 - [BIPs #756][] assigne [BIP127][] à une spécification pour l'outil de preuve de réserves décrit dans le [Bulletin #33][le bulletin #33]. Le texte
   préliminaire du BIP est fusionné.
 
-## Footnotes
+## Notes de bas de page
+{: id="footnotes"}
 
 [^full-chain-verification]:
     Le mécanisme assumed valid est activé par défaut mais peut être désactivé en démarrant Bitcoin Core avec le
