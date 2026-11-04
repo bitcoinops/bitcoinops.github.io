@@ -56,6 +56,51 @@ popular Bitcoin infrastructure software.
   make not accepting inbound connections the safer default for home users.
   Discussion is ongoing.
 
+- **BIP draft for standardized co-signer spending policies:** Luke Carriere
+  [posted][cosigner pols del] to Delving Bitcoin about his proposal for
+  standardizing the spending policies enforced by co-signers when emulating
+  [covenants][topic covenants]. Several recent designs, including Johan
+  Halseth's [blinded co-signers][news412 blinded cosigners] and [chain code
+  delegation][news364 delegation], each define their own policy, so a wallet
+  built for one cannot use a co-signer or oracle built for another. Carriere
+  is not requesting a BIP number for the [draft][cosigner pol draft] and
+  asked whether this is the right layer to standardize.
+
+  The draft follows several design principles:
+
+  - Anything that can be enforced by Bitcoin script must be enforced there,
+    with co-signer policies only defining what script cannot.
+
+  - At least one spending path that needs no co-signer must always be
+    available.
+
+  - How a co-signer verifies a spend, and what backs its honesty, are
+    pluggable profiles chosen per policy.
+
+  - Co-signers must accept oracle attestations in the
+    [DLC][topic dlc] format so that already-available oracles can be reused
+    with no modifications.
+
+  A policy has five parts. The output defines the
+  [taproot][topic taproot] descriptor that holds the funds, the co-signer
+  group tells which co-signers take part and how many must sign, templates
+  list the transactions the co-signers may sign with their exact outputs,
+  conditions state what must be true before each template can be signed, and
+  profiles name the verification mode, evidence formats, and any
+  accountability scheme. Some points
+  remain open, such as whether to use JSON or TLV for serialization, whether
+  blinded verification should be specified now or wait for more implementation
+  experience, whether to specify statement attestation format in the proposal
+  or in the DLC specifications, and whether the fallback path must be timelocked.
+
+  In the discussion that followed, PREDGE pointed out that one of the evidence
+  profiles, called `statement-v0`, lacks a finality flag, meaning that a co-signer
+  could act on a provisional attestation later corrected. Moreover, tehiyadu stated
+  that the policy hash should commit to the exact verifier semantics to prevent
+  different implementations from accepting the same bytes while enforcing different
+  conditions. Carriere agreed with both points and said he would add a finality
+  flag and pin down the verifier rules.
+
 ## Releases and release candidates
 
 _New releases and release candidates for popular Bitcoin infrastructure
@@ -86,3 +131,7 @@ FIXME:Gustavojfe
 [b10c holepunch option6]: https://delvingbitcoin.org/t/tcp-hole-punching-for-bitcoin-nodes-behind-home-nats/2497/22
 [aj holepunch goals]: https://delvingbitcoin.org/t/tcp-hole-punching-for-bitcoin-nodes-behind-home-nats/2497/25
 [aj holepunch cves]: https://delvingbitcoin.org/t/tcp-hole-punching-for-bitcoin-nodes-behind-home-nats/2497/35
+[cosigner pols del]: https://delvingbitcoin.org/t/bip-draft-co-signer-spending-policies/2955
+[news412 blinded cosigners]: /en/newsletters/2026/01/02/#building-a-vault-using-blinded-co-signers
+[news364 delegation]: /en/newsletters/2025/07/25/#chain-code-withholding-for-multisig-scripts
+[cosigner pol draft]: https://github.com/lukecarriere/bip-cosigner-spending-policies/blob/468fdd1b75647432ed56c3a2b5579cbcfedaec74/bip-cosigner-spending-policies.md
