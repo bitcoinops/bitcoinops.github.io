@@ -48,7 +48,7 @@ popular Bitcoin infrastructure software.
   signers over the wallet's coordinator channel. He said a paper with
   security proofs is under internal review, but noted that its claim that
   corrupted signers and the coordinator cannot forge a proof or a
-  signature relies on an assumption whose hardness is an open question.
+  signature relies on an assumption whose hardness is an open question. {% assign timestamp="41:18" %}
 
 - **CLN self-referential channel announcement DoS disclosure:** Nishant
   Bansal [posted][cln selfref dos] to Delving Bitcoin disclosing a
@@ -75,7 +75,7 @@ popular Bitcoin infrastructure software.
   rejects any announcement whose `node_id_1` is not strictly less than
   `node_id_2`. [BOLTs #1333][] added the same receiver requirement to
   [BOLT7][], which had only required senders to order the IDs. Operators
-  still on an affected version should upgrade to the latest release.
+  still on an affected version should upgrade to the latest release. {% assign timestamp="52:57" %}
 
 - **Bitcoin Core security policy update:** Antoine Poinsot [posted][poinsot
   policy ml] to the Bitcoin-Dev mailing list that Bitcoin Core has amended its
@@ -92,7 +92,7 @@ popular Bitcoin infrastructure software.
   #36669]) were disclosed under the new classification. Their fixes were merged
   after 32.0 had been tagged, so 32.0 was never released and [Bitcoin Core
   32.1][] (described below), along with 31.2, 30.4, and 29.5, ships them
-  instead.
+  instead. {% assign timestamp="24:53" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -112,7 +112,7 @@ answers posted since our last update.*
   still reference txids. Blocks additionally commit to wtxids so that a node
   handed a block with tampered witness data can reject it permanently rather
   than reprocess every variant a peer offers. [BIP339][] later extended wtxid
-  use to transaction relay for similar denial-of-service reasons.
+  use to transaction relay for similar denial-of-service reasons. {% assign timestamp="1:02:58" %}
 
 - [How to sign a MuSig with Bitcoin Core]({{bse}}131086) Ava Chow explains
   that [MuSig2][topic musig] signing takes two rounds, so each wallet must
@@ -120,7 +120,7 @@ answers posted since our last update.*
   nonce and the second, run on the combined PSBT once every nonce is present,
   adds its partial signature, after which `finalizepsbt` produces the
   transaction. The asker published an [example][bc musig2] of creating and
-  spending from a MuSig2 address with Bitcoin Core.
+  spending from a MuSig2 address with Bitcoin Core. {% assign timestamp="1:07:54" %}
 
 - [What changed in Bitcoin P2P protocol version 70017 compared to 70016?]({{bse}}131080)
   Ava Chow explains that [BIP434][] assigns the new version number because it
@@ -130,7 +130,7 @@ answers posted since our last update.*
   protocol version or defining a dedicated message for each new feature (see
   [Newsletter #386][news386 bip434]). Bitcoin Core implemented the message and
   the version bump earlier this year (see [Newsletter #410][news410 bip434]),
-  and both ship in [Bitcoin Core 32.1][], described below.
+  and both ship in [Bitcoin Core 32.1][], described below. {% assign timestamp="1:09:11" %}
 
 ## Releases and release candidates
 
@@ -147,7 +147,7 @@ release candidates._
   transaction and transaction-output-spender indexes remain compatible but
   must be rebuilt to save disk space. See the [release notes][bcc32.1 rn] for
   details and upgrade considerations. Versions 29.x and earlier have reached
-  the end of their lifecycle and will no longer receive updates.
+  the end of their lifecycle and will no longer receive updates. {% assign timestamp="35:56" %}
 
 - [Bitcoin Core 31.2][] is a maintenance release of the predominant
   full-node implementation. It includes the same three security fixes as
@@ -155,29 +155,29 @@ release candidates._
   extra nonce space for miners from the [BIP9][] unknown soft fork warning
   (see [Newsletter #409][news409 bip323]), caps the `-privatebroadcast`
   queue at 10,000 transactions, and compacts the chainstate database
-  regularly. See the [release notes][bcc31.2 rn] for details.
+  regularly. See the [release notes][bcc31.2 rn] for details. {% assign timestamp="39:18" %}
 
 - [Bitcoin Core 30.4][] is a maintenance release for a previous major
   release series. It includes the same three security fixes as 32.1, the
   BIP323 warning change, and the removal of one DNS seed. See the [release
-  notes][bcc30.4 rn] for details.
+  notes][bcc30.4 rn] for details. {% assign timestamp="40:42" %}
 
 - [Bitcoin Core 29.5][] is a maintenance release for a previous major
   release series. It includes the same three security fixes as 32.1 and the
-  removal of one DNS seed. See the [release notes][bcc29.5 rn] for details.
+  removal of one DNS seed. See the [release notes][bcc29.5 rn] for details. {% assign timestamp="40:53" %}
 
 - [Eclair 0.14.6][] is a security release for this LN node implementation. It
   includes the [splicing][topic splicing] force-close and [on-the-fly
   funding][topic jit channels] fee-tracking fixes described below. The project
   strongly recommends upgrading because malicious peers can exploit some of the
-  fixed issues.
+  fixed issues. {% assign timestamp="1:12:37" %}
 
 - [LND v0.21.5-beta][lnd0215] and [v0.20.6-beta][lnd0206] are maintenance
   releases of this popular LN node implementation, following the release
   candidates covered in [Newsletter #428][news428 releases]. Both
   include the commitment feerate fixes described below, as well as fixes for
   excessive memory allocation when parsing TLV records and SQL database
-  deadlocks, and faster startup cleanup on SQL-backed nodes.
+  deadlocks, and faster startup cleanup on SQL-backed nodes. {% assign timestamp="1:13:36" %}
 
 ## Notable code and documentation changes
 
@@ -197,7 +197,7 @@ repo], and [BINANAs][binana repo]._
   exceptional conditions. A peer could send TCP urgent data to trigger further
   reads and bypass the queue limit. Now, exceptional conditions are only
   monitored when reads are enabled for that socket. Linux uses a different
-  socket backend and was unaffected.
+  socket backend and was unaffected. {% assign timestamp="3:43" %}
 
 - [Bitcoin Core #36667][] adds a timeout that disconnects a peer if the node's
   send buffer for that peer exceeds its limit for more than 20 minutes,
@@ -208,7 +208,7 @@ repo], and [BINANAs][binana repo]._
   [BIP31][] could avoid this. This would allow a malicious peer to maintain an
   open connection while queued announcements gradually accumulate. The new
   timeout applies regardless of the peer's protocol version. Nodes using the
-  `-blocksonly` option were much less affected.
+  `-blocksonly` option were much less affected. {% assign timestamp="14:37" %}
 
 - [Bitcoin Core #36669][] fixes an [undo-file overflow][core undo overflow]
   that could corrupt data needed to disconnect blocks during a reorg. Since
@@ -221,7 +221,7 @@ repo], and [BINANAs][binana repo]._
   thousands of specially constructed blocks. For the corruption case, it also
   requires precisely positioning those blocks within the targeted node's block
   files, followed by a reorg. The disclosure deems this impractical. Nodes on
-  32-bit systems or FAT32 block storage are still affected.
+  32-bit systems or FAT32 block storage are still affected. {% assign timestamp="19:02" %}
 
 - [BIPs #2130][] adds draft [BIP139][], Wallet Metadata Export Format,
   specifying a JSON format for exporting wallet accounts and their [output
@@ -231,7 +231,7 @@ repo], and [BINANAs][binana repo]._
   between wallets and the restoration of information that cannot be recovered
   by a seed backup alone. The specification prohibits including spending
   private keys or mnemonic seeds in mainnet exports, so these exports
-  complement a separate key backup.
+  complement a separate key backup. {% assign timestamp="1:15:55" %}
 
 - [Core Lightning #9627][] updates `xpay` to account for [BOLT4][]'s 1,300-byte
   routing information limit for the payment onion before selecting a payment
@@ -242,7 +242,7 @@ repo], and [BINANAs][binana repo]._
   invoice's [blinded path][topic rv routing], then passes a corresponding hop
   limit to askrene through a new `maxhops` parameter on its `getroutes` RPC.
   The pathfinding cost calculation in askrene also adds a penalty for each
-  hop to favor shorter routes.
+  hop to favor shorter routes. {% assign timestamp="1:17:33" %}
 
 - [Eclair #3417][] and [#3419][eclair #3419] improve force-close handling when
   [splice transactions][topic splicing] remain unconfirmed (see [Newsletter
@@ -258,7 +258,7 @@ repo], and [BINANAs][binana repo]._
   previous one confirms. The changes also ensure that a previously published
   local commitment is recognized if it confirms after Eclair switches to a
   different commitment. Previously, Eclair could leave its own balance and
-  [HTLC][topic htlc] outputs unclaimed.
+  [HTLC][topic htlc] outputs unclaimed. {% assign timestamp="1:19:13" %}
 
 - [Eclair #3416][] fixes a bug that allowed a peer to repeatedly obtain
   [on-the-fly funding][topic jit channels] without paying the agreed-upon
@@ -271,7 +271,7 @@ repo], and [BINANAs][binana repo]._
   Flagged peers count toward the existing suspicious-peer limit, which disables
   this payment method globally once it is reached. Flags are cleared on
   restart, through operator intervention, or if the funding transaction is
-  aborted before publication.
+  aborted before publication. {% assign timestamp="1:26:02" %}
 
 - [LDK #5314][] fixes a privacy leak in [onion message][topic onion messages]
   forwarding that could link an [unannounced channel][topic unannounced
@@ -283,7 +283,7 @@ repo], and [BINANAs][binana repo]._
   and the nodes. LDK now refuses to resolve real SCIDs for unannounced channels
   when forwarding onion messages. SCID aliases remain usable. This complements
   the HTLC-forwarding privacy protections covered in [Newsletter #426][news426
-  ldk5028].
+  ldk5028]. {% assign timestamp="1:28:48" %}
 
 - [LDK #5412][] fixes a denial-of-service bug in its [LSPS2][BLIP52] server for
   [just-in-time channels][topic jit channels]. Previously, a client could
@@ -292,7 +292,7 @@ repo], and [BINANAs][binana repo]._
   and replaced the stored entry. Reaching the 1,000-request limit caused the
   LSP to reject requests from other clients, despite having far fewer requests
   to process. Duplicate IDs are now rejected without increasing the counter or
-  replacing the original request.
+  replacing the original request. {% assign timestamp="1:31:27" %}
 
 - [LND #11164][] advances its gossip-v2 implementation by updating message
   formats to match the latest [taproot gossip proposal][bolts #1059], which
@@ -303,7 +303,7 @@ repo], and [BINANAs][binana repo]._
   signatures for the node and funding keys. The changes also correct the
   encoding of the fee and capacity fields and preserve optional fields
   containing default values. This preserves the signed bytes when messages are
-  decoded and re-encoded, thus preventing signature verification failures.
+  decoded and re-encoded, thus preventing signature verification failures. {% assign timestamp="1:33:28" %}
 
 - [LND #11373][] and [#11380][lnd #11380] enforce LND's existing minimum
   commitment feerate of 253 sat/kw consistently during channel opening and fee
@@ -316,7 +316,7 @@ repo], and [BINANAs][binana repo]._
   fee updates against the minimum before recording or sending them, instead of
   only rejecting them when signing commitments. LND attempts to raise the
   feerate of existing channels opened below the minimum, but those channels
-  remain unable to carry HTLCs if their initiator cannot afford the increase.
+  remain unable to carry HTLCs if their initiator cannot afford the increase. {% assign timestamp="1:36:17" %}
 
 - [BTCPay Server #7744][] and [#7748][btcpay server #7748] fix two errors when
   merchants authorize application API keys. Optional permissions that a
@@ -327,7 +327,7 @@ repo], and [BINANAs][binana repo]._
   applying the merchant's store selection. These changes affect key issuance,
   following the permission-enforcement fixes covered in [Newsletter
   #428][news428 btcpay7684]. Previously issued keys retain their permissions
-  and may need to be revoked if they grant unintended access.
+  and may need to be revoked if they grant unintended access. {% assign timestamp="1:38:59" %}
 
 {% include snippets/recap-ad.md when="2026-11-03 16:30" %}
 {% include references.md %}
