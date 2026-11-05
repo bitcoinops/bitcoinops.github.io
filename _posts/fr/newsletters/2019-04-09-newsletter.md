@@ -70,6 +70,8 @@ permet aux personnes que vous payez de bénéficier de tous les multiples avanta
   | replace: "/en/newsletters/", "/fr/newsletters/"
   | replace: "/fr/newsletters/2019/04/02/#bech32-sending-support",
              "/fr/newsletters/2019/04/02/#prise-en-charge-de-lenvoi-vers-bech32"
+  | replace: "/fr/newsletters/2019/04/09/#bech32-sending-support",
+             "/fr/newsletters/2019/04/09/#prise-en-charge-de-lenvoi-vers-bech32"
 }}
 
 ## Changements notables dans le code et la documentation
