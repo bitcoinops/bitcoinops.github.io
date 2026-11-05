@@ -37,7 +37,7 @@ code and documentation changes.  For that, we have Elias.  Would you like to
 introduce yourself, Elias?
 
 **Elias Rohrer**: Sure.  Hi, I'm Elias, I'm with Spiral working on LDK and
-also Project Loop, which is AI security scanning, which probably we'll both
+also Project Loupe, which is AI security scanning, which probably we'll both
 get into.
 
 _Proposal for onchain, private bitcoin transfers with no consensus changes_
@@ -351,7 +351,7 @@ generally bug fix releases for us, because of course a lot of people are
 currently doing LLM-based scanning.  And these releases are no different.  So,
 we had a few issues that were reported by individual contributors and by
 individual people.  But indeed, the most fixes that we discuss here have been
-reported by Project Loop and other security scanning efforts.  And to get into
+reported by Project Loupe and other security scanning efforts.  And to get into
 the security fixes, for one, there was one Electrum issue, where in our
 Electrum sync logic, we previously, when we essentially tried to download
 transactions for a specific output spend, we would previously pick a random
@@ -538,7 +538,7 @@ Anything else you would like to add?
 
 **Elias Rohrer**: Yeah, I mean, I definitely want to thank everybody that
 reported these issues again, individual reporters, I'm not sure if Red Team
-had a report in this release.  Definitely also want to shout out Project Loop,
+had a report in this release.  Definitely also want to shout out Project Loupe,
 which is our own LLM scanning project, which generally, if anybody is working
 on projects and not doing LLM scanning, you definitely should because they
 find a lot currently.  You definitely need to scan your code.  That is maybe
