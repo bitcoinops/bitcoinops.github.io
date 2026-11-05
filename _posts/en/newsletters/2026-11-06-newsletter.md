@@ -236,7 +236,27 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [LND v0.21.6-beta][] and [v0.20.7-beta][lnd v0.20.7-beta] are security
+  releases for the 0.21 and 0.20 branches of this popular LN node
+  implementation. Both include the mitigation for the Linux kernel
+  vulnerability CVE-2026-98432 described under [LND #11456][] below. Linux
+  operators should upgrade, disable MPTCP on the host to protect other
+  services, and install a patched kernel, since the LND
+  mitigation does not fix the underlying vulnerability.
+
+- [Core Lightning 26.06.10][] is a security release of this popular LN node
+  implementation. It fixes vulnerabilities in [dual funding][topic dual
+  funding], [splicing][topic splicing], onchain [HTLC][topic htlc] resolution,
+  access controls, and other components. Source code for the security fixes is
+  available, while associated tests are temporarily withheld to give users more
+  time to upgrade. The project strongly recommends upgrading.
+
+- [BTCPay Server 2.4.7][] is a security release of this self-hosted payment
+  processor. It fixes 85 security findings reported by Anthropic's
+  [OSS Scanner program][anthropic oss scanner], including issues affecting
+  payout limits, access to other stores' data, authentication, and resource
+  exhaustion. It also fixes payment-accounting and reliability issues. Updating
+  is strongly recommended, especially for servers shared by multiple merchants.
 
 ## Notable code and documentation changes
 
@@ -249,11 +269,144 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #36539][] restores the PSBTv0 format for unsigned transactions
+  and fee bumps exported from the GUI. Bitcoin Core 32.1 exported these
+  [PSBTs][topic psbt] using version 2, preventing users from signing them with
+  tools that only support version 0. The separate external-signer workflow
+  configured with `-signer` (see [Newsletter #138][news138 signer]) continues
+  to use PSBTv2, so those users need an external signer that supports it,
+  such as HWI 2.1.0 or later.
+
+- [Bitcoin Core #35714][] fixes a bug where the node could update its block
+  index and UTXO database after failing to flush block or undo data to disk.
+  Although the failure signaled the node to shut down, the code handling these
+  writes could still update the databases before the node stopped. If these
+  updates succeeded, the databases could record a state for which the
+  supporting block or undo data had not yet been safely saved. This could leave
+  the node's local state inconsistent and complicate recovery. The code now
+  skips those database writes during the failing flush attempt. This
+  complements earlier flush ordering protections for optional indexes covered
+  in [Newsletter #414][news414 flush].
+
+- [Bitcoin Core #35492][] fixes a bug where `bitcoin-wallet dump` (see
+  [Newsletter #130][news130 dump]) could report success after writing an
+  incomplete wallet export. Previously, the command checked if it could open
+  the destination file but did not detect subsequent write failures, such as
+  running out of disk space. Consequently, users could mistakenly believe that
+  the export was complete, only to discover missing data when trying to restore
+  the wallet. Now, the command verifies the writing, flushing, and closing of
+  the file. It reports failures and removes incomplete dump files.
+
+- [BIPs #2205][], [#2210][bips #2210], and [#2212][bips #2212] add three draft
+  specifications for [cross-input signature aggregation][topic cisa].
+  [BIP458][] specifies non-interactive half aggregation, combining `n` existing
+  [BIP340][] signatures into `32 × (n + 1)` bytes instead of `64 × n` bytes.
+  [BIP459][] specifies DahLIAS, an interactive protocol that produces a single
+  64-byte aggregate signature for multiple keys and messages. [BIP460][]
+  proposes using these schemes for keypath spends of new witness-version-2
+  outputs, while retaining individual signatures for scriptpath spends and
+  allowing keypath inputs to opt out. Since the proposal was covered in
+  [Newsletter #417][news417 cisa], opted-out inputs have been changed to use
+  ordinary [BIP341][] signatures without a special marker, allowing wallets to
+  adopt the new output type while reusing their existing signing logic. This
+  would reduce transaction weight and fees for transactions with multiple
+  participating inputs, including [coinjoins][topic coinjoin] and
+  [payjoins][topic payjoin]. Deploying the proposed transaction aggregation
+  would require a soft fork. BIP460 leaves the activation mechanism and
+  parameters unspecified.
+
+- [Core Lightning #9419][] adds an optional `failure_reason` field to the
+  `listforwards` RPC and `forward_event` notifications for locally failed
+  forwarding attempts. Previously, several distinct problems shared the same
+  protocol failure code, which made it difficult for operators to determine why
+  forwarding failed. The new field distinguishes between causes such as
+  insufficient outgoing liquidity, an offline outgoing peer, and limits on the
+  number or total value of pending [HTLCs][topic htlc].
+
+- [Core Lightning #9592][] updates `xpay` (see [Newsletter #330][news330 xpay])
+  to avoid a forwarding node for the remainder of a payment after it twice
+  returns `unknown_next_peer`. Previously, each failure excluded only the
+  reported channel, so successive attempts could keep selecting other channels
+  through the same node until the payment's retry time expired. Now, after the
+  second failure from the same node, `xpay` excludes it through the payment's
+  private `askrene` routing layer. This heuristic can exclude usable channels,
+  but limits repeated attempts through the same node.
+
+- [LDK #5089][] updates fee bumping during force closes of channels with
+  [anchor outputs][topic anchor outputs]. If LDK cannot obtain the necessary
+  funds for a [CPFP][topic cpfp] child transaction that spends an anchor
+  output, it now broadcasts the commitment transaction alone. Previously, this
+  failure could leave both transactions unbroadcast, delaying recovery of
+  channel funds. The commitment already includes a fee, which may still be
+  sufficient for confirmation if the fee estimate was conservative or network
+  demand falls. However, this fallback excludes [zero-fee commitment
+  transactions][topic v3 commitments], which require a fee-paying child
+  transaction for relay. The issue was reported by Project Loupe.
+
+- [LND #11456][] disables Multipath TCP (MPTCP) listeners by default to
+  mitigate [CVE-2026-98432][mptcp advisory], a Linux kernel vulnerability for
+  which remote code execution was demonstrated using MPTCP. Go 1.24 and later
+  enable these listeners by default on supported Linux systems, which could
+  expose LND operators even if they don't explicitly configure MPTCP. The
+  change sets `multipathtcp=0` in LND's Go defaults. This blocks the
+  demonstrated exploit path through LND's listeners, but does not fix the
+  underlying kernel bug. Affected systems still require a patched kernel.
+  Operators using existing binaries can apply the same mitigation by restarting
+  LND with the environment variable `GODEBUG=multipathtcp=0`.
+
+- [LND #11357][] tightens [BOLT11][] invoice validation following [BOLTs
+  #1357][] (see [Newsletter #428][news428 bolts11]). Instead of using the first
+  and ignoring the rest, it now rejects duplicate payment secret fields,
+  preventing ambiguity between parsers that select different occurrences. This
+  builds on the earlier rejection of duplicate payment hashes (see [Newsletter
+  #425][news425 lnd]). Tests added by the specification update also revealed
+  that existing requirements were not being enforced. The decoder now rejects
+  incorrect lengths when parsing the payment hash, description hash,
+  payment secret, and
+  receiver public key, instead of treating those fields as absent. Previously,
+  an incorrectly sized receiver public key field could cause LND to fall back
+  to recovering the key from the signature. For invoices containing an explicit
+  receiver public key, a low-S ECDSA signature is also required. However, this
+  restriction does not apply when the public key is recovered from the
+  signature (see [Newsletter #381][news381 low-s]).
+
+- [LND #11413][] speeds up the startup cleanup of stored outgoing payment
+  results on nodes using SQLite or PostgreSQL. During normal operation, the
+  node accumulates a result for each resolved, locally initiated [HTLC][topic
+  htlc] attempt. At startup, it removes results that are no longer needed.
+  Previously, reading and deleting entries individually required repeated
+  database round trips, which could make cleanup take hours on a busy node
+  using remote PostgreSQL. Now, cleanup batches database operations while
+  preserving the results needed to resume pending payments.
+
+- [LND #11151][] adds checks for excessive commitment feerates and inadequate
+  initial balances when accepting incoming channels. LND now rejects a proposed
+  feerate above the greater of ten times its [three-block estimate][topic fee
+  estimation] and 100 sat/vbyte. It also enforces [BOLT2][]'s initial-reserve
+  rule and separately rejects channels where neither party's initial balance
+  exceeds the reserve that party must maintain. Although the initiator pays the
+  commitment fee, an excessive fee can consume their usable balance, wasting
+  the receiver's pending-channel capacity during opening and leaving behind an
+  unusable channel once the funding transaction is confirmed. This complements
+  the minimum feerate checks covered in [Newsletter #429][news429 lnd fees].
+
+- [Rust Bitcoin #7067][] extends the [taproot][topic taproot] signature hash
+  (sighash) helpers to accept an optional [annex][topic annex] and, for
+  scriptpath spends, the opcode position of the last [OP_CODESEPARATOR][topic
+  OP_CODESEPARATOR] executed before the signature check. Both affect the
+  message that a signature commits to. Previously, these convenience functions
+  assumed no annex and no executed `OP_CODESEPARATOR`, so callers handling such
+  spends had to use the more general sighash function to avoid producing an
+  incorrect digest. The helpers now accept these values directly, although
+  callers must still determine the separator position. Callers handling spends
+  without an annex or an executed `OP_CODESEPARATOR` can pass `None` for the
+  new arguments to retain the previous behavior. See [Newsletter #427][news427
+  rust bitcoin] for related sighash API changes for legacy and segwit v0
+  spends.
 
 {% include snippets/recap-ad.md when="2026-11-10 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="35793" %}
+{% include linkers/issues.md v=2 issues="35793,11456,36539,35714,35492,2205,2210,2212,9419,9592,5089,11357,1357,11413,11151,7067" %}
 
 [news406 holepunch]: /en/newsletters/2026/05/22/#tcp-hole-punching-for-bitcoin-nodes-behind-nats
 [b10c holepunch recap]: https://delvingbitcoin.org/t/tcp-hole-punching-for-bitcoin-nodes-behind-home-nats/2497/18
@@ -284,3 +437,21 @@ FIXME:Gustavojfe
 [on ml bip300]: https://groups.google.com/g/bitcoindev/c/7P0_BHRAYQI
 [bk delving decay]: https://delvingbitcoin.org/t/a-novel-post-quantum-approach-proof-of-decay-cryptographic-half-life-for-unmigrated-dormant-utxos/2970
 [vc delving decay]: https://delvingbitcoin.org/t/a-novel-post-quantum-approach-proof-of-decay-cryptographic-half-life-for-unmigrated-dormant-utxos/2970/2
+
+[LND v0.21.6-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.21.6-beta
+[lnd v0.20.7-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.20.7-beta
+[Core Lightning 26.06.10]: https://github.com/ElementsProject/lightning/releases/tag/v26.06.10
+[BTCPay Server 2.4.7]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.4.7
+[anthropic oss scanner]: https://github.com/anthropics/oss-scanner
+[mptcp advisory]: https://www.openwall.com/lists/oss-security/2026/10/30/1
+[LDK #5089]: https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5089
+[news138 signer]: /en/newsletters/2021/03/03/#bitcoin-core-16546
+[news414 flush]: /en/newsletters/2026/07/17/#bitcoin-core-34897
+[news130 dump]: /en/newsletters/2021/01/06/#bitcoin-core-19137
+[news417 cisa]: /en/newsletters/2026/08/07/#cisa-for-taproot-keypath-spends-bip460
+[news330 xpay]: /en/newsletters/2024/11/22/#core-lightning-7799
+[news428 bolts11]: /en/newsletters/2026/10/23/#bolts-1357
+[news425 lnd]: /en/newsletters/2026/10/02/#lnd-11190
+[news381 low-s]: /en/newsletters/2025/11/21/#bolts-1284
+[news429 lnd fees]: /en/newsletters/2026/10/30/#lnd-11373
+[news427 rust bitcoin]: /en/newsletters/2026/10/16/#rust-bitcoin-6956

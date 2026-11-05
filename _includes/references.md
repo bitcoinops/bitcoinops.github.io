@@ -227,6 +227,9 @@ for details --> {% endcomment %}
 [BIP449]: https://github.com/bitcoin/bips/blob/master/bip-0449.md
 [BIP450]: https://github.com/bitcoin/bips/blob/master/bip-0450.mediawiki
 [BIP451]: https://github.com/bitcoin/bips/blob/master/bip-0451.md
+[BIP458]: https://github.com/bitcoin/bips/blob/master/bip-0458.mediawiki
+[BIP459]: https://github.com/bitcoin/bips/blob/master/bip-0459.mediawiki
+[BIP460]: https://github.com/bitcoin/bips/blob/master/bip-0460.mediawiki
 [BIP461]: https://github.com/bitcoin/bips/blob/master/bip-0461.md
 
 {% for i in (1..10) %}
