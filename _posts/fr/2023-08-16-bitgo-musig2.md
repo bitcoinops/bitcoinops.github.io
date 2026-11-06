@@ -12,4 +12,4 @@ excerpt: >
    et le déploiement des capacités de MuSig2 sur leur plateforme.
 
 ---
-{% include articles/bitgo-musig2.md %}
+{% include articles/fr/bitgo-musig2.md %}
