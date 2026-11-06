@@ -139,6 +139,9 @@ optech_mentions:
   - title: "Covenants.diy browser editor for constructing and stepping through covenant scripts"
     url: /en/newsletters/2026/09/18/#covenants-diy-script-editor
 
+  - title: "Draft BIP standardizing the spending policies co-signers enforce when emulating covenants"
+    url: /en/newsletters/2026/11/06/#bip-draft-for-standardized-co-signer-spending-policies
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

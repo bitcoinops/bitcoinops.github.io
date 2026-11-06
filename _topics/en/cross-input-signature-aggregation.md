@@ -54,6 +54,9 @@ optech_mentions:
   - title: "Discussion of whether to bundle CISA with a post-quantum P2TRv2 output type"
     url: /en/newsletters/2026/10/02/#continued-discussion-of-pqc-output-types
 
+  - title: "BIP458, BIP459, and BIP460 drafts for half aggregation, DahLIAS, and witness v2 keypath spends"
+    url: /en/newsletters/2026/11/06/#bips-2205
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

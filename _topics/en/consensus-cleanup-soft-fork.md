@@ -110,6 +110,9 @@ optech_mentions:
   - title: "Proof that BIP54's two timestamp rules bound chain length for a given amount of work"
     url: /en/newsletters/2026/10/02/#bounds-on-chain-length-with-bip54-time-warp-fixes
 
+  - title: "Riard's summary of BIP54 status and the remaining steps before activation"
+    url: /en/newsletters/2026/11/06/#continued-discussion-of-bip54
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation

@@ -264,6 +264,9 @@ optech_mentions:
   - title: "Discussion of broader inter-wallet communication spec covering PSBTs"
     url: /en/newsletters/2026/10/02/#proposal-for-wallet-label-synchronization
 
+  - title: "Bitcoin Core restores PSBTv0 for GUI exports after 32.1 switched them to PSBTv2"
+    url: /en/newsletters/2026/11/06/#bitcoin-core-36539
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

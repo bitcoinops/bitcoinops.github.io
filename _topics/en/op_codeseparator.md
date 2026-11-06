@@ -54,6 +54,9 @@ optech_mentions:
   - title: "Rust Bitcoin #6956 adds a `ScriptCode` type for `OP_CODESEPARATOR`-aware segwit v0 signature hashing"
     url: /en/newsletters/2026/10/16/#rust-bitcoin-6956
 
+  - title: "Rust Bitcoin taproot sighash helpers accept the position of the last executed OP_CODESEPARATOR"
+    url: /en/newsletters/2026/11/06/#rust-bitcoin-7067
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Tapscript soft fork proposal

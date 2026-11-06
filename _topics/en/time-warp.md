@@ -69,6 +69,9 @@ optech_mentions:
   - title: "Bounds on chain length with the BIP54 time warp fixes"
     url: /en/newsletters/2026/10/02/#bounds-on-chain-length-with-bip54-time-warp-fixes
 
+  - title: "Riard argues BIP54's time warp fix leaves only a limited, unsound forward blocks variant"
+    url: /en/newsletters/2026/11/06/#continued-discussion-of-bip54
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal
