@@ -179,15 +179,22 @@ features for Bitcoin users:
   of the arbitrary message passed to `OP_CSFS` is identical to the
   serialized spending transaction (and other data) implicitly used
   with `OP_CHECKSIG`.  This makes it possible to put a validated copy
-  of the spending transaction on the script evaluation stack where
-  other opcodes can run tests on it in order to enforce restrictions
-  on the spending transaction.
+  of the spending transaction on the script evaluation stack.  Note
+  that `OP_CSFS` alone only verifies a signature over that copy as a
+  single element and gives a script no way to examine individual
+  fields: to test a field, the spender has to supply it separately
+  and the script has to be able to reassemble the signed message from
+  the fields it has checked.  This use case therefore assumes an
+  opcode such as the proposed [OP_CAT][topic op_cat] as well (see
+  *Relationship to OP_CAT* below).  With both, other opcodes can run
+  tests on the individual fields in order to enforce restrictions on
+  the spending transaction.
 
-  For example, if `OP_CSFS` had been available in 2015 and 2016, it
-  would've been possible to implement the features of [BIP65][]
-  `OP_CHECKLOCKTIMEVERIFY` (CLTV) and [BIP112][]
-  `OP_CHECKSEQUENCEVERIFY` (CSV) using without any consensus changes
-  just by writing a verification script.
+  For example, if `OP_CSFS` and `OP_CAT` had been available in 2015
+  and 2016, it would've been possible to implement the features of
+  [BIP65][] `OP_CHECKLOCKTIMEVERIFY` (CLTV) and [BIP112][]
+  `OP_CHECKSEQUENCEVERIFY` (CSV) without any consensus changes just
+  by writing a verification script.
 
   Looking forward, `OP_CSFS` could also allow scripts to [implement
   the features][oconnor generic] of the proposed [SIGHASH_ANYPREVOUT][topic
@@ -200,8 +207,9 @@ features for Bitcoin users:
   restrict its spending transaction to a small set of acceptable
   scriptPubKeys to limit the risk of theft.
 
-  The strength of `OP_CSFS` is that it provides full introspection
-  of the signing transaction in a completely generic way.  Its
+  The strength of `OP_CSFS` combined with `OP_CAT` is that it
+  provides full introspection of the signing transaction in a
+  completely generic way.  Its
   weakness is that it requires essentially adding a complete copy of
   the signing transaction to the stack, which may significantly
   increase the size of transactions that want to use `OP_CSFS` for
