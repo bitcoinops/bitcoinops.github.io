@@ -41,6 +41,9 @@ optech_mentions:
   - title: "Proposal to use the annex for opt-in replay protection against forks"
     url: /en/newsletters/2026/08/28/#discussion-on-universal-opt-in-replay-protection
 
+  - title: "Provoost's replay protection prototype uses a typed annex committing to a block height"
+    url: /en/newsletters/2026/11/06/#opt-in-replay-protection-prototype
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

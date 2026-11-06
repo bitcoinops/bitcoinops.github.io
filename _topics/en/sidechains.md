@@ -43,6 +43,9 @@ optech_mentions:
   - title: "Discussion about affect on sidechains of mitigating merkle tree vulnerabilities"
     url: /en/newsletters/2024/09/06/#mitigating-merkle-tree-vulnerabilities
 
+  - title: "Analysis of a minority hashrate censorship attack on BIP300 withdrawal bundles"
+    url: /en/newsletters/2026/11/06/#bip300-bundle-censorship
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #  - title:

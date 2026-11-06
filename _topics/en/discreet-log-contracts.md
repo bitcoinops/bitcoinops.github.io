@@ -89,6 +89,9 @@ optech_mentions:
   - title: "Summary and criticism of CTV + CSFS benefits for discreet log contracts (DLCs)"
     url: /en/newsletters/2025/04/04/#dlcs
 
+  - title: "Co-signer spending policy draft requires accepting DLC oracle attestations as evidence"
+    url: /en/newsletters/2026/11/06/#bip-draft-for-standardized-co-signer-spending-policies
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signature adaptors

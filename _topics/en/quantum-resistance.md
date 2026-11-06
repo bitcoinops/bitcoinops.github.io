@@ -193,6 +193,9 @@ optech_mentions:
   - title: "Block-wide aggregation of hash-based post-quantum signatures via SNARKs"
     url: /en/newsletters/2026/10/02/#block-wide-signature-aggregation-via-snarks
 
+  - title: "QSAVE: five draft BIPs for a no-burn post-quantum transition with a second spending factor"
+    url: /en/newsletters/2026/11/06/#qsave-for-unmigrated-coins
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
