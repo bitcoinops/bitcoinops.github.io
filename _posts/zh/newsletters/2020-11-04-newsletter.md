@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 总结了关于双向 LN 预付费的讨论，并传达了专家对 Taproot 激活方式偏好的小范围调查结果。此外，还包括我们常规的各个项目更新部分。
+本周的 Newsletter 总结关于 LN 双向前置手续费的讨论，并转述一项针对专家的小范围问卷调查结果，内容是他们倾向于用哪种方式激活 taproot。此外，还包括我们常规的各个项目更新部分。
 
 ## 行动项
 
@@ -15,42 +15,42 @@ lang: zh
 
 ## 新闻
 
-- **<!--bi-directional-upfront-fees-for-ln-->****双向 LN 预付费：** 在关于预付费的 Lightning-Dev 邮件列表讨论（见 [Newsletter #120][news120 upfront]）基础上，Bastien Teinturier [提出][teinturier bidir]了一个建议，要求提供 [HTLC][topic htlc] 的一方和接收方双方都需向对方支付费用——但如果支付在指定时间内结算，接收方可获得费用的退款。例如：
+- **<!--bi-directional-upfront-fees-for-ln-->****LN 双向前置手续费：** 在 Lightning-Dev 邮件列表此前关于前置手续费的讨论帖（见 [Newsletter #120][news120 upfront]）基础上，Bastien Teinturier [提出][teinturier bidir]一项建议：让提供 [HTLC][topic htlc] 的一方和收到 HTLC 的一方各自向对方支付手续费——不过，如果支付在指定时间内结算，收款方能拿回自己支付的手续费。例如：
 
   {:.center}
-  ![Alice 通过 Bob 向 Carol 路由支付，使用双向预付费](/img/posts/2020-11-bi-directional-upfront.png)
+  ![Alice 通过 Bob 向 Carol 路由支付，使用双向前置手续费](/img/posts/2020-11-bi-directional-upfront.png)
 
-  前向费用（如 Alice→Bob）可阻止垃圾信息；即使接收方拒绝中继支付，前向费用仍需支付。后向费用（如 Bob→Alice）通过设置退款期限鼓励及时结算。任何希望使用[延迟发票][topic hold invoices]的最终接收者若超出剩余时间，将需支付后向费用。任何中间跳点如果怀疑支付在期限前不会成功，也会拒绝该支付，从而允许前面的跳点在期限前结算失败的支付并获得退款。
+  前向手续费（例如 Alice→Bob）可抑制垃圾支付；即使接收方拒绝中继这笔支付，前向手续费也必须支付。后向手续费（例如 Bob→Alice）通过退款期限来鼓励及时结算。任何想使用[挂起发票][topic hold invoices]超过剩余时间的最终收款方，现在都需要支付后向手续费。任何怀疑支付无法在期限前成功的中间跳点，现在都会拒绝该支付，从而让更前面的跳点也能在期限前结算这笔失败的支付并拿回退款。
 
-  在对此想法的讨论中，尚未发现任何致命问题，但该提案引发的兴趣程度尚不明确。
+  在对此想法的讨论中，似乎并未发现任何致命问题，但该提案引发了多大热情尚不清楚。
 
-- **<!--taproot-activation-survey-results-->****Taproot 激活方式调查结果：** Anthony Towns 收到了来自 13 位“智能开发者类型人士”的调查反馈，询问他们对使用哪种软分叉激活方式进行 Taproot 激活的偏好。[帖子][towns survey]中包含了他个人对结果的总结，简要摘录如下：
+- **<!--taproot-activation-survey-results-->****taproot 激活方式调查结果：** Anthony Towns 收到 13 位未具名“聪明开发者型人士”的问卷反馈，内容是他们对为 taproot 选用哪种软分叉激活机制的偏好。[帖子][towns survey]中包含他个人对结果的总结，下面简要节选：
 
-  > - 激活阈值应保持在 95% [...]
+  > - 激活阈值应保持在 95%……
   >
-  > - [...] 希望矿工在几个月内能快速响应，但计划的时间跨度应考虑到即使一切顺利也可能长达一年
+  > - ……希望矿工能在几个月内快速响应，但计划上要考虑到即使一切顺利也可能耗时长达一年
   >
-  > - 设置[最早的激活时间]在包含激活代码的 Bitcoin Core 版本发布后的一个月左右可能比较合适 [...]
+  > - 把[最早可能的激活时间]设在包含激活代码的 Bitcoin Core 版本发布后一两个月左右，可能比较合适……
   >
-  > - 在某些情况下，几乎所有人都支持设定一个强制激活日
+  > - 在某些情况下，几乎所有人都愿意接受设立强制激活日（flag day）
   >
-  > - 如果有强制激活日，我们应预计这个日期在一两年之后 [...]
+  > - 如果要设强制激活日，应当预计它在一两年之后……
   >
-  > - 初期可能不支持设定强制激活日 [...]
+  > - 一开始大概没人支持直接设定强制激活日……
   >
-  > - 几乎所有人都希望在激活后尽可能多的节点执行规则
+  > - 几乎所有人都希望激活后尽可能多的节点强制执行规则
   >
-  > - 大多数人似乎愿意接受通过强制信号提前到来的强制激活日
+  > - 大多数人似乎愿意接受通过强制信令把强制激活日提前
   >
-  > - 对于通过配置选项选择加入激活日的方式支持不多
+  > - 对于通过设置配置选项来自愿启用强制激活日，支持者不多
 
-  在 Bitcoin Core 开发者完成即将发布的 0.21 版本的工作后，此调查结果可能会帮助他们选择用于 Taproot 的激活参数。当然，软分叉的实际执行将取决于其在用户中的广泛支持——用户也可能选择使用其他激活方式。欢迎在 [##taproot-activation][] IRC 聊天室中进一步讨论激活参数（[日志][##taproot-activation logs]）。
+  在 Bitcoin Core 开发者完成即将发布的 0.21 版本的工作之后，这次调查的结果很可能会帮助他们选定后续版本中 taproot 将要采用的激活参数。当然，软分叉能否真正强制执行，取决于它能否获得用户的广泛支持——用户也可能决定采用别的激活机制。欢迎在 [##taproot-activation][] IRC 聊天室中进一步讨论激活参数（[日志][##taproot-activation logs]）。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中的值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中的值得注意的变更。*
 
-- [C-Lightning #4162][] 更新了日志记录以显示支付是否使用了[支付秘密][payment secret]。支付秘密作为[多路径支付][topic multipath payments]功能的一部分，已在 [BOLTs #643][] 中添加到 BOLT 11，用于防止路径上的节点进行探测攻击。支付秘密已被所有 LN 实现支持，并最终将被 C-Lightning 强制使用；记录哪些支付使用了支付秘密可以帮助开发者了解何时合理地做出该更改。
+- [C-Lightning #4162][] 更新了日志输出，使其记录一笔支付是否使用了[支付秘密][payment secret]。支付秘密是[多路径支付][topic multipath payments]功能的一部分，已在 [BOLTs #643][] 中加入 BOLT 11，用于防止支付路径上的节点发起探测攻击。所有 LN 实现都已支持支付秘密，C-Lightning 最终也会强制要求使用；记录哪些支付使用了支付秘密，有助于开发者判断何时适合推行这项变更。
 
 {% include references.md %}
 {% include linkers/issues.md issues="643,4162" %}

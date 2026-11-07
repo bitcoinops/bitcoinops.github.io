@@ -7,75 +7,75 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 宣布了 C-Lightning 0.8.1 的发布，呼吁协助测试 Bitcoin Core 的维护版本，概述了关于 taproot 与分别实现 MAST 和 schnorr 签名的讨论，总结了在闪电网络通道构建中使用 PoDLEs 的新想法，并重点介绍了隐私增强支付在未公告的闪电网络通道上的新影响。此外，还包括我们常规的有关热门服务、客户端软件和基础设施项目值得注意的变更部分。
+本周的 Newsletter 宣布 C-Lightning 0.8.1 发布，请求协助测试 Bitcoin Core 的一个维护版本，总结一场关于 taproot 与分别实现 MAST、schnorr 签名的讨论，介绍在 LN 通道构建中使用 PoDLE 的新想法，并重点介绍针对未公布 LN 通道的隐私增强支付工作所带来的一项新影响。此外还有关于热门服务、客户端软件和基础设施项目值得注意的变更的常规栏目。
 
 ## 行动项
 
-- **<!--upgrade-to-c-lightning-0-8-1-->****升级到 C-Lightning 0.8.1：** 此次[发布][cl 0.8.1]增加了多个新特性（包括在下文 *值得注意的变更* 部分中描述的特性），并提供了多项错误修复。详细的更新列表请参见 [changelog][cl changelog]。
+- **<!--upgrade-to-c-lightning-0-8-1-->****升级到 C-Lightning 0.8.1：** 此次[发布][cl 0.8.1]增加了多个新特性（包括下文*值得注意的变更*部分中描述的那些），并带来多项错误修复。详细更新列表请参见 [changelog][cl changelog]。
 
-- **<!--help-test-bitcoin-core-0-19-1rc2-->****协助测试 Bitcoin Core 0.19.1rc2：** 即将发布的此维护版本 [release][bitcoin core 0.19.1] 包含多项错误修复。我们鼓励有经验的用户协助测试，查找任何回归或其他意外行为。
+- **<!--help-test-bitcoin-core-0-19-1rc2-->****协助测试 Bitcoin Core 0.19.1rc2：** 即将发布的这一维护[版本][bitcoin core 0.19.1]包含多项错误修复。我们鼓励有经验的用户帮助测试是否存在回归或其他意外行为。
 
 ## 新闻
 
-- **<!--discussion-about-taproot-versus-alternatives-->关于 taproot 与替代方案的讨论：** 一组希望保持匿名的开发者（我们称之为 Anon）撰写了一篇[批评][anon reflowed]，比较了 taproot 与在比特币中实现 MAST 和 schnorr 签名的替代方案。Anon 在批评结尾提出了五个问题，我们在下面使用这些问题来组织 Anon 的关注点和几位比特币贡献者的回复。
+- **<!--discussion-about-taproot-versus-alternatives-->****关于 taproot 与替代方案的讨论：** 一群希望保持匿名的开发者（下文称 Anon）写了一篇[批评文章][anon reflowed]，把 taproot 与在比特币中分别实现 MAST 和 schnorr 签名的其他方案作了比较。Anon 在批评结尾提出五个问题，下面我们就用这五个问题来组织对其疑虑以及几位比特币贡献者回复的总结。
 
-  1. {:#tap1} Anon 问道：“taproot 是否真的比单独使用 MAST 和 schnorr 更隐私？与分别使用它们相比，实际的匿名性集收益是什么？”
+  1. {:#tap1} Anon 问道：“taproot 真的比分别使用 MAST 和 schnorr 更隐私吗？与分别实现相比，匿名集的实际收益是什么？”
 
-     Anthony Towns [回复][towns tap]，“是的【更隐私】，假设单公钥单签名仍然是一种常见的授权模式。”Towns 表明，单签名花费当前占所有交易输出的 57% 以上（考虑到 P2SH 包装的 P2WPKH 的频繁使用，实际可能更多）。如果 schnorr 可用，单签名的用户将增加，因为它简化了交互式 n-of-n 多重签名、交互式 k-of-n 门限签名和自适应签名（无脚本脚本），这些在链上看起来就像是单签名花费。
+     Anthony Towns [回复][towns tap]：“是的（更隐私），前提是单公钥单签名仍是一种常见的授权模式。”Towns 说明，单签花费目前占全部交易输出的 57% 以上（考虑到 P2SH 包装的 P2WPKH 被频繁使用，实际可能更多）。如果 schnorr 可用，能用单签的人只会更多，因为 schnorr 简化了交互式 n-of-n 多重签名、交互式 k-of-n 门限签名和适配器签名（无脚本脚本）的使用，而这些在链上看起来都像单签花费。
 
-     然而，随着越来越多的人转向多重签名和高级合约，出现了越来越多的实际用例，这些用例大多数情况下可以通过单个签名来满足，但有时仍然需要使用脚本。如果只有 MAST 而没有 taproot，这些用例就需要始终使用 MAST。MAST 也可以用于单签名花费，但这将需要更大的交易和更高的费用，因此单签名用户可能不会使用 MAST。这将在链上分析中造成使用 MAST 的花费与不使用 MAST 的花费之间的明显区别。
+     然而，随着越来越多人转向多重签名和高级合约，有越来越多的实际用例在大多数时候只需一个签名就能满足，但有时仍要用到脚本。如果只有 MAST 而没有 taproot，这些用例就不得不始终使用 MAST。MAST 也能用于单签花费，但相比纯粹的单签构造，它需要更大的交易和更多手续费，所以单签用户多半不会用 MAST。这样一来，在链上分析者眼里，用 MAST 的花费和不用 MAST 的花费之间就会出现一道清晰的分界。
 
-     Taproot 通过允许便宜的单签名花费消除了这一区别，这些花费在外观上与那些能够使用单签名但也有备用脚本的用户的花费相同（虽然实际使用备用脚本进行花费时，在链上是可以识别的）。这创造了一个比单独使用 MAST 和 schnorr 更大的匿名集，只要确实有一群人有时使用单个签名进行花费，而有时使用脚本进行花费。
+     taproot 通过允许廉价的单签花费消除了这道分界：这些花费在外观上与那些能用单签、但也备有备用脚本的用户的花费完全一样（不过真的用备用脚本去花费时，在链上是可识别的）。只要确实存在这样一群人——他们有时用单个签名花费，有时用脚本花费——taproot 就能形成比分别实现 MAST 和 schnorr 更大的匿名集。
 
-  2. {:#tap2} Anon 问道：“taproot 是否真的比单独使用 MAST 和 schnorr 更便宜？”在邮件的早些时候，Anon 声称，taproot 在密钥路径花费中比 MAST+schnorr 节省 67 字节，但在脚本路径花费中增加了 67 字节。
+  2. {:#tap2} Anon 问道：“taproot 真的比分别使用 MAST 和 schnorr 更便宜吗？”在该邮件较靠前的部分，Anon 声称 taproot 在密钥路径花费上比 MAST+schnorr 省 67 字节，但在脚本路径花费上要多 67 字节。
 
-     Towns 指出 Anon 计算中的一个冗余数据字段，并表明在脚本路径花费情况下，taproot 实际上只增加了大约 33 字节，使得成本效益分析偏向于 taproot。David Harding [指出][harding tap]，额外的大小（相当于 8.25 个虚拟字节）相对于脚本路径花费者为花费 UTXO 需要提供的所有其他数据（如 41 个虚拟字节的输入数据、16 个虚拟字节的签名或各种大小的其他见证、一个或多个 8 个虚拟字节的默克尔节点以及要执行的脚本）来说是非常小的。
+     Towns 指出 Anon 的计算里有一个冗余数据字段，并说明在脚本路径花费的情况下，taproot 实际上只多出约 33 字节，这使得成本与收益的权衡不对称地偏向 taproot。David Harding [指出][harding tap]，多出来的这点体积（相当于 8.25 vbyte）相对于用脚本路径花费一个 UTXO 时需要提供的其他所有数据（例如 41 vbyte 的输入数据、16 vbyte 的签名或各种大小的其他见证、一个或多个 8 vbyte 的默克尔节点，以及要执行的脚本）来说相当小。
 
-  3. {:#tap3} Anon 问道：“考虑到新的加密技术，taproot 是否比单独使用 MAST 和 schnorr 更有风险？”
+  3. {:#tap3} Anon 问道：“考虑到引入了新的密码学，taproot 是否比分别实现 MAST 和 schnorr 风险更大？”
 
-     Towns 回复道，“我不这么认为；无论哪种方式，大部分风险都在于细节处理得当。[…] 大多数复杂的加密部分都在应用层： [MuSig][topic musig]、门限签名、自适应签名、无脚本脚本等。” 他还链接了几个学习资源供有兴趣的人进一步了解 ([1][taplearn1], [2][taplearn2], [3][taplearn3])。
+     Towns 回复说，他“不这么认为；这两者的大部分风险都在于能否把细节做对。……大部分复杂的密码学部分都在应用层：[MuSig][topic musig]、门限签名、适配器签名、无脚本脚本等。”他还给想深入了解的人列了几份资料（[1][taplearn1]、[2][taplearn2]、[3][taplearn3]）。
 
-  4. {:#tap4} Anon 问道：“我们是否可以不遵循 [Nothing Up My Sleeve]<!-- prevent link --> [NUMS][] 点要求，而能够直接检查它是否是一个哈希根？”这是一个要求，即钱包创建并随后发布一个 taproot 内部密钥，即使它只是一个随机曲线点，因为它们从未打算使用密钥路径花费。Anon 的建议本质上是允许花费者跳过发布内部密钥，直接进行脚本路径验证。
+  4. {:#tap4} Anon 问道：“我们能不能省掉 [Nothing Up My Sleeve]<!-- prevent link --> [NUMS][] 点这一要求，直接检查它是不是一个哈希根？”这项要求是指：钱包要创建并在之后公布一个 taproot 内部密钥，即便那只是个随机曲线点，因为钱包压根没打算用密钥路径花费。Anon 实质上是建议允许付款方跳过公布内部密钥，直接进入脚本路径验证。
 
-     Towns 回复道，“这会大大减少匿名集。”原因是，在花费时，如果不存在内部密钥，就会揭示花费者从未打算使用密钥路径花费，从而将他们的花费与其他可能使用密钥路径的花费区分开来。Towns 进一步指出，不发布内部密钥只会节省 8 个虚拟字节。
+     Towns 回复：“那会大幅缩小匿名集。”原因在于，没有内部密钥会在花费时暴露出付款方从未打算使用密钥路径花费，从而把他们的花费和其他本来可以用密钥路径的花费区分开。Towns 还指出，不公布内部密钥只能省下 8 vbyte。
 
-     Jonas Nick 和 Jeremy Rubin 分别提供了他们的分析。Nick [总结][nick tap]，“【因为】比特币中的匿名集是永久性的，软件的部署时间通常比任何人预期的要长[…]现实中 taproot 优于【Anon 提出的】优化。”Rubin [得出相反的结论][rubin tap]，更倾向于 Anon 的提议或他自己的替代方案（这仍然会导致相同的隐私损失）。
+     Jonas Nick 和 Jeremy Rubin 各自给出了分析。Nick [总结][nick tap]：“（因为）比特币里的匿名集是永久的，而软件的部署时间往往比任何人预想的都长……现实中 taproot 优于（Anon 所提议的）那个优化。”Rubin [得出相反的结论][rubin tap]，更倾向于 Anon 的提议或他自己提出的替代方案（后者仍会导致同样的隐私损失）。
 
-  5. {:#tap5} Anon 问道：“将多个功能一次性加入比特币的开发模型是否对比特币开发有益？”
+  5. {:#tap5} Anon 问道：“一股脑把一堆功能塞进比特币，这种开发模式对比特币开发有好处吗？”
 
-     Towns 回复道，“将这些特定更改捆绑在一起【带来了】taproot 的优势”——在使用密钥路径或脚本路径花费方面的灵活性，“密钥路径的使用与不使用 taproot 相比没有成本”，“如果不使用脚本路径，增加一个脚本路径也没有成本”，并且“如果可以在链下交互式验证脚本条件，则始终可以使用密钥路径”。
+     Towns 回复说，“把这些特定改动捆绑在一起（带来了）taproot 的优势”——在密钥路径或脚本路径花费之间自由选择的灵活性，“密钥路径与不使用 taproot 相比没有任何额外成本”，“如果你最终用不到脚本路径，把脚本路径加进去也不会带来额外成本”，以及“如果你能在链下交互式验证脚本条件，你就随时可以使用密钥路径”。
 
-    讨论没有得出明显的结论。如果有任何进一步值得注意的发展，我们将在未来的 Newsletter 中进行报道。
+    讨论没有得出明确结论。今后若有值得注意的新进展，我们会在之后的 Newsletter 中报道。
 
-- **<!--using-podle-in-ln-->****在闪电网络中使用 PoDLE：** 正如 [Newsletter #83][news83 interactive] 中描述的那样，闪电网络开发者正在努力制定一个用于交互式构建资金交易的协议，作为双向资助支付通道和[通道拼接][topic splicing]的步骤之一。双向资助通道设置的一个问题是，有人可以提议与您开设一个通道，了解您的一个或多个 UTXO，然后在签署交易并支付任何费用之前放弃通道设置过程。对此问题的一个建议解决方案是要求通道开启提议包含离散对数等价证明（[PoDLE][]），JoinMarket 使用该方法来避免同类型的无成本 UTXO 泄露攻击。
+- **<!--using-podle-in-ln-->****在 LN 中使用 PoDLE：** 如 [Newsletter #83][news83 interactive] 所述，LN 开发者正在为交互式构建注资交易制定协议，这是迈向双向资助支付通道和[通道拼接][topic splicing]的一步。双向资助通道建立过程中的一个问题是：有人可以提议与你开一个通道，得知你的一个或多个 UTXO，然后在签署交易、支付任何手续费之前放弃整个流程。针对这个问题，一个建议的解决办法是要求开通道的提议中包含离散对数等价证明（[PoDLE][]），JoinMarket 正是用它来避免同类的零成本 UTXO 泄露攻击。
 
-  本周，Lisa Neigut 发布了她对 PoDLE 交互式资助想法的[分析][neigut podle1]。她还单独[描述了][neigut podle2]一种攻击，攻击者不诚实的 Mallory 等待诚实的 Alice 提交一个 PoDLE，然后利用该 PoDLE 让其他节点将 Alice 列入黑名单。Neigut 提出了一个缓解方案，但 JoinMarket 开发者 Adam Gibson 提出了一种更简洁的替代缓解方案 [gibson podle]。Gibson 的方法要求 PoDLE 对要接收它的节点进行承诺，从而防止它被恶意地重复使用在其他节点上。Gibson 还描述了 JoinMarket 使用 PoDLE 的一些设计决策，并建议闪电网络开发者可以针对闪电网络自身的独特约束使用不同的权衡。
+  本周，Lisa Neigut 发表了她对把 PoDLE 用于交互式注资的[分析][neigut podle1]。她还另外[描述][neigut podle2]了一种攻击：不诚实的 Mallory 等诚实的 Alice 提交 PoDLE，然后拿它让其他节点把 Alice 列入黑名单。Neigut 提出了一个缓解办法，但 JoinMarket 开发者 Adam Gibson [提出][gibson podle]了一个更紧凑的替代缓解方案。Gibson 的做法要求 PoDLE 承诺到预期接收它的那个节点，从而防止它被恶意拿到其他节点上重复使用。Gibson 还讲述了 JoinMarket 采用 PoDLE 时的一些设计取舍，并就 LN 开发者如何针对 LN 自身的独特约束做出不同的权衡提出了建议。
 
-- **<!--decoy-nodes-and-lightweight-rendez-vous-routing-->****诱饵节点和轻量级会合路由：** Bastien Teinturier 先前[发帖][teinturier delink]，讨论了如何打破 [BOLT11][] 发票中包含的数据与接收付款的通道的资金交易之间的联系（见 [Newsletter #82][news82 unannounced]）。在进一步讨论和改进后，Teinturier [指出][teinturier rv]他的方案的一个副作用可能会启用便捷的会合路由——一种隐私增强的支付路由方式，其中接收节点和支付节点彼此之间都不了解对方的网络身份。更多信息请参见 [Teinturier 的方案文档][rv gist]，阅读 [Newsletter #22][news22 rv] 中关于会合路由的先前讨论，并查看周一闪电网络开发者[规范会议][spec meet]中的相关讨论。
+- **<!--decoy-nodes-and-lightweight-rendez-vous-routing-->****诱饵节点与轻量级会合路由：** Bastien Teinturier 此前[发帖][teinturier delink]，讨论如何切断 [BOLT11][] 发票中包含的数据与将接收这笔支付的通道的注资交易之间的联系（见 [Newsletter #82][news82 unannounced]）。经过进一步讨论和完善，Teinturier [指出][teinturier rv]，他的方案有一个副作用，可能顺带实现便捷的会合路由——一种隐私增强的支付路由方式，收款节点与付款节点双方都无法得知对方网络身份的任何信息。更多信息请参见 [Teinturier 关于该方案的文档][rv gist]，阅读 [Newsletter #22][news22 rv] 中关于会合路由的既往讨论，并查看周一 LN 开发者[规范会议][spec meet]上关于该话题的讨论。
 
-## 服务和客户端软件的更改
+## 服务和客户端软件的变更
 
-*在这一月度特色中，我们重点介绍比特币钱包和服务的有趣更新。*
+*在本月栏目中，我们重点介绍 Bitcoin 钱包与服务的一些有趣更新。*
 
-- **<!--btcpay-vault-using-hwi-for-signing-->****BTCPay Vault 使用 HWI 进行签名：** [BTCPay Vault][btcpay vault blog] 是一个桌面应用程序，它使用 [HWI][topic hwi] 协调与各种硬件钱包的交易签名。虽然 BTCPay Server 创建了 BTCPay Vault，但该软件可以重新用于其他应用程序。
+- **<!--btcpay-vault-using-hwi-for-signing-->****BTCPay Vault 使用 HWI 签名：** [BTCPay Vault][btcpay vault blog] 是一个桌面应用，通过 [HWI][topic hwi] 协调与多种硬件钱包之间的交易签名。虽然 BTCPay Vault 是 BTCPay Server 团队开发的，但该软件可以被改用于其他应用。
 
-- **<!--ckbunker-using-psbts-for-an-hsm-->****CKBunker 使用 PSBTs 作为 HSM：** [CKBunker][coinkite bunker] 允许用户为在线、通过 Tor 启用的 Coldcard 硬件钱包配置基于规则的支出条件。然后，Coldcard 的功能就类似于一个 HSM（硬件安全模块），签署通过 Tor 隐藏服务传送的 [PSBTs][topic psbt]。
+- **<!--ckbunker-using-psbts-for-an-hsm-->****CKBunker 用 PSBT 驱动 HSM：** [CKBunker][coinkite bunker] 允许用户为一台在线的、启用了 Tor 的 Coldcard 硬件钱包配置基于规则的支出条件。这样 Coldcard 就起到了 HSM（硬件安全模块）的作用，为通过 Tor 隐藏服务送达的[部分签名比特币交易][topic psbt]（PSBT）签名。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中的值得注意的变更。*
+*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络 BOLT][bolts repo] 中值得注意的变更。*
 
-- [Bitcoin Core #18104][] 终止了对 Linux 平台上 32 位 x86 二进制文件构建的支持，作为 Bitcoin Core 发布流程的一部分。对应的 Windows 平台 32 位二进制文件几个月前已经被移除（见 [Newsletter #46][news46 win32]）。32 位 Linux 二进制文件仍然在 Bitcoin Core 的持续集成测试中进行构建，用户仍可以手动构建这些文件，但由于使用较少且缺乏开发者的实际测试，项目已停止分发这些二进制文件。
+- [Bitcoin Core #18104][] 在 Bitcoin Core 的发布流程中不再支持为 Linux 构建 32 位 x86 二进制文件。对应的 Windows 32 位二进制文件几个月前就已移除（见 [Newsletter #46][news46 win32]）。32 位 Linux 二进制文件仍会在 Bitcoin Core 的持续集成测试中构建，用户也仍可自行构建，但由于使用量小、缺少开发者动手测试，项目已不再分发这些二进制文件。
 
-- [C-Lightning #3488][] 标准化了 C-Lightning 对比特币数据的请求，使得可以在 Bitcoin Core 之外使用其他后端运行 C-Lightning。这个拉取请求是一个更大项目的一部分，旨在允许 C-Lightning 与比特币后端的交互更加灵活，如 [C-Lightning #3354][] 中提出的那样。保持后端交互的通用性，允许插件进行标准 RPC 调用、将 RPC 组合成更抽象的方法，甚至创建通知。尽管通过 `bitcoin-cli` 与 `bitcoind` 的交互仍然是默认设置，但该项目正在努力为移动集成提供更多可能性（参见 [C-Lightning #3484][]）或允许用户共享诸如 [esplora][esplora] 实例的[区块浏览器][topic block explorers]，对于那些可能只是[偶尔上线进行通道管理和监控][remyers twitter]的用户。
+- [C-Lightning #3488][] 把 C-Lightning 请求比特币数据的方式标准化，使 C-Lightning 可以跑在 Bitcoin Core 之外的其他后端上。这个 PR 属于一个更大的项目，目的是让 C-Lightning 与比特币后端的交互方式更自由，正如 [C-Lightning #3354][] 所提议的那样。保持后端交互的通用性，可以让插件发起标准 RPC 调用、把多个 RPC 组合成更抽象的方法，甚至创建通知。虽然通过 `bitcoin-cli` 与 `bitcoind` 交互仍是默认方式，但这个项目正努力为移动端集成打开可能性（参见 [C-Lightning #3484][]），或让那些只是[偶尔上线做通道管理和监控][remyers twitter]的用户可以共用一个 [esplora][esplora] 实例这类[区块浏览器][topic block explorers]。
 
-- [C-Lightning #3500][] 实现了一个简单的解决方案，用于解决可能导致通道卡住的问题，即双方都无法向对方发送资金。[卡住资金问题][bolts #728] 发生在某次付款会导致资助通道的一方负责支付超出其当前余额的更多价值。例如，Alice 资助了一个通道并将她全部可用余额支付给 Bob。此时，Alice 无法再支付更多资金（这是预期的），但 Bob 也无法向 Alice 付款，因为这需要增加承诺交易及其相应费用的大小——这些费用应由资助者（Alice）支付。这使得通道在两个方向上都无法使用。C-Lightning 的合并简单地限制了用户（当他们是资助者时）不能花费所有可用余额，从而提供了一个有效的短期解决方案。另一个替代解决方案在 [C-Lightning #3501][] 中提出，但它仍在等待所有闪电网络实现的维护者之间的进一步讨论结果。
+- [C-Lightning #3500][] 针对一个可能让通道卡死、双方都无法向对方发送资金的问题，实现了一个简单的解决办法。[卡住资金问题][bolts #728]出现在某笔支付会导致为通道出资的一方所需承担的价值超过其当前余额之时。例如，Alice 出资开了通道，并把自己的全部可用余额付给 Bob。此时 Alice 无法再支出（这在预期之内），但 Bob 也无法付给 Alice，因为那需要增大承诺交易及其对应手续费的规模——而这些手续费要由出资方 Alice 承担。于是通道两个方向都用不了了。C-Lightning 合并的改动只是简单地限制用户（在作为出资方时）花光自己的全部可用余额，作为一个有效的短期修补。[C-Lightning #3501][] 中还提出了另一种解决方案，但它要等所有 LN 实现维护者进一步讨论后再定。
 
-- [C-Lightning #3489][] 允许多个插件附加到 `htlc_accepted` 插件钩子上，并计划未来允许多个插件附加到其他钩子上。对于 `htlc_accepted` 钩子，这使得插件可以拒绝 HTLC、解决 HTLC（即通过返回原像来索赔任何支付）或将 HTLC 传递给下一个绑定到钩子的插件。
+- [C-Lightning #3489][] 允许把多个插件挂到 `htlc_accepted` 插件钩子上，并计划今后允许把多个插件挂到其他钩子上。对于 `htlc_accepted` 钩子，这使得插件可以拒绝该 HTLC、了结该 HTLC（即返回原像以领取相应支付），或者把该 HTLC 交给挂在这个钩子上的下一个插件。
 
-- [C-Lightning #3477][] 允许插件注册将在节点的 [BOLT1][bolt1 init] `init` 消息、[BOLT7][bolt7 node announce] `node_announcement` 消息或 [BOLT11][bolt11 featurebits] 发票的功能位字段（字段 `9`）中发送的功能标志。这使得插件可以向其他程序传达其节点可以处理广告的功能。
+- [C-Lightning #3477][] 允许插件注册特性标志，这些标志会随节点的 [BOLT1][bolt1 init] `init` 消息、[BOLT7][bolt7 node announce] `node_announcement` 消息，或 [BOLT11][bolt11 featurebits] 发票的 feature bits 字段（字段 `9`）一起发出。这让插件可以向其他程序表明，自己的节点能够处理所公布的那些特性。
 
-- [Libsecp256k1 #682][] 移除了 Java 本地接口（JNI）绑定，原因是，“【这些】JNI 绑定需要更多的工作才能继续对 Java 开发者有用，但 libsecp 的维护者和常规贡献者对 Java 并不熟悉。” 拉取请求指出，ACINQ 已知在其项目中使用这些绑定，并维护了一个库的[分支][acinq libsecp]。
+- [Libsecp256k1 #682][] 移除了 Java 原生接口（JNI）绑定，理由是“（这些）JNI 绑定需要多得多的工作才能继续对 Java 开发者有用，而 libsecp 的维护者和常规贡献者对 Java 并不太熟悉。”该 PR 指出，据知 ACINQ 在其项目中使用了这些绑定，并自行维护了这个库的一个[分叉][acinq libsecp]。
 
 {% include references.md %}
 {% include linkers/issues.md issues="18104,3488,3354,3484,3500,3489,3477,682,728,3501" %}

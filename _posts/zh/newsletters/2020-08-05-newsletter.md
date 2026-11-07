@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 介绍了新的 Minsc 策略语言，并包含最近转录的演讲和对话、发布与候选发布，以及一些流行的比特币基础设施项目的值得注意的更改。
+本周的 Newsletter 介绍了新的 Minsc 策略语言，我们还照例收录了最近转录的演讲与对话、发布与候选发布，以及热门比特币基础设施项目的值得注意的变更。
 
 ## 行动项
 
@@ -15,9 +15,9 @@ lang: zh
 
 ## 新闻
 
-- **<!--new-spending-policy-language-->****新的支出策略语言：** Nadav Ivgi [宣布][ivgi minsc]他开发了一种新的语言 Minsc，该语言可以让开发人员更轻松地指定花费 UTXO 所需满足的条件。新语言基于 [miniscript][topic miniscript] 策略语言，但增加了使用变量和函数的功能以及其他几个特性。Minsc 策略可以编译为 miniscript 策略，这些策略又可以编译为 miniscript，从而生成常规的比特币脚本。与 miniscript 的兼容性意味着使用 Minsc 开发的策略在未来可以被任何支持 miniscript 的钱包解析，从而让钱包贡献签名、原像或花费比特币所需的其他数据，而不需要开发人员手动指定如何处理每个特定的脚本模板。这应当能加快对新语言特性的升级，并大大简化用于 Coinjoin、合约协议、共享币所有权及其他类型的协作的钱包的互操作性开发。
+- **<!--new-spending-policy-language-->****新的支出策略语言：** Nadav Ivgi [宣布][ivgi minsc]他开发了一种新的语言 Minsc，该语言可以让开发人员更轻松地指定花费 UTXO 所需满足的条件。新语言基于 [miniscript][topic miniscript] 策略语言，但增加了使用变量和函数的功能以及其他几个特性。Minsc 策略可以编译为 miniscript 策略，这些策略又可以编译为 miniscript，从而生成常规的比特币脚本。与 miniscript 的兼容性意味着，用 Minsc 开发的策略将来可以被任何懂 miniscript 的钱包求解，让这些钱包贡献签名、原像或花费比特币所需的其他数据，而无需钱包开发者手动指明如何处理钱包支持的每一种脚本模板。这应当能加快升级到新的语言特性，并大大简化面向 coinjoin、合约协议、共享币所有权以及其他各类理想协作场景的互操作钱包开发。
 
-  Ivgi 还为该语言创建了一个出色的[网站][min.sc]，其中包含丰富的示例和一个实时编译器，该编译器允许链接输入，以便开发人员可以轻松地玩转该语言并与其他开发人员分享他们的 Minsc 策略。我们建议任何对开发支出策略感兴趣的人访问该网站，但为了说明 Minsc 的功能，我们提供了一个来自 Ivgi 自身示例的改编示例。几年前，在 miniscript 和 Minsc 出现之前，LN 开发者手工编写了以下 [HTLC 脚本][HTLC script]，它在 BOLT3 中有详细描述：
+  Ivgi 还为这门语言做了一个出色的[网站][min.sc]，其中既有大量示例，也有一个实时编译器——它支持直接链接当前输入，方便开发者随手摆弄这门语言，并把自己的 Minsc 策略分享给其他开发者。我们建议对开发支出策略感兴趣的读者去逛逛这个网站；不过为了说明 Minsc 能做什么，下面给出一个改编自 Ivgi 本人示例的例子。几年前，在 miniscript 和 Minsc 出现之前，LN 开发者手工编写了 BOLT3 中规定的如下 [HTLC 脚本][HTLC script]：
 
   ```python
   # 使用撤销密钥发送给远程节点
@@ -58,55 +58,55 @@ lang: zh
   htlc_received(A, B, C, H, 3 hours)
   ```
 
-  Minsc 策略对于大多数开发人员来说要容易分析得多，并且它能够利用 miniscript 将策略转换为比原始手工编写的脚本更小的脚本。
+  Minsc 策略对于大多数开发人员来说要容易分析得多，并且它能够利用 miniscript 将策略转换为比原始手工编写的脚本略小一些的脚本。
 
-## 最近转录的演讲和对话
+## 最近转录的演讲与对话
 
-*[Bitcoin Transcripts][] 是技术性比特币演讲和讨论的转录库。在本月的特辑中，我们重点介绍了上个月的一些精选转录内容。*
+*[Bitcoin Transcripts][] 汇集了比特币技术演讲与讨论的转录稿。在这个月度栏目中，我们挑选上个月的部分转录稿加以介绍。*
 
-- **<!--raspiblitz-full-node-->****RaspiBlitz 全节点：** Rootzoll 和 Openoms 出现在 [Potzblitz][] 节目中，介绍了 RaspiBlitz，这是一款基于树莓派构建的比特币和闪电网络全节点（也兼容其他硬件）。Openoms 探讨了你可以在 RaspiBlitz 上安装的一些应用和服务，如 [ThunderHub][] 和 [Balance of Satoshis][]。Rootzoll 解释了 IP2TOR 订阅服务如何解决在家庭网络上运行的 RaspiBlitz 全节点与移动钱包连接的问题。([转录][rb transcript]、[视频][rb video]、[幻灯片][rb slides])
+- **<!--raspiblitz-full-node-->****RaspiBlitz 全节点：** Rootzoll 和 Openoms 做客 [Potzblitz][]，介绍 RaspiBlitz——一款运行在树莓派上的比特币与闪电网络全节点（也兼容其他硬件）。Openoms 演示了可以在 RaspiBlitz 上安装的一些应用和服务，例如 [ThunderHub][] 和 [Balance of Satoshis][]。Rootzoll 解释了 IP2TOR 订阅服务如何解决一个难题：如何让移动钱包连上运行在家庭网络里的 RaspiBlitz 全节点。（[转录][rb transcript]、[视频][rb video]、[幻灯片][rb slides]）
 
-- **<!--chicago-meetup-discussion-->****芝加哥聚会讨论：** 参与者匿名讨论了多种闪电网络攻击，包括 [flood and loot][]、费用勒索、[交易固定][topic transaction pinning]、原像拒绝（参见 [Newsletter #95][news95 LN payment atomicity]）和时间膨胀（参见 [Newsletter #101][news101 LN time dilation]）。针对这些不同程度的攻击，讨论了当前用户在闪电网络上应如何保护自己，以及从长远来看哪些措施是足够的。诸如 [package relay][topic package relay]、[anchor outputs][topic anchor outputs] 和重新设计 Bitcoin Core 的内存池等解决方案正在进行中，但在链上层和闪电层还需要更多的工作。([转录][chicago transcript])
+- **<!--chicago-meetup-discussion-->****芝加哥聚会讨论：** 匿名化的参与者讨论了多种闪电网络攻击，包括 [flood and loot][]、手续费勒索、[交易钉住][topic transaction pinning]、原像拒绝（参见 [Newsletter #95][news95 LN payment atomicity]）和时间膨胀（参见 [Newsletter #101][news101 LN time dilation]）。面对这些严重程度各异的攻击，大家争论了当前用户该怎么做才能在闪电网络上保护自己，以及从更长远的眼光看什么样的缓解措施才算够用。诸如[交易包中继][topic package relay]、[锚定输出][topic anchor outputs] 和重构 Bitcoin Core 内存池等方案正在推进——但未来数月乃至数年，链上层与闪电网络层都还需要付出更多努力。（[转录][chicago transcript]）
 
-- **<!--sapio-->****Sapio：** Jeremy Rubin 在 Reckless VR 上展示了 Sapio，这是一种新的高级编程语言，专为构建带有 [OP_CHECKTEMPLATEVERIFY][topic OP_CHECKTEMPLATEVERIFY] 的状态智能合约而设计。Rubin 使用 Blockstream 的 Liquid 侧链最近的时间锁 [问题][timelock issue] 案例研究，解释了 Sapio 和 OP_CHECKTEMPLATEVERIFY 理论上如何防止资金意外转移到 2-of-3 多重签名紧急备份中。([转录][sapio transcript]、[视频][sapio video]、[幻灯片][sapio slides])
+- **<!--sapio-->****Sapio：** Jeremy Rubin 在虚拟现实环境 Reckless VR 中介绍了 Sapio。Sapio 是一门新的高级编程语言，专为借助 [OP_CHECKTEMPLATEVERIFY][topic OP_CHECKTEMPLATEVERIFY] 构建有状态的智能合约而设计。Rubin 以 Blockstream 的 Liquid 侧链最近一次时间锁[问题][timelock issue] 为案例，说明 Sapio 与 OP_CHECKTEMPLATEVERIFY 理论上如何能防止资金意外转入那个 2-of-3 多重签名紧急备份。（[转录][sapio transcript]、[视频][sapio video]、[幻灯片][sapio slides]）
 
-- **<!--sydney-meetup-discussion-->****悉尼聚会讨论：** 参与者匿名讨论了过去几个月中 Bitcoin Core 构建系统中的已解决错误，以及在 MacOS 上构建和分发 Bitcoin Core 二进制文件面临的未来挑战，特别是关于认证要求以及苹果从 Intel 处理器过渡到 ARM 处理器的问题。其他话题包括 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 提案的更新、通用比特币兼容通道，以及关于 taproot 激活的最新思考。([转录][sydney transcript])
+- **<!--sydney-meetup-discussion-->****悉尼聚会讨论：** 匿名化的参与者讨论了过去几个月 Bitcoin Core 构建系统中已修复的 bug，以及鉴于公证（notarization）要求和苹果从 Intel 处理器转向 ARM 处理器，未来在 macOS 上构建和分发 Bitcoin Core 二进制程序将面临的挑战。其他话题包括 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 提案的更新、泛化的比特币兼容通道，以及关于 taproot 激活的最新思考。（[转录][sydney transcript]）
 
-- **<!--bip-taproot-->****BIP-Taproot：** Pieter Wuille 和 Russell O’Connor 参加了由 London BitDevs 和 Bitcoin Munich 共同组织的活动，探讨了 [MAST][topic MAST] 原始想法如何演变为最终的 [taproot][topic Taproot] 提案。Wuille 讲述了他个人动机从寻求实现跨输入签名聚合转变为增强更复杂交易的隐私和效率的过程。O’Connor 还更新了 Simplicity 语言的开发进展（参见 [Newsletter #96][news96 simplicity]）。他推测 Simplicity 可能如何作为 Tapleaf 版本实现，并用于委托、[契约][topic covenants]以及当前比特币脚本无法实现的其他功能。[libsecp256k1 #558] 中的 [schnorr 签名][topic schnorr signatures] PR 和 Bitcoin Core 中的 taproot [PR][Bitcoin Core #17977] 正在寻求进一步的审查，O’Connor 鼓励社区提前考虑 taproot 可能会在他们的软件中带来的破坏。([转录][london/munich transcript]、[视频][london/munich video])
+- **<!--bip-taproot-->****BIP-Taproot：** Pieter Wuille 和 Russell O’Connor 参加了由 London BitDevs 与 Bitcoin Munich 联合举办的活动，回顾了 [MAST][topic MAST] 最初的构想如何演变为最终的 [taproot][topic Taproot] 提案。Wuille 讲到他个人的动机如何从推动跨输入签名聚合，转向增强复杂交易的隐私与效率。O’Connor 还介绍了 Simplicity 语言的开发进展（参见 [Newsletter #96][news96 simplicity]）。他推测未来几年 Simplicity 可能如何作为一种 Tapleaf 版本落地，并用于委托、[契约][topic covenants] 以及当前用 Bitcoin Script 无法实现的其他功能。libsecp256k1 中 [schnorr 签名][topic schnorr signatures] 的 [PR][libsecp256k1 #558] 以及 Bitcoin Core 中的 taproot [PR][Bitcoin Core #17977] 正在征求更多审查，O’Connor 鼓励社区在任何可能的部署之前尽早考虑 taproot 会破坏自家软件的哪些地方。（[转录][london/munich transcript]、[视频][london/munich video]）
 
 ## 发布与候选发布
 
-*流行比特币基础设施项目的新发布和候选发布。请考虑升级到新版本或帮助测试候选发布。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [C-Lightning 0.9.0][C-Lightning 0.9.0] 是 C-Lightning 的最新主要版本。它增加了对更新的 `pay` 命令和新的 `keysend` RPC 的支持，这两者均在 [Newsletter #107][news107 notable] 中进行了描述。它还包括其他几个值得注意的更改和多个错误修复。
+- [C-Lightning 0.9.0][C-Lightning 0.9.0] 是 C-Lightning 最新的主要版本。它新增了对更新版 `pay` 命令和新 `keysend` RPC 的支持，两者都在 [Newsletter #107][news107 notable] 中介绍过。它还包含若干其他值得注意的变更和多项错误修复。
 
-- [Bitcoin Core 0.20.1][Bitcoin Core 0.20.1] 是一个新的维护版本。除了错误修复和由于这些修复引起的一些 RPC 行为更改外，计划的发布还提供了与 [HWI][topic HWI] 的最新版本兼容性，并支持硬件钱包固件中的[手续费超额支付攻击][fee overpayment attack]。
+- [Bitcoin Core 0.20.1][Bitcoin Core 0.20.1] 是一个新的维护版本。除了错误修复以及这些修复带来的一些 RPC 行为变化之外，计划发布的版本还兼容较新版本的 [HWI][topic HWI]，并能用上 HWI 对为应对[手续费超额支付攻击][fee overpayment attack] 而发布的硬件钱包固件的支持。
 
-- [LND 0.11.0-beta.rc1][LND 0.11.0-beta] 是新主要版本的第一个候选发布。
+- [LND 0.11.0-beta.rc1][LND 0.11.0-beta] 是一个新大版本的首个候选发布。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi]、[比特币改进提案（BIPs)][bips repo]和[闪电网络规范][bolts repo]中的值得注意的更改。*
+*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi]、[比特币改进提案（BIPs）][bips repo]和[闪电网络 BOLT 规范][bolts repo]中的值得注意的变更。*
 
 - [Bitcoin Core #19569][] 允许 Bitcoin Core 从使用 wtxid 中继交易的对等方获取 _孤儿_ 交易的父交易。孤儿交易是指从一个对等方接收到的未确认交易，但我们尚未获得其父交易，既不在我们的最佳区块链中，也不在内存池中。更准确地说，孤儿交易至少有一个交易输入，其关联的输出不在 UTXO 集合或我们内存池的 outpoint 映射中。
 
   当我们收到一个孤儿交易时，我们将其放在一个称为孤儿集的临时数据结构中。然后我们要求发送孤儿交易的对等方也发送我们尚未拥有的父交易。我们可以这样做是因为孤儿交易包含其父交易的 txid。我们只需向对等方发送一个包含这些 txid 的 `getdata` 消息来请求父交易。
 
-  对于 [wtxid 中继对等方][news108 wtxid relay]，交易使用 _wtxid_ 而非 _txid_ 来通告和请求。然而，孤儿交易包含的是其父交易的 txid 而非 wtxid，因此无法使用 wtxid 请求父交易。上周合并的 [PR #18044][Bitcoin Core #18044] 引入了 wtxid 中继对等方，但并未允许从 wtxid 对等方获取父交易。该后续 PR 允许我们使用 txid 来获取这些父交易。
+  对于 [wtxid 中继对等节点][news108 wtxid relay]，交易是用 _wtxid_ 而非 _txid_ 来公告和请求的。然而，孤儿交易里带的是父交易的 txid 而非 wtxid，因此无法用 wtxid 请求父交易。上周合并的 [PR #18044][Bitcoin Core #18044] 引入了 wtxid 中继对等节点，却不允许从 wtxid 对等节点获取父交易。这个后续 PR 让我们可以用 txid 去获取这些父交易。
 
-  使用 txid 获取父交易可能最终会被[包中继][topic package relay]机制取代，通过该机制我们可以直接向对等方请求所有未确认的祖先交易。
+  用 txid 获取父交易的做法，最终可能会被[交易包中继][topic package relay]机制取代——那时可以直接向对等节点请求一笔交易的全部未确认祖先。
 
-- [Eclair #1491][] 增加了部分支持创建、使用和关闭使用[锚定输出][topic anchor outputs]的通道，以在正常情况下减少链上交易费用，并在必要时提高费用以确保安全。此实现处理了所有基本内容，但尚不支持双边通道关闭或实际的费用提升；这些将稍后添加。此外，与 LND 实现的互操作性测试揭示了一个需要在[规范][anchor spec discuss]中澄清的情况。
+- [Eclair #1491][] 部分支持创建、使用和关闭采用[锚定输出][topic anchor outputs] 的通道，既能减少正常情况下的链上手续费，又能在需要时为安全考虑提高手续费。此实现覆盖了所有基础功能，但尚不支持双方共同关闭通道或真正的手续费追加；这些会后续加入。此外，与 LND 实现的互操作性测试暴露出一种情况，需要在[规范][anchor spec discuss]中加以澄清。
 
-- [LND #4488][] 更新了用户可以设置的最小 CLTV 过期差值至 18 个区块，以符合更新的[推荐值][BOLTs #785]。默认值仍为 40 个区块。当 LN 支付的结算截止时间仅剩这些区块时，LND 将单方面关闭通道以确保最新状态记录在链上。然而，过期差值越高，支付在通道中暂时卡住的时间就越长（无论是意外还是故意）。这导致一些 LN 实现使用优化低 CLTV 过期差值的路由算法，进而导致一些用户设置了特别不安全的差值。这个新的最小值应当有助于防止没有经验的用户轻率地设置不安全的值。
+- [LND #4488][] 把用户可设置的最小 CLTV 过期差值下调到 18 个区块，以符合[更新后的建议值][BOLTs #785]。默认值仍为 40 个区块。当距离一笔 LN 支付必须结算只剩这么多区块时，LND 会单方面关闭通道，确保最新状态被记录到链上。然而，过期差值越高，支付可能在通道里暂时卡住的时间就越长（无论出于意外还是有意为之）。这促使一些 LN 实现改用偏好低 CLTV 过期差值的路径查找算法，进而又让一些用户把差值设成特别不安全的数值。新的下限应当有助于防止没有经验的用户轻率地设出危险的值。
 
-- [BIPs #948][] 更新了 [BIP174][] 规范中的 [PSBT][topic psbt] 输入记录，明确允许为单个输入同时提供非见证 UTXO（完整交易）和见证 UTXO。这与 Bitcoin Core 中的[当前行为][news105 fee overpayment]一致，其动机是防止在未包含非见证 UTXO 的多输入 segwit PSBT 上发生的多付费用攻击（详见[之前的 Newsletter][fee overpayment attack]）。
+- [BIPs #948][] 更新了 [BIP174][] 中关于 [PSBT][topic psbt] 输入记录的规范，明确允许为同一个输入同时提供非见证 UTXO（完整交易）和见证 UTXO。这与 Bitcoin Core 的[当前行为][news105 fee overpayment]一致，起因于一种可能性：对未包含非见证 UTXO 的多输入 segwit PSBT 可能发起手续费超额支付攻击，详见[之前的 Newsletter][fee overpayment attack]。
 
-- [BIPs #947][] 更新了 [BIP325][] 规范中的 [signet][topic signet]，更改了区块签名验证方法。Signet 是一个测试网络，其中有效区块由受信任的签名者签署，这一变化消除了某些问题并简化了某些类型的测试。
+- [BIPs #947][] 更新了 [BIP325][] 中 [signet][topic signet] 的规范，更换了区块签名的验证方法。signet 是一类测试网络，其有效区块由受信任的签名者签名；这一改动消除了一些问题，也让某些类型的测试更容易。
 
-  之前，signet 假定使用与传统比特币脚本兼容的签名（例如 DER 编码的 ECDSA 签名）。此更改后，signet 改为使用一对虚拟交易——这些交易在区块链上无效，也不会被包含在区块中，但比特币软件可以轻松构建（直接或使用 [PSBT][topic PSBT]）。第一个交易承诺支付给网络的受信任签名者脚本。第二个虚拟交易随后花费第一个虚拟交易的输出。第二个虚拟交易的签名被包含在区块的 coinbase 交易中，以证明区块已被有效签署。
+  此前，signet 假定使用与传统 Bitcoin Script 兼容的签名（例如 DER 编码的 ECDSA 签名）。改动之后，signet 改用一对虚拟交易——这类交易在区块链上无效，也不会被打包进区块，但比特币软件可以轻松构造（直接构造，或借助 [PSBT][topic PSBT]）。第一笔交易承诺向该网络的受信任签名者脚本付款；第二笔虚拟交易随后花费第一笔虚拟交易的输出。区块的 币基交易中会包含第二笔虚拟交易的签名，以证明该区块确实被有效签署。
 
-  这种新方法的主要优势在于它允许使用 segwit 交易。当前 segwit v0 中可用的操作码几乎与传统脚本完全相同 <!-- 我认为唯一的变化是 OP_CODESEPARATOR -->，因此这看起来可能无关紧要——但如果 segwit v1（[taproot][topic taproot]）在 signet 上可用，这将允许使用 [schnorr 签名][topic schnorr signatures]来签署区块。未来的协议更改可能也会使用 segwit，这将允许这些功能得到使用。次要的优势是，任何能够为任意输入签署 PSBT 的软件或硬件现在都可以作为 signet 的受信任签名者运行。
+  这种新方法的主要好处是可以用上 segwit 交易。当前 segwit v0 可用的操作码几乎与传统脚本完全一致 <!-- 我认为唯一的变化是 OP_CODESEPARATOR -->，所以这看起来也许无关紧要——但如果 segwit v1（[taproot][topic taproot]）能在某个 signet 上启用，就可以用 [schnorr 签名][topic schnorr signatures] 来签署区块。由于未来的协议变更多半也会使用 segwit，这些特性同样能用得上。次要的好处是，任何能为任意输入签署 PSBT 的软件或硬件，现在都能充当 signet 的受信任签名者。
 
 {% include references.md %}
 {% include linkers/issues.md issues="19569,1491,4488,948,947,785,18044,558,17977" %}
@@ -115,7 +115,7 @@ lang: zh
 [LND 0.11.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.11.0-beta.rc1
 [fee overpayment attack]: /zh/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 [news105 fee overpayment]: /zh/newsletters/2020/07/08/#bitcoin-core-19215
-[news107 notable]: /zh/newsletters/2020/07/22/#值得注意的代码和文档更改
+[news107 notable]: /zh/newsletters/2020/07/22/#值得注意的代码与文档变更
 [anchor spec discuss]: https://github.com/lightningnetwork/lightning-rfc/pull/688#issuecomment-661669232
 [ivgi minsc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018062.html
 [min.sc]: https://min.sc

@@ -7,43 +7,43 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周 Newsletter 包括请帮助测试 Bitcoin Core 下一个版本的候选发布版本的提醒、关于 Optech 新公共仪表盘开发的信息、两个在 Bitcoin-Dev邮件列表上的讨论摘要以及比特币基础设施项目值得注意的提交。
+本周 Newsletter 包括请帮助测试 Bitcoin Core 下一版本发布候选版本的提醒、关于 Optech 新公共仪表盘开发情况的信息、Bitcoin-Dev 邮件列表上两场讨论的摘要，以及比特币基础设施项目中值得注意的提交。
 
 ## 行动项
 
-- **<!--allocate-time-to-test-bitcoin-core-0-17rc2-->****分配时间测试 Bitcoin Core 0.17RC2：** Bitcoin Core 已经上传了 0.17RC2 的[二进制文件][bcc 0.17]。测试非常受欢迎，可以帮助确保最终发布版本的质量。
+- **<!--allocate-time-to-test-bitcoin-core-0-17rc2-->****安排时间测试 Bitcoin Core 0.17 RC2：** Bitcoin Core 已经上传了 0.17 候选版本（RC）2 的[二进制文件][bcc 0.17]。我们非常欢迎你参与测试，这有助于保证最终版本的质量。
 
 ## 仪表盘项
 
-- **<!--optech-dashboard-->****Optech 仪表盘：** Marcin Jachymiak 在[博客文章][dashboard post]中介绍了他在今年夏天的实习期间为 Optech 开发的实时仪表盘，不仅提供了仪表盘为您提供的信息概览，还描述了他的构建过程，以便任何希望独立复制数据或使用自己的完整节点扩展仪表盘的人。
+- **<!--optech-dashboard-->****Optech 仪表盘：** Marcin Jachymiak 在[博客文章][dashboard post]中介绍了他今年夏天实习期间为 Optech 开发的实时仪表盘，不仅概述了仪表盘能为你提供哪些信息，还说明了他是如何构建的，方便任何想独立复现这些数据、或用自己完整节点扩展仪表盘的人参考。
 
-    Optech 团队的其他成员感谢 Marcin 的专心工作和敏锐的洞察力，并祝他在未来的一年中一切顺利。
+    Optech 团队的其他成员感谢 Marcin 的专注工作和敏锐洞察，并祝他在接下来的一年里一切顺利。
 
 ## 新闻
 
-- **<!--discussion-of-resetting-testnet-->****关于重置测试网的讨论：** 比特币的第一个公共测试网于 2010 年末引入；几个月后，它被重置为 testnet2；并于 2012 年中再次重置为当前的 testnet3。如今，testnet3 拥有超过 140 万个区块，并在存档节点上消耗超过 20GB 的磁盘空间。在 Bitcoin-Dev 邮件列表上开始了一场关于再次重置测试网以提供一个更小的链进行实验的[讨论][testnet reset]。除了讨论是否有必要拥有一个大的测试链供实验之外，还有人[建议][signed testnet]未来的测试网可能会想使用签名区块（signed blocks）而不是工作量证明（proof of work）来使链的运作比当前的 testnet3 更加可预测，后者容易受到疯狂的哈希率波动的影响。这也将允许轻松管理测试网的灾难演练，如大型链重组。
+- **<!--discussion-of-resetting-testnet-->****关于重置测试网的讨论：** 比特币的第一个公共测试网于 2010 年末推出；几个月后它被重置为 testnet2；2012 年中又再次重置为当前的 testnet3。如今 testnet3 已有超过 140 万个区块，在存档节点上占用超过 20 GB 磁盘空间。Bitcoin-Dev 邮件列表上发起了一场[讨论][testnet reset]，主题是再次重置测试网，以便为实验提供一个更小的链。除了讨论拥有一条大型测试链供实验是否可取之外，还有人[建议][signed testnet]未来的测试网可以改用签名区块（signed blocks）而非工作量证明（proof of work），让链的运行比当前的 testnet3 更可预测——后者容易出现剧烈的哈希率波动。这样也能方便地组织测试网灾难演练，例如大规模链重组。
 
-- **<!--proposed-sighash-updates-->****建议的 sighash 更新：** 在签名交易之前，比特币钱包会创建未签名交易和一些其他数据的加密哈希。然后，钱包不是直接签名交易，而是签名该哈希。自原始 Bitcoin 0.1 实现以来，钱包被允许在签名前从哈希中移除某些部分的未签名交易，这允许这些部分的交易由其他人更改，如多方合约中的其他参与者。
+- **<!--proposed-sighash-updates-->****sighash 更新建议：** 在签名交易之前，比特币钱包会先计算未签名交易及其他一些数据的密码学哈希，然后不直接签名交易，而是对这个哈希签名。自 Bitcoin 0.1 的原始实现以来，钱包可以在签名前把未签名交易的某些部分从哈希中排除，这样其他人（例如多方合约中的其他参与方）就能修改交易的这些部分。
 
-    在 [BIP143][] 中，隔离见证保留了所有原始 Bitcoin 0.1 的 sighash 标志，但对包含在哈希中的钱包数据进行了一些小的（但有用的）更改，这使得矿工更难对其他矿工进行 DoS 攻击，并使得如硬件钱包这样的低功耗设备更容易保护用户资金。本周，BIP143 的合著者 Johnson Lau [发布][sighash changes]一些对 sighash 标志的建议更改，包括新的标志，这些可以作为软分叉使用隔离见证提供的见证脚本更新机制来实现。
+    在 [BIP143][] 中，隔离见证保留了 Bitcoin 0.1 的全部 sighash 标志，但对钱包纳入哈希的数据做了小幅（但有用）的调整，使矿工更难对其他矿工发起 DoS 攻击，也让硬件钱包这类算力有限的设备更容易保护用户资金。本周，BIP143 的合著者 Johnson Lau [提出][sighash changes]了一些 sighash 标志的修改建议，包括新增标志；这些改动可以利用隔离见证提供的见证脚本更新机制，以软分叉方式实现。
 
     {% comment %}<!-- for reference: numbers in following paragraph
     correspond to the numbered bullet points in Lau's email -->{%
     endcomment %}
 
-    如果这些更改被采纳，一些显著的优点包括：使硬件钱包更容易安全地参与 CoinJoin 式交易<!--#1-->以及其他智能合约<!--#2-->，潜在地通过多方交易中的任何单独一方更容易地增加费用<!--#6-->，并防止复杂智能合约的对手方和第三方通过 DoS 攻击增加多方交易的大小，从而降低交易的费用优先级。<!--#8-->
+    如果这些更改被采纳，比较显著的优点包括：让硬件钱包更容易安全地参与 coinjoin 式交易<!--#1-->以及其他智能合约<!--#2-->；多方交易中的任意一方都可能更容易地进行手续费追加（fee bumping）<!--#6-->；防止复杂智能合约的对手方和第三方在 DoS 攻击中膨胀多方交易的体积，从而拉低交易的手续费优先级。<!--#8-->
 
 ## 值得注意的提交
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中的值得注意的提交。提醒：新合并到 Bitcoin Core 的代码是提交到其主开发分支的，不太可能成为即将发布的 0.17 版本的一部分——你可能需要等到大约六个月后的 0.18 版本。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中值得注意的提交。提醒：Bitcoin Core 的新合并都进入主开发分支，不太可能成为即将发布的 0.17 版本的一部分——你大概要等到约六个月后的 0.18 版本。*
 
-{% comment %}<!-- 本周 LND 只有三次合并，个人觉得都不太激动人心 -harding -->{% endcomment %}
+{% comment %}<!-- LND only had three merges this week, none of them exciting IMO -harding -->{% endcomment %}
 
-- [Bitcoin Core #12952][]：在经过几个主要版本的弃用并且在即将发布的 0.17 版本中默认禁用后，Bitcoin Core 的内置账户系统已从主开发分支中移除。账户系统于 2010 年末添加，以允许早期的比特币交易所在 Bitcoin Core 中管理其用户账户，但它缺少许多真正生产系统所需的特性（如原子数据库更新），并且经常让用户感到困惑，因此逐步移除它已经是几年来的一个目标。
+- [Bitcoin Core #12952][]：内置账户系统被弃用已有几个大版本，并在即将发布的 0.17 中默认禁用；现在它已从主开发分支移除。账户系统于 2010 年末加入，目的是让早期的比特币交易所能在 Bitcoin Core 中管理用户账户，但它缺少许多真正生产系统所需的特性（例如原子化的数据库更新），还经常让用户困惑，因此稳妥地移除它已经成为几年来的目标。
 
-- [Bitcoin Core #13987][]：当 Bitcoin Core 收到一个每 vbyte 费用低于其最低费率的交易时，它会忽略该交易。[BIP133][]（在 Bitcoin Core 0.13.0 中实现）允许节点告知其对等节点其最低费率，以便那些对等节点不会浪费带宽发送将被忽略的交易。此 PR 现在为 [getpeerinfo][rpc getpeerinfo] RPC 中的每个对等节点提供了该信息，使用新的 `minfeefilter` 值，允许您轻松发现您的对等节点正在使用的最小费率。
+- [Bitcoin Core #13987][]：当 Bitcoin Core 收到一笔每 vbyte 手续费低于自身最低费率的交易时，就会忽略它。[BIP133][]（在 Bitcoin Core 0.13.0 中实现）允许节点把自己的最低费率告知对等节点，这样对等节点就不会浪费带宽发送会被忽略的交易。此 PR 现在通过新增的 `minfeefilter` 值，在 [getpeerinfo][rpc getpeerinfo] RPC 中为每个对等节点提供这一信息，让你可以轻松查出对等节点正在使用的最低费率。
 
-- [C-Lightning #1887][] 现在允许您请求 lightningd 为您的链上交易计算一个费率目标，通过传递 "urgent"、"normal" 或 "slow" 给 `feerate` 参数。或者，您也可以使用此参数手动指定您想要使用的特定费率。
+- [C-Lightning #1887][]：现在你可以给 `feerate` 参数传入“urgent”、“normal” 或 “slow”，让 lightningd 为你的链上交易计算一个目标费率。或者，你也可以用这个参数手动指定想要使用的特定费率。
 
 {% include references.md %}
 {% include linkers/issues.md issues="12952,13987,1887" %}

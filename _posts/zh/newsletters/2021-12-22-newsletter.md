@@ -18,7 +18,7 @@ excerpt: >
 * 1 月
   * [Bitcoin Core 中的 Signet](#signet)
   * [Bech32m 地址](#bech32m)
-  * [洋葱消息与报价协议](#offers)
+  * [洋葱消息与 offers 协议](#offers)
 * 2 月
   * [签名创建与验证加速](#safegcd)
   * [通道堵塞攻击](#jamming)
@@ -27,7 +27,7 @@ excerpt: >
 * 4 月
   * [闪电网络原子多路径支付](#amp)
 * 5 月
-  * [BIP125 选择性手续费追加差异](#bip125)
+  * [BIP125 自愿启用的手续费替换（RBF）分歧](#bip125)
   * [双向资助通道](#dual-funding)
 * 6 月
   * [基于候选集的区块构建](#csb)
@@ -40,8 +40,8 @@ excerpt: >
   * [零确认通道开通](#zeroconfchan)
   * [SIGHASH_ANYPREVOUT](#anyprevout)
 * 8 月
-  * [保真债券](#fibonds)
-  * [闪电网络路径查找](#pathfinding)
+  * [忠诚债券](#fibonds)
+  * [闪电网络寻路](#pathfinding)
 * 9 月
   * [OP_TAPLEAF_UPDATE_VERIFY](#tluv)
 * 10 月
@@ -57,104 +57,98 @@ excerpt: >
   * [Bitcoin Optech](#optech)
 
 ## 一月
+
 {:#signet}
-经过多年讨论，比特币核心支持[Signet][topic signet]的首个版本于 1 月[发布][bcc21]，此前 C-Lightning 已[支持][cl#2816]，随后 LND 也[支持][lnd#5025]。Signet 是任何人都可以使用的测试网络，用于模拟比特币主网（mainnet）的现状或某些变更（如软分叉共识变更激活）后的可能状态。大多数实现 Signet 的软件还支持默认的 Signet 网络，这为不同团队开发的软件提供了一个特别便捷的安全测试环境，最大程度地模拟真实资金环境。同年还[讨论][signet reorgs]了在 Bitcoin Core 的默认 Signet 网络中引入故意的区块链重组，以帮助开发者测试软件应对此类问题的能力。
+经过多年讨论，支持 [Signet][topic signet] 的 Bitcoin Core 版本于 1 月[首次发布][bcc21]，此前 C-Lightning 已[支持][cl#2816]，随后 LND 也[支持][lnd#5025]。Signet 是任何人都可以使用的测试网络，可用来模拟比特币主网（mainnet）的现状，或它在某些变更（例如激活某项软分叉共识变更）之后可能呈现的样子。大多数实现 Signet 的软件还支持一个默认 signet，这为不同团队开发的软件提供了一个特别方便的测试环境，尽可能贴近它们在真实资金攸关时所面对的环境。今年还[讨论][signet reorgs]了在 Bitcoin Core 的默认 signet 网络中刻意加入区块链重组，以帮助开发者测试自己的软件应对这类问题的能力。
 
 {:#bech32m}
-一月还[宣布][bech32 bip]了[Bech32m][topic bech32]地址的 BIP 草案。Bech32m 地址是对 Bech32 地址的轻微修改，使其可安全用于[Taproot][topic taproot]及未来协议扩展。同年晚些时候，[比特币 Wiki 页面][bech32m page]更新了 Bech32m 地址在钱包和服务中的采用情况追踪。
+一月还[宣布][bech32 bip]了 [bech32m][topic bech32] 地址的 BIP 草案。bech32m 地址是 bech32 地址的轻微修改，使其可安全用于 [taproot][topic taproot] 及未来的协议扩展。同年晚些时候，一个[比特币 Wiki 页面][bech32m page]更新了 bech32m 地址在钱包和服务中的采用情况追踪。
 
 {:#offers}
-C-Lightning 0.9.3 版本[首次发布][cl 0.9.3]了[洋葱消息][topic onion messages]和[报价协议][topic offers]新协议。洋葱消息允许闪电网络节点以最小化开销的方式向其他节点发送消息，相较基于[HTLC][topic htlc]的消息传递更高效。报价协议利用洋葱消息使节点可主动*报价*支付，接收方节点可返回详细发票及其他必要信息。洋葱消息和报价协议在年内持续作为草案规范，但获得了更多开发进展，包括一项利用它们[降低卡顿支付影响][offers stuck]的提案。
+C-Lightning 0.9.3 的另一项[首次发布][cl 0.9.3]带来了一项新协议：[洋葱消息][topic onion messages]和 [offers 协议][topic offers]。洋葱消息让 LN 节点可以向另一个节点发送消息，其开销比基于 [HTLC][topic htlc] 的消息传递方式更小。offers 使用洋葱消息，让一个节点可以*提议*向另一个节点付款，并让接收方节点返回详细的发票及其他必要信息。洋葱消息和 offers 在当年余下的时间里一直是草案规范，但获得了更多开发，其中还包括一项利用它们来[减轻支付卡住的影响][offers stuck]的提案。
 
 ## 二月
 
 {:#safegcd}
-比特币贡献者们[推进了][safegcd blog]改进签名生成与验证算法的研究进展，并基于研究成果提出了具备额外优化的变体算法。该算法在 libsecp256k1（[1][secp831]、[2][secp906]）和 Bitcoin Core 中[实现][bcc21573]后，将签名验证时间缩短约 10%——对于验证比特币区块链中近十亿个签名而言意义重大。多位密码学家参与验证了该变更的数学严谨性和安全性。此次优化还显著提升了低功耗硬件签名设备的安全签名生成速度。
+比特币贡献者[推进][safegcd blog]了一项改进签名生成与验证算法的研究，随后又利用研究成果做出了一个带有更多改进的变体。该算法先后在 libsecp256k1（[1][secp831]、[2][secp906]）和 [Bitcoin Core][bcc21573] 中实现，把验证签名所需的时间缩短了约 10%——在验证比特币区块链中大约十亿个签名时，这是相当可观的改进。多位密码学家参与了工作，以确保该变更在数学上站得住脚、使用起来是安全的。这一变更还显著提升了在低功耗硬件签名设备上安全生成签名的速度。
 
 {:#jamming}
-[通道阻塞攻击][topic channel jamming attacks]作为闪电网络自 2015 年就存在的已知问题，全年持续引发讨论，先后有[多种][jam1][可行][jam2][方案][jam3]被提出。遗憾的是年内未形成广泛认可的解决方案，该问题至年底仍未得到有效缓解。
+[通道堵塞攻击][topic channel jamming attacks]是 LN 自 2015 年起就已知的问题，全年持续引发讨论，先后讨论了[多种][jam1][可能][jam2]的[解决方案][jam3]。遗憾的是，年内并未形成被广泛接受的方案，该问题到年底仍未得到缓解。
 
 {:.center}
-![阻塞攻击示意图](/img/posts/2020-12-ln-jamming-attacks.png)
+![通道堵塞攻击示意图](/img/posts/2020-12-ln-jamming-attacks.png)
 
 ## 三月
+
 {:#quantum}
-三月围绕量子计算机攻击比特币风险的[讨论][quant]尤为激烈，尤其针对[Taproot][topic taproot]激活并被广泛使用后的场景。比特币的原始特性之一 —— 公钥哈希（可能最初是为缩短比特币地址而设计）—— 在量子计算突然取得重大突破时，或能增加攻击者窃取少数用户资金的难度。而 Taproot 未延续此特性，至少有一位开发者担忧这会带来不合理风险。尽管大量反驳论点被提出，社区对 Taproot 的支持度似乎并未受到影响。
+三月围绕量子计算机攻击比特币风险的[讨论][quant]尤为激烈，尤其针对[Taproot][topic taproot]激活并被广泛使用后的场景。比特币的原始特性之一 —— 公钥哈希（可能最初是为缩短比特币地址而设计）—— 如果量子计算突然取得重大突破，它也很可能增加了攻击者窃取少数用户资金的难度。而 Taproot 未延续此特性，至少有一位开发者担忧这会带来不合理风险。尽管大量反驳论点被提出，社区对 Taproot 的支持度似乎并未受到影响。
 
 <div markdown="1" class="callout" id="taproot">
 
-## 2021 年度总结<br>Taproot 激活之路
+### 2021 年度总结<br>Taproot 激活
 
-截至 2020 年底，包含 [schnorr 签名][topic schnorr signatures]和 [Tapscript][topic tapscript] 支持的 [Taproot][topic taproot] 软分叉实现已[合并][bcc#19953]至 Bitcoin Core。这标志着协议开发者的主要工作基本完成，社区可自主选择激活 Taproot，钱包开发者则着手添加对其及相关技术（如 [Bech32m][topic bech32] 地址）的支持。
+截至 2020 年底，包含 [schnorr 签名][topic schnorr signatures] 与 [tapscript][topic tapscript] 支持的 [taproot][topic taproot] 软分叉实现已[合并][bcc#19953]到 Bitcoin Core。协议开发者的工作至此基本完成；接下来是否激活 taproot 取决于社区，钱包开发者则要开始支持 taproot 及相关技术，例如 [bech32m][topic bech32] 地址。
 
 {% comment %}<!-- comments in bold text below tweak auto-anchors to prevent ID conflicts -->{% endcomment %}
 
-- ​**<!--january-taproot-->​**​**1 月**：Bitcoin Core 0.21.0 [发布][bcc21]，首次支持 [Signet][topic signet] 测试网络，其中默认 Signet 已激活 Taproot，为用户和开发者提供便捷的测试环境。
+- <span id="1"></span>**1 月**：Bitcoin Core 0.21.0 [发布][bcc21]，这是首个支持 [signet][topic signet] 的版本，其中包括已激活 taproot 的默认 signet——为用户和开发者提供了一个便于开始测试的环境。
 
-- ​**<!--february-taproot-->​**​**2 月**：`##taproot-activation` IRC 频道召开[首次][tapa1]及[后续][tapa2][会议][tapa3]，该频道成为开发者、用户和矿工讨论 Taproot 激活方案的主要平台。
+- <span id="2"></span>**2 月**：`##taproot-activation` IRC 频道召开了[首次][tapa1]及后续[多次][tapa2]预定[会议][tapa3]。该频道随后成为开发者、用户和矿工讨论如何激活 taproot 的主要枢纽。
 
-- ​**<!--march-taproot-->​**​**3 月**：经过多轮讨论，参与者初步同意尝试名为*快速试验（speedy trial）*的激活机制，旨在快速收集矿工反馈的同时给予用户充足升级时间。该机制最终成为 Taproot 的实际[激活方式][topic soft fork activation]。
+- <span id="3"></span>**3 月**：月初，许多讨论参与者初步同意[尝试][speedy trial]一种名为 *speedy trial* 的激活方案。该方案旨在快速收集矿工反馈，同时给用户留出足够时间升级软件以执行 taproot 规则。speedy trial 后来成为实际用于激活 taproot 的[机制][topic soft fork activation]。
 
-  同期，针对 Taproot 设计中使用裸公钥可能增加量子计算机攻击风险的[讨论][quant]再度引发关注。多位开发者认为担忧缺乏依据或被过度放大。
+  在激活讨论进行期间，围绕一项设计决定——使用裸公钥——展开了最后一轮[讨论][quant]。有人认为这可能让用户资金更容易被未来的量子计算机盗取；许多开发者则认为这种担忧没有依据，至少被夸大了。
 
-  Bitcoin Core 本月还合并了[BIP350][] 支持，使其可支付至 [Bech32m][topic bech32] 地址。这一改进修复了原 Bech32 地址在极端情况下可能导致 Taproot 用户资金丢失的隐患（原隔离见证版本地址不受此影响）。
+  同样在 3 月，Bitcoin Core 合并了对 [BIP350][] 的支持，使其可以支付到 [bech32m][topic bech32] 地址。这是对用于支付原始 segwit 版本地址的 bech32 地址的小幅修改，修复了一个在极少数情况下可能让 taproot 用户损失资金的 bug。（由 bech32 地址创建的原始 segwit 输出是安全的，不受该 bug 影响。）
 
-  {% comment %}
-  /zh/newsletters/2021/03/03/#rust-lightning-794
-  /zh/newsletters/2021/03/10/#documenting-the-intention-to-use-and-build-upon-taproot
-  /zh/newsletters/2021/03/24/#discussion-of-quantum-computer-attacks-on-taproot
-  /zh/newsletters/2021/03/24/#bitcoin-core-20861
-  /zh/newsletters/2021/03/31/#should-block-height-or-mtp-or-a-mixture-of-both-be-used-in-a-soft-fork-activation-mechanism
-  {% endcomment %}
+- <span id="4"></span>**4 月**：激活进程几乎脱轨，协议开发者和部分用户就两个略有差异的 speedy trial 版本[展开辩论][tapa4]。不过，两个不同版本的实现作者最终达成[妥协][bcc#21377]，使一个带有激活机制和参数的 Bitcoin Core [版本][bcctap]得以发布。
 
-- ​**<!--april-taproot-->​**​**4 月**：协议开发者与用户就两种快速试验机制的细微差异[展开辩论][tapa4]，最终通过[妥协方案][bcc#21377]达成一致，Bitcoin Core 发布包含激活机制和参数的[版本][bcctap]。
+- <span id="5"></span>**5 月**：矿工[得以][signal able][开始][signal began]发出准备执行 taproot 的信号，一个追踪信号进度的网站 [taproot.watch][taproot.watch] 也流行起来。
 
-- ​**<!--may-taproot-->​**​**5 月**：矿工[开始][signal began][发出信号][signal able]表示支持 Taproot，进度追踪网站 [taproot.watch][taproot.watch] 获得广泛关注。
+- <span id="6"></span>**6 月**：矿工[锁定 taproot][lockin]，承诺在约六个月后的区块高度 {{site.trb}} 执行激活。这意味着[是时候][rb#589]让[钱包开发者][bcc#22051]和[其他基础设施开发者][bolts#672]更加[关注][bcc#21365]、并[着手][cl#4591]让[自己的软件][p2trhd][适配][rb#601] taproot 了——[许多人][bcc#22154]确实[这样做了][bcc#22166]。此外，有人[提议][nsequence default]让链上 taproot 钱包能够方便地为使用 LN、[coinswap][topic coinswap] 等合约协议的钱包贡献隐私。Optech 也[启动][p4tr begins]了[《为 Taproot 做准备》][p4tr]系列。
 
-- ​**<!--june-taproot-->​**​**6 月**：矿工[锁定 Taproot 激活][lockin]，承诺在约 6 个月后的区块高度 {{site.trb}} 强制执行。钱包开发者随即[投入][rb#589][适配工作][bcc#22051]，闪电网络等基础设施也[跟进调整][bolts#672]。Optech 启动[《Taproot 准备指南》][p4tr]系列文章。
+- <span id="7"></span>**7 月**：Bitcoin Wiki 上出现了一个[页面][bech32m page]，专门追踪各钱包在 taproot 激活后使用所需的 bech32m 地址格式的支持情况。许多钱包和服务开发者积极响应，确保用户在激活后即可使用 taproot。其他[软分叉提案][bip118 update]也做了更新，以利用 taproot 或[吸取其激活过程中的经验][bip119 update]。
 
-- ​**<!--july-taproot-->​**​**7 月**：比特币 Wiki 创建[专页][bech32m page]追踪 Bech32m 地址格式支持情况，多数钱包和服务商完成适配。其他[软分叉提案][bip118 update]也吸取 Taproot 经验进行[优化][bip119 update]。
+- <span id="8"></span>**8 月**：taproot 开发相对平静，不过一些与 taproot 相关的[文档][reuse risks]已经写出。
 
-- ​**<!--august-taproot-->​**​**8 月**：Taproot 开发进入平静期，部分[技术文档][reuse risks]完成编写。
+- <span id="9"></span>**9 月**：比特币最受欢迎的开源商户软件在计划激活之前就[加入][btcpay taproot]了对 taproot 的支持。同月还出现了新操作码 [OP_TLUV][op_tluv] 的提案，它利用 taproot 的特性实现基于脚本的[契约][topic covenants]。
 
-- ​**<!--september-taproot-->​**​**9 月**：主流商户软件 BTCPay Server [提前支持][btcpay taproot] Taproot。新操作码 [OP_TLUV][op_tluv] 提案利用 Taproot 特性实现链上[契约][topic covenants]。
+- <span id="10"></span>**10 月**：随着 taproot 激活[临近][testing taproot]，开发[活动][rb#563][重新活跃][rb#644]。taproot 的 BIP 扩充了[测试向量][expanded test vectors]，帮助钱包和基础设施开发者验证各自实现。
 
-- ​**<!--october-taproot-->​**​**10 月**：随着激活日临近，开发者[加速][rb#563][测试][testing taproot]，BIP 文件[扩充测试用例][expanded test vectors]以验证各实现方案。
+- <span id="11"></span>**11 月**：人们庆祝 [taproot 激活][taproot activation]。最初出现了一些困惑：区块 {{site.trb}} 及其后几个区块的矿工没有打包任何 taproot 花费交易。但在多位开发者和矿池管理员的努力下，随后几天挖出的大多数区块都已准备好包含 taproot 花费交易。对 [taproot-ready][dec cs] 软件的[开发][nov cs]与[测试][cbf verification]仍在[继续][rb#691]。
 
-- ​**<!--november-taproot-->​**​**11 月**：Taproot 成功[激活][taproot activation]。尽管区块 {{site.trb}} 及其后数个区块未包含 Taproot 交易引发短暂困惑，但矿池迅速调整后即正常处理交易。相关软件[持续优化][nov cs][验证流程][cbf verification]。
+- <span id="12"></span>**12 月**：Bitcoin Core 合并了一个 PR，允许[描述符钱包][topic descriptors]生成 [bech32m][topic bech32] 地址以接收 taproot 支付。LN 开发者还进一步讨论了[如何利用][ln ptlcs] taproot 的特性。
 
-- ​**<!--december-taproot-->​**​**12 月**：Bitcoin Core 支持[描述符钱包][topic descriptors]生成 Bech32m 收款地址。闪电网络开发者[探讨][ln ptlcs]如何利用 Taproot 特性优化支付。
-
-尽管在 Taproot 激活机制的选择过程中遭遇波折，且激活初期出现短暂困惑，但比特币整体上对 Taproot 软分叉的支持工作进展顺利。这远非 Taproot 故事的终结。随着钱包及基础设施开发者逐步挖掘其众多功能，Optech 预计未来数年将持续投入大量篇幅报道相关进展。
+尽管在 taproot 激活机制的选择上遇到波折，激活后也出现过短暂困惑，但为比特币整体加入 taproot 软分叉支持的最后几步看来进展顺利。这远不是 taproot 故事的终点。随着钱包和基础设施开发者开始利用它的众多特性，Optech 预计未来几年仍会花大量篇幅报道 taproot。
 
 </div>
 
 ## 四月
 
 {:#amp}
-LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multipath Payments），因提出时间早于当前主流实现支持的[简化多路径支付][topic multipath payments]（SMPs）而被称为原始 AMP。相比 SMP，AMP 具备隐私优势，且确保接收方在申领支付前已收到所有路径款项。其缺点在于无法生成支付密码学证明。LND 将其应用于[即时支付][topic spontaneous payments]场景（该场景本身无需支付证明），从而规避了 AMP 的主要缺陷。
+LND 在 4 月[新增支持][lnd#5709]原子多路径支付（Atomic Multipath Payments，AMP）。由于提出时间早于当前所有主流 LN 实现都支持的[简化多路径支付][topic multipath payments]（SMP），它也被称为“原始 AMP”。相比 SMP，AMP 具备隐私优势，还能确保接收方在领取支付之前已经收到所有部分。它的缺点是产生不了密码学意义上的支付证明。LND 把它用于[自发支付][topic spontaneous payments]——这种支付本质上就无法提供支付证明，因此 AMP 唯一显著的缺点也就无从谈起。
 
 ## 五月
 
 {:#bip125}
-5 月披露了 [BIP125][] 交易[替换][topic rbf]规范与 Bitcoin Core 实现之间的[不一致性][bip125 discrep]。据我们所知，该问题不会导致比特币资金风险，但引发了多轮关于意外交易中继行为对合约协议（如闪电网络）用户影响的讨论。
+5 月披露了 [BIP125][] 交易[替换][topic rbf]规范与 Bitcoin Core 实现之间的[不一致][bip125 discrep]。据我们所知，这并没有让任何比特币面临风险，但它确实引发了几场讨论，主题是意外的交易中继行为会给合约协议（如 LN）的用户带来哪些风险。
 
 {:#dual-funding}
-同月，C-Lightning 项目[合并][cl#4489]了[双向资助通道][topic dual funding]管理插件（双方均可提供初始资金的通道）。结合今年早些时候[合并][cl#4410]的双向资助功能，该功能使通道发起方不仅能在通道内发送资金，还能在通道初始状态下接收资金。这种初始收款能力使双向资助特别适用于以接收而非发送为主的商户场景。
+同样在 5 月，C-Lightning 项目[合并][cl#4489]了一个用于管理[双向资助通道][topic dual funding]的插件——在这类通道中，双方都可以提供一部分初始资金。加上今年早些时候[合并][cl#4410]的双向资助工作，这让发起通道开通的一方不仅能通过通道花费资金，还能在通道的初始状态下接收资金。这种一开始就能收款的能力，使双向资助特别适用于那些主要用 LN 收款而非付款的商户。
 
 <div markdown="1" class="callout" id="releases">
 
-### 2021 年度总结<br>热门基础设施项目主要版本发布
+### 2021 年度总结<br>热门基础设施项目的主要版本发布
 
 - ​[Eclair 0.5.0][] 新增支持可扩展集群模式（参见[Newsletter #128][news128 akka]）、区块链监控机制（[Newsletter #123][news123 watchdog]）及更多插件钩子。
 
-- ​[Bitcoin Core 0.21.0][] 包含对使用[版本 2 地址广播消息][topic addr v2]的新版 Tor 洋葱服务支持，可选提供[致密区块过滤器][topic compact block filters]功能，并支持 [Signet][topic signet] 测试网络（包含已激活[Taproot][topic taproot]的默认 Signet）。同时实验性支持原生使用[输出脚本描述符][topic descriptors]的钱包。
+- ​[Bitcoin Core 0.21.0][] 包含对使用[版本 2 地址广播消息][topic addr v2]的新版 Tor 洋葱服务支持，可选提供[紧凑区块过滤器][topic compact block filters]功能，并支持 [Signet][topic signet] 测试网络（包含已激活[Taproot][topic taproot]的默认 Signet）。同时实验性支持原生使用[输出脚本描述符][topic descriptors]的钱包。
 
 - ​[Rust Bitcoin 0.26.0][] 新增 Signet 支持、版本 2 地址广播消息，并优化了[部分签名比特币交易（PSBT）][topic psbt]处理。
 
-- ​[LND 0.12.0-beta][] 支持搭配[锚定输出][topic anchor outputs]使用[瞭望塔][topic watchtowers]，新增用于操作[PSBT][topic psbt]的 `psbt` 钱包子命令。
+- ​[LND 0.12.0-beta][] 支持搭配[锚定输出][topic anchor outputs]使用[瞭望塔][topic watchtowers]，并新增了用于操作 [PSBT][topic psbt] 的 `psbt` 钱包子命令。
 
-- ​[HWI 2.0.0][] 新增 BitBox02 硬件钱包的多签支持，改进文档，并支持通过 Trezor 支付 `OP_RETURN` 输出。
+- ​[HWI 2.0.0][] 新增 BitBox02 硬件钱包的多重签名支持，改进文档，并支持通过 Trezor 支付 `OP_RETURN` 输出。
 
 - ​[C-Lightning 0.10.0][] 增强 API 功能，并实验性支持[双向资助][topic dual funding]通道。
 
@@ -162,13 +156,13 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 
 - ​[Eclair 0.6.0][] 包含多项提升用户安全与隐私的改进，同时兼容未来可能使用[Bech32m][topic bech32]地址的软件。
 
-- ​[LND 0.13.0-beta][] 默认采用[锚定输出][topic anchor outputs]作为承诺交易格式以优化费率管理，新增支持使用剪枝版比特币全节点，支持通过原子多路径支付（[AMP][topic amp]）收发款项，并增强[PSBT][topic psbt]功能。
+- ​[LND 0.13.0-beta][] 通过把[锚定输出][topic anchor outputs]设为默认的承诺交易格式来改进费率管理，新增对使用剪枝后的比特币全节点的支持，允许用原子多路径支付（[AMP][topic amp]）收发款项，并增强了 LND 的 [PSBT][topic psbt] 能力。
 
 - ​[Bitcoin Core 22.0][] 支持[I2P][topic anonymity networks]匿名网络连接，移除对[Tor v2][topic anonymity networks]的支持，并强化[硬件钱包][topic hwi]支持。
 
 - ​[BDK 0.12.0][] 新增通过 Sqlite 存储数据的功能。
 
-- ​[LND 0.14.0][] 包含增强的[日蚀攻击][topic eclipse attacks]防护（参见 [Newsletter #164][news164 ping]）、远程数据库支持（[Newsletter #157][news157 db]）、更快的路径搜索（[Newsletter #170][news170 path]）、针对 Lightning Pool 用户的优化（[Newsletter #172][news172 pool]）及可复用的 [AMP][topic amp] 发票（[Newsletter #173][news173 amp]）。
+- ​[LND 0.14.0][] 包含额外的[日食攻击][topic eclipse attacks]防护（见 [Newsletter #164][news164 ping]）、远程数据库支持（[Newsletter #157][news157 db]）、更快的寻路（[Newsletter #170][news170 path]）、Lightning Pool 用户体验改进（[Newsletter #172][news172 pool]），以及可重复使用的 [AMP][topic amp] 发票（[Newsletter #173][news173 amp]）。
 
 - ​[BDK 0.14.0][] 简化了为交易添加 `OP_RETURN` 输出的流程，并优化了向[Bech32m][topic bech32]地址（用于 Taproot）支付的功能。
 
@@ -178,48 +172,48 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 ## 六月
 
 {:#csb}
-六月讨论的[新分析][csb]提出了一种矿工选择打包交易的替代方案。该方法预计短期内可小幅提升矿工收益。长期来看，若被广泛采用，支持该方案的钱包在使用 [CPFP][topic cpfp] 追加手续费时可实现协同，从而提高该技术的有效性。
+六月讨论的一项[新分析][csb]描述了矿工在选择要把哪些交易放进自己创建的区块时可以采用的另一种方法。据预测，这种新方法短期内会小幅提高矿工收入。长期来看，如果矿工采用了这项技术，了解它的钱包就可以在通过[子为父付（CPFP）][topic cpfp]追加手续费时相互配合，从而提高这项技术的效果。
 
 {:#default-rbf}
-另一项提升手续费追加效率的尝试是[提议][rbf default]允许 Bitcoin Core 中的任何未确认交易进行 [RBF][topic rbf]——而不仅限于通过 [BIP125][] 选择启用的交易。此举或能解决多方协议中的手续费追加难题，并通过统一交易设置提升隐私性。另一项与隐私相关的[提案][nseq default]建议，创建 Taproot 交易的钱包应设置默认 nSequence 值（即使无需使用[BIP68][]的共识级序列功能），使需要 BIP68 功能的交易与普通交易特征趋同。两项提案虽无明显反对意见，但进展有限。
+另一项让手续费追加更有效的尝试是[提议][rbf default]在 Bitcoin Core 中允许任何未确认交易被[手续费替换][topic rbf]（RBF）——而不仅仅是那些通过 [BIP125][] 自愿启用替换的交易。这有助于解决多方协议中手续费追加的一些问题，也能让更多交易采用一致的设置，从而提升隐私性。与隐私相关的另一项[提案][nseq default]则建议，创建 taproot 花费的钱包即使用不到 [BIP68][] 的共识强制序列值所提供的功能，也应当设置默认的 nSequence 值；这样，那些确实需要使用 BIP68 的软件所创建的交易就能与更常见的交易混在一起。两项提案尽管没有多少重大反对意见，但似乎都没有取得太大进展。
 
 {:#mpa}
-六月 Bitcoin Core 合并了实现[内存池包接受][mpa ml]的[首个 PR][bcc#20833]，这是迈向包中继的第一步。[包中继][topic package relay]允许节点和矿工将关联交易包视为单一交易进行费率评估。例如，一个低费率父交易与高费率子交易组成的包中，子交易的高收益将激励矿工同时打包父交易。尽管 Bitcoin Core 自 2016 年已支持[打包挖矿][bitcoin core #7600]，但此前缺乏交易包中继机制，导致高费率时期低费率父交易可能无法触达矿工，使得闪电网络等使用预签名交易的协议依赖的 [CPFP][topic cpfp] 机制可靠性不足。包中继旨在解决这一关键安全问题。
+六月，Bitcoin Core 合并了实现[内存池包接受][mpa ml]的一系列 PR 中的[第一个][bcc#20833]，这是迈向[交易包中继][topic package relay]的第一步。交易包中继将允许中继节点和矿工在计算费率时把一组相关交易当作一笔交易来处理。一个包可能包含一笔低费率的父交易和一笔高费率的子交易；挖出子交易带来的收益会激励矿工也挖出父交易。尽管 Bitcoin Core 自 2016 年起就已[实现][bitcoin core #7600]打包挖矿，但到目前为止节点还无法以包为单位中继交易，这意味着在高费率时期，即使低费率的父交易有高费率的子交易，它们也可能到不了矿工手里。这让使用预签名交易的合约协议（如 LN）中的 [CPFP][topic cpfp] 手续费追加变得不可靠。交易包中继有望解决这一关键的安全问题。
 
 {:#ff}
-一项 2019 年提出的闪电网络概念在 6 月重获关注。原始[快速转发（Fast Forwards）][ff orig]方案描述了如何通过减少网络往返次数接收或转发支付，从而降低带宽消耗和支付延迟。今年该方案被[扩展][ff expanded]，提出闪电网络钱包无需每次收款都启用签名密钥即可接收多笔支付，提升了密钥的离线安全性。
+一项 2019 年为 LN 提出的想法在 6 月重获生机。最初的[快进][ff orig]（fast forwards）方案描述了 LN 钱包如何以更少的网络往返来接收或中继支付，从而减少网络带宽占用和支付延迟。今年这一想法被[扩展][ff expanded]：LN 钱包无需为每一笔支付都让签名密钥上线，就能接收多笔支付，这让密钥更容易保持安全。
 
 ## 七月
 
 {:#liq-ads}
-经过多年讨论和开发，首个去中心化流动性广告系统实现[合并][cl#4639]至闪电网络实现中。仍处于草案阶段的[流动性广告][bolts #878]提案允许节点通过闪电网络 gossip 协议广播其愿意在一定期限内出租资金的意向，使其他节点能够购买入账容量以实现即时收款。看到广告的节点可以通过[双向资助][topic dual funding]的通道开通方式，在支付的同时获得入账容量。虽然无法强制广告节点实际路由支付，但该提案整合了早期方案（后来也[应用于][lnd#5709] Lightning Pool），确保广告方在约定的租赁期内无法将资金挪作他用。这意味着拒绝路由支付不会带来任何优势，反而会剥夺广告节点赚取路由手续费的机会。
+经过多年讨论和开发，首个去中心化流动性广告系统的实现被[合并][cl#4639]进一个 LN 实现。仍处于草案阶段的[流动性广告][bolts #878]提案允许节点利用 LN 的 gossip 协议广播自己愿意在一段时间内出租资金的意向，让其他节点可以购买入站容量，从而即时接收支付。看到广告的节点可以通过一次[双向资助][topic dual funding]的通道开通，在付款的同时获得入站容量。虽然无法强制广告节点真的去路由支付，但该提案纳入了更早的一个提案（后来也[用于][lnd#5709] Lightning Pool），使广告方在约定的租赁期结束前无法把钱挪作他用。这意味着拒绝路由支付不会带来任何好处，反而会剥夺广告节点赚取路由手续费的机会。
 
 {:#descriptors}
-在首次[提出][descriptor gist]比特币核心集成三年后，[输出脚本描述符][topic descriptors]的[草案 BIP][descriptor bips1] [最终定稿][descriptor bips2]。描述符是包含所有必要信息的字符串，能让钱包或其他程序追踪特定脚本（即地址）或相关脚本集合（如[分层确定性钱包][topic bip32]）的资金收支。描述符与[miniscript][topic miniscript]的协同使用，可扩展钱包对多样化脚本的追踪和签名支持。其与[部分签名的比特币交易（PSBTs）][topic psbt]的结合，则能帮助钱包识别多签脚本中自身控制的密钥。截至年底，比特币核心已将基于描述符的钱包设为[新建钱包的默认选项][descriptor default]。
+在首次为 Bitcoin Core [提出][descriptor gist]三年之后，[输出脚本描述符][topic descriptors]的[草案 BIP][descriptor bips1] 得以[创建][descriptor bips2]。描述符是一种字符串，包含追踪发往某个脚本或某组相关脚本（即某个地址，或[HD 钱包][topic bip32] 中的一组相关地址）的支付、以及从这些脚本花费的支付所需的全部信息。描述符与 [miniscript][topic miniscript] 结合得很好，能让钱包追踪和签名更多种类的脚本。它们与 [PSBT][topic psbt] 也结合得很好，能让钱包确定自己在某个多重签名脚本中控制哪些密钥。到年底时，Bitcoin Core 已把基于描述符的钱包作为新建钱包的[默认选项][descriptor default]。
 
 {:#zeroconfchan}
-一种从未正式纳入闪电网络协议、但被广泛使用的通道开通方式于七月开始[标准化][0conf channels]。零确认通道开通（亦称*极速通道*）是新型单边资助通道，资助方在通道开通时将部分或全部初始资金转移至接收方。这些资金需在通道开通交易获得足够确认后才具备安全性，因此接收方通过标准闪电网络协议将部分资金转回资助方不存在风险。例如：Alice 在 Bob 的托管交易所持有若干 BTC，她请求 Bob 开通向其支付 1.0 BTC 的新通道。由于 Bob 信任自己不会双花新开通的通道，即使该通道交易尚未获得任何确认，他仍可允许 Alice 通过其节点向第三方 Carol 发送 0.1 BTC。对此行为的标准化将提升闪电网络节点与提供此类服务的商户之间的互操作性。
+一种在 LN 中很常见、但此前从未被纳入 LN 协议的通道开通方式，在 7 月开始被[规范化][0conf channels]。零确认通道开通（也叫*极速通道*）是一种新型单方资助通道：资助方在开通时把自己的一部分或全部初始资金交给接受方。这些资金要等通道开通交易获得足够确认后才安全，因此接受方通过标准的 LN 协议把其中一部分资金花回资助方那边并没有风险。例如，Alice 在 Bob 的托管交易所有若干 BTC，她请 Bob 开一个新通道付给她 1.0 BTC。因为 Bob 相信自己不会双花自己刚开的通道，所以即使通道开通交易还没有一个确认，他也可以允许 Alice 通过他的节点向第三方 Carol 发送 0.1 BTC。把这种行为写入规范，应当有助于改善 LN 节点与提供这项服务的商户之间的互操作性。
 
 {:.center}
 ![零确认通道示意图](/img/posts/2021-07-zeroconf-channels.png)
 
 {:#anyprevout}
-两项关于新签名哈希（sighash）类型的关联提案被[整合][sighash combo]至 [BIP118][]。2017 年提出的 `SIGHASH_NOINPUT`（部分源自十年前的相关提案）被 2019 年[首次提出][anyprevout proposed]的[`SIGHASH_ANYPREVOUT` 和 `SIGHASH_ANYPREVOUTANYSCRIPT`][topic sighash_anyprevout]取代。新 sighash 类型将使闪电网络和[保险库][topic vaults]等链下协议减少需保留的中间状态数量，大幅降低存储需求和复杂度。对多方协议而言，其优势可能更为显著——可从根本上减少需要生成的不同状态数量。
+两项关于新签名哈希（sighash）类型的关联提案被[合并][sighash combo]进 [BIP118][]。2017 年提出的 `SIGHASH_NOINPUT`（部分基于更早十年间的提案）被 2019 年[首次提出][anyprevout proposed]的 [`SIGHASH_ANYPREVOUT` 和 `SIGHASH_ANYPREVOUTANYSCRIPT`][topic sighash_anyprevout] 所取代。新的 sighash 类型将使 LN 和[保险库][topic vaults]等链下协议减少需要保留的中间状态数量，从而大幅降低存储需求和复杂度。对多方协议而言，由于一开始就需要生成的不同状态减少了，好处可能更加显著。
 
 
 ## 八月
 
 {:#fibonds}
-保真债券（Fidelity bonds）这一概念最早可追溯至[2010年][wiki contract]，其原理是通过锁定比特币一定时间来为第三方系统中的恶意行为设定成本。由于锁定的比特币在时间锁到期前无法再次使用，其他系统中在此期间被封禁或处罚的用户将无法使用同一比特币创建新虚拟身份。八月，JoinMarket 首次在[生产环境][fi bonds]中大规模去中心化应用保真债券机制。该机制上线数日内，超过 50 BTC（当时价值逾 200 万美元）被施加时间锁。
+忠诚债券（fidelity bonds）这一概念至少在 [2010 年][wiki contract] 就已被描述，其原理是把比特币锁定一段时间，从而为第三方系统中的不当行为制造成本。由于锁定的比特币在时间锁到期前无法再次使用，其他系统中在锁定期间被封禁或以其他方式受到惩罚的用户，就无法用同一批比特币再创建一个新的虚拟身份。八月，JoinMarket 首次在[生产环境][fi bonds]中大规模、去中心化地使用忠诚债券。上线数日内，锁定（时间锁）的比特币就超过了 50 BTC（当时价值超过 200 万美元）。
 
 {:#pathfinding}
-一种新型闪电网络路径发现方案于八月[引发讨论][0base]。该技术的支持者认为，若路由节点仅按路由金额比例收费且不针对每笔支付收取最低*基础手续费*，方案将最为有效。其他开发者则持不同看法。至年底，该技术的[改良版本][cl#4771]已在 C-Lightning 中实现。
+一种新的 LN 寻路变体在八月[引发了讨论][0base]。该技术的支持者认为，如果路由节点只按所路由金额的百分比收费，而不对每笔支付收取最低的*基础手续费*，这种方案会最有效。其他人则不这么看。到年底，该技术的一个[变体][cl#4771]已在 C-Lightning 中实现。
 
 <div markdown="1" class="callout" id="optech">
 
 ### 2021 年度总结<br>Bitcoin Optech
 
-在 Optech 成立的第四年，我们发布了 51 期[周报][newsletters]，为[主题索引][topics index]新增 30 个页面，发表了一篇[投稿博文][additive batching]，并（在[两位][zmn guest]客座[作者][darosior guest]协助下）撰写了 21 篇系列文章介绍[如何为 Taproot 升级做准备][p4tr]。全年 Optech 共发布逾 80,000 字比特币软件研发相关内容，相当于一本 250 页的书籍。<!-- wc -w _posts/en/newsletters/2021-* _includes/specials/taproot/en/* -->
+在 Optech 成立的第四年，我们发布了 51 期 [Newsletter][newsletters]，为[主题索引][topics index]新增 30 个页面，发表了一篇[投稿博文][additive batching]，并（在[两位][zmn guest]客座[作者][darosior guest]协助下）撰写了 21 篇系列文章，介绍[如何为 taproot 激活做准备][p4tr]。全年 Optech 共发布逾 80,000 字比特币软件研发相关内容，相当于一本 250 页的书籍。<!-- wc -w _posts/en/newsletters/2021-* _includes/specials/taproot/en/* -->
 
 </div>
 
@@ -231,30 +225,30 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 ## 十月
 
 {:#txhids}
-十月，比特币开发者探讨了一种新的交易[标识方法][heritage identifiers]来指定其欲花费的比特币集合。当前比特币通过其在上次花费交易中的位置标识，例如"交易 foo 的第零个输出"。新提案允许结合花费交易及其在继承层级中的位置进行标识，例如"交易 bar 的第二个子交易的第零个输出"。该方案被认为可为 [eltoo][topic eltoo]、[通道工厂][topic channel factories]和[瞭望塔][topic watchtowers]等设计带来优势，这些设计均有利于闪电网络等合约协议。
+十月，比特币开发者讨论了一种新方法，让交易能够[指明][heritage identifiers]自己想花费的是哪一组比特币。目前，比特币是靠它在最后一次花费它的那笔交易中的位置来标识的，例如“交易 foo 的第零个输出”。一项新提案则允许用此前花费过它们的那笔交易、它们在派生层级中的位置以及它们的位置来标识比特币，例如“交易 bar 的第二个子交易的第零个输出”。有人提出，这会给 [eltoo][topic eltoo]、[通道工厂][topic channel factories]和[瞭望塔][topic watchtowers]等设计带来好处，而这些设计都有利于 LN 等合约协议。
 
 {:#ptlcsx}
-同月，多项闪电网络改进方案被[整合][ptlcs extreme]为单一提案，可在无需[`SIGHASH_ANYPREVOUT`][topic sighash_anyprevout]软分叉或其他共识变更的情况下，实现与 eltoo 相近的效益。该提案将支付延迟降低至接近路径上各路由节点单向数据传输所需时间，并通过在通道创建时备份所有必要数据、在多数恢复场景中动态补全数据来增强弹性。此外，该方案支持使用离线密钥接收支付，特别有利于商户节点减少在线设备使用密钥的时间。
+同月，若干已有的 LN 改进想法被[打包][ptlcs extreme]成一份单一提案，它能带来 eltoo 的部分好处，却无需 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 软分叉或任何其他共识变更。该提案将把支付延迟降低到几乎等同于数据在特定路径上所有路由节点之间单向传输所需的时间。它还会增强弹性：节点可以在创建通道时备份它需要的全部信息，并在数据恢复时于多数情况下取得其他所需信息。它还将允许用离线密钥接收支付，这尤其能让商户节点缩短其密钥需要被联网计算机使用的时间。
 
 ## 十一月
 
 {:#lnsummit}
-闪电网络开发者举行了[2018 年以来的首次][2018 ln summit]全体峰会，并[讨论][2021 ln summit]了多项议题，包括在闪电网络中应用 [Taproot][topic taproot]（包含 [PTLC][topic ptlc]、用于[多签][topic multisignature]的 [MuSig2][topic musig] 和 [eltoo][topic eltoo]）、将规范讨论从 IRC 迁移至视频会议、当前闪电网络规范（BOLTs）模型的变更、[洋葱消息][topic onion messages]和[支付要约][topic offers]、[无卡支付][stuckless payments]、[通道堵塞攻击][topic channel jamming attacks]及其缓解方案、以及[蹦床路由][topic trampoline payments]。
+LN 开发者举行了[2018 年以来][2018 ln summit]的首次全体 LN 峰会，并[讨论][2021 ln summit]了多个议题，包括在 LN 中使用 [taproot][topic taproot]（含 [PTLC][topic ptlc]、用于[多重签名][topic multisignature]的 [MuSig2][topic musig] 以及 [eltoo][topic eltoo]）；把规范讨论从 IRC 转到视频聊天；当前 BOLTs 规范模型的变更；[洋葱消息][topic onion messages]与 [offers][topic offers]；[无阻支付][stuckless payments]；[通道堵塞攻击][topic channel jamming attacks]及各种缓解措施；以及[蹦床路由][topic trampoline payments]。
 
 ## 十二月
 
 {:#bumping}
-对于单签的链上交易，通过提升手续费（fee bumping）来加速交易确认是相对直接的操作。但对于闪电网络和[保险库][topic vaults]等合约协议，在需要提升手续费时，可能无法获得所有原始签名者的参与。更糟糕的是，合约协议通常要求特定交易在截止时间前确认——否则诚实用户可能蒙受资金损失。十二月，关于为合约协议选择有效手续费提升机制的[研究成果][fee bump research]发布，推动了针对这一长期重要问题的解决方案讨论。
+对于单签的链上交易，通过手续费追加（fee bumping）提高一笔交易的费率、促使矿工更早确认它，是相对直接的操作。但对 LN 和[保险库][topic vaults]等合约协议来说，在需要追加手续费时，当初授权这笔花费的签名者未必都能到场。更糟的是，合约协议常常要求某些交易必须在截止时间前得到确认，否则诚实用户就可能损失资金。十二月，一份关于如何为合约协议选择有效手续费追加机制的研究成果[发表][fee bump research]，推动了对这一重要的长期问题所需解决方案的讨论。
 
 ## 总结
 
-我们在今年的总结中尝试了新做法——在不提及任何贡献者姓名的情况下，阐述了 2021 年二十余项重要进展。我们深知所有贡献者的辛勤付出，并衷心希望他们的卓越工作得到认可，但同时也希望表彰那些通常未被提及的无名英雄。
+我们在今年的总结中尝试了新做法：在不提及任何一位贡献者姓名的情况下，描述 2021 年的二十多项值得注意的进展。我们感激所有这些贡献者，也非常希望他们的出色工作得到认可，但同样想表彰那些我们通常不会提到的贡献者。
 
-他们花费数小时进行代码审查，为现有功能编写测试以确保其行为不会意外改变，努力调试疑难问题以避免资金风险，以及完成上百项虽不显眼却至关重要的基础工作。
+他们花数小时做代码审查，为已有行为编写测试以确保它不会意外改变，努力调试疑难问题以便在资金面临风险之前修复故障，或者在做上百项其他工作——这些工作只有在没人做的时候才会成为新闻。
 
-这份 2021 年最终期 Newsletter 谨献给他们。我们虽无法列全这些默默无闻贡献者的姓名，但通过刻意隐去本期所有署名，旨在强调比特币开发是团队协作的成果——其中最关键的工作往往由那些从未在本 Newsletter 中出现过名字的人完成。
+这份 2021 年的最后一期 Newsletter 谨献给他们。我们没有简单的方法列出这些未得到充分认可的贡献者的名字。于是我们选择隐去本期中的所有名字，以此表明：开发比特币是一项团队工作，其中一些最重要的工作正是由那些名字从未出现在本刊任何一期的人完成的。
 
-我们向这些无名英雄及所有 2021 年比特币贡献者致以谢意。我们迫不及待想见证他们在 2022 年带来的激动人心的新进展。
+我们感谢他们，也感谢 2021 年所有为比特币做出贡献的人。我们迫不及待想看到他们在 2022 年带来哪些激动人心的新进展。
 
 *Optech Newsletter 将于 1 月 5 日恢复每周三定期发布。*
 
@@ -296,7 +290,7 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 [p2trhd]: /zh/newsletters/2021/06/30/#key-derivation-path-for-single-sig-p2tr
 [bcc#22154]: /zh/newsletters/2021/06/30/#bitcoin-core-22154
 [bcc#22166]: /zh/newsletters/2021/06/30/#bitcoin-core-22166
-[p4tr begins]: /zh/newsletters/2021/06/23/#preparing-for-taproot-1-bech32m-sending-support
+[p4tr begins]: /zh/newsletters/2021/06/23/#准备-taproot-1bech32m-发送支持
 [bech32m page]: /zh/newsletters/2021/07/14/#tracking-bech32m-support
 [bip118 update]: /zh/newsletters/2021/07/14/#bips-943
 [bip119 update]: /zh/newsletters/2021/11/10/#bips-1215
@@ -342,7 +336,7 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 [topics index]: /en/topics/
 [additive batching]: /zh/cardcoins-rbf-batching/
 [zmn guest]: /zh/newsletters/2021/09/01/#准备-taproot-11使用-taproot-的闪电网络
-[darosior guest]: /zh/newsletters/2021/09/08/#准备-taproot-12使用-taproot-的保险库
+[darosior guest]: /zh/newsletters/2021/09/08/#准备-taproot-12配合-taproot-的保险库
 [heritage identifiers]: /zh/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
 [ptlcs extreme]: /zh/newsletters/2021/10/13/#multiple-proposed-ln-improvements
 [lnd#5709]: /zh/newsletters/2021/10/27/#lnd-5709
@@ -373,8 +367,8 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 [wiki contract]: https://en.bitcoin.it/wiki/Contract#Example_1:_Providing_a_deposit
 [cl#4771]: /zh/newsletters/2021/10/27/#c-lightning-4771
 [fee bump research]: /zh/newsletters/2021/12/08/#fee-bumping-research
-[nov cs]: /zh/newsletters/2021/11/17/#服务和客户端软件的更改
-[dec cs]: /zh/newsletters/2021/12/15/#服务和客户端软件的更改
+[nov cs]: /zh/newsletters/2021/11/17/#服务和客户端软件的变更
+[dec cs]: /zh/newsletters/2021/12/15/#服务和客户端软件的变更
 [mpa ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
 [ff orig]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
 [2020 conclusion]: /zh/newsletters/2020/12/23/#conclusion

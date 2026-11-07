@@ -55,19 +55,19 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 通过使用学习 Taproot
 
-*最初发表于 [Newsletter #159](/zh/newsletters/2021/07/28/#准备-taproot-6通过使用学习-taproot)*
+*最初发表于 [Newsletter #159](/zh/newsletters/2021/07/28/#准备-taproot-6在使用中学习-taproot)*
 
 {% include specials/taproot/zh/05-taproot-notebooks.md %}
 
 ## 多签
 
-*最初发表于 [Newsletter #160](/zh/newsletters/2021/08/04/#准备-taproot-7多签)*
+*最初发表于 [Newsletter #160](/zh/newsletters/2021/08/04/#准备-taproot-7多重签名)*
 
 {% include specials/taproot/zh/06-multisignatures.md %}
 
 ## 多签随机数
 
-*最初发表于 [Newsletter #161](/zh/newsletters/2021/08/11/#准备-taproot-8多签随机数)*
+*最初发表于 [Newsletter #161](/zh/newsletters/2021/08/11/#准备-taproot-8多重签名的-nonce)*
 
 {% include specials/taproot/zh/07-nonces.md %}
 
@@ -91,7 +91,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 使用 Taproot 的保险库
 
-*最初发表于 [Newsletter #165](/zh/newsletters/2021/09/08/#准备-taproot-12使用-taproot-的保险库)*
+*最初发表于 [Newsletter #165](/zh/newsletters/2021/09/08/#准备-taproot-12配合-taproot-的保险库)*
 
 {% include specials/taproot/zh/11-vaults-with-taproot.md %}
 
@@ -127,13 +127,13 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 琐事
 
-*最初发表于 [Newsletter #171](/zh/newsletters/2021/10/20/#准备-taproot-18琐事)*
+*最初发表于 [Newsletter #171](/zh/newsletters/2021/10/20/#准备-taproot-18冷知识)*
 
 {% include specials/taproot/zh/18-trivia.md %}
 
 ## 未来的共识变化
 
-*最初发表于 [Newsletter #172](/zh/newsletters/2021/10/27/#准备-taproot-19未来的共识变化)*
+*最初发表于 [Newsletter #172](/zh/newsletters/2021/10/27/#准备-taproot-19未来的共识变更)*
 
 {% include specials/taproot/zh/19-future.md %}
 
