@@ -113,7 +113,7 @@ lang: zh
 [bdk 0.25.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.25.0
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 [grpc doc]: https://github.com/cdecker/lightning/blob/20bc743840bf5d948efbf62d32a21a00ed233e31/plugins/grpc-plugin/README.md
-[news181 bcc23789]: /en/newsletters/2022/01/05/#bitcoin-core-23789
+[news181 bcc23789]: /zh/newsletters/2022/01/05/#bitcoin-core-23789
 [kani rust verifier]: https://github.com/model-checking/kani
 [news223 anchors]: /zh/newsletters/2022/10/26/#ephemeral-anchors
 [news224 anchors]: /zh/newsletters/2022/11/02/#anchor-outputs-workaround

@@ -93,7 +93,7 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
 [LND v0.17.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc2
 [net]: https://github.com/bitcoin/bitcoin/blob/master/src/net.h
 [net_processing]: https://github.com/bitcoin/bitcoin/blob/master/src/net_processing.h
-[news195 taro]: /en/newsletters/2022/04/13/#transferable-token-scheme
+[news195 taro]: /zh/newsletters/2022/04/13/#transferable-token-scheme
 [osuntokun bips]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021938.html
 [osuntokun blip post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004089.html
 [osuntokun blip]: https://github.com/lightning/blips/pull/29

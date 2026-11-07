@@ -80,14 +80,14 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="1092,392,240,20160,27869" %}
-[news58 bolts619]: /en/newsletters/2019/08/07/#bolts-619
+[news58 bolts619]: /zh/newsletters/2019/08/07/#bolts-619
 [policy series]: /zh/blog/waiting-for-confirmation/
-[news31 data loss]: /en/newsletters/2019/01/29/#fn:fn-data-loss-protect
-[news67 bolts642]: /en/newsletters/2019/10/09/#bolts-642
+[news31 data loss]: /zh/newsletters/2019/01/29/#fn:fn-data-loss-protect
+[news67 bolts642]: /zh/newsletters/2019/10/09/#bolts-642
 [lnd v0.16.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.4-beta
 [russell clean up]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/004001.html
 [review club 27625]: https://bitcoincore.reviews/27625
 [wiki getdata]: https://en.bitcoin.it/wiki/Protocol_documentation#getdata
-[news125 descriptor wallets]: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
-[news172 descriptor wallets]: /en/newsletters/2021/10/27/#bitcoin-core-23002
+[news125 descriptor wallets]: /zh/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
+[news172 descriptor wallets]: /zh/newsletters/2021/10/27/#bitcoin-core-23002
 [news230 descriptor wallets]: /zh/newsletters/2022/12/14/#with-legacy-wallets-deprecated-will-bitcoin-core-be-able-to-sign-messages-for-an-address-bitcoin-core

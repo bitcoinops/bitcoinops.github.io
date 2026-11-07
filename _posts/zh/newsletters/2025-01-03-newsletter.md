@@ -90,7 +90,7 @@ lang: zh
 [dashjr qc]: https://groups.google.com/g/bitcoindev/c/8O857bRSVV8/m/YT0fR2j_AgAJ
 [dryja qc]: https://groups.google.com/g/bitcoindev/c/8O857bRSVV8/m/8nr6I5NIAwAJ
 [rubin transitory]: https://delvingbitcoin.org/t/transitory-soft-forks-for-consensus-cleanup-forks/1333
-[news197 transitory]: /en/newsletters/2022/04/27/#relayed
+[news197 transitory]: /zh/newsletters/2022/04/27/#relayed
 [harding transitory]: https://delvingbitcoin.org/t/transitory-soft-forks-for-consensus-cleanup-forks/1333/2
 [provoost timewarp]: https://delvingbitcoin.org/t/timewarp-attack-600-second-grace-period/1326
 [poinsot timewarp]: https://delvingbitcoin.org/t/timewarp-attack-600-second-grace-period/1326/11

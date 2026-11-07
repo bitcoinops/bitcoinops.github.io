@@ -84,7 +84,7 @@ lang: zh
 [btcpay server 1.13.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.13.1
 [phoenixd github]: https://github.com/ACINQ/phoenixd
 [sri blog]: https://stratumprotocol.org/blog/sri-1-0-0/
-[news192 tt]: /en/newsletters/2022/03/23/#coinswap-implementation-teleport-transactions-announced
+[news192 tt]: /zh/newsletters/2022/03/23/#coinswap-implementation-teleport-transactions-announced
 [tt tweet]: https://twitter.com/RajarshiMaitra/status/1768623072280809841
 [bitcoin keeper v.1.2.1]: https://github.com/bithyve/bitcoin-keeper/releases/tag/v1.2.1
 [labelbase blog]: https://labelbase.space/ann-v2/

@@ -11,15 +11,15 @@ lang: zh
 
 ## 新闻
 
-- **<!--lowering-the-default-minimum-transaction-relay-feerate-->降低默认的最低交易中继费率：** Bitcoin Core 只中继那些按照[每 vbyte 最少 1 satoshi 的费率][topic default minimum transaction relay feerates]（1 sat/vbyte）支付的单个未确认交易。如果一个节点的内存池中填满了最低费率为 1 sat/vbyte 的交易，则需要支付更高的费率。支付较低费率的交易仍然可以被矿工包含在区块中，并且这些区块将被转发。其他节点软件实施了类似的策略。
+- **<!--lowering-the-default-minimum-transaction-relay-feerate-->****降低默认的最低交易中继费率：** Bitcoin Core 只中继那些按照[每 vbyte 最少 1 satoshi 的费率][topic default minimum transaction relay feerates]（1 sat/vbyte）支付的单个未确认交易。如果一个节点的内存池中填满了最低费率为 1 sat/vbyte 的交易，则需要支付更高的费率。支付较低费率的交易仍然可以被矿工包含在区块中，并且这些区块将被转发。其他节点软件实施了类似的策略。
 
     过去曾讨论过降低默认最低费用（参见 [Newsletter #3][news3 min]），但[尚未合并][bitcoin core #13922]到 Bitcoin Core。在过去的几周里，这个话题有了更多新的[讨论][chauhan min]：
 
-    - *<!--individual-change-effectiveness-->单个变更的有效性：*[一些][vjudeu min]人[辩论][todd min]单个节点运营商改变其策略的有效性如何。
+    - **<!--individual-change-effectiveness-->***单个变更的有效性：*[一些][vjudeu min]人[辩论][todd min]单个节点运营商改变其策略的有效性如何。
 
-    - *<!--past-failures-->过去的失败：*讨论[提到][harding min]之前降低默认费率的尝试曾被更低的费率所阻碍。低费率也降低了几次小规模拒绝服务 (DoS) 攻击的成本。
+    - **<!--past-failures-->***过去的失败：*讨论[提到][harding min]之前降低默认费率的尝试曾被更低的费率所阻碍。低费率也降低了几次小规模拒绝服务 (DoS) 攻击的成本。
 
-    - *<!--alternative-relay-criteria-->备选的中继标准：*[建议][todd min2]违反某些默认标准（例如默认最低费率）的交易可以改为满足一些单独的、使 DoS 攻击成本变高标准——例如，将少量的 hashcash 式的工作量证明提交到待中继的交易上。
+    - **<!--alternative-relay-criteria-->***备选的中继标准：*[建议][todd min2]违反某些默认标准（例如默认最低费率）的交易可以改为满足一些单独的、使 DoS 攻击成本变高标准——例如，将少量的 hashcash 式的工作量证明提交到待中继的交易上。
 
     在编写本文时，这些讨论还没有得出明确的结论。
 
@@ -75,14 +75,14 @@ lang: zh
 {% include linkers/issues.md v=2 issues="25610,24584,5071,645,911,13922,9527" %}
 [core lightning 0.12.0rc1]: https://github.com/ElementsProject/lightning/releases/tag/v0.12.0rc1
 [news208 core RBF]: /zh/newsletters/2022/07/13/#bitcoin-core-25353
-[news167 ln dns]: /en/newsletters/2021/09/22/#dns-records-for-ln-nodes
-[news181 change matching]: /en/newsletters/2022/01/05/#bitcoin-core-23789
+[news167 ln dns]: /zh/newsletters/2021/09/22/#dns-records-for-ln-nodes
+[news181 change matching]: /zh/newsletters/2022/01/05/#bitcoin-core-23789
 [chauhan min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020784.html
 [todd min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020800.html
 [vjudeu min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020821.html
 [harding min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020808.html
 [todd min2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020815.html
-[news3 min]: /en/newsletters/2018/07/10/#discussion-min-fee-discussion-about-minimum-relay-fee
+[news3 min]: /zh/newsletters/2018/07/10/#discussion-min-fee-discussion-about-minimum-relay-fee
 [#23789]: https://github.com/bitcoin/bitcoin/issues/23789
 [review club 25527]: https://bitcoincore.reviews/25527
 [libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/24303

@@ -196,18 +196,18 @@ _由于本周新闻量较大，以及我们主要撰稿人时间上的限制，�
 [hash_serialized_2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022038.html
 [russell scripts]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022031.html
 [russell scripts blog]: https://rusty.ozlabs.org/2023/10/20/examining-scriptpubkey-in-script.html
-[news187 op_tx]: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
+[news187 op_tx]: /zh/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
 [heilman cat]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022049.html
 [op_cat bip]: https://github.com/EthanHeilman/op_cat_draft/blob/main/cat.mediawiki
 [jahr hash_serialized_2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022038.html
 [Bitcoin Core 25.1]: https://bitcoincore.org/bin/bitcoin-core-25.1/
 [Bitcoin Core 24.2]: https://bitcoincore.org/bin/bitcoin-core-24.2/
 [Bitcoin Core 26.0rc1]: https://bitcoincore.org/bin/bitcoin-core-26.0/
-[news40 delta]: /en/newsletters/2019/04/02/#lnd-2759
-[news95 delta]: /en/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
-[news109 delta]: /en/newsletters/2020/08/05/#lnd-4488
-[news112 delta]: /en/newsletters/2020/08/26/#bolts-785
-[news142 delta]: /en/newsletters/2021/03/31/#rust-lightning-849
+[news40 delta]: /zh/newsletters/2019/04/02/#lnd-2759
+[news95 delta]: /zh/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
+[news109 delta]: /zh/newsletters/2020/08/05/#lnd-4488
+[news112 delta]: /zh/newsletters/2020/08/26/#bolts-785
+[news142 delta]: /zh/newsletters/2021/03/31/#rust-lightning-849
 [news248 delta]: /zh/newsletters/2023/04/26/#lnd-v0-16-1-beta
 [news255 delta]: /zh/newsletters/2023/06/14/#eclair-2677
 [bitcoin core developer wiki]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki

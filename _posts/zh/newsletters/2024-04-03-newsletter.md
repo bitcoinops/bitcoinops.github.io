@@ -55,12 +55,12 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide
 [Bitcoin Core 27.0rc1]: https://bitcoincore.org/bin/bitcoin-core-27.0/test.rc1/
 [poinsot cleanup]: https://delvingbitcoin.org/t/great-consensus-cleanup-revival/710
-[news36 cleanup]: /en/newsletters/2019/03/05/#cleanup-soft-fork-proposal
-[news37 confiscation]: /en/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
+[news36 cleanup]: /zh/newsletters/2019/03/05/#cleanup-soft-fork-proposal
+[news37 confiscation]: /zh/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
 [erhardt bip editors]: https://gnusha.org/pi/bitcoindev/52a0d792-d99f-4360-ba34-0b12de183fef@murch.one/
 [sdaftuar incentive compatibility]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553
 [TRUC BIP draft]: https://github.com/bitcoin/bips/pull/1541
 [news288 cln deprecation]: /zh/newsletters/2024/02/07/#core-lightning-6936
 [26.1 rn]: https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-26.1.md
 [HWI 3.0.0-rc1]: https://github.com/bitcoin-core/HWI/releases/tag/3.0.0-rc.1
-[news37 trees]: /en/newsletters/2019/03/12/#bitcoin-core-vulnerability-disclosure
+[news37 trees]: /zh/newsletters/2019/03/12/#bitcoin-core-vulnerability-disclosure

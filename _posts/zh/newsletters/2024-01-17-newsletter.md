@@ -86,14 +86,14 @@ lang: zh
 [morehouse blog]: https://morehouse.github.io/lightning/cln-channel-open-race/
 [news266 dos]: /zh/newsletters/2023/08/30/#disclosure-of-past-ln-vulnerability-related-to-fake-funding
 [script wiki]: https://en.bitcoin.it/wiki/Script#Arithmetic
-[news166 tluv]: /en/newsletters/2021/09/15/#amount-introspection
+[news166 tluv]: /zh/newsletters/2021/09/15/#amount-introspection
 [news283 exits]: /zh/newsletters/2024/01/03/#pool-exit-payment-batching-with-delegation-using-fraud-proofs
 [daftuar cluster]: https://delvingbitcoin.org/t/an-overview-of-the-cluster-mempool-proposal/393/
 [news280 cluster]: /zh/newsletters/2023/12/06/#cluster-mempool-discussion
 [news267 compress]: /zh/newsletters/2023/09/06/#bitcoin-transaction-compression
 [briar compress]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022274.html
 [compress spec]: https://github.com/bitcoin/bitcoin/blob/7e8511c1a8229736d58bd904595815636f410aa8/doc/compressed_transactions.md
-[news201 mev]: /en/newsletters/2022/05/25/#miner-extractable-value-discussion
+[news201 mev]: /zh/newsletters/2022/05/25/#miner-extractable-value-discussion
 [news266 lnbugs]: /zh/newsletters/2023/08/30/#disclosure-of-past-ln-vulnerability-related-to-fake-funding
 [race condition]: https://zh.wikipedia.org/wiki/%E7%AB%B6%E7%88%AD%E5%8D%B1%E5%AE%B3
 [morehouse full]: https://morehouse.github.io/lightning/cln-channel-open-race/
@@ -102,10 +102,10 @@ lang: zh
 [daftuar cluster]: https://delvingbitcoin.org/t/an-overview-of-the-cluster-mempool-proposal/393/
 [sanders mev]: https://delvingbitcoin.org/t/ephemeral-anchors-and-mev/383/
 [bip 64]: https://github.com/bitcoin/bips/pull/1538
-[taproot internal key]: /en/newsletters/2019/05/14/#complex-spending-with-taproot
-[news56 carveout]: /en/newsletters/2019/07/24/#bitcoin-core-15681
+[taproot internal key]: /zh/newsletters/2019/05/14/#使用-taproot-的复杂支出
+[news56 carveout]: /zh/newsletters/2019/07/24/#bitcoin-core-15681
 [news269 rpc]: /zh/newsletters/2023/09/20/#bitcoin-core-28448
-[news85 stuck]: /en/newsletters/2020/02/19/#c-lightning-3500
-[news89 stuck]: /en/newsletters/2020/03/18/#eclair-1319
+[news85 stuck]: /zh/newsletters/2020/02/19/#c-lightning-3500
+[news89 stuck]: /zh/newsletters/2020/03/18/#eclair-1319
 [ldk 0.0.119]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.119
 [rubin templating]: https://freenode.irclog.whitequark.org/bitcoin-wizards/2019-05-24#24661606;

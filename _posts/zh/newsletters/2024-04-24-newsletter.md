@@ -86,7 +86,7 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="8571,29434,29850,16070" %}
 [sanders weak]: https://delvingbitcoin.org/t/second-look-at-weak-blocks/805
-[news173 weak]: /en/newsletters/2021/11/03/#feerate-communication
+[news173 weak]: /zh/newsletters/2021/11/03/#feerate-communication
 [news253 weak]: /zh/newsletters/2023/05/31/#nostr
 [sanders poc]: https://github.com/instagibbs/bitcoin/commits/2024-03-weakblocks_poc/
 [july 2015 chain forks]: https://en.bitcoin.it/wiki/July_2015_chain_forks

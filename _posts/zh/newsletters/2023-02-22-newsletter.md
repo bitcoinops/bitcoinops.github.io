@@ -98,11 +98,11 @@ lang: zh
 {% include linkers/issues.md v=2 issues="24149,25344,2596,2595,2479,5988,1636,27050" %}
 [core lightning 23.02rc3]: https://github.com/ElementsProject/lightning/releases/tag/v23.02rc3
 [news226 jam]: /zh/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
-[news86 boomerang]: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
-[news92 overpayments]: /en/newsletters/2022/03/23/#payment-delivery-algorithm-update
+[news86 boomerang]: /zh/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
+[news92 overpayments]: /zh/newsletters/2022/03/23/#payment-delivery-algorithm-update
 [codex32 website]: https://secretcodex32.com/
 [codex32 video]: https://www.youtube.com/watch?v=kf48oPoiHX0
-[news192 pp]: /en/newsletters/2022/03/23/#payment-delivery-algorithm-update
+[news192 pp]: /zh/newsletters/2022/03/23/#payment-delivery-algorithm-update
 [obeirne op_vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021465.html
 [bip op_vault]: https://github.com/jamesob/bips/blob/jamesob-23-02-opvault/bip-vaults.mediawiki
 [news234 vault]: /zh/newsletters/2023/01/18/#vault
@@ -119,7 +119,7 @@ lang: zh
 [pr review 27050]: https://bitcoincore.reviews/27050
 [specialized compression for headers sync]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015851.html
 [general LZO-based compression]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011837.html
-[news66 dns seed]: /en/newsletters/2019/10/02/#bitcoin-core-15558
+[news66 dns seed]: /zh/newsletters/2019/10/02/#bitcoin-core-15558
 [Chaincode Labs Research]: https://research.chaincode.com/research-intro/
 [Bitcoin Problems]: https://bitcoinproblems.org/
 [weight unit]: https://en.bitcoin.it/wiki/Weight_units
