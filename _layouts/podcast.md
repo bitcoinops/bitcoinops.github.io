@@ -42,3 +42,7 @@ Join us for the weekly Bitcoin Optech Recap on streaming live on X/Twitter at 16
   </li>
   {%- endfor -%}
 </ul>
+
+{%- if page.lang == "en" -%}
+<p class="rss-subscribe">subscribe to <a href="{{ "/en/podcast/transcriptions.xml" | relative_url }}">episodes with transcriptions</a> via RSS</p>
+{%- endif -%}
