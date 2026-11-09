@@ -58,7 +58,8 @@ notables apportés aux logiciels d'infrastructure Bitcoin populaires.
   - La manière dont un co-signataire vérifie une dépense, et ce qui garantit son honnêteté, sont des profils modulaires choisis pour chaque
     politique.
 
-  - Les co-signataires doivent accepter les attestations d'oracle au format [DLC][topic dlc] afin que les oracles déjà disponibles puissent
+  - Les co-signataires doivent accepter les attestations d'oracle au format
+    [DLC][topic dlc] afin que les oracles déjà disponibles puissent
     être réutilisés sans aucune modification.
 
   Une politique comporte cinq parties. La sortie définit le descripteur [taproot][topic taproot] qui détient les fonds, le groupe de
