@@ -26,7 +26,7 @@ publication sur différentes plateformes telles que [BitcoinCore.org][].
 
 *Aucune cette semaine. Nous espérons que tout le monde profite d'un beau printemps, automne, ou d'une saison sèche agréable.*
 
-## Prise en charge de l'envoi vers Bech32
+## Prise en charge de l'envoi vers bech32
 
 *Semaine 7 sur 24. Jusqu'au deuxième anniversaire du verrouillage du soft fork segwit le 24 août 2019, le bulletin Optech contiendra cette
 section hebdomadaire qui fournit des informations pour aider les développeurs et les organisations à mettre en œuvre la prise en charge de
@@ -102,7 +102,7 @@ rétroportées vers sa version en attente de publication.*
   similaire à la signification spéciale des adresses segwit version 0 pour P2WPKH et P2WSH. Cela signifie que personne ne devrait utiliser
   des adresses version 1+ aujourd'hui. Cependant, si quelqu'un crée une telle adresse et demande à un portefeuille ou service prenant en
   charge segwit de la payer, ce changement garantit que la transaction sera relayée et minée comme n'importe quelle autre transaction. (Une
-  future édition de la section *bech32 sending support* de ce bulletin approfondira davantage le sujet des adresses pour les futures
+  future édition de la section *Prise en charge de l'envoi vers bech32* de ce bulletin approfondira davantage le sujet des adresses pour les futures
   versions segwit.)
 
 - [Eclair #950][] cesse d'envoyer des mises à jour de désactivation de canal chaque fois qu'un nœud se déconnecte, et les envoie seulement

@@ -56,7 +56,7 @@ dans le code de projets populaires d'infrastructure Bitcoin.
   valeur par défaut dès maintenant peuvent définir l'option de configuration `addresstype=bech32` dans toute version de Bitcoin Core à
   partir de 0.16.0.)
 
-## Prise en charge de l'envoi vers Bech32
+## Prise en charge de l'envoi vers bech32
 
 *Semaine 3 sur 24. Jusqu'au deuxième anniversaire du verrouillage du soft fork segwit le 24 août 2019, le bulletin Optech contiendra cette
 rubrique hebdomadaire qui fournit des informations pour aider les développeurs et organisations à mettre en œuvre la prise en charge de

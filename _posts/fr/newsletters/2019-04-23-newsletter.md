@@ -58,7 +58,7 @@ populaires d'infrastructure Bitcoin.
   affectant le portefeuille. Avec les filtres, le portefeuille peut simplement vérifier d'abord les filtres, plus petits et plus rapides,
   puis n'examiner en détail que les blocs pour lesquels le filtre indique une correspondance possible avec des transactions du portefeuille.
 
-## Prise en charge de l'envoi vers Bech32
+## Prise en charge de l'envoi vers bech32
 
 *Semaine 6 sur 24. Jusqu'au deuxième anniversaire de la mise en place définitive du soft fork SegWit, le 24 août 2019,
 le bulletin Optech comportera cette rubrique hebdomadaire destinée à fournir aux développeurs et aux organisations des informations utiles

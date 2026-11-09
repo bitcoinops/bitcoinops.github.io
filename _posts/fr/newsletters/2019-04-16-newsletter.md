@@ -31,7 +31,7 @@ d'éviter de remplir les bulletins courts avec des articles de remplissage et d'
 varie en fonction de la quantité réelle de nouvelles techniques significatives chaque semaine. Vous nous avez probablement déjà vus publier
 un bulletin occasionnellement très long ; cette semaine, vous voyez l'inverse.)*
 
-## Prise en charge de l'envoi vers Bech32
+## Prise en charge de l'envoi vers bech32
 
 *Semaine 5 sur 24. Jusqu'au deuxième anniversaire du verrouillage du soft fork segwit le 24 août 2019, le bulletin Optech contiendra cette
 section hebdomadaire qui fournit des informations pour aider les développeurs et les organisations à implémenter la prise en charge de

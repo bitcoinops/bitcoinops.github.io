@@ -58,7 +58,7 @@ fusions notables dans les projets d'infrastructure Bitcoin populaires.
   devenir impossible pour quiconque disposant de moyens modestes de jamais vérifier sans confiance l'état UTXO de Bitcoin, forçant les
   nouveaux utilisateurs à faire confiance aux utilisateurs existants.
 
-## Prise en charge de l'envoi vers Bech32
+## Prise en charge de l'envoi vers bech32
 
 *Semaine 4 sur 24. Jusqu'au deuxième anniversaire du verrouillage du soft fork segwit le 24 août 2019, le bulletin Optech contiendra cette
 section hebdomadaire qui fournit des informations pour aider les développeurs et les organisations à mettre en œuvre le support d'envoi
