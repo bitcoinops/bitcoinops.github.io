@@ -54,7 +54,7 @@ popular Bitcoin infrastructure software.
   through a node's own [Tor][topic anonymity networks] service. Towns later
   [asked][aj holepunch cves] whether recent TCP and protocol vulnerabilities
   make not accepting inbound connections the safer default for home users.
-  Discussion is ongoing.
+  Discussion is ongoing. {% assign timestamp="1:28" %}
 
 - **BIP draft for standardized co-signer spending policies:** Luke Carriere
   [posted][cosigner pols del] to Delving Bitcoin about his proposal for
@@ -99,7 +99,7 @@ popular Bitcoin infrastructure software.
   that the policy hash should commit to the exact verifier semantics to prevent
   different implementations from accepting the same bytes while enforcing different
   conditions. Carriere agreed with both points and said he would add a finality
-  flag and pin down the verifier rules.
+  flag and pin down the verifier rules. {% assign timestamp="30:51" %}
 
 ## Changing consensus
 
@@ -142,7 +142,7 @@ Bitcoin's consensus rules._
   when they are synchronized onto the compatibility chain, for the same fees
   unless users paid twice, and nodes that had not upgraded would still have to
   download the extra data. Riard will propose a short BIP54 footnote making
-  that case, and ask Friedenbach for counter-arguments.
+  that case, and ask Friedenbach for counter-arguments. {% assign timestamp="57:26" %}
 
 - **Opt-in replay protection prototype**: Sjors Provoost
   [followed up][sj delving replay] on the Delving Bitcoin thread about opt-in
@@ -174,7 +174,7 @@ Bitcoin's consensus rules._
   protection. Provoost also wrote that he expects the rule to be deployed
   before a contentious hard fork, so both sides inherit it, and that neither
   side can easily drop it: the block hash is only in the signature message, so
-  removing the rule means changing transaction serialization to carry the hash.
+  removing the rule means changing transaction serialization to carry the hash. {% assign timestamp="43:22" %}
 
 - **QSAVE for unmigrated coins**: James Tagg [posted][jt ml qsave] to the
   Bitcoin-Dev mailing list [five draft BIPs][qsave drafts] for QSAVE (Quantum
@@ -198,7 +198,7 @@ Bitcoin's consensus rules._
   and the funds could earn a conservative 0.5% return directed to charity. The
   drafts also specify pre-cutoff watermarks, an optional ML-DSA-87 key he
   called QD5, and a zk-STARK spend leaf for [BIP360][] ([P2MR][news393 p2mr])
-  outputs.
+  outputs. {% assign timestamp="1:11:46" %}
 
 - **Proof-of-decay for unmigrated outputs**: bitKingAE
   [posted][bk delving decay] to Delving Bitcoin a sketch for shrinking
@@ -212,7 +212,7 @@ Bitcoin's consensus rules._
   quantum attacker can wait until the grace period ends and sweep exposed
   outputs before the decay has done much; a sudden improvement in quantum
   attacks can drain them even earlier; and the schedule reduces the balance of
-  a passive owner, including one whose keys were already stolen.
+  a passive owner, including one whose keys were already stolen. {% assign timestamp="1:18:41" %}
 
 - **BIP300 bundle censorship**: Ori Newman [argued][on ml bip300] on the
   Bitcoin-Dev mailing list that a miner with 26% of hashrate can censor a
@@ -228,7 +228,7 @@ Bitcoin's consensus rules._
   asked that the BIP instead state a 75% honest majority assumption. He called
   that a strong departure from Bitcoin's security model, and said one argument
   for it is that stealing funds would be harder for an attacker with less than
-  75% of hashrate.
+  75% of hashrate. {% assign timestamp="1:20:49" %}
 
 ## Releases and release candidates
 
@@ -242,21 +242,21 @@ release candidates._
   vulnerability CVE-2026-98432 described under [LND #11456][] below. Linux
   operators should upgrade, disable MPTCP on the host to protect other
   services, and install a patched kernel, since the LND
-  mitigation does not fix the underlying vulnerability.
+  mitigation does not fix the underlying vulnerability. {% assign timestamp="1:25:37" %}
 
 - [Core Lightning 26.06.10][] is a security release of this popular LN node
   implementation. It fixes vulnerabilities in [dual funding][topic dual
   funding], [splicing][topic splicing], onchain [HTLC][topic htlc] resolution,
   access controls, and other components. Source code for the security fixes is
   available, while associated tests are temporarily withheld to give users more
-  time to upgrade. The project strongly recommends upgrading.
+  time to upgrade. The project strongly recommends upgrading. {% assign timestamp="1:26:54" %}
 
 - [BTCPay Server 2.4.7][] is a security release of this self-hosted payment
   processor. It fixes 85 security findings reported by Anthropic's
   [OSS Scanner program][anthropic oss scanner], including issues affecting
   payout limits, access to other stores' data, authentication, and resource
   exhaustion. It also fixes payment-accounting and reliability issues. Updating
-  is strongly recommended, especially for servers shared by multiple merchants.
+  is strongly recommended, especially for servers shared by multiple merchants. {% assign timestamp="1:27:45" %}
 
 ## Notable code and documentation changes
 
@@ -275,7 +275,7 @@ repo], and [BINANAs][binana repo]._
   tools that only support version 0. The separate external-signer workflow
   configured with `-signer` (see [Newsletter #138][news138 signer]) continues
   to use PSBTv2, so those users need an external signer that supports it,
-  such as HWI 2.1.0 or later.
+  such as HWI 2.1.0 or later. {% assign timestamp="1:29:24" %}
 
 - [Bitcoin Core #35714][] fixes a bug where the node could update its block
   index and UTXO database after failing to flush block or undo data to disk.
@@ -286,7 +286,7 @@ repo], and [BINANAs][binana repo]._
   the node's local state inconsistent and complicate recovery. The code now
   skips those database writes during the failing flush attempt. This
   complements earlier flush ordering protections for optional indexes covered
-  in [Newsletter #414][news414 flush].
+  in [Newsletter #414][news414 flush]. {% assign timestamp="1:31:44" %}
 
 - [Bitcoin Core #35492][] fixes a bug where `bitcoin-wallet dump` (see
   [Newsletter #130][news130 dump]) could report success after writing an
@@ -295,7 +295,7 @@ repo], and [BINANAs][binana repo]._
   running out of disk space. Consequently, users could mistakenly believe that
   the export was complete, only to discover missing data when trying to restore
   the wallet. Now, the command verifies the writing, flushing, and closing of
-  the file. It reports failures and removes incomplete dump files.
+  the file. It reports failures and removes incomplete dump files. {% assign timestamp="1:34:35" %}
 
 - [BIPs #2205][], [#2210][bips #2210], and [#2212][bips #2212] add three draft
   specifications for [cross-input signature aggregation][topic cisa].
@@ -313,7 +313,7 @@ repo], and [BINANAs][binana repo]._
   participating inputs, including [coinjoins][topic coinjoin] and
   [payjoins][topic payjoin]. Deploying the proposed transaction aggregation
   would require a soft fork. BIP460 leaves the activation mechanism and
-  parameters unspecified.
+  parameters unspecified. {% assign timestamp="1:35:53" %}
 
 - [Core Lightning #9419][] adds an optional `failure_reason` field to the
   `listforwards` RPC and `forward_event` notifications for locally failed
@@ -321,7 +321,7 @@ repo], and [BINANAs][binana repo]._
   protocol failure code, which made it difficult for operators to determine why
   forwarding failed. The new field distinguishes between causes such as
   insufficient outgoing liquidity, an offline outgoing peer, and limits on the
-  number or total value of pending [HTLCs][topic htlc].
+  number or total value of pending [HTLCs][topic htlc]. {% assign timestamp="1:42:17" %}
 
 - [Core Lightning #9592][] updates `xpay` (see [Newsletter #330][news330 xpay])
   to avoid a forwarding node for the remainder of a payment after it twice
@@ -330,7 +330,7 @@ repo], and [BINANAs][binana repo]._
   through the same node until the payment's retry time expired. Now, after the
   second failure from the same node, `xpay` excludes it through the payment's
   private `askrene` routing layer. This heuristic can exclude usable channels,
-  but limits repeated attempts through the same node.
+  but limits repeated attempts through the same node. {% assign timestamp="1:43:38" %}
 
 - [LDK #5089][] updates fee bumping during force closes of channels with
   [anchor outputs][topic anchor outputs]. If LDK cannot obtain the necessary
@@ -341,7 +341,7 @@ repo], and [BINANAs][binana repo]._
   sufficient for confirmation if the fee estimate was conservative or network
   demand falls. However, this fallback excludes [zero-fee commitment
   transactions][topic v3 commitments], which require a fee-paying child
-  transaction for relay. The issue was reported by Project Loupe.
+  transaction for relay. The issue was reported by Project Loupe. {% assign timestamp="1:46:30" %}
 
 - [LND #11456][] disables Multipath TCP (MPTCP) listeners by default to
   mitigate [CVE-2026-98432][mptcp advisory], a Linux kernel vulnerability for
@@ -352,7 +352,7 @@ repo], and [BINANAs][binana repo]._
   demonstrated exploit path through LND's listeners, but does not fix the
   underlying kernel bug. Affected systems still require a patched kernel.
   Operators using existing binaries can apply the same mitigation by restarting
-  LND with the environment variable `GODEBUG=multipathtcp=0`.
+  LND with the environment variable `GODEBUG=multipathtcp=0`. {% assign timestamp="1:49:31" %}
 
 - [LND #11357][] tightens [BOLT11][] invoice validation following [BOLTs
   #1357][] (see [Newsletter #428][news428 bolts11]). Instead of using the first
@@ -368,7 +368,7 @@ repo], and [BINANAs][binana repo]._
   to recovering the key from the signature. For invoices containing an explicit
   receiver public key, a low-S ECDSA signature is also required. However, this
   restriction does not apply when the public key is recovered from the
-  signature (see [Newsletter #381][news381 low-s]).
+  signature (see [Newsletter #381][news381 low-s]). {% assign timestamp="1:50:38" %}
 
 - [LND #11413][] speeds up the startup cleanup of stored outgoing payment
   results on nodes using SQLite or PostgreSQL. During normal operation, the
@@ -377,7 +377,7 @@ repo], and [BINANAs][binana repo]._
   Previously, reading and deleting entries individually required repeated
   database round trips, which could make cleanup take hours on a busy node
   using remote PostgreSQL. Now, cleanup batches database operations while
-  preserving the results needed to resume pending payments.
+  preserving the results needed to resume pending payments. {% assign timestamp="1:53:36" %}
 
 - [LND #11151][] adds checks for excessive commitment feerates and inadequate
   initial balances when accepting incoming channels. LND now rejects a proposed
@@ -388,7 +388,7 @@ repo], and [BINANAs][binana repo]._
   commitment fee, an excessive fee can consume their usable balance, wasting
   the receiver's pending-channel capacity during opening and leaving behind an
   unusable channel once the funding transaction is confirmed. This complements
-  the minimum feerate checks covered in [Newsletter #429][news429 lnd fees].
+  the minimum feerate checks covered in [Newsletter #429][news429 lnd fees]. {% assign timestamp="1:55:42" %}
 
 - [Rust Bitcoin #7067][] extends the [taproot][topic taproot] signature hash
   (sighash) helpers to accept an optional [annex][topic annex] and, for
@@ -402,7 +402,7 @@ repo], and [BINANAs][binana repo]._
   without an annex or an executed `OP_CODESEPARATOR` can pass `None` for the
   new arguments to retain the previous behavior. See [Newsletter #427][news427
   rust bitcoin] for related sighash API changes for legacy and segwit v0
-  spends.
+  spends. {% assign timestamp="1:58:00" %}
 
 {% include snippets/recap-ad.md when="2026-11-10 16:30" %}
 {% include references.md %}
