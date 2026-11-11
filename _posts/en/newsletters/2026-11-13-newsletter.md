@@ -17,6 +17,38 @@ software.
 
 ## News
 
+- **Draft BIPs for anti-exfil signing:** Connor Avila [posted][anti ex ml]
+  to the Bitcoin-Dev mailing list about a proposal to standardize
+  [exfiltration-resistant signing][topic exfiltration-resistant signing]
+  for hardware devices. Since the nonce is chosen by the signing device,
+  a compromised device may be able to leak its seed. The proposal introduces
+  the possibility for the host to contribute to the nonce generation, a
+  technique already used by several manufacturers but never standardized
+  (see [Newsletter #136][news136 anti ex]). This is not the first time
+  this topic has been discussed: Stepan Snigirev made a first proposal in 2020
+  to standardize exfiltration-resistant signing (see
+  [Newsletter #87][news87 anti ex]), Pieter Wuille provided an overview of
+  the different techniques available (see [Newsletter #88][news88 anti ex]),
+  Moonsettler proposed an anti-exfiltration protocol in 2024 (see
+  [Newsletter #317][news317 anti ex]), and the recently-merged [BIP461][]
+  provides a way to identify possible attempts to leak key material by a
+  signing device (see [Newsletter #424][news424 bip461]).
+
+  Avila's proposal comes with two draft BIPs. [The first one][anti ex bip]
+  covers anti-exfil signing for [schnorr][topic schnorr signatures] and
+  ECDSA signatures, defining a two-round protocol in which a host provides
+  its own randomness for nonce generation and checks that the signing device
+  has actually used it. [The second draft][anti ex psbt] adds three dedicated
+  per-input fields to [PSBTs][topic psbt] in order to run the anti-exfil protocol.
+  The proposal also comes with test vectors, a reference implementation in Python, and
+  a C module for libsecp256k1.
+
+  Avila noted that Sjors Provoost had already published an
+  [experimental draft][anti ex sjors] covering single-signer taproot key-path signing.
+  According to the author, Provoost plans to align his implementations with Avila's
+  specification. Finally, Avila requested feedback and reviews from other developers, since
+  his proposal had not received any audit on the cryptography.
+
 FIXME:bitschmidty
 
 ## Releases and release candidates
@@ -43,3 +75,13 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when="2026-11-17 16:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
+
+[anti ex ml]: https://groups.google.com/g/bitcoindev/c/cB37_jChkEI/m/3paRGQ_IBgAJ
+[news136 anti ex]: /en/newsletters/2021/02/17/#anti-exfiltration
+[anti ex bip]: https://github.com/AvilaLabs/anti-exfil/blob/main/spec/bip-anti-exfil.md
+[anti ex psbt]: https://github.com/AvilaLabs/anti-exfil/blob/main/spec/bip-anti-exfil-psbt.md
+[news87 anti ex]: /en/newsletters/2020/03/04/#proposal-to-standardize-an-exfiltration-resistant-nonce-protocol
+[news88 anti ex]: /en/newsletters/2020/03/11/#exfiltration-resistant-nonce-protocols
+[news317 anti ex]: /en/newsletters/2024/08/23/#simple-but-imperfect-anti-exfiltration-protocol
+[news424 bip461]: /en/newsletters/2026/09/25/#bips-2224
+[anti ex sjors]: https://github.com/Sjors/bips/pull/2/
