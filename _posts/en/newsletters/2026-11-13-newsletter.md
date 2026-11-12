@@ -89,6 +89,25 @@ software.
   28.3. All of the affected release series have now reached end of life, so
   anyone still running one should upgrade to a maintained release.
 
+- **Testnet5 genesis block to be mined:** Anthony Towns [posted][towns tn5]
+  to the Bitcoin-Dev mailing list a plan to mine the genesis block of
+  [testnet5][topic testnet], the proposed replacement for testnet4 specified
+  in [BIP95][] (see Newsletters [#409][news409 testnet5] and [#412][news412
+  bip95]). Mining is set to begin once mainnet reaches its next difficulty
+  adjustment at block 975,744, expected on November 13. The genesis block
+  will commit to a mainnet block hash at or after that height, so nobody can
+  mine testnet5 blocks in advance. Because testnet5's minimum difficulty is
+  about a million times higher than testnet4's (to prevent large numbers of
+  blocks from being mined quickly after launch, before difficulty adjusts),
+  mining the first blocks requires ASICs, and Towns [described][towns tn5
+  gist] a public pool that anyone can point hashrate at so that developers
+  have no head start.
+
+  After the genesis block is mined, its values will replace the placeholders in
+  BIP95. Towns noted that node software will still need testnet5 parameters and
+  BIP54 [consensus cleanup][topic consensus cleanup] logic, plus DNS seeds,
+  faucets, and explorers, before the network is ready for general use.
+
 FIXME:bitschmidty
 
 ## Releases and release candidates
@@ -132,3 +151,7 @@ FIXME:Gustavojfe
 [CVE-2025-62860]: https://bitcoincore.org/en/2026/11/10/disclose-cve-2025-62860/
 [CVE-2025-62859]: https://bitcoincore.org/en/2026/11/10/disclose-cve-2025-62859/
 [news375 truc]: /en/newsletters/2025/10/10/#bitcoin-core-33504
+[towns tn5]: https://groups.google.com/g/bitcoindev/c/DmFiHeo-xRw/m/YI3cpl5vAQAJ
+[towns tn5 gist]: https://gist.github.com/ajtowns/ebb148819c6028387271e6f0dce5e1da
+[news409 testnet5]: /en/newsletters/2026/06/12/#draft-bip-for-testnet5
+[news412 bip95]: /en/newsletters/2026/07/03/#bips-2196
