@@ -49,6 +49,46 @@ software.
   specification. Finally, Avila requested feedback and reviews from other developers, since
   his proposal had not received any audit on the cryptography.
 
+- **Disclosure of three vulnerabilities in Bitcoin Core:** Antoine Poinsot
+  [posted][poinsot adv ml] to the Bitcoin-Dev mailing list three Bitcoin Core
+  security advisories, one high-severity and two medium-severity, for
+  vulnerabilities that were fixed in Bitcoin Core 29.2 and 30.0. According to
+  the [disclosure policy][disc pol] (see [Newsletter #306][news306
+  disclosures]), medium and high severity vulnerabilities are disclosed two
+  weeks after the last affected release reaches end of life, which the 29.x
+  series did on October 27. The three disclosed vulnerabilities are the
+  following:
+
+  - [Block template creation halted by TRUC sibling eviction during reorg][CVE-2025-62861]:
+    This high-severity bug only affected nodes used for mining, leaving them
+    unable to create block templates after certain reorgs until they were
+    restarted. [TRUC][topic v3 transaction relay] sibling eviction still ran
+    when transactions from disconnected blocks re-entered the mempool, which
+    could evict a transaction while leaving its descendants behind. The bug
+    affected versions 28.0 through 29.1. It was [disclosed responsibly][topic
+    responsible disclosures] by Niklas Gögge in September 2025 and fixed by
+    Greg Sanders in [Bitcoin Core #33504][] (see [Newsletter #375][news375
+    truc]).
+
+  - [Inbound Tor connections wrongly receive `-whitelist` permissions][CVE-2025-62860]:
+    This medium-severity bug would lift DoS limits and privacy-leak mitigations
+    for every inbound [Tor][topic anonymity networks] peer on nodes whose
+    `-whitelist` range included the address of their Tor daemon, a
+    configuration used by thousands of reachable nodes. The bug was disclosed
+    responsibly by Martin Zumsande and Antoine Poinsot in September 2025 and
+    fixed by Zumsande in [Bitcoin Core #33395][].
+
+  - [Block processing stall via witness malleation][CVE-2025-62859]: This
+    medium-severity bug would allow a peer that was first to announce a
+    [compact block][topic compact block relay] to stall a node's processing of
+    that block for up to 10 minutes, and to repeat the stall indefinitely under
+    some conditions. The bug was disclosed responsibly by Eugene Siegel in
+    April 2025 and fixed by Greg Sanders in [Bitcoin Core #32646][].
+
+  Fixes for the first two vulnerabilities were also included in Bitcoin Core
+  28.3. All of the affected release series have now reached end of life, so
+  anyone still running one should upgrade to a maintained release.
+
 FIXME:bitschmidty
 
 ## Releases and release candidates
@@ -74,7 +114,7 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-11-17 16:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="33504,33395,32646" %}
 
 [anti ex ml]: https://groups.google.com/g/bitcoindev/c/cB37_jChkEI/m/3paRGQ_IBgAJ
 [news136 anti ex]: /en/newsletters/2021/02/17/#anti-exfiltration
@@ -85,3 +125,10 @@ FIXME:Gustavojfe
 [news317 anti ex]: /en/newsletters/2024/08/23/#simple-but-imperfect-anti-exfiltration-protocol
 [news424 bip461]: /en/newsletters/2026/09/25/#bips-2224
 [anti ex sjors]: https://github.com/Sjors/bips/pull/2/
+[poinsot adv ml]: https://groups.google.com/g/bitcoindev/c/tOLTRSOz87k/m/7eiOFoHIAQAJ
+[disc pol]: https://bitcoincore.org/en/security-advisories/
+[news306 disclosures]: /en/newsletters/2024/06/07/#upcoming-disclosure-of-vulnerabilities-affecting-old-versions-of-bitcoin-core
+[CVE-2025-62861]: https://bitcoincore.org/en/2026/11/10/disclose-cve-2025-62861/
+[CVE-2025-62860]: https://bitcoincore.org/en/2026/11/10/disclose-cve-2025-62860/
+[CVE-2025-62859]: https://bitcoincore.org/en/2026/11/10/disclose-cve-2025-62859/
+[news375 truc]: /en/newsletters/2025/10/10/#bitcoin-core-33504
