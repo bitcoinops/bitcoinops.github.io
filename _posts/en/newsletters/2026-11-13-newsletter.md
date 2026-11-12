@@ -108,7 +108,27 @@ software.
   BIP54 [consensus cleanup][topic consensus cleanup] logic, plus DNS seeds,
   faucets, and explorers, before the network is ready for general use.
 
-FIXME:bitschmidty
+- **Continued discussion of compact block reconstruction stats:** 0xB10C
+  [posted][b10c cb summary] to his Delving Bitcoin thread (see [Newsletter
+  #382][news382 cb]) an explanation for why [compact block relay][topic compact
+  block relay] performed poorly from mid-July to mid-October. In September, he
+  [reported][b10c cb sept] that his nodes could reconstruct only 1% to 5% of
+  blocks without requesting transactions and were requesting about 100 kB per
+  block. Gregory Sanders [found][sanders cb investigation] that nearly all of
+  the transactions his node was missing belonged to chains of rune mints, which
+  reached mining pools minutes before other nodes.
+
+  Investigations on the Bitcoin Network Operations Collective forum ([one][bnoc
+  fleet], [two][bnoc degradation]) traced the chains to someone minting tokens
+  as cheaply as possible. Each transaction was roughly 100 vbytes, had a
+  [pay-to-anchor (P2A)][topic ephemeral anchors] input and P2A and `OP_RETURN`
+  outputs, and paid about 10 sat in fees. Peers sent the chains directly to
+  nodes without announcing them, and other peers sent transactions that each
+  spent a P2A output from the middle of a chain, paying its whole value as
+  fees. Each of those [replaced][topic rbf] the rest of its chain in any
+  mempool that accepted it, and whether a node kept the chain or the
+  replacement depended partly on which arrived first. Mempools diverged from
+  what pools mined, so nodes had to request the missing transactions.
 
 ## Releases and release candidates
 
@@ -288,6 +308,12 @@ repo], and [BINANAs][binana repo]._
 [towns tn5 gist]: https://gist.github.com/ajtowns/ebb148819c6028387271e6f0dce5e1da
 [news409 testnet5]: /en/newsletters/2026/06/12/#draft-bip-for-testnet5
 [news412 bip95]: /en/newsletters/2026/07/03/#bips-2196
+[b10c cb summary]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/63
+[news382 cb]: /en/newsletters/2025/11/28/#stats-on-compact-block-reconstructions-updates
+[b10c cb sept]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/53
+[sanders cb investigation]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052/56
+[bnoc fleet]: https://bnoc.xyz/t/satoshi-31-0-0-peers-with-no-service-flags-and-protocol-70015-pushed-transactions-then-stopped-together-on-oct-18/193/
+[bnoc degradation]: https://bnoc.xyz/t/compact-block-reconstruction-degradation-between-september-october-2026/198/
 
 [LDK v0.3-rc4]: https://github.com/lightningdevkit/rust-lightning/tree/v0.3-rc4
 [ldk 0.3 notes]: https://github.com/lightningdevkit/rust-lightning/blob/v0.3-rc4/CHANGELOG.md
