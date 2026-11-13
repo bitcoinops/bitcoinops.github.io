@@ -284,7 +284,7 @@ repo], and [BINANAs][binana repo]._
   issue affects historical scans, including those used by Neutrino and by
   Bitcoin Core without a transaction index.
 
-{% include snippets/recap-ad.md when="2026-11-17 16:30" %}
+{% include snippets/recap-ad.md when="2026-11-17 17:30" %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="33504,33395,32646,36142,2251,2347,2342,9610,11492,11479,11340,11374,11480,11481,5507,5532" %}
 
