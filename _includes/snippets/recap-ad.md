@@ -45,8 +45,8 @@ na stránce našeho [podcastu][podcast].
 
 Pour plus de discussions sur les sujets mentionnés dans ce bulletin,
 rejoignez-nous pour le récapitulatif hebdomadaire Bitcoin Optech sur
-[Riverside.fm][] à {{recap_formatted_time_utc}} UTC le jeudi (le jour suivant la
-publication de la newsletter). La discussion est également enregistrée et sera
+[Riverside.fm][] à {{recap_formatted_time_utc}} UTC le mardi suivant la
+publication de la newsletter. La discussion est également enregistrée et sera
 disponible sur notre page de [podcasts][podcast].
 {% when "ja" %}
 
@@ -62,8 +62,8 @@ disponible sur notre page de [podcasts][podcast].
 ## 想了解更多？
 
 想了解更多本周报中提到的内容，请加入我们每周的比特币 Optech 回顾的
-[Riverside.fm][]，时间为每周四 {{recap_formatted_time_utc}} UTC（即周报发布后的
-一天）。讨论内容会被录制下来，也将在我们的[播客][podcast]页面上提供。
+[Riverside.fm][]，时间为周报发布后的周二 {{recap_formatted_time_utc}} UTC。
+讨论内容会被录制下来，也将在我们的[播客][podcast]页面上提供。
 
 {% else %}
 ## Want more?
