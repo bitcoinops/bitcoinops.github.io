@@ -223,6 +223,18 @@ optech_mentions:
   - title: "Project Loupe's LLM scan found an undo-file offset overflow in Bitcoin Core"
     url: /en/newsletters/2026/10/30/#bitcoin-core-36669
 
+  - title: "Niklas Gögge responsibly disclosed a Bitcoin Core bug halting block template creation after reorgs"
+    url: /en/newsletters/2026/11/13/#block-template-creation-halted-by-truc-sibling-eviction-during-reorg
+    date: 2025-09-26
+
+  - title: "Martin Zumsande and Antoine Poinsot responsibly disclosed a Bitcoin Core Tor permissions bug"
+    url: /en/newsletters/2026/11/13/#inbound-tor-connections-wrongly-receive-whitelist-permissions
+    date: 2025-09-12
+
+  - title: "Eugene Siegel responsibly disclosed a block processing stall vulnerability in Bitcoin Core"
+    url: /en/newsletters/2026/11/13/#block-processing-stall-via-witness-malleation
+    date: 2025-04-28
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

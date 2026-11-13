@@ -9,6 +9,7 @@ title: Testnet
 title-aliases:
   - Testnet3
   - Testnet4
+  - Testnet5
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -19,6 +20,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
   - title: BIP94
+  - title: BIP95
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -118,6 +120,12 @@ optech_mentions:
 
   - title: "BIPs #2196 adds BIP95, a draft specification for testnet5"
     url: /en/newsletters/2026/07/03/#bips-2196
+
+  - title: "Plan to mine the testnet5 genesis block using a public pool to prevent pre-mining"
+    url: /en/newsletters/2026/11/13/#testnet5-genesis-block-to-be-mined
+
+  - title: "BIPs #2347 updates BIP95 to make the testnet5 genesis block easier to mine with pool infrastructure"
+    url: /en/newsletters/2026/11/13/#bips-2347
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

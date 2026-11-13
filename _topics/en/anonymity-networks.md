@@ -121,6 +121,12 @@ optech_mentions:
   - title: "Hole punching coordinated through a node's own Tor service"
     url: /en/newsletters/2026/11/06/#continued-discussion-of-tcp-hole-punching-for-home-nodes
 
+  - title: "Disclosure of Bitcoin Core vulnerability giving inbound Tor connections whitelist permissions"
+    url: /en/newsletters/2026/11/13/#inbound-tor-connections-wrongly-receive-whitelist-permissions
+
+  - title: "Bitcoin Core #36142 fixes command injection through the Tor control endpoint"
+    url: /en/newsletters/2026/11/13/#bitcoin-core-36142
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion
