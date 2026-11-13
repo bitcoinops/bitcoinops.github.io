@@ -84,6 +84,12 @@ optech_mentions:
   - title: "Bitcoin Core #32606 ignores compact block messages from peers that haven't negotiated support"
     url: /en/newsletters/2026/07/10/#bitcoin-core-32606
 
+  - title: "Disclosure of Bitcoin Core vulnerability allowing compact block peers to stall block processing"
+    url: /en/newsletters/2026/11/13/#block-processing-stall-via-witness-malleation
+
+  - title: "Unannounced chains of P2A transactions and their replacements degraded compact block reconstruction"
+    url: /en/newsletters/2026/11/13/#continued-discussion-of-compact-block-reconstruction-stats
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

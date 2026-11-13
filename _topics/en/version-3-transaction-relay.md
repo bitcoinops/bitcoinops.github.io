@@ -116,6 +116,9 @@ optech_mentions:
   - title: "BOLTs #1228 specifies zero-fee channels requiring TRUC for commitment and HTLC transactions"
     url: /en/newsletters/2026/05/08/#bolts-1228
 
+  - title: "Disclosure of Bitcoin Core vulnerability where TRUC sibling eviction halted block template creation"
+    url: /en/newsletters/2026/11/13/#block-template-creation-halted-by-truc-sibling-eviction-during-reorg
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

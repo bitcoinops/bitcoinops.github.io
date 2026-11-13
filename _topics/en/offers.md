@@ -153,6 +153,9 @@ optech_mentions:
   - title: "LND #11146 adds validated encoders and decoders for BOLT12 offers, invoice requests, and invoices"
     url: /en/newsletters/2026/09/25/#lnd-11146
 
+  - title: "LND #11340 and #11374 add BOLT12 offer creation and invoice request handling"
+    url: /en/newsletters/2026/11/13/#lnd-11340
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

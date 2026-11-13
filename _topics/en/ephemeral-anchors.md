@@ -94,6 +94,9 @@ optech_mentions:
   - title: "BOLTs #1228 specifies zero-fee commitment channels using a shared P2A output for fee bumping"
     url: /en/newsletters/2026/05/08/#bolts-1228
 
+  - title: "Keyless P2A outputs let third parties replace chains of mint transactions, diverging mempools"
+    url: /en/newsletters/2026/11/13/#continued-discussion-of-compact-block-reconstruction-stats
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay

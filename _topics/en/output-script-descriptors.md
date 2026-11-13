@@ -242,6 +242,9 @@ optech_mentions:
   - title: "Draft BIP139 defines a JSON wallet metadata export format"
     url: /en/newsletters/2026/10/30/#bips-2130
 
+  - title: "BIPs #2251 adds BIP394 specifying the `rawtr()` output script descriptor"
+    url: /en/newsletters/2026/11/13/#bips-2251
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

@@ -42,6 +42,9 @@ optech_mentions:
   - title: "BIPs #2224 adds BIP461 deterministic ECDSA signing to detect nonce-based key exfiltration"
     url: /en/newsletters/2026/09/25/#bips-2224
 
+  - title: "Draft BIPs for anti-exfil signing with schnorr and ECDSA signatures"
+    url: /en/newsletters/2026/11/13/#draft-bips-for-anti-exfil-signing
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
