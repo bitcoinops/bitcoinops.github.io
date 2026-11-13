@@ -63,8 +63,8 @@ _请注意，下面提到的对 Bitcoin Core 的提交适用于其主开发分�
 [maredia post]: https://delvingbitcoin.org/t/lava-loans-trust-minimized-bitcoin-secured-loans/1112
 [lava loans]: https://github.com/lava-xyz/loans-paper/blob/960b91af83513f6a17d87904457e7a9e786b21e0/loans_v2.pdf
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
-[news99 multi]: /en/newsletters/2020/05/27/#bitcoin-core-18677
-[news147 multi]: /en/newsletters/2021/05/05/#bitcoin-core-19160
+[news99 multi]: /zh/newsletters/2020/05/27/#bitcoin-core-18677
+[news147 multi]: /zh/newsletters/2021/05/05/#bitcoin-core-19160
 [multiprocess project]: https://github.com/ryanofsky/bitcoin/blob/pr/ipc/doc/design/multiprocess.md
 [news301 seednode]: /zh/newsletters/2024/05/08/#bitcoin-core-28016
 [review club v28-rc-testing]: https://bitcoincore.reviews/v28-rc-testing

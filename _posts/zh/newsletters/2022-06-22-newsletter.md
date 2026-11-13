@@ -11,23 +11,23 @@ lang: zh
 
 ## 新闻
 
-- **<!--full-replace-by-fee-->完全交易费替换：** 已开启[两个][bitcoin core #25353] pull [requests][bitcoin core #25373] 以支持 Bitcoin Core 的完全交易费替换（[RBF][topic rbf]）这个默认关闭的选项。如果启用，该节点的内存池中的任何未确认交易都可以被该交易的替代版本所替换，该替代版本的交易会支付更高的费用（同时考虑其他规则）。
+- **<!--full-replace-by-fee-->****完全交易费替换：** 已开启[两个][bitcoin core #25353] pull [requests][bitcoin core #25373] 以支持 Bitcoin Core 的完全交易费替换（[RBF][topic rbf]）这个默认关闭的选项。如果启用，该节点的内存池中的任何未确认交易都可以被该交易的替代版本所替换，该替代版本的交易会支付更高的费用（同时考虑其他规则）。
 
   目前，Bitcoin Core 仅在要替换的交易版本启用了信号位时才允许 RBF，如 [BIP125][] 中所定义。这给多方合约协议带来了挑战，例如 LN 和 [DLCs][topic dlc]，其中一方有时可能会从交易中删除 BIP125 信号，以防止其他参与方使用交易替换。这可能会导致延迟，在最坏的情况下，可能会导致依赖及时确认的协议（例如 [HTLCs][topic htlc]）中的资金损失。
 
   [其中一个 PR][bitcoin core #25353] 很快得到了开发者的大力支持。因为它只添加了启用完全 RBF 的能力——但默认情况下不启用它——它不会改变 Bitcoin Core 当前的默认行为。从长远来看，一些开发人员可能会提倡默认启用完全 RBF，因此本周在 Bitcoin-Dev 邮件列表上[开始][rbf Discussion]了一个讨论主题贴，以给服务、应用程序和替代完整节点的开发人员一个机会来提出反对提供完整 RBF 选项的意见，并可能最终默认启用它。
 
-- **Hertzbleed：** 一个最近[披露][hertzbleed]的安全漏洞影响许多（可能是所有）主流的笔记本电脑、台式机和服务器 CPU 处理器。当这些私钥被用于为比特币交易创建签名（或执行其他类似的操作），该漏洞可能会使攻击者发现私钥。这种攻击值得注意的方面是它可能会影响签名生成代码，而这些代码原本专门被编写为始终使用相同类型和数量的 CPU 操作，以防止向攻击者泄露信息。
+- **<!--hertzbleed-->****Hertzbleed：** 一个最近[披露][hertzbleed]的安全漏洞影响许多（可能是所有）主流的笔记本电脑、台式机和服务器 CPU 处理器。当这些私钥被用于为比特币交易创建签名（或执行其他类似的操作），该漏洞可能会使攻击者发现私钥。这种攻击值得注意的方面是它可能会影响签名生成代码，而这些代码原本专门被编写为始终使用相同类型和数量的 CPU 操作，以防止向攻击者泄露信息。
 
   利用该漏洞需要攻击者测量 CPU 芯片的功耗或测量部分签名操作的持续时间。理想情况下，对于攻击者来说，他们将能够在用户使用相同的私钥创建许多签名时进行测量。因此，该漏洞更有可能影响常用的热钱包，例如托管服务和 LN 路由节点使用的热钱包，以及[地址重用][topic output linking]的情况。在安全环境中使用的大部分时间离线或完全离线的钱包将更能抵抗攻击。
 
   在撰写本文时，尚未完全清楚该漏洞对比特币用户的严重性。我们知道今天的许多钱包，包括几种流行的硬件签名设备，都在使用容易受到功率和时序分析的签名生成代码，因此对于这些用户来说，可能没法改变任何事情。对于有着更高安全规范的用户，开发人员可能会实施额外的保护措施。如果您对您使用的软件有任何疑问或疑虑，请通过适当的支持渠道（例如用于许多免费和开源软件比特币项目的 [Bitcoin Stack Exchange][]）联系其开发人员。
 
-- **<!--timestamping-design-->时间戳设计：** Bitcoin-Dev 邮件列表上关于基于比特币的 [Open Timestamps][]（OTS）系统设计的旷日持久的辩论似乎在本周有了[结论][poelstra timestamping]。争论的根源看起来是因为存在着两种不同的时间戳系统设计：
+- **<!--timestamping-design-->****时间戳设计：** Bitcoin-Dev 邮件列表上关于基于比特币的 [Open Timestamps][]（OTS）系统设计的旷日持久的辩论似乎在本周有了[结论][poelstra timestamping]。争论的根源看起来是因为存在着两种不同的时间戳系统设计：
 
-    - *加盖时间戳的存在证明（TSPoE）：*一个比特币交易承诺了一个哈希摘要，而该哈希摘要承诺了一个文档。当交易在区块中得到确认时，承诺的创建者可以向第三方证明该文件在新建此区块时存在。值得注意的是，每个时间戳交易可以完全独立于其他时间戳交易，这意味着可以多次为同一个文档加上时间戳，而时间戳之间没有联系。
+    - **<!--time-stamped-proofs-of-existence-tspoe-->***加盖时间戳的存在证明（TSPoE）：*一个比特币交易承诺了一个哈希摘要，而该哈希摘要承诺了一个文档。当交易在区块中得到确认时，承诺的创建者可以向第三方证明该文件在新建此区块时存在。值得注意的是，每个时间戳交易可以完全独立于其他时间戳交易，这意味着可以多次为同一个文档加上时间戳，而时间戳之间没有联系。
 
-    - *事件排序 (EO)：*一系列交易都以特定方式相互关联，每个交易都以允许系统中任何用户查看到所有承诺的方式提交了文档。对于在该系统下被加盖两次或多次时间戳的任何文档，都可以确定它第一次加盖时间戳的时间。
+    - **<!--event-ordering-eo-->***事件排序 (EO)：*一系列交易都以特定方式相互关联，每个交易都以允许系统中任何用户查看到所有承诺的方式提交了文档。对于在该系统下被加盖两次或多次时间戳的任何文档，都可以确定它第一次加盖时间戳的时间。
 
   TSPoE 系统借助 OTS 实现，本质上非常高效。它使用相同数量的全局存储空间为无限数量的文档添加时间戳，因为每个请求时间戳的人都会负责存储他们的时间戳证明。该系统还具有概念和实现都简单的优点。
 
@@ -35,7 +35,7 @@ lang: zh
 
   上文中的讨论并未引发任何系统已公布的修改或提案，例如： Open Timestamps 或交易赞助（讨论的原始主题，请参阅 [Newsletter #116][news116 Sponsorship]）。这似乎的确让一些讨论参与者感到意外，因为他们每个人都可能对“时间戳”所隐含的内容有不同的观念。
 
-- **新的 RIDDLE 防女巫攻击方法：** Adam “Waxwing” Gibson 在 Bitcoin-Dev 邮件列表[发布了][gibson riddle post]一个使用比特币 UTXO 集并可提供相当好的隐私的[防女巫攻击][sybil]的[提案][gibson riddle gist]。用户可以生成一个 UTXO 的列表，其中一个 UTXO 属于该用户，其余的属于其他用户。该用户之后创建一个签名。该签名可被证明是来自列表中的一个 UTXO 的所有者，但不知道是哪个所有者所创建的。
+- **<!--new-riddle-anti-sybil-method-->****新的 RIDDLE 防女巫攻击方法：** Adam “Waxwing” Gibson 在 Bitcoin-Dev 邮件列表[发布了][gibson riddle post]一个使用比特币 UTXO 集并可提供相当好的隐私的[防女巫攻击][sybil]的[提案][gibson riddle gist]。用户可以生成一个 UTXO 的列表，其中一个 UTXO 属于该用户，其余的属于其他用户。该用户之后创建一个签名。该签名可被证明是来自列表中的一个 UTXO 的所有者，但不知道是哪个所有者所创建的。
 
   一个恶意用户可以生成许多这样的证明，但在用尽可选的证明之前只能生成有限数量的证明，从而限制了他们过度消耗稀缺网络资源的能力。恶意用户也可以尽可能长时间地使用一个 UTXO，然后花费它来获得一个新的 UTXO，但这会产生交易费用。这种高成本也会阻止滥用。服务可以通过限制用户可选择的 UTXO 来进一步限制女巫攻击。例如，一项服务可能只接受价值 1 BTC 且一年未使用的 UTXO 的签名。
 
@@ -53,13 +53,13 @@ lang: zh
 
 *在这个月度专题中，我们重点介绍比特币钱包和服务的有意思的变更。*
 
-- **Zeus 添加了对 Taproot 的支持：**
+- **<!--zeus-adds-taproot-support-->****Zeus 添加了对 Taproot 的支持：**
   [Zeus v0.6.5-rc1][] 添加了对 LND v0.15+ 后端的 [taproot][topic taproot] 发送和接收的支持。
 
-- **Wasabi 钱包 2.0 发布：**
+- **<!--wasabi-wallet-2-0-released-->****Wasabi 钱包 2.0 发布：**
   这个[混币][topic coinjoin]软件的[发布][wasabi 2.0]实现了 [WabiSabi 协议][news194 wabisabi]以及其他改进。
 
-- **Sparrow 添加 Taproot 硬件签名：**
+- **<!--sparrow-adds-taproot-hardware-signing-->****Sparrow 添加 Taproot 硬件签名：**
   通过升级到 [HWI 2.1.0][]，Sparrow [1.6.4][sparrow 1.6.4] 添加了对某些硬件签名设备的 Taproot 签名支持。
 
 ## 软件的新版本和候选版本
@@ -89,7 +89,7 @@ lang: zh
 [bdk 0.19.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.19.0
 [rbf discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020557.html
 [hertzbleed]: https://www.hertzbleed.com/
-[news116 sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
+[news116 sponsorship]: /zh/newsletters/2020/09/23/#transaction-fee-sponsorship
 [poelstra timestamping]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020569.html
 [gibson riddle post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020555.html
 [gibson riddle gist]: https://gist.github.com/AdamISZ/51349418be08be22aa2b4b469e3be92f
@@ -99,6 +99,6 @@ lang: zh
 [zmnscpxj riddle]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003607.html
 [Zeus v0.6.5-rc1]: https://github.com/ZeusLN/zeus/releases/tag/v0.6.5-rc1
 [wasabi 2.0]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v2.0.0.0
-[news194 wabisabi]: /en/newsletters/2022/04/06/#wabisabi-alternative-to-payjoin
-[HWI 2.1.0]: /en/newsletters/2022/03/23/#hwi-2-1-0-rc-1
+[news194 wabisabi]: /zh/newsletters/2022/04/06/#wabisabi-alternative-to-payjoin
+[HWI 2.1.0]: /zh/newsletters/2022/03/23/#hwi-2-1-0-rc-1
 [sparrow 1.6.4]: https://github.com/sparrowwallet/sparrow/releases/tag/1.6.4

@@ -123,8 +123,8 @@ lang: zh
 [core lightning 22.11.1]: https://github.com/ElementsProject/lightning/releases/tag/v22.11.1
 [news224 fat]: /zh/newsletters/2022/11/02/#ln-routing-failure-attribution
 [law factory]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003782.html
-[news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
-[news189 evict]: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
+[news166 tluv]: /zh/newsletters/2021/09/15/#covenant-opcode-proposal
+[news189 evict]: /zh/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
 [law tp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003732.html
 [jager jam]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003781.html
 [circuitbreaker]: https://github.com/lightningequipment/circuitbreaker
@@ -133,10 +133,10 @@ lang: zh
 [news208 rbf]: /zh/newsletters/2022/07/13/#bitcoin-core-25353
 [tlv]: https://github.com/lightning/bolts/blob/master/01-messaging.md#type-length-value-format
 [483 pending htlcs]: https://github.com/lightning/bolts/blob/master/02-peer-protocol.md#rationale-7
-[news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
+[news188 phantom]: /zh/newsletters/2022/02/23/#ldk-1199
 [LDK phantom payments]: https://lightningdevkit.org/blog/introducing-phantom-node-payments/
-[news125 legacy descriptor wallets]: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
-[news74 policy miniscript]: /en/newsletters/2019/11/27/#what-is-the-difference-between-bitcoin-policy-language-and-miniscript
+[news125 legacy descriptor wallets]: /zh/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
+[news74 policy miniscript]: /zh/newsletters/2019/11/27/#what-is-the-difference-between-bitcoin-policy-language-and-miniscript
 [lily v1.2.0]: https://github.com/Lily-Technologies/lily-wallet/releases/tag/v1.2.0
 [vortex tweet]: https://twitter.com/benthecarman/status/1590886577940889600
 [vortex github]: https://github.com/ln-vortex/ln-vortex

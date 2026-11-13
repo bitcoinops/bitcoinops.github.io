@@ -132,7 +132,7 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和 [Bitcoin Inquis
 [poc lns]: https://github.com/instagibbs/lightning/tree/eltoo_support
 [cln hotfix]: /zh/newsletters/2024/01/03/#core-lightning-6957
 [review club 28956]: https://bitcoincore.reviews/28956
-[time dilation attack]: /en/newsletters/2020/06/10/#time-dilation-attacks-against-ln
+[time dilation attack]: /zh/newsletters/2020/06/10/#time-dilation-attacks-against-ln
 [se timestamp accecptance]: https://bitcoin.stackexchange.com/a/121251/97099
 [TestBlockValidity function]: https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/validation.cpp#L4228
 [CreateNewBlock function]: https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/node/miner.cpp#L106

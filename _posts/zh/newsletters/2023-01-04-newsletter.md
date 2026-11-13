@@ -71,7 +71,7 @@ lang: zh
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26265,21576,24865,23319,26628,2464,2482,2208,1738,1908,1467,1330,4411,25600" %}
-[news172 prevout]: /en/newsletters/2021/10/27/#bitcoin-core-22918
+[news172 prevout]: /zh/newsletters/2021/10/27/#bitcoin-core-22918
 [weight units]: https://en.bitcoin.it/wiki/Weight_units
 [towns bci]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021275.html
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin

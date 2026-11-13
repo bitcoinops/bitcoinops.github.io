@@ -144,5 +144,5 @@ lang: zh
 [poelstra lamport2]: https://gnusha.org/pi/bitcoindev/Zjo72iTDYjwwsXW3@camus/T/#m9c4d5836e54ed241c887bcbf3892f800b9659ee2
 [news300 secp]: /zh/newsletters/2024/05/01/#libsecp256k1-1058
 [news288 time]: /zh/newsletters/2024/02/07/#bitcoin-core-28956
-[news141 key hiding]: /en/newsletters/2021/03/24/#p2pkh-hides-keys
+[news141 key hiding]: /zh/newsletters/2021/03/24/#p2pkh-hides-keys
 [review club 30000]: https://bitcoincore.reviews/30000

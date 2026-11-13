@@ -94,7 +94,7 @@ lang: zh
 [memory dos from large `inv` messages]: https://bitcoincore.org/en/2024/07/03/disclose-inv-buffer-blowup/
 [memory dos using low-difficulty headers]: https://bitcoincore.org/en/2024/07/03/disclose-header-spam/
 [cpu-wasting dos due to malformed requests]: https://bitcoincore.org/en/2024/07/03/disclose-getdata-cpu/
-[news70 bip70]: /en/newsletters/2019/10/30/#bitcoin-core-17165
+[news70 bip70]: /zh/newsletters/2019/10/30/#bitcoin-core-17165
 [memory-related crash in attempts to parse BIP72 URIs]: https://bitcoincore.org/en/2024/07/03/disclose-bip70-crash/
 [cve-2020-14198]: https://nvd.nist.gov/vuln/detail/CVE-2020-14198
 [news306 disclosure]: /zh/newsletters/2024/06/07/#upcoming-disclosure-of-vulnerabilities-affecting-old-versions-of-bitcoin-core

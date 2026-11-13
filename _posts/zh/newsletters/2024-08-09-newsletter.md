@@ -136,8 +136,8 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs]
 [libsecp256k1 0.5.1]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.5.1
 [news274 cycle mitigate]: /zh/newsletters/2023/10/25/#ln
 [dark skippy]: https://darkskippy.com/
-[news87 anti-exfil]: /en/newsletters/2020/03/04/#proposal-to-standardize-an-exfiltration-resistant-nonce-protocol
-[news136 anti-exfil]: /en/newsletters/2021/02/17/#anti-exfiltration
+[news87 anti-exfil]: /zh/newsletters/2020/03/04/#proposal-to-standardize-an-exfiltration-resistant-nonce-protocol
+[news136 anti-exfil]: /zh/newsletters/2021/02/17/#anti-exfiltration
 [towns withholding]: https://mailing-list.bitcoindevs.xyz/bitcoindev/Zp%2FGADXa8J146Qqn@erisian.com.au/
 [0xb10c compact]: https://delvingbitcoin.org/t/stats-on-compact-block-reconstructions/1052
 [maxwell reconstruct]: https://github.com/bitcoin/bitcoin/pull/30493#issuecomment-2260918779

@@ -12,7 +12,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--continued-package-relay-bip-discussion-->关于交易包转发升级提议的持续讨论**：近期的一份关于[交易包转发][topic package relay] 的 BIP 草案（见[周报 #201][news201 relay]）在过去几周了收到了附加性的评论：
+- **<!--continued-package-relay-bip-discussion-->****关于交易包转发升级提议的持续讨论**：近期的一份关于[交易包转发][topic package relay] 的 BIP 草案（见[周报 #201][news201 relay]）在过去几周了收到了附加性的评论：
 
   - *<!--policy-limits-->用法局限性*：Anthony Towns [询问][towns relay] 支持交易包转发的两个对等节点间的沟通，是否应该说明各自支持的交易包体积上限和深度上限，不然使用非默认设定的节点将重复收到关于自己不想要的交易包的提醒，浪费带宽。该 BIP 的作者 Gloria Zhao [说明][zhao negotiation]：第一个版本的交易包转发协议应该会使用 25 笔交易和 101,000 vbyte 的体积限制。
 
@@ -24,7 +24,7 @@ lang: zh
 
   - *<!--challenges-of-a-block-hash-beacon-->区块哈希信标的挑战*：Daftuar 还指出，这套协议的一个特性可能会给其他软件制造麻烦。当前的 BIP 草案规定了节点在宣布交易包时需要附带本地区块链最新区块的哈希值。这使得接收的节点可以忽略掉很久以前的交易包（以及另一条链上的交易包），因为这些交易包跟接收节点当下的交易池可能没关系了。但是，Daftuar 指出，可能许多用来发送交易的软件 —— 也是最终可能用来发送交易包的软件 —— 并不跟踪当前区块链的最新区块哈希值。
 
-- **<!--summary-of-ln-developer-meeting-->闪电网络开发者会议的总结**：Olaoluwa Osuntokun 提供了一份关于上周奥克兰（Oakland）闪电网络开发者会议的[详细总结][osuntokun summary]。其中的主题包括：
+- **<!--summary-of-ln-developer-meeting-->****闪电网络开发者会议的总结**：Olaoluwa Osuntokun 提供了一份关于上周奥克兰（Oakland）闪电网络开发者会议的[详细总结][osuntokun summary]。其中的主题包括：
 
   - *<!--taprootbased-ln-channels-->基于 Taproot 的闪电网络通道*：参与者讨论了将闪电网络迁移到完全使用 [taproot][topic taproot] 特性的第一步。后续步骤有可能加入对 “[点时间锁合约（PTLC）][topic ptlc]” 的支持（见[周报 #164][news164 taproot ln]）。
 
@@ -50,7 +50,7 @@ lang: zh
 
   - *<!--lnurl-plus-bolt12-->闪电网络统一资源位置符加闪电网络技术基础十二*：闪电网络统一资源位置符（LNURL）协议允许一个节点向一个互联网服务器（webserver）请求一个 [BOLT11][] 发票；而 BOLT12 [要约][topic offers] 协议允许一个节点向网络中的另一个节点请求发票。围绕这些协议的其它侧面，参与者们讨论了这两个协议如何相互兼容，使得节点可以使用其中一个或同时使用两个。
 
-- **<!--using-routing-fees-to-signal-liquidity-->使用路由费来说明流动性**：开发者 ZmnSCPxj 在 Lightning-Dev 邮件组中[发帖][zmnscpxj hilolohi]，论证了最便宜和可靠的支付如何可以通过花费者和路由节点之间的博弈理论行为来实现：
+- **<!--using-routing-fees-to-signal-liquidity-->****使用路由费来说明流动性**：开发者 ZmnSCPxj 在 Lightning-Dev 邮件组中[发帖][zmnscpxj hilolohi]，论证了最便宜和可靠的支付如何可以通过花费者和路由节点之间的博弈理论行为来实现：
 
   - 花费者要选择路由费更少的路径。
 
@@ -81,7 +81,7 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="24171,1505,628,593" %}
 [lnd 0.15.0-beta.rc6]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.0-beta.rc6
-[news201 relay]: /en/newsletters/2022/05/25/#package-relay-proposal
+[news201 relay]: /zh/newsletters/2022/05/25/#package-relay-proposal
 [towns relay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020496.html
 [zhao negotiation]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020512.html
 [voskuil graph]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020518.html
@@ -89,12 +89,12 @@ lang: zh
 [zhao sids]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020539.html
 [daftuar repeat]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020542.html
 [osuntokun summary]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003600.html
-[news164 taproot ln]: /en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
-[news188 gossip]: /en/newsletters/2022/02/23/#updated-ln-gossip-proposal
-[news55 tlv]: /en/newsletters/2019/07/17/#bolts-607
-[news198 minisketch]: /en/newsletters/2022/05/04/#ln-gossip-rate-limiting
-[news190 onion]: /en/newsletters/2022/03/09/#paying-for-onion-messages
-[news85 blinded]: /en/newsletters/2020/02/19/#decoy-nodes-and-lightweight-rendez-vous-routing
+[news164 taproot ln]: /zh/newsletters/2021/09/01/#准备-taproot-11使用-taproot-的闪电网络
+[news188 gossip]: /zh/newsletters/2022/02/23/#updated-ln-gossip-proposal
+[news55 tlv]: /zh/newsletters/2019/07/17/#bolts-607
+[news198 minisketch]: /zh/newsletters/2022/05/04/#ln-gossip-rate-limiting
+[news190 onion]: /zh/newsletters/2022/03/09/#paying-for-onion-messages
+[news85 blinded]: /zh/newsletters/2020/02/19/#decoy-nodes-and-lightweight-rendez-vous-routing
 [lnurl]: https://github.com/fiatjaf/lnurl-rfc
-[news171 ln offline]: /en/newsletters/2021/10/20/#paying-offline-ln-nodes
+[news171 ln offline]: /zh/newsletters/2021/10/20/#paying-offline-ln-nodes
 [zmnscpxj hilolohi]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003598.html
