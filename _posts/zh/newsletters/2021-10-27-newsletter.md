@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周周报包含常规栏目：比特币 Stack Exchange 精选问答摘要、Taproot 激活准备指南、新版本与候选版本列表，以及主流比特币基础设施项目的显著变更说明。
+本期 Newsletter 包含常规栏目：Bitcoin Stack Exchange 精选问答摘要、taproot 激活准备信息、新版本与候选发布列表，以及主流比特币基础设施项目的值得注意的变更说明。
 
 ## 新闻
 
@@ -15,60 +15,64 @@ lang: zh
 
 ## Bitcoin Stack Exchange 精选问答
 
-*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻求答案的首选之地——亦是我们抽空解答用户疑问的去处。本栏目每月精选自上次更新以来获票最高的问题与答案。*
+*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选去处之一，也是我们有点空闲时帮助好奇或困惑用户的地方。在本月栏目中，我们精选自上次更新以来得票最高的一些问题和回答。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- ​**<!--where-to-find-the-exact-number-of-hashes-required-to-mine-most-recent-block-->**[如何获取最新区块的精确哈希计算次数？]({{bse}}110330)
-  Pieter Wuille 指出，虽然区块的实际哈希尝试次数未公开，但使用难度值乘以 4,295,032,833 的公式可估算预期哈希次数。
+- **<!--where-to-find-the-exact-number-of-hashes-required-to-mine-most-recent-block-->**[如何获取挖出最新区块所需的精确哈希次数？]({{bse}}110330)
+  Pieter Wuille 指出，虽然一个区块尝试了多少次哈希并不会公开，但用 4,295,032,833 乘以该区块的[难度值][wiki difficulty]，就能简单地估算出解决一个区块所需的预期哈希次数。
 
-- ​**<!--using-a-2-of-3-taproot-keypath-with-schnorr-signatures-->**[如何在 Taproot 密钥路径中使用 2/3 Schnorr 多签？]({{bse}}110249)
-  Pieter Wuille 提到，尽管 [BIP340][] 要求单密钥单签名，但仍可使用 [FROST][frost whitepaper] 等[阈值签名][topic threshold signature]方案或 [MuSig][topic musig] 等[多签][topic multisignature]方案。
+- **<!--using-a-2-of-3-taproot-keypath-with-schnorr-signatures-->**[在 taproot 密钥路径中使用 2-of-3 的 schnorr 签名？]({{bse}}110249)
+  Pieter Wuille 提到，尽管 [BIP340][] 要求 1 个密钥和 1 个签名，但仍可使用 [FROST][frost whitepaper] 等[阈值签名][topic threshold signature]方案、[MuSig][topic musig] 等[多重签名][topic multisignature]方案，以及其他方案。
 
-- ​**<!--why-coinbase-maturity-is-defined-to-be-100-and-not-50-->**[为何 coinbase 成熟度设定为 100 而非 50？]({{bse}}110085)
-  用户 liorko 询问比特币 [coinbase 成熟度][se coinbase maturity]设定为 100 的原因。答案指出该选择可能具有未解释的任意性。
+- **<!--why-coinbase-maturity-is-defined-to-be-100-and-not-50-->**[为何 coinbase 成熟度设定为 100 而非 50？]({{bse}}110085)
+  用户 liorko 询问，比特币的 [coinbase 成熟度][se coinbase maturity]期限为什么选择常数 100 而不是 50。回答指出，这一选择没有给出解释，而且可能是随意的。
 
-- ​**<!--why-does-bitcoin-use-double-hashing-so-often-->**[为何比特币频繁使用双重哈希？]({{bse}}110065)
-  Pieter Wuille 列举了比特币初期采用 SHA256 双重哈希与 SHA256+RIPEMD160 组合的场景，推测中本聪可能误用这些方案以防御特定攻击。
+- **<!--why-does-bitcoin-use-double-hashing-so-often-->**[为何比特币频繁使用双重哈希？]({{bse}}110065)
+  Pieter Wuille 列举了比特币最初在哪里使用双重 SHA256 与 SHA256+RIPEMD160 两种双重哈希方案，指出哪些新特性沿用了同样的方案，并推测中本聪当初是误用这些双重哈希方案来缓解某些攻击。
 
-## 准备 Taproot #19：未来的共识变化
+## 准备 Taproot #19：未来的共识变更
 
-*每周[系列][series preparing for taproot]，介绍开发者和服务提供商如何为即将在区块高度 {{site.trb}} 激活的 taproot 做准备。*
+*本[系列][series preparing for taproot]每周一篇，讨论开发者和服务提供商如何为 taproot 即将在区块高度 {{site.trb}} 激活做好准备。*
 
 {% include specials/taproot/zh/19-future.md %}
 
 ## 发布与候选发布
 
-*热门比特币基础设施项目的新版本与候选版本。请考虑升级或协助测试候选版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
 - [Rust-Lightning 0.0.102][] 发布，包含多项 API 改进并修复了与 LND 节点建立通道的缺陷。
 
-- [C-Lightning 0.10.2rc1][] 候选版本[包含][decker tweet] [不经济输出安全漏洞][news170 unec bug]修复、数据库体积优化及 `pay` 命令效率提升（详见下文*显著变更*）。
+- [C-Lightning 0.10.2rc1][] 是候选发布，[包含][decker tweet] [不经济输出安全问题][news170 unec bug]的修复、更小的数据库体积，以及 `pay` 命令有效性的提升（详见下文*值得注意的变更*）。
 
-## 值得注意的代码和文档变更
+## 值得注意的代码与文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案 (BIPs)][bips repo]和[闪电网络规范（BOLTs）][bolts repo]的显著变更。*
+*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo]的值得注意的变更。*
 
-- [Bitcoin Core #23002][] 将[描述符][topic descriptors]钱包设为新建钱包的默认类型。描述符钱包首次引入于 [Bitcoin Core PR #16528][optech pr16528]，长期计划将[迁移所有钱包][Bitcoin Core #20160]并逐步弃用传统钱包。
+- [Bitcoin Core #23002][] 在创建新钱包时把[输出脚本描述符（descriptor）][topic descriptors]钱包设为默认。基于描述符的钱包最早在 [Bitcoin Core PR #16528][optech pr16528] 中引入。目前有一项[长期计划][Bitcoin Core #20160]，要把所有钱包都迁移为基于描述符的形式，并最终停止支持传统钱包。
 
-- [Bitcoin Core #22918][] 扩展 `getblock` RPC 和 `/rest/block/` 端点，新增详细级别 `3`，包含区块中每个已花费输出的完整信息（"prevout"）。该功能通过解析撤销文件快速获取历史输出数据，但启用修剪的节点无法查询旧区块的此类信息。
+- [Bitcoin Core #22918][] 扩展 `getblock` RPC 和 `/rest/block/` 端点，新增详细级别 `3`，其中包含区块内每一笔被花费的、先前创建的输出（“prevout”）的信息。
 
-- [C-Lightning #4771][] 优化 `pay` 命令，优先选择通道容量大的路径（假设通道状态概率均等时，大容量通道更可能承载大额支付）。
+  当一个区块创建新的未花费交易输出（UTXO）时，Bitcoin Core 会把它存入数据库。之后有交易试图花费该 UTXO 时，Bitcoin Core 会从数据库中取回它，并验证这次花费满足所有必需条件（例如为正确的公钥提供了有效签名）。如果区块中的每一笔花费都有效，Bitcoin Core 就会把这些 prevout 条目从 UTXO 数据库移入一个 *undo* 文件；若该区块日后在重组中被移出链，可以用这个文件把 UTXO 数据库恢复到先前的状态。
 
-- [C-Lightning #4685][] 基于 [BOLTs #891][] 草案规范新增实验性 [websocket][] 传输层，允许节点通过替代端口进行对等通信（底层协议不变，仅改用二进制 websocket 帧）。
+  这个 PR 会从 undo 文件中取回这些 prevout，并把它们纳入实际包含在区块中、或由区块内容计算得出的信息。对于需要 prevout 数据的用户和应用来说，这比直接查找每一笔先前交易及其输出要快得多，也方便得多。启用了修剪的完整节点会删除较旧的 undo 文件，因此对这些区块将无法使用新的详细级别 3。
 
-- [Eclair #1969][] 扩展 `findroute*` API，新增 `ignoreNodeIDs`、`ignoreChannelIDs`、`maxFeeMsat` 参数，并支持返回完整路由信息的 `full` 格式。
+- [C-Lightning #4771][] 更新 `pay` 命令，在其他条件相同时，优先选择包含资金总额较大（通道容量较大）通道的路径。通道中的资金总额是公开信息；不公开的是通道每个方向各有多少可用资金。不过，如果两条通道处于任意状态的概率[相同][prob path]，那么容量较大的通道比容量较小的通道更有可能处理得了该笔支付的金额。
 
-- [LND #5709][]（原 [#5549][lnd #5549]）为支持 Lightning Pool 的节点（目前仅 LND）新增承诺交易格式，防止通道出租方在租期内链上动用资金，激励其保持通道开放以赚取路由费（仅影响直接对等节点）。
+- [C-Lightning #4685][] 基于 [BOLTs #891][] 中的草案规范，新增了一种实验性的 [websocket][] 传输方式。这让 C-Lightning（以及其他支持同一协议的 LN 实现）可以公布一个用于与对等节点通信的替代端口。底层的 LN 通信协议保持不变，只是改用二进制 websocket 帧而不是纯 TCP/IP 来传输。
 
-- [LND #5346][] 支持节点间交换自定义消息（类型标识符高于 32,757），并更新 `lncli` 命令简化收发操作。
+- [Eclair #1969][] 为 `findroute*` 这组 API 调用新增了若干参数：`ignoreNodeIDs`、`ignoreChannelIDs` 和 `maxFeeMsat`。它还新增了 `full` 格式，用于返回关于所找到路由的全部已知信息。
 
-- [LND #5689][] 允许 LND 节点将私钥操作委托至远程离线「签名器」节点，[详细文档][lnd remote signing]已发布。
+- [LND #5709][]（原为 [#5549][lnd #5549]）新增一种承诺交易格式，供支持 Lightning Pool 的节点之间使用（参见 [Newsletter #123][news123 pool]），而目前这类节点只有 LND。新格式会阻止出租通道的节点在租期结束前在链上动用其资金。这就激励它们在租期内保持通道开放，以便用自己的资金（流动性）赚取路由费。通道打开期间，承诺交易的格式只有通道的两个直接对等节点看得到，因此无论采用哪种格式，都不会影响网络上的其他节点。
 
-- [BTCPay Server #2517][] 新增通过闪电网络发放付款或退款功能，管理员可输入金额，接收方提供节点信息即可收款。
+- [LND #5346][] 支持 LND 节点与其对等节点交换自定义消息——即类型标识符高于 32,767 的消息。PR 中给出了若干自定义消息的用途建议。`lncli` 命令也做了更新，以简化发送和监听对等节点自定义消息的操作。
 
-- [HWI #497][] 为 Trezor 设备提供额外信息验证多签联盟的找零地址，避免用户手动校验。
+- [LND #5689][] 允许 LND 节点把所有私钥操作委托给一个远程的、大部分时间离线的“签名器”节点。详细文档见[此处][lnd remote signing]。
+
+- [BTCPay Server #2517][] 新增通过闪电网络发放付款或退款的功能。管理员可以输入要支付的金额，接收方随后填入自己的节点信息，就能收到这笔付款。
+
+- [HWI #497][] 向使用 Trezor 固件的设备发送额外信息，使其能够验证某个找零地址属于某个多重签名联盟。否则 Trezor 会把找零显示为一笔单独的支付，需要用户手动核对自己的找零地址是否正确。
 
 
 {% include references.md %}

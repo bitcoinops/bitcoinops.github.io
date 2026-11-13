@@ -7,55 +7,55 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 描述了关于选择 Taproot 软分叉激活参数讨论的结果，并包括我们定期的部分，内容涵盖来自 Bitcoin Stack Exchange 的精选问答、发布与候选发布，以及对流行比特币基础设施软件中值得注意的更改。
+本周的 Newsletter 介绍了关于 taproot 软分叉激活参数选择的讨论结果，并包含我们的固定栏目：Bitcoin Stack Exchange 精选问答、发布与候选发布，以及热门比特币基础设施软件的值得注意的变更。
 
 ## 新闻
 
-- **<!--taproot-activation-discussion-->****Taproot 激活讨论：** Michael Folkson [总结][folkson lot]了关于 [taproot][topic taproot] 激活参数的第二次会议，得出结论“对于 LOT=true 或 LOT=false 并未达成压倒性的共识”，LockinOnTimeout (LOT) 参数来自 [BIP8][]，决定节点是否需要强制信号以激活该分叉。然而，对于其他激活参数几乎达成了一致意见，最显著的是将需要信号以激活分叉的哈希率从 95% 减少到 90%。
+- **<!--taproot-activation-discussion-->****Taproot 激活讨论：** Michael Folkson [总结][folkson lot]了关于 [taproot][topic taproot] 激活参数的第二次会议，结论是“对 LOT=true 和 LOT=false 都没有形成压倒性共识”。LOT 即 [BIP8][] 中的 LockinOnTimeout 参数，决定节点是否强制要求表态支持激活该分叉。不过，对其他激活参数几乎达成了一致，其中最显著的一点是把激活分叉所需表态的算力（哈希率）比例从 95% 降低到 90%。
 
-  讨论继续在邮件列表上进行，主要围绕鼓励用户自行选择选项的影响，无论是通过命令行选项还是通过选择使用哪个软件版本。截至撰写本文时，尚未达成明确的协议，似乎也没有广泛支持的路径来激活 taproot——尽管 taproot 本身似乎几乎完全被期望。
+  邮件列表上围绕 LOT 参数的讨论仍在继续，主要涉及鼓励用户自行选择该选项会带来什么影响——无论是通过命令行选项，还是通过选择使用哪个软件版本。截至本文撰写时，尚未达成明确共识，似乎也没有一条获得广泛支持的推进路径来激活 taproot——尽管 taproot 本身几乎已是众望所归。
 
 ## Bitcoin Stack Exchange 精选问答
 
-*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选地点之一——或者当我们有一些闲暇时间帮助好奇或困惑的用户时。在这个月度特辑中，我们重点介绍了一些自上次更新以来获得最高票的问题和答案。*
+*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选去处之一，也是我们有点空闲时帮助好奇或困惑用户的地方。在本月栏目中，我们精选自上次更新以来得票最高的一些问题和回答。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- **<!--is-sharding-a-good-alternative-to-multisig-->**[Sharding 是否是 multisig 的一个好替代方案？]({{bse}}102007)
-  用户 S.O.S 询问像 Shamir 的秘密共享 (SSS) 这样的分片方案实现 multisig 类似功能的可行性。Pieter Wuille 指出了 `OP_CHECKMULTISIG` 相较于 SSS 的优势（可追溯性，无需在一台机器上重建秘密密钥），SSS 相较于 `OP_CHECKMULTISIG` 的优势（更低的费用、更高的隐私），以及 [schnorr 签名][topic schnorr signatures]的考虑因素（缺乏可追溯性，无需在一台机器上重建秘密密钥，更低的费用、更高的隐私，额外的复杂性）。
+- **<!--is-sharding-a-good-alternative-to-multisig-->**[分片（sharding）是多重签名的一个好替代方案吗？]({{bse}}102007)
+  用户 S.O.S 询问像沙米尔秘密共享（Shamir's Secret Sharing，SSS）这样的分片方案能否实现类似多重签名的功能。Pieter Wuille 指出了 `OP_CHECKMULTISIG` 相较于 SSS 的优势（可追责、无需在一台机器上重建私钥），SSS 相较于 `OP_CHECKMULTISIG` 的优势（手续费更低、隐私更好），以及 [schnorr 签名][topic schnorr signatures]需要考虑的因素（无法追责、无需在一台机器上重建私钥、手续费更低、隐私更好，但复杂性更高）。
 
-- **<!--can-a-channel-be-closed-while-the-funding-tx-is-still-stuck-in-the-mempool-->**[在资金交易仍卡在 mempool 中时，通道是否可以关闭？]({{bse}}102180)
-  在尝试打开 LN 通道但设置资金交易的 feerate 过低后，PyrolitePancake 询问在资金交易仍在 mempool 中时关闭通道的问题。虽然一种选择是通过等待确认并可能重新广播交易来继续打开通道，Rene Pickhardt 指出双重花费资金交易的输入将使其从 mempool 中移除。cdecker 为 C-lightning 提供了一些示例命令，用于重新广播资金交易或创建双重花费。
+- **<!--can-a-channel-be-closed-while-the-funding-tx-is-still-stuck-in-the-mempool-->**[在注资交易仍卡在内存池中时，通道能否关闭？]({{bse}}102180)
+  在尝试打开 LN 通道、却把注资交易的费率（feerate）设得过低之后，PyrolitePancake 询问在注资交易仍留在内存池中时关闭通道的问题。一种选择是等待确认并可能重新广播交易，从而继续打开通道；Rene Pickhardt 则指出，双重花费注资交易的输入会让它从内存池中被剔除。cdecker 为 C-lightning 提供了一些示例命令，用于重新广播注资交易或构造双重花费。
 
-- **<!--with-peerblockfilters-1-hundreds-of-btcwire-0-5-0-neutrino-connections-are-downloading-tb-from-my-bitcoin-node-->**[启用 peerblockfilters=1 后，数百个“btcwire 0.5.0/neutrino”连接正在从我的比特币节点下载 TB]({{bse}}102263)
-  在启用[致密区块过滤器][topic compact block filters]的 Bitcoin Core 0.21.0 运行时，qertoip 注意到大量连接（75%）和带宽使用（90%）来自 `btcwire 0.5.0/neutrino` 用户代理。Murch 指出这些对等方是 LND 节点，并且由于致密区块过滤器既是 Bitcoin Core 的[新功能][news132 0.21.0]，也是[默认情况下禁用的][news98 18877]，目前网络上可能缺乏支持致密区块过滤器的对等方，导致支持过滤器的节点流量较高。
+- **<!--with-peerblockfilters-1-hundreds-of-btcwire-0-5-0-neutrino-connections-are-downloading-tb-from-my-bitcoin-node-->**[启用 peerblockfilters=1 后，数百个“btcwire 0.5.0/neutrino”连接正在从我的 Bitcoin 节点下载数 TB 数据]({{bse}}102263)
+  在启用[紧凑区块过滤器][topic compact block filters]的情况下运行 Bitcoin Core 0.21.0 时，qertoip 注意到有大量连接（75%）和带宽占用（90%）来自 `btcwire 0.5.0/neutrino` 用户代理。Murch 指出，这些对等节点是 LND 节点；由于紧凑区块过滤器既是 Bitcoin Core 的[一项新功能][news132 0.21.0]，又[默认处于禁用状态][news98 18877]，目前网络上提供紧凑区块过滤器服务的对等节点可能偏少，导致支持这些过滤器的节点流量偏高。
 
 - **<!--is-there-dumpwallet-output-documentation-explanation-->**[是否有 `dumpwallet` 输出的文档和解释？]({{bse}}101767)
-  Andrew Chow 利用这个回答机会，提供了 `dumpwallet` RPC 输出的额外文档和解释。
+  Andrew Chow 借这个回答的机会，补充了 `dumpwallet` RPC 输出的文档和解释。
 
-- **<!--is-there-something-about-bitcoin-that-prevents-implementing-the-same-privacy-protocols-of-monero-and-zcash-->**[比特币是否有某些限制，防止实现与 Monero 和 Zcash 相同的隐私协议？]({{bse}}101868)
-  Pieter Wuille 列出了开发者可能不选择开发，以及生态系统可能不选择支持 Monero 或 Zcash 所采取的隐私方法的一些挑战。考虑因素包括“选择加入”方法的缺点，引入新的密码学安全假设，可扩展性问题，以及供应审计性的问题。
+- **<!--is-there-something-about-bitcoin-that-prevents-implementing-the-same-privacy-protocols-of-monero-and-zcash-->**[比特币是否有某些限制，使得无法实现与 Monero 和 Zcash 相同的隐私协议？]({{bse}}101868)
+  Pieter Wuille 列举了一些原因，说明开发者为何可能不愿投入、生态系统为何可能不愿支持 Monero 或 Zcash 所采用的隐私方案。考虑因素包括“自愿启用”方式的缺点、引入新的密码学安全假设、可扩展性问题，以及供应量的可审计性问题。
 
 ## 发布与候选发布
 
-*流行比特币基础设施项目的新发布和候选发布。请考虑升级到新版本或帮助测试候选发布。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [LND 0.12.1-beta][LND 0.12.1-beta] 是 LND 的最新维护版本。它修复了一个可能导致意外通道关闭的边缘情况和一个可能导致某些支付不必要失败的错误，以及一些其他的小改进和错误修复。
+- [LND 0.12.1-beta][LND 0.12.1-beta] 是 LND 最新的维护版本。它修复了一个可能导致通道意外关闭的边缘情况，以及一个可能让某些支付无谓失败的 bug，此外还有一些小改进和错误修复。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo]中的值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo]中值得注意的变更。*
 
-- [Bitcoin Core #19136][] 扩展了 `getaddressinfo` RPC，增加了一个新的 `parent_desc` 字段，包含钱包中地址的公钥的 [output script descriptor][topic descriptors]。钱包的 [BIP32][] 路径将移除所有硬化前缀，仅保留公共派生步骤，允许描述符被导入到其他钱包软件中，这些软件可以监控接收到该地址及其同级地址的比特币。
+- [Bitcoin Core #19136][] 为 `getaddressinfo` RPC 新增了 `parent_desc` 字段，其中包含一个[输出脚本描述符][topic descriptors]，对应包含该地址公钥的钱包。该钱包的 [BIP32][] 路径会被去掉所有硬化前缀，只保留公开派生步骤，这样描述符就能导入其他钱包软件，让它们监控发往该地址及其兄弟地址的比特币。
 
-- [Bitcoin Core #15946][] 使得可以同时使用配置选项 `prune` 和 `blockfilterindex` 来在修剪节点上维护[致密区块过滤器][topic compact block filters]（如果使用了 `peerblockfilters` 配置选项，也会为其提供服务）。一位 LND 开发者[指出][osuntokun request]这将对他们的软件有益，并且它还可以允许未来的更新，允许钱包逻辑使用区块过滤器来确定修剪节点需要重新下载哪些历史区块以导入钱包。
+- [Bitcoin Core #15946][] 使得可以同时使用 `prune` 和 `blockfilterindex` 两个配置选项，在修剪节点上维护[紧凑区块过滤器][topic compact block filters]（若启用了 `peerblockfilters` 配置选项，还会对外提供这些过滤器）。一位 LND 开发者[指出][osuntokun request]这对他们的软件会有帮助；此外，未来的更新还可能让钱包逻辑利用区块过滤器，判断修剪节点需要重新下载哪些历史区块才能导入钱包。
 
-- [Eclair #1693][] 和 [Rust-Lightning #797][] 更改了节点地址公告的处理方式。当前的 [BOLT7][] 规范要求对公告中的地址进行排序，然而一些实现并未使用或强制执行此规则。Eclair 更新了他们的实现以开始排序，Rust-Lightning 更新了他们的实现以停止要求排序。一个 [PR][bolts #842] 正在开放以更新规范，但关于应做何种更改仍在讨论中。
+- [Eclair #1693][] 和 [Rust-Lightning #797][] 更改了节点地址公告的处理方式。当前的 [BOLT7][] 规范要求对公告内的地址排序，但一些实现并未使用或强制执行这条规则。Eclair 更新了自己的实现，开始进行排序；Rust-Lightning 则更新了自己的实现，不再要求排序。有一个 [PR][bolts #842] 已提交以更新规范，但究竟应做何种更改仍在讨论中。
 
-- [HWI #454][] 更新了 `displayaddress` 命令，增加了在 BitBox02 设备上注册 multisig 地址的支持。
+- [HWI #454][] 更新了 `displayaddress` 命令，增加了在 BitBox02 设备上注册多重签名地址的支持。
 
-- [BIPs #1052][] 将 [BIP338][] 分配给在比特币 P2P 协议中添加 `disabletx` 消息的提案。发送此消息的节点在连接建立期间向其对等方发出信号，表示它将永远不会在该连接上请求或公告交易。正如在 [Newsletter #131][news131 disabletx] 中描述的，这允许对等方为禁用中继连接使用不同的限制，例如接受超过当前 125 个连接最大值的额外连接。另见 1 月 12 日 P2P 开发者会议的[讨论总结][2021-01-12 p2p summary]。
+- [BIPs #1052][] 把 [BIP338][] 这个编号分配给了在比特币 P2P 协议中添加 `disabletx` 消息的提案。节点在建立连接期间发送该消息，即向对等节点表明：它永远不会在这条连接上请求或公告交易。正如 [Newsletter #131][news131 disabletx] 中所述，这允许对等节点对禁用了交易中继的连接采用不同的限制，例如接受超过当前 125 个连接上限的额外连接。另见 1 月 12 日 P2P 开发者会议的[讨论总结][2021-01-12 p2p summary]。
 
 {% include references.md %}
 {% include linkers/issues.md issues="1052,454,19136,15946,1693,797,842,798" %}

@@ -7,46 +7,49 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周 Newsletter 总结了关于在 Bitcoin 中允许量子安全密钥交换的讨论，并包含我们常规的版块，介绍服务和客户端软件的值得注意的更改、发布与候选发布以及流行的比特币基础设施软件。
+本周 Newsletter 总结了关于在 Bitcoin 中允许量子安全密钥交换的讨论，并包含我们常规的栏目，介绍服务和客户端软件、发布与候选发布以及热门比特币基础设施软件中值得注意的变更。
 
 ## 新闻
 
-- **<!--quantum-safe-key-exchange-->****量子安全密钥交换：** Erik Aronesty 在 Bitcoin-Dev 邮件列表上发起了关于[量子抗性][topic quantum resistance]——当出现快速量子计算机（QC）时保持 Bitcoin 安全——的[讨论线程][aronesty qc]。预测认为，快速 QC 能够在不知道原始私钥的情况下生成与比特币公钥对应的签名，使得拥有快速 QC 的人可以花费属于他人的比特币。很少有安全研究人员认为快速 QC 是短期威胁，但如果有任何方法能够在不显著干扰现有 Bitcoin 用途的情况下消除这一隐患，那么就值得被考虑。
+- **<!--quantum-safe-key-exchange-->****量子安全密钥交换：** Erik Aronesty 在 Bitcoin-Dev 邮件列表上发起了关于[量子抗性][topic quantum resistance]——即在快速量子计算机（QC）被研发出来的情况下仍保持 Bitcoin 安全——的[讨论帖][aronesty qc]。据预测，快速 QC 能够在不知道原始私钥的情况下生成与比特币公钥对应的签名，使得拥有快速 QC 的人可以花掉属于他人的钱。很少有安全研究人员认为快速 QC 是短期威胁，但任何能在不显著影响 Bitcoin 现有用途的前提下消除这一隐患的方法，或许都值得考虑。
 
-  Aronesty 建议允许用户接收支付到由量子安全算法保护的公钥——同时也可使用现有风格的 Bitcoin 公钥来保护这些比特币，这样在两种密钥算法中都被发现可利用的漏洞之前，任何比特币都无法因为密码学密钥失效而被盗。这将需要一次软分叉共识变更，并且在最坏情况下可能会减少每个区块中可用的有效交易数量，因为量子安全见证数据比 Bitcoin 当前使用的 ECDSA 和 schnorr 签名见证数据更大。
+  Aronesty 建议允许用户把款项支付到由量子安全算法保护的公钥——同时或许再用现有风格的 Bitcoin 公钥为这些比特币提供一层保护，这样一来，必须在两种密钥算法中都找到可利用的问题，才可能因密码学密钥失效而盗走比特币。这需要一次软分叉共识变更，并且鉴于量子安全的见证数据比 Bitcoin 当前使用的 ECDSA 和 [schnorr 签名][topic schnorr signatures]见证数据更大，最坏情况下可能减少每个区块中可容纳的有效交易数量。
 
-  Lloyd Fournier [建议][fournier qc]开发一种标准化方案，使 taproot 输出能够除了其常规 schnorr 公钥之外，还承诺量子安全公钥。量子安全公钥目前可能无法被花费，但如果 Bitcoin 用户开始更加担心即将到来的快速 QC，他们可以选择通过软分叉添加一项要求使用量子安全支出路径的共识变更。Fournier 还建议将问题和可能的解决方案[记录][qc issue]在 [BitcoinProblems.org][] 上，供当前和未来的研究人员及开发者参考。
+  Lloyd Fournier 则[建议][fournier qc]开发一种标准化方案，使 taproot 输出能够除了其常规 schnorr 公钥之外，还承诺量子安全公钥。量子安全公钥目前可能无法被花费，但如果 Bitcoin 用户开始更加担心即将到来的快速 QC，他们可以选择通过软分叉添加一项要求使用量子安全支出路径的共识变更。Fournier 还建议将问题和可能的解决方案[记录][qc issue]在 [BitcoinProblems.org][] 上，供当前和未来的研究人员及开发者参考。
 
-## 服务和客户端软件的更改
+## 服务和客户端软件的变更
 
-*在这一月度栏目中，我们重点介绍 Bitcoin 钱包和服务的有趣更新。*
+*在本月栏目中，我们重点介绍 Bitcoin 钱包与服务的一些有趣更新。*
 
-- **<!--bitcoin-com-adds-segwit-sends-->****Bitcoin.com 新增 segwit 发送：** 在一次[近期更新][bitcoin.com segwit]中，Bitcoin.com 钱包现已支持向原生 segwit（bech32）地址发送比特币。
+- **<!--bitcoin-com-adds-segwit-sends-->****Bitcoin.com 新增 segwit 发送：** 在 Bitcoin.com 钱包的一次[近期更新][bitcoin.com segwit]中，现已支持向原生 segwit（[bech32][topic bech32]）地址发送比特币。
+
 - **<!--kraken-adds-lightning-support-->****Kraken 新增 Lightning 支持：** Kraken 使用 LND，已经[支持][kraken lightning]通过闪电网络进行最高 0.1 BTC 的充值和提现。
+
 - **<!--cash-app-adds-lightning-receive-support-->****Cash App 新增 Lightning 收款支持：** 在此前新增[闪电网络发送功能][news183 cash app ln send]之后，Cash App 现已上线让用户通过闪电网络收款的能力。Cash App 的 LN 功能基于 [Lightning Development Kit (LDK)][ldk website]。
+
 - **<!--bitpay-adds-lightning-receive-support-->****BitPay 新增 Lightning 收款支持：** 支付处理商 BitPay [宣布][bitpay lightning]其商户可接受 LN 支付。
 
 ## 发布与候选发布
 
-*流行的比特币基础设施项目的新版本与候选版本。请考虑升级到新版本或帮助测试候选版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [LND 0.14.3-beta][LND 0.14.3-beta] 是该热门 LN 节点软件的一个包含多项错误修复的版本。
+- [LND 0.14.3-beta][LND 0.14.3-beta] 是该热门 LN 节点软件的一个版本，包含若干缺陷修复。
 
-- [Bitcoin Core 23.0 RC5][Bitcoin Core 23.0 RC5] 是此主要全节点软件的下一个主要版本的候选版本。[草拟版发布说明][bcc23 rn]列出了多项改进，鼓励高级用户和系统管理员在最终发布前进行[测试][test guide]。
+- [Bitcoin Core 23.0 RC5][Bitcoin Core 23.0 RC5] 是这一主流全节点软件下一主要版本的候选发布。[发布说明草案][bcc23 rn]列出了多项改进，鼓励高级用户和系统管理员在最终发布前进行[测试][test guide]。
 
-- [Core Lightning 0.11.0rc3][Core Lightning 0.11.0rc3] 是该热门 LN 节点软件的下一个主要版本的候选版本。
+- [Core Lightning 0.11.0rc3][Core Lightning 0.11.0rc3] 是该热门 LN 节点软件下一主要版本的候选发布。
 
 ## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的变更。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的变更。*
 
-- [LND #5810][LND #5810] 实现了对支付元数据的发送支持。如果发票包含支付元数据，发送方将把该数据编码为一个 TLV 记录发送给接收方。这是朝着解锁[无状态发票][topic stateless invoices]迈出的又一步，无状态发票允许接收方在支付尝试到达时重新生成发票，从而无需信任地存储展示给潜在发送方的发票。
+- [LND #5810][LND #5810] 实现了对支付元数据的发送支持。如果发票中包含支付元数据，发送方会把该数据编码成一条 TLV 记录发给接收方。这是朝着解锁[无状态发票][topic stateless invoices]迈出的又一步：有了无状态发票，接收方无需存储曾展示给潜在发送方的发票，等支付尝试到达时再重新生成即可。
 
-- [LND #6212][LND #6212] 阻止 HTLC 在以下情况下通过 HTLC 拦截器发送到外部进程：如果接受该 HTLC 可能需要通道立即或在短时间内链上关闭。当 HTLC 的过期高度接近最近看到的区块时，会发生这种情况。
+- [LND #6212][LND #6212] 若接受某个 HTLC 可能导致通道必须在链上立即关闭或在很短时间内关闭，就会阻止该 HTLC 经 HTLC 拦截器发送给外部进程。当 HTLC 的过期时间接近最近看到的区块时，就可能出现这种情况。
 
-- [LND #6024][LND #6024] 添加了一个 `time_pref` 路径寻找参数，可用于在通过被认为更有可能转发支付（更快）的通道和收取更少手续费的通道之间进行权衡。
+- [LND #6024][LND #6024] 新增 `time_pref` 寻路参数，可用于调整以下两种通道之间的取舍：一种被认为更可能转发支付（更快），另一种收取的手续费更低。
 
-- [LND #6385][LND #6385] 移除了在构造新支付时使用最初 LN 协议洋葱包格式的选项，现要求用户创建 TLV 风格的洋葱包。TLV 洋葱包在 2019 年加入协议（参见 [Newsletter #55][news55 tlv]），并在所有 LN 软件中已成为默认格式超过两年。其它 LN 软件也在进行类似变更以移除旧洋葱包格式支持，例如 [Newsletter #158][news158 cl4646] 报道的 Core Lightning 更新。
+- [LND #6385][LND #6385] 移除了在构造新支付时使用最初 LN 协议洋葱支付格式的选项，现在要求用户创建 TLV 风格的洋葱格式。TLV 洋葱格式于 2019 年加入协议（参见 [Newsletter #55][news55 tlv]），并在所有 LN 软件中作为默认格式已有两年多。其他 LN 软件也在做类似的变更以弃用旧的洋葱格式支持，例如 [Newsletter #158][news158 cl4646] 中报道的 Core Lightning 更新。
 
 
 {% include references.md %}

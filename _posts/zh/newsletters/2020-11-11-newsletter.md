@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 宣布了一个新的用于购入 LN 入口通道的市场。同时还包括我们的常规部分，总结了 Bitcoin Core PR 审查俱乐部的会议内容以及对流行的比特币基础设施软件的值得注意的更改。
+本周的 Newsletter 分享了一则关于 LN 入站通道交易市场的公告。常规部分还包括 Bitcoin Core PR 审查俱乐部会议摘要，以及热门比特币基础设施软件的值得注意的变更。
 
 ## 行动项
 
@@ -15,45 +15,45 @@ lang: zh
 
 ## 新闻
 
-- **<!--incoming-channel-marketplace-->****入口通道市场：** Olaoluwa Osuntokun [宣布][pool announce]了一个新的 *Lightning Pool* 市场，用户可以在其中购买入口 LN 通道。用户和商家需要具备有入口容量的通道，以便能够在 LN 上快速接收资金。当前一些节点运营者已提供入口通道服务，部分是免费提供，部分则为付费服务，而 Lightning Pool 希望通过该平台使这项服务更加标准化和具有竞争力。最初的重点是让高度排名的[节点][node rankings]提供一个为期 2,016 个区块（约两周）的入口通道。未来计划增加其他的合约期限及其他功能。
+- **<!--incoming-channel-marketplace-->****入站通道市场：** Olaoluwa Osuntokun [宣布][pool announce]了一个新的 *Lightning Pool* 市场，用于购买 LN 入站通道。用户和商家需要有具备入站容量的通道，才能通过 LN 快速收款。已有一些节点运营者在提供入站通道，有的免费，有的作为付费服务，而 Lightning Pool 希望让这项服务更加标准化、更具竞争力。最初的重点是一份合约：由排名较高的[节点][node rankings]提供一个为期 2,016 个区块（约两周）的入站通道。未来计划支持更多合约期限和其他功能。
 
 ## Bitcoin Core PR 审查俱乐部
 
-*在这个月度部分中，我们总结了最近的 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club]会议，重点介绍了一些重要的问答。点击下面的问题可以查看会议中答案的总结。*
+*在本月度栏目中，我们总结最近一次 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club]会议，重点介绍其中一些重要的问答。点击下面的问题即可查看会议中答案的摘要。*
 
-[添加 MuHash3072 实现][review club #19055-2] 是由 Fabian Jahr 提交的 PR ([#19055][Bitcoin Core #19055])（其中包含了 Pieter Wuille 最初编写的代码），在 C++ 中实现了 [MuHash 算法][muhash mailing list]。MuHash 是一种滚动哈希算法，可用于计算对象集合的哈希摘要，并在集合中添加或移除项目时高效地更新该摘要。该算法可以用于计算完整 UTXO 集的摘要，这对于数据库一致性检查或诸如 [assumeutxo][topic assumeutxo] 之类的快速同步方法非常有用。
+[添加 MuHash3072 实现][review club #19055-2] 是 Fabian Jahr 提交的一个 PR（[#19055][Bitcoin Core #19055]），其中纳入了 Pieter Wuille 最初编写的代码，在 C++ 中实现了 [MuHash 算法][muhash mailing list]。MuHash 是一种滚动哈希算法，可用于计算一组对象的哈希摘要，并在向集合添加或移除条目时高效地更新该摘要。该算法可用于计算整个 UTXO 集合的摘要，这对数据库一致性检查，或对 [assumeutxo][topic assumeutxo] 之类的快速同步方法都很有用。
 
-关于 MuHash 的高级概念已在[之前的审查俱乐部会议][review club #19055]中讨论过，因此此次会议专注于该算法的具体规范和实现。
+MuHash 的总体概念已在[此前的一次审查俱乐部会议][review club #19055]中讨论过，因此本次会议专门聚焦该算法的规范和实现。
 
 {% include functions/details-list.md
   q0="**<!--q0-->**MuHash3072 滚动哈希对象内部存储了多少状态？请求集合哈希的用户将收到多少数据？"
-  a0="MuHash3072 对象存储了 3072 位（384 字节）的内部状态。该状态通过 256 位的哈希函数进行哈希处理，以向最终用户返回 256 位（32 字节）的数据。一个优化方案是存储一个分子（用于添加的项目）和一个分母（用于移除的项目），这将需要 6144 位（768 字节）的内部状态，但可以减少所需的大量模运算次数。"
+  a0="MuHash3072 对象存储了 3072 位（384 字节）的内部状态。这份状态经 256 位哈希函数处理，向最终用户返回 256 位（32 字节）的数据。一种优化方案是同时存储分子（对应添加的条目）和分母（对应移除的条目），这需要 6144 位（768 字节）的内部状态，但能减少所需的代价高昂的模运算次数。"
   a0link="https://bitcoincore.reviews/19055-2#l-47"
 
   q1="**<!--q1-->**如何测试某个对象是否在 MuHash 集合中？"
-  a1="MuHash 不是一个累加器，因此无法有效地测试集合成员资格。唯一的方式是从整个对象集合重新计算 MuHash 摘要，然后对比摘要。"
+  a1="MuHash 不是累加器，因此没有高效的办法测试集合成员资格。唯一的办法是从整个对象集合重新计算 MuHash 摘要，再比较摘要。"
   a1link="https://bitcoincore.reviews/19055-2#l-131"
 
   q2="**<!--q2-->**MuHash 实现中的 `#ifdef HAVE___INT128` 代码的作用是什么？"
-  a2="`#ifdef HAVE___INT128` 是一个 C++ 预处理指令。它确保只有在支持 128 位整数的平台上才会编译该指令内的代码。由于 MuHash 代码操作的数值远大于内置整数类型所能处理的范围，这些数值被分解为多个“位段”，这些位段组合成完整的数值。较大的位段意味着更少的运算，从而 [提高性能][muhash performance]。支持 128 位整数使我们可以使用 64 位位段，并且可以安全地将这些位段中的数值相乘（两个 64 位数相乘的结果是一个 128 位数）。如果不能使用 64 位位段，则改用 32 位位段。"
+  a2="`#ifdef HAVE___INT128` 是一个 C++ 预处理指令。它确保 `#ifdef` 与 `#endif` 之间的代码只在支持 128 位整数的平台上编译。由于 MuHash 代码要处理的数值远大于内置整数类型能表示的范围，这些数值被拆成多个“limb”（大数分段），再由这些分段拼出完整的数值。分段越大，运算次数越少，因而[性能越好][muhash performance]。支持 128 位整数让我们可以使用 64 位的分段，并安全地把这些分段中的数值相乘（两个 64 位数相乘得到一个 128 位数）。如果无法使用 64 位分段，就改用 32 位分段。"
   a2link="https://bitcoincore.reviews/19055-2#l-190"
 
   q3="**<!--q3-->**1437 mod 99 是多少？"
-  a3="1437 mod 99 = 51。此问题作为一个示例，展示了一种计算除以接近某个数的幂的模数的余数的高效方法。在此示例中，99 稍小于 10^2，因此我们可以将低位部分（这里为 37）加到高位部分乘以模数和基数之间的差值（在此例中为 14 * (10^2 - 99)）。在 MuHash 实现中采用了相同的技术，并解释了为何选择接近 2^3072 的模数。"
+  a3="1437 mod 99 = 51。这个问题的用意是举例说明一种高效算法：当模数略小于基数的某个幂时，如何计算一个数除以该模数的余数。在本例中，99 略小于 10^2，因此求余数时可以把低位部分（这里是 37）加到“高位部分乘以模数与基数幂之差”上（本例中为 14 * (10^2 - 99)）。MuHash 的实现采用了同样的技巧，这也解释了为何把模数选为略小于 2^3072 的数。"
   a3link="https://bitcoincore.reviews/19055-2#l-246"
 %}
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中的值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中的值得注意的变更。*
 
-- [BOLTs #807][] 修改了 [BOLT2][]，规定节点应将接收的非标准高-*S* 签名视为无效签名，并立即关闭通道或断开连接。这有助于减轻之前在 [Newsletter #121][news121 lows-sig-cve] 中提到的 [CVE-2020-26895][]。
+- [BOLTs #807][] 修订了 [BOLT2][]，规定节点应将收到非标准高-*S* 签名视同收到无效签名，并立即让通道或连接失败。这有助于缓解此前在 [Newsletter #121][news121 lows-sig-cve] 中介绍过的 [CVE-2020-26895][]。
 
-- [Eclair #1545][] 增加了一个区块链监视器，用于检测 [eclipse 攻击][eclipse attacks]。Eclair 从多个第三方来源获取区块头，以核对其节点提供的最佳链。如 [Newsletter #101][news101 time-dilation] 中所述，攻击者可以利用 eclipse 攻击在争议期过期之前隐藏恶意的通道关闭尝试。
+- [Eclair #1545][] 增加了一个区块链看门狗（watchdog），用于检测 [日食攻击][eclipse attacks]。Eclair 从多个第三方来源获取区块头，以核对其对等方提供的最佳链。如 [Newsletter #101][news101 time-dilation] 中所述，攻击者可以利用 日食攻击，把恶意的通道关闭尝试一直隐藏到争议期结束。
 
-- [LND #4735][] 增加了一个 `max_local_csv` 配置参数，用于拒绝需要本地节点在单方面关闭通道后等待超过指定区块数才能支配其资金的通道。默认最大值为 10,000 个区块，同时设置了最小值 144 个区块，以确保用户不会设置过低的值。
+- [LND #4735][] 增加了一个 `max_local_csv` 配置参数，用于拒绝来自对等方的这类通道：对方要求本地节点在单方面关闭通道后等待超过指定区块数才能动用资金。默认上限为 10,000 个区块，同时设有 144 个区块的下限，以免用户把该值设得低于合理水平。
 
-- [LND #4701][] 在默认构建中添加了 `assumechanvalid`（假设通道有效）配置选项。对于使用 Neutrino 客户端检索[致密区块过滤器][topic compact block filters]的节点，这允许节点假设通过 LN gossip 学到的通道是可用的，而无需花费额外带宽检查最近区块中的相关交易。如果假设错误且通道实际上不可用（例如通道最近已关闭），LND 尝试通过这些通道进行的支付将失败。这可能导致延迟或不必要的支付失败，但不会造成资金损失。
+- [LND #4701][] 在默认构建中加入 `assumechanvalid`（假设通道有效）配置选项。对于使用 Neutrino 客户端获取[紧凑区块过滤器][topic compact block filters]的节点，这允许节点直接假定通过 LN gossip 获知的通道可用，而无需额外消耗带宽去检查最近区块中的相关交易。如果假设有误、通道实际上不可用（例如最近刚刚关闭），LND 尝试经由这些通道路由的支付就会失败。这可能造成延迟或不必要的支付失败，但不会导致资金损失。
 
 {% include references.md %}
 {% include linkers/issues.md issues="807,1545,4735,4701,19055,19055-2" %}
