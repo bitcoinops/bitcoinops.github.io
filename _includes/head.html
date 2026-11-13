@@ -4,7 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  {%- feed_meta -%}
+  {%- assign feed_lang = page.lang | default: "en" -%}
+  {%- assign feed_path = "/feed.xml" -%}
+  {%- if feed_lang != "en" -%}{%- assign feed_path = "/" | append: feed_lang | append: "/feed.xml" -%}{%- endif -%}
+  <link type="application/atom+xml" rel="alternate" href="{{ feed_path | absolute_url }}" title="{{ site.title }}" />
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
