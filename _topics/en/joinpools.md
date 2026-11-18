@@ -54,6 +54,9 @@ optech_mentions:
   - title: "Announcement of a proof-of-concept `OP_CTV` payment pool"
     url: /en/newsletters/2025/01/24/#joinpool-prototype-using-ctv
 
+  - title: "Analysis of paying decentralized mining pool rewards into a coinbase-funded joinpool"
+    url: /en/newsletters/2026/11/20/#framework-for-decentralized-mining-pool-payouts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coinjoin
