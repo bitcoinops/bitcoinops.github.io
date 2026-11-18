@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Bark 0.5.0 released"
     url: /en/newsletters/2026/08/21/#bark-0-5-0-released
 
+  - title: "Analysis of Ark-based decentralized mining pool payouts, with and without covenants"
+    url: /en/newsletters/2026/11/20/#framework-for-decentralized-mining-pool-payouts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools

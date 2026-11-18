@@ -142,6 +142,9 @@ optech_mentions:
   - title: "Draft BIP standardizing the spending policies co-signers enforce when emulating covenants"
     url: /en/newsletters/2026/11/06/#bip-draft-for-standardized-co-signer-spending-policies
 
+  - title: "Suggestion to use covenants to commit a coinbase output to an Ark tree paying pool miners"
+    url: /en/newsletters/2026/11/20/#framework-for-decentralized-mining-pool-payouts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

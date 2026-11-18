@@ -101,6 +101,9 @@ optech_mentions:
   - title: "Analysis of vardiff controllers that strand slowing miners"
     url: /en/newsletters/2026/09/18/#vardiff-controllers-that-strand-slowing-miners
 
+  - title: "Framework for decentralized mining pool payouts and the rich list attack"
+    url: /en/newsletters/2026/11/20/#framework-for-decentralized-mining-pool-payouts
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:
