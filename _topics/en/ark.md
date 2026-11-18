@@ -76,6 +76,9 @@ optech_mentions:
   - title: "Analysis of Ark-based decentralized mining pool payouts, with and without covenants"
     url: /en/newsletters/2026/11/20/#framework-for-decentralized-mining-pool-payouts
 
+  - title: "Wavelength released on mainnet as an alpha"
+    url: /en/newsletters/2026/11/20/#wavelength-released-on-mainnet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools

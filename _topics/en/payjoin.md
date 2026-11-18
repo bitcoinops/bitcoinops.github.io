@@ -126,6 +126,9 @@ optech_mentions:
   - title: "Payjoin Dev Kit (rust-payjoin) 1.0.0 released"
     url: /en/newsletters/2026/08/21/#payjoin-dev-kit-rust-payjoin-1-0-0-released
 
+  - title: "Bull Bitcoin makes payjoin the default for exchange orders from its wallet"
+    url: /en/newsletters/2026/11/20/#bull-bitcoin-makes-payjoin-the-default-for-exchange-orders
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Coinswap v0.2.2 released with multi-transaction swaps and deniability proofs"
     url: /en/newsletters/2026/07/24/#coinswap-v0-2-2-released
 
+  - title: "Coinswap renamed to OpenSwap, adding an Electrum backend and Lightning swaps"
+    url: /en/newsletters/2026/11/20/#coinswap-renamed-to-openswap
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coinjoin
