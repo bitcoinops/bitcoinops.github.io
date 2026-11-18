@@ -110,9 +110,9 @@ _以下是来自 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core light
 [BIP31]: https://github.com/bitcoin/bips/blob/master/bip-0031.mediawiki
 [BLIP52]: https://github.com/lightning/blips/blob/master/blip-0052.md
 [news399 metadata]: /zh/newsletters/2026/04/03/#draft-bip-for-a-wallet-backup-metadata-format
-[news428 releases]: /en/newsletters/2026/10/23/#releases-and-release-candidates
+[news428 releases]: /zh/newsletters/2026/10/23/#版本和候选版本
 [news426 ldk5028]: /zh/newsletters/2026/10/09/#ldk-5028
-[news428 btcpay7684]: /en/newsletters/2026/10/23/#btcpay-server-7684
+[news428 btcpay7684]: /zh/newsletters/2026/10/23/#btcpay-server-7684
 [news427 eclair splicing]: /zh/newsletters/2026/10/16/#eclair-3396
 [cln selfref dos]: https://delvingbitcoin.org/t/cln-self-referential-channel-announcement-dos-disclosure/2974
 [cln 26.04.1]: https://github.com/ElementsProject/lightning/releases/tag/v26.04.1
