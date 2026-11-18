@@ -47,7 +47,7 @@ software.
   [experimental draft][anti ex sjors] covering single-signer taproot key-path signing.
   According to the author, Provoost plans to align his implementations with Avila's
   specification. Finally, Avila requested feedback and reviews from other developers, since
-  his proposal had not received any audit on the cryptography.
+  his proposal had not received any audit on the cryptography. {% assign timestamp="50:27" %}
 
 - **Disclosure of three vulnerabilities in Bitcoin Core:** Antoine Poinsot
   [posted][poinsot adv ml] to the Bitcoin-Dev mailing list three Bitcoin Core
@@ -87,7 +87,7 @@ software.
 
   Fixes for the first two vulnerabilities were also included in Bitcoin Core
   28.3. All of the affected release series have now reached end of life, so
-  anyone still running one should upgrade to a maintained release.
+  anyone still running one should upgrade to a maintained release. {% assign timestamp="0:50" %}
 
 - **Testnet5 genesis block to be mined:** Anthony Towns [posted][towns tn5]
   to the Bitcoin-Dev mailing list a plan to mine the genesis block of
@@ -106,7 +106,7 @@ software.
   After the genesis block is mined, its values will replace the placeholders in
   BIP95. Towns noted that node software will still need testnet5 parameters and
   BIP54 [consensus cleanup][topic consensus cleanup] logic, plus DNS seeds,
-  faucets, and explorers, before the network is ready for general use.
+  faucets, and explorers, before the network is ready for general use. {% assign timestamp="40:15" %}
 
 - **Continued discussion of compact block reconstruction stats:** 0xB10C
   [posted][b10c cb summary] to his Delving Bitcoin thread (see [Newsletter
@@ -128,7 +128,7 @@ software.
   fees. Each of those [replaced][topic rbf] the rest of its chain in any
   mempool that accepted it, and whether a node kept the chain or the
   replacement depended partly on which arrived first. Mempools diverged from
-  what pools mined, so nodes had to request the missing transactions.
+  what pools mined, so nodes had to request the missing transactions. {% assign timestamp="55:55" %}
 
 ## Releases and release candidates
 
@@ -141,20 +141,20 @@ release candidates._
   the candidate described in [Newsletter #426][news426 ldk rc]. Developers
   should review the [API and backwards-compatibility changes][ldk 0.3 notes]
   before testing, including the invalidation of previously issued [BOLT11][]
-  invoices containing payment metadata.
+  invoices containing payment metadata. {% assign timestamp="1:06:51" %}
 
 - [LDK v0.2.8][] and [v0.1.14][ldk v0.1.14] are security releases for the 0.2
   and 0.1 branches of this library, respectively. Both fix vulnerabilities that
   could lead to a loss of funds or a DoS attack, as well as the
   cooperative-close issues described below and a route-hint handling issue.
   Version 0.2.8 also fixes a fee overpayment vulnerability affecting payments
-  of static [BOLT12][] invoices and DoS vulnerabilities affecting LSPS2 services.
+  of static [BOLT12][] invoices and DoS vulnerabilities affecting LSPS2 services. {% assign timestamp="1:07:47" %}
 
 - [LND v0.21.8-beta][] and [v0.20.8-beta][lnd v0.20.8-beta] are maintenance
   releases of this LN node implementation. Both include the AMP recovery,
   channel funding, restored-channel force-close, and confirmation-hint fixes
   described below. They also address recovery of forwarded HTLCs across link
-  reconnections and include sweeper and channel state fixes.
+  reconnections and include sweeper and channel state fixes. {% assign timestamp="1:09:24" %}
 
 ## Notable code and documentation changes
 
@@ -175,7 +175,7 @@ repo], and [BINANAs][binana repo]._
   validates keys before saving or reusing them and checks returned onion
   service IDs. If an existing cached key fails validation, the onion service
   will be unavailable. Deleting the cached key and restarting will generate a
-  new onion address.
+  new onion address. {% assign timestamp="1:10:21" %}
 
 - [BIPs #2251][] adds [BIP394][], a draft specification for the `rawtr()`
   output script descriptor previously discussed in [Newsletter #419][news419
@@ -187,7 +187,7 @@ repo], and [BINANAs][binana repo]._
   absent. Therefore, software importing one from an untrusted source should
   warn users of the possibility of hidden scriptpaths. Bitcoin Core has
   supported this descriptor since version 24.0 (see [Newsletter #213][news213
-  rawtr]).
+  rawtr]). {% assign timestamp="1:13:21" %}
 
 - [BIPs #2347][] updates [BIP95][], the draft specification for
   [testnet5][topic testnet] (see [Newsletter #412][news412 bip95]), to make its
@@ -198,7 +198,7 @@ repo], and [BINANAs][binana repo]._
   output uses `OP_RETURN` instead, which explicitly marks it as unspendable and
   provides eight bytes of extra nonce space. The draft also allows miners to
   vary the block version, expanding the available mining search space. The
-  example genesis block remains a placeholder.
+  example genesis block remains a placeholder. {% assign timestamp="1:16:09" %}
 
 - [BIPs #2342][] clarifies [BIP34][]'s encoding of the block height at the
   start of the coinbase input script for chains that enforce the rule
@@ -208,7 +208,7 @@ repo], and [BINANAs][binana repo]._
   interpreted as requiring a length-prefixed number. This clarification aligns
   with the existing behavior of Bitcoin Core. It also notes that the coinbase
   input script must still contain at least two bytes, so the height opcode
-  alone is insufficient (see [Newsletter #406][news406 coinbase]).
+  alone is insufficient (see [Newsletter #406][news406 coinbase]). {% assign timestamp="1:18:19" %}
 
 - [Core Lightning #9610][] fixes a peer-triggered crash caused by an oversized
   [HTLC][topic htlc] amount. This crash could be triggered by a channel peer
@@ -218,7 +218,7 @@ repo], and [BINANAs][binana repo]._
   funds. Subsequent commitment transaction construction triggered an assertion
   and terminated `channeld`, the affected channel's subprocess. Now, CLN
   rejects amounts above the [BOLT1][] ceiling of 21 million BTC, expressed in
-  millisatoshis, before performing the balance arithmetic.
+  millisatoshis, before performing the balance arithmetic. {% assign timestamp="1:20:55" %}
 
 - [LDK #5507][] and [#5532][ldk #5532] fix cooperative-close bugs that could
   combine signatures for different transactions. The first ensures that LDK
@@ -228,7 +228,7 @@ repo], and [BINANAs][binana repo]._
   an async signer was unavailable, preventing an old peer signature from being
   combined with a new local proposal after reconnection. Previously, in both
   cases, LDK could submit an invalid closing transaction for broadcast while
-  treating the channel as closed, leaving behind funds that required recovery.
+  treating the channel as closed, leaving behind funds that required recovery. {% assign timestamp="1:22:12" %}
 
 - [LND #11492][] fixes onchain recovery of received atomic multipath payments
   ([AMP][topic amp]) after a force close. Previously, LND could fail to find
@@ -239,7 +239,7 @@ repo], and [BINANAs][binana repo]._
   checks intended for new payments from rejecting previously recorded
   spontaneous AMP and [keysend][topic spontaneous payments] HTLCs when they are
   processed again during recovery (see [Newsletter #412][news412 cltv] for
-  earlier coverage of LND's expiry checks).
+  earlier coverage of LND's expiry checks). {% assign timestamp="1:24:29" %}
 
 - [LND #11479][] fixes the handling of errors when publishing a [transaction
   that opens multiple channels][topic payment batching] (see [Newsletter
@@ -249,7 +249,7 @@ repo], and [BINANAs][binana repo]._
   keeps the pending channels' state once publication is attempted, preserving
   the information needed to monitor the transaction and recover the channels.
   If the transaction can't confirm, the retained pending channels require
-  manual cleanup.
+  manual cleanup. {% assign timestamp="1:25:51" %}
 
 - [LND #11340][] and [#11374][lnd #11374] extend LND's experimental [BOLT12
   offers][topic offers] support (see [Newsletter #424][news424 bolt12]) with
@@ -259,7 +259,7 @@ repo], and [BINANAs][binana repo]._
   messages] and adds the `CreateOffer` RPC and the `lncli createoffer` command.
   However, the handler does not yet retain the invoice state needed to settle
   payments against the invoices it issues. The feature is only available in
-  development builds and requires additional configuration.
+  development builds and requires additional configuration. {% assign timestamp="1:27:17" %}
 
 - [LND #11480][] fixes a crash when attempting to force close a channel
   restored from a [static channel backup][topic static channel backups]. Such a
@@ -269,7 +269,7 @@ repo], and [BINANAs][binana repo]._
   status, allowing it to access a missing commitment transaction and panic. LND
   now rejects that local force-close attempt and handles the unavailable
   transaction safely, including when resuming an interrupted close after
-  restart.
+  restart. {% assign timestamp="1:29:21" %}
 
 - [LND #11481][] fixes how LND caches the starting block height for scans that
   check whether a transaction has confirmed. Previously, an attacker could
@@ -282,7 +282,7 @@ repo], and [BINANAs][binana repo]._
   the revoked commitment and its [penalty transaction][topic ln-penalty]. LND
   now stores separate starting heights for each txid and output script. The
   issue affects historical scans, including those used by Neutrino and by
-  Bitcoin Core without a transaction index.
+  Bitcoin Core without a transaction index. {% assign timestamp="1:30:16" %}
 
 {% include snippets/recap-ad.md when="2026-11-17 17:30" %}
 {% include references.md %}
