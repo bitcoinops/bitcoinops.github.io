@@ -44,6 +44,9 @@ optech_mentions:
   - title: "BIPs #2258 fixes BIP93 checksum length bounds and restricts codex32 master seed sizes"
     url: /en/newsletters/2026/09/18/#bips-2258
 
+  - title: "COLDCARD firmware adds codex32 secrets and Shamir share backups"
+    url: /en/newsletters/2026/11/20/#coldcard-firmware-adds-codex32-backups
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP32 hierarchical derivation from seeds

@@ -64,7 +64,57 @@ FIXME:bitschmidty
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Liana v16.0 released:** [Liana v16.0][liana v16.0] writes its encrypted
+  [descriptor][topic descriptors] backups in the [BIP138][] format (see
+  [Newsletter #424][news424 bip138]) and makes [taproot][topic taproot] the
+  default for new wallets.
+
+- **COLDCARD firmware adds codex32 backups:** Coinkite
+  [announced][coldcard 5.6.3] COLDCARD firmware versions 5.6.3 and 1.5.3Q,
+  which add support for generating and importing [codex32][topic codex32]
+  secrets and for splitting the device's wallet into two to nine Shamir shares
+  for later recovery. The releases also add support for per-input height and
+  time locktimes in [PSBTv2][topic psbt] transactions.
+
+- **Wavelength released on mainnet:** Lightning Labs
+  [announced][wavelength mainnet] that Wavelength, its [Ark][topic ark]-like
+  payments toolkit (see [Newsletter #415][news415 wavelength]), is available
+  on mainnet as an alpha with accounts limited to 300,000 sats.
+
+- **Bull Bitcoin makes payjoin the default for exchange orders:** Bull Bitcoin
+  [announced][bull payjoin blog] that onchain purchases and sales made on its
+  exchange through the Bull Bitcoin Mobile wallet now use
+  [payjoin][topic payjoin] by default (see [Newsletter #338][news338 bull]).
+  Version [6.14.0][bull 6.14.0] of the wallet also adds experimental support
+  for sending and receiving [silent payments][topic silent payments].
+
+- **Breez SDK adds silent payment sending:** Version [0.28.0][breez 0.28.0] of
+  the Spark-based Breez SDK adds support for sending to
+  [silent payment][topic silent payments] addresses.
+
+- **Silent payments scanner for Electrum plugin:** Ali Sherief
+  [announced][spscand delving] spscand, a watch-only
+  [silent payments][topic silent payments] scanner that works with the
+  Electrum sending plugin covered in [Newsletter #419][news419 sp electrum].
+  It can scan for payments using the user's own Bitcoin Core node, a BlindBit
+  server, or a BlindBit server combined with
+  [compact block filters][topic compact block filters] from P2P peers.
+
+- **Stratum v2 releases and pool adoption:** The
+  [Stratum v2][topic pooled mining] reference implementation released
+  [sv2-apps v0.9.0][], which adds support for Bitcoin Core 32.x, including
+  submitting found blocks over its IPC interface, and hardens its Job
+  Declarator Client (see [Newsletter #384][news384 sv2] for previous
+  coverage). Separately, MARA Foundation [announced][mara sv2] that MARA mined
+  its first block using Stratum v2, and Foundry [announced][foundry sv2] that
+  it has begun testing Stratum v2 on its pool.
+
+- **Coinswap renamed to OpenSwap:** [OpenSwap v0.2.3][] is the first release
+  under the new name of the [coinswap][topic coinswap] protocol implementation
+  formerly called Coinswap (see [Newsletter #415][news415 coinswap]). It adds
+  an Electrum server backend option, swaps that pay a third-party address,
+  and, when built with Lightning support, swaps between onchain funds and LN
+  through LDK Server (see [Newsletter #406][news406 ldk server]).
 
 ## Releases and release candidates
 
@@ -96,3 +146,21 @@ FIXME:Gustavojfe
 [lb p2pool]: https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060/2
 [jungly dcpp]: https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060/5
 [roose dcpp]: https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060/4
+[liana v16.0]: https://github.com/wizardsardine/liana/releases/tag/v16.0
+[news424 bip138]: /en/newsletters/2026/09/25/#bips-1951
+[coldcard 5.6.3]: https://blog.coinkite.com/coldcard-firmware-563-153q/
+[wavelength mainnet]: https://lightning.engineering/posts/2026-10-23-wavelength-mainnet-launch/
+[news415 wavelength]: /en/newsletters/2026/07/24/#wavelength-alpha-released
+[bull payjoin blog]: https://www.bullbitcoin.com/blog/payjoin-trading
+[news338 bull]: /en/newsletters/2025/01/24/#bull-bitcoin-mobile-wallet-adds-payjoin
+[bull 6.14.0]: https://github.com/SatoshiPortal/bullbitcoin-mobile/releases/tag/v6.14.0
+[breez 0.28.0]: https://github.com/breez/spark-sdk/releases/tag/0.28.0
+[spscand delving]: https://delvingbitcoin.org/t/silent-payments-for-electrum/3078
+[news419 sp electrum]: /en/newsletters/2026/08/21/#silent-payments-sender-plugin-for-electrum
+[sv2-apps v0.9.0]: https://github.com/stratum-mining/sv2-apps/releases/tag/v0.9.0
+[news384 sv2]: /en/newsletters/2025/12/12/#stratum-v2-updates
+[mara sv2]: https://x.com/MARAFoundation_/status/2120520367500308580
+[foundry sv2]: https://x.com/FoundryServices/status/2121279504475709625
+[openswap v0.2.3]: https://github.com/citadel-foss/openswap/releases/tag/v0.2.3
+[news415 coinswap]: /en/newsletters/2026/07/24/#coinswap-v0-2-2-released
+[news406 ldk server]: /en/newsletters/2026/05/22/#ldk-server-announced

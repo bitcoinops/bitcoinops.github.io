@@ -134,6 +134,12 @@ optech_mentions:
   - title: "Proposed AggDLEQ protocol for silent payments from multiparty wallets"
     url: /en/newsletters/2026/10/30/#silent-payments-for-multiparty-wallets
 
+  - title: "Breez SDK adds silent payment sending"
+    url: /en/newsletters/2026/11/20/#breez-sdk-adds-silent-payment-sending
+
+  - title: "spscand watch-only silent payments scanner announced for Electrum plugin"
+    url: /en/newsletters/2026/11/20/#silent-payments-scanner-for-electrum-plugin
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
