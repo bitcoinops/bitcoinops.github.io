@@ -45,6 +45,9 @@ optech_mentions:
   - title: "BIPs #2241 adds BIP332 for opt-in stale tip relay"
     url: /en/newsletters/2026/09/18/#bips-2241
 
+  - title: "Discussion of relaying only stale headers versus stale block data and mining incentives"
+    url: /en/newsletters/2026/11/20/#continued-discussion-of-stale-tip-relay
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
