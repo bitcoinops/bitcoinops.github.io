@@ -57,6 +57,29 @@ infrastructure software.
   which would let a coinbase output deterministically commit to an Ark
   transaction tree that pays every miner who uses the same Ark server.
 
+- **Disclosure of a DoS vulnerability in Eclair:** rorp [posted][eclair vuln del]
+  to Delving Bitcoin the [responsible disclosure][topic responsible disclosures] of a memory-exhaustion denial-of-service (DoS)
+  vulnerability affecting Eclair version [0.14.0][eclair 0.14.0] and fixed in July
+  2026 in release [0.14.1][eclair 0.14.1]. Any peer able to connect to a vulnerable node could crash
+  it, even without having a channel with it. The bug gave an attacker no
+  direct access to funds, but repeatedly crashing a node could put its channel
+  funds at risk. Users still running 0.14.0 should upgrade.
+
+  The attack vector leveraged a missing size check in Eclair. According to [BOLT2][],
+  messages can be sent in batches to be treated as a single logical update through the
+  `start_batch` message, which among other fields carries the `batch_size`. According
+  to the specifications, the size must be at most `20` and strictly greater than `1`.
+  While Eclair checked for the upper bound, it did not enforce the lower one.
+
+  An attacker would have been able to use this vulnerability by sending a `start_batch`
+  message with `batch_size = 0`, followed by `commitment_signed` messages, which are
+  sent in batches during [splicing][topic splicing]. Since the code stopped adding
+  messages to its internal batch only once the number of received messages reached the
+  `batch_size` (which was `0`, thus always lower than the number of messages received),
+  the list never stopped growing, leading to memory exhaustion.
+  The vulnerability was fixed by having the code check the lower bound, too, as
+  specified in BOLT2.
+
 FIXME:bitschmidty
 
 ## Changes to services and client software
@@ -146,6 +169,9 @@ FIXME:Gustavojfe
 [lb p2pool]: https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060/2
 [jungly dcpp]: https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060/5
 [roose dcpp]: https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060/4
+[eclair vuln del]: https://delvingbitcoin.org/t/disclosure-memory-exhaustion-dos-in-eclair-0-14-0/3057
+[eclair 0.14.0]: https://github.com/ACINQ/eclair/releases/tag/v0.14.0
+[eclair 0.14.1]: https://github.com/ACINQ/eclair/releases/tag/v0.14.1
 [liana v16.0]: https://github.com/wizardsardine/liana/releases/tag/v16.0
 [news424 bip138]: /en/newsletters/2026/09/25/#bips-1951
 [coldcard 5.6.3]: https://blog.coinkite.com/coldcard-firmware-563-153q/
