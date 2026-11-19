@@ -180,11 +180,138 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #36757][] fixes a privacy leak in address discovery over [Tor
+  and I2P][topic anonymity networks]. Previously, when a node connected
+  outbound to a malicious Tor or I2P peer, that peer could claim to see the
+  node at an arbitrary routable IP address in its `version` message. Bitcoin
+  Core could then advertise that address back to the peer, along with its own
+  clearnet listening port. A distinctive port could then help correlate the
+  connection with a clearnet node that was observed using the same port (see
+  [Newsletter #52][news52 port] for an earlier Tor listening-port fix). Bitcoin
+  Core now ignores the address that Tor and I2P peers report seeing the
+  node at.
+
+- [BIPs #2356][] replaces the placeholder genesis parameters in [BIP95][] with
+  those of the mined [testnet5][topic testnet] genesis block and marks the BIP
+  as `Deployed`. The genesis coinbase includes the date 2026-11-14 and the hash
+  of mainnet block 975,744. Committing to that hash ensures that the testnet5
+  genesis block could only be mined after mainnet reached that height (see
+  [Newsletter #431][news431 testnet5]).
+
+- [Core Lightning #9730][] adds the `lightning-hsmtool recoverhtlc` command to
+  manually recover [HTLC][topic htlc] outputs after local channel-state loss.
+  Once the peer publishes its latest commitment transaction, the recovering
+  node can already reclaim its main output using a [static channel
+  backup][topic static channel backups] (see [Newsletter #421][news421
+  recovery]). Given the local `hsm_secret`, channel and HTLC details, and the
+  peer's per-commitment point, the new command identifies matching HTLC
+  outputs. The tool constructs signed transactions to reclaim outgoing HTLCs
+  after a timeout or to claim incoming HTLCs with known preimages. However, the
+  operator must manually review and broadcast the transactions. A cooperative
+  CLN peer can export the public point using the
+  `dumpcommitments --point-only` command without revealing secrets.
+
+- [LDK #5561][] fixes a potential loss of forwarded funds when a peer sends
+  `revoke_and_ack` before LDK sends the corresponding `commitment_signed`
+  message. Previously, LDK could accept this premature acknowledgment and
+  advance its internal commitment number. Consequently, it could sign a
+  commitment that differed from the one recorded by its onchain monitor. If the
+  peer published that commitment, LDK might fail to claim the incoming HTLC,
+  even after paying the outgoing HTLC, despite knowing its preimage. LDK now
+  rejects the premature acknowledgment and force closes the channel. The fix
+  was released in LDK 0.2.8 (see [Newsletter #431][news431 ldk]). [Newsletter
+  #426][news426 ldk5057] described an earlier bug that left a signed commitment
+  unmonitored during reconnection.
+
+- [LDK #5562][] and [#5545][ldk #5545] fix channel ID collisions that a
+  malicious peer could create between its channels and an LDK node. In the
+  first, the peer could reuse a force-closed channel's known ID as a new
+  channel's temporary ID. This could prevent LDK from recording a forwarded
+  payment's preimage in the closed channel's monitor, leaving the incoming
+  [HTLC][topic htlc] unclaimed after the outgoing HTLC had been paid. In the
+  second, the peer could calculate a channel's future final ID from its funding
+  transaction and submit another opening request with that temporary ID. If the
+  original channel adopted its final ID before the application accepted the new
+  request, acceptance could overwrite its funded state. LDK now rejects
+  conflicting IDs and rechecks them at acceptance. Both fixes were also
+  released in LDK 0.2.8. See [Newsletter #427][news427 channelid] for related
+  channel ID collisions that could cause a DoS in Eclair.
+
+- [LDK #5557][] fixes a vulnerability that allowed malicious peers to disrupt
+  transaction monitoring on nodes using an Electrum backend. The peer could
+  propose a channel whose claimed funding output reused an already-watched
+  outpoint, but with a different locking script. Registering that proposal
+  could overwrite the legitimate watch's stored script, even if LDK
+  subsequently rejected the channel. LDK would then query Electrum for
+  transactions associated with the bogus script and might miss a transaction
+  spending the real output, preventing a timely response to a channel closure.
+  LDK now retains every distinct script registered for an outpoint, so a bogus
+  registration cannot suppress the legitimate watch. This fix was also released
+  in LDK 0.2.8.
+
+- [LDK #5558][] and [#5482][ldk #5482] fix two ways payments could exceed their
+  fee budget. The first PR addresses the handling of an omitted fee-limit
+  setting for [async payments][topic async payments] using static
+  [BOLT12][topic offers] invoices (see [Newsletter #321][news321 async]). LDK
+  now applies its default cap of 1% of the payment amount plus 50 sat when the
+  application omits the setting. Previously, omitting it removed the limit
+  entirely, allowing a malicious receiver to supply a [blinded path][topic rv
+  routing] with excessive fees. This fix was also released in LDK 0.2.8. The
+  second PR addresses retries when a route adds value to meet an HTLC minimum.
+  LDK treated the extra value as part of the requested payment and restored the
+  failed path's fee budget on retry, allowing the total spend to exceed its
+  limit. LDK now retries only the remaining amount owed and counts any excess
+  against the remaining fee budget.
+
+- [LND #11555][] changes how LND reports non-[AMP][topic amp] invoices as
+  settled. Although applications could already monitor when the settlement of
+  individual [HTLCs][topic htlc] was locked in offchain (see [Newsletter
+  #224][news224 finality]), LND could mark an invoice as settled as soon as the
+  preimage was released. The invoice now enters the `PENDING_SETTLE` state on
+  preimage release. Once every HTLC in the payment has a final offchain or
+  onchain outcome, LND marks the invoice as `SETTLED` if all parts were
+  collected or `CANCELED` if any failed. A canceled invoice can still have
+  collected some parts, which are not refunded, so applications should credit
+  only the amounts from finalized, successful HTLCs. An invoice's
+  `preimage_released` flag records whether LND has committed to releasing the
+  preimage. AMP payment sets still settle at preimage release.
+
+- [LND #11551][] fixes expiry validation when completing [multipath
+  payments][topic multipath payments] and [AMP][topic amp] payments.
+  Previously, LND checked each HTLC when it arrived. If more blocks were mined
+  while the receiver waited for the remaining parts, LND could release
+  preimages even though an earlier HTLC no longer had the required [expiry
+  margin][topic cltv expiry delta] for onchain collection. Now, LND rechecks
+  every part against the current block height when the final part arrives. If a
+  previously accepted part is now too close to expiry, LND fails that set and
+  leaves the invoice open for another attempt (see [Newsletter #424][news424
+  amp] for earlier work on canceling individual AMP sets).
+
+- [LND #11472][] and [#10842][lnd #10842] fix cases where temporary backend
+  errors or one problematic input could block otherwise valid sweeps. The first
+  keeps inputs available for retry after temporary or unclassified errors
+  during mempool acceptance checks (see [Newsletter #373][news373 sweeper]). It
+  was released in LND 0.21.8-beta and 0.20.8-beta (see [Newsletter
+  #431][news431 lnd]). The second uses diagnostic transactions that are never
+  broadcast to test subsets of a rejected batch. If an invalid or conflicting
+  input can be identified, LND excludes it from the next attempt and retries
+  the remaining inputs.
+
+- [LND #11542][] fixes recovery of forwarded [HTLCs][topic htlc] after channel
+  reconnections. When replaying stored forwarding batches, LND could filter out
+  acknowledged HTLCs and then use the remaining entries' new positions to look
+  up metadata indexed by their original positions. This could cause unresolved
+  HTLCs to be skipped or misassociated. Additionally, if a channel's HTLC
+  handler stopped after LND recorded the batch but before handing off an HTLC,
+  an incomplete record could be left behind, causing retries to be discarded as
+  duplicates. LND now preserves the original batch indexes and removes
+  incomplete records after a failed handoff, allowing unresolved HTLCs to be
+  retried. The fix was released in LND 0.21.8-beta and 0.20.8-beta (see
+  [Newsletter #431][news431 lnd]).
 
 {% include snippets/recap-ad.md when="2026-11-24 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="36757,2356,9730,5561,5562,5545,5557,5558,5482,11555,11551,11472,10842,11542" %}
 [7d5x9 dcpp]: https://delvingbitcoin.org/t/decentralized-coinbase-payout-protocols-dcpp-a-framework-for-discussion/3060
 [news340 braidpool]: /en/newsletters/2025/02/07/#request-for-a-covenant-design-supporting-braidpool
 [news397 bip448]: /en/newsletters/2026/03/20/#bips-1974
@@ -219,3 +346,20 @@ FIXME:Gustavojfe
 [openswap v0.2.3]: https://github.com/citadel-foss/openswap/releases/tag/v0.2.3
 [news415 coinswap]: /en/newsletters/2026/07/24/#coinswap-v0-2-2-released
 [news406 ldk server]: /en/newsletters/2026/05/22/#ldk-server-announced
+[LDK #5561]: https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5561
+[LDK #5562]: https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5562
+[LDK #5545]: https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5545
+[LDK #5557]: https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5557
+[LDK #5558]: https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5558
+[LDK #5482]: https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5482
+[news52 port]: /en/newsletters/2019/06/26/#bitcoin-core-15651
+[news431 testnet5]: /en/newsletters/2026/11/13/#testnet5-genesis-block-to-be-mined
+[news421 recovery]: /en/newsletters/2026/09/04/#core-lightning-9435
+[news431 ldk]: /en/newsletters/2026/11/13/#ldk-v0-2-8
+[news426 ldk5057]: /en/newsletters/2026/10/09/#ldk-5057
+[news427 channelid]: /en/newsletters/2026/10/16/#disclosure-of-two-dos-vulnerabilities-fixed-in-eclair-v0-14-1
+[news321 async]: /en/newsletters/2024/09/20/#ldk-3140
+[news224 finality]: /en/newsletters/2022/11/02/#lnd-6517
+[news424 amp]: /en/newsletters/2026/09/25/#lnd-11198
+[news373 sweeper]: /en/newsletters/2025/09/26/#lnd-10189
+[news431 lnd]: /en/newsletters/2026/11/13/#lnd-v0-21-8-beta
