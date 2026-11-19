@@ -80,7 +80,29 @@ infrastructure software.
   The vulnerability was fixed by having the code check the lower bound, too, as
   specified in BOLT2.
 
-FIXME:bitschmidty
+- **Continued discussion of stale tip relay:** Antoine Poinsot
+  [replied][poinsot staletip] to the Bitcoin-Dev mailing list thread about
+  [BIP332][] stale tip relay (see Newsletters [#417][news417 staletip] and
+  [#423][news423 staletip]) to suggest that nodes initially relay only the
+  headers of stale blocks. Poinsot argued that headers are enough to make stale
+  blocks observable. Relaying the block data as well lets nodes reorganize
+  faster to a chain built on a stale block, which increases the expected
+  revenue of a miner that briefly keeps mining on its own block after losing a
+  block race. Poinsot [considered][poinsot staletip2] that effect most likely
+  small but not worth working out rigorously.
+
+  Anthony Towns [replied][towns staletip] that any miner who would benefit can
+  cheaply implement stale block relay itself. Towns
+  [estimated][towns staletip2] that a pool with 20% of network hashrate already
+  gains about 16.1 BTC per year by mining on its own block instead of a
+  competing block it saw first at the same height, and that cutting the relay
+  delay of the resulting one-block reorg from five seconds to one would raise
+  that to 16.36 BTC. Towns also argued that stale headers can raise concerns,
+  such as possible [selfish mining][topic selfish mining], but only the block
+  data can settle them. Poinsot [agreed][poinsot staletip3] that the estimate
+  appears to cover the effect on honest mining incentives and, while still
+  seeing most of the value in headers, did not want to block relaying full
+  blocks.
 
 ## Changes to services and client software
 
@@ -172,6 +194,13 @@ FIXME:Gustavojfe
 [eclair vuln del]: https://delvingbitcoin.org/t/disclosure-memory-exhaustion-dos-in-eclair-0-14-0/3057
 [eclair 0.14.0]: https://github.com/ACINQ/eclair/releases/tag/v0.14.0
 [eclair 0.14.1]: https://github.com/ACINQ/eclair/releases/tag/v0.14.1
+[poinsot staletip]: https://groups.google.com/g/bitcoindev/c/AwOPNxF15mU/m/qJIADCfABgAJ
+[news417 staletip]: /en/newsletters/2026/08/07/#draft-bip-for-stale-tip-relay
+[news423 staletip]: /en/newsletters/2026/09/18/#bips-2241
+[poinsot staletip2]: https://groups.google.com/g/bitcoindev/c/AwOPNxF15mU/m/ORRffqwZAgAJ
+[towns staletip]: https://groups.google.com/g/bitcoindev/c/AwOPNxF15mU/m/NF7UNdJoAQAJ
+[towns staletip2]: https://groups.google.com/g/bitcoindev/c/AwOPNxF15mU/m/Kt4orC5bAAAJ
+[poinsot staletip3]: https://groups.google.com/g/bitcoindev/c/AwOPNxF15mU/m/NqK6HjiAAQAJ
 [liana v16.0]: https://github.com/wizardsardine/liana/releases/tag/v16.0
 [news424 bip138]: /en/newsletters/2026/09/25/#bips-1951
 [coldcard 5.6.3]: https://blog.coinkite.com/coldcard-firmware-563-153q/
