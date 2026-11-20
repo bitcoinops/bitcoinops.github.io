@@ -231,6 +231,12 @@ a transaction).  Initializing the stack with the message already split
 into parts simplifies the writing of scripts that perform tests on
 those parts.
 
+This is what the introspection use case above depends on.  `OP_CSFS`
+verifies the signed message as a single element, so a script that
+wants to check individual fields has to supply those fields itself
+and rebuild the message with `OP_CAT` before checking the signature.
+Without `OP_CAT`, `OP_CSFS` allows only whole-message checks.
+
 {% include references.md %}
 [dead cat]: https://github.com/bitcoin/bitcoin/commit/4bd188c4383d6e614e18f79dc337fbabe8464c82#diff-8458adcedc17d046942185cb709ff5c3R94
 [value overflow incident]: https://en.bitcoin.it/wiki/Value_overflow_incident
