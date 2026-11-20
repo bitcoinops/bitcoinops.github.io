@@ -47,7 +47,7 @@ lang: zh
 
 *热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [硬件钱包接口（HWI） 1.1.2][hwi 1.1.2]：此版本新增了处理带已序列化前序 segwit 交易的 [PSBT][topic psbt] 的能力。为应对[手续费超额支付攻击][news101 fee overpayment]，目前已有多个硬件钱包要求或建议这样做。
+- [Hardware Wallet Interface (HWI) 1.1.2][hwi 1.1.2]：此版本新增了处理带已序列化前序 segwit 交易的 [PSBT][topic psbt] 的能力。为应对[手续费超额支付攻击][news101 fee overpayment]，目前已有多个硬件钱包要求或建议这样做。
 
 - [LND 0.10.2-beta.rc4][lnd 0.10.2-beta]：这一 LND 维护版本的候选版本现已可供测试，其中包含多项错误修复，包括一项与备份创建相关的重要修复。
 
