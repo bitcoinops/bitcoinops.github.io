@@ -100,12 +100,12 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 [news297 inbound]: /zh/newsletters/2024/04/10/#lnd-6703
 [news285 encdebug]: /zh/newsletters/2024/01/17/#lnd-8188
 [unsolicited `block` messages]: https://developer.bitcoin.org/devguide/p2p_network.html#block-broadcasting
-[news72 txoutset]: /en/newsletters/2019/11/13/#bitcoin-core-16899
-[news178 txoutset]: /en/newsletters/2021/12/08/#bitcoin-core-23155
+[news72 txoutset]: /zh/newsletters/2019/11/13/#bitcoin-core-16899
+[news178 txoutset]: /zh/newsletters/2021/12/08/#bitcoin-core-23155
 [news289 v3]: /zh/newsletters/2024/02/14/#bitcoin-core-28948
 [news296 v3]: /zh/newsletters/2024/04/03/#bitcoin-core-29242
-[news52 asmap]: /en/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
-[news83 asmap]: /en/newsletters/2020/02/05/#bitcoin-core-16702
-[news101 asmap]: /en/newsletters/2020/06/10/#bitcoin-core-0-20-0
+[news52 asmap]: /zh/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
+[news83 asmap]: /zh/newsletters/2020/02/05/#bitcoin-core-16702
+[news101 asmap]: /zh/newsletters/2020/06/10/#bitcoin-core-0-20-0
 [news290 asmap]: /zh/newsletters/2024/02/21/#improved-reproducible-asmap-creation-process-asmap
 [news259 cleanup]: /zh/newsletters/2023/07/12/#ln

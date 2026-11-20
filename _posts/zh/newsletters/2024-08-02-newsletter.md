@@ -81,7 +81,7 @@ Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (
 [hyperion]: https://github.com/sr-gi/hyperion
 [news310 disclosure]: /zh/newsletters/2024/07/05/#disclosure-of-vulnerabilities-affecting-bitcoin-core-versions-before-0210-0-21-0-bitcoin-core
 [Remote crash by sending excessive `addr` messages]: https://bitcoincore.org/en/2024/07/31/disclose-addrman-int-overflow/
-[news159 bcc22387]: /en/newsletters/2021/07/28/#bitcoin-core-22387
+[news159 bcc22387]: /zh/newsletters/2021/07/28/#bitcoin-core-22387
 [news310 miniupnpc]: /zh/newsletters/2024/07/05/#remote-code-execution-due-to-bug-in-miniupnpc-miniupnpc
 [Remote crash on local network when UPnP enabled]: https://bitcoincore.org/en/2024/07/31/disclose-upnp-oom/
 [upnp]: https://zh.wikipedia.org/wiki/UPnP

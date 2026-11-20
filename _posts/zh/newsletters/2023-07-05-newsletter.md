@@ -43,7 +43,7 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="24914,27896,6334,1452,1354,24771" %}
 [policy series]: /zh/blog/waiting-for-confirmation/
-[news111 cln anchor]: /en/newsletters/2020/08/19/#c-lightning-3830
+[news111 cln anchor]: /zh/newsletters/2020/08/19/#c-lightning-3830
 [news211 desc]: /zh/newsletters/2022/08/03/#multiple-derivation-path-descriptors
 [core lightning 23.05.2]: https://github.com/ElementsProject/lightning/releases/tag/v23.05.2
-[news170 syscall]: /en/newsletters/2021/10/13/#bitcoin-core-20487
+[news170 syscall]: /zh/newsletters/2021/10/13/#bitcoin-core-20487

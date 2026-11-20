@@ -137,8 +137,8 @@ Lloyd Fournier、Nick Farrow 和 Robin Linus [公布了“Dark Skippy”][news31
 年度最后披露涉及 Wasabi 和相关软件的[去匿名化漏洞][news333 deanon]，该漏洞允许类似 Wasabi 和 GingerWallet 的[coinjoin][topic coinjoin]协调器为用户提供原本应该匿名的凭证，但这些凭证可以被设计为具有区别性，从而实现追踪。尽管一种生成区别性凭证的方法已被消除，但 Yuval Kogman 在 2021 年发现的一个更普遍的问题，即允许协调器生成不同的证书，截至撰写本文时仍未解决。
 
 <!-- Not summarized here but discussed in the P2P improvements section
-- https://bitcoinops.org/en/newsletters/2024/03/27/#disclosure-of-free-relay-attack
-- https://bitcoinops.org/en/newsletters/2024/07/26/#varied-discussion-of-free-relay-and-fee-bumping-upgrades
+- https://bitcoinops.org/zh/newsletters/2024/03/27/#disclosure-of-free-relay-attack
+- https://bitcoinops.org/zh/newsletters/2024/07/26/#varied-discussion-of-free-relay-and-fee-bumping-upgrades
 -->
 
 </div>
@@ -606,7 +606,7 @@ Optech 很幸运且感激地收到了来自[人权基金会][Human Rights Founda
 [yirs 2018]: /zh/newsletters/2018/12/28/
 [yirs 2019]: /zh/newsletters/2019/12/28/
 [yirs 2020]: /zh/newsletters/2020/12/23/
-[yirs 2021]: /en/newsletters/2021/12/22/
+[yirs 2021]: /zh/newsletters/2021/12/22/
 [yirs 2022]: /zh/newsletters/2022/12/21/
 [yirs 2023]: /zh/newsletters/2023/12/20/
 [news283 feelocks]: /zh/newsletters/2024/01/03/#feedependent-timelocks

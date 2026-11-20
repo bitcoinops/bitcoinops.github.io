@@ -101,7 +101,7 @@ _本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Ligh
 [news259 bolts]: /zh/newsletters/2024/05/31/#bolts-1092
 [news305 bolts]: /zh/newsletters/2023/07/12/#ln
 [news293 routefee]: /zh/newsletters/2024/03/13/#lnd-8136
-[news152 quiescence]: /en/newsletters/2021/06/09/#c-lightning-4532
+[news152 quiescence]: /zh/newsletters/2021/06/09/#c-lightning-4532
 [news262 quiescence]:/zh/newsletters/2023/08/02/#eclair-2680
-[news115 anchors]: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
-[news165 anchors]: /en/newsletters/2021/09/08/#bolts-824
+[news115 anchors]: /zh/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
+[news165 anchors]: /zh/newsletters/2021/09/08/#bolts-824

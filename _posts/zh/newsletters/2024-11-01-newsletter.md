@@ -51,7 +51,7 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="31130,3007,1676" %}
 [news83 podle]: /zh/newsletters/2020/02/05/#podle
-[news131 podle]: /en/newsletters/2021/01/13/#ln-dual-funding-anti-utxo-probing
+[news131 podle]: /zh/newsletters/2021/01/13/#ln-dual-funding-anti-utxo-probing
 [news308 sp]: /zh/newsletters/2024/06/21/#continued-discussion-of-psbts-for-silent-payments-psbt
 [zmnscpxj post1]: https://delvingbitcoin.org/t/superscalar-laddered-timeout-tree-structured-decker-wattenhofer-factories/1143
 [deepdive]: /en/podcast/2024/10/31/

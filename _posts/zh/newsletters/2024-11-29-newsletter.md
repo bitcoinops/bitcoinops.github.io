@@ -90,7 +90,7 @@ lang: zh
 [towns wots]: https://delvingbitcoin.org/t/winternitz-one-time-signatures-contrasting-between-lisp-and-script/1255
 [nick wots]: https://x.com/n1ckler/status/1854552545084977320
 [towns earmarks]: https://delvingbitcoin.org/t/flexible-coin-earmarks/1275
-[news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
+[news166 tluv]: /zh/newsletters/2021/09/15/#covenant-opcode-proposal
 [towns badcov]: https://gnusha.org/pi/bitcoindev/20220719044458.GA26986@erisian.com.au/
 [core lightning 24.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v24.11rc2
 [bdk 0.30.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.30.0
@@ -99,7 +99,7 @@ lang: zh
 [news263 renepay]: /zh/newsletters/2023/08/09/#core-lightning-6376
 [news330 cs]: /zh/newsletters/2024/11/22/#covenants-based-on-grinding-rather-than-consensus-changes
 [pod330 cs]: /en/podcast/2024/11/26/#covenants-based-on-grinding-rather-than-consensus-changes
-[news222 validity rollups]: /zh/newsletters/2022/10/19/#rollup
+[news222 validity rollups]: /zh/newsletters/2022/10/19/#validity-rollups-research
 [policy series]: /zh/blog/waiting-for-confirmation/
 [news326 p2a]: /zh/newsletters/2024/10/25/#how-was-the-structure-of-pay-to-anchor-decided-p2a
 [news330 ed]: /zh/newsletters/2024/11/22/#bitcoin-core-30239

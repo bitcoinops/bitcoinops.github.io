@@ -97,7 +97,7 @@ lang: zh
 [news237 dos]: /zh/newsletters/2023/02/08/#core-lightning-5849
 [news240 dos]: /zh/newsletters/2023/03/01/#ldk-1988
 [black mashup]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021907.html
-[news185 txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
+[news185 txhash]: /zh/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
 [stateless funding]: https://gnusha.org/lightning-dev/2023-08-27.log
 [bip158 filters]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki#block-filters
 [merkle.fun]: https://merkle.fun/

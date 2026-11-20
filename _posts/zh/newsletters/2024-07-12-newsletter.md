@@ -67,7 +67,7 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs]
 [interesting transaction]: https://stacker.news/items/600187
 [LND v0.18.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.2-beta
 [news19 bip69]: /zh/newsletters/2018/10/30/#bip69-discussion
-[news151 bip69]: /en/newsletters/2021/06/02/#bolts-872
+[news151 bip69]: /zh/newsletters/2021/06/02/#bolts-872
 [gh fjahr]: https://github.com/fjahr
 [review club 29775]: https://bitcoincore.reviews/29775
 [ml testnet4]: https://groups.google.com/g/bitcoindev/c/9bL00vRj7OU

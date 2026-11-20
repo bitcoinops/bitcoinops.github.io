@@ -113,7 +113,7 @@ lang: zh
 {% include linkers/issues.md v=2 issues="27746,6376,6475,6466,6473,6253,5675,863,1945,759,28132,28130" %}
 [news245 blinded]: /zh/newsletters/2023/04/05/#bolts-765
 [towns dos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004020.html
-[news86 hold fees]: /en/newsletters/2020/02/26/#reverse-up-front-payments
+[news86 hold fees]: /zh/newsletters/2020/02/26/#reverse-up-front-payments
 [shikhelman dos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004033.html
 [towns dos2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004035.html
 [kcs endorsement]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004034.html
@@ -135,5 +135,5 @@ lang: zh
 [review club 28122]: https://bitcoincore.reviews/28122
 [bip352]: https://github.com/bitcoin/bips/pull/1458
 [bip158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
-[news192 pp]: /en/newsletters/2022/03/23/#payment-delivery-algorithm-update
-[news163 base]: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion
+[news192 pp]: /zh/newsletters/2022/03/23/#payment-delivery-algorithm-update
+[news163 base]: /zh/newsletters/2021/08/25/#zero-base-fee-ln-discussion

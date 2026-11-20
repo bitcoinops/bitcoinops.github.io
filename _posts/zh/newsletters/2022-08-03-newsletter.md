@@ -12,7 +12,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--multiple-derivation-path-descriptors-->多个派生路径的描述符**：Andrew Chow 在 Bitcoin-Dev 邮件组中[发帖][chow desc]提出了一个 [BIP 草案][bip-multipath-descs]，让单个描述符可以指定两个相关的 [BIP32][] 路径用于[层级确定式（HD）密钥生成][topic bip32]。第一个路径用于生成接收支付的地址；第二个路径用于钱包内部的支付，也就是在花费 UTXO 之后接收找零。
+- **<!--multiple-derivation-path-descriptors-->****多个派生路径的描述符**：Andrew Chow 在 Bitcoin-Dev 邮件组中[发帖][chow desc]提出了一个 [BIP 草案][bip-multipath-descs]，让单个描述符可以指定两个相关的 [BIP32][] 路径用于[层级确定式（HD）密钥生成][topic bip32]。第一个路径用于生成接收支付的地址；第二个路径用于钱包内部的支付，也就是在花费 UTXO 之后接收找零。
 
   如 BIP32 [所指定的][bip32 wallet layout]，大部分钱包都使用相互隔离的路径来生成外部地址和内部地址，以加强隐私性。一个用于接收支付的外部路径也许可以跟不那么值得信赖的设备分享，比如上载到网络服务器以接收支付。只用于找零的内部路径可能仅在需要动用私钥时才会用上，所以它可以获得跟私钥相同的安全性。如果举例所言的网站服务器被攻破了、外部地址遭到泄露，攻击者将知晓用户什么时候收到了钱、收到了多少、什么时候想发起一笔支付 —— 但他们并不一定能知道多少资金被发回给了用户自己，也并不必然能知道用户完全由找零输出所形成的支付。
 
@@ -41,4 +41,4 @@ lang: zh
 [raw desc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020799.html
 [petukhov desc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020804.html
 [unix epoch time]: https://en.wikipedia.org/wiki/Unix_time
-[news178 eclair 2061]: /en/newsletters/2021/12/08/#eclair-2061
+[news178 eclair 2061]: /zh/newsletters/2021/12/08/#eclair-2061

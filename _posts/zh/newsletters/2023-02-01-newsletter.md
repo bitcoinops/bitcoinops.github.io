@@ -58,7 +58,7 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26471,23395,2573,2574,2584,2540,1878,1860,7231" %}
 [common input ownership heuristic]: https://en.bitcoin.it/wiki/Privacy#Common-input-ownership_heuristic
-[news132 payjoin]: /en/newsletters/2021/01/20/#payjoin-adoption
+[news132 payjoin]: /zh/newsletters/2021/01/20/#payjoin-adoption
 [gould payjoin]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021364.html
 [payjoin impl]: https://github.com/chaincase-app/payjoin/pull/21
 [noise protocol]: http://www.noiseprotocol.org/

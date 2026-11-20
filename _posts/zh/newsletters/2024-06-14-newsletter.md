@@ -89,9 +89,9 @@ Bitcoin Core 实现了 5 种索引。UTXO 集和区块索引是必需的，而�
 [gh thecharlatan]: https://github.com/TheCharlatan
 [gh b47bd95]: https://github.com/bitcoin/bitcoin/commit/b47bd959207e82555f07e028cc2246943d32d4c3
 [reindex flag set]: https://github.com/bitcoin/bitcoin/blob/457e1846d2bf6ef9d54b9ba1a330ba8bbff13091/src/node/blockstorage.cpp#L58
-[news198 sendall]: /en/newsletters/2022/04/06/#bitcoin-core-24118
+[news198 sendall]: /zh/newsletters/2022/04/06/#bitcoin-core-24118
 [news290 bip353]: /zh/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-dns
-[news194 sendall]: /en/newsletters/2022/04/06/#bitcoin-core-24118
+[news194 sendall]: /zh/newsletters/2022/04/06/#bitcoin-core-24118
 [news269 deficit]: /zh/newsletters/2023/09/20/#bitcoin-core-26152
 [news284 lnd final delta]: /zh/newsletters/2024/01/10/#lnd-8308
 [news306 dns]: /zh/newsletters/2024/06/07/#blips-32

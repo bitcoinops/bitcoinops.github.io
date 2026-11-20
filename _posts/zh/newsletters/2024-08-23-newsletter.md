@@ -93,10 +93,10 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs]
 [moonsettler exfil1]: https://delvingbitcoin.org/t/non-interactive-anti-exfil-airgap-compatible/1081
 [wuille exfil1]: https://delvingbitcoin.org/t/non-interactive-anti-exfil-airgap-compatible/1081/3
 [wuille exfil2]: https://delvingbitcoin.org/t/non-interactive-anti-exfil-airgap-compatible/1081/7
-[news87 exfil]: /en/newsletters/2020/03/04/#proposal-to-standardize-an-exfiltration-resistant-nonce-protocol
-[news88 exfil]: /en/newsletters/2020/03/11/#exfiltration-resistant-nonce-protocols
+[news87 exfil]: /zh/newsletters/2020/03/04/#proposal-to-standardize-an-exfiltration-resistant-nonce-protocol
+[news88 exfil]: /zh/newsletters/2020/03/11/#exfiltration-resistant-nonce-protocols
 [maxwell exfil]: https://bitcointalk.org/index.php?topic=893898.msg9861102#msg9861102
-[news136 exfil]: /en/newsletters/2021/02/17/#anti-exfiltration
+[news136 exfil]: /zh/newsletters/2021/02/17/#anti-exfiltration
 [proton blog]: https://proton.me/blog/proton-wallet-launch
 [proton github]: https://github.com/protonwallet/
 [braidpool github]: https://github.com/braidpool/braidpool

@@ -20,23 +20,23 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [<!--what-is-the-purpose-of-indexing-the-mempool-by-these-five-criteria-->按这五个标准对内存池进行索引的目的是什么？]({{bse}}114216)
+- **<!--what-is-the-purpose-of-indexing-the-mempool-by-these-five-criteria-->**[按这五个标准对内存池进行索引的目的是什么？]({{bse}}114216)
   Murch 和 glozow 解释了 Bitcoin Core 中不同的交易池交易索引（txid、wtxid、交易池的时间、祖先费率和后代费率）以及它们的用途。
 
-- [<!--bip-341-should-key-path-only-p2tr-be-eschewed-altogether-->BIP-341: 是否应该摒弃只用密钥路径的 P2TR？]({{bse}}113989)
+- **<!--bip-341-should-key-path-only-p2tr-be-eschewed-altogether-->**[BIP-341: 是否应该摒弃只用密钥路径的 P2TR？]({{bse}}113989)
   Pieter Wuille 定义了 4 个 [taproot][topic taproot] 密钥路径花费选项，概述了[BIP341 推荐][bip41 constructing] "noscript" 选项的原因，并指出其他选项可能更受欢迎的情况。
 
 
-- [<!--was-the-addition-of-op-nop-codes-in-bitcoin-0-3-6-a-hard-or-soft-fork-->比特币 0.3.6 中增加的 OP_NOP 代码是硬分叉还是软分叉？]({{bse}}113994)
+- **<!--was-the-addition-of-op-nop-codes-in-bitcoin-0-3-6-a-hard-or-soft-fork-->**[Bitcoin 0.3.6 中增加的 OP_NOP 代码是硬分叉还是软分叉？]({{bse}}113994)
   Pieter Wuille 解释说，在 Bitcoin Core 0.3.6 中增加 [`OP_NOP` 代码][wiki reserved words]是一个向后不兼容的共识变化，因为旧的软件版本会将使用新的合法 `OP_NOP` 代码的交易视为不合法。然而，由于之前没有使用这些 `OP_NOP` 代码的交易被打包，所以没有分叉。
 
-- [<!--what-is-the-largest-multisig-quorum-currently-possible-->目前可能的最大多签人数是多少？]({{bse}}114048)
+- **<!--what-is-the-largest-multisig-quorum-currently-possible-->**[目前可能的最大多签人数是多少？]({{bse}}114048)
   Andrew Chow 列出了不同的可能的多签类型（裸脚本，P2SH，P2WSH，P2TR，P2TR + [MuSig][topic musig]）以及每种类型的多签的人数限制。
 
 - **<!--what-is-the-difference-between-blocksonly-and-block-relay-only-in-bitcoin-core-->**[Bitcoin Core 中的 block-only 和 block-relay-only 之间有什么区别？]({{bse}}114081)
   Lightlike 列出了 block-relay-only 连接和运行 `-blocksonly` 模式的节点之间的区别。
 
-- [<!--where-are-bips-40-and-41-->BIP 40 和 41 在哪里？]({{bse}}114168)
+- **<!--where-are-bips-40-and-41-->**[<!--where-are-bips-40-and-41-->BIP 40 和 41 在哪里？]({{bse}}114168)
   用户 andrewz 问，为什么[分配给][assigned BIP numbers] Stratum wire 协议的 BIP40 和 Stratum mining 协议的 BIP41 没有内容。在[另一个回答中][se 114179]，Michael Folkson 给出了一些正在编写的 Stratum 的文档链接。
 
 ## 新版本和候选版本

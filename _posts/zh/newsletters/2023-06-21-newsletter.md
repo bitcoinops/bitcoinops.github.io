@@ -84,7 +84,7 @@ _这是一个关于交易转发、交易池纳入以及挖矿选择的[限定周
 [t 2p]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003982.html
 [v 2p3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003981.html
 [eclair v0.9.0]: https://github.com/ACINQ/eclair/releases/tag/v0.9.0
-[news162 greenlight]: /en/newsletters/2021/08/18/#blockstream-announces-non-custodial-ln-cloud-service-greenlight
+[news162 greenlight]: /zh/newsletters/2021/08/18/#blockstream-announces-non-custodial-ln-cloud-service-greenlight
 [decker twitter]: https://twitter.com/Snyke/status/1666096470884515840
 [github greenlight]: https://github.com/Blockstream/greenlight
 [greenlight testing]: https://blockstream.github.io/greenlight/tutorials/testing/

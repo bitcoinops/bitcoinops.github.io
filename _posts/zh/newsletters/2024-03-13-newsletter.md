@@ -67,7 +67,7 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 {% include linkers/issues.md v=2 issues="8136,8499,2916" %}
 [zmnscpxj bet]: https://delvingbitcoin.org/t/economic-majority-signaling-for-op-ctv-activation/635
 [rubin bet]: https://blog.bitmex.com/taproot-you-betcha/
-[news191 lisp]: /en/newsletters/2022/03/16/#using-chia-lisp
+[news191 lisp]: /zh/newsletters/2022/03/16/#using-chia-lisp
 [towns lisp]: https://delvingbitcoin.org/t/chia-lisp-for-bitcoiners/636
 [lisp]: https://zh.wikipedia.org/wiki/LISP
 [bitcoin core 26.1rc1]: https://bitcoincore.org/bin/bitcoin-core-26.1/

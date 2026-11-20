@@ -93,7 +93,7 @@ _在这个每月专题中，我们重点介绍比特币钱包和服务的有趣�
 [pushtx spec]: https://pushtx.org/#url-protocol-spec
 [news305 bdb]: /zh/newsletters/2024/05/31/#bitcoin-core-26606
 [news309 p2sh]: /zh/newsletters/2024/06/28/#rust-bitcoin-2794
-[news161 fidelity]: /en/newsletters/2021/08/11/#implementation-of-fidelity-bonds
+[news161 fidelity]: /zh/newsletters/2021/08/11/#implementation-of-fidelity-bonds
 [news257 jit htlc]: /zh/newsletters/2023/06/28/#ldk-2319
 [news307 ldk3080]: /zh/newsletters/2024/06/14/#ldk-3080
 [news245 blind]: /zh/newsletters/2023/04/05/#bolts-765

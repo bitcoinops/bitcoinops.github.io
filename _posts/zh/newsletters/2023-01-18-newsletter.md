@@ -82,7 +82,7 @@ lang: zh
 [obeirne op_vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021318.html
 [obeirne paper]: https://jameso.be/vaults.pdf
 [obeirne scripthash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021329.html
-[news185 ctv-dlc]: /en/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
+[news185 ctv-dlc]: /zh/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
 [towns op_vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021328.html
 [kraken bech32m]: https://blog.kraken.com/post/16740/bitcoin-taproot-address-now-supported-on-kraken/
 [whirlpool rust client]: https://github.com/straylight-orbit/whirlpool-client-rs

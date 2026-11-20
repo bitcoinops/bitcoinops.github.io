@@ -102,6 +102,6 @@ lang: zh
 [news244 law]: /zh/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
 [eclair keys]: https://github.com/ACINQ/eclair/blob/d3ac58863fbb76f4a44a779a52a6893b43566b29/docs/ManagingBitcoinCoreKeys.md
 [news269 psbt]: /zh/newsletters/2023/09/20/#bitcoin-core-28414
-[news146 mtp]: /en/newsletters/2021/04/28/#what-are-the-different-contexts-where-mtp-is-used-in-bitcoin
+[news146 mtp]: /zh/newsletters/2021/04/28/#what-are-the-different-contexts-where-mtp-is-used-in-bitcoin
 [headers first pr]: https://github.com/bitcoin/bitcoin/pull/4468
 [policy series]: /zh/blog/waiting-for-confirmation/
