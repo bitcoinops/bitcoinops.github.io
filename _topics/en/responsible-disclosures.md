@@ -235,6 +235,9 @@ optech_mentions:
     url: /en/newsletters/2026/11/13/#block-processing-stall-via-witness-malleation
     date: 2025-04-28
 
+  - title: "rorp disclosed a `start_batch` memory-exhaustion DoS vulnerability in Eclair"
+    url: /en/newsletters/2026/11/20/#disclosure-of-a-dos-vulnerability-in-eclair
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

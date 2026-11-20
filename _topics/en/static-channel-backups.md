@@ -38,6 +38,9 @@ optech_mentions:
   - title: "Core Lightning #5361 adds experimental support for peer storage backups"
     url: /en/newsletters/2023/02/15/#core-lightning-5361
 
+  - title: "Core Lightning #9730 adds a tool for recovering HTLC outputs after channel-state loss"
+    url: /en/newsletters/2026/11/20/#core-lightning-9730
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

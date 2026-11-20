@@ -127,6 +127,9 @@ optech_mentions:
   - title: "BIPs #2347 updates BIP95 to make the testnet5 genesis block easier to mine with pool infrastructure"
     url: /en/newsletters/2026/11/13/#bips-2347
 
+  - title: "BIPs #2356 updates BIP95 with the mined testnet5 genesis block and marks it as deployed"
+    url: /en/newsletters/2026/11/20/#bips-2356
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signet

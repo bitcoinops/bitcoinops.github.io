@@ -127,6 +127,9 @@ optech_mentions:
   - title: "Bitcoin Core #36142 fixes command injection through the Tor control endpoint"
     url: /en/newsletters/2026/11/13/#bitcoin-core-36142
 
+  - title: "Bitcoin Core #36757 ignores a Tor or I2P peer's view of the node's address to fix a privacy leak"
+    url: /en/newsletters/2026/11/20/#bitcoin-core-36757
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion
