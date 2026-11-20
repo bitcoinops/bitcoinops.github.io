@@ -7,82 +7,82 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周 Newsletter 描述了一项允许在某些情况下中继零值输出交易的提案，并总结了关于为闪电网络采用 PTLC 做准备的讨论。此外还包含我们的常规栏目：服务和客户端软件的更改、Bitcoin Stack Exchange 的热门问答，以及主流比特币基础设施软件的值得注意的变更。
+本周 Newsletter 描述了一项提案：允许在某些情况下中继带零值输出的交易；并总结了关于为 LN 采用 PTLC 做准备的讨论。此外还包含我们的常规栏目：服务和客户端软件的变更、Bitcoin Stack Exchange 的热门问答，以及主流比特币基础设施软件的值得注意的变更。
 
 ## 新闻
 
-- ​**<!--adding-a-special-exception-for-certain-uneconomical-outputs-->****为特定不经济输出添加例外规则：​** 自我们在 [Newsletter #162][news162 unec] 描述以来，Jeremy Rubin 在 Bitcoin-Dev 邮件列表[重新发起讨论][rubin unec]，提议允许创建低于[粉尘限制][topic uneconomical outputs]的交易输出。粉尘限制是中继节点用于阻止用户创建经济上不合理 UTXO 的交易中继策略。UTXO 需要至少由部分全节点存储至花费前，某些情况下还需快速检索能力，因此允许*不经济输出*可能无端引发问题。
+- **<!--adding-a-special-exception-for-certain-uneconomical-outputs-->****为特定不经济输出添加例外规则：** 自我们在 [Newsletter #162][news162 unec] 描述以来，Jeremy Rubin 在 Bitcoin-Dev 邮件列表[重新发起讨论][rubin unec]，提议允许交易创建价值低于[粉尘限制][topic uneconomical outputs]的输出。粉尘限制是一项交易中继策略，节点用它来劝阻用户创建那些花起来在经济上不划算的 UTXO。UTXO 在被花费之前至少需要由部分全节点存储，有时还需要能被快速检索到，因此允许*不经济输出*存在，可能会平白无故地制造问题。
 
-  然而，零值输出在 [CPFP（Child-Pays-For-Parent）][topic cpfp] 手续费追加场景中有潜在用途——当被追加交易的所有资金均无法花费时（如 [eltoo][topic eltoo] 协议），所有手续费资金需来自独立 UTXO。Ruben Somsen 也[举例][somsen unec]说明零值输出对空间链（一种单向锚定侧链）的实用性。
+  不过，零值输出在[子为父付（CPFP）][topic cpfp]手续费追加中可能确有用处：此时被追加手续费的那笔交易，其资金没有任何一部分可以被花费，用于追加手续费的资金必须全部来自其他 UTXO，例如在 [eltoo][topic eltoo] 中就是如此。Ruben Somsen 也[举例][somsen unec]说明了零值输出对空间链（一种单向锚定侧链）的用处。
 
   截至本文撰写时，讨论尚未形成明确结论。
 
-- ​**<!--preparing-ln-for-ptlcs-->****为闪电网络采用 PTLC 做准备：​** Bastien Teinturier 在 Lightning-Dev 邮件列表发起[讨论][teinturier post]，提议对闪电网络通信协议进行[最小化修改][ln docs 16]以支持节点升级使用 [PTLC][topic ptlc]。PTLC 相较当前使用的 [HTLC][topic htlc] 具备更强隐私性且占用更少区块空间。
+- **<!--preparing-ln-for-ptlcs-->****为 LN 采用 PTLC 做准备：** Bastien Teinturier 在 Lightning-Dev 邮件列表发起[讨论][teinturier post]，提议对 LN 通信协议做[最小的必要改动][ln docs 16]，使节点可以开始升级到使用 [PTLC][topic ptlc]。PTLC 比目前使用的 [HTLC][topic htlc] 更具隐私性，占用的区块空间也更少。
 
-  Teinturier 试图使这些修改与拟议的 `option_simplified_update` [协议变更][bolts #867]（参见 [Newsletter #120][news120 opt_simp_update]）同步实施。次要目标是使通信协议兼容 [Newsletter #152][news152 ff] 描述的基于快进机制的 PTLC 协议，这将支持节点分阶段升级：先采用带 HTLC 的 `option_simplified_update`，再升级至 PTLC，最后实现快进功能。
+  Teinturier 试图整理出一组改动，使其可以与拟议的 `option_simplified_update` [协议变更][bolts #867]（见 [Newsletter #120][news120 opt_simp_update]）同时实施。次要目标是让通信协议兼容 [Newsletter #152][news152 ff] 中描述的基于快进（fast forwards）的 PTLC 协议。这样，节点就可以分阶段升级：先升级到使用 HTLC 的 `option_simplified_update`，再升级到 PTLC，最后升级到快进。
 
-## 服务和客户端软件的更改
+## 服务和客户端软件的变更
 
-*本月我们重点介绍比特币钱包和服务的趣味更新。*
+*在本月栏目中，我们重点介绍 Bitcoin 钱包与服务的一些有趣更新。*
 
-- ​**<!--simple-bitcoin-wallet-adds-taproot-sends-->****Simple Bitcoin Wallet 新增 Taproot 发送功能：​**
+- **<!--simple-bitcoin-wallet-adds-taproot-sends-->****Simple Bitcoin Wallet 新增 Taproot 发送功能：**
   SBW [2.4.22 版本][sbw 2.4.22] 支持发送至 Taproot 地址。
 
-- ​**<!--trezor-suite-supports-taproot-->****Trezor Suite 支持 Taproot：​**
-  [Trezor 公告][trezor taproot blog]称 21.12.2 版本已支持 [Taproot][topic taproot]。用户升级客户端和固件后可创建新的 Taproot 账户。
+- **<!--trezor-suite-supports-taproot-->****Trezor Suite 支持 Taproot：**
+  [Trezor 公告][trezor taproot blog]称 Trezor Suite 的 21.12.2 版本已支持 [taproot][topic taproot]。用户下载最新的客户端和固件后，可以创建一个新的 taproot 账户。
 
-- ​**<!--bluewallet-adds-taproot-sends-->****BlueWallet 新增 Taproot 发送功能：​**
+- **<!--bluewallet-adds-taproot-sends-->****BlueWallet 新增 Taproot 发送功能：**
   BlueWallet [v6.2.14][bluewallet 6.2.14] 新增对 Taproot 地址的发送支持。
 
-- ​**<!--cash-app-adds-taproot-sends-->****Cash App 新增 Taproot 发送功能：​**
-  自 [2021 年 12 月 1 日][cash app bech32m]起，用户可发送至 [bech32m][topic bech32] 地址。
+- **<!--cash-app-adds-taproot-sends-->****Cash App 新增 Taproot 发送功能：**
+  自 [2021 年 12 月 1 日][cash app bech32m]起，Cash App 用户可以发送到 [bech32m][topic bech32] 地址。
 
-- ​**<!--swan-adds-taproot-sends-->****Swan 新增 Taproot 发送功能：​**
+- **<!--swan-adds-taproot-sends-->****Swan 新增 Taproot 发送功能：**
   Swan [公告][swan taproot tweet]支持 Taproot 提现（发送）。
 
-- ​**<!--wallet-of-satoshi-adds-taproot-sends-->****Wallet of Satoshi 新增 Taproot 发送功能：​**
+- **<!--wallet-of-satoshi-adds-taproot-sends-->****Wallet of Satoshi 新增 Taproot 发送功能：**
   移动端比特币与闪电钱包 [Wallet of Satoshi][wallet of satoshi website] [宣布][wallet of satoshi tweet]支持 Taproot 发送。
 
 ## Bitcoin Stack Exchange 精选问答
 
-*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题解答的首选地——也是我们为好奇或困惑用户提供帮助的去处。本月我们精选自上次更新后的高票问答。*
+*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选去处之一，也是我们有点空闲时帮助好奇或困惑用户的地方。在本月栏目中，我们精选自上次更新以来得票最高的一些问题和回答。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- ​**<!--what-is-the-script-assembly-and-execution-in-p2tr-spend-spend-from-taproot-->**[P2TR 花费（从 Taproot 花费）中的脚本汇编和执行是怎样的？]({{bse}}111098)
+- **<!--what-is-the-script-assembly-and-execution-in-p2tr-spend-spend-from-taproot-->**[P2TR 花费（从 Taproot 花费）中的脚本汇编和执行是怎样的？]({{bse}}111098)
   Pieter Wuille 详细解析了一个简化的 [BIP341][] 示例，涵盖构建 Taproot 输出、密钥路径花费、脚本路径花费及验证流程。
 
-- ​**<!--how-can-i-find-samples-for-p2tr-transactions-on-mainnet-->**[如何在主网查找 P2TR 交易样本？]({{bse}}110995)
-  Murch 提供[区块浏览器][topic block explorers]链接，包括：首笔 P2TR 交易、首个包含脚本路径和密钥路径输入的交易、首笔含多密钥路径输入的交易、首个 2-of-2 多签脚本路径花费，以及新 [Tapscript][topic tapscript] 操作码 `OP_CHECKSIGADD` 的首次使用。
+- **<!--how-can-i-find-samples-for-p2tr-transactions-on-mainnet-->**[如何在主网查找 P2TR 交易样本？]({{bse}}110995)
+  Murch 提供[区块浏览器][topic block explorers]链接，包括：首笔 P2TR 交易、首个包含脚本路径和密钥路径输入的交易、首笔含多密钥路径输入的交易、首个 2-of-2 多重签名脚本路径花费，以及新 [Tapscript][topic tapscript] 操作码 `OP_CHECKSIGADD` 的首次使用。
 
-- ​**<!--does-a-miner-adding-transactions-to-a-block-while-mining-reset-the-block-s-pow-->**[矿工在挖矿时添加交易会重置区块的工作量证明吗？]({{bse}}110903)
-  Pieter Wuille 解释挖矿具有[无进展性][oconnor blog]，每次哈希尝试都是独立的，即便当前挖矿区块中添加了新交易。
+- **<!--does-a-miner-adding-transactions-to-a-block-while-mining-reset-the-block-s-pow-->**[矿工在挖矿时添加交易会重置区块的工作量证明吗？]({{bse}}110903)
+  Pieter Wuille 解释挖矿是[无进展的][oconnor blog]：每一次为求解区块而进行的哈希尝试，都与此前已经完成的工作无关，即使有人在这段时间向正在挖的区块里加入了新交易也是如此。
 
-- ​**<!--can-schnorr-aggregate-signatures-be-nested-inside-other-schnorr-aggregate-signatures-->**[Schnorr 聚合签名可以嵌套在其他 Schnorr 聚合签名中吗？]({{bse}}110862)
-  Pieter Wuille 探讨了使用 [Schnorr 签名][topic schnorr signatures]实现密钥分层聚合的可行性，指出 [MuSig2][topic musig] 设计兼容嵌套使用，但需注意尚无安全性证明。
+- **<!--can-schnorr-aggregate-signatures-be-nested-inside-other-schnorr-aggregate-signatures-->**[Schnorr 聚合签名可以嵌套在其他 Schnorr 聚合签名中吗？]({{bse}}110862)
+  Pieter Wuille 描述了用 [schnorr 签名][topic schnorr signatures] 做密钥聚合的可行性：在这种方案中，“密钥可以分层聚合，而签名者无需了解自己‘侄辈’密钥的信息”。他指出 [MuSig2][topic musig] 在设计上就兼容嵌套，也可以针对这一用例加以修改，不过目前还没有安全性证明。
 
-## 值得注意的代码和文档变更
+## 值得注意的代码与文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo] 和 [闪电网络规范（BOLTs）][bolts repo] 的值得注意变更。*
+*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo] 和 [闪电网络规范（BOLTs）][bolts repo] 的值得注意的变更。*
 
-- [Bitcoin Core #23716][] 在测试代码中新增原生 Python 实现的 RIPEMD-160，不再依赖 OpenSSL 实现。新版 OpenSSL 默认不再提供 RIPEMD-160 支持。
+- [Bitcoin Core #23716][] 在 Bitcoin Core 的测试代码中新增了一个用原生 Python 实现的 RIPEMD-160。这样 Bitcoin Core 就不再使用 Python `hashlib` 库中的 RIPEMD-160 函数——该函数封装的是 OpenSSL 的 RIPEMD-160 实现。较新版本的 OpenSSL 默认不再提供 RIPEMD-160 支持，需要单独启用。
 
-- [Bitcoin Core #20295][] 新增 `getblockfrompeer` RPC，支持手动从指定节点请求特定区块，用于分叉监控和研究。
+- [Bitcoin Core #20295][] 新增 `getblockfrompeer` RPC，允许手动向指定的对等节点请求某个特定区块。其预期用途是获取陈旧的链尖（stale chaintip），用于分叉监控和研究。
 
-- [Bitcoin Core #14707][] 更新多个 RPC 以包含矿工 coinbase 输出，新增 `include_immature_coinbase` 选项控制是否包含未成熟（未达 100 确认）的 coinbase 交易。
+- [Bitcoin Core #14707][] 更新了多个 RPC，使其也计入通过矿工 币基交易输出获得的比特币。这些 RPC 新增了 `include_immature_coinbase` 选项，用于切换是否包含尚未成熟的 币基交易（成熟即达到 100 个确认，按共识规则这是它们最早可以被花费的时候）。
 
-- [Bitcoin Core #23486][] 优化 `decodescript` RPC，仅在脚本适用时返回 P2SH/P2WSH 地址。
+- [Bitcoin Core #23486][] 更新 `decodescript` RPC，只有当某个脚本能够分别用于 P2SH 或 P2WSH 时，才返回该脚本对应的 P2SH 或 P2WSH 地址。
 
-- [BOLTs #940][] 弃用 `node_announcement` 中 Tor v2 地址的声明与解析。[Rust-Lightning #1204][] 同步实现此变更。
+- [BOLTs #940][] 弃用了在 `node_announcements` 中公告和解析 Tor v2 洋葱地址的做法。同样在本周合并的 [Rust-Lightning #1204][] 更新了该实现，使其遵循这一更新后的规范。
 
-- [BOLTs #918][] 移除 `ping` 消息的速率限制，支持更频繁的心跳检测以提升服务质量。
+- [BOLTs #918][] 移除了 `ping` 消息的速率限制。`ping` 消息主要用于检查与对等节点的连接是否仍然存活。在这次合并之前，`ping` 消息最多每 30 秒发送一次。对许多节点来说，通过 `ping` 更频繁地发送心跳消息有助于保证较高的服务质量。由于其他闪电网络消息都不受速率限制，`ping` 消息这条 30 秒的限制也随之取消。
 
-- [BOLTs #906][] 新增 `channel_type` 功能位（参见[第 165 期周报][news165 channel_type]），便于未来节点筛选支持此特性的对等节点。
+- [BOLTs #906][] 为 [Newsletter #165][news165 channel_type] 中描述的 `channel_type` 功能新增了一个功能位。增加这个功能位之后，未来的节点就更容易只选择那些理解这项新功能的节点。
 
 ## 假期发布安排
 
-节日快乐！本期是本年度的最后一期常规周报。下周我们将发布年度特刊，并于 1 月 5 日恢复常规发布。
+节日快乐！本期是我们今年最后一期常规 Newsletter。下周我们将发布年度回顾特刊，并于 1 月 5 日（周三）恢复常规发布。
 
 {% include references.md %}
 {% include linkers/issues.md issues="867,23716,20295,14707,23486,940,906,1204,918" %}

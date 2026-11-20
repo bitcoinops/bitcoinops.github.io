@@ -11,13 +11,13 @@ lang: zh
 
 ## 新闻
 
-本周没有重要新闻。我们之前已经报道的话题，包括 [OP_CHECKTEMPLATEVERIFY 操作码][topic op_checktemplateverify]和 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]，收到了更多评论——但大部分讨论要么是非技术性的，要么是关于一些我们认为对广大读者并不重要的细节。在本期 Newsletter 编辑期间，开发者邮件列表收到几篇有趣的帖子；我们将在下周详细介绍它们。
+本周没有重要新闻。我们之前已经报道的话题，包括 [OP_CHECKTEMPLATEVERIFY 操作码][topic op_checktemplateverify]和 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]，确实收到了大量补充评论——但大部分讨论要么是非技术性的，要么是关于一些我们认为普遍参考价值不大的细节。在本期 Newsletter 编辑期间，开发者邮件列表收到了几篇有趣的帖子；我们会在下周详细介绍。
 
 ## Bitcoin Core PR 审查俱乐部
 
-*本月专栏，我们总结了最近一次 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club] 的会议，突出一些重要问题与解答。点击下面的问题可查看会议回答摘要。*
+*本月栏目，我们总结了最近一次 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club] 的会议，突出一些重要问题与解答。点击下面的问题可查看会议回答摘要。*
 
-[通过修剪阻挡器改进裁剪节点上的索引][review club pr] 是 Fabian Jahr 提交的一个 PR，引入了一种新的方法来决定何时可以安全地从区块存储中裁剪区块。该新方法使得裁剪节点能够维护 Coinstats 索引，并移除了验证模块对索引相关代码的依赖。
+[通过修剪阻挡器改进修剪节点上的索引][review club pr] 是 Fabian Jahr 提交的一个 PR，引入了一种新的方法，用来决定何时可以安全地从区块存储中修剪区块。这一新方法使得修剪节点能够维护 Coinstats 索引，并移除了验证模块对索引相关代码的依赖。
 
 {% include functions/details-list.md
 
@@ -26,23 +26,23 @@ lang: zh
   a0link="https://bitcoincore.reviews/21726#l-28"
 
   q1="<!--q1-->什么是循环依赖？为什么我们要尽量避免循环依赖？"
-  a1="当两个代码模块彼此都离不开对方才能工作时，就存在循环依赖。循环依赖本身不是安全问题，但它意味着代码组织不良，并通过增加单独构建、使用和测试特定模块或功能的难度来阻碍开发。"
+  a1="当两个代码模块彼此都离不开对方才能工作时，就存在循环依赖。循环依赖本身不是安全问题，但它说明代码组织不良，并且让单独构建、使用和测试特定模块或功能变得更难，从而拖累开发。"
   a1link="https://bitcoincore.reviews/21726#l-44"
 
   q2="<!--q2-->在 [此提交][review club commit]中引入的修剪阻挡器是如何工作的？"
-  a2="该 PR 引入了一张“修剪锁”列表，为每个索引记录必须保留的最早区块高度。在 `CChainState::FlushStateToDisk` 中，当节点决定要裁剪哪些区块时，它会避免裁剪高度高于这些值的区块。每当某个索引更新其已知的最佳区块高度时，相应的修剪锁也会被更新。"
+  a2="该 PR 引入了一张“修剪锁”列表，为每个索引记录必须保留的最早区块高度。在 `CChainState::FlushStateToDisk` 中，当节点决定要修剪哪些区块时，它会避免修剪高度高于这些值的区块。每当某个索引更新其关于最佳区块的视图时，修剪锁也会随之更新。"
   a2link="https://bitcoincore.reviews/21726#l-68"
 
-  q3="<!--q3-->与旧方法相比，这种修剪方式的优缺点是什么？"
-  a3="此前，`CChainState::FlushStateToDisk` 中的逻辑会向索引查询其最佳高度，以确定停止裁剪的区块位置；因此索引与验证逻辑相互依赖。现在，修剪锁被主动计算，可能计算得更频繁，但验证过程不再需要查询索引。"
+  q3="<!--q3-->与旧方法相比，这种修剪方式的优缺点分别是什么？"
+  a3="此前，`CChainState::FlushStateToDisk` 中的逻辑会向各个索引查询其最佳高度，以确定应当在哪里停止修剪；因此索引与验证逻辑相互依赖。现在改为提前计算修剪锁，计算可能更频繁，但验证过程不再需要查询索引。"
   a3link="https://bitcoincore.reviews/21726#l-92"
 %}
 
-## Notable code and documentation changes
+## 值得注意的代码与文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]的值得注意的代码和文档更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]上值得注意的变更。*
 
-- [Rust Bitcoin #716][Rust Bitcoin #716] 新增了 `amount::Display`，一种可配置的显示类型，用于面向用户的金额或其他数值表达。该补丁默认将所有数字表示压缩到最小宽度，从而减少多余的零，这些多余的零会让 [BIP21][BIP21] URI 不必要地变长，常常导致二维码尺寸更大或更难扫描。
+- [Rust Bitcoin #716][Rust Bitcoin #716] 新增了 `amount::Display`，这是一个可配置的 Display 类型，用于表示面额或其他面向用户的金额。该补丁默认把所有数字表示压缩到最小宽度，从而减少多余的零。这些多余的零会让 [BIP21][BIP21] URI 不必要地变长，常常使二维码尺寸更大，或比实际需要的更难扫描。
 
 
 {% include references.md %}

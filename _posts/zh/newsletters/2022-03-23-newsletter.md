@@ -7,23 +7,27 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 概述了关于 speedy trial 软分叉激活机制的讨论，并链接到针对 LN 路径寻找算法的优化更新。此外，我们照例提供了对服务和客户端软件最近更改的描述、新版发布与候选发布的公告，以及对流行比特币基础设施软件值得注意的更改摘要。
+本周的 Newsletter 概述了关于 speedy trial 软分叉激活机制的讨论，并链接到一种经过优化的 LN 寻路算法的最新进展。此外，我们照例提供了对服务和客户端软件最近变更的描述、新版本与候选版本的发布公告，以及对热门比特币基础设施软件值得注意的变更的摘要。
 
 ## 新闻
 
-- **<!--speedy-trial-discussion-->****speedy trial 讨论：** 在最近一次关于提议中的 OP_CHECKTEMPLATEVERIFY opcode 的会议纪要中提到 speedy trial 软分叉激活方法，该内容随后被拆分出来，在 Bitcoin-Dev 邮件列表上单独开设了讨论线程，因为 Jorge Timón 表达了对在他认为具有争议的软分叉上使用 speedy trial 的担忧。Russell O'Connor 解释了这些担忧此前已如何得到解决。Anthony Towns 进一步描述了反对者如何抵制利用 speedy trial 激活一个他们并不希望发生的软分叉。
+- **<!--speedy-trial-discussion-->****speedy trial 讨论：** 最近一次关于提议中的 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] 操作码的会议，其摘要中提到了 speedy trial [软分叉激活方法][topic soft fork activation]，这部分内容随后被拆分出来，在 Bitcoin-Dev 邮件列表上单独开了一个讨论帖继续讨论，起因是 Jorge Timón [表达][timon st]了对在他认为有争议的软分叉上采用 speedy trial 的担忧。
 
-- **<!--payment-delivery-algorithm-update-->****支付路径算法更新：** René Pickhardt 在 Lightning-Dev 邮件列表中发帖表示，他为去年与 Stefan Richter 发布的路径寻找算法找到了计算效率更高的近似实现。关于该算法的早期讨论可见 Newsletter #163。Pickhardt 的邮件还提出了一些可以提高快速支付成功率的方法，例如实现 [stuckless 支付][news53 stuckless]，以及按照[多篇][boomerang]学术[论文][spear]中的提议，允许[可退款的超额支付][news86 boomerang]。
+  Russell O'Connor [解释][oconnor st]了这些担忧此前是如何得到解决的。Anthony Towns 进一步[描述][towns st]了反对的用户可以如何抵制用 speedy trial 激活一个他们并不想要的软分叉。
 
-## 服务和客户端软件的更改
+- **<!--payment-delivery-algorithm-update-->****支付投递算法更新：** René Pickhardt 在 Lightning-Dev 邮件列表[发帖][pickhardt payment delivery]表示，他为自己与 Stefan Richter 去年发表的寻路算法找到了一个计算效率高得多的近似算法。关于该算法的早期讨论见 [Newsletter #163][news163 pp]。
 
-*在这一月度栏目中，我们重点介绍比特币钱包与服务的有趣更新。*
+  Pickhardt 的邮件还提出了一些可以提高快速支付成功率的方法，例如实现 [stuckless 支付][news53 stuckless]，以及按照[多篇][boomerang]学术[论文][spear]中的提议，允许[可退款的超额支付][news86 boomerang]。
 
-- **<!--coinswap-implementation-teleport-transactions-announced-->****Coinswap 实现 Teleport Transactions 发布：** 在最近的 Bitcoin-Dev 邮件列表[帖子][belcher teleport]中，Chris Belcher 公布了实现 [coinswap][topic coinswap] 协议的 Teleport Transactions alpha 版 [0.1][teleport transactions 0.1]。
+## 服务和客户端软件的变更
 
-- **<!--joinmarket-adds-taproot-sends-->****JoinMarket 新增 taproot 转账：** [JoinMarket v0.9.5][joinmarket v0.9.5] 增加了向 [bech32m][topic bech32] 地址发送资金的能力。
+*在本月栏目中，我们重点介绍 Bitcoin 钱包与服务的一些有趣更新。*
 
-- **<!--mercury-wallet-adds-rbf-support-->****Mercury Wallet 增加 RBF（Replace-by-Fee） 支持：** 面向 Mercury [statechain][topic statechains] 的钱包发布了 [v0.6.5][mercury v0.6.5]，其中为提现交易引入了 RBF（Replace-by-Fee） 替换功能。
+- **<!--coinswap-implementation-teleport-transactions-announced-->****公布 coinswap 实现 Teleport Transactions：** 在最近的一封 Bitcoin-Dev 邮件列表[帖子][belcher teleport]中，Chris Belcher 公布了实现 [coinswap][topic coinswap] 协议的 Teleport Transactions alpha 版本 [0.1][teleport transactions 0.1]。
+
+- **<!--joinmarket-adds-taproot-sends-->****JoinMarket 新增 taproot 发送支持：** [JoinMarket v0.9.5][joinmarket v0.9.5] 增加了向 [bech32m][topic bech32] 地址发送资金的能力。
+
+- **<!--mercury-wallet-adds-rbf-support-->****Mercury Wallet 新增 RBF 支持：** Mercury Wallet 是面向 Mercury [statechain][topic statechains] 的钱包，它发布了 [v0.6.5][mercury v0.6.5]，其中支持对提现交易进行手续费替换（[RBF][topic rbf]）。
 
 - **<!--hexa-wallet-adds-lightning-support-->****Hexa Wallet 新增闪电网络支持：** 移动端钱包 Hexa 在 [v2.0.71 版本][hexa v2.0.71] 中为运行自有 LND 节点的用户加入了闪电网络功能。
 
@@ -31,25 +35,25 @@ lang: zh
 
 ## 发布与候选发布
 
-*面向流行比特币基础设施项目的新版本发布与候选发布。请考虑升级到新版本或协助测试候选版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [HWI 2.1.0-rc.1][HWI 2.1.0-rc.1] 是 HWI 的一个候选发布，新增了对多款硬件签名设备的 taproot 支持，并包含其他改进和漏洞修复。
+- [HWI 2.1.0-rc.1][HWI 2.1.0-rc.1] 是 HWI 的一个候选发布版本，为多款硬件签名设备新增了 taproot 支持，并包含其他改进与缺陷修复。
 
 ## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的变更。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]以及[闪电网络规范（BOLTs）][bolts repo]中的值得注意的变更。*
 
-- [Eclair #2203][Eclair #2203] 添加了额外的配置参数，使用户可以为[未公开通道][topic unannounced channels]指定与公开通道默认值不同的最小资金金额。
+- [Eclair #2203][Eclair #2203] 增加了若干配置参数，使用户可以为[未公开通道][topic unannounced channels]指定不同于公开通道默认值的最小注资额。
 
-- [LDK #1311][LDK #1311] 实现了 [BOLTs #910][] 中提议的短通道标识符（SCID） `alias` 字段，允许节点请求其对等方使用任意值而非锚定通道的链上交易所派生的值来标识通道。这有助于通过防止 SCID 向第三方泄露节点创建了哪些交易来提升隐私，并且在 Newsletter #156 中描述的可选零确认通道（有时称为 *turbo channels*）规范里也被提议使用。
+- [LDK #1311][LDK #1311] 增加了对 [BOLTs #910][] 中提议的短通道标识符（SCID） `alias` 字段的支持，允许节点请求其对等节点用一个任意值（而非由锚定该通道的链上交易派生出的值）来标识某个通道。这有助于提升隐私，防止 SCID 向第三方泄露节点创建了哪些交易；此外，正如 [Newsletter #156][news156 zcc] 所述，该字段也被提议用于自愿启用的零确认通道（有时称为 *turbo channels*）规范。
 
-- [LDK #1286][LDK #1286] 按 [BOLT7 的推荐][bolt7 route rec]，为用于路由付款的 CLTV（`OP_CHECKLOCKTIMEVERIFY`）值增加了偏移量。这使得观察到部分支付过程的实体（例如中继该支付的节点）更难准确猜测哪个节点可能是最终收款人。
+- [LDK #1286][LDK #1286] 按照 [BOLT7 的推荐][bolt7 route rec]，为用于路由支付的 CLTV（`OP_CHECKLOCKTIMEVERIFY`）值加上了偏移量。这让只观察到支付尝试一部分的旁观者（例如为这笔支付做路由的某个节点）更难正确猜出哪个节点可能是预期的收款方。
 
-- [HWI #584][HWI #584] 在使用 BitBox02 硬件签名设备的最新固件版本时，加入了向 [bech32m][topic bech32] 地址付款的支持。
+- [HWI #584][HWI #584] 增加了在搭配最新固件版本使用 BitBox02 硬件签名设备时向 [bech32m][topic bech32] 地址支付的支持。
 
-- [HWI #581][HWI #581] 在使用未来固件版本的 Trezor 时，禁用了包含外部输入（例如在 [coinjoin][topic coinjoin] 中）的交易签名支持。该拉取请求紧随一次固件更新之后，该更新破坏了 HWI 先前用于实现此支持的变通方案。后续拉取请求（[HWI #590][HWI #590]）显示 Trezor 正在研究为用户提供签署此类交易的途径。
+- [HWI #581][HWI #581] 在搭配未来固件版本的 Trezor 使用时，禁用了对含外部输入的交易（例如 [coinjoin][topic coinjoin] 中的交易）的签名支持。这个 PR 是在一次固件变更之后提出的，该变更破坏了 HWI 此前用于实现该支持的变通做法。后续的 PR（[HWI #590][HWI #590]）似乎表明，Trezor 正在考虑将来为用户提供签署这类交易的途径。
 
-- [BDK #515][BDK #515] 开始在内部数据库中保留已花费的交易输出，这对于创建[替换交易][topic rbf]很有用，并简化了对 [BIP47][] 可重复使用付款码的[持续实现][bdk #549]。
+- [BDK #515][BDK #515] 开始在内部数据库中保留已花费的交易输出。这对创建[替换交易][topic rbf]很有用，也简化了对 [BIP47][] 可复用支付码的[持续实现][bdk #549]。
 
 
 {% include references.md %}
