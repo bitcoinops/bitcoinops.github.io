@@ -13,7 +13,7 @@ lang: zh
 
 - **<!--dlcs-over-ln-->****闪电网络上实现 DLC：** Thibaut Le Guilly 在 DLC-Dev 邮件列表上发起了一个[讨论][leguilly thread]，主题是将[谨慎日志合约（DLC）][topic dlc]与闪电网络（LN）整合。初始帖子描述了在直接相连的两个 LN 对等节点（例如共同运营一个通道的 Alice 和 Bob）之间的交易中纳入 DLC 的几种可能构造。帖子还描述了创建通过 LN 网络路由的 DLC 时会遇到的一些挑战。
 
-- **<!--ln-summit-2021-notes-->****2021 年闪电网络峰会纪要：** Olaoluwa Osuntokun [发布][osuntokun summary]了近期苏黎世线上线下混合举行的闪电网络开发者会议的详尽总结。纪要内容包括关于在 LN 中使用 [taproot][topic taproot] 的讨论，涉及 [PTLCs][topic ptlc]、用于[多重签名][topic multisignature]的 [MuSig2][topic musig] 以及 [eltoo][topic eltoo]；将规范讨论从 IRC 迁移至视频会议；当前 BOLTs 规范模型的变更；洋葱消息与 [offers][topic offers]；无阻支付（见 [Newsletter #53][news53 stuckless]）；[通道堵塞攻击][topic channel jamming attacks]及多种缓解措施；以及[蹦床路由][topic trampoline payments]。
+- **<!--ln-summit-2021-notes-->****2021 年闪电网络峰会纪要：** Olaoluwa Osuntokun [发布][osuntokun summary]了近期苏黎世线上线下混合举行的闪电网络开发者会议的详尽总结。纪要内容包括关于在 LN 中使用 [taproot][topic taproot] 的讨论，涉及 [PTLCs][topic ptlc]、用于[多重签名][topic multisignature]的 [MuSig2][topic musig] 以及 [eltoo][topic eltoo]；将规范讨论从 IRC 迁移至视频会议；当前 BOLTs 规范模型的变更；洋葱消息与 [offers][topic offers]；无阻支付（见 [周报 #53][news53 stuckless]）；[通道堵塞攻击][topic channel jamming attacks]及多种缓解措施；以及[蹦床路由][topic trampoline payments]。
 
 - **<!--additional-compact-block-filter-verification-->****紧凑区块过滤器的额外验证：** [Neutrino][] 轻客户端包含了一种启发式方法，用于检测[紧凑区块过滤器][topic compact block filters]是否可能包含错误数据。该方法曾错误地报告了一个包含 taproot 交易的测试网区块的正确过滤器存在问题。该问题已在 Neutrino 源代码中[修复][neutrino #234]，其他紧凑区块过滤器实现不受影响。但 Olaoluwa Osuntokun 在 [Bitcoin-Dev][bd cbf thread] 和 [LND-Dev][ld cbf thread] 邮件列表上发起讨论，既谈到了该问题，也谈到了未来对紧凑区块过滤器可能的改进，例如：
 
@@ -71,13 +71,13 @@ lang: zh
 
 - [LND 0.13.4-beta][] 是维护版本，修复了上述 *新闻* 部分描述的 Neutrino 问题。发布说明指出：“如果你在生产环境运行 Neutrino，我们强烈建议你在 taproot 激活之前升级到这个版本，以确保你的节点在链上持续前进。”
 
-- [LND 0.14.0-beta.rc3][] 是候选版本，包含额外的[日食攻击][topic eclipse attacks]防护（见 [Newsletter #164][news164 ping]）、远程数据库支持（[Newsletter #157][news157 db]）、更快的寻路（[Newsletter #170][news170 path]）、Lightning Pool 用户体验改进（[Newsletter #172][news172 pool]）以及可重复使用的 [AMP][topic amp] 发票（[Newsletter #173][news173 amp]），此外还有许多其他功能与错误修复。
+- [LND 0.14.0-beta.rc3][] 是候选版本，包含额外的[日食攻击][topic eclipse attacks]防护（见 [周报 #164][news164 ping]）、远程数据库支持（[周报 #157][news157 db]）、更快的寻路（[周报 #170][news170 path]）、Lightning Pool 用户体验改进（[周报 #172][news172 pool]）以及可重复使用的 [AMP][topic amp] 发票（[周报 #173][news173 amp]），此外还有许多其他功能与错误修复。
 
 ## 值得注意的代码与文档变更
 
 *本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo] 本周值得注意的变更。*
 
-- [Rust-Lightning #1078][] 新增了 [BOLTs #880][] 定义的 `channel_type` 协商功能，该功能在 [Newsletter #165][news165 bolts-880] 中介绍过。这一实现目前还不会发送 [BOLTs #906][] 提出的功能位。BOLTs #880 是[锚定通道][topic anchor outputs]的必需项，也可能用于支持[零确认通道][news156 zcc]。
+- [Rust-Lightning #1078][] 新增了 [BOLTs #880][] 定义的 `channel_type` 协商功能，该功能在 [周报 #165][news165 bolts-880] 中介绍过。这一实现目前还不会发送 [BOLTs #906][] 提出的功能位。BOLTs #880 是[锚定通道][topic anchor outputs]的必需项，也可能用于支持[零确认通道][news156 zcc]。
 
 - [Rust-Lightning #1144][] 在路由评分逻辑中新增惩罚机制。在支付重试之间对失败的通道施加惩罚，以便向寻路算法提示可能存在故障的通道。
 

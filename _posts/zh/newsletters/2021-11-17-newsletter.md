@@ -47,13 +47,13 @@ lang: zh
 
 *热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [LND 0.14.0-beta.rc4][] 是候选版本，除许多其他功能与错误修复外，还包含额外的[日食攻击][topic eclipse attacks]防护（见 [Newsletter #164][news164 ping]）、远程数据库支持（[Newsletter #157][news157 db]）、更快的寻路（[Newsletter #170][news170 path]）、Lightning Pool 用户体验改进（[Newsletter #172][news172 pool]），以及可重复使用的 [AMP][topic amp] 发票（[Newsletter #173][news173 amp]）。
+- [LND 0.14.0-beta.rc4][] 是候选版本，除许多其他功能与错误修复外，还包含额外的[日食攻击][topic eclipse attacks]防护（见 [周报 #164][news164 ping]）、远程数据库支持（[周报 #157][news157 db]）、更快的寻路（[周报 #170][news170 path]）、Lightning Pool 用户体验改进（[周报 #172][news172 pool]），以及可重复使用的 [AMP][topic amp] 发票（[周报 #173][news173 amp]）。
 
 ## 值得注意的代码与文档变更
 
 *本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo] 的值得注意的变更。*
 
-- [Bitcoin Core #22934][] 在 ECDSA 签名和 [schnorr 签名][topic schnorr signatures] 生成之后都增加了一步验证。这可以防止软件泄露生成有误的签名，因为这类签名可能泄露生成它时所用私钥或 nonce 的信息。这一做法遵循此前对 [BIP340][] 的一次更新中给出的建议（见 [Newsletter #87][news87 bips886]），相关内容之前在 [Newsletter #83][news83 safety] 中讨论过。
+- [Bitcoin Core #22934][] 在 ECDSA 签名和 [schnorr 签名][topic schnorr signatures] 生成之后都增加了一步验证。这可以防止软件泄露生成有误的签名，因为这类签名可能泄露生成它时所用私钥或 nonce 的信息。这一做法遵循此前对 [BIP340][] 的一次更新中给出的建议（见 [周报 #87][news87 bips886]），相关内容之前在 [周报 #83][news83 safety] 中讨论过。
 
 - [Bitcoin Core #23077][] 通过 [CJDNS][] 实现地址中继，使 CJDNS 成为与 IPv4、IPv6、Tor 和 I2P 一样得到完整支持的网络。在 Bitcoin Core 之外完成 CJDNS 的配置后，节点运营者可以开启新的配置选项 `-cjdnsreachable`，让 Bitcoin Core 把 `fc00::/8` 地址视为属于 CJDNS，而不是把它解释为私有 IPv6 地址。
 
@@ -63,7 +63,7 @@ lang: zh
 
 - [BDK #460][] 新增为交易添加 `OP_RETURN` 输出的功能。
 
-- [BIPs #1225][] 用 [Newsletter #173][news173 taproot tests] 中描述的 taproot 测试向量更新 BIP341。
+- [BIPs #1225][] 用 [周报 #173][news173 taproot tests] 中描述的 taproot 测试向量更新 BIP341。
 
 {% include references.md %}
 {% include linkers/issues.md issues="22934,23077,1957,691,460,1225,759" %}
