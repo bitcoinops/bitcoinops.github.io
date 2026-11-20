@@ -167,7 +167,14 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-FIXME:Gustavojfe
+- [Core Lightning 26.12rc1][] is a release candidate for the next major version
+  of this popular LN node implementation. It will be the first major release
+  since 26.06 and covers two release cycles. It adds a tool for recovering
+  [HTLC][topic htlc] outputs after channel-state loss (see Core Lightning #9730
+  below), improves payment pathfinding (see Newsletters [#418][news418
+  impressions] and [#430][news430 xpay]), and adds experimental support for a
+  new cooperative close protocol (see [Newsletter #413][news413 simpleclose]).
+  The release notes also announce that `xpay` will replace `pay` in 27.03.
 
 ## Notable code and documentation changes
 
@@ -363,3 +370,7 @@ repo], and [BINANAs][binana repo]._
 [news424 amp]: /en/newsletters/2026/09/25/#lnd-11198
 [news373 sweeper]: /en/newsletters/2025/09/26/#lnd-10189
 [news431 lnd]: /en/newsletters/2026/11/13/#lnd-v0-21-8-beta
+[news418 impressions]: /en/newsletters/2026/08/14/#core-lightning-9150
+[news430 xpay]: /en/newsletters/2026/11/06/#core-lightning-9592
+[news413 simpleclose]: /en/newsletters/2026/07/10/#core-lightning-9104
+[Core Lightning 26.12rc1]: https://github.com/ElementsProject/lightning/releases/tag/v26.12rc1
