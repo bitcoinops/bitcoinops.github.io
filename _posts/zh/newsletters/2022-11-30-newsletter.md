@@ -24,7 +24,7 @@ lang: zh
 
   - **<!--utxo-ownership-proofs-or-other-alternatives-->***UTXO 所有权证明或其他替代方案：*虽然在 Riard 的首份提议中并非必需，但一些转发节点可能会试验性地向证明他们拥有比特币 UTXO 的每个人提供凭证。使用修饰符，较旧或更高价值的 UTXO 相较于较新或更低价值的 UTXO 将获得更多的凭证代币。每个转发节点自行选择如何分发其凭证代币时，任何其他标准均可使用。
 
-  [Newsletter #226][news226 jam]中描述的部分基于本地声誉的提案的联合作者 Clara Shikhelman，在回复中[询问][shikelman credentials]证书代币是否可以在用户之间转移以及这是否会导致创建代币市场。她还询问了他们将如何使用支出节点不知道接收节点的完整路径的[盲化路径][topic rv routing]。
+  [周报 #226][news226 jam]中描述的部分基于本地声誉的提案的联合作者 Clara Shikhelman，在回复中[询问][shikelman credentials]证书代币是否可以在用户之间转移以及这是否会导致创建代币市场。她还询问了他们将如何使用支出节点不知道接收节点的完整路径的[盲化路径][topic rv routing]。
 
   Riard [回复][riard double spend]说，因为任何转账都需要信任，所以很难重新分配凭证代币并为它们创建市场。例如，如果 Bob 的节点向 Alice 颁发了一个新凭证，然后 Alice 试图将凭证卖给 Carol。那么即使 Carol 付了钱，Alice 也无法通过去信任化的方式证明她自己不会尝试使用该代币。
 

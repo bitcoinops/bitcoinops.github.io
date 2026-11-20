@@ -22,7 +22,7 @@ lang: zh
 
   - **<!--offering-non-replacement-doesn-t-introduce-any-issues-for-full-nodes-->***提供不可替换的特性并没有为全节点带来任何问题*：实际上，这简化了对一长串的交易的处理。
 
-  - **<!--determining-incentive-compatibility-isn-t-always-straightforward-->***有时候并不容易确定激励兼容性*：Daftuar 使用了 v3 交易转发提议（详见 [Newsletter #220][news220 v3tx]）作为一个例子：
+  - **<!--determining-incentive-compatibility-isn-t-always-straightforward-->***有时候并不容易确定激励兼容性*：Daftuar 使用了 v3 交易转发提议（详见 [周报 #220][news220 v3tx]）作为一个例子：
 
     > 设想几年后有人提议给软件加入一个 “disable_v3_transaction_enforcement” 的标签，让用户可以决定关闭这些限制性的策略，并对 v3 交易和 v2 交易一视同仁，而且使用的理由可以跟今天为全面 RBF 辩护的理由完全相同 【……】
     >
@@ -38,7 +38,7 @@ lang: zh
 
   截至本文撰写之时，邮件组中还没有人回答 Daftuar 的问题，虽然在 Daftuar 对 Bitcoin Core 提交的移除  `mempoolfullrbf` 配置选项的 [PR][bitcoin core #26438] 中出现了两个回复。后来 Daftuar [关闭][26438 close]了这个 PR。
 
-- **<!--block-parsing-bug-affecting-multiple-software-->****区块解析的 bug 影响了多个软件：**[Newsletter #222][news222 bug] 报道过，似乎一个会影响 BTCD 全节点和 LND 闪电节点的严重 bug 被意外触发了，导致这些软件的用户处在风险之中。不过升级版软件很快就发布了。在 bug 触发之后，很快 Anthony Towns 就[发现][towns find]了第二个相关的 bug，是只能由矿工触发的 bug。Towns 把这个 bug 报告给了 BTCD 和 LND 的带头维护者  Olaoluwa Osuntokun，后者准备了一个补丁，准备在软件的下一次常规升级中加入。在安全修复中加入其它变更，可以隐藏漏洞被修复的事情，并减少用户被爆破的可能。Towns 和 Osuntokun 都负责任地保守了这个漏洞的秘密，等待这个修复可以部署的时机。
+- **<!--block-parsing-bug-affecting-multiple-software-->****区块解析的 bug 影响了多个软件：**[周报 #222][news222 bug] 报道过，似乎一个会影响 BTCD 全节点和 LND 闪电节点的严重 bug 被意外触发了，导致这些软件的用户处在风险之中。不过升级版软件很快就发布了。在 bug 触发之后，很快 Anthony Towns 就[发现][towns find]了第二个相关的 bug，是只能由矿工触发的 bug。Towns 把这个 bug 报告给了 BTCD 和 LND 的带头维护者  Olaoluwa Osuntokun，后者准备了一个补丁，准备在软件的下一次常规升级中加入。在安全修复中加入其它变更，可以隐藏漏洞被修复的事情，并减少用户被爆破的可能。Towns 和 Osuntokun 都负责任地保守了这个漏洞的秘密，等待这个修复可以部署的时机。
 
   不幸的是，第二个相关 bug 被人自己重新发现了，TA 找到了一个矿工来触发。这个新 bug 又一次影响了 BTCD 和 LND，但同时也影响了至少[两个其它][liquid and rust bitcoin vulns]项目和服务。所有受影响的系统的用户都应该立即升级。我们重复在周前提出的建议：任何使用比特币软件的人，都应该留心软件的开发团队发出的安全通知。
 

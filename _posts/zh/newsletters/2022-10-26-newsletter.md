@@ -36,7 +36,7 @@ lang: zh
 
 - **<!--coredev-tech-transcripts-->****CoreDev.tech 记录稿**：在亚特兰大比特币大会（TabConf）之前，大约 40 位开发者出现在了 CoreDev.tech 活动中。Bryan Bishop 已经提供了活动中大概半数的会议的记录稿。重要的讨论包括：
 
-  - **<!--transport-encryption-->**[流量加密][p2p encryption]：关于[版本 2 的流量加密协议][topic v2 p2p transport]提案（见 [Newsletter #222][news222 bip324]）的最近升级的一场对话。这套协议将使网络的监听者更难发现一笔交易由哪个 IP 地址发起，而且提升了在诚实节点间侦测和抵抗中间人攻击的能力。
+  - **<!--transport-encryption-->**[流量加密][p2p encryption]：关于[版本 2 的流量加密协议][topic v2 p2p transport]提案（见 [周报 #222][news222 bip324]）的最近升级的一场对话。这套协议将使网络的监听者更难发现一笔交易由哪个 IP 地址发起，而且提升了在诚实节点间侦测和抵抗中间人攻击的能力。
 
     这场讨论涵盖了多项协议设计上的考量，如果你想理解协议作者为什么要作出某些决定，你可以读读这份记录稿。讨论还探究了当前的协议与更早的 [countersign][topic countersign]（“会签”）身份验证协议的关系。
 

@@ -47,9 +47,9 @@ lang: zh
 
 - [LND #7082][] 更新了没有包括请求数量的发票的创建方法，已允许包含路由提醒；这样的路由提醒可帮助发送者找到通往接收者的路径。
 
-- [LDK #1413][] 移除了最初的定长洋葱数据格式的支持。升级后的变长格式已经在三年多以前添加到了规范中，并且对旧版本的支持已经从规范（见[Newsletter #220][news220 bolts962]）、Core Lightning（[Newsletter #193][news193 cln5058]）、LND（[Newsletter #196][news196 lnd6385]）和 Eclair（[Newsletter #217][news217 eclair2190]）中移除。
+- [LDK #1413][] 移除了最初的定长洋葱数据格式的支持。升级后的变长格式已经在三年多以前添加到了规范中，并且对旧版本的支持已经从规范（见[周报 #220][news220 bolts962]）、Core Lightning（[Newsletter #193][news193 cln5058]）、LND（[Newsletter #196][news196 lnd6385]）和 Eclair（[Newsletter #217][news217 eclair2190]）中移除。
 
-- [HWI #637][] 为 Ledger 设备的比特币相关固件的一个重大计划升级添加了支持。未包含在本次 PR 中，但在 PR 描述中提到作为未来工作的，是策略管理工作，见[Newsletter #200][news200 policy]。
+- [HWI #637][] 为 Ledger 设备的比特币相关固件的一个重大计划升级添加了支持。未包含在本次 PR 中，但在 PR 描述中提到作为未来工作的，是策略管理工作，见[周报 #200][news200 policy]。
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25730,7082,1413,637" %}

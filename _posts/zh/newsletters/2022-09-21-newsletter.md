@@ -12,7 +12,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--creating-drivechains-with-apo-and-a-trusted-setup-->****使用 APO 和可信设置创建 drivechains：** Jeremy Rubin [发表][rubin apodc]到 Bitcoin-Dev 邮件列表，描述了可信设置过程如何结合提议的 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 操作码，以实现类似于 [Drivechain][topic sidechains] 提议的行为。Drivechain 是这样一种侧链，矿工通常会负责保护该侧链资金的安全（对比于负责保护比特币主链上资金的全节点）。试图窃取 Drivechain 资金的矿工必须提前几天或几周公布他们的恶意意图，让用户有机会更改他们的全节点以执行侧链规则。Drivechain 主要被提议作为软分叉包含在比特币中（参见 BIP [300][bip300] 和 [301][bip301]），但之前在邮件列表中的一个帖子（参见 [Newsletter #190][news190 dc]）描述了对比特币合约语言的一些其他灵活提议的补充内容也可以支持 drivechain 的实施。
+- **<!--creating-drivechains-with-apo-and-a-trusted-setup-->****使用 APO 和可信设置创建 drivechains：** Jeremy Rubin [发表][rubin apodc]到 Bitcoin-Dev 邮件列表，描述了可信设置过程如何结合提议的 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 操作码，以实现类似于 [Drivechain][topic sidechains] 提议的行为。Drivechain 是这样一种侧链，矿工通常会负责保护该侧链资金的安全（对比于负责保护比特币主链上资金的全节点）。试图窃取 Drivechain 资金的矿工必须提前几天或几周公布他们的恶意意图，让用户有机会更改他们的全节点以执行侧链规则。Drivechain 主要被提议作为软分叉包含在比特币中（参见 BIP [300][bip300] 和 [301][bip301]），但之前在邮件列表中的一个帖子（参见 [周报 #190][news190 dc]）描述了对比特币合约语言的一些其他灵活提议的补充内容也可以支持 drivechain 的实施。
 
     在本周的帖子中，Rubin 描述了另一种可以使用比特币合约语言中的拟议补充来实现 drivechain 的方式。这种方式将使用 [BIP118][] 中提议的 `SIGHASH_ANYPREVOUT`（APO）。与 BIP300 相比，帖子所描述的基于 APO 的 drivechain 有几个缺点，但可能提供了足够相似的行为，以至于 APO 可以被视作是启用了 drivechain。一些人可能认为这有益处，而另一些人可能认为这是一个问题。
 
