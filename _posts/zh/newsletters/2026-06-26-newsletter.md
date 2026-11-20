@@ -3,6 +3,7 @@ title: 'Bitcoin Optech Newsletter #411'
 permalink: /zh/newsletters/2026/06/26/
 name: 2026-06-26-newsletter-zh
 slug: 2026-06-26-newsletter-zh
+type: newsletter
 layout: newsletter
 lang: zh
 ---
