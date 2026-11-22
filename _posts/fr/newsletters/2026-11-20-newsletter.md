@@ -253,7 +253,7 @@ BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin
 [bull payjoin blog]: https://www.bullbitcoin.com/blog/payjoin-trading
 [news338 bull]: /fr/newsletters/2025/01/24/#bull-bitcoin-mobile-wallet-ajoute-payjoin
 [bull 6.14.0]: https://github.com/SatoshiPortal/bullbitcoin-mobile/releases/tag/v6.14.0
-[breez 0.28.0]: https://github.com/breez/spark-sdk/releases/tag/v0.28.0
+[breez 0.28.0]: https://github.com/breez/spark-sdk/releases/tag/0.28.0
 [spscand delving]: https://delvingbitcoin.org/t/silent-payments-for-electrum/3078
 [news419 sp electrum]: /fr/newsletters/2026/08/21/#plugin-d-envoi-silent-payments-pour-electrum
 [sv2-apps v0.9.0]: https://github.com/stratum-mining/sv2-apps/releases/tag/v0.9.0
