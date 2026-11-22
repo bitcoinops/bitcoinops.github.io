@@ -257,7 +257,7 @@ BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin
 [spscand delving]: https://delvingbitcoin.org/t/silent-payments-for-electrum/3078
 [news419 sp electrum]: /fr/newsletters/2026/08/21/#plugin-d-envoi-silent-payments-pour-electrum
 [sv2-apps v0.9.0]: https://github.com/stratum-mining/sv2-apps/releases/tag/v0.9.0
-[news384 sv2]: /fr/newsletters/2025/12/12/#librairie-python-bip-329-1-0-0-publiee
+[news384 sv2]: /fr/newsletters/2025/12/12/#mises-a-jour-de-stratum-v2
 [mara sv2]: https://x.com/MARAFoundation_/status/2120520367500308580
 [foundry sv2]: https://x.com/FoundryServices/status/2121279504475709625
 [openswap v0.2.3]: https://github.com/citadel-foss/openswap/releases/tag/v0.2.3
