@@ -57,7 +57,7 @@ software.
   disclosures]), medium and high severity vulnerabilities are disclosed two
   weeks after the last affected release reaches end of life, which the 29.x
   series did on October 27. The three disclosed vulnerabilities are the
-  following:
+  following: {% assign timestamp="0:50" %}
 
   - [Block template creation halted by TRUC sibling eviction during reorg][CVE-2025-62861]:
     This high-severity bug only affected nodes used for mining, leaving them
@@ -87,7 +87,7 @@ software.
 
   Fixes for the first two vulnerabilities were also included in Bitcoin Core
   28.3. All of the affected release series have now reached end of life, so
-  anyone still running one should upgrade to a maintained release. {% assign timestamp="0:50" %}
+  anyone still running one should upgrade to a maintained release.
 
 - **Testnet5 genesis block to be mined:** Anthony Towns [posted][towns tn5]
   to the Bitcoin-Dev mailing list a plan to mine the genesis block of
