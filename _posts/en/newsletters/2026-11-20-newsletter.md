@@ -55,7 +55,7 @@ infrastructure software.
   given current firmware. Steven Roose [replied][roose dcpp] that he could not
   think of a scheme worth exploring without [covenants][topic covenants],
   which would let a coinbase output deterministically commit to an Ark
-  transaction tree that pays every miner who uses the same Ark server.
+  transaction tree that pays every miner who uses the same Ark server. {% assign timestamp="1:04" %}
 
 - **Disclosure of a DoS vulnerability in Eclair:** rorp [posted][eclair vuln del]
   to Delving Bitcoin the [responsible disclosure][topic responsible disclosures] of a memory-exhaustion denial-of-service (DoS)
@@ -78,7 +78,7 @@ infrastructure software.
   `batch_size` (which was `0`, thus always lower than the number of messages received),
   the list never stopped growing, leading to memory exhaustion.
   The vulnerability was fixed by having the code check the lower bound, too, as
-  specified in BOLT2.
+  specified in BOLT2. {% assign timestamp="21:00" %}
 
 - **Continued discussion of stale tip relay:** Antoine Poinsot
   [replied][poinsot staletip] to the Bitcoin-Dev mailing list thread about
@@ -102,7 +102,7 @@ infrastructure software.
   data can settle them. Poinsot [agreed][poinsot staletip3] that the estimate
   appears to cover the effect on honest mining incentives and, while still
   seeing most of the value in headers, did not want to block relaying full
-  blocks.
+  blocks. {% assign timestamp="26:02" %}
 
 ## Changes to services and client software
 
@@ -112,30 +112,30 @@ wallets and services.*
 - **Liana v16.0 released:** [Liana v16.0][liana v16.0] writes its encrypted
   [descriptor][topic descriptors] backups in the [BIP138][] format (see
   [Newsletter #424][news424 bip138]) and makes [taproot][topic taproot] the
-  default for new wallets.
+  default for new wallets. {% assign timestamp="36:13" %}
 
 - **COLDCARD firmware adds codex32 backups:** Coinkite
   [announced][coldcard 5.6.3] COLDCARD firmware versions 5.6.3 and 1.5.3Q,
   which add support for generating and importing [codex32][topic codex32]
   secrets and for splitting the device's wallet into two to nine Shamir shares
   for later recovery. The releases also add support for per-input height and
-  time locktimes in [PSBTv2][topic psbt] transactions.
+  time locktimes in [PSBTv2][topic psbt] transactions. {% assign timestamp="37:11" %}
 
 - **Wavelength released on mainnet:** Lightning Labs
   [announced][wavelength mainnet] that Wavelength, its [Ark][topic ark]-like
   payments toolkit (see [Newsletter #415][news415 wavelength]), is available
-  on mainnet as an alpha with accounts limited to 300,000 sats.
+  on mainnet as an alpha with accounts limited to 300,000 sats. {% assign timestamp="38:06" %}
 
 - **Bull Bitcoin makes payjoin the default for exchange orders:** Bull Bitcoin
   [announced][bull payjoin blog] that onchain purchases and sales made on its
   exchange through the Bull Bitcoin Mobile wallet now use
   [payjoin][topic payjoin] by default (see [Newsletter #338][news338 bull]).
   Version [6.14.0][bull 6.14.0] of the wallet also adds experimental support
-  for sending and receiving [silent payments][topic silent payments].
+  for sending and receiving [silent payments][topic silent payments]. {% assign timestamp="40:55" %}
 
 - **Breez SDK adds silent payment sending:** Version [0.28.0][breez 0.28.0] of
   the Spark-based Breez SDK adds support for sending to
-  [silent payment][topic silent payments] addresses.
+  [silent payment][topic silent payments] addresses. {% assign timestamp="44:05" %}
 
 - **Silent payments scanner for Electrum plugin:** Ali Sherief
   [announced][spscand delving] spscand, a watch-only
@@ -143,7 +143,7 @@ wallets and services.*
   Electrum sending plugin covered in [Newsletter #419][news419 sp electrum].
   It can scan for payments using the user's own Bitcoin Core node, a BlindBit
   server, or a BlindBit server combined with
-  [compact block filters][topic compact block filters] from P2P peers.
+  [compact block filters][topic compact block filters] from P2P peers. {% assign timestamp="44:29" %}
 
 - **Stratum v2 releases and pool adoption:** The
   [Stratum v2][topic pooled mining] reference implementation released
@@ -152,14 +152,14 @@ wallets and services.*
   Declarator Client (see [Newsletter #384][news384 sv2] for previous
   coverage). Separately, MARA Foundation [announced][mara sv2] that MARA mined
   its first block using Stratum v2, and Foundry [announced][foundry sv2] that
-  it has begun testing Stratum v2 on its pool.
+  it has begun testing Stratum v2 on its pool. {% assign timestamp="45:24" %}
 
 - **Coinswap renamed to OpenSwap:** [OpenSwap v0.2.3][] is the first release
   under the new name of the [coinswap][topic coinswap] protocol implementation
   formerly called Coinswap (see [Newsletter #415][news415 coinswap]). It adds
   an Electrum server backend option, swaps that pay a third-party address,
   and, when built with Lightning support, swaps between onchain funds and LN
-  through LDK Server (see [Newsletter #406][news406 ldk server]).
+  through LDK Server (see [Newsletter #406][news406 ldk server]). {% assign timestamp="48:47" %}
 
 ## Releases and release candidates
 
@@ -174,7 +174,7 @@ release candidates._
   below), improves payment pathfinding (see Newsletters [#418][news418
   impressions] and [#430][news430 xpay]), and adds experimental support for a
   new cooperative close protocol (see [Newsletter #413][news413 simpleclose]).
-  The release notes also announce that `xpay` will replace `pay` in 27.03.
+  The release notes also announce that `xpay` will replace `pay` in 27.03. {% assign timestamp="51:21" %}
 
 ## Notable code and documentation changes
 
@@ -196,14 +196,14 @@ repo], and [BINANAs][binana repo]._
   connection with a clearnet node that was observed using the same port (see
   [Newsletter #52][news52 port] for an earlier Tor listening-port fix). Bitcoin
   Core now ignores the address that Tor and I2P peers report seeing the
-  node at.
+  node at. {% assign timestamp="54:26" %}
 
 - [BIPs #2356][] replaces the placeholder genesis parameters in [BIP95][] with
   those of the mined [testnet5][topic testnet] genesis block and marks the BIP
   as `Deployed`. The genesis coinbase includes the date 2026-11-14 and the hash
   of mainnet block 975,744. Committing to that hash ensures that the testnet5
   genesis block could only be mined after mainnet reached that height (see
-  [Newsletter #431][news431 testnet5]).
+  [Newsletter #431][news431 testnet5]). {% assign timestamp="56:00" %}
 
 - [Core Lightning #9730][] adds the `lightning-hsmtool recoverhtlc` command to
   manually recover [HTLC][topic htlc] outputs after local channel-state loss.
@@ -216,7 +216,7 @@ repo], and [BINANAs][binana repo]._
   after a timeout or to claim incoming HTLCs with known preimages. However, the
   operator must manually review and broadcast the transactions. A cooperative
   CLN peer can export the public point using the
-  `dumpcommitments --point-only` command without revealing secrets.
+  `dumpcommitments --point-only` command without revealing secrets. {% assign timestamp="56:51" %}
 
 - [LDK #5561][] fixes a potential loss of forwarded funds when a peer sends
   `revoke_and_ack` before LDK sends the corresponding `commitment_signed`
@@ -228,7 +228,7 @@ repo], and [BINANAs][binana repo]._
   rejects the premature acknowledgment and force closes the channel. The fix
   was released in LDK 0.2.8 (see [Newsletter #431][news431 ldk]). [Newsletter
   #426][news426 ldk5057] described an earlier bug that left a signed commitment
-  unmonitored during reconnection.
+  unmonitored during reconnection. {% assign timestamp="59:31" %}
 
 - [LDK #5562][] and [#5545][ldk #5545] fix channel ID collisions that a
   malicious peer could create between its channels and an LDK node. In the
@@ -242,7 +242,7 @@ repo], and [BINANAs][binana repo]._
   request, acceptance could overwrite its funded state. LDK now rejects
   conflicting IDs and rechecks them at acceptance. Both fixes were also
   released in LDK 0.2.8. See [Newsletter #427][news427 channelid] for related
-  channel ID collisions that could cause a DoS in Eclair.
+  channel ID collisions that could cause a DoS in Eclair. {% assign timestamp="1:01:37" %}
 
 - [LDK #5557][] fixes a vulnerability that allowed malicious peers to disrupt
   transaction monitoring on nodes using an Electrum backend. The peer could
@@ -254,7 +254,7 @@ repo], and [BINANAs][binana repo]._
   spending the real output, preventing a timely response to a channel closure.
   LDK now retains every distinct script registered for an outpoint, so a bogus
   registration cannot suppress the legitimate watch. This fix was also released
-  in LDK 0.2.8.
+  in LDK 0.2.8. {% assign timestamp="1:04:34" %}
 
 - [LDK #5558][] and [#5482][ldk #5482] fix two ways payments could exceed their
   fee budget. The first PR addresses the handling of an omitted fee-limit
@@ -268,7 +268,7 @@ repo], and [BINANAs][binana repo]._
   LDK treated the extra value as part of the requested payment and restored the
   failed path's fee budget on retry, allowing the total spend to exceed its
   limit. LDK now retries only the remaining amount owed and counts any excess
-  against the remaining fee budget.
+  against the remaining fee budget. {% assign timestamp="1:06:34" %}
 
 - [LND #11555][] changes how LND reports non-[AMP][topic amp] invoices as
   settled. Although applications could already monitor when the settlement of
@@ -281,7 +281,7 @@ repo], and [BINANAs][binana repo]._
   collected some parts, which are not refunded, so applications should credit
   only the amounts from finalized, successful HTLCs. An invoice's
   `preimage_released` flag records whether LND has committed to releasing the
-  preimage. AMP payment sets still settle at preimage release.
+  preimage. AMP payment sets still settle at preimage release. {% assign timestamp="1:09:22" %}
 
 - [LND #11551][] fixes expiry validation when completing [multipath
   payments][topic multipath payments] and [AMP][topic amp] payments.
@@ -292,7 +292,7 @@ repo], and [BINANAs][binana repo]._
   every part against the current block height when the final part arrives. If a
   previously accepted part is now too close to expiry, LND fails that set and
   leaves the invoice open for another attempt (see [Newsletter #424][news424
-  amp] for earlier work on canceling individual AMP sets).
+  amp] for earlier work on canceling individual AMP sets). {% assign timestamp="1:10:55" %}
 
 - [LND #11472][] and [#10842][lnd #10842] fix cases where temporary backend
   errors or one problematic input could block otherwise valid sweeps. The first
@@ -302,7 +302,7 @@ repo], and [BINANAs][binana repo]._
   #431][news431 lnd]). The second uses diagnostic transactions that are never
   broadcast to test subsets of a rejected batch. If an invalid or conflicting
   input can be identified, LND excludes it from the next attempt and retries
-  the remaining inputs.
+  the remaining inputs. {% assign timestamp="1:12:02" %}
 
 - [LND #11542][] fixes recovery of forwarded [HTLCs][topic htlc] after channel
   reconnections. When replaying stored forwarding batches, LND could filter out
@@ -314,7 +314,7 @@ repo], and [BINANAs][binana repo]._
   duplicates. LND now preserves the original batch indexes and removes
   incomplete records after a failed handoff, allowing unresolved HTLCs to be
   retried. The fix was released in LND 0.21.8-beta and 0.20.8-beta (see
-  [Newsletter #431][news431 lnd]).
+  [Newsletter #431][news431 lnd]). {% assign timestamp="1:14:53" %}
 
 {% include snippets/recap-ad.md when="2026-11-24 17:30" %}
 {% include references.md %}
