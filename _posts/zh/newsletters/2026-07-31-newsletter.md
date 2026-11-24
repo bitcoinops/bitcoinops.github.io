@@ -44,7 +44,7 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [比特币对“交易中立性”的客观定义是什么？]({{bse}}130849)
+- [<!--what-is-bitcoin-s-objective-definition-of-transaction-neutrality-->比特币对“交易中立性”的客观定义是什么？]({{bse}}130849)
   Ava Chow 将中立性界定为：某项变更是否会阻止任何人继续像原来那样使用比特币，例如让原本可花费的脚本变得不可花费，或者破坏一种已经部署的协议。
 
 - [为什么 BIP110 的去中心化收益不足以抵消它对交易中立性的影响？]({{bse}}130848)
@@ -59,13 +59,13 @@ lang: zh
 - [BIP342 中保留 OP_SUCCESSx 的设计，是否针对某些特定的操作码家族？]({{bse}}130670)
   Murch 将 `OP_SUCCESS` 操作码描述为通用的升级挂钩。由于任何 `OP_SUCCESS` 都会让一个 [tapscript][topic tapscript] 无条件有效，未来的软分叉可以把其中某个操作码重新定义为更受限制的行为，包括那些重新定义后的 `OP_NOP` 操作码永远做不到的栈操作。
 
-- [长期费率与丢弃费率之间有什么区别？]({{bse}}130861)
+- [<!--what-is-the-difference-between-the-long-term-feerate-and-the-discard-feerate-->长期费率与丢弃费率之间有什么区别？]({{bse}}130861)
   Murch 澄清说，这两者不能互换。丢弃费率决定了潜在找零输出在何种数值以下会被视为 dust、并将其价值直接记入手续费；而长期费率决定了钱包在执行[币选择][topic coin selection]时，何时应偏向归集、何时应偏向节省。
 
-- [在已修剪节点上，将传统钱包迁移为描述符钱包的最快方法是什么？]({{bse}}130713)
+- [<!--what-is-the-quickest-method-for-migrating-a-legacy-wallet-to-a-descriptor-wallet-on-a-pruned-node-->在已修剪节点上，将传统钱包迁移为描述符钱包的最快方法是什么？]({{bse}}130713)
   Pol Espinasa 解释说，迁移流程会尝试加载迁移后的钱包；如果节点已修剪掉该钱包诞生高度（birthday）之前的区块，这一步就会失败。[Bitcoin Core #35266][]（见[周报 #412][news412 migratewallet]）预计会包含在 32.0 版中，它允许在不加载钱包的情况下完成迁移；不过，要加载迁移后的[描述符][topic descriptors]钱包，仍然需要节点持有相关区块。
 
-- [在高手续费时期，是否有孤块/陈旧区块率的历史数据？]({{bse}}130889)
+- [<!--is-there-historical-data-on-orphan-stale-block-rates-during-high-fee-periods-->在高手续费时期，是否有孤块/陈旧区块率的历史数据？]({{bse}}130889)
   0xB10C 给出了 bitcoin-data 项目维护的[陈旧区块数据集][stale blocks site]；它展示了陈旧区块率随时间变化的图表，并提供[原始数据][stale blocks repo]，可据以推导自定义指标。
 
 ## 版本和候选版本
