@@ -17,6 +17,33 @@ infrastructure software.
 
 ## News
 
+- **Disclosure of a medium-severity vulnerability in Bitcoin Core:** Greg
+  Sanders [posted][sanders adv ml] to the Bitcoin-Dev mailing list a Bitcoin
+  Core [security advisory][core orphan inv stall] for a vulnerability that
+  allowed a peer to temporarily stop a node from processing blocks and
+  transactions. It affects all 29.x releases, 30.x before [30.5][core 30.5],
+  and 31.x before [31.3][core 31.3]. Version 32.1 already includes the fix.
+  The 29.x series has reached end of life and will not receive a fix, so its
+  users should upgrade to a maintained release.
+
+  Bitcoin Core stores transactions whose parents it has not yet seen, called
+  orphans. Since 29.0, each time a peer announced the wtxid of a stored
+  orphan, the node checked every parent of that orphan against its mempool
+  and its filters of recently seen transactions. An `inv` message can contain
+  up to 50,000 announcements, and duplicates were not skipped. An attacker
+  could send an orphan with thousands of missing parents, followed by `inv`
+  messages repeating its wtxid 50,000 times. According to the advisory, each
+  such message stalled the node for over a dozen seconds, during which it
+  processed no messages from other peers, including blocks. [Bitcoin Core
+  #35878][] now processes each announced transaction only once per `inv`
+  message.
+
+  The vulnerability was discovered in July by Project Loupe, [responsibly
+  disclosed][topic responsible disclosures] by Sanders, and independently
+  reported by stutxo in August. Because it was classified as easily
+  discoverable (see [Newsletter #429][news429 policy]), the advisory was
+  published alongside 30.5 and 31.3.
+
 FIXME:bitschmidty
 
 ## Selected Q&A from Bitcoin Stack Exchange
@@ -55,4 +82,9 @@ FIXME:Gustavojfe
 
 {% include snippets/recap-ad.md when="2026-12-01 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="35878" %}
+[sanders adv ml]: https://groups.google.com/g/bitcoindev/c/lFzWO5W9pBE
+[core orphan inv stall]: https://bitcoincore.org/en/2026/11/20/disclose-orphan-inv-stall/
+[core 31.3]: https://bitcoincore.org/en/2026/11/20/release-31.3/
+[core 30.5]: https://bitcoincore.org/en/2026/11/20/release-30.5/
+[news429 policy]: /en/newsletters/2026/10/30/#bitcoin-core-security-policy-update
