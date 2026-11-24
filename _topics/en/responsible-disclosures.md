@@ -238,6 +238,9 @@ optech_mentions:
   - title: "rorp disclosed a `start_batch` memory-exhaustion DoS vulnerability in Eclair"
     url: /en/newsletters/2026/11/20/#disclosure-of-a-dos-vulnerability-in-eclair
 
+  - title: "Greg Sanders responsibly disclosed a duplicate orphan announcement node stall in Bitcoin Core"
+    url: /en/newsletters/2026/11/27/#disclosure-of-a-medium-severity-vulnerability-in-bitcoin-core
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
