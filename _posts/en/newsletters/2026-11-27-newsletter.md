@@ -97,7 +97,30 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why does a policy that is valid with rust-miniscript throw a compile error on the sipa site?]({{bse}}131089)
+  Pieter Wuille explains that his [miniscript][topic miniscript] policy
+  compiler site accepts symbolic names only for keys, not hash preimages, and
+  does not allow malleable scripts (see
+  [Newsletter #230][news230 malleable]). One branch of the asker's policy
+  could be satisfied by just revealing a preimage after 144 blocks, which is
+  inherently malleable because it involves no signatures.
+
+- [How can I repair corrupted undo data (rev*.dat checksum mismatch) without a full reindex?]({{bse}}131107)
+  P22 describes rebuilding damaged undo records on a node with `-txindex`. A
+  block's undo data is the list of outputs its inputs spent, so each record
+  can be reconstructed byte for byte and written back in place.
+  `-reindex-chainstate` does not help because Bitcoin Core only writes undo
+  data for a block that has no undo position yet.
+
+- [Why does no Bitcoin opcode push data about the spending transaction onto the stack?]({{bse}}131130)
+  LearnBitcoin answers that a soft fork redefining an `OP_NOP` opcode can
+  only make scripts fail, since leaving a value on the stack would cause old
+  and new nodes to disagree about validity. That is why the proposed
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] only verifies.
+  [Tapscript][topic tapscript] added `OP_SUCCESSx` opcodes that may also
+  write to the stack (see [Newsletter #416][news416 success]), and the
+  [covenant][topic covenants] proposals `OP_TXHASH` and `OP_TEMPLATEHASH` are
+  defined on them.
 
 ## Releases and release candidates
 
@@ -134,3 +157,5 @@ FIXME:Gustavojfe
 [news424 cln rel]: /en/newsletters/2026/09/25/#core-lightning-26-06-8
 [gh smite]: https://github.com/lnfuzz/smite
 [cln 25.05]: https://github.com/ElementsProject/lightning/releases/tag/v25.05
+[news230 malleable]: /en/newsletters/2022/12/14/#when-is-a-miniscript-solution-malleable
+[news416 success]: /en/newsletters/2026/07/31/#was-the-op-successx-reservation-in-bip342-designed-with-specific-opcode-families-in-mind
