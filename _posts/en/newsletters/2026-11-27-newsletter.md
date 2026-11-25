@@ -84,7 +84,20 @@ infrastructure software.
     until it is upgraded. This specific attack vector affected only versions
     [25.05][cln 25.05] and higher.
 
-FIXME:bitschmidty
+- **Discussion on refreshing BIP editors:** Mark "Murch" Erhardt
+  [posted][erhardt bip editors] to the Bitcoin-Dev mailing list to resurface
+  his April proposal to refresh the BIP editor team (see Newsletters
+  [#299][news299 bip editors] and [#418][news418 bip editors] for previous
+  coverage of the editor set), citing a backlog of submissions awaiting
+  editor review in the [BIPs repository][bips repo]. He described two
+  options, adding active editors or lowering standards so that editors check
+  only the format of new submissions, and strongly preferred refreshing the
+  team to three editors who all contribute regularly. He added that
+  volunteers wary of an open-ended commitment could offer to serve a limited
+  term, such as 12 to 24 months. Following the post, several people
+  volunteered, and current editor Olaoluwa Osuntokun indicated he plans to
+  step down at the end of the year. Discussion was ongoing at the time of
+  writing.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -157,5 +170,8 @@ FIXME:Gustavojfe
 [news424 cln rel]: /en/newsletters/2026/09/25/#core-lightning-26-06-8
 [gh smite]: https://github.com/lnfuzz/smite
 [cln 25.05]: https://github.com/ElementsProject/lightning/releases/tag/v25.05
+[erhardt bip editors]: https://groups.google.com/g/bitcoindev/c/zCmHEGbCADQ/m/0nXgyto-AQAJ
+[news299 bip editors]: /en/newsletters/2024/04/24/#bip-editors-update
+[news418 bip editors]: /en/newsletters/2026/08/14/#bips-2248
 [news230 malleable]: /en/newsletters/2022/12/14/#when-is-a-miniscript-solution-malleable
 [news416 success]: /en/newsletters/2026/07/31/#was-the-op-successx-reservation-in-bip342-designed-with-specific-opcode-families-in-mind
