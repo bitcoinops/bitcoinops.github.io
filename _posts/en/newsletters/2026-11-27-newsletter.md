@@ -44,6 +44,46 @@ infrastructure software.
   discoverable (see [Newsletter #429][news429 policy]), the advisory was
   published alongside 30.5 and 31.3.
 
+- **Disclosure of a DoS vulnerability in CLN:** Nishant Bansal [posted][cln
+  vuln del] to Delving Bitcoin the [responsible disclosure][topic responsible
+  disclosures] of a denial-of-service (DoS) vulnerability in Core Lightning
+  (CLN) affecting versions [0.12.0][cln 0.12.0] (August 2022) through
+  [26.06.7][cln 26.06.7] (August 2026), which allowed an attacker to repeatedly
+  crash a victim's node. The bug gave an attacker no direct access to funds,
+  but continuously crashing a node could put its channel funds at risk. Users
+  are recommended to upgrade to the latest version immediately. The
+  vulnerability was fixed in CLN version 26.06.8 (see [Newsletter #424][news424
+  cln rel]).
+
+  The vulnerability was related to more than one v1 channel sharing the same
+  `channel_id`. A malicious peer could open a channel by providing another
+  channel's funding outpoint. Since `channel_id` is derived from that outpoint,
+  according to [BOLT2][], two channels would thus have matching IDs. CLN runs a
+  `channeld` subdaemon for each channel, while `connectd` routes messages to
+  the correct subdaemon based on their `channel_id`. Since CLN assumes the
+  uniqueness of `channel_id`, collisions led the node to crash.
+
+  There were two ways a malicious peer could crash the node, one during
+  reconnection, detected using [smite][gh smite], a snapshot fuzzing framework
+  for Lightning Network implementations, and the other on channel closure,
+  found by developer Eugene Siegel:
+
+  - When a peer reconnects, the main daemon, `lightningd`, starts the
+    `channeld` subdaemons and hands them to `connectd`. On the first
+    `channel_id` lookup everything would work fine. However, on the second
+    request an `assert` proving that the connection was not already active
+    would abort `connectd`, taking down the node. Since both channels were
+    still present in the database after a restart, a new reconnection attempt
+    would crash the node again.
+
+  - CLN keeps in memory previously closed channels in a hash table keyed by
+    `channel_id`. An attacker closing a channel with the same `channel_id` as
+    one already closed would trigger the failure of an assertion checking that
+    no duplicates were added to the map. Unlike the first variant, the node
+    then crashes on every restart without further action from the attacker,
+    until it is upgraded. This specific attack vector affected only versions
+    [25.05][cln 25.05] and higher.
+
 FIXME:bitschmidty
 
 ## Selected Q&A from Bitcoin Stack Exchange
@@ -88,3 +128,9 @@ FIXME:Gustavojfe
 [core 31.3]: https://bitcoincore.org/en/2026/11/20/release-31.3/
 [core 30.5]: https://bitcoincore.org/en/2026/11/20/release-30.5/
 [news429 policy]: /en/newsletters/2026/10/30/#bitcoin-core-security-policy-update
+[cln vuln del]: https://delvingbitcoin.org/t/disclosure-dos-vulnerability-fixed-in-core-lightning-v26-06-8/3072
+[cln 0.12.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.12.0
+[cln 26.06.7]: https://github.com/ElementsProject/lightning/releases/tag/v26.06.7
+[news424 cln rel]: /en/newsletters/2026/09/25/#core-lightning-26-06-8
+[gh smite]: https://github.com/lnfuzz/smite
+[cln 25.05]: https://github.com/ElementsProject/lightning/releases/tag/v25.05
