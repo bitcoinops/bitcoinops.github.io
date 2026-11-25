@@ -20,9 +20,9 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- ["比特币不使用加密"是什么意思？]({{bse}}130576) Pieter Wuille 区分了用于对未授权方隐藏数据的加密（比特币的 ECDSA 不能用于此目的）和比特币用于验证和认证的数字签名。
+- [<!--what-is-meant-by-bitcoin-doesn-t-use-encryption-->"比特币不使用加密"是什么意思？]({{bse}}130576) Pieter Wuille 区分了用于对未授权方隐藏数据的加密（比特币的 ECDSA 不能用于此目的）和比特币用于验证和认证的数字签名。
 
-- [比特币脚本何时以及为何转向了承诺-揭示结构？]({{bse}}130580) 用户 bca-0353f40e 解释了从比特币最初的用户直接向公钥支付的方式，到 P2PKH、再到 P2SH、[隔离见证][topic segwit]和 [taproot][topic taproot] 方式的演变过程，其中花费条件在输出中被承诺，仅在花费时才揭示。
+- [<!--when-and-why-did-bitcoin-script-shift-to-a-commit-reveal-structure-->比特币脚本何时以及为何转向了承诺-揭示结构？]({{bse}}130580) 用户 bca-0353f40e 解释了从比特币最初的用户直接向公钥支付的方式，到 P2PKH、再到 P2SH、[隔离见证][topic segwit]和 [taproot][topic taproot] 方式的演变过程，其中花费条件在输出中被承诺，仅在花费时才揭示。
 
 - [P2TR-MS（Taproot M-of-N 多重签名）是否会泄露公钥？]({{bse}}130574) Murch 确认，单叶 taproot 脚本路径多重签名在花费时会暴露所有合格的公钥，因为 OP_CHECKSIG 和 OP_CHECKSIGADD 都要求与签名对应的公钥必须存在。
 

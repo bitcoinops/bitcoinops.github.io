@@ -27,13 +27,13 @@ lang: zh
 
 - [为什么禁止在 tapscript 中使用 `OP_IF` 会是个问题？]({{bse}}130815) Murch 指出，由于一个 taproot 输出是以哈希形式承诺其叶子脚本，因此不可能知道哪些现有 UTXO 依赖于 `OP_IF`，例如基于 [miniscript][topic miniscript] 的降级多重签名钱包。拥有这类设置的用户可能会在激活之后无意间把新收到的资金锁死，因为相应的花费路径将不再有效。
 
-- [软分叉是否总会成功？]({{bse}}130775) Murch 讲解了一种场景：采用强制信号机制的[软分叉][topic soft fork activation]只得到少数算力支持，在这种情况下，发信号的那条链会在工作量证明上落后并停滞，而不是迫使网络其他部分接受新规则。
+- [<!--does-a-softfork-always-succeed-->软分叉是否总会成功？]({{bse}}130775) Murch 讲解了一种场景：采用强制信号机制的[软分叉][topic soft fork activation]只得到少数算力支持，在这种情况下，发信号的那条链会在工作量证明上落后并停滞，而不是迫使网络其他部分接受新规则。
 
 - [如何设置 Bitcoin Core，才能在 2026 年 8 月 BIP110 激活之后挖出一个有效区块？]({{bse}}130770) Antoine Poinsot 指出，Bitcoin Core 不会强制执行 BIP110 规则，也没有功能可以构建一个排除 BIP110 所视为无效交易的区块模板。想要挖出符合 BIP110 的区块，节点运营者需要使用外部区块模板构建软件来选择交易，或者直接挖空区块。
 
 - [处于较低难度分支上的 BIP110 区块是否有效？]({{bse}}130827) Pieter Wuille 区分了“链是有效的”和“链是活跃的”这两个概念。每个分支的难度调整只取决于其自身的区块，因此一个可能更慢的 BIP110 分支，对遵循当前规则的节点而言仍然是有效的；但除非它累积的总工作量证明超过主链，否则这些节点永远不会将其视为活跃链。
 
-- [比特币测试网络背后的故事是什么？]({{bse}}130806) Murch 和 Antoine Poinsot 回顾了 [testnet][topic testnet] 从 testnet1 到拟议中的 testnet5 的历史，包括每次网络被赋予经济价值后所进行的重置，以及导致 testnet3 反复出现区块风暴的“20 分钟难度例外规则”（见[周报 #311][news311 block storm]）。
+- [<!--what-is-the-story-behind-bitcoin-test-networks-->比特币测试网络背后的故事是什么？]({{bse}}130806) Murch 和 Antoine Poinsot 回顾了 [testnet][topic testnet] 从 testnet1 到拟议中的 testnet5 的历史，包括每次网络被赋予经济价值后所进行的重置，以及导致 testnet3 反复出现区块风暴的“20 分钟难度例外规则”（见[周报 #311][news311 block storm]）。
 
 - [为什么 `-datacarriersize` 在 2022 年被重新定义，而 2023 年扩大它的提案没有被合并？]({{bse}}128027) 这是对去年首次作答问题的再次补充，Murch 新增了一份互补性回答，说明自 Bitcoin Core 0.10.0 引入以来，`datacarrier` 和 `datacarriersize` 选项一直仅指 `OP_RETURN` 输出，并引用了原始代码和发行说明作为依据。
 
