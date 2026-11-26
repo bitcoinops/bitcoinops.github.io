@@ -177,6 +177,7 @@ for details --> {% endcomment %}
 [BIP329]: https://github.com/bitcoin/bips/blob/master/bip-0329.mediawiki
 [BIP330]: https://github.com/bitcoin/bips/blob/master/bip-0330.mediawiki
 [BIP331]: https://github.com/bitcoin/bips/blob/master/bip-0331.mediawiki
+[BIP333]: https://github.com/bitcoin/bips/blob/master/bip-0333.md
 [BIP337]: https://github.com/bitcoin/bips/blob/master/bip-0337.mediawiki
 [BIP338]: https://github.com/bitcoin/bips/blob/master/bip-0338.mediawiki
 [BIP339]: https://github.com/bitcoin/bips/blob/master/bip-0339.mediawiki
