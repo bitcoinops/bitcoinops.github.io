@@ -45,6 +45,12 @@ optech_mentions:
   - title: "Superscalar: a timeout tree channel factory proposal with leaves using LN-Penalty"
     url: /en/newsletters/2024/11/01/#timeout-tree-channel-factories
 
+  - title: "LDK #5678 uses an urgent fee target for penalty transactions on revoked commitments"
+    url: /en/newsletters/2026/11/27/#ldk-5678
+
+  - title: "LND #11607 fixes weight estimates for penalty transactions spending revoked HTLC outputs"
+    url: /en/newsletters/2026/11/27/#lnd-11607
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "LN-Symmetry (eltoo)"

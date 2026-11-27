@@ -112,6 +112,9 @@ optech_mentions:
   - title: "Proposal for a private form of miniscript hash fragments holding the preimage"
     url: /en/newsletters/2026/10/23/#descriptor-syntax-for-hash-preimages
 
+  - title: "Why does a policy that is valid with rust-miniscript throw a compile error on the sipa site?"
+    url: /en/newsletters/2026/11/27/#why-does-a-policy-that-is-valid-with-rust-miniscript-throw-a-compile-error-on-the-sipa-site
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"
