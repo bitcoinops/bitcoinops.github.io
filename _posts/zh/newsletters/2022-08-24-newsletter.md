@@ -11,9 +11,9 @@ lang: zh
 
 ## 新闻
 
-- **<!--overview-of-channel-jamming-attacks-and-mitigations-->通道堵塞攻击和缓解措施概述：**Antoine Riard 和 Gleb Naumenko 在 Lightning-Dev 邮件列表[宣布][riard jam]，他们已经[发布][rn jam]了一份关于[通道堵塞攻击][topic channel jamming attacks]及若干提出的解决方案的指南。该指南还研究了一些解决方案如何使构建在 LN 之上的协议受益，例如互换协议和短期 [DLC][topic dlc]。
+- **<!--overview-of-channel-jamming-attacks-and-mitigations-->****通道堵塞攻击和缓解措施概述：**Antoine Riard 和 Gleb Naumenko 在 Lightning-Dev 邮件列表[宣布][riard jam]，他们已经[发布][rn jam]了一份关于[通道堵塞攻击][topic channel jamming attacks]及若干提出的解决方案的指南。该指南还研究了一些解决方案如何使构建在 LN 之上的协议受益，例如互换协议和短期 [DLC][topic dlc]。
 
-- **更新静默支付 PR：**woltx [发表][woltx sp]在 Bitcoin-Dev 邮件列表称，Bitcoin Core 的[静默支付][topic silent payments]的 PR 已更新。静默支付提供了一个可以被不同的支付者重复使用的地址，而不会在这些支出之间建立可在链上观察到的链接（尽管接收者需要小心不要通过他们的后续行动削弱这种隐私性）。该 PR 最显著的变化是为静默支付添加了一种新类型的[输出脚本描述符][topic descriptors]。
+- **<!--updated-silent-payments-pr-->****更新静默支付 PR：**woltx [发表][woltx sp]在 Bitcoin-Dev 邮件列表称，Bitcoin Core 的[静默支付][topic silent payments]的 PR 已更新。静默支付提供了一个可以被不同的支付者重复使用的地址，而不会在这些支出之间建立可在链上观察到的链接（尽管接收者需要小心不要通过他们的后续行动削弱这种隐私性）。该 PR 最显著的变化是为静默支付添加了一种新类型的[输出脚本描述符][topic descriptors]。
 
     该 PR 的新描述符的设计引起了相当多的讨论。值得注意的是，对于监控新交易，每个钱包只允许一个静默支付描述符是最有效的，但在许多情况下它也会给用户带来不好的体验。有人提议对静默支付设计进行轻微调整以解决该问题，尽管它也需要权衡。
 
@@ -21,16 +21,16 @@ lang: zh
 
 *在这个月度专题中，我们重点介绍比特币钱包和服务的有意思的更新。*
 
-- **Purse.io 增加闪电网络支持：**
+- **<!--purse-io-adds-lightning-support-->****Purse.io 增加闪电网络支持：**
   Purse.io 在[最近的一个推特][purse ln tweet]中宣布支持使用闪电网络进行存款（接收）和取款（发送）。
 
-- **概念证明 coinjoin 实现 joinstr：**
-  1440000bytes 开发了 [joinstr][joinstr github]，一个使用 [nostr 协议][nostr github] 的 [coinjoin][topic coinjoin] 概念证明实现。这是一个基于公钥的、无中心化服务器的中继网络。
+- **<!--proof-of-concept-coinjoin-implementation-joinstr-->****概念证明 coinjoin 实现 joinstr：**
+  1440000bytes 开发了 [joinstr][joinstr github]，一个使用 [nostr 协议][nostr github]的 [coinjoin][topic coinjoin] 概念证明实现。这是一个基于公钥的、无中心化服务器的中继网络。
 
-- **Coldcard 固件 5.0.6 发布：**
-  Coldcard 的 5.0.6 版本增加了对 [BIP85][]、`OP_RETURN` 脚本和多签[描述符][topic descriptors] 的更多支持。
+- **<!--coldcard-firmware-5-0-6-released-->****Coldcard 固件 5.0.6 发布：**
+  Coldcard 的 5.0.6 版本增加了对 [BIP85][]、`OP_RETURN` 脚本和多签[描述符][topic descriptors]的更多支持。
 
-- **Nunchuk 新增 Taproot 支持：**
+- **<!--nunchuk-adds-taproot-support-->****Nunchuk 新增 Taproot 支持：**
   最新版本的 [Nunchuk 的手机钱包][nunchuk appstore]增加了对 [taproot][topic taproot]（单签）、[signet][topic signet]的支持，增强了 [PSBT][topic psbt]。
 
 ## 软件的新版本和候选版本

@@ -89,4 +89,4 @@ lang: zh
 [Core Lightning 23.05.1]: https://github.com/ElementsProject/lightning/releases/tag/v23.05.1
 [review club 27600]: https://bitcoincore.reviews/27600
 [news250 getprioritisedtransactions]: /zh/newsletters/2023/05/10/#bitcoin-core-pr-审核俱乐部
-[lnd max_cltv]: /en/newsletters/2019/10/23/#lnd-3595
+[lnd max_cltv]: /zh/newsletters/2019/10/23/#lnd-3595

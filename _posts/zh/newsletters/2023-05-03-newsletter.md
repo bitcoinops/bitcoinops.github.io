@@ -56,8 +56,8 @@ lang: zh
 {% include linkers/issues.md v=2 issues="25158,26933,25325,2222,2208,25939" %}
 [Core Lightning 23.05rc2]: https://github.com/ElementsProject/lightning/releases/tag/v23.05rc2
 [lnd v0.16.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.2-beta
-[news101 overpayment]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
-[news129 adaptors]: /en/newsletters/2020/12/23/#ptlcs
+[news101 overpayment]: /zh/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
+[news129 adaptors]: /zh/newsletters/2020/12/23/#ptlcs
 [news243 rebroadcast]: /zh/newsletters/2023/03/22/#lnd-7448
 [news247 rebroadcast]: /zh/newsletters/2023/04/19/#core-lightning-6120
 [ingala vaults]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021588.html
@@ -66,6 +66,6 @@ lang: zh
 [halseth matt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021593.html
 [gibson adaptors]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021594.html
 [lee hiring]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021589.html
-[news34 psbt]: /en/newsletters/2019/02/19/#bitcoin-core-13932
+[news34 psbt]: /zh/newsletters/2019/02/19/#bitcoin-core-13932
 [abandontransaction rpc]: https://developer.bitcoin.org/reference/rpc/abandontransaction.html
 

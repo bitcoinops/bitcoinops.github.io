@@ -83,8 +83,8 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Bitcoin Inquisit
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="1551,27877,851" %}
 [news283 coingrinder]: /zh/newsletters/2024/01/03/#new-coin-selection-strategies
-[news52 asmap]: /en/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
-[news83 asmap]: /en/newsletters/2020/02/05/#bitcoin-core-16702
+[news52 asmap]: /zh/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
+[news83 asmap]: /zh/newsletters/2020/02/05/#bitcoin-core-16702
 [jahr asmap]: https://delvingbitcoin.org/t/asmap-creation-process/548
 [autonomous systems]: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
 [daftuar feerate rule]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553#feerate-rule-9
@@ -100,7 +100,7 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Bitcoin Inquisit
 [dnssec-prover]: https://github.com/TheBlueMatt/dnssec-prover
 [dns demo]: http://http-dns-prover.as397444.net/
 [news278 dns]: /zh/newsletters/2023/11/22/#offers-compatible-ln-addresses
-[news166 tluv]: /en/newsletters/2021/09/15/#amount-introspection
+[news166 tluv]: /zh/newsletters/2021/09/15/#amount-introspection
 [64bit discuss]: https://delvingbitcoin.org/t/64-bit-arithmetic-soft-fork/397
 [stewart inout]: https://delvingbitcoin.org/t/op-inout-amount/549
 [thunderbiscuit ecash]: https://delvingbitcoin.org/t/building-intuition-for-the-cashu-blind-signature-scheme/506

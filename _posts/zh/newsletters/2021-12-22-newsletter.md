@@ -296,7 +296,7 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 [p2trhd]: /zh/newsletters/2021/06/30/#key-derivation-path-for-single-sig-p2tr
 [bcc#22154]: /zh/newsletters/2021/06/30/#bitcoin-core-22154
 [bcc#22166]: /zh/newsletters/2021/06/30/#bitcoin-core-22166
-[p4tr begins]: /zh/newsletters/2021/06/23/#preparing-for-taproot-1-bech32m-sending-support
+[p4tr begins]: /zh/newsletters/2021/06/23/#准备-taproot-1bech32m-发送支持
 [bech32m page]: /zh/newsletters/2021/07/14/#tracking-bech32m-support
 [bip118 update]: /zh/newsletters/2021/07/14/#bips-943
 [bip119 update]: /zh/newsletters/2021/11/10/#bips-1215
@@ -377,4 +377,4 @@ LND 在 4 月[新增支持][lnd#5709]原子多路径支付（AMP，Atomic Multip
 [dec cs]: /zh/newsletters/2021/12/15/#服务和客户端软件的更改
 [mpa ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
 [ff orig]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
-[2020 conclusion]: /zh/newsletters/2020/12/23/#conclusion
+[2020 conclusion]: /zh/newsletters/2020/12/23/#结论

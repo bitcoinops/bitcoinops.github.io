@@ -103,4 +103,4 @@ lang: zh
 [bitvm sha256]: https://raw.githubusercontent.com/TechMiX/tapleaf-circuits/abc38e880872150ceec08a8b67ac2fddaddd06dc/scripts/circuits/bristol_sha256.js
 [bitkit website]: https://bitkit.to/
 [bitkit v1.0.0-beta.86]: https://github.com/synonymdev/bitkit/releases/tag/v1.0.0-beta.86
-[news53 data]: /en/newsletters/2019/07/03/#standardized-atomic-data-delivery-following-ln-payments
+[news53 data]: /zh/newsletters/2019/07/03/#standardized-atomic-data-delivery-following-ln-payments

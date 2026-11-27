@@ -80,7 +80,7 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 [news304 sp]: /zh/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments-psbt
 [news308 sp]: /zh/newsletters/2024/06/21/#continued-discussion-of-psbts-for-silent-payments-psbt
 [core lightning 24.08.2]: https://github.com/ElementsProject/lightning/releases/tag/v24.08.2
-[news172 remote]: /en/newsletters/2021/10/27/#lnd-5689
+[news172 remote]: /zh/newsletters/2021/10/27/#lnd-5689
 [rfc8439]: https://datatracker.ietf.org/doc/html/rfc8439
 [news264 chacha]: /zh/newsletters/2023/08/16/#bitcoin-core-28008
 [bcc28 guide]: /zh/bitcoin-core-28-wallet-integration-guide/

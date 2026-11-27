@@ -33,6 +33,7 @@ lang: zh
 
   本周的 taproot 审查还引发了许多其他不那么重要的讨论，讨论记录可供有兴趣的读者查看（[1][tr meet1]，[2][tr meet2]）。
 
+  {:#x-only-pubkeys}
   在其他 schnorr/taproot 新闻中，Jonas Nick 发布了一篇[信息丰富的博客文章][x-only pubkeys]，介绍了 [bip-schnorr][] 和 [bip-taproot][] 的最近重大变化，该变化将序列化公钥的大小从 33 字节减少到 32 字节，同时不降低安全性。有关此优化的先前讨论，请参见 Newsletters [#59][news59 proposed 32B pubkeys] 和 [#68][news68 taproot update]。
 
 - **<!--possible-privacy-leak-in-the-ln-onion-format-->****LN 洋葱格式的潜在隐私泄露：** 正如在 [BOLT4][] 中所述，LN 使用 [Sphinx][] 协议在 LN 节点之间传递支付信息。Olaoluwa Osuntokun 本周在 Lightning-Dev 邮件列表上[发布][osuntokun sphinx]了一项关于最近发布的[原始 Sphinx 描述中的缺陷][breaking onion routing] 的帖子，该缺陷可能允许目标节点“推断出路径长度的下限[回到源节点]”。<!-- quote from Osuntokun email -->

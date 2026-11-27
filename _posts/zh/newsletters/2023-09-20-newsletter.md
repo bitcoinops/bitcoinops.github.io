@@ -73,7 +73,7 @@ lang: zh
 [news229 bumpfee]: /zh/newsletters/2022/12/07/#bitcoin-core-pr-审核俱乐部
 [Core Lightning 23.08.1]: https://github.com/ElementsProject/lightning/releases/tag/v23.08.1
 [B'SST]: https://github.com/dgpv/bsst
-[news222 zerosync]: /zh/newsletters/2022/10/19/#zerosync
+[news222 zerosync]: /zh/newsletters/2022/10/19/#zerosync-project-launches
 [zerosync demo]: https://zerosync.org/demo/
 [zerosync code]: https://github.com/ZeroSync/header_chain
 [joinmarket v0.9.10]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.10

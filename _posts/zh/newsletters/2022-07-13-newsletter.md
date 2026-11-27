@@ -12,17 +12,17 @@ lang: zh
 
 ## 新闻
 
-- **BIP340 签名的减半聚合：** Jonas Nick 在 Bitcoin-Dev 邮件列表中[发表][nick agg]了一个关于比特币 [schnorr 签名][topic schnorr signatures]的减半聚合的 [BIP 草案][bip-agg]并发表了一个[博客文章][blog agg]。博文中提到，该提案“允许将多个 schnorr 签名聚合成单个签名，其长度约为单个签名总和的一半。重要的是，该方案是非交互式的，这意味着一组签名可以由第三方进行减半聚合，而无需签名者参与。”
+- **<!--half-aggregation-of-bip340-signatures-->****BIP340 签名的减半聚合：** Jonas Nick 在 Bitcoin-Dev 邮件列表中[发表][nick agg]了一个关于比特币 [schnorr 签名][topic schnorr signatures]的减半聚合的 [BIP 草案][bip-agg]并发表了一个[博客文章][blog agg]。博文中提到，该提案“允许将多个 schnorr 签名聚合成单个签名，其长度约为单个签名总和的一半。重要的是，该方案是非交互式的，这意味着一组签名可以由第三方进行减半聚合，而无需签名者参与。”
 
     一个[单独的文档][cia doc]提供了减半聚合如何使比特币和闪电网络节点的运营商受益的示例，以及在为共识协议添加减半聚合的软分叉设计中需要考虑的几个问题。
 
-- **X-only 变通解决方法：** 比特币公钥是二维图上的点，由 *x* 坐标和 *y* 坐标的交点标记。对于任何给定的 *x* 坐标，只有两个有效的 *y* 坐标并且可以从 *x* 值计算出来。这个性质可支持对 [taproot][topic taproot] 的设计进行优化，以要求与 [BIP340][] 样式的 schnorr 签名一起使用的所有公钥仅使用这些 *y* 坐标中的某个坐标，从而允许交易中包含的任何公钥完全省略包括 *y* 点，与原始的主根设计相比，每个签名节省一个 vbyte。
+- **<!--x-only-workaround-->****X-only 变通解决方法：** 比特币公钥是二维图上的点，由 *x* 坐标和 *y* 坐标的交点标记。对于任何给定的 *x* 坐标，只有两个有效的 *y* 坐标并且可以从 *x* 值计算出来。这个性质可支持对 [taproot][topic taproot] 的设计进行优化，以要求与 [BIP340][] 样式的 schnorr 签名一起使用的所有公钥仅使用这些 *y* 坐标中的某个坐标，从而允许交易中包含的任何公钥完全省略包括 *y* 点，与原始的主根设计相比，每个签名节省一个 vbyte。
 
     当时，这种技术（称为 *x-only 公钥*）被认为是一种无需明显权衡的优化，但后来对 OP_TAPLEAF_UPDATE_VERIFY ([TLUV][news166 tluv]) 的设计工作表明，x-only 公钥需要计算限制提议或在区块链或 UTXO 集中存储额外数据。该问题也可能影响公钥的其他高级用途。
 
     本周，Tim Ruffing 在 Bitcoin-Dev 邮件列表中[发表][ruffing xonly]了一个可能的变通解决方法，只需要签名者进行少量额外计算——即使是资源受限的硬件签名设备也可能执行的计算量，而不会让用户等待太久。
 
-- **<!--allowing-deliberately-slow-ln-payment-forwarding-->允许刻意放慢闪电网络支付转发：**在对有关递归/嵌套 [MuSig2][topic musig] 的讨论主题帖的回复中（参见 [Newsletter #204][news204 rmusig]）以及使用它的节点在路由付款时会增加的延迟，开发人员 Peter Todd 在 Lightning-Dev 邮件列表上[询问][todd delay]是否“值得让人们选择更慢地进行支付以保护隐私？”例如，如果 Alice 和 Bob 大约在同一时间通过 Carol 的转发节点向 Dan 的转发节点发送慢速转发的付款，那么 Carol 将能够同时转发两笔付款，从而减少第三方可以通过[余额探测][topic payment probes]、网络活动监控或其他技术来发现参与者的隐私泄露信息。开发者 Matt Corallo [同意][corallo delay]这是一个有趣的想法。
+- **<!--allowing-deliberately-slow-ln-payment-forwarding-->****允许刻意放慢闪电网络支付转发：**在对有关递归/嵌套 [MuSig2][topic musig] 的讨论主题帖的回复中（参见 [Newsletter #204][news204 rmusig]）以及使用它的节点在路由付款时会增加的延迟，开发人员 Peter Todd 在 Lightning-Dev 邮件列表上[询问][todd delay]是否“值得让人们选择更慢地进行支付以保护隐私？”例如，如果 Alice 和 Bob 大约在同一时间通过 Carol 的转发节点向 Dan 的转发节点发送慢速转发的付款，那么 Carol 将能够同时转发两笔付款，从而减少第三方可以通过[余额探测][topic payment probes]、网络活动监控或其他技术来发现参与者的隐私泄露信息。开发者 Matt Corallo [同意][corallo delay]这是一个有趣的想法。
 
 ## Bitcoin Core PR 审核俱乐部
 
@@ -87,7 +87,7 @@ lang: zh
 [nick agg]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020662.html
 [bip-agg]: https://github.com/ElementsProject/cross-input-aggregation/blob/master/half-aggregation.mediawiki
 [blog agg]: https://blog.blockstream.com/half-aggregation-of-bip-340-signatures/
-[news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
+[news166 tluv]: /zh/newsletters/2021/09/15/#covenant-opcode-proposal
 [ruffing xonly]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020663.html
 [news204 rmusig]: /zh/newsletters/2022/06/15/#recursive-musig2-musig2
 [todd delay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003621.html

@@ -113,4 +113,4 @@ repo] 和 [BINANAs][binana repo]。*
 [news160 ebpf]: /zh/newsletters/2021/08/04/#bitcoin-core-22006
 [ludpr]: https://github.com/lnurl/luds/pull/234
 [news232 deschash]: /zh/newsletters/2023/01/04/#btcpay-server-4411
-[news194 deschash]: /en/newsletters/2022/04/06/#c-lightning-5121
+[news194 deschash]: /zh/newsletters/2022/04/06/#c-lightning-5121

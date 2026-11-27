@@ -55,7 +55,7 @@ lang: zh
 [bdk 1.0.0-alpha.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-alpha.0
 [segura watchtowers post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003892.html
 [segura watchtowers gist]: https://gist.github.com/sr-gi/f91f007fc8d871ea96ead9b27feec3d5
-[news85 blinding]: /en/newsletters/2020/02/19/#decoy-nodes-and-lightweight-rendez-vous-routing
+[news85 blinding]: /zh/newsletters/2020/02/19/#decoy-nodes-and-lightweight-rendez-vous-routing
 [news226 bolts1031]: /zh/newsletters/2022/11/16/#bolts-1031
 [news225 bolts1032]: /zh/newsletters/2022/11/09/#bolts-1032
 [news243 bdk]: /zh/newsletters/2023/03/22/#bdk-793

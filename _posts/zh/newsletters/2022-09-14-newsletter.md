@@ -73,7 +73,7 @@ lang: zh
 {% include linkers/issues.md v=2 issues="25614,24464,25768,19602,2406,2190,962,619,1196" %}
 
 [managing wallets]: https://github.com/bitcoin/bitcoin/blob/master/doc/managing-wallets.md
-[news193 cln5058]: /en/newsletters/2022/03/30/#c-lightning-5058
+[news193 cln5058]: /zh/newsletters/2022/03/30/#c-lightning-5058
 [news211 rb994]: /zh/newsletters/2022/08/03/#rust-bitcoin-994
 [ldk 0.0.111]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.111
 [review club 25720]: https://bitcoincore.reviews/25720
