@@ -1,0 +1,37 @@
+---
+layout: null
+lang: en
+permalink: /en/podcast/transcriptions.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+{%- assign podcast_posts = site.posts | where: "lang", "en" | where: "type", "podcast" -%}
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
+  <link href="{{ page.url | absolute_url }}" rel="self" type="application/atom+xml" />
+  <link href="{{ '/en/podcast/' | absolute_url }}" rel="alternate" type="text/html" hreflang="en" />
+  {%- if jekyll.environment != 'local' -%}<updated>{{ site.time | date_to_xmlschema }}</updated>{%- endif %}
+  <id>{{ page.url | absolute_url }}</id>
+  <title type="html">Bitcoin Optech podcast episodes with transcriptions</title>
+  <subtitle>Only episodes whose transcription has been published</subtitle>
+  <author>
+    <name>{{ site.author.name | default: site.author | xml_escape }}</name>
+  </author>
+
+  {%- assign shown = 0 -%}
+  {%- for post in podcast_posts -%}
+  {%- if shown == 10 -%}{%- break -%}{%- endif -%}
+  {%- if post.content contains 'id="transcription"' %}
+  {%- unless post.content contains "transcription coming soon" %}
+  <entry>
+    <title type="html">{{ post.title | smartify | strip_html | normalize_whitespace | xml_escape }}</title>
+    <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
+    <id>{{ post.id | absolute_url | xml_escape }}</id>
+    <content type="html" xml:base="{{ post.url | absolute_url | xml_escape }}">{{ post.content | strip | xml_escape }}</content>
+  </entry>
+  {%- assign shown = shown | plus: 1 -%}
+  {%- endunless %}
+  {%- endif %}
+  {%- endfor %}
+</feed>
