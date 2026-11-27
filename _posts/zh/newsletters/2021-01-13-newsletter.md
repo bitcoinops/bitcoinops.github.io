@@ -7,61 +7,61 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 描述了一个新的比特币 P2P 协议消息的提议、一个针对 Bech32 修改地址格式的 BIP，以及一个关于防止在提议的双向资助 LN 通道中进行 UTXO 探测的想法。同时，还包括我们常规的内容：Bitcoin Core PR 审查俱乐部会议摘要、发布与候选发布列表以及对流行比特币基础设施软件的值得注意的更改的描述。
+本周的 Newsletter 描述了一个新的比特币 P2P 协议消息提议、一份关于 bech32 修改版地址格式的 BIP，以及一个防止在提议的双向资助 LN 通道中进行 UTXO 探测的想法。此外，还包括我们常规的栏目：Bitcoin Core PR 审查俱乐部会议摘要、发布与候选发布列表，以及热门比特币基础设施软件值得注意的变更介绍。
 
 ## 新闻
 
-- **<!--proposed-disabletx-message-->****提议的 `disabletx` 消息：** 2012 年，发布了 [BIP37][]，为轻量级客户端提供了请求对等方在客户端加载[布隆过滤器][topic transaction bloom filtering]前不向其转发任何未确认交易的能力。Bitcoin Core 后来通过其带宽节约的 `-blocksonly` 模式重新利用了这一机制，使节点请求其对等方完全不发送任何未确认交易。去年，默认配置的 Bitcoin Core 开始建立一些仅用于区块中继的连接，这是在不显著增加带宽或减少隐私的情况下，提高[隔离攻击][topic eclipse attacks]抵抗能力的高效方式（见 [Newsletter #63][news63 bcc15759]）。然而，用于抑制交易转发的 BIP37 机制允许发起节点在任何时候请求完整交易转发。交易转发会消耗节点资源，例如内存和带宽，因此节点需要根据每个基于 BIP37 的低带宽区块中继连接可能突然变为完整交易转发连接的假设来设置其连接限制。
+- **<!--proposed-disabletx-message-->****提议的 `disabletx` 消息：** 2012 年发布的 [BIP37][] 让轻量级客户端能够请求对等节点在客户端加载[布隆过滤器][topic transaction bloom filtering]之前，不要向它中继任何未确认交易。Bitcoin Core [后来][bitcoin core #6993]把这套机制复用到节省带宽的 `-blocksonly` 模式中：节点请求对等节点完全不发送任何未确认交易。去年，Bitcoin Core 在默认设置下开始建立少量仅中继区块的连接，作为提高[日食攻击][topic eclipse attacks]抵抗能力的高效手段，同时不会显著增加带宽或降低隐私（见 [Newsletter #63][news63 bcc15759]）。然而，用来抑制交易中继的 BIP37 机制允许发起节点随时请求完整的交易中继。交易中继会消耗内存、带宽等节点资源，因此节点在设置连接上限时，必须假设每一条基于 BIP37 的低带宽仅中继区块连接都可能突然变成完整的交易中继连接。
 
-  本周，Suhas Daftuar 在 Bitcoin-Dev 邮件列表中[发布了][daftuar disabletx]一个新的 BIP 提议，提出 `disabletx` 消息。这条消息可在连接协商期间发送。了解该消息的对等方并按照 BIP 的所有建议实现的节点，不会向请求 `disabletx` 的节点发送任何交易公告，也不会向其请求任何交易。此外，也不会发送某些其他的 gossip 消息，例如用于 IP 地址公告的 `addr` 消息。`disabletx` 的协商在连接的整个生命周期内有效，这允许对禁用转发的连接使用不同的限制，例如接受超过当前 125 个连接上限的额外连接。
+  本周，Suhas Daftuar 在 Bitcoin-Dev 邮件列表中[发布][daftuar disabletx]了一份新的 BIP 提议，提出可在连接协商期间发送的 `disabletx` 消息。理解该消息、并落实该 BIP 全部建议的对等节点，不会向请求 `disabletx` 的节点发送任何交易公告，也不会向该节点请求任何交易；它也不会发送另一些 gossip 消息，例如用于公布 IP 地址的 `addr` 消息。`disabletx` 的协商结果在连接的整个生命周期内有效，这让对等节点可以对禁用中继的连接采用不同的限制，例如在现有 125 个连接上限之外再多接受一些连接。
 
-- **<!--bech32m-->****Bech32m：** Pieter Wuille 在 Bitcoin-Dev 邮件列表中[发布了][wuille bech32m post]一个 [BIP 草案][bech32m bip]，提议了一种修改版的 [Bech32][topic bech32] 地址编码。这种编码增加了检测意外添加或移除字符的可能性。如果该提案未发现问题，预计 Bech32m 地址将用于 [Taproot][topic taproot] 地址以及未来可能的新脚本升级。实现对 Bech32m 地址支付支持的钱包和服务将自动支持支付所有这些未来的改进（详情见 [Newsletter #45][news45 bech32 upgrade]）。
+- **<!--bech32m-->****bech32m：** Pieter Wuille 在 Bitcoin-Dev 邮件列表中[发布][wuille bech32m post]了一份 [BIP 草案][bech32m bip]，提出一种修改版的 [bech32][topic bech32] 地址编码，提高了检出这类 *bech32m* 地址中意外增加或删除字符的几率。如果该提案没有发现问题，预计 bech32m 地址将用于 [taproot][topic taproot] 地址，也可能用于未来新的脚本升级。实现向 bech32m 地址付款支持的钱包和服务，将自动支持向所有这些未来改进的地址付款（详情见 [Newsletter #45][news45 bech32 upgrade]）。
 
-- **<!--ln-dual-funding-anti-utxo-probing-->****LN 双向资助防 UTXO 探测：** LN 的长期目标之一是双向资助，即可以通过发起通道的节点和接收请求的对等方的资金开设新通道。这将允许在通道完全打开后，支付可以向任意方向流动。在发起方能够签署双向资助交易之前，他们需要了解其他方想要添加到交易中的所有 UTXO 的身份（outpoint）。这带来了一个风险，即滥用者可能试图与许多不同的用户发起双向资助通道，获取其 UTXO，然后拒绝签署资助交易，从而在没有成本的情况下损害这些用户的隐私。
+- **<!--ln-dual-funding-anti-utxo-probing-->****LN 双向资助防 UTXO 探测：** LN 的一个长期目标是双向资助，即用发起通道的节点和收到请求的对等方双方的资金来开设新通道。这样一来，通道完全打开后，支付就可以朝任一方向流动。在发起方签署双向资助交易之前，它需要知道另一方想加入该交易的全部 UTXO 的标识（outpoint）。这就带来一种风险：滥用者可能与许多不同用户发起双向资助通道，摸清他们的 UTXO，然后拒绝签署注资交易——在自身毫无成本的情况下损害这些用户的隐私。
 
-  本周，Lloyd Fournier 在 Lightning-Dev 邮件列表中[发布了][fournier podle]一份关于应对该问题的两个先前提案的评估：[一个][zmn podle]使用离散对数等价性证明（PoDLE，见 [Newsletter #83][news83 podle]），[另一个][darosior sighash]则使用带有 `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` 的双向资助交易的半签名方式。Fournier 扩展了先前的半签名提案，并提出了一个等效有效但更简单的新提案。新提案要求发起方创建并签署（但不广播）一笔将其 UTXO 转回给自己的交易。他们将此交易交给另一方作为诚意证明——如果发起方后来未能签署实际的资助交易，应答方可以广播诚意交易，从而强制发起方支付一笔链上费用。Fournier 在他的帖子末尾总结了不同方法之间的权衡。
+  本周，Lloyd Fournier 在 Lightning-Dev 邮件列表中[发布][fournier podle]了对以往两个应对方案的评估：[一个][zmn podle]使用离散对数等价性证明（PoDLE，见 [Newsletter #83][news83 podle]），[另一个][darosior sighash]使用带 `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` 半签名的双向资助交易。Fournier 扩展了先前的半签名提案，然后提出了自己的方案：效果相当，但更简单。新方案让发起方创建并签署（但不广播）一笔把自己的 UTXO 花回给自己的交易，再把这笔交易交给另一方作为诚信证明——如果发起方后来不肯签署真正的注资交易，应答方就可以广播这笔诚信交易，迫使发起方支付一笔链上手续费。Fournier 在帖子末尾总结了各种方法之间的权衡。
 
 ## Bitcoin Core PR 审查俱乐部
 
-*在本月的栏目中，我们总结了一次最近的 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club]会议，突出一些重要问题和答案。点击下面的问题可以查看会议中答案的摘要。*
+*在本月度栏目中，我们总结最近一次 [Bitcoin Core PR 审查俱乐部][Bitcoin Core PR Review Club]会议，重点介绍一些重要的问题和答案。点击下面的问题可以查看会议中答案的摘要。*
 
-[增加节点驱逐逻辑的单元测试][review club #20477]是一个由匿名贡献者 practicalswift 提交的 PR ([#20477][Bitcoin Core #20477])，旨在改进 Bitcoin Core 的节点驱逐逻辑的测试覆盖率，特别是当节点的入站连接插槽已满时。需要小心以避免因该逻辑暴露节点于攻击者触发的网络分区中。
+[为节点驱逐逻辑添加单元测试][review club #20477]是匿名贡献者 practicalswift 提交的一个 PR（[#20477][Bitcoin Core #20477]），旨在提高 Bitcoin Core 在节点入站连接槽位已满时驱逐对等节点逻辑的测试覆盖率。必须小心，避免这套逻辑使节点暴露在攻击者触发的网络分区之下。
 
-大部分讨论集中在理解 Bitcoin Core 的节点驱逐逻辑上。
+大部分讨论集中在理解 Bitcoin Core 的对等节点驱逐逻辑上。
 
 {% include functions/details-list.md
-  q0="**<!--q0-->**入站或出站节点选择：哪一个是我们抵御隔离攻击的主要防御措施？"
-  a0="出站节点选择，因为攻击者对我们选择哪些出站节点的影响小于我们接受的入站连接。入站节点驱逐是第二层保护——而且并非所有节点都允许入站连接。"
+  q0="**<!--q0-->**入站还是出站对等节点选择：哪一个是抵御日食攻击的主要防线？"
+  a0="出站对等节点选择，因为相比我们接受的入站连接，攻击者对我们选择哪些出站对等节点的影响力更小。驱逐入站对等节点是第二层保护——而且并非所有节点都接受入站连接。"
   a0link="https://bitcoincore.reviews/20477#l-77"
 
-  q1="**<!--q1-->**为什么 Bitcoin Core 会驱逐入站连接？"
-  a1="为了为网络中的诚实节点腾出入站插槽，以便新节点可以与它们建立良好的出站连接。否则，不诚实的节点可以更容易通过占用尽可能多的入站插槽和为新节点的出站连接提供服务来攻击新节点。"
+  q1="**<!--q1-->**Bitcoin Core 为什么要驱逐入站连接？"
+  a1="为了让网络中的诚实对等节点有空出的入站槽位，使新节点能够与它们建立良好的出站连接。否则，不诚实的节点就更容易攻击新节点：它们既可以为新节点的出站连接提供服务，又尽可能多地占满入站槽位。"
   a1link="https://bitcoincore.reviews/20477#l-66"
 
-  q2="**<!--q2-->**当需要释放一个插槽时，Bitcoin Core 如何决定驱逐哪个入站节点？"
-  a2="最多 28 个节点根据一些难以伪造的标准（如低延迟、网络组、提供新颖的有效交易和区块等）受到保护。剩下的节点中，连接时间最长的一半受到保护，包括一些 Onion 节点。在剩下的节点中，选择网络组中连接数最多的组的最年轻成员断开连接。攻击者必须在所有这些特性上同时优于诚实节点，才能分区一个节点。"
+  q2="**<!--q2-->**需要腾出一个槽位时，Bitcoin Core 如何决定驱逐哪个入站对等节点？"
+  a2="最多有 28 个对等节点会依据一些难以伪造的标准受到保护，例如低延迟、网络组、提供新颖的有效交易和区块等。剩余节点中连接时间最长的一半也受到保护，其中包括一些洋葱节点。在剩余的节点里，连接数最多的那个网络组中最年轻的成员会被选来断开。攻击者必须在所有这些特征上同时优于诚实节点，才可能对某个节点实施分区。"
   a2link="https://bitcoincore.reviews/20477#l-83"
 %}
 
 ## 发布与候选发布
 
-*流行比特币基础设施项目的新发布和候选发布版本。请考虑升级到新版本或帮助测试候选发布版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [Bitcoin Core 0.21.0rc5][Bitcoin Core 0.21.0] 是这个全节点实现及其相关钱包和其他软件的下一个主要版本的候选发布（RC）。Jarol Rodriguez 编写了一份 [RC 测试指南][RC testing guide]，描述了该版本中的主要变化并建议了如何帮助测试。
+- [Bitcoin Core 0.21.0rc5][Bitcoin Core 0.21.0] 是该全节点实现及其配套钱包等软件的下一个主要版本的候选发布（RC）。Jarol Rodriguez 编写了一份 [RC 测试指南][RC testing guide]，介绍该版本中的主要变更，并建议你如何协助测试。
 
-- [LND 0.12.0-beta.rc5][LND 0.12.0-beta] 是这个闪电网络节点的下一个主要版本的最新候选发布。它使 [锚定输出][topic anchor outputs] 成为承诺交易的默认设置，并在其 [瞭望塔][topic watchtowers] 实现中增加了对锚定输出的支持，从而降低成本并提高安全性。该版本还增加了对创建和签署 [PSBT][topic psbt] 的通用支持，并包括一些错误修复。
+- [LND 0.12.0-beta.rc5][LND 0.12.0-beta] 是该 LN 节点下一个主要版本的最新候选发布。它让[锚定输出][topic anchor outputs]成为承诺交易的默认配置，并在其[瞭望塔][topic watchtowers]实现中加入对锚定输出的支持，从而降低成本、提高安全性。该版本还增加了创建和签署[部分签名比特币交易（PSBT）][topic psbt]的通用支持，并包含若干错误修复。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[比特币改进提案 (BIPs)][bips repo]和[闪电网络规范 (BOLTs)][bolts repo] 的值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[比特币改进提案 (BIPs)][bips repo]和[闪电网络规范 (BOLTs)][bolts repo]中值得注意的变更。*
 
-- [Bitcoin Core #18077][] 添加了对一种常见的自动端口转发协议 [NAT-PMP][rfc 6886]（网络地址转换端口映射协议）的支持。通过 `-natpmp` 配置参数启动的监听 Bitcoin 客户端将自动在支持 NAT-PMP 的路由器上打开监听端口。NAT-PMP 的支持与现有的 UPnP（通用即插即用）支持并行添加，而后者由于多次安全问题，在 Bitcoin Core 0.11.1 中默认被禁用。与 UPnP 不同，NAT-PMP 使用固定大小的 UDP 数据包而非 XML 解析，因此被认为[风险较低][laanwj natpmp]。此更改还传递性地增加了对 [PCP][rfc 6887]（端口控制协议）的支持，这是 NAT-PMP 的向后兼容继任者。
+- [Bitcoin Core #18077][] 增加了对一种常见自动端口转发协议 [NAT-PMP][rfc 6886]（网络地址转换端口映射协议）的支持。用 `-natpmp` 配置参数启动的监听型 Bitcoin 客户端，会自动在支持 NAT-PMP 的路由器上打开监听端口。NAT-PMP 支持与现有的 UPnP（通用即插即用）支持并行加入，而后者在出现多起安全问题后已于 Bitcoin Core 0.11.1 中默认禁用。与 UPnP 不同，NAT-PMP 使用固定大小的 UDP 数据包，而不是解析 XML，因此被认为[风险较低][laanwj natpmp]。此变更还间接增加了对 [PCP][rfc 6887]（端口控制协议）的支持，它是 NAT-PMP 的向后兼容后继者。
 
-- [Bitcoin Core #19055][] 添加了 [MuHash 算法][MuHash algorithm]，以便未来的 PR 可以用它实现计划中的功能。如 [Newsletter 123][muhash review club] 所述，MuHash 是一种滚动哈希算法，可用于计算一组对象的哈希摘要，并在添加或移除项目时高效更新。这是 2017 年 [Pieter Wuille 提出的想法][muhash mailing list]的复兴，用于计算完整 UTXO 集的摘要，并在 [Bitcoin Core #10434][] 中首次实现。对于有兴趣跟踪为 UTXO 集统计创建索引进度的人，meta PR [Bitcoin Core #18000][] 记录了该项目的进展和未来步骤。
+- [Bitcoin Core #19055][] 加入了 [MuHash 算法][MuHash algorithm]，以便未来的 PR 把它用于计划中的功能。如 [Newsletter 123][muhash review club] 所述，MuHash 是一种滚动哈希算法，可用来计算一组对象的哈希摘要，并在增删条目时高效更新。这是对“用 MuHash 计算完整 UTXO 集摘要”这一想法的复兴；该想法最早由 [Pieter Wuille 在 2017 年提出][muhash mailing list]，并在 [Bitcoin Core #10434][] 中实现。对于有兴趣跟踪“为 UTXO 集统计信息创建索引”进展的人——该索引让验证 [assumeUTXO][topic assumeutxo] 归档更容易——总括 PR [Bitcoin Core #18000][] 记录了该项目的进展和后续步骤。
 
-- [C-Lightning #4320][] 在 `invoice` RPC 中添加了一个 `cltv` 参数，允许用户和插件设置生成发票的 `min_final_cltv_expiry` 字段。
+- [C-Lightning #4320][] 为 `invoice` RPC 添加了一个 `cltv` 参数，让用户和插件可以设置所生成发票的 `min_final_cltv_expiry` 字段。
 
-- [C-Lightning #4303][] 更新了 `hsmtool`，使其从标准输入（stdin）接收密码，并开始忽略命令行中提供的任何密码。
+- [C-Lightning #4303][] 更新了 `hsmtool`，改为从标准输入（stdin）读取口令，并开始忽略命令行中提供的任何口令。
 
 {% include references.md %}
 {% include linkers/issues.md issues="18077,19055,4320,4303,6993,20477,18000,10434" %}

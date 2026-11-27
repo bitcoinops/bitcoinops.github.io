@@ -7,30 +7,30 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 询问了对 miniscript 语言的意见，发布了我们关于 bech32 发送支持部分的最终章节，包含了 Bitcoin Stack Exchange 上的热门问答，并描述了几个值得注意的比特币基础设施项目的更改。
+本周的 Newsletter 就 miniscript 语言征求反馈，刊出 bech32 发送支持系列的最后一篇，收录 Bitcoin Stack Exchange 上的热门问答，并介绍流行比特币基础设施项目的几处值得注意的变更。
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
 
 ## 行动项
 
-- **<!--evaluate-miniscript-->****评估 miniscript：** 钱包开发者们被鼓励评估这一[提议的语言][miniscript code]，它可以让钱包适应新的脚本模板，而无需为每个新模板更改底层钱包代码。详情请见*新闻*部分。
+- **<!--evaluate-miniscript-->****评估 miniscript：** 我们鼓励钱包开发者评估这项[提案中的语言][miniscript code]，它可以让钱包适应新的脚本模板，而无需为每个新模板改动底层钱包代码。详情请见*新闻*部分。
 
 ## 新闻
 
-- **<!--miniscript-request-for-comments-->****Miniscript 请求评论：** 该语言的开发者已[请求][miniscript email]社区对其初步设计进行反馈。[Miniscript][] 允许软件自动分析脚本，包括确定创建满足脚本的见证所需的数据，并允许任何被该脚本保护的比特币被花费。在 miniscript 指导钱包如何操作的情况下，钱包开发者在从一个脚本模板切换到另一个脚本模板时无需编写新代码。
+- **<!--miniscript-request-for-comments-->****Miniscript 征求反馈：** 该语言的开发者已[请求][miniscript email]社区对其初步设计提供反馈。[Miniscript][] 能让软件自动分析脚本，包括判断需要哪些数据才能构造出满足脚本的见证——有了这样的见证，受该脚本保护的比特币就能被花掉。有了 miniscript 告诉钱包该做什么，钱包开发者从一个脚本模板切换到另一个脚本模板时就不必再写新代码。
 
-  例如，如今一个钱包开发者如果想从 2-of-3 多重签名切换到带有 1-of-2 时间锁逃生条款的 2-of-2 多重签名，可能需要为新情况编写和测试一个新函数。而有了 miniscript，只要钱包知道如何为指定密钥生成签名以及如何解决时间锁，miniscript 就可以引导钱包通过各种可能的路径来解决脚本。不需要额外的花费代码。
+  例如，如今一个钱包开发者如果想从 2-of-3 多重签名切换到带有 1-of-2 时间锁逃生条款的 2-of-2 多重签名，可能需要为新情况编写和测试一个新函数。而有了 miniscript，只要钱包知道如何为指定密钥生成签名、如何处理时间锁，miniscript 就能引导钱包走遍各种可能的路径去解开该脚本。不需要写新的支出代码。
 
-  对于需要来自多个钱包的签名或其他数据的脚本，miniscript 可以引导钱包创建它可以提供的所有见证数据，以便这些数据可以打包到部分签名比特币交易（PSBT）中。其他钱包可以创建它们自己的 PSBT，所有这些 PSBT 都交给 PSBT 完成器。如果该完成器支持 miniscript，它可以将所有提供的 PSBT 中的见证数据排序为一个完整的见证，使花费交易有效。
+  对于需要来自多个钱包的签名或其他数据的脚本，miniscript 可以引导钱包尽可能创建出它能创建的见证数据，以便把这些数据打包进一个部分签名比特币交易（PSBT）。其他钱包可以各自创建自己的 PSBT，所有这些 PSBT 都交给 PSBT 终结器（finalizer）。如果该终结器支持 miniscript，它就能把所有传入 PSBT 中的见证数据整理成一个完整的见证，使这笔支出交易有效。
 
-  这种对 miniscript 支持的大范围脚本的自动化允许钱包在使用脚本时更加灵活，甚至可能允许用户指定自己的脚本。为了支持这种动态性，miniscript 可以使用一种易于编写的策略语言创建。策略是可组合的，允许任何有效的子表达式在比特币系统施加的某些限制范围内被另一个有效的子表达式替换。例如，假设 Alice 有一个涉及热钱包、硬件钱包和备用冷钱包的 2-of-3 策略：
+  Miniscript 支持的脚本种类很多，这种自动化让钱包在选择脚本时可以灵活得多，甚至可能让用户指定自己的脚本。为了支持这种灵活性，miniscript 可以用一种易写的策略语言来编写。策略是可组合的，可以把任何一个有效的子表达式替换成另一个有效的子表达式（前提是不超出 Bitcoin 系统设定的某些限制）。例如，假设 Alice 有一个涉及热钱包、硬件钱包和备用冷钱包的 2-of-3 策略：
 
   ```
   thresh(2, pk(A_hot), pk(A_hard), pk(A_cold))
   ```
 
-  后来 Alice 被要求创建一个忠诚债券，该债券将她的一些比特币锁定 26,000 个区块。该策略的通用形式为：
+  后来 Alice 被要求创建一份忠诚债券（fidelity bond），把她的一部分比特币时间锁定 26,000 个区块。该策略的通用形式是：
 
   ```
   and(pk(KEY), older(26000))
@@ -42,42 +42,42 @@ lang: zh
   and(thresh(2, pk(A_hot), pk(A_hard), pk(A_cold)), older(26000))
   ```
 
-  Miniscript 编译器可以将该策略转换为高效的 P2WSH 脚本，并检查它是否违反了比特币的共识规则或 Bitcoin Core 的交易中继和挖矿政策。它还可以告诉 Alice 与该脚本相关的各种尺寸，以便她可以估算自己的交易费用开支。
+  Miniscript 编译器可以把该策略转换成高效的 P2WSH 脚本，并确认它不会违反比特币的任何共识规则，也不违反 Bitcoin Core 的交易中继与挖矿策略。它还能告诉 Alice 与该脚本相关的各种大小，方便她估算这笔交易的手续费开销。
 
-  如果比特币协议增加了脚本更改，例如 [taproot][bip-taproot]，很可能会创建支持这些协议新增内容的新版本 miniscript，从而使得即便钱包和用户使用复杂脚本，升级也会变得更加容易。
+  如果比特币协议日后加入对脚本的改动，例如 [taproot][bip-taproot]，很可能会推出支持这些协议新增内容的新版 miniscript，让钱包和用户即使使用复杂脚本也能轻松升级。
 
   欲了解更多信息，请参见我们的 [miniscript 主题页面][miniscript]、[C++ miniscript 实现][miniscript code]、[Rust 实现][miniscript rust]、[Bitcoin Core 集成代码][core miniscript]，以及 Pieter Wuille 关于早期版本 miniscript 的演讲（[视频][miniscript vid]、[文字记录][miniscript xs]、[Optech 摘要][miniscript summary]）。
 
 ## Bech32 发送支持
 
-*关于让你支付的人能够享受 segwit 所有好处的[系列][bech32 series]中的最后一部分。*
+*这是共 24 周的[系列][bech32 series]中的最后一篇，目的是让你支付的对象也能获得隔离见证的全部好处。*
 
 {% include specials/bech32/zh/24-conclusion.md %}
 
 ## Bitcoin Stack Exchange 精选问答
 
-*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者们寻找答案的首选之一——或者当我们有空闲时间时，我们也会帮助好奇或困惑的用户。在这个月度特色栏目中，我们会重点介绍自上次更新以来的一些高票问答。*
+*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选去处之一，也是我们有点空闲时帮助好奇或困惑用户的地方。在本月栏目中，我们精选自上次更新以来得票最高的一些问题和回答。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- **<!--what-are-the-key-differences-between-regtest-and-the-proposed-signet-->**[regtest 和提议的 signet 之间的主要区别是什么？]({{bse}}89640) Pieter Wuille 和 Andrew Chow 解释说，虽然 regtest 适用于本地自动化集成测试，但 signet 更类似于 testnet，它允许测试节点发现、传播和交易选择等功能。Signet 允许比 testnet 更好地控制区块生产时间，并且可以存在多个 signet 来测试不同的场景。
+- **<!--what-are-the-key-differences-between-regtest-and-the-proposed-signet-->**[regtest 和提议中的 signet 之间有哪些关键区别？]({{bse}}89640) Pieter Wuille 和 Andrew Chow 解释说，regtest 适合做本地自动化集成测试，而 signet 更接近测试网（testnet）：可以测试节点发现、消息传播、交易选择这类东西。相比测试网，signet 能更好地控制出块时间，而且可以同时存在多个 signet，用于测试不同场景。
 
-- **<!--can-hardware-wallets-actually-display-the-amount-of-funds-leaving-your-control-->**[硬件钱包能实际显示离开你控制的资金数量吗？]({{bse}}89508) Andrew Chow 解释说，由于硬件钱包不是一个全节点，它需要从其他地方获取其交易金额信息。对于非 segwit 输入，通常通过将先前的交易发送到设备，由主机计算机或其他钱包提供给硬件签名设备。在 segwit 输入的情况下，正在签名的输入金额必须始终提供，因为它是签名和验证所需数据的必备部分。
+- **<!--can-hardware-wallets-actually-display-the-amount-of-funds-leaving-your-control-->**[硬件钱包真的能显示离开你掌控的资金数额吗？]({{bse}}89508) Andrew Chow 解释说，硬件钱包不是全节点，因此只能从别处获取交易金额信息。对于非 segwit 输入，通常由主机电脑或其他钱包把前一笔交易发送给该设备，从而把金额提供给硬件签名设备。对于 segwit 输入，正在签名的那个输入的金额必须始终提供，因为它是签名和验证所依据数据中必不可少的一部分。
 
 - **<!--how-does-one-prove-that-they-sent-bitcoins-to-an-unspendable-wallet-->**[如何证明他们将比特币发送到不可花费的钱包？]({{bse}}89554) JBaczuk 解释说，你可以通过将比特币发送到 OP_RETURN 输出或另一个始终返回 false 的脚本，或者将比特币发送到从人为设计、非随机脚本哈希派生的地址来证明这些币是不可花费的。
 
-- **<!--why-is-proof-of-work-required-in-bitcoin-->**[为什么比特币需要工作量证明？]({{bse}}89972) Pieter Wuille 解释说，PoW 并不创建信任，而是为矿工合作构建其他矿工的区块创造了激励。PoW 还用于调节区块时间（因此可以防止拒绝服务攻击），因为难度调整使得可靠地生产区块的成本高昂，平均而言不超过每 10 分钟一个。
+- **<!--why-is-proof-of-work-required-in-bitcoin-->**[为什么比特币需要工作量证明？]({{bse}}89972) Pieter Wuille 解释说，PoW 并不创造信任，而是激励矿工与其他矿工合作，在他们的区块之上继续构建。PoW 还用来调节出块时间（从而防止拒绝服务攻击）：难度调整使得想要稳定地以高于平均每 10 分钟一块的频率出块，代价会高得难以承受。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]的一些值得注意的更改。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo] 中值得注意的变更。*
 
 - [LND #2203][] 添加了一个 `rejecthtlc` 配置选项，该选项将阻止节点为其他节点转发支付，但仍允许其接收传入支付和发送传出支付。
 
-- [LND #3256][] 增加了 LND 从路由失败中得出的推论数量，并使用这些信息调整后续路由。例如，如果某个节点在交易中的特定角色（如中间节点或最终节点）不应生成错误消息，但却生成了错误消息，则该节点在路由优选数据库中会被惩罚。
+- [LND #3256][] 增加了 LND 从路由失败中得出的推断数量，并利用这些信息调整后续路由。例如，某个节点在交易中扮演特定角色（如中间节点或最终节点）时本不该产生某条错误消息，却产生了，那么它就会在路由偏好数据库中受到惩罚。
 
-- [BOLTs #608][] 提供了对 [BOLT4][] 的隐私更新，使路由节点更难识别最终接收支付的节点。此前，如果最终节点收到即将到期的支付，它会发送 `final_expiry_too_soon` 错误。而其他非最终节点则会报告它们不识别该支付。这使得可以通过探测各种通道来确定接收方。更新后的 BOLT 现在建议最终节点即使知道问题是即将到期，也发送通用的 `incorrect_or_unknown_payment_details` 消息。这与[上周的 newsletter][lnd3391] 中描述的错误金额问题和解决方案是类似的基本隐私泄露和解决方案。
+- [BOLTs #608][] 对 [BOLT4][] 做了一项隐私改进，使路由节点更难判断最终是哪个节点在收款。此前，最终节点如果收到一笔在未来太短时间内就会过期的支付，会发送 `final_expiry_too_soon` 错误；其他非最终节点则只报告自己不认识该支付。这就让人可以探测各个通道，从而确定收款方。更新后的 BOLT 现在建议最终节点即使知道问题是过期时间太近，也发送通用的 `incorrect_or_unknown_payment_details` 消息。这与[上周的 Newsletter][lnd3391] 中就金额错误问题描述的基本隐私泄露及应对办法是同一回事。
 
 ## 特别感谢
 

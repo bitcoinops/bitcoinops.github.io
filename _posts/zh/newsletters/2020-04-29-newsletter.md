@@ -7,84 +7,84 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 总结了一个影响闪电网络（LN）支付安全的问题披露，并宣布了一个新的预签名保险库提案。此外，还包括我们常规部分的 Bitcoin Stack Exchange 精选问答、发布与候选发布的公告，以及热门比特币基础设施项目中的值得注意的代码更改描述。
+本周的 Newsletter 总结了一项影响闪电网络（LN）路由支付安全的问题披露，并宣布了一个新的预签名保险库提案。此外，还包括我们的常设栏目：Bitcoin Stack Exchange 精选问答、发布与候选发布的公告，以及热门比特币基础设施项目中值得注意的代码变更描述。
 
 ## 行动项
 
-- **<!--review-the-disclosure-of-a-potential-ln-issue-->****审查潜在 LN 问题的披露**：如下面的*新闻*部分所述，本周的一项公开披露描述了一种从 LN 节点中窃取资金的新方法。该问题与现有的、已知的费用管理问题部分重叠。我们目前所知这一问题尚未被利用，因为过去两年中几乎所有的链上交易即便仅支付默认的最低中继费用率，也能相对快速地确认。如果费用率在一段时间内显著上升，这些问题将变得更为严重。有关详细信息，请参阅我们在*新闻*部分中的解释，并在担心此问题可能影响您的通道时，联系您的 LN 软件供应商。
+- **<!--review-the-disclosure-of-a-potential-ln-issue-->****审查潜在 LN 问题的披露**：如下面的*新闻*部分所述，本周的一项公开披露描述了一种从 LN 节点窃取资金的新方法。该问题与一个已知的既有手续费管理问题部分重叠。据我们所知，这个问题尚未被利用，因为过去两年中几乎所有的链上交易即便只支付默认的最低中继费率，也能相对快速地确认。如果费率在较长一段时间内显著上升，这些问题就会变得更加严重。详细信息请参阅我们在*新闻*部分的解释；如果你担心此问题会影响自己的通道，请联系你的 LN 软件供应商。
 
 ## 新闻
 
-- **<!--new-attack-against-ln-payment-atomicity-->****针对 LN 支付原子性的新攻击**：Matt Corallo 在 [Lightning-Dev][corallo thread ld] 和 [Bitcoin-Dev][corallo thread bd] 邮件列表中启动了一个线程，披露了在讨论允许 LN 承诺交易通过[锚定输出][topic anchor outputs]使用 [CPFP][topic cpfp] 费用提升时发现的攻击。[BOLTs #688] 中对此进行了讨论。我们将通过一个扩展示例来描述此次攻击：Alice 使用 LN 通道向 Bob 发送了一个哈希时间锁定合约（HTLC），该合约旨在以下两种方式之一结算：
+- **<!--new-attack-against-ln-payment-atomicity-->****针对 LN 支付原子性的新攻击**：Matt Corallo 在 [Lightning-Dev][corallo thread ld] 和 [Bitcoin-Dev][corallo thread bd] 两个邮件列表上同时发起一个讨论帖，披露了一个在[讨论][BOLTs #688]如何允许 LN 承诺交易通过[锚定输出][topic anchor outputs]进行[子为父付（CPFP）][topic cpfp]手续费追加时发现的攻击。我们用一个更详细的示例来说明这次攻击：Alice 通过 LN 通道向 Bob 发送一份哈希时间锁定合约（HTLC），该合约可按以下两种方式之一结算：
 
-  - 如果 Bob 披露了 `<hash>` 的原像，他可以花费 Alice 的 1 BTC
-  - 否则，80 个区块后，Alice 可以将这 1 BTC 退回给自己
+  - 如果 Bob 披露 `<hash>` 的原像，他就能花费 Alice 的 1 BTC
+  - 否则，80 个区块后，Alice 可以把这 1 BTC 退回给自己
 
-  Alice 还告知 Bob，她的支付目的是支付给 Mallory，因此 Bob 使用他与 Mallory 的通道向她发送了一个相关的 HTLC：
+  Alice 还告诉 Bob，她这笔支付的目标是付给 Mallory，因此 Bob 使用他与 Mallory 的通道，向她发送一份相关的 HTLC：
 
-  - 如果 Mallory 披露了 `<hash>` 的原像，她可以花费 Bob 的 1 BTC（在此示例中忽略了路由费用）
-  - 否则，40 个区块后，Bob 可以将这 1 BTC 退回给自己
+  - 如果 Mallory 披露 `<hash>` 的原像，她就能花费 Bob 的 1 BTC（本例忽略路由手续费）
+  - 否则，40 个区块后，Bob 可以把这 1 BTC 退回给自己
 
-  尽管上述 HTLC 通常是离线创建并结算的，每个参与者也都有一个*承诺交易*，他们可以用它将 HTLC 承诺上链。一个单独的链上*结算交易*可以满足 HTLC 的任一条件。
+  虽然上述 HTLC 通常在链下创建并结算，但每个参与方还各有一笔*承诺交易*，可用来把 HTLC 承诺放到链上。一笔单独的链上*结算交易*可以满足 HTLC 的任一条件。
 
-  例如，Mallory 可以发布承诺交易，然后创建一个结算交易，提供原像并索取 Bob 的 1 BTC。如果 Bob 在 Alice-Bob 合约的 80 个区块超时之前看到 Mallory 的原像结算交易，他可以提取该原像并用它索取 Alice 的 1 BTC（无论是链上还是链下）。或者，如果 Bob 没有看到原像结算交易，他可以在 40 个区块后创建自己的退款结算交易，收回他的 1 BTC，同时也可以启动 Alice 的 1 BTC 的退款（同样，无论是链上还是链下）。在任何情况下，这都使所有人遵守其合约的意图。
+  例如，Mallory 可以先发布承诺交易，再创建一笔提供原像的结算交易，索取 Bob 的 1 BTC。如果 Bob 在 Alice-Bob 合约的 80 个区块超时之前看到 Mallory 的原像结算交易，他就能提取该原像，并用它取走 Alice 的 1 BTC（链上或链下均可）。或者，如果 Bob 没有看到原像结算交易，他可以在 40 个区块后创建自己的退款结算交易，收回自己的 1 BTC，从而也能启动对 Alice 那 1 BTC 的退款（同样链上或链下均可）。无论哪种情况，各方最终都仍符合其合约的本意。
 
-  不幸的是，据本周披露，Mallory 似乎有办法通过阻止 Bob 了解原像并阻止他发送退款结算交易来规避这一过程。
+  不幸的是，本周披露的情况显示，Mallory 似乎有办法绕过这个过程：既让 Bob 无法获知原像，又让他无法发出退款结算交易。
 
-  - **<!--preimage-denial-->****原像拒绝**：Mallory 可以通过给她的原像结算交易设置一个较低的费用率来阻止 Bob 获悉该原像，使其无法快速确认。如果 Bob 仅在区块链中查找原像，他将不会在未确认的情况下看到 Mallory 的交易。
+  - **<!--preimage-denial-->****拒绝披露原像**：Mallory 可以给自己的原像结算交易设一个低费率，让这笔交易无法很快确认，从而让 Bob 无法获知原像。如果 Bob 只在区块链里查找原像，那么只要这笔交易还没确认，他就看不到它。
 
-  - **<!--refund-denial-->****退款拒绝**：Mallory 先前广播的原像结算交易可以阻止矿工和比特币中继节点接受 Bob 后来广播的退款结算交易，因为这两个交易*冲突*，即它们都花费了同一个输入（在承诺交易中创建的 UTXO）。理论上，Bob 的退款结算交易将支付更高的费用率，从而可以通过 [RBF][topic rbf] 替换 Mallory 的原像结算交易，但实际上，Mallory 可以使用各种[交易固定][topic transaction pinning]技术来阻止这种替换。
+  - **<!--refund-denial-->****阻止退款**：Mallory 先前广播的原像结算交易，会让矿工和比特币中继节点拒绝接受 Bob 之后广播的退款结算交易，因为这两笔交易*冲突*——它们花费的是同一个输入（承诺交易中创建的一个 UTXO）。理论上，Bob 的退款结算交易会支付更高的费率，因而可以通过 [RBF][topic rbf] 替换掉 Mallory 的原像结算交易；但在实践中，Mallory 可以用各种[交易钉住][topic transaction pinning]手法阻止这种替换发生。
 
-  由于 Bob 被阻止获知原像结算交易或确认他的退款结算交易，Alice 可以在 Alice-Bob HTLC 的 80 个区块超时到期后收回她提供给 Bob 的 1 BTC。而当 Mallory 的原像结算交易最终确认时，Mallory 可以获得 Bob 提供的 1 BTC，这让 Bob 损失了 1 BTC。
+  由于 Bob 既无法获知原像结算交易，也无法让自己的退款结算交易得到确认，因此等 Alice-Bob HTLC 的 80 个区块超时到期后，Alice 就能收回她提供给 Bob 的 1 BTC。而等 Mallory 的原像结算交易最终确认时，Mallory 就得到了 Bob 在 Bob-Mallory HTLC 中许诺给她的那 1 BTC。结果 Bob 比开始时少了 1 BTC。
 
-  该线程中考虑了几种解决方案，但都存在问题或涉及重大权衡：
+  讨论帖中考虑了几种解决方案，但都存在问题，或者需要做出重大取舍：
 
-  - **<!--require-a-mempool-->****要求内存池**：Bob 可以使用比特币全节点来监控比特币 P2P 中继网络并获悉 Mallory 的结算交易。一些 LN 节点如 Eclair 已经这样做了，并且这看起来是一个[合理的额外负担][osuntokun reasonable]，因为问题仅直接影响路由节点（如 Bob）。仅为自己发送或接收支付的节点只会间接受到影响，[^non-routing-issues]因此日常用户仍然可以在移动设备上运行轻量级 LN 客户端。不幸的是，即使在一切正常的情况下，不同全节点接收到的交易也可能不同。更糟糕的是，攻击者如 Mallory 可以使用技术[向不同的对等方发送不同的冲突交易][corallo mempool not guaranteed]（例如，将固定的原像结算交易发送给已知矿工，但将另一笔不涉及结算的交易发送给非矿工的中继节点）。
+  - **<!--require-a-mempool-->****要求运行内存池**：Bob 可以用一个比特币全节点监控比特币 P2P 中继网络，从而获知 Mallory 的结算交易。Eclair 等一些 LN 节点已经这么做，而且看起来这是[合理的额外负担][osuntokun reasonable]，因为该问题只直接影响路由节点（如 Bob）。只为自己收发支付的节点仅会间接受影响，[^non-routing-issues]因此普通用户仍然可以在移动设备上运行轻量级 LN 客户端。不幸的是，即便一切运转正常，不同全节点收到的交易也未必相同。更糟的是，像 Mallory 这样的攻击者还可以用一些手法[向不同对等节点发送不同的冲突交易][corallo mempool not guaranteed]（例如，把被钉住的原像结算交易发给已知矿工，却把另一笔至少共用其中一个输入的非结算交易发给非矿工的中继节点）。
 
-  - **<!--beg-or-pay-for-preimages-->****请求或支付原像**：中继网络可以向交易提交者如 Bob 提供[关于冲突的相关信息][harding reject]，这样他们就不需要自己持续监控中继。这个方案仍然面临像 Mallory 这样的恶意行为者使用[定向中继][corallo targeted relay]向矿工和非矿工发送不同交易的问题。此外，Bob 可能可以[支付][harding pay]矿工或其他第三方节点以获得所需的原像，尽管这需要一些人运行额外的软件，并且[在某些闪电网络协议的提议升级部署后可能并不那么容易][zmn ptlcs]。
+  - **<!--beg-or-pay-for-preimages-->****求人或付费获取原像**：中继网络可以向 Bob 这样的交易提交者提供[关于冲突的信息][harding reject]，这样他们就不必自己持续监控中继。这个方案仍然面临一个问题：像 Mallory 这样的恶意行为者可以用[定向中继][corallo targeted relay]向矿工和非矿工发送不同的交易。此外，Bob 也许能[付费][harding pay]向矿工或其他第三方节点购买所需的原像，尽管这需要有人运行额外的软件，而且在 LN 协议的一些拟议升级部署之后，[做这件事可能就没那么容易了][zmn ptlcs]。
 
-  - **<!--settlement-transaction-anchor-outputs-->****结算交易锚定输出**：链上结算交易可以重新设计为将其价值支付给[锚定输出][topic anchor outputs]，以便通过 [CPFP 分离][topic cpfp carve out]进行 [CPFP 费用提升][topic cpfp]。这将要求这些交易更大（增加链上费用）且预签名（减少灵活性）。这仅直接影响在支付未完成时单方面关闭的通道，而这种情况本身就会显著增加链上成本，因此用户会尽量避免这一情况。然而，提高链上执行成本也提高了无需信任地通过 LN 发送支付的最低实际金额。尽管存在这些挑战，截至本文撰写时，这仍然是最受欢迎的解决方案。
+  - **<!--settlement-transaction-anchor-outputs-->****结算交易的锚定输出**：可以把链上结算交易重新设计成将其价值花到[锚定输出][topic anchor outputs]上，以便通过 [CPFP 豁免（carve-out）][topic cpfp carve out] 进行 [CPFP 手续费追加][topic cpfp]。这要求这些交易体积更大（增加链上手续费），并且要预签名（降低灵活性）。它只会直接影响在支付尚未结算时被单方面关闭的通道，而这种情况本身就会显著抬高链上成本，所以用户本就尽量避免。然而，提高链上执行的成本，也会提高通过 LN 无需信任地发送支付的最低实际金额。尽管有这些挑战，截至本文撰写时，这似乎仍是最受青睐的方案。
 
-  Corallo 将此标记为一个严重问题，但指出其后果类似于另一个已知的问题，即 LN 链上交易的费用管理问题。现有问题（在 [Newsletter #78][news78 anchor outputs] 中描述）是承诺交易的费用率是在签署交易时设定的，这可能是交易广播到比特币中继节点之前的几天或几周。如果自交易上次签署以来，下一几个区块包含交易所需的最低费用率显著增加，那么承诺交易可能在 Alice 能够从 Bob 那里收回资金之前无法确认，从而再次为 Bob 创造了既支付给 Mallory 又退款给 Alice 的机会。（开发人员正在修复此问题时发现了新问题。[^package-relay]）
+  Corallo 将其称为严重问题，但同时指出，它的后果与另一个已知问题相似，即 LN 链上交易的手续费管理问题。那个既有问题（在 [Newsletter #78][news78 anchor outputs] 中描述）是：承诺交易的费率在签署时就已确定，而签署时间可能比广播到比特币中继节点早好几天甚至好几周。如果自该交易上次签署以来，让交易进入接下来几个区块所需的最低费率已显著上升，那么承诺交易可能要等到 Alice 从 Bob 那里收回资金之后才能确认，于是又给 Bob 制造了既付钱给 Mallory、又退款给 Alice 的机会。（开发者正是在着手修复这个既有问题时发现了新问题。[^package-relay]）
 
-  到目前为止，我们尚未意识到 LN 中由于链上费用管理问题造成的实际损失，这可能部分归因于过去两年中几乎没有持续足够长时间的大费用峰值，足以显著延迟先前可接受费用率的交易确认。好运不会无限期地持续下去，因此这个新问题为 LN 开发人员提供了一个额外的理由来优先实施改进的链上费用管理。在此期间，担心攻击的节点运营者可能希望增加其 [cltv_expiry_delta][] 以便为原像结算交易提供更多的确认时间。当前流行 LN 节点的默认值为：C-Lightning 为 [14][cl ced]，LND 为 [40][lnd ced]，Rust-Lightning 为 [72][rl ced]，Eclair 为 [144][eclair ced]。请注意，增加该值会使您的通道对支付者的吸引力下降，因为更高的值会增加等待支付结算的正常最坏情况时间。
+  迄今为止，我们尚未听说 LN 中因链上手续费管理问题造成任何真实损失，部分原因可能是过去两年里很少有大幅费率飙升能持续足够长时间，从而显著延迟那些按原先可接受费率发出的交易的确认。好运不会无限期地持续，因此这个新问题又多给 LN 开发者一个理由，去优先实现更好的链上手续费管理。在此期间，担心该攻击的节点运营者不妨提高 [cltv_expiry_delta][]，让原像结算交易有更多时间确认。目前主流 LN 节点的默认值为：C-Lightning [14][cl ced]、LND [40][lnd ced]、Rust-Lightning [72][rl ced]、Eclair [144][eclair ced]。请注意，提高该值会让你的通道对付款方吸引力下降，因为该值越高，支付在最坏情况下等待结算的正常时间就越长。
 
-- **<!--multiparty-vault-architecture-->****多方保险库架构**：Antoine “Darosior” Poinsot [宣布][darosior revault]了一个基于与[上周 Newsletter][news94 bishop vault] 提到的相同预签名交易概念的保险库[约束][topic covenants]原型的演示实现。这个新实现被命名为 *Revault*，重点是使用多重签名安全性存储多个方共享的资金。该协议允许部分参与方通过确认信标交易来启动提款过程；如果保险库的其他参与方对提款有异议，他们有机会广播第二笔交易，将资金退回保险库中的紧急地址。如果在规定时间内没有异议，则另一笔交易可以完成资金的提款。Poinsot 正在征求对该提案的反馈。
+- **<!--multiparty-vault-architecture-->****多方保险库架构**：Antoine “Darosior” Poinsot [宣布][darosior revault]了一个保险库[契约][topic covenants]原型的演示实现，它基于[上周 Newsletter][news94 bishop vault] 提到的那套预签名交易基本思路。这一新实现名为 *Revault*，重点是用多重签名（multisig）保障多方共享资金的安全存储。该协议允许一部分参与方通过让一笔信标（beacon）交易得到确认来启动提款流程；如果保险库的其他参与方反对提款，他们有机会广播第二笔交易，把资金退回到保险库中的紧急地址。如果在规定时间内没有异议，再由另一笔交易完成提款。Poinsot 正在征求对该提案的反馈。
 
 ## Bitcoin Stack Exchange 精选问答
 
-*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者们寻找问题答案的首选之地，或者在有空的时候帮助好奇或困惑的用户。在这个月度特色部分中，我们重点介绍自上次更新以来发布的部分高票问题与回答。*
+*[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选去处之一，也是我们有点空闲时帮助好奇或困惑用户的地方。在本月栏目中，我们精选自上次更新以来得票最高的一些问题和回答。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{%
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
 - **<!--what-are-the-potential-attacks-against-ecdsa-that-would-be-possible-if-we-used-raw-public-keys-as-addresses-->**[如果我们将原始公钥用作地址，可能会对 ECDSA 发起哪些潜在攻击？]({{bse}}95123)
-  Pieter Wuille 总结了使用公钥哈希而非公钥作为地址的理由，即这可以减缓具有量子计算能力的攻击者。他接着列举了为什么这一假设的理由可能被夸大，并可能给人一种虚假的安全感。
+  Pieter Wuille 在回答中总结了用公钥哈希而非公钥作为地址的理由，即这能拖慢具备量子计算能力的攻击者。他接着列举了若干理由，说明这个说法可能被高估，并会带来虚假的安全感。
 
-- **<!--what-is-meant-by-default-ancestor-limit-in-child-pays-for-parent-->**[在子支付父（CPFP）中，DEFAULT_ANCESTOR_LIMIT 是什么意思？]({{bse}}95473)
-  用户 anu 提问关于 Bitcoin Core 中的 [DEFAULT_ANCESTOR_LIMIT][bitcoin core default ancestor limit] 与 [子支付父（CPFP）][topic cpfp] 费用提升技术的关系。Murch 指出这个默认策略有助于防止垃圾攻击，并给出了几个确定祖先交易数量的例子。
+- **<!--what-is-meant-by-default-ancestor-limit-in-child-pays-for-parent-->**[在子为父付（CPFP）中，DEFAULT_ANCESTOR_LIMIT 是什么意思？]({{bse}}95473)
+  用户 anu 就 Bitcoin Core 中的 [DEFAULT_ANCESTOR_LIMIT][bitcoin core default ancestor limit] 提问，想了解它与 [CPFP][topic cpfp] 手续费追加技术的关系。Murch 指出，这一默认策略有助于防止垃圾攻击，并给出了几个计算祖先交易数量的例子。
 
 - **<!--how-is-simplicity-better-suited-for-static-analysis-compared-to-script-->**[与 Script 相比，Simplicity 如何更适合静态分析？]({{bse}}95332)
-  [Simplicity 白皮书][simplicity] 的作者 Russell O'Connor 描述了与 Simplicity 语言相比，静态分析比特币 Script 程序的挑战。
+  [Simplicity 白皮书][simplicity]的作者 Russell O'Connor 描述了静态分析比特币 Script 程序的难点，并与 Simplicity 语言作了对比。
 
 ## 发布与候选发布
 
-*受欢迎的比特币基础设施项目的新版本与候选发布版本。请考虑升级到新版本或帮助测试候选发布版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [Bitcoin Core 0.20.0rc1][bitcoin core 0.20.0] 是下一个主要版本的候选发布。
-- [LND 0.10.0-beta.rc6][lnd 0.10.0-beta] 允许测试 LND 的下一个主要版本。
-- [C-Lightning 0.8.2-rc3][c-lightning 0.8.2] 是 C-Lightning 下一个版本的最新候选发布。
+- [Bitcoin Core 0.20.0rc1][bitcoin core 0.20.0] 是 Bitcoin Core 下一个大版本的候选发布。
+- [LND 0.10.0-beta.rc6][lnd 0.10.0-beta] 允许测试 LND 的下一个大版本。
+- [C-Lightning 0.8.2-rc3][c-lightning 0.8.2] 是 C-Lightning 下一版本的最新候选发布。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Rust-Lightning][rust-lightning repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中值得注意的更改。*
+*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Rust-Lightning][rust-lightning repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中值得注意的变更。*
 
-*注意：下面提到的 Bitcoin Core 提交适用于其主开发分支，因此这些更改可能不会在即将发布的 0.20 版本之前发布，预计大约在 0.20 版本发布后六个月的 0.21 版本中。*
+*注意：下面提到的 Bitcoin Core 提交针对其主开发分支，因此这些变更很可能要到 0.21 版才会发布，也就是在即将发布的 0.20 版发布约六个月之后。*
 
-- [Bitcoin Core #15761][] 添加了一个 `upgradewallet` RPC，取消了启动时升级的旧方法，从而允许用户在加载钱包时解锁并升级到[分层确定性（HD）][Hierarchical Deterministic ref]。该功能还兼容[多钱包][multi-wallet]，因为它在 RPC 指定的单个钱包上运行。
+- [Bitcoin Core #15761][] 添加了一个 `upgradewallet` RPC，废弃了启动时升级钱包的旧方式，从而让用户可以在钱包已加载的情况下将其解锁并升级为[分层确定性（HD）][Hierarchical Deterministic ref]钱包。该功能同样兼容[多钱包][multi-wallet]，因为它作用于 RPC 指定的那个钱包。
 
-- [Bitcoin Core #17509][] 允许钱包 GUI 将[部分签名比特币交易][topic psbt]（PSBT）保存到文件，并从文件加载 PSBT。保存功能适用于禁用私钥的钱包，此前 Bitcoin Core 会自动将 PSBT 复制到剪贴板（请参阅 Newsletters [#74][news74 core psbt] 和 [#82][news82 core psbt] 中描述的 PR）。加载 PSBT 时，如果所有签名都可用，它将提供最终确定和广播交易的选项；否则，PSBT 将被复制到剪贴板，供单独的用户操作进行签名（例如，使用 GUI 控制台的 RPC 或使用诸如 [HWI][topic hwi] 等独立工具）。预计后续 PR 将添加在 GUI 中签名 PSBT 的功能。
+- [Bitcoin Core #17509][] 允许钱包 GUI 将[部分签名比特币交易][topic psbt]（PSBT）保存到文件，并从文件加载 PSBT。保存功能在禁用私钥的钱包中也可用——此前这类钱包里 Bitcoin Core 会自动把 PSBT 复制到剪贴板（见 Newsletters [#74][news74 core psbt] 和 [#82][news82 core psbt] 中描述的 PR）。加载 PSBT 时，如果所有签名都已具备，程序会询问是否完成交易并广播；否则 PSBT 会被复制到剪贴板，等用户另行操作来签名（例如在 GUI 控制台调用 RPC，或使用 [HWI][topic hwi] 之类的独立工具）。后续 PR 预计会加入在 GUI 中签名 PSBT 的功能。
 
 ## 特别感谢
 
@@ -92,10 +92,10 @@ endcomment %}
 
 ## 脚注
 [^package-relay]:
-    处理 LN 中任意费用率的最终解决方案还取决于比特币全节点能够执行[包中继][Bitcoin Core #14895]，这是一个长期讨论但从未完全实施的功能。目前，LN 承诺交易通常只需[稍微支付更高][corallo slightly higher]的费用率，以避免需要包中继。
+    要应对 LN 中任意波动的费率，最终还取决于比特币全节点能否进行[交易包中继][Bitcoin Core #14895]（package relay）——这是一个讨论已久但从未完整实现的功能。目前，LN 承诺交易通常只需[支付比严格所需稍高][corallo slightly higher]的费率，就能免去对交易包中继的需要。
 
 [^non-routing-issues]:
-    虽然目前已知唯一直接窃取资金的方法是通过滥用路由节点（如 Alice→Bob→Mallory 中的 Bob），但当对支付者（如 Alice→Mallory 中的 Alice）执行相同的延迟原像结算和阻止退款结算的攻击时，可能会产生一个“支付失败”的错误，从而导致用户在未意识到第一次支付尚未撤销的情况下发起第二次支付。这种[间接攻击][corallo send twice] 或许可以通过警告用户支付卡住——而不是失败——并且发送额外的支付可能会导致损失来解决。
+    虽然目前已知能直接借该攻击窃取资金的唯一方式是通过滥用路由节点（如 Alice→Bob→Mallory 中的 Bob），但当把同样的攻击——延迟原像结算并阻止退款结算——施加于付款方（如 Alice→Mallory 中的 Alice）时，可能会产生“支付失败”的错误提示，让用户在没意识到第一笔支付尚未撤销的情况下又发起第二笔支付。这种[间接攻击][corallo send twice]或许可以通过提醒用户来解决：这笔支付是卡住了，而不是失败了；再发送支付可能造成损失。
 
 {% include references.md %}
 {% include linkers/issues.md issues="688,15761,17509,14895" %}

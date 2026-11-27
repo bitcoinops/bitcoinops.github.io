@@ -7,32 +7,32 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 总结了关于粉尘限制的讨论，并包括我们的常规栏目，介绍了对服务和客户端软件的更改、如何为 Taproot 做准备、新的发布与候选发布，以及对流行比特币基础设施软件的值得注意的更改。
+本周的 Newsletter 总结了关于粉尘限制的讨论，并包括我们的常规栏目：服务和客户端软件的变更、如何为 Taproot 做准备、新版本与候选版本，以及热门比特币基础设施软件值得注意的变更。
 
 ## 新闻
 
 - **<!--dust-limit-discussion-->****粉尘限制讨论：**
-  Bitcoin Core 及其他节点软件默认拒绝中继或挖掘任何输出值低于某个特定金额的交易，这一金额被称为[粉尘限制][topic uneconomical outputs]（具体金额因输出类型而异）。此限制使得用户更难创建*非经济性输出*——即花费其 UTXO 需要支付的手续费高于 UTXO 本身价值的情况。
+  Bitcoin Core 及其他节点软件默认拒绝中继或挖出任何输出值低于某个金额的交易，这一下限就是[粉尘限制][topic uneconomical outputs]（具体金额因输出类型而异）。这让用户更难创建*非经济性输出*——即花费它所需的手续费高于它本身价值的 UTXO。
 
-  本周，Jeremy Rubin 在 Bitcoin-Dev 邮件列表中[发表][rubin dust]了一篇文章，提出了五点理由支持移除粉尘限制，并表示他认为该限制的目的是为了防止“垃圾交易”和“[粉尘指纹攻击][topic output linking]”。其他人对此[作出了回复][corallo dust]，提出了[反对意见][harding dust]，并指出该限制的存在并非为了防止垃圾交易，而是为了防止用户创建 UTXO，而这些 UTXO 由于经济因素将不会被花费，从而永久浪费全节点运营者的资源。此外，部分讨论也[描述][riard dust]了粉尘限制及非经济性输出对闪电网络的[影响][towns dust]。
+  本周，Jeremy Rubin 在 Bitcoin-Dev 邮件列表中[发表][rubin dust]了支持移除粉尘限制的五点理由，并表示他认为该限制的目的是防止“垃圾交易”和“[粉尘指纹攻击][topic output linking]”。其他人对此[作出了回复][corallo dust]，提出了[反对意见][harding dust]，并指出该限制的存在并非为了防止垃圾交易，而是为了防止用户创建自己永远没有经济动机去花费的 UTXO，从而长期浪费全节点的资源。部分讨论还[描述][riard dust]了粉尘限制与非经济性输出对闪电网络的[影响][towns dust]。
 
-  截至目前，讨论尚未达成共识。至少在短期内，我们预计粉尘限制仍将保留。
+  截至本文撰写时，似乎不太可能达成任何共识。至少在短期内，我们预计粉尘限制仍会保留。
 
-## 服务和客户端软件的更改
+## 服务和客户端软件的变更
 
-*在此月度特辑中，我们重点介绍比特币钱包和服务的有趣更新。*
+*在本月栏目中，我们重点介绍 Bitcoin 钱包与服务的一些有趣更新。*
 
 - **<!--spark-lightning-wallet-adds-bolt12-support-->****Spark Lightning Wallet 添加 BOLT12 支持：**
-  [Spark v0.3.0rc 版本][spark v0.3.0rc]为 [Spark][spark github] 增加了对 BOLT12 [offers][topic offers] 的部分支持。
+  [Spark][spark github] 的 [v0.3.0rc 版本][spark v0.3.0rc]加入了对 BOLT12 [offers][topic offers] 的部分支持。
 
-- **<!--blockstream-announces-non-custodial-ln-cloud-service-greenlight-->****Blockstream 宣布去托管的闪电网络云服务 Greenlight：**
-  在最近的[博客文章][blockstream blog greenlight]中，Blockstream 介绍了其基于云的 C-Lightning 托管节点服务，该服务将节点的运营（由 Blockstream 负责）与节点所持资金的控制权（由用户掌控）分离。[Sphinx][sphinx website] 和 [Lastbit][lastbit website] 目前均使用 Greenlight 服务。
+- **<!--blockstream-announces-non-custodial-ln-cloud-service-greenlight-->****Blockstream 宣布非托管的闪电网络云服务 Greenlight：**
+  在最近的[博客文章][blockstream blog greenlight]中，Blockstream 介绍了其托管式云上 C-Lightning 节点服务，该服务把节点的运行（由 Blockstream 负责）与节点所持资金的控制权（归用户所有）分离开来。[Sphinx][sphinx website] 和 [Lastbit][lastbit website] 目前都在使用 Greenlight 服务。
 
-- **<!--bitgo-announces-native-segwit-change-outputs-->****BitGo 宣布采用原生 SegWit 作为找零地址：**
-  鉴于 SegWit 采用率已突破 75% 里程碑，[BitGo 的博客文章][bitgo blog segwit change]宣布默认的找零地址将从 P2SH 封装格式切换为[原生 SegWit][topic bech32] 格式。
+- **<!--bitgo-announces-native-segwit-change-outputs-->****BitGo 宣布采用原生 segwit 找零输出：**
+  在 segwit 采用率跨过 75% 里程碑之后，[BitGo 的博客文章][bitgo blog segwit change]宣布其默认找零输出将从 P2SH 封装切换为[原生 segwit][topic bech32] 输出。
 
-- **<!--blockstream-green-desktop-0-1-10-released-->****Blockstream Green 桌面端 0.1.10 版本发布：**
-  [0.1.10 版本][blockstream green desktop 0.1.10] 增加了默认采用 SegWit 的单签名钱包，并支持手动 [coin selection][topic coin selection] 功能。
+- **<!--blockstream-green-desktop-0-1-10-released-->****Blockstream Green 桌面端 0.1.10 发布：**
+  [0.1.10 版本][blockstream green desktop 0.1.10] 新增了默认使用 segwit 的单签钱包，并加入手动[选币][topic coin selection]功能。
 
 ## 准备 Taproot #9：签名适配器
 
@@ -42,29 +42,29 @@ lang: zh
 
 ## 发布与候选发布
 
-*流行比特币基础设施项目的新发布和候选发布版本。请考虑升级到新版本或协助测试候选发布版本。*
+*热门比特币基础设施项目的新版本与候选发布。请考虑升级到新版本，或协助测试候选发布。*
 
-- [Bitcoin Core 22.0rc2][bitcoin core 22.0] 是该全节点实现及其相关钱包和其他软件的下一个主要版本的候选发布。该版本的主要更改包括支持 [I2P][topic anonymity networks] 连接、移除对[版本 2 Tor][topic anonymity networks] 连接的支持，以及增强对硬件钱包的支持。
+- [Bitcoin Core 22.0rc2][bitcoin core 22.0] 是该全节点实现及其配套钱包和其他软件下一个主要版本的候选版本。这个新版本的主要变更包括：支持 [I2P][topic anonymity networks] 连接、移除对[版本 2 Tor][topic anonymity networks] 连接的支持，以及加强对硬件钱包的支持。
 
-- [Bitcoin Core 0.21.2rc1][bitcoin core 0.21.2] 是 Bitcoin Core 的一个维护版本候选发布，包含多个错误修复和小改进。
+- [Bitcoin Core 0.21.2rc1][bitcoin core 0.21.2] 是 Bitcoin Core 一个维护版本的候选版本，包含多项错误修复和若干小改进。
 
-## 值得注意的代码和文档更改
+## 值得注意的代码与文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[Bitcoin 改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo]中的值得注意的更改。*
+*本周 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo]的值得注意的变更。*
 
-- [Bitcoin Core #22642][] 更新了 Bitcoin Core 22.0 版本的发布流程，将所有[可重复构建][topic reproducible builds]二进制文件的 GPG 签名合并到一个文件中，以便进行批量验证（[示例][gpg batch]）。虽然确定性构建者的签名已经存在多年，但此更改使得这些签名更加易于访问，同时减少了对项目首席维护者签署发布二进制文件的依赖。
+- [Bitcoin Core #22642][] 更新了 Bitcoin Core 为即将发布的 22.0 版所用的发布流程：把每一位[可重复构建][topic reproducible builds]出这些二进制文件的人的 GPG 签名拼接为单个文件，以便批量验证（[示例][gpg batch]）。确定性构建者的签名已经存在多年，但这一改动应能让这些签名更易获取，同时减少项目对首席维护者签署发布二进制文件这一做法的依赖。
 
-- [Bitcoin Core #21800][] 为内存池包接受流程引入了祖先和后代限制。Bitcoin Core 限制其内存池中相关交易的数量，以防止 DoS 攻击并使矿工能够高效构建区块。默认情况下，这些[限制][bitcoin core mempool limits]确保内存池中任何交易及其祖先交易总数不超过 25 笔，或其总重量不超过 101KB。同样的规则适用于交易及其后代交易的组合。
+- [Bitcoin Core #21800][] 为内存池接受交易包引入了祖先和后代限制。Bitcoin Core 会限制其内存池中相关交易的数量，以防 DoS 攻击，同时让矿工构建区块时切实可行。默认情况下，这些[限制][bitcoin core mempool limits]确保内存池中的任何交易连同其祖先交易，都不超过 25 笔或 101KvB 的重量。同样的规则也适用于该交易连同其后代交易的组合。
 
-  这些祖先和后代限制在交易被考虑加入内存池时生效。如果添加交易会导致某个限制被超出，则交易将被拒绝。尽管包交易的语义尚未最终确定，[#21800][bitcoin core #21800] 实现了用于验证任意交易包（即同时考虑多个交易加入内存池）的祖先和后代限制检查。内存池包接受功能最初在 [#20833][mempool package test accept] 仅作为测试实现，最终将作为[包中继][topic package relay]的一部分在 P2P 网络中公开。
+  这些祖先和后代限制在交易被考虑加入内存池时生效。如果加入该交易会导致某一限制被突破，交易就会被拒绝。尽管交易包的语义尚未最终确定，[#21800][bitcoin core #21800] 已实现了对任意交易包（即同时考虑把多笔交易加入内存池）进行祖先和后代限制检查。内存池交易包接受功能最初在 [#20833][mempool package test accept] 中仅供测试之用，最终会作为[交易包中继][topic package relay]的一部分，通过 P2P 网络对外提供。
 
 - [Bitcoin Core #21500][] 更新了 `listdescriptors` RPC，增加了 `private` 参数，当该参数被设置时，该命令将返回每个描述符的私有形式。私有形式包含任何已知的私钥或扩展私钥（xprvs），使得该命令可用于备份钱包。
 
-- [Rust-Lightning #1009][] 添加了 `max_dust_htlc_exposure_msat` 通道配置选项，该选项限制“粉尘 HTLC”（即金额低于[粉尘限制][topic uneconomical outputs]的 HTLC）的总余额。
+- [Rust-Lightning #1009][] 新增了 `max_dust_htlc_exposure_msat` 通道配置选项，用于限制处于待处理状态的“粉尘 HTLC”（金额低于[粉尘限制][topic uneconomical outputs]的 HTLC）的总余额。
 
-  该更改是为[提议的][BOLTs #873] `option_dusty_htlcs_uncounted` 功能位做准备，该功能位表示该节点不希望将“粉尘 HTLC”计入 `max_accepted_htlcs`。节点运营者可能希望采用此功能位，因为 `max_accepted_htlcs` 主要用于限制链上交易的潜在大小，以防发生强制关闭，而“粉尘 HTLC”无法在链上被认领，因此不会影响最终交易的大小。
+  该变更是为[拟议的][BOLTs #873] `option_dusty_htlcs_uncounted` 功能位做准备，该功能位表示节点不希望把“粉尘 HTLC”计入 `max_accepted_htlcs`。节点运营者多半会愿意采用这一功能位，因为 `max_accepted_htlcs` 主要用来限制万一发生强制关闭时链上交易的潜在大小，而“粉尘 HTLC”在链上根本无法被认领，永远不会影响最终交易的大小。
 
-  新增的 `max_dust_htlc_exposure_msat` 通道配置选项确保即使启用了 `option_dusty_htlcs_uncounted`，用户仍可以限制“粉尘 HTLC”的总余额，因为在强制关闭的情况下，这些 HTLC 的余额将作为矿工费用损失。
+  新增的 `max_dust_htlc_exposure_msat` 通道配置选项确保即使启用了 `option_dusty_htlcs_uncounted`，用户仍可限制“粉尘 HTLC”的总余额，因为一旦发生强制关闭，这部分余额会作为手续费付给矿工而损失掉。
 
 {% include references.md %}
 {% include linkers/issues.md issues="22642,21800,21500,1009,873" %}
