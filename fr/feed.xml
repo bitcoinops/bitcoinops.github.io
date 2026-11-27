@@ -1,0 +1,6 @@
+---
+layout: null
+lang: fr
+permalink: /fr/feed.xml
+---
+{% include functions/atom-feed.xml posts=site.posts lang="fr" feed_path="/fr/feed.xml" home_path="/fr/" feed_title=site.title limit=10 %}
