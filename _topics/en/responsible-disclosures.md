@@ -241,6 +241,9 @@ optech_mentions:
   - title: "Greg Sanders responsibly disclosed a duplicate orphan announcement node stall in Bitcoin Core"
     url: /en/newsletters/2026/11/27/#disclosure-of-a-medium-severity-vulnerability-in-bitcoin-core
 
+  - title: "Nishant Bansal disclosed a duplicate funding outpoint DoS vulnerability in Core Lightning"
+    url: /en/newsletters/2026/11/27/#disclosure-of-a-dos-vulnerability-in-cln
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

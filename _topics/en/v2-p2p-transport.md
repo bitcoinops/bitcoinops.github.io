@@ -101,6 +101,9 @@ optech_mentions:
   - title: "Draft BIP for dynamic one-byte message type IDs over BIP324"
     url: /en/newsletters/2026/10/09/#dynamic-one-byte-message-type-ids-for-bip324
 
+  - title: "BIPs #2301 adds draft BIP333 for dynamic one-byte message type IDs over BIP324"
+    url: /en/newsletters/2026/11/27/#bips-2301
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151

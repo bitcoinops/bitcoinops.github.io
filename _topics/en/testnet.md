@@ -130,6 +130,9 @@ optech_mentions:
   - title: "BIPs #2356 updates BIP95 with the mined testnet5 genesis block and marks it as deployed"
     url: /en/newsletters/2026/11/20/#bips-2356
 
+  - title: "Rust Bitcoin #7160 adds testnet5 support"
+    url: /en/newsletters/2026/11/27/#rust-bitcoin-7160
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signet
